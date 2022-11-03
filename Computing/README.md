@@ -6,5 +6,4 @@ Depending on the nature of the research you are conducting and the computing res
     * [Secure Computing](./Secure_Computing/README.md)
     * [HPC Clusters](./HPC_Clusters/README.md)
     * [Research Workstations](./Research_Workstations/README.md)
-    * [Visualization](./Visualization/README.md)
-    * [AI-ML](./AI-ML/README.md)
+    * [Research Computing Services](./Research_Computing_Services/README.md)
