@@ -5,7 +5,7 @@ High-Performance Computing (HPC) refers to the practice of aggregating computing
 Today, HPC is used to solve complex, performance-intensive problems—and organizations are increasingly moving HPC workloads to the cloud. Ursa Major is UCR's HPC in the cloud is and it lowers the economics of product development and research because it requires fewer prototypes, accelerates testing, and decreases time to discovery.
 
 UCR's Research Computing can facilitate our researchers and their lab’s access to the following HPC resources:
-* [UCR Ursa Major HPC](Ursa_Major_HPC.md)
+* [UCR Ursa Major HPC](#ucr-ursa-major-hpc)
 * [HPCC](https://hpcc.ucr.edu/)
 * [The Nautlius Cluster]()
 * [National and Academic Supercomputing Centers]()  
