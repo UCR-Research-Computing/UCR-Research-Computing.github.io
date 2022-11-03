@@ -22,6 +22,9 @@ UCR's *Ursa Major* Research Computing Service. Ursa Major is ITS Campus subsidiz
 ### [Steps to launch an Ursa Major HPC Cluster now.](../../Training_and_Consulting/Campus_Training_Resources/Ursa_Major/How_To_Launch_a_Ursa_Major_Cluster.md) ####  
 ### [Learn more about UCR's Ursa Major HPC.](../../Training_and_Consulting/Campus_Training_Resources/Ursa_Major) ####
 
+Reach out to the Research Computing team to help you get your lab up and running today!  
+[research-computing@ucr.edu](mailto:research-computing@ucr.edu?subject=Ursa_Major_HPC)
+
 ## Othe HPC Clusters Avaible ##  
 
 ### [HPCC](http://hpcc.ucr.edu) ###
