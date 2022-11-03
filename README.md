@@ -11,7 +11,7 @@ Here you will find a series of documents, tutorials, and resources to facilitate
     * [HPC Clusters](Computing/HPC_Clusters)
     * [Research Workstations](Computing/Research_Workstations)
     * [Visualization](Computing/Visualization)
-    * [AI-ML](Computing/AI-ML)
+    * [Research Computing Services](Computing/Research_Computing_Services)    
 * [Storage](Storage)
     * [Local Lab Storage](Storage/Local_Lab_Storage)
     * [Google Drive](Storage/Google_Drive)
