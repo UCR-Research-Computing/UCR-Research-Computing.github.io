@@ -10,7 +10,6 @@ Here you will find a series of documents, tutorials, and resources to facilitate
     * [Secure Computing](Computing/Secure_Computing)
     * [HPC Clusters](Computing/HPC_Clusters)
     * [Research Workstations](Computing/Research_Workstations)
-    * [Visualization](Computing/Visualization)
     * [Research Computing Services](Computing/Research_Computing_Services)    
 * [Storage](Storage)
     * [Local Lab Storage](Storage/Local_Lab_Storage)
