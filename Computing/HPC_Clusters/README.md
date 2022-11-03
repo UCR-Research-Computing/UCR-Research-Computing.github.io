@@ -33,12 +33,12 @@ UCR's *High-Performance Computing Center* (HPCC) provides a shared HPC Cluster a
 * Access to 256 Cores, Shared access to Bigdata filesystem, Shared Highmem nodes, and shared GPUs.
 * Access to 1000 software tools, packages, and community databases.  
 
-## The Nautlius Cluster ##
+## [The Nautlius Cluster](https://ucsd-prp.gitlab.io/) ##
 Nautilus is a heterogeneous, distributed cluster, with computational resources of various shapes and sizes made available by research institutions spanning multiple continents! Check out the Cluster Map to see where the nodes are located.
 
 This is a free resource at the moment and can be used to run many types of machine learning and research workloads.
 
-## National and Academic Supercomputing Centers ##
+## [National and Academic Supercomputing Centers](https://access-ci.org/about/) ##
 National and Academic Supercomputing Centers via the ACCESS program formally known as XSEDE.
 This provides free access to supercomputer resources through a proposal process.
 
