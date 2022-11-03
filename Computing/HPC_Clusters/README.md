@@ -16,12 +16,14 @@ UCR's *Ursa Major* Research Computing Service. Ursa Major is ITS Campus subsidiz
 * Customized with installed software to support your research needs. 
 * Each Ursa Major Cluster is ephemeral and can be started and stopped as often as you like without losing data.
 * Each Ursa Major Cluster is elastic and scales/descales to however many cores or memory or GPU your research needs based on cluster load.
-    * Access to unlimited CPU, RAM, and GPUs.
+    * Access to unlimited CPU, High RAM, and High GPUs.
 * Each Ursa Major Cluster is connected to an Ursa Major's virtually unlimited-sized parallel high-speed storage as well as the Ursa Major's General Research Storage.
 
 #### [Steps to launch an Ursa Major HPC Cluster now.](../../Training_and_Consulting/Campus_Training_Resources/Ursa_Major/How_To_Launch_a_Ursa_Major_Cluster.md) ####  
 #### [Learn more about Ursa Major HPC.](../../Training_and_Consulting/Campus_Training_Resources/Ursa_Major/README.md) ####
 #### [A current list of Research Software available to be installed on an Ursa Major Cluster.](https://spack.readthedocs.io/en/latest/package_list.html) ####
+
+
 
 ### [HPCC](http://hpcc.ucr.edu) ###
 UCR's *High-Performance Computing Center* (HPCC) provides a shared HPC Cluster accessible to all UCR researchers and affiliates at a low cost. This includes access to the shared HPC resources and services summarized below:
