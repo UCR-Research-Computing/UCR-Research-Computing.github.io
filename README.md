@@ -14,7 +14,7 @@ Here you will find a series of documents, tutorials, and resources to facilitate
 * [Storage](Storage)
     * [Local Lab Storage](Storage/Local_Lab_Storage)
     * [Google Drive](Storage/Google_Drive)
-    * [Ursa Major Secure Research Storge](Storage/Ursa_Major)
+    * [Ursa Major Secure Research Storage](Storage/Ursa_Major)
 * [Software](Software)
     * [Campus Sites and Licenses](Software/Campus_Sites_and_Licenses)
     * [Research Software](Software/Research_Software)
