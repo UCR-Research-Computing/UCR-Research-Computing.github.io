@@ -21,6 +21,6 @@ UCR's *Ursa Major* Research Computing Service. Ursa Major is ITS Campus subsidiz
 * [UCR Ursa Major Slurm Job Scripts Examples](https://github.com/UCR-Research-Computing/UCR-Ursa-Major-Slurm-Job-Scripts)  
 
 ### Youtube Tutorials ###
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=acRzY4mnkAc
+* <a href="http://www.youtube.com/watch?feature=player_embedded&v=acRzY4mnkAc
 " target="_blank"><img src="http://img.youtube.com/vi/acRzY4mnkAc/0.jpg" 
 alt="Cloud HPC Toolkit tutorial: Simple cluster" width="240" height="180" border="10" /></a>
