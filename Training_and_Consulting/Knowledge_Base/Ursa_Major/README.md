@@ -10,9 +10,11 @@ UCR's *Ursa Major* Research Computing Infrastructre Service. Ursa Major is ITS C
     * Access to unlimited CPU, RAM, and GPUs.
 * Each Ursa Major Cluster is connected to a Ursa Major's virtually unlimited sized parallel high-speed storage as well as as Ursa Major's General Research Storage.
 * Slurm job sceduler
+#### [A current list of Research Software available to be installed on an Ursa Major Cluster.](https://spack.readthedocs.io/en/latest/package_list.html) ####
 
 ## [Ursa Major Workstations]() ##
 ## [Ursa Major Services]() ##
 ## [Ursa Major Storage]() ##
+
 
 
