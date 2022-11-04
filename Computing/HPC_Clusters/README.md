@@ -10,7 +10,7 @@ UCR's Research Computing can facilitate our researchers and their lab’s access
 * [The Nautlius Cluster](#the-nautlius-cluster)
 * [National and Academic Supercomputing Centers](#national-and-academic-supercomputing-centers)  
 
-# [UCR Ursa Major HPC](Training_and_Consulting/Knowledge_Base/Ursa_Major/README.md) #
+# [UCR Ursa Major HPC](/Training_and_Consulting/Knowledge_Base/Ursa_Major.md) #
 `UCR's Ursa Major Research Computing Service.` Ursa Major is ITS Campus subsidized and is free to UCR Researchers or at a very small token fee. Ursa Major is powered by Google Cloud and is a game-changing development for UCR's Researcher and their Research. This service is designed to drive research at an increased pace and bring more grants and funding to the University. This service is a massively scalable and innovative approach to providing Research Computing resources, tools, and support as summarized below: Reach out and get started today!
 * Multiple Personal, Lab-Based, or Shared HPC Clusters.
 * Customized with installed software to support your research needs. 
@@ -19,8 +19,8 @@ UCR's Research Computing can facilitate our researchers and their lab’s access
     * Access to unlimited CPU, High RAM, and High GPUs.
 * Each Ursa Major Cluster is connected to an Ursa Major's virtually unlimited-sized parallel high-speed storage as well as the Ursa Major's General Research Storage.  
 
-### [Follow steps to launch an Ursa Major HPC Cluster now.](../../Training_and_Consulting/Knowledge_Base/Ursa_Major/How_To_Launch_a_Ursa_Major_Cluster.md) ####  
-### [Learn about UCR's Ursa Major HPC.](../../Training_and_Consulting/Knowledge_Base/Ursa_Major) ####
+### [Follow steps to launch an Ursa Major HPC Cluster now.](/Training_and_Consulting/Knowledge_Base/Ursa_Major/How_To_Launch_a_Ursa_Major_Cluster.md) ####  
+### [Learn about UCR's Ursa Major HPC.](/Training_and_Consulting/Knowledge_Base/Ursa_Major) ####
 
 Reach out to the Research Computing team to help you get your lab up and running today!  
 [research-computing@ucr.edu](mailto:research-computing@ucr.edu?subject=Ursa_Major_HPC)
