@@ -24,7 +24,8 @@ Next, configure Rclone to access your GCS bucket by adding the following to the 
 [gc]
 type = gcs
 project_id = <your project id here>
-service_account_file = <path to your service account file>
+object_acl = bucketOwnerFullControl
+token = {"<your token here>"}
 ```
 ### Step 3: Create a mount point ###
 Create a directory where you want to mount your GCS bucket:
