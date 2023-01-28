@@ -2,10 +2,10 @@
 In this guide, we will go over the steps to mount Google Drive on a Linux machine using Rclone. Rclone is a command-line tool that allows you to sync files and directories to and from various cloud storage providers, including Google Drive.
 
 ## Prerequisites ##
-A Google account with access to Google Drive
-A Linux machine with administrative access
+* A Google account with access to Google Drive
+* A Linux machine with administrative access
 Rclone installed on your machine
-Step 1: Install Rclone
+## Step 1: Install Rclone
 If Rclone is not already installed on your machine, you can install it by running the following command:
 
 ```bash
