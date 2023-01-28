@@ -1,51 +1,52 @@
-Prerequisites
+## Prerequisites ##
 Before you begin, make sure you have the following:
 
-A Linux machine
-Rclone installed on your Linux machine
-A GCS bucket created
-GCS API credentials
-Step 1: Create a configuration file for Rclone
+* A Linux machine
+* Rclone installed on your Linux machine
+* A GCS bucket created
+* GCS API credentials
+
+### Step 1: Create a configuration file for Rclone ###
 First, create a directory for the Rclone configuration file:
 
-```sh
+```bash
 mkdir -p ~/.config/rclone
 ```
 Then, create the configuration file itself:
 
-```sh
+```bash
 touch ~/.config/rclone/rclone.conf
 ```
-Step 2: Configure Rclone
+### Step 2: Configure Rclone ###
 Next, configure Rclone to access your GCS bucket by adding the following to the configuration file:
 
-```sh
+```bash
 [gc]
 type = gcs
 project_id = <your project id here>
 service_account_file = <path to your service account file>
 ```
-Step 3: Create a mount point
+### Step 3: Create a mount point ###
 Create a directory where you want to mount your GCS bucket:
 
-```sh
+```bash
 mkdir -p ~/gc
 ```
-Step 4: Mount GCS using Rclone
+### Step 4: Mount GCS using Rclone ###
 Now, you can mount your GCS bucket by running the following command:
 
-```sh
+```bash
 rclone mount gc: <path to mount point> &
 ```
 For example, to mount the GCS bucket to the ~/gc directory, you would run:
 
-```sh
+```bash
 rclone mount gc: ~/gc &
 ```
-Step 5: Automount on startup
+### Step 5: Automount on startup ###
 To make sure that your GCS bucket is automatically mounted on startup, add the mount command to your crontab:
 
-```sh
+```bash
 (crontab -l 2>/dev/null; echo "@reboot rclone mount gc: $HOME/gc/ &") | crontab -
 ```
 ## Conclusion ##
