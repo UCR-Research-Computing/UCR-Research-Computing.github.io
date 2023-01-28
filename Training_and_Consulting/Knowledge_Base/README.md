@@ -8,6 +8,7 @@
         * [Configure a UCR Ursa Major Cluster](https://github.com/UCR-Research-Computing/UCR-Ursa-Major-Cluster-Blueprints) 
         * [UCR Ursa Major Slurm Job Scripts Examples](https://github.com/UCR-Research-Computing/UCR-Ursa-Major-Slurm-Job-Scripts)
         * [How to: Mount Google Cloud Storage on a Linux Workstation or Cluster](how_to_mount_google_cloud_storage.md)  
+        * [How to: Mount Google Drive on a Linux Workstation or Cluster](how_to_mount_google_drive.md)  
         * [A current list of Research Software available to be installed on an Ursa Major Cluster.](https://spack.readthedocs.io/en/latest/package_list.html)
     * [The Nautilus Cluster](The_Nautilus_Cluster.md)
     * [ACCESS Systems](ACCESS_Systems.md)
