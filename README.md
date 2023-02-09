@@ -24,7 +24,7 @@ All of these services will be offered at no cost to the researcher, making this 
 * [Ursa Major Research Computing Services](Computing/Research_Computing_Services)
 * [Ursa Major Secure Research Storage](Storage/Ursa_Major)
 
-## Knowledge Base ##
+## Resources for your Research ##
 
 * [Computing](Computing)
     * [Secure Computing](Computing/Secure_Computing)
