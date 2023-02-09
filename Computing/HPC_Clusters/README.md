@@ -19,7 +19,7 @@ UCR's Research Computing can facilitate our researchers and their lab’s access
     * Access to unlimited CPU, High RAM, and High GPUs.
 * Each Ursa Major Cluster is connected to an Ursa Major's virtually unlimited-sized parallel high-speed storage as well as the Ursa Major's General Research Storage.  
 
-### [Follow steps to launch an Ursa Major HPC Cluster now.](../../Training_and_Consulting/Knowledge_Base/How_To_Launch_a_Ursa_Major_Cluster.md) ###
+### [Follow steps to Launch an Ursa Major HPC Cluster now.](../../Training_and_Consulting/Knowledge_Base/How_To_Launch_a_Ursa_Major_Cluster.md) ###
 ### [Follow steps to Connect to your Ursa Major HPC Cluster now.](../../Training_and_Consulting/Knowledge_Base/how_to_connect_to_hpc_cluster_run_sample_job.md) ###
 ### [Learn more about UCR's Ursa Major HPC.](../../Training_and_Consulting/Knowledge_Base/Ursa_Major) ###
 
