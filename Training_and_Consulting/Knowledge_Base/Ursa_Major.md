@@ -3,6 +3,7 @@ UCR's *Ursa Major* Research Computing Infrastructre Service. Ursa Major is ITS C
 
 
 ## [Ursa Major HPC Clusters](How_To_Launch_a_Ursa_Major_Cluster.md) ##
+### Whats can an Ursa Major Cluster do?###
 * Multiple Personal, Lab Based, or Shared HPC Clusters.
 * Customized with installed software to support your research needs. 
 * Each Ursa Major Cluster is ephemerial and can be started and stopped as often as you like with out losing data.
@@ -10,11 +11,12 @@ UCR's *Ursa Major* Research Computing Infrastructre Service. Ursa Major is ITS C
     * Access to unlimited CPU, RAM, and GPUs.
 * Each Ursa Major Cluster is connected to a Ursa Major's virtually unlimited sized parallel high-speed storage as well as as Ursa Major's General Research Storage.
 * Slurm job sceduler  
-#### Ursa Major HPC Cluster Links ####
+
+### Top Ursa Major HPC Cluster Articles ###
 * [Follow steps to launch an Ursa Major HPC Cluster now.](How_To_Launch_a_Ursa_Major_Cluster.md)
 * [Configure a UCR Ursa Major Cluster](https://github.com/UCR-Research-Computing/UCR-Ursa-Major-Cluster-Blueprints) 
 * [UCR Ursa Major Slurm Job Scripts Examples](https://github.com/UCR-Research-Computing/UCR-Ursa-Major-Slurm-Job-Scripts)  
-* [A current list of Research Software available to be installed on an Ursa Major Cluster.](https://spack.readthedocs.io/en/latest/package_list.html) ####
+* [A current list of Research Software available to be installed on an Ursa Major Cluster.](https://spack.readthedocs.io/en/latest/package_list.html)
 
 ## [Ursa Major Workstations]() ##
 ## [Ursa Major Services]() ##
