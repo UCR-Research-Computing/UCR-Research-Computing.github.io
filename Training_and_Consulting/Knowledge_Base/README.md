@@ -4,7 +4,7 @@
     * [Local Research Systems]()
         * [UCR Research Computing System Administration Service](UCR_Research_Computing_System_Administration_Service.md)
     * [Ursa major](Ursa_Major.md)
-        *  ### [Cluster](#Cluster) ###
+        *  ### [Clusters](#Clusters) ###
             * [How to: Launch an Ursa Major Cluster](How_To_Launch_a_Ursa_Major_Cluster.md)
             * [Configure a UCR Ursa Major Cluster](https://github.com/UCR-Research-Computing/UCR-Ursa-Major-Cluster-Blueprints) 
             * [UCR Ursa Major Slurm Job Scripts Examples](https://github.com/UCR-Research-Computing/UCR-Ursa-Major-Slurm-Job-Scripts)
