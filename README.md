@@ -1,7 +1,6 @@
-# UCR Research Computing #
-## Resources for your Research ##
+## Cutting-Edge Research Computing ##
 
-**In today’s world research requires advanced computing and data management resources** 
+**Modern research requires advanced computing and data management resources** 
 ITS Research Computing is dedicated to supporting the talent and research of UC Riverside’s many highly acclaimed faculty members and outstanding graduate and undergraduate students. We offer powerful onsite and offsite computing resources, support, consulting, and training with the help of our partners.
 
 Here you will find a series of documents, tutorials, and resources to facilitate UCR Researchers and their Research.
