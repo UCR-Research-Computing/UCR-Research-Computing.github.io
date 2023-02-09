@@ -11,4 +11,5 @@
 ### [Follow steps to Connect to your Ursa Major HPC Cluster now.](how_to_connect_to_hpc_cluster_run_sample_job.md) ###
 ### [Learn more about UCR's Ursa Major HPC.](Ursa_Major_HPC_Clusters.md) ###
 
-Reach out to the Research Computing team to help you get your lab up and running today![research-computing@ucr.edu](mailto:research-computing@ucr.edu?subject=Ursa_Major_HPC)
+Reach out to the Research Computing team to help you get your lab up and running today.
+[research-computing@ucr.edu](mailto:research-computing@ucr.edu?subject=Ursa_Major_HPC)
