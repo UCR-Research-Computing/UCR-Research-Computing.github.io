@@ -3,7 +3,7 @@
 * ### [Computing]() ###
     * ### [Local_Research_Systems]() ###
         * [UCR Research Computing System Administration Service](UCR_Research_Computing_System_Administration_Service.md)
-    * ### [Ursa_major](Ursa_Major.md) ###
+    * ### [Ursa_major]() ###
         *  ### [Clusters](#Clusters) ###
             * [How to: Launch an Ursa Major Cluster](How_To_Launch_a_Ursa_Major_Cluster.md)
             * [How to: Connect to your HPC Cluster and Submit a Sample Job](how_to_connect_to_hpc_cluster_run_sample_job.md)              
