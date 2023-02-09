@@ -19,7 +19,7 @@ All of these services will be offered at no cost to the researcher, making this 
 
 ## Lets get started! ##
 
-* [Ursa Major HPC Clusters](Computing/HPC_Clusters)
+* [Ursa Major HPC Clusters](Computing/HPC_Clusters#ucr-ursa-major-hpc)
 * [Ursa Major Research Workstations](Computing/Research_Workstations)
 * [Ursa Major Research Computing Services](Computing/Research_Computing_Services)
 * [Ursa Major Secure Research Storage](Storage/Ursa_Major)
