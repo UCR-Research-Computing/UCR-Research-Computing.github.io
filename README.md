@@ -1,13 +1,30 @@
 ## Cutting-Edge Research Computing ##
 
 **Modern research requires advanced computing and data management resources** 
-Welcome to the University of California, Riverside Research Computing Service, where we provide cutting-edge technology and resources to support the research endeavors of all UCR researchers. Our partnership with Google Cloud Platform (GCP) allows us to offer a range of services, including secure research workstations, auto-scaling HPC clusters, infinity scaling databases, AI and machine learning services, and web servers and secure research storage. These resources are designed to increase productivity, attract and retain top talent, improve collaboration, increase grant funding, improve research outcomes, and save costs, all while improving data management.
+The University of California, Riverside is proud to introduce Ursa Major, the code name for our groundbreaking partnership with Google Cloud Platform (GCP). This collaboration will provide research computing support to UCR's researchers and unlock new opportunities for innovation and growth. Ursa Major, inspired by the power of the cloud and the stars, is designed to help UCR's research community access cutting-edge technology and resources to advance their work.
 
-We understand the importance of collaboration in research and are proud to partner with some of UCR's most important support units, including BCOE, the Library, CHASS, ITS, and others, to ensure that we provide the best possible resources and support to our research community. Our research computing team is dedicated to serving the needs of UCR researchers and is always available to answer any questions and provide support.
+The UCR Research Computing Team, in collaboration with important support partners such as BCOE, the Library, CHASS, ITS, and others, is thrilled to offer the following services through Ursa Major:
 
-With access to advanced computational resources and storage, UCR researchers can conduct more complex and data-intensive research projects, analyze large data sets, perform complex simulations and modeling, and develop new technologies faster and more efficiently. Our goal is to drive increased research output and grant funding, campus income, campus prestige, and the hiring of amazing new faculty for UCR. This is not just a free service, it's a subsidized investment in the future of research at our R1 research university.
+* Secure Research Workstations: Researchers can access workstations with high memory and CPU or storage capabilities.
 
-We invite you to explore our services and discover how the University of California, Riverside Research Computing Service can support your research goals. Let's work together to push the boundaries of what's possible.
+* Auto-scaling HPC Clusters: Researchers can access high-performance computing clusters with the latest CPUs and GPUs, and large memory configurations.
+
+* Infinity Scaling Databases: Researchers can access databases that can scale to meet their evolving needs.
+
+* AI and Machine Learning Services: Researchers can access Vertex.ai, Google's AI and Machine Learning platform, and other services to support their research.
+
+* Web Servers and Secure Research Storage: Researchers can access web servers and storage that is secure and optimized for research.
+
+All of these services will be offered at no cost to the researcher, making this a truly exciting and impactful investment in the future of research at UCR. The UCR Research Computing Team is committed to providing secure research computing infrastructure and research support services to increase innovation, breadth, and scale for UCR's researchers. This investment will drive increased research output and grant funding, enhance campus income, prestige, and the hiring of new faculty, positioning UCR as a leading R1 research university.
+
+## Lets get started! ##
+
+* [Ursa Major HPC Clusters](Computing/HPC_Clusters)
+* [Ursa Major Research Workstations](Computing/Research_Workstations)
+* [Ursa Major Research Computing Services](Computing/Research_Computing_Services)
+* [Ursa Major Secure Research Storage](Storage/Ursa_Major)
+
+## Resources for your Research ##
 
 * [Computing](Computing)
     * [Secure Computing](Computing/Secure_Computing)
