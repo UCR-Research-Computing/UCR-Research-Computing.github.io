@@ -5,15 +5,15 @@ The University of California, Riverside is proud to introduce Ursa Major, the co
 
 The UCR Research Computing Team, in collaboration with important support partners such as BCOE, the Library, CHASS, ITS, and others, is thrilled to offer the following services through Ursa Major:
 
-* Secure Research Workstations: Researchers can access workstations with high memory and CPU or storage capabilities.
+* `Secure Research Workstations:` Researchers can access workstations with high memory and CPU or storage capabilities.
 
-* Auto-scaling HPC Clusters: Researchers can access high-performance computing clusters with the latest CPUs and GPUs, and large memory configurations.
+* `Auto-scaling HPC Clusters:` Researchers can access high-performance computing clusters with the latest CPUs and GPUs, and large memory configurations.
 
-* Infinity Scaling Databases: Researchers can access databases that can scale to meet their evolving needs.
+* `Infinity Scaling Databases:` Researchers can access databases that can scale to meet their evolving needs.
 
-* AI and Machine Learning Services: Researchers can access Vertex.ai, Google's AI and Machine Learning platform, and other services to support their research.
+* `AI and Machine Learning Services:` Researchers can access Vertex.ai, Google's AI and Machine Learning platform, and other services to support their research.
 
-* Web Servers and Secure Research Storage: Researchers can access web servers and storage that is secure and optimized for research.
+* `Web Servers and Secure Research Storage:` Researchers can access web servers and storage that is secure and optimized for research.
 
 All of these services will be offered at no cost to the researcher, making this a truly exciting and impactful investment in the future of research at UCR. The UCR Research Computing Team is committed to providing secure research computing infrastructure and research support services to increase innovation, breadth, and scale for UCR's researchers. This investment will drive increased research output and grant funding, enhance campus income, prestige, and the hiring of new faculty, positioning UCR as a leading R1 research university.
 
