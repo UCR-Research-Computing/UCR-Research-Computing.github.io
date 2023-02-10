@@ -1,1 +1,0 @@
-Ursa_Major
