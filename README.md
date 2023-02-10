@@ -26,9 +26,9 @@ All of these services will be offered at no cost to the researcher, making this 
 
 ## Resources for your Research ##
 
-* [Services](Knowledge_Base/Services.md)
+* [Services](Knowledge_Base/README.md#Services)
 * [Knowledge Base](Knowledge_Base)
-* [Training and Workshops](Knowledge_Base)
+* [Training and Workshops](Knowledge_Base/README.md#Training_and_Workshops)
 * [Partners]()
     * [Research IT Leaders](Knowledge_Base/Research_IT_Leaders)
     * [The Library](https://library.ucr.edu/)

@@ -14,8 +14,9 @@
             * [Research Software available on a Ursa Major Cluster.](https://spack.readthedocs.io/en/latest/package_list.html)
         * ### [Workstations]() ###
         * ### [AI_ML]() ###
-    * ### [The_Nautilus_Cluster](The_Nautilus_Cluster.md) ###
-    * ### [ACCESS_Systems](ACCESS_Systems.md) ###
+    * ### [Regional_and_National_Systems]() ###
+    * [The_Nautilus_Cluster](The_Nautilus_Cluster.md)
+    * [ACCESS_Systems](ACCESS_Systems.md)
     * ### [Linux_Manual](Linux_Manual.md) ###
 * ## [Storage]() ##
     * ### [Local_Lab_Storage](Local_Lab_Storage.md) ###
@@ -24,4 +25,6 @@
         * [How to: Mount Google Drive on a Linux Workstation or Cluster](how_to_mount_google_drive.md)  
     * ### [Google_Drive](Google_Drive.md) ###
 * ## [Security]() ##
-    * ### [UCR_Data_Security_Plans](UCR_Data_Security_Plans.md) ###
+    * [UCR_Data_Security_Plans](UCR_Data_Security_Plans.md)
+* ## [Software]()
+    * [[Linux_Manual](Linux_Manual.md)
