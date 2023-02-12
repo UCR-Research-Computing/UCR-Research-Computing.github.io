@@ -8,7 +8,7 @@ With the support of important campus partners such as BCOE, CHASS, ITS, the Libr
 
 Through Ursa Major, UCR's researchers will have access to the following new and exciting services:
 
-* [Research Workstations](Knowledge_Base/Research_Workstations.md): Researchers can access high-performance workstations with ample memory and CPU or storage capabilities.
+* [Research Workstations](Knowledge_Base/Ursa_Major_Research_Workstations.md): Researchers can access high-performance workstations with ample memory and CPU or storage capabilities.
 
 * [Auto-scaling HPC Clusters](Knowledge_Base/Ursa_Major_HPC_Clusters.md): Researchers can access cutting-edge high-performance computing clusters, equipped with the latest CPUs, GPUs, and large memory configurations.
 
@@ -21,7 +21,7 @@ This partnership with Google Cloud Platform is a major milestone for UCR, repres
 ## Lets get started! ##
 
 * [Ursa Major HPC Clusters](Knowledge_Base/Ursa_Major_HPC_Clusters.md)
-* [Ursa Major Research Workstations](Knowledge_Base/Research_Workstations.md)
+* [Ursa Major Research Workstations](Knowledge_Base/Ursa_Major_Research_Workstations.md)
 * [Ursa Major Research Computing Services](Knowledge_Base/Research_Computing_Services.md)
 * [Ursa Major Secure Research Storage](Knowledge_Base/Ursa_Major_Research_Storage.md)
 
