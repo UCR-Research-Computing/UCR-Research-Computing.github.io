@@ -5,10 +5,10 @@
 
 * ## [Computing]() ##
     * ### [Local_Research_Systems]() ###
-        * [UCR Research Computing System Administration Service](UCR_Research_Computing_System_Administration_Service.md)
+      * [UCR Research Computing System Administration Service](UCR_Research_Computing_System_Administration_Service.md)
 
     * ### [Ursa_Major]() ###
-        *  ### [Clusters](#Clusters) ###
+        * ### [Clusters](#Clusters) ###
             * [Available HPC Clusters](Available_Clusters.md)
             * [How to: Launch an Ursa Major Cluster](How_To_Launch_a_Ursa_Major_Cluster.md)
             * [How to: Connect to your HPC Cluster and Submit a Sample Job](how_to_connect_to_hpc_cluster_run_sample_job.md)              
@@ -18,11 +18,15 @@
         * ### [Workstations](#Workstations) ###
 	    * [Ursa Major Research Workstations](Ursa_Major_Research_Workstations.md)
         * ### [AI_ML_Services](#AL_ML_Services) ###
+
     * ### [Regional_and_National_Systems]() ###
         * [The_Nautilus_Cluster](The_Nautilus_Cluster.md)
         * [ACCESS_Systems](ACCESS_Systems.md)
 
     * ### [Linux_Manual](Linux_Manual.md) ###
+
+    * ### [Local_Research_Systems]() ###
+        * [UCR Research Computing System Administration Service](UCR_Research_Computing_System_Administration_Service.md)`
 
 
 * ## [Storage]() ##
