@@ -8,9 +8,9 @@ The University of California, Riverside's Ursa Major service is available to all
 ### Description of the Process for Obtaining Access to Ursa Major Services
 To obtain access to Ursa Major services, researchers must complete the following steps:
 
-* Complete the required training and certifications for the services that the researcher intends to use. This training is designed to ensure that researchers are familiar with the policies, procedures, and best practices for using the Ursa Major services.
+* Review the training for the services that the researcher intends to use. This training is designed to ensure that researchers are familiar with the policies, procedures, and best practices for using the Ursa Major services.
 
-* Submit a request for access to the Ursa Major service through the designated web portal. The request must include the researcher's name, UCR email address, department, and the specific services that the researcher intends to use.
+* Submit a request for access to the Ursa Major service through the Ursa Major web portal or ITS Service Now. The request must include the researcher's name, UCR email address, department, and the specific services that the researcher intends to use.
 
 * The request will be reviewed by the Ursa Major team to determine the researcher's eligibility and to ensure that the services requested align with the researcher's needs.
 
@@ -42,9 +42,9 @@ Misuse of Ursa Major services can have serious consequences, including but not l
 
 * Termination of access to Ursa Major services.
 
-* Legal action against the researcher for violations of data privacy or intellectual property laws.
+* Potential legal action against the researcher for violations of data privacy or intellectual property laws.
 
-* Financial liability for damages caused by misuse of Ursa Major services.
+* Potential financial liability for damages caused by misuse of Ursa Major services against security policies.
 
 * Reputational harm to the researcher and UCR.
 
@@ -101,8 +101,7 @@ It is also important to note that the hardware and systems provided by Ursa Majo
 ## Security Policy
 The University of California, Riverside is committed to providing secure research computing infrastructure and support services to increase innovation, breadth, and scale for UCR's researchers through its partnership with Google Cloud Platform (GCP). The code name for this groundbreaking partnership is Ursa Major. The UCR Research Computing Team is responsible for ensuring the security of Ursa Major services and the data stored on the services.
 
-### Explanation of the Measures in Place to Protect the Confidentiality, Integrity, and Availability of Researcher Data:
-
+### Measures in Place to Protect the Confidentiality, Integrity, and Availability of Researcher Data:
 The UCR Research Computing Team has implemented a number of technical and administrative controls to protect the confidentiality, integrity, and availability of researcher data stored on Ursa Major services. These controls include but are not limited to:
 
 Encryption: All data stored on Ursa Major services is encrypted both at rest and in transit, to protect against unauthorized access and disclosure.
@@ -110,32 +109,10 @@ Access Controls: Access to Ursa Major services and data stored on the services i
 Data Backup and Recovery: Ursa Major services are designed to provide high availability and disaster recovery capabilities, to ensure that researcher data is protected against loss or corruption.
 In addition to these technical controls, the UCR Research Computing Team has established policies and procedures to ensure that researchers understand their responsibilities and obligations with respect to the security of the data stored on Ursa Major services.
 
-### Explanation of the Incident Response and Reporting Procedures for Security Incidents:
-
+### Incident Response and Reporting Procedures for Security Incidents:
 In the event of a security incident, the UCR Research Computing Team will work with Google Cloud Platform to investigate and respond to the incident, in accordance with established incident response procedures. Researchers who suspect a security incident has occurred must immediately report the incident to the UCR Research Computing Team.
 
 The UCR Research Computing Team will also work with relevant stakeholders, including UCR's Information Security Office and Google Cloud Platform, to ensure that appropriate remediation measures are taken, and that any necessary notifications are made in accordance with applicable laws and regulations.
-
-### Explanation of the Security Training and Awareness Programs for Researchers using Ursa Major Services:
-
-The UCR Research Computing Team provides security training and awareness programs for researchers using Ursa Major services, to help ensure that they understand their responsibilities and obligations with respect to the security of the data stored on Ursa Major services.
-
-These programs cover topics such as:
-
-Understanding the risks associated with storing and accessing research data on cloud services.
-Best practices for protecting confidential and sensitive research data.
-Understanding the importance of secure access controls, and the role of strong passwords and two-factor authentication.
-### UCR Research Computing and UCR's Policy of Creating Research Data Security Plans for P3-P4 Secure Research:
-
-The UCR Research Computing Team recognizes the importance of protecting the confidentiality, integrity, and availability of P3-P4 secure research data, and has established policies and procedures to ensure that such data is stored and accessed in a secure manner.
-
-When conducting P3-P4 secure research, researchers are required to create a research data security plan, in accordance with UCR's policies and procedures. The research data security plan should outline the measures that will be taken to protect the confidentiality, integrity, and availability of the research data, including but not limited to:
-
-Encryption: All P3-P4 secure research data stored on Ursa Major services must be encrypted, both at rest and in transit, to protect against unauthorized access and disclosure.
-Access Controls: Access to P3-P4 secure research data stored on Ursa Major
-
-## Security Policy2
-At Ursa Major Engineering, we understand the importance of data security and are committed to protecting the confidential and sensitive information of our clients and users. This security policy outlines the measures we take to ensure the protection of sensitive information and data within our systems.
 
 ### Access Control: 
 Access to sensitive information and data is restricted to authorized personnel only. All users are assigned unique login credentials and are required to use strong passwords. Access rights and permissions are reviewed regularly and updated as necessary to ensure that only authorized personnel have access to sensitive information and data.
@@ -151,6 +128,14 @@ In the event of a security breach, Ursa Major Engineering has an incident respon
 
 ### Training and Awareness:
 Ursa Major Engineering provides regular training and awareness programs to educate employees on security best practices and to ensure that they are aware of the importance of protecting sensitive information and data.
+
+The UCR Research Computing Team provides security training and awareness programs for researchers using Ursa Major services, to help ensure that they understand their responsibilities and obligations with respect to the security of the data stored on Ursa Major services.
+
+These programs cover topics such as:
+
+* Understanding the risks associated with storing and accessing research data on cloud services.
+* Best practices for protecting confidential and sensitive research data.
+* Understanding the importance of secure access controls, and the role of strong passwords and two-factor authentication.
 
 This security policy is reviewed regularly and updated as necessary to ensure that we are taking the necessary steps to protect the sensitive information and data of our clients and users. By adhering to this policy, Ursa Major Engineering ensures the confidentiality, integrity, and availability of sensitive information and data.
 
