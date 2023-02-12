@@ -1,7 +1,4 @@
 # Ursa Major Policy
-## Introduction
-The University of California, Riverside is proud to introduce Ursa Major, our partnership with Google Cloud Platform (GCP) that provides research computing support to our researchers and opens up new opportunities for innovation and growth. Ursa Major, inspired by the power of the cloud and the stars, offers a range of cutting-edge technology and resources to support the research community at UCR. The Research Computing Team, in collaboration with key support partners such as BCOE, the Library, CHASS, ITS, and others, is committed to providing secure and reliable research computing services to increase innovation, breadth, and scale for our researchers.
-
 To ensure the responsible and ethical use of Ursa Major services, the following policies have been established. These policies outline the terms of access, usage, support, privacy, ownership, security, and stewardship for Ursa Major. We strongly advise all users to read and understand these policies before using Ursa Major services.
 
 ## Access Policy
@@ -27,10 +24,6 @@ In addition, access to Ursa Major services is subject to the University of Calif
 The Ursa Major team reserves the right to revoke or restrict access to the services if a researcher is found to be in violation of the University's policies or the Ursa Major policies. The Ursa Major team will work with the researcher to resolve any issues and to ensure that the services are used in a responsible and ethical manner.
 
 ## Usage Policy
-The University of California, Riverside is proud to offer Ursa Major, a collaboration with Google Cloud Platform (GCP) to provide research computing support to UCR's researchers. Ursa Major is designed to help UCR's research community access cutting-edge technology and resources to advance their work. The services offered through Ursa Major are intended for academic research purposes only and must not be used for commercial or personal purposes. This policy outlines the guidelines for appropriate use of Ursa Major services and the consequences for misuse.
-
-### Explanation of the Intended Purpose of Ursa Major Services:
-
 Ursa Major services are intended to support academic research at UCR. The services are available to UCR researchers for the purpose of advancing their research projects and producing high-quality research outcomes.
 
 ### Guidelines for Appropriate Use of Ursa Major Services:
@@ -60,15 +53,15 @@ The UCR Research Computing Team reserves the right to monitor and enforce this u
 ## Support Policy
 The University of California, Riverside is committed to providing its research community with the necessary support to make the most of its partnership with Google Cloud Platform (GCP) through Ursa Major. The Research Computing Team is dedicated to helping researchers overcome any technical issues they may encounter while using Ursa Major services.
 
-### Description of the Support Available to Researchers Using Ursa Major Services
+### Support Available to Researchers Using Ursa Major Services
 
 The Research Computing Team is available to provide technical support to researchers using Ursa Major services. Researchers can contact the team for assistance with any technical issues they may encounter while using Ursa Major services. The team will provide best-effort support, but cannot guarantee a solution to every problem. Researchers are also encouraged to familiarize themselves with the resources and documentation available on the Ursa Major website, which provides information on how to use the services effectively.
 
-### Explanation of the Response Time and Resolution Time for Support Requests
+### Response Time and Resolution Time for Support Requests
 
 The Research Computing Team will make every effort to respond to support requests in a timely manner. The response time will depend on the complexity of the issue and the workload of the team. Once a support request is received, the Research Computing Team will work to resolve the issue as quickly as possible. The resolution time will depend on the complexity of the issue and the resources available to the team.
 
-### Description of the Escalation Process for Unresolved Support Issues
+### Escalation Process for Unresolved Support Issues
 
 In the event that a support issue is not resolved to the satisfaction of the researcher, the researcher may escalate the issue to a higher level of the Research Computing Team. The escalation process will depend on the nature of the issue and the resources available to the team. The Research Computing Team will make every effort to resolve escalated issues in a timely and satisfactory manner.
 
@@ -92,9 +85,18 @@ Ursa Major implements strict data access and sharing policies to ensure that res
 In conclusion, Ursa Major is committed to protecting the privacy of its researchers and the data they store on its services. The Research Computing Team implements strong technical and administrative controls, as well as strict data access and sharing policies, to ensure that researcher data is secure and protected.
 
 ## Ownership Policy
-A. Explanation of who owns the data generated through the use of Ursa Major services
-B. Explanation of the rights and responsibilities of researchers with regards to their data
-C. Explanation of any restrictions on the use or sharing of research data generated through Ursa Major
+### Ursa Major Ownership Policy for Research Data
+The research data generated through the use of Ursa Major services is owned by the University of California, Riverside (UCR) nd the researcher unless otherwise agreed upon. This ownership policy applies to all research data generated by researchers at UCR, regardless of the source of funding or the type of research being conducted.
+
+### Researchers’ Rights and Responsibilities
+Researchers at UCR have the right to access and use their own research data for their own research purposes, subject to any restrictions imposed by law or other agreements. They are also responsible for ensuring that the data is used in an ethical and responsible manner, in accordance with the relevant data protection and privacy regulations.
+
+Researchers must comply with the terms and conditions of their contracts with UCR and any other agreements related to the use of Ursa Major services. They are also responsible for ensuring that the research data is securely stored and protected from unauthorized access or use.
+
+### Restrictions on the Use or Sharing of Research Data
+Research data generated through the use of Ursa Major services may be subject to restrictions on its use or sharing, as determined by UCR, the source of funding, or other agreements. In such cases, researchers must comply with the relevant restrictions and obtain any necessary approvals or permissions before accessing or using the data.
+
+It is also important to note that the hardware and systems provided by Ursa Major are owned by Google and rented by UCR. Researchers must comply with the terms and conditions of their agreements with Google and UCR, which may include restrictions on the use or sharing of the hardware or systems.
 
 ## Security Policy
 The University of California, Riverside is committed to providing secure research computing infrastructure and support services to increase innovation, breadth, and scale for UCR's researchers through its partnership with Google Cloud Platform (GCP). The code name for this groundbreaking partnership is Ursa Major. The UCR Research Computing Team is responsible for ensuring the security of Ursa Major services and the data stored on the services.
