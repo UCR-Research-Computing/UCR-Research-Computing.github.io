@@ -1,21 +1,22 @@
 ## Cutting-Edge Research Computing ##
 
 **Modern research requires advanced computing and data management resources** 
-The University of California, Riverside is proud to introduce Ursa Major, the code name for our groundbreaking partnership with Google Cloud Platform (GCP). This collaboration will provide research computing support to UCR's researchers and unlock new opportunities for innovation and growth. Ursa Major, inspired by the power of the cloud and the stars, is designed to help UCR's research community access cutting-edge technology and resources to advance their work.
 
-The UCR Research Computing Team, in collaboration with important support partners such as BCOE, the Library, CHASS, ITS, and others, is thrilled to offer the following services through Ursa Major:
+The University of California, Riverside is proud to announce its latest partnership with Google Cloud Platform (GCP), code-named Ursa Major, designed to provide the research computing support and resources necessary for our researchers to advance their work and unlock new opportunities for innovation and growth.
 
-* **Research Workstations:** Researchers can access workstations with high memory and CPU or storage capabilities.
+With the support of important campus partners such as BCOE, CHASS, ITS, the Library, and RED, UCR's Research Computing Team is dedicated to removing barriers and fostering collaboration among researchers by supporting their research technology needs. This includes providing access to cutting-edge technology, resources, and research computing support services, all at no cost to the researcher.
 
-* **Auto-scaling HPC Clusters:** Researchers can access high-performance computing clusters with the latest CPUs and GPUs, and large memory configurations.
+Through Ursa Major, UCR's researchers will have access to the following new and exciting services:
 
-* **Infinity Scaling Databases:** Researchers can access databases that can scale to meet their evolving needs.
+* Research Workstations: Researchers can access high-performance workstations with ample memory and CPU or storage capabilities.
 
-* **AI and Machine Learning Services:** Researchers can access Vertex.ai, Google's AI and Machine Learning platform, and other services to support their research.
+* Auto-scaling HPC Clusters: Researchers can access cutting-edge high-performance computing clusters, equipped with the latest CPUs, GPUs, and large memory configurations.
 
-* **Secure Research Storage:** Researchers can access storage that is secure and optimized for research.
+* Research AI and Machine Learning Services: Researchers can leverage Vertex.ai, Google's AI and Machine Learning platform, as well as other services, to support their research endeavors.
 
-All of these services will be offered at no cost to the researcher, making this a truly exciting and impactful investment in the future of research at UCR. The UCR Research Computing Team is committed to providing secure research computing infrastructure and research support services to increase innovation, breadth, and scale for UCR's researchers. This investment will drive increased research output and grant funding, enhance campus income, prestige, and the hiring of new faculty, positioning UCR as a leading R1 research university.
+* Secure Research Storage: Researchers will have access to secure and optimized storage solutions, ensuring the safekeeping of their valuable research data.
+
+This partnership with Google Cloud Platform is a major milestone for UCR, representing a significant investment in the future of research at our university. Our Research Computing Team is committed to providing a secure research computing infrastructure and research support services that will drive increased research output, grant funding, campus income, and prestige. This, in turn, will lead to the hiring of new faculty, positioning UCR as a leading R1 research university.
 
 ## Lets get started! ##
 
