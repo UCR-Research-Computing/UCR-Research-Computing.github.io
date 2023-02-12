@@ -1,3 +1,4 @@
+# Ursa Major Policy
 ## Introduction
 The University of California, Riverside is proud to introduce Ursa Major, our partnership with Google Cloud Platform (GCP) that provides research computing support to our researchers and opens up new opportunities for innovation and growth. Ursa Major, inspired by the power of the cloud and the stars, offers a range of cutting-edge technology and resources to support the research community at UCR. The Research Computing Team, in collaboration with key support partners such as BCOE, the Library, CHASS, ITS, and others, is committed to providing secure and reliable research computing services to increase innovation, breadth, and scale for our researchers.
 
