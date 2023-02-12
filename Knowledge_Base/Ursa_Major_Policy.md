@@ -2,10 +2,10 @@
 To ensure the responsible and ethical use of Ursa Major services, the following policies have been established. These policies outline the terms of access, usage, support, privacy, ownership, security, and stewardship for Ursa Major. We strongly advise all users to read and understand these policies before using Ursa Major services.
 
 ## Access Policy
-### Eligibility for Researchers at UCR
+### Eligibility 
 The University of California, Riverside's Ursa Major service is available to all researchers affiliated with the university. This includes faculty, staff, postdoctoral researchers, and students. The researcher must have a valid UCR email address and must have completed the necessary training and certifications to use the Ursa Major services.
 
-### Description of the Process for Obtaining Access to Ursa Major Services
+### Obtaining Access to Ursa Major Services
 To obtain access to Ursa Major services, researchers must complete the following steps:
 
 * Review the training for the services that the researcher intends to use. This training is designed to ensure that researchers are familiar with the policies, procedures, and best practices for using the Ursa Major services.
@@ -16,7 +16,7 @@ To obtain access to Ursa Major services, researchers must complete the following
 
 * If the request is approved, the researcher will receive a confirmation email with instructions for accessing the Ursa Major services.
 
-### Explanation of Any Limitations or Restrictions on Access
+### Limitations or Restrictions on Access
 The Ursa Major services are available to researchers for academic and research purposes only. Access to the services may be limited or restricted based on the specific service and the researcher's needs. For example, some services may have limitations on the amount of storage space or the number of compute resources that can be used. The Ursa Major team will work with researchers to ensure that they have access to the services they need to support their research.
 
 In addition, access to Ursa Major services is subject to the University of California, Riverside's information security policies and procedures. Researchers are expected to use the services in accordance with these policies and procedures, including the responsible use of resources and the protection of sensitive or confidential information.
@@ -172,6 +172,6 @@ The Research Computing Team will implement the following sustainability and cont
 The Ursa Major system is a critical component of the research computing infrastructure and the Research Computing Team is responsible for ensuring its long-term sustainability and maintenance. This policy outlines the roles and responsibilities of the Research Computing Team in maintaining and updating Ursa Major services and provides a framework for ensuring the sustainability and continuity of these services. By following this policy, the Research Computing Team will ensure that Ursa Major services are available and accessible to researchers, and that data stored on Ursa Major is protected and properly managed for the long-term.
 
 ## Conclusion
-A. Summary of the policies and services offered through Ursa Major
-B. Explanation of the impact and benefits of Ursa Major for UCR researchers and the university
-C. Acknowledgement of the UCR Research Computing Team's commitment to providing secure and impactful research computing support.
+The impact and benefits of Ursa Major are significant and wide-ranging, from improving the quality of research outputs and enabling the discovery of new insights and knowledge, to facilitating the development of new technologies and products. Ursa Major helps UCR researchers to overcome technological limitations and enables them to engage in cutting-edge research that has the potential to make a real impact on the world.
+
+Finally, the commitment of the UCR Research Computing Team to providing secure and impactful research computing support is commendable. Their focus on providing a reliable and secure research computing environment that supports the needs of UCR researchers is essential to advancing the university's research mission and to fostering a thriving research community at UCR. With their dedication and expertise, the UCR Research Computing Team is ensuring that UCR remains at the forefront of innovation and discovery.
