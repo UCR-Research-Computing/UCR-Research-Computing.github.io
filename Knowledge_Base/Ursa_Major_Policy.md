@@ -1,18 +1,29 @@
 ## Introduction
-The University of California, Riverside is proud to introduce Ursa Major, a revolutionary partnership with Google Cloud Platform (GCP) aimed at providing world-class research computing support to UCR's research community. Inspired by the power of the cloud and the stars, Ursa Major is designed to unlock new opportunities for innovation and growth by providing cutting-edge technology and resources to researchers.
-
-The UCR Research Computing Team, in collaboration with key support partners such as BCOE, the Library, CHASS, ITS, and others, is thrilled to offer a range of services through Ursa Major, including secure research workstations, auto-scaling HPC clusters, infinity scaling databases, AI and machine learning services, and web servers and secure research storage.
-
-This investment in research computing infrastructure and support services will drive increased research output and grant funding, enhance campus income, prestige, and the hiring of new faculty, positioning UCR as a leading R1 research university. And, best of all, these services will be offered at no cost to the researcher.
-
-The UCR Research Computing Team is dedicated to ensuring responsible and secure access, usage, and stewardship of these valuable resources. In this About the Service page, we will outline our policies regarding access, usage, support, privacy, ownership, security, and stewardship, to help ensure the successful and sustainable operation of Ursa Major for the benefit of UCR's research community.
-
 The University of California, Riverside is proud to introduce Ursa Major, our partnership with Google Cloud Platform (GCP) that provides research computing support to our researchers and opens up new opportunities for innovation and growth. Ursa Major, inspired by the power of the cloud and the stars, offers a range of cutting-edge technology and resources to support the research community at UCR. The Research Computing Team, in collaboration with key support partners such as BCOE, the Library, CHASS, ITS, and others, is committed to providing secure and reliable research computing services to increase innovation, breadth, and scale for our researchers.
 
 To ensure the responsible and ethical use of Ursa Major services, the following policies have been established. These policies outline the terms of access, usage, support, privacy, ownership, security, and stewardship for Ursa Major. We strongly advise all users to read and understand these policies before using Ursa Major services.
 
 ## Access Policy
-Ursa Major services are available to all UCR researchers who have a valid UCR email account and have completed the necessary training and certifications. To request access, researchers must submit a completed application form and agree to comply with all Ursa Major policies. Access to Ursa Major services may be revoked at any time if a researcher violates any of these policies or if their account becomes inactive for an extended period.
+### Eligibility for Researchers at UCR
+The University of California, Riverside's Ursa Major service is available to all researchers affiliated with the university. This includes faculty, staff, postdoctoral researchers, and students. The researcher must have a valid UCR email address and must have completed the necessary training and certifications to use the Ursa Major services.
+
+### Description of the Process for Obtaining Access to Ursa Major Services
+To obtain access to Ursa Major services, researchers must complete the following steps:
+
+Complete the required training and certifications for the services that the researcher intends to use. This training is designed to ensure that researchers are familiar with the policies, procedures, and best practices for using the Ursa Major services.
+
+Submit a request for access to the Ursa Major service through the designated web portal. The request must include the researcher's name, UCR email address, department, and the specific services that the researcher intends to use.
+
+The request will be reviewed by the Ursa Major team to determine the researcher's eligibility and to ensure that the services requested align with the researcher's needs.
+
+If the request is approved, the researcher will receive a confirmation email with instructions for accessing the Ursa Major services.
+
+### Explanation of Any Limitations or Restrictions on Access
+The Ursa Major services are available to researchers for academic and research purposes only. Access to the services may be limited or restricted based on the specific service and the researcher's needs. For example, some services may have limitations on the amount of storage space or the number of compute resources that can be used. The Ursa Major team will work with researchers to ensure that they have access to the services they need to support their research.
+
+In addition, access to Ursa Major services is subject to the University of California, Riverside's information security policies and procedures. Researchers are expected to use the services in accordance with these policies and procedures, including the responsible use of resources and the protection of sensitive or confidential information.
+
+The Ursa Major team reserves the right to revoke or restrict access to the services if a researcher is found to be in violation of the University's policies or the Ursa Major policies. The Ursa Major team will work with the researcher to resolve any issues and to ensure that the services are used in a responsible and ethical manner.
 
 ## Usage Policy
 Ursa Major services must be used for academic research purposes only and must not be used for commercial or personal purposes. Researchers are responsible for ensuring that their use of Ursa Major services complies with all relevant laws and regulations, including but not limited to data privacy and intellectual property laws. Researchers must also ensure that their use of Ursa Major services does not interfere with the normal functioning of the services or compromise the security of the data stored on the services.
