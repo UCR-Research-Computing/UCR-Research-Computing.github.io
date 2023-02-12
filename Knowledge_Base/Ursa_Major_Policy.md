@@ -152,6 +152,7 @@ The Research Computing Team is responsible for ensuring the availability and acc
 * Implementing and enforcing data retention policies to ensure that data is properly managed and disposed of when necessary.
 * Keeping the system up-to-date with the latest software and hardware upgrades.
 * Providing user support and training as needed.
+
 ### Processes for Updating and Upgrading Ursa Major Services:
 The Research Computing Team will implement the following processes for updating and upgrading Ursa Major services:
 
@@ -160,6 +161,7 @@ The Research Computing Team will implement the following processes for updating 
 * Providing regular updates to researchers on upcoming upgrades and changes to Ursa Major services.
 * Coordinating with researchers to minimize the impact of upgrades on their research activities.
 * Conducting regular data migrations to ensure that data is properly stored and protected.
+
 ### Sustainability and Continuity Plans for Ursa Major Services:
 The Research Computing Team will implement the following sustainability and continuity plans for Ursa Major services:
 
