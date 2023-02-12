@@ -1,6 +1,6 @@
 ## [UCR Ursa Major HPC](Ursa_Major_HPC_Clusters.md) ##
-`UCR's Ursa Major Research Computing Service.` Ursa Major is ITS Campus subsidized and is no cost to UCR Researcherse. Ursa Major is powered by Google Cloud and is a game-changing development for UCR's Researcher and their Research. This service is designed to drive research at an increased pace and bring more grants and funding to the University. This service is a massively scalable and innovative approach to providing Research Computing resources, tools, and support as summarized below: Reach out and get started today!
-* Multiple Personal, Lab-Based, or Shared HPC Clusters.
+**UCR's Ursa Major Research Computing Service.** Ursa Major is powered by Google Cloud and is a game-changing development for UCR's Researcher and their Research. This service is designed to drive research at an increased pace and bring more grants and funding to the University. This service is a massively scalable and innovative approach to providing Research Computing resources, tools, and support as summarized below: Reach out and get started today!
+* Personal, Lab-Based, or Shared HPC Clusters.
 * Customized with installed software to support your research needs. 
 * Each Ursa Major Cluster is ephemeral and can be started and stopped as often as you like without losing data.
 * Each Ursa Major Cluster is elastic and scales/descales to however many cores or memory or GPU your research needs based on cluster load.
