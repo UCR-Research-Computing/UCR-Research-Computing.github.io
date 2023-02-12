@@ -26,6 +26,7 @@ All of these services will be offered at no cost to the researcher, making this 
 
 ## Resources for your Research ##
 
+* [Policies](Knowledge_Base/Ursa_Major_Policy.md)
 * [Services](Knowledge_Base/README.md#Services)
 * [Knowledge Base](Knowledge_Base)
 * [Training and Workshops](Knowledge_Base/README.md#Training_and_Workshops)
