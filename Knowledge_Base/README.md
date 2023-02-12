@@ -4,9 +4,6 @@
 
 
 * ## [Computing]() ##
-    * ### [Local_Research_Systems]() ###
-      * [UCR Research Computing System Administration Service](UCR_Research_Computing_System_Administration_Service.md)
-
     * ### [Ursa_Major]() ###
         * ### [Clusters](#Clusters) ###
             * [Available HPC Clusters](Available_Clusters.md)
