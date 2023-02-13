@@ -28,9 +28,12 @@ This partnership with Google Cloud Platform is a major milestone for UCR, repres
 ## Resources for your Research ##
 
 * [Policies](Knowledge_Base/Ursa_Major_Policy.md)
-* [Services](Knowledge_Base/README.md#Services)
 * [Knowledge Base](Knowledge_Base)
 * [Training and Workshops](Knowledge_Base/README.md#Training_and_Workshops)
+
+Contact us for help or to learn more!
+[research-computing@ucr.edu](mailto:research-computing@ucr.edu) - [UCR Research Computing Slack](https://ucr-research-compute.slack.com/)
+
 
 ### Partners
 * [Research IT Leaders](Knowledge_Base/Research_IT_Leaders)
