@@ -28,28 +28,27 @@
 
 Open a terminal or command line window.
 
-Type in the following command to log in to your Google Cloud account:
-
-``bash
+* Type in the following command to log in to your Google Cloud account:
+```bash
 gcloud auth login
 ```
-Type in the following command to set the project you want to launch the instance in:
+* Type in the following command to set the project you want to launch the instance in:
 ```bash
 gcloud config set project [PROJECT_ID]
 ```
-Type in the following command to launch the instance:
+* Type in the following command to launch the instance:
 ```bash
 gcloud compute instances create [INSTANCE_NAME] --zone [ZONE] --machine-type [CPU_MEMORY] --image-family [OS] --image-project [OS_PROJECT]
 ```
-(Optional) If you want to use a GPU, add the following flag to the command:
+* (Optional) If you want to use a GPU, add the following flag to the command:
 ```bash
 --accelerator type=[GPU_TYPE],count=[GPU_COUNT]
 ```
-(Optional) If you want to add storage to your instance, add the following flag to the command:
+* (Optional) If you want to add storage to your instance, add the following flag to the command:
 ```bash
 --boot-disk-size=[STORAGE_SIZE] --boot-disk-type=[STORAGE_TYPE]
 ```
-Wait for the instance to launch, which should take a few minutes.
+* Wait for the instance to launch, which should take a few minutes.
 
 #### Pointers:
 
