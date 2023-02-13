@@ -12,6 +12,7 @@
             * [Research Software available on a Ursa Major Cluster.](https://spack.readthedocs.io/en/latest/package_list.html)
         * #### [Workstations](#Workstations)
             * [Ursa Major Research Workstations](Ursa_Major_Research_Workstations.md)
+            * [How to: Launch a Ursa Major Research Workstation](Ursa_Major_Research_Workstations_How_to_Launch.md)
         * #### [AI_ML_Services](#AL_ML_Services)
     * ### [Local_Research_Systems]()
         * [UCR Research Computing System Administration Service](UCR_Research_Computing_System_Administration_Service.md
