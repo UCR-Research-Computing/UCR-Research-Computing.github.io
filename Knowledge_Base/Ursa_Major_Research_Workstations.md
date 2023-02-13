@@ -1,6 +1,6 @@
 Ursa Major research workstations are utilizing advanced technology to help advance research in a wide range of disciplines. These workstations are equipped with high-performance processors, large memory capacity, and high-speed storage systems to support the demands of complex research projects. The workstations are designed to provide a powerful and reliable environment for researchers to analyze data, develop models, and run simulations.
 
-* [How to: Launch a Ursa Major Research Workstation](Knowledge_Base/Ursa_Major_Research_Workstations_How_to_Launch.md)
+* [How to: Launch a Ursa Major Research Workstation](Ursa_Major_Research_Workstations_How_to_Launch.md)
 
 One of the major research disciplines that could benefit from Ursa Major workstations is life sciences. Researchers in this field can use the workstations to perform complex genomic analyses, protein structure predictions, and molecular simulations. The workstations provide a fast and efficient environment for researchers to process large amounts of data and develop new insights into biological systems.
 
