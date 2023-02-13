@@ -24,6 +24,8 @@
 * ## [Storage]()
     * ### [Local_Lab_Storage](Local_Lab_Storage.md)
     * ### [Ursa_Major_Secure_Research_Storage](Ursa_Major_Secure_Research_Storage.md)
+        * [How to: Create a Ursa Major Research Storage Bucket](Ursa_Major_Research_Storage_How_to_Create_Bucket.md)
+        * [How to: Access a Ursa Major Research Storage Bucket](Ursa_Major_Research_Storage_How_to_Access_Bucket.md)
         * [How to: Mount Google Cloud Storage on a Linux Workstation or Cluster](how_to_mount_google_cloud_storage.md)  
         * [How to: Mount Google Drive on a Linux Workstation or Cluster](how_to_mount_google_drive.md)  
     * ### [Google_Drive](Google_Drive.md)
