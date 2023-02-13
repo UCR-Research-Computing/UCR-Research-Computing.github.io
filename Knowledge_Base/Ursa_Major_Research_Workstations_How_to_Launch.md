@@ -2,7 +2,7 @@
 
 * Go to the Google Cloud Console: To start, go to the Google Cloud Console, which is the web-based portal for managing your Google Cloud resources. You will need a Google account to access the console.
 
-* Create a Project: If you do not already have a project in the Google Cloud Console, create one by clicking on the “Select a Project” drop-down in the top navigation bar and clicking “New Project.”
+* On the “Select a Project” drop-down in the top navigation bar select the project you want to launch in. 
 
 * Navigate to Compute Engine: From the console home page, click on the hamburger menu in the top left corner and select “Compute Engine” from the list of services.
 
