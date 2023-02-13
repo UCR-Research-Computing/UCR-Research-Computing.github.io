@@ -32,6 +32,7 @@
 * ## [Security]()
     * [UCR_Data_Security_Plans](UCR_Data_Security_Plans.md)
 * ## [Software]()
+* ## [Information](#Information)
     * [Linux_Manual](Linux_Manual.md)
     * [Available_Resources](Resources.md)
-* ## [Policy](Ursa_Major_Policy.md)
+    * [Policy](Ursa_Major_Policy.md)
