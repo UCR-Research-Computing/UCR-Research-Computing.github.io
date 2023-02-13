@@ -1,6 +1,5 @@
 # UCR's Research Computing Knowledge Base #
 
-* ## [Available_Resources](Resources.md)
 * ## [Computing]()
     * ### [Ursa_Major]()
         * #### [Clusters](#Clusters)
@@ -17,7 +16,7 @@
         * #### [AI_ML_Services](#AL_ML_Services)
             * [Ursa Major Reseach Services](Ursa_Major_Research_Services.md)
     * ### [Local_Research_Systems]()
-        * [UCR Research Computing System Administration Service](UCR_Research_Computing_System_Administration_Service.md
+        * [UCR Research Computing System Administration Service](UCR_Research_Computing_System_Administration_Service.md)
         * [UCR Research Computing System Administration Service MOU](https://docs.google.com/document/d/19nYYXakruAbg1pxKybpSddSz8p1TBiBc/edit?usp=sharing&ouid=115996119773834121624&rtpof=true&sd=true)
     * ### [Regional_and_National_Systems]()
         * [The_Nautilus_Cluster](The_Nautilus_Cluster.md)
