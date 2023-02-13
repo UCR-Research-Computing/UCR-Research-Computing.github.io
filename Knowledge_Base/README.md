@@ -15,6 +15,7 @@
             * [How to: Launch a Ursa Major Research Workstation](Ursa_Major_Research_Workstations_How_to_Launch.md)
             * [How to: Connect to a Ursa Major Research Workstation](Ursa_Major_Research_Workstations_How_to_Connect.md)
         * #### [AI_ML_Services](#AL_ML_Services)
+            * [Ursa Major Reseach Services](Ursa_Major_Research_Services.md)
     * ### [Local_Research_Systems]()
         * [UCR Research Computing System Administration Service](UCR_Research_Computing_System_Administration_Service.md
     * ### [Regional_and_National_Systems]()
