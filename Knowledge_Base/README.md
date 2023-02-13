@@ -18,6 +18,7 @@
             * [Ursa Major Reseach Services](Ursa_Major_Research_Services.md)
     * ### [Local_Research_Systems]()
         * [UCR Research Computing System Administration Service](UCR_Research_Computing_System_Administration_Service.md
+        * [UCR Research Computing System Administration Service MOU](https://docs.google.com/document/d/19nYYXakruAbg1pxKybpSddSz8p1TBiBc/edit?usp=sharing&ouid=115996119773834121624&rtpof=true&sd=true)
     * ### [Regional_and_National_Systems]()
         * [The_Nautilus_Cluster](The_Nautilus_Cluster.md)
         * [ACCESS_Systems](ACCESS_Systems.md)
@@ -34,3 +35,4 @@
 * ## [Software]()
     * [Linux_Manual](Linux_Manual.md)
     * [Available_Resources](Resources.md)
+* ## [Policy](Ursa_Major_Policy.md)
