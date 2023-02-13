@@ -12,12 +12,12 @@
             * [Research Software available on a Ursa Major Cluster.](https://spack.readthedocs.io/en/latest/package_list.html)
         * #### [Workstations](#Workstations)
             * [Ursa Major Research Workstations](Ursa_Major_Research_Workstations.md)
-        * ### [AI_ML_Services](#AL_ML_Services)
+        * #### [AI_ML_Services](#AL_ML_Services)
+    * ### [Local_Research_Systems]()
+        * [UCR Research Computing System Administration Service](UCR_Research_Computing_System_Administration_Service.md
     * ### [Regional_and_National_Systems]()
         * [The_Nautilus_Cluster](The_Nautilus_Cluster.md)
         * [ACCESS_Systems](ACCESS_Systems.md)
-    * ### [Local_Research_Systems]() 
-        * [UCR Research Computing System Administration Service](UCR_Research_Computing_System_Administration_Service.md)`
 * ## [Storage]()
     * ### [Local_Lab_Storage](Local_Lab_Storage.md)
     * ### [Ursa_Major_Secure_Research_Storage](Ursa_Major_Secure_Research_Storage.md)
@@ -28,3 +28,4 @@
     * [UCR_Data_Security_Plans](UCR_Data_Security_Plans.md)
 * ## [Software]()
     * [Linux_Manual](Linux_Manual.md)
+    * [Available_Resources](Resources.md)
