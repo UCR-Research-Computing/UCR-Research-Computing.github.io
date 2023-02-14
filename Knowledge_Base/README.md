@@ -1,4 +1,4 @@
-# UCR's Research Computing Knowledge Base #
+# Knowledge Base #
 
 * ## [Computing]()
     * ### [Ursa_Major]()
