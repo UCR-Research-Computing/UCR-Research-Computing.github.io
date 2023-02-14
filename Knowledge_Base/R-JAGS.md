@@ -1,4 +1,15 @@
 ## JAGS
+Install if you don't already have it:
+
+```bash
+sudo su -
+spack install r-rjags
+spack find
+```
+
+This will take some time to install.
+
+* Relogin to see the new software
 
 You can test if the R package "rjags" is installed and working in your system by running a simple script in the R environment. Here's how:
 
