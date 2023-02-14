@@ -29,6 +29,8 @@ summary(samples)
 
 If the script runs successfully and provides output, it means that both R and JAGS are installed and working correctly.
 
+* [How to: Run an R script on a Ursa Major HPC Cluster](https://github.com/UCR-Research-Computing/UCR-Ursa-Major-Slurm-Job-Scripts/blob/master/R/README.md)
+
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=Xn2c7rgc3rM
 " target="_blank"><img src="http://img.youtube.com/vi/Xn2c7rgc3rM/0.jpg" 
 alt="Check if R JAGS is installed." width="240" height="180" border="10" /></a>
