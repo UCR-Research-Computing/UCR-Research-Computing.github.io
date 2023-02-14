@@ -32,7 +32,7 @@
 * ## [Security]()
     * [UCR_Data_Security_Plans](UCR_Data_Security_Plans.md)
 * ## [Software]()
-    * [How to: Check if R JAGS is installed](How_to_Check_if_R-JAGS_is_istalled.md)
+    * [How to: Install and Run R JAGS on a Ursa Major HPC Cluster](R-JAGS.md)
 * ## [Information](#Information)
     * [Linux_Manual](Linux_Manual.md)
     * [Available_Resources](Resources.md)
