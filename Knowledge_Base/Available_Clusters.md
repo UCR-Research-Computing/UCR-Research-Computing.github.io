@@ -6,11 +6,10 @@ Today, HPC is used to solve complex, performance-intensive problems—and organi
 
 UCR's Research Computing can facilitate our researchers and their lab’s access to the following HPC resources:
 * [UCR Ursa Major HPC](#ucr-ursa-major-hpc)
-* [HPCC](https://hpcc.ucr.edu/)
 * [The Nautlius Cluster](#the-nautlius-cluster)
 * [National and Academic Supercomputing Centers](#national-and-academic-supercomputing-centers)  
 
-## [UCR Ursa Major HPC](../../Training_and_Consulting/Knowledge_Base/Ursa_Major_HPC_Clusters.md) ##
+## [UCR Ursa Major HPC](README.md#Clusters) ##
 `UCR's Ursa Major Research Computing Service.` Ursa Major is ITS Campus subsidized and is no cost to UCR Researcherse. Ursa Major is powered by Google Cloud and is a game-changing development for UCR's Researcher and their Research. This service is designed to drive research at an increased pace and bring more grants and funding to the University. This service is a massively scalable and innovative approach to providing Research Computing resources, tools, and support as summarized below: Reach out and get started today!
 * Multiple Personal, Lab-Based, or Shared HPC Clusters.
 * Customized with installed software to support your research needs. 
@@ -19,20 +18,13 @@ UCR's Research Computing can facilitate our researchers and their lab’s access
     * Access to unlimited CPU, High RAM, and High GPUs.
 * Each Ursa Major Cluster is connected to an Ursa Major's virtually unlimited-sized parallel high-speed storage as well as the Ursa Major's General Research Storage.  
 
-* [Follow steps to Launch an Ursa Major HPC Cluster now.](../../Training_and_Consulting/Knowledge_Base/How_To_Launch_a_Ursa_Major_Cluster.md)
-* [Follow steps to Connect to your Ursa Major HPC Cluster now.](../../Training_and_Consulting/Knowledge_Base/how_to_connect_to_hpc_cluster_run_sample_job.md)
-* [Learn more about UCR's Ursa Major HPC.](../../Training_and_Consulting/Knowledge_Base/README.md#Clusters)
+* [Follow steps to Launch an Ursa Major HPC Cluster now.](How_To_Launch_a_Ursa_Major_Cluster.md)
+* [Follow steps to Connect to your Ursa Major HPC Cluster now.](how_to_connect_to_hpc_cluster_run_sample_job.md)
+* [Learn more about UCR's Ursa Major HPC.](README.md#Clusters)
 
 Reach out to the Research Computing team to help you get your lab up and running today[research-computing@ucr.edu](mailto:research-computing@ucr.edu?subject=Ursa_Major_HPC)
 
 ## Other HPC Clusters Avaible ##  
-
-### [HPCC](http://hpcc.ucr.edu) ###
-UCR's *High-Performance Computing Center* (HPCC) provides a shared HPC Cluster accessible to all UCR researchers and affiliates at a low cost. This includes access to the shared HPC resources and services summarized below:
-
-* Multipurpose cluster optimized for parallel, non-parallel and big data computing.
-* Access to 256 Cores, Shared access to Bigdata filesystem, Shared Highmem nodes, and shared GPUs.
-* Access to 1000 software tools, packages, and community databases.  
 
 ## [The Nautlius Cluster](https://ucsd-prp.gitlab.io/) ##
 Nautilus is a heterogeneous, distributed cluster, with computational resources of various shapes and sizes made available by research institutions spanning multiple continents! Check out the Cluster Map to see where the nodes are located.
