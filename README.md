@@ -22,7 +22,7 @@ This partnership with Google Cloud Platform is a major milestone for UCR, repres
 
 * [Ursa Major HPC Clusters](Knowledge_Base/Ursa_Major_HPC_Clusters.md)
 * [Ursa Major Research Workstations](Knowledge_Base/Ursa_Major_Research_Workstations.md)
-* [Ursa Major Research Computing Services](Knowledge_Base/Research_Computing_Services.md)
+* [Ursa Major Research Computing Services](Knowledge_Base/Ursa_Major_Research_Services.md)
 * [Ursa Major Secure Research Storage](Knowledge_Base/Ursa_Major_Research_Storage.md)
 
 ## Resources for your Research ##
