@@ -6,6 +6,9 @@ Ursa Major Cloud Storage is a game-changer for researchers at a major research u
 * [How to: Access a Ursa Major Research Storage Bucket](Ursa_Major_Research_Storage_How_to_Access_Bucket.md)
 * [Google Drive]() (Google Drive has a 500GB Limit per account for collaboration)
 
+Reach out to the Research Computing team to help you get your lab up and running today.
+[research-computing@ucr.edu](mailto:research-computing@ucr.edu?subject=Ursa_Major_HPC)
+
 ### Big Data Analytics
 Ursa Major Cloud Storage offers researchers a powerful platform for big data analytics. With its ability to store and manage large data sets, researchers can analyze their data with ease and gain valuable insights that can drive their research forward.
 
