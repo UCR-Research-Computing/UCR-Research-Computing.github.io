@@ -3,6 +3,8 @@ Ursa Major research workstations are utilizing advanced technology to help advan
 * [How to: Launch a Ursa Major Research Workstation](Ursa_Major_Research_Workstations_How_to_Launch.md)
 * [How to: Connect to a Ursa Major Research Workstation](Ursa_Major_Research_Workstations_How_to_Connect.md)
 
+Reach out to the Research Computing team to help you get your lab up and running today.
+[research-computing@ucr.edu](mailto:research-computing@ucr.edu?subject=Ursa_Major_HPC)
 
 One of the major research disciplines that could benefit from Ursa Major workstations is life sciences. Researchers in this field can use the workstations to perform complex genomic analyses, protein structure predictions, and molecular simulations. The workstations provide a fast and efficient environment for researchers to process large amounts of data and develop new insights into biological systems.
 
