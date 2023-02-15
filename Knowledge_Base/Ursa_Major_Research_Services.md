@@ -1,5 +1,8 @@
 Ursa Major, the cloud for research, offers a wide range of cutting-edge AI and ML services to support your research. With its cloud-based infrastructure, you can access advanced tools, including machine learning algorithms, data analysis tools, and big data analytics, at a fraction of the cost. Collaborate with team members from anywhere in the world, tackle large-scale projects, and manage your data with ease. Enjoy the benefits of cloud computing, including access to massive computing resources, and have the peace of mind knowing your data is secure and compliant with the necessary security measures. Unleash the potential of AI and ML in your research with Ursa Major.
 
+Reach out to the Research Computing team to help you get your lab up and running today.
+[research-computing@ucr.edu](mailto:research-computing@ucr.edu?subject=Ursa_Major_HPC)
+
 ## Ursa Major Research Services:
 
 #### [Access to Advanced Tools:](https://cloud.google.com/products/)
