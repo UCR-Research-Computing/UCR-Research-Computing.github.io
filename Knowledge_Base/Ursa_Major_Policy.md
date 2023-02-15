@@ -1,6 +1,9 @@
 # Ursa Major Policy
 To ensure the responsible and ethical use of Ursa Major services, the following policies have been established. These policies outline the terms of access, usage, support, privacy, ownership, security, and stewardship for Ursa Major. We strongly advise all users to read and understand these policies before using Ursa Major services.
 
+Reach out to the Research Computing team to help you get your lab up and running today.
+[research-computing@ucr.edu](mailto:research-computing@ucr.edu?subject=Ursa_Major_HPC)
+
 ## Access Policy
 ### Eligibility 
 The University of California, Riverside's Ursa Major service is available to all researchers affiliated with the university. This includes faculty, staff, postdoctoral researchers, and students. The researcher must have a valid UCR email address and must have completed the necessary training and certifications to use the Ursa Major services.
