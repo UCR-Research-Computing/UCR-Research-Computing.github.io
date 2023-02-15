@@ -10,7 +10,7 @@
 * [Follow steps to Launch an Ursa Major HPC Cluster now.](How_To_Launch_a_Ursa_Major_Cluster.md)
 * [Follow steps to Connect to your Ursa Major HPC Cluster now.](how_to_connect_to_hpc_cluster_run_sample_job.md)
 * [Learn more about UCR's Ursa Major HPC.](README.md#Clusters)
-* [Build on Google's HPC Tools](https://cloud.google.com/solutions/hpc/)
+* [Built on Google's HPC Tools](https://cloud.google.com/solutions/hpc/)
 
 Reach out to the Research Computing team to help you get your lab up and running today.
 [research-computing@ucr.edu](mailto:research-computing@ucr.edu?subject=Ursa_Major_HPC)
