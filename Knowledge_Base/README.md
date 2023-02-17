@@ -33,6 +33,7 @@
     * [UCR_Data_Security_Plans](UCR_Data_Security_Plans.md)
 * ## [Software](#Software)
     * [How to: Install and Run R JAGS on a Ursa Major HPC Cluster](R-JAGS.md)
+    * [Ask Chatgpt to help you make input files for molecular dynamics simulation packages](md_simulation_input_files_chatpgt.md)
 * ## [Information](#Information)
     * [Linux_Manual](Linux_Manual.md)
     * [Available_Resources](Resources.md)
