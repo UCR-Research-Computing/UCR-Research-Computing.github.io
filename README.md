@@ -27,6 +27,10 @@ This partnership with Google Cloud Platform is a major milestone for UCR, repres
 
 ## Resources for your Research ##
 
+<div>
+    <iframe src="ursa_major.html" width="100%" height="600"></iframe>
+</div>
+
 * [Policies](Knowledge_Base/Ursa_Major_Policy.md)
 * [Knowledge Base](Knowledge_Base)
 * [Training and Workshops](Knowledge_Base/README.md#Training_and_Workshops)
