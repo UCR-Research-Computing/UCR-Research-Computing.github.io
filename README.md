@@ -45,3 +45,5 @@ Contact us for help or to learn more!
 * [School of Business](https://business.ucr.edu/)
 * [School of Public Policy](https://spp.ucr.edu/)
 * [XCITE](https://xcite.ucr.edu/)
+
+<iframe src="https://drive.google.com/file/d/1sVuUij1q7kj3KS9zhqhfb02gT0nbcHwC/preview" width="640" height="480" allow="autoplay"></iframe>
