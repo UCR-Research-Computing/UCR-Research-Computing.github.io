@@ -1,6 +1,6 @@
 ## Cutting-Edge Research Computing ##
 
-**Modern research requires advanced computing and data management resources** 
+**Modern Research requires advanced computing and data management resources** 
 
 With the support of important campus partners such as BCOE, CHASS, ITS, the Library, and RED, UCR's Research Computing Team is dedicated to removing barriers and fostering collaboration among researchers by supporting their research technology needs. This includes providing access to cutting-edge technology, resources, and research computing support services, all at no cost to the researcher.
 
