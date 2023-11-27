@@ -46,3 +46,10 @@ Contact us for help or to learn more!
 * [School of Public Policy](https://spp.ucr.edu/)
 * [XCITE](https://xcite.ucr.edu/)
 
+<script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    Chatbot.init({
+        chatflowid: "84362af6-fde0-4758-8f68-6566f1ca6ff4",
+        apiHost: "http://34.70.75.7:3000",
+    })
+</script>
