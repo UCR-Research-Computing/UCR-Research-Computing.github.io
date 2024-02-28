@@ -15,21 +15,20 @@ The University of California, Riverside’s Ursa Major service is available to a
 
 To promote fair and equitable access to Ursa Major services for all researchers, the following resource allocation approach has been established. This approach outlines the process of resource allocation, ensuring that the available resources are distributed fairly among the researchers while taking into account the specific needs and requirements of each project.
 
+In our commitment to fostering an environment of research excellence and innovation at UCR, we've developed a strategic framework for the allocation of Ursa Major services. This framework is designed to ensure all researchers have equitable access to advanced cloud resources, aligning with our broader objectives of enhancing research capabilities and securing more grant funding. By prioritizing projects that demonstrate significant potential for academic and societal impact, and showcasing the transformative applications of cloud technology, we aim to optimize the distribution of resources across the research community.
 
+This approach ensures that resources are not only allocated fairly but also used to drive forward the most impactful research projects. By doing so, we aim to not only advance UCR's research agenda but also attract significant grant funding. This, in turn, bolsters our campus's research infrastructure, attracts top-tier talent, and ultimately, enhances the prestige and competitiveness of UCR within the academic community.
 
+* Tiered resource allocation:
+    * Tiered allocation system based on factors such as project maturity, cloud experience, project timing, or project funding. Allocating more resources to time bound and/or high value resource needs. While still providing some access to resources for long running, exploratory or early-stage projects.
+    * Allow researchers to request an allocation for GCP resources for specific periods of time, ensuring that resources are available when needed and reducing the risk of resource contention among researchers.
 * Prioritize projects based on research impact
-    * Allocate resources to projects with high potential for academic or societal impact, such as research addressing pressing global challenges, innovative research projects, or those with strong potential for future funding or partnerships.
-* Set a maximum daily budget or quota per researcher/project:
+    * Allocate resources to projects with high potential impact, innovative research projects, or those with strong potential for future funding.
+* Set maximum running resource quotas per allocation:
     * This can vary among projects, and would be based on requested resources, such as compute, storage, etc.
 * Monitor resource usage and adjust allocations:
-    * Regularly monitor the usage of GCP resources by researchers to identify inefficiencies, unused allocations, or bottlenecks. Adjust the allocations based on actual usage patterns to optimize the utilization of the budget.
+    * Regularly monitor the usage of GCP resources by RC Team and researchers themselves to identify inefficiencies, unused allocations, or bottlenecks. Adjust the allocations based on actual usage patterns to optimize the utilization of the budget.
     * This may involve reconfiguring resources in use to better fit the performance needs of the project, which may require short maintenance windows where running jobs, simulations, etc may need to be stopped to make the requisite changes.
-* Tiered resource allocation:
-    * Tiered allocation system based on factors such as project maturity, cloud experience, project timing, or project funding. Allocate more resources to time bound and/or high value resource needs. While still providing access to resources for long running, exploratory or early-stage projects.
-* Implement a resource reservation system:
-    * Allow researchers to reserve GCP resources for specific periods of time, ensuring that resources are available when needed and reducing the risk of resource contention among researchers.
-* Allocate resources based on grant matching:
-    * Allocate GCP resources to projects that have secured external funding with the stipulation that the funding body matches the GCP resource allocation. This can help to maximize the return on investment and distribute resources effectively.
 * Continuously evaluate and optimize allocations:
     * Regularly review the effectiveness of the allocation strategy and make adjustments as necessary to ensure optimal use of the GCP Subscription.
 
@@ -38,13 +37,10 @@ By implementing these ideas, the university can allocate the Ursa Major campus b
 
 ## Obtaining a Ursa Major Resource Allocation:
 
-
-
-1. Researchers become aware of the available training for the services they intend to use while ensuring familiarity with policies, procedures, and best practices for using Ursa Major services.
-2. Researchers submit an allocation request through the Ursa Major web portal or ITS Service Now, providing essential details about their research project and the specific services required.  This may include software needs, hardware requirements, storage capacity needs, etc, and length of time needed.
-3. The Research Computing Team will schedule an intake meeting with the lab to understand their research needs and discuss how an Ursa Major allocation can be beneficial.
-4. The Research Computing Team will review the request, considering the project's needs, the alignment of resources and services requested, and the availability of Ursa Major resources to accommodate the proposed allocation.
-5. If the request is approved, the researcher will receive a confirmation email with access instructions and follow-up meetings will be scheduled to facilitate research collaboration and support.
+1. Researchers submit an allocation request [Here](https://forms.gle/usMEn3F9db7rHVhR9) or through the Ursa Major section of the Research Computing Web Portal or ITS Service Now, providing essential details about their research project and the specific services required.  This may include software needs, hardware requirements, storage capacity needs, etc, and length of time needed.
+2. The Research Computing Team will schedule an intake meeting with the lab to understand their research needs and discuss how an Ursa Major allocation can be beneficial.
+3. The Research Computing Team will review the request, considering the project's needs, the alignment of resources and services requested, and the availability of Ursa Major resources to accommodate the proposed allocation.
+4. If the request is approved, the researcher will receive a confirmation email with access instructions and follow-up meetings will be scheduled to facilitate research collaboration and support.
 
 
 ## Limitations or Restrictions on Access:
