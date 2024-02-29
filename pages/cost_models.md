@@ -11,7 +11,7 @@ Our model offers a variety of funding support and cost options to facilitate res
 
 ## NSF-Based Resources (No Cost)
 
-* [ACCESS Program](pages/nsf-access.md): Provides no-cost access to advanced computing systems and services, funded by the NSF.
+* [ACCESS Program](nsf-access.md): Provides no-cost access to advanced computing systems and services, funded by the NSF.
 * [Open Science Grid](pages/open_science_grid.md):: Access to distributed high-throughput computing resources.
 * [NRP Nautilus Cluster](pages/Nautilus.md): Access to regional HPC resources via the Pacific Research Platform.
 
