@@ -56,6 +56,4 @@ Whether you're new to research computing or looking to expand your project's com
 
 Stay up-to-date with the latest news, workshops, and updates from UCR Research Computing. Join our community and contribute to the cutting edge of research at UCR.
 
-[Subscribe to Our Newsletter](#subscribe)
-
 Welcome to the future of research computing at UCR. Let's innovate together.
