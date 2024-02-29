@@ -1,6 +1,6 @@
 title: UCR Research Computing
 description: "Empowering UCRs research community with advanced computing resources, training, and support."
-remote_theme: pages-themes/minimal@v0.2.0
+remote_theme: zendesk/jekyll-theme-zendesk-garden@main
 
 sidebar:
   - about.md
