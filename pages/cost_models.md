@@ -47,21 +47,21 @@ Our model offers a variety of funding support and cost options to facilitate res
 
 * [HPCC Cluster](pages/HPCC.md): Central Campus High-performance clusters for compute-intensive tasks.
 * [HPCC-GPFS Cluster Storage](pages/hpcc_gpfs.md): High-performance cluster storage.
-* [Campus Ceph Research Storage](pages/ceph_secure_research_storage.md): Additional storage over the base allocation.
+* [Ceph Secure Research Storage](pages/ceph_secure_research_storage.md): Additional storage over the base allocation.
 
 
 ### No Cost
 
 * [RCSAS Local Cluster Support](pages/rcsas.md): Custom support for researcher clusters, labs, and storage systems.
 * [Research Computing Research Facilitation and Support](pages/research_facilitation.md): Assistance with research projects grants grants.
-* [Ceph Research Storage](pages/ceph_secure_research_storage.md): Secure central research storage solution for research data on campus.
+* [Ceph Secure Research Storage](pages/ceph_secure_research_storage.md): Secure central research storage solution for research data on campus.
 
 
 ### Condo Model
 
 * [HPCC Cluster](pages/HPCC.md): Central Campus High-performance clusters for compute-intensive tasks.
 * [HPCC-GPFS Cluster Storage](pages/hpcc_gpfs.md): High-performance cluster storage.
-* [Campus Ceph Research Storage](pages/ceph_secure_research_storage.md): Additional storage over the base allocation.
+* [Ceph Secure Research Storage](pages/ceph_secure_research_storage.md): Additional storage over the base allocation.
 
 
 ## Web-Based Resources (Cost)
