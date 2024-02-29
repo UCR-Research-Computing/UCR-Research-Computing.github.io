@@ -4,16 +4,13 @@ id: ursa-major
 
 # Ursa Major
 
-
-## Cutting-Edge Research Computing ##
-
 **Modern Research requires advanced computing and data management resources** 
 
 The University of California, Riverside is proud to announce its latest partnership with Google Cloud Platform (GCP), code-named Ursa Major, designed to provide the research computing support and resources necessary for our researchers to advance their work and unlock new opportunities for innovation and growth.
 
 Through Ursa Major, UCR's researchers will have access to the following new and exciting services:
 
-* [Research Workstations](Knowledge_Base/Ursa_Major_Research_Workstations.md): Researchers can access high-performance workstations with ample memory and CPU or storage capabilities.
+* [Research Workstations](/Knowledge_Base/Ursa_Major_Research_Workstations.md): Researchers can access high-performance workstations with ample memory and CPU or storage capabilities.
 * [Auto-scaling HPC Clusters](Knowledge_Base/Ursa_Major_HPC_Clusters.md): Researchers can access cutting-edge high-performance computing clusters, equipped with the latest CPUs, GPUs, and large memory configurations.
 * [Research AI and Machine Learning Services](Knowledge_Base/Ursa_Major_Research_Services.md): Researchers can leverage Vertex.ai, Google's AI and Machine Learning platform, as well as other services, to support their research endeavors.
 * [Secure Research Storage](Knowledge_Base/Ursa_Major_Research_Storage.md): Researchers will have access to secure and optimized storage solutions, ensuring the safekeeping of their valuable research data.
