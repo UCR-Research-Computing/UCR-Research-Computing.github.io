@@ -8,9 +8,9 @@ sidebar:
     children:
       - hpcc
       - ursa-major
-      - cris-luster
-      - can-cluster
+      - nsf-access
       - nautilus
+      - nsf-osg
       - gcp-aws-edp
       - gcp-aws-cloud-credits
   - label: Research Data Storage
