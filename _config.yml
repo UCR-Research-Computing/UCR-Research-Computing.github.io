@@ -3,7 +3,7 @@ description: "Empowering UCRs research community with advanced computing resourc
 remote_theme: zendesk/jekyll-theme-zendesk-garden@main
 
 sidebar:
-  - label: Research Computing
+  - label: Computing
     children:
       - hpcc
       - ursa-major
@@ -12,7 +12,7 @@ sidebar:
       - nsf-osg
       - gcp-aws-edp
       - gcp-aws-cloud-credits
-  - label: Research Data Storage
+  - label: Data Storage
     children:
       - google-drive
       - ursa-major-data
@@ -21,7 +21,7 @@ sidebar:
       - ceph-secure-research-storage
       - dryad
       - backup
-  - label: Research Support
+  - label: Support
     children:
       - research-computing-consultation
       - software-and-application-support
