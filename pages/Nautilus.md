@@ -15,43 +15,48 @@ Nautilus, a HyperCluster designed for running containerized Big Data application
 - **Access**: Users can access Nautilus using institutional credentials via CILogin.
 - **Storage**: Includes a Home File System with 1.6 PB capacity and Data Cache with 50TB each.
 
-[Nautilus Cluster Main Page](https://nautilus.optiputer.net/)
+The NRP Nautilus Cluster, part of the National Research Platform, equips researchers with access to high-performance computational resources. It's designed to support a wide array of computational tasks, excluding the storage of HIPAA, PID, FISMA, FERPA, or protected data.
 
-## Key Resources and Links
+## Getting Started
 
-- **[How to Start](https://ucsd-prp.gitlab.io/userdocs/start/toc-start/)**: Guide on beginning with Nautilus.
-- **[Cluster Map](https://ucsd-prp.gitlab.io/nautilus/cluster-map/)**: Visualize the distribution of Nautilus nodes.
-- **[Namespace](https://nautilus.optiputer.net/namespaces-g)**: Join Research Computing's namespace or request a new one.
-- **[Free Jupyter Notebooks CPU and GPU](https://jupyterhub.nautilus.optiputer.net/hub/login)**: Access Jupyter Notebooks for interactive computing.
+- **[Get Access](https://docs.nationalresearchplatform.org/userdocs/start/get-access/)**: Steps to access the Nautilus cluster.
+- **[Quick Start](https://docs.nationalresearchplatform.org/userdocs/start/quickstart/)**: Begin with Nautilus quickly.
+- **[Policies](https://docs.nationalresearchplatform.org/userdocs/start/policies/)**: Important policies for using the cluster.
+- **[Deployed Projects](https://docs.nationalresearchplatform.org/userdocs/start/resources/)**: Explore projects already deployed on Nautilus.
+- **[FAQ](https://docs.nationalresearchplatform.org/userdocs/start/faq/)**: Answers to common questions.
+- **[Contact in Matrix](https://docs.nationalresearchplatform.org/userdocs/start/contact/)**: Reach out for more support.
 
-## Tools and Dashboards
+## Tutorials
 
-- **[GPU Cluster Grafana](https://grafana.nautilus.optiputer.net/d/f_qakuSiz/k8s-nvidia-gpu-cluster?refresh=15m&orgId=1)**
-- **[Mesh Dashboard](https://perfsonar.nautilus.optiputer.net/maddash-webui/)**
-- **[Trace Route](https://traceroute.nautilus.optiputer.net/)**
+Enhance your Nautilus skills with tutorials covering a range of topics:
 
-## Usage and Policies
+- **[Docker and Containers](https://docs.nationalresearchplatform.org/userdocs/tutorial/docker/)**
+- **[Basic Kubernetes](https://docs.nationalresearchplatform.org/userdocs/tutorial/basic/)**
+- **[Scaling and Exposing](https://docs.nationalresearchplatform.org/userdocs/tutorial/basic2/)**
+- **[Scheduling](https://docs.nationalresearchplatform.org/userdocs/tutorial/scheduling/)**
+- **[Batch Jobs](https://docs.nationalresearchplatform.org/userdocs/tutorial/jobs/)**
+- **[Images](https://docs.nationalresearchplatform.org/userdocs/tutorial/images/)**
+- **[Storage](https://docs.nationalresearchplatform.org/userdocs/tutorial/storage/)**
+- **[MNIST Training Presentation](https://docs.google.com/presentation/d/1GMvaZr9Nm6LhYUU_E0E0LdoebPpk0dgb2Z6oS9v2Ww8/edit?usp=sharing)**
 
-- **[Get Access](https://docs.nationalresearchplatform.org/userdocs/start/get-access/)**: Steps to access Nautilus.
-- **[Cluster Policies](https://docs.nationalresearchplatform.org/userdocs/start/policies/)**: Understand the rules and guidelines for using the cluster.
-- **[FAQ](https://docs.nationalresearchplatform.org/userdocs/start/faq/)**: Answers to common questions about Nautilus.
+## Running
 
-## Learn and Engage
+- Beginner start, Intermediate, and Performance tutorials help users from all levels optimize their projects on the cluster.
 
-- **[Tutorial](https://docs.nationalresearchplatform.org/userdocs/tutorial/basic/)**: Learn how to use the cluster effectively.
-- **[Contact](https://docs.nationalresearchplatform.org/userdocs/start/contact/)**: Reach out for further assistance or inquiries.
+## Jupyter
 
-## Important Disclaimers
+- **[JupyterHub Service](https://docs.nationalresearchplatform.org/userdocs/jupyter/jupyterhub-service/)**: Use JupyterHub on Nautilus.
+- **[ML/Jupyter Pod](https://docs.nationalresearchplatform.org/userdocs/jupyter/jupyter-pod/)**: Machine Learning with Jupyter.
+- **[Deploy JupyterHub](https://docs.nationalresearchplatform.org/userdocs/jupyter/jupyterhub/)**: Set up JupyterHub for collaborative projects.
 
-- **Storage for Sensitive Data**: The NRP does not currently offer storage suitable for HIPAA, PID, FISMA, FERPA, or protected data of any kind. Users are strictly prohibited from storing such data on NRP machines.
+## Storage
 
-## About the NRP
+- Explore storage options and managing data effectively on Nautilus.
 
-The NRP is a heterogeneous, nationally distributed system optimized for data science, simulations, machine learning, and AI applications. It supports Composable Systems, allowing dynamic system component composition to meet specific project requirements.
+## Development
 
-## Start Using Nautilus
+- **[Building in GitLab](https://docs.nationalresearchplatform.org/userdocs/development/gitlab/)**
+- **[Private Repos](https://docs.nationalresearchplatform.org/userdocs/development/private-repos/)**
+- **[Integrate GitLab and Kubernetes](https://docs.nationalresearchplatform.org/userdocs/development/k8s-integration/)**: Leverage GitLab with Kubernetes for development.
 
-- **[Run GPU Pods](https://docs.nationalresearchplatform.org/userdocs/running/gpu-pods/)**
-- **[Run Batch Jobs](https://docs.nationalresearchplatform.org/userdocs/running/jobs/)**
-
-Nautilus and the NRP exemplify the power of collaborative computing, providing an advanced platform for scientific research across disciplines.
+The NRP Nautilus Cluster is a comprehensive platform for advancing computational research, offering a rich set of resources and support to ensure researchers can achieve their project goals efficiently.
