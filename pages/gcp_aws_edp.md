@@ -2,4 +2,5 @@
 id: gcp-aws-edp
 ---
 
-# Cloud Computing Discount Programs
+# Cloud Computing Discounts
+
