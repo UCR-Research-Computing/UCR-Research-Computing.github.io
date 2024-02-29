@@ -4,33 +4,42 @@ remote_theme: zendesk/jekyll-theme-zendesk-garden@main
 
 sidebar:
   - Home
-  - label: About Us
+  - About Us
+  - label: Research Computing Resources
     children:
-      - about
-      - Mission-Vision
-      - Strategic Plan
-      - Leadership
+      - hpcc
+      - CRIS Cluster
+      - CAN Cluster
+      - nautilus
+      - Ursa Major: GCP Subscription
+      - GCP and AWS Discount Programs
+      - GCP and AWS Cloud Credits
+  - label: Research Data Storage
+    children:
+      - label: Cloud-Based Storage Solutions
+        children:
+          - Google Drive
+          - GCS (Google Cloud Storage)
+          - AWS S3
+      - label: High-Performance Computing Storage
+        children:
+          - HPCC - GPFS
+      - label: Special-Purpose Storage Solutions
+        children:
+          - Ceph-Based Secure Central Campus Research Storage
+          - Dryad (Research Data Repository)
+          - CrashPlan Backup
   - label: Services
     children:
       - High-Performance Computing
       - Cloud Services
       - Data Analytics
-      - Secure Data Management
-  - label: Resources
-    children:
-      - Software and Tools
-      - Computing Facilities
-      - UCR Cloud Partnerships
+      - Secure Data Management      
   - label: Training & Development
     children:
       - Workshops & Webinars
       - Online Courses
       - Documentation & Guides
-  - label: Collaboration
-    children:
-      - Research Networks
-      - Academic Partnerships
-      - Industry Collaboration
   - Policies & Compliance
   - Support
   - Success Stories
