@@ -17,7 +17,7 @@ sidebar:
     children:
       - label: Cloud-Based Storage Solutions
         children:
-          - google-dive
+          - google-drive
           - gcs-aws-s3
       - label: High-Performance Computing Storage
         children:

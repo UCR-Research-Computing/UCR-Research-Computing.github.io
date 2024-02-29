@@ -1,4 +1,3 @@
-
 ---
 id: ursa-major
 ---
