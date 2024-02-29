@@ -28,14 +28,15 @@ sidebar:
       - software-and-application-support
       - computing-and-research-infrastructure-support
       - grant-collaboration-and-innovation
-      - supporting-research-security
       - optimizing-research-environments 
   - label: Training
     children:
       - workshops-and-webinars
       - online-courses
       - documentation-and-guides
-  - policies-and-compliance
+  - cost-models
+  - research-security
+  - policies
   - success-stories
   - contact-us
 
