@@ -1,0 +1,14 @@
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Exclude any personal or system files
+.DS_Store
+Thumbs.db
+
+# Exclude node modules if you're using any node-based tools
+node_modules/
+
+# Exclude any backup files
+*~
