@@ -15,18 +15,13 @@ sidebar:
       - gcp-aws-cloud-credits
   - label: Research Data Storage
     children:
-      - label: Cloud-Based Storage Solutions
-        children:
-          - google-drive
-          - gcs-aws-s3
-      - label: High-Performance Computing Storage
-        children:
-          - hpcc-gpfs
-      - label: Special-Purpose Storage Solutions
-        children:
-          - ceph-secure-research-storage
-          - dryad
-          - crashplan
+      - google-drive
+      - ursa-major-data
+      - gcs-aws-s3
+      - hpcc-gpfs
+      - ceph-secure-research-storage
+      - dryad
+      - backup
   - label: Research Support Services
     children:
       - research-computing-consultation
