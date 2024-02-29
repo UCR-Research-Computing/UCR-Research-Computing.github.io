@@ -3,7 +3,38 @@ description: "Empowering UCRs research community with advanced computing resourc
 remote_theme: zendesk/jekyll-theme-zendesk-garden@main
 
 sidebar:
-  - about
+  - Home
+  - label: About Us
+    children:
+      - Mission & Vision
+      - Strategic Plan
+      - Leadership
+  - label: Services
+    children:
+      - High-Performance Computing
+      - Cloud Services
+      - Data Analytics
+      - Secure Data Management
+  - label: Resources
+    children:
+      - Software and Tools
+      - Computing Facilities
+      - UCR Cloud Partnerships
+  - label: Training & Development
+    children:
+      - Workshops & Webinars
+      - Online Courses
+      - Documentation & Guides
+  - label: Collaboration
+    children:
+      - Research Networks
+      - Academic Partnerships
+      - Industry Collaboration
+  - Policies & Compliance
+  - Support
+  - Success Stories
+  - Contact Us
+
 
 
 # Build settings
