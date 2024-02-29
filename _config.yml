@@ -7,10 +7,10 @@ sidebar:
   - label: Computing Resources
     children:
       - hpcc
+      - ursa-major
       - cris-luster
       - can-cluster
       - nautilus
-      - ursa-major
       - gcp-aws-edp
       - gcp-aws-cloud-credits
   - label: Research Data Storage
