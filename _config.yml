@@ -4,7 +4,7 @@ remote_theme: zendesk/jekyll-theme-zendesk-garden@main
 
 sidebar:
   - about
-  - label: Research Computing Resources
+  - label: Computing Resources
     children:
       - hpcc
       - cris-luster

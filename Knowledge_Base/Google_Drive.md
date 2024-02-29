@@ -1,8 +1,6 @@
 ---
 id: google-drive
-title: Google Drive
 ---
 
-## Google Drive
+# Google Drive
 
-###
