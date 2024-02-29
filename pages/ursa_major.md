@@ -17,14 +17,14 @@ Through Ursa Major, UCR's researchers will have access to the following new and 
 
 This partnership with Google Cloud Platform is a major milestone for UCR, representing a significant investment in the future of research at our university. Our Research Computing Team is committed to providing a secure research computing infrastructure and research support services that will drive increased research output, grant funding, campus income, and prestige. This, in turn, will lead to the hiring of new faculty, positioning UCR as a leading R1 research university.
 
-## Lets get started! ##
+### Lets get started! ###
 
 * [Ursa Major HPC Clusters](../Knowledge_Base/Ursa_Major_HPC_Clusters.md)
 * [Ursa Major Research Workstations](../Knowledge_Base/Ursa_Major_Research_Workstations.md)
 * [Ursa Major Research Computing Services](../Knowledge_Base/Ursa_Major_Research_Services.md)
 * [Ursa Major Secure Research Storage](../Knowledge_Base/Ursa_Major_Research_Storage.md)
 
-## Ursa Major Resources ##
+### Ursa Major Resources ###
 
 * [Ursa Major Policy](../Knowledge_Base/Ursa_Major_Policy.md)
 * [Knowledge Base](Knowledge_Base)
