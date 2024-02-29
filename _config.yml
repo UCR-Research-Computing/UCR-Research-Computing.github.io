@@ -27,21 +27,22 @@ sidebar:
           - ceph-secure-research-storage
           - dryad
           - crashplan
-  - label: Services
+  - label: Research Support Services
     children:
-      - High-Performance Computing
-      - Cloud Services
-      - Data Analytics
-      - Secure Data Management      
-  - label: Training & Development
+      - research-computing-consultation
+      - software-and-application-support
+      - computing-and-research-infrastructure-support
+      - grant-collaboration-and-innovation
+      - supporting-research-security
+      - optimizing-research-environments 
+  - label: Training
     children:
-      - Workshops & Webinars
-      - Online Courses
-      - Documentation & Guides
-  - Policies & Compliance
-  - Support
-  - Success Stories
-  - Contact Us
+      - workshops-and-webinars
+      - online-courses
+      - documentation-and-guides
+  - policies-and-compliance
+  - success-stories
+  - contact-us
 
 
 
