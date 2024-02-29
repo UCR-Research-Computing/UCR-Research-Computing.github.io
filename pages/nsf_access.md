@@ -3,7 +3,7 @@ id: nsf-access
 title: NSF ACCESS for Research Computing
 ---
 
-# NSF ACCESS for Research Computing
+# NSF ACCESS
 
 The Advanced Cyberinfrastructure Coordination Ecosystem: Services & Support (ACCESS) is an initiative by the National Science Foundation (NSF) designed to enhance computational and data-intensive research across all scientific disciplines.
 
