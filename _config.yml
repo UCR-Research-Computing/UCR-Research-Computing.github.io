@@ -6,7 +6,8 @@ sidebar:
   - Home
   - label: About Us
     children:
-      - Mission & Vision
+      - about
+      - Mission-Vision
       - Strategic Plan
       - Leadership
   - label: Services

@@ -9,6 +9,10 @@ id: about
 
 At the University of California, Riverside (UCR), we are at the forefront of academic research, pushing the boundaries of knowledge and innovation. Our Research Computing services play a crucial role in empowering researchers, faculty, and students by providing comprehensive computational tools and resources through the Ursa Major initiative.
 
+---
+id: Mission-Vision
+---
+
 ## Mission and Vision
 
 **Mission**: To enhance UCR's research capabilities with state-of-the-art computational resources, expert support, and a collaborative environment, empowering researchers to achieve groundbreaking discoveries.
