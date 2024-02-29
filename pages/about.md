@@ -24,7 +24,7 @@ Positioning UCR as a leader in research and innovation through advanced computin
 ## Compute Resources
 - Ursa Major: Campus-wide GCP subscription for cloud computing.
 - High-Performance Computing Center (HPCC): For compute-intensive tasks.
-- Specialized clusters for diverse research needs.
+- Specialized clusters for diverse research needs..
 
 ## Research Storage
 Offering a range of cloud-based and high-performance computing storage solutions to meet the diverse needs of our research community.

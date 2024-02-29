@@ -4,6 +4,8 @@ remote_theme: zendesk/jekyll-theme-zendesk-garden@main
 
 sidebar:
   - about.md
+
+  
 # Build settings
 markdown: kramdown
 plugins:
