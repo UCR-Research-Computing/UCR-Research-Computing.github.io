@@ -12,8 +12,8 @@ Our model offers a variety of funding support and cost options to facilitate res
 ## NSF-Based Resources (No Cost)
 
 * [ACCESS Program](nsf-access.md): Provides no-cost access to advanced computing systems and services, funded by the NSF.
-* [Open Science Grid](pages/open_science_grid.md):: Access to distributed high-throughput computing resources.
-* [NRP Nautilus Cluster](pages/Nautilus.md): Access to regional HPC resources via the Pacific Research Platform.
+* [Open Science Grid](open_science_grid.md):: Access to distributed high-throughput computing resources.
+* [NRP Nautilus Cluster](Nautilus.md): Access to regional HPC resources via the Pacific Research Platform.
 
 
 ## Cloud Resources
@@ -21,23 +21,23 @@ Our model offers a variety of funding support and cost options to facilitate res
 
 ### System-Wide Discounted (Cost)
 
-* [AWS Enterprise Discount Program](pages/gcp_aws_edp.md): Cost-effective AWS access for cloud computing.
-* [GCP Enterprise Discount Program](pages/gcp_aws_edp.md): Additional access to GCP resources through UC system-wide agreement.
-* [Individual GCP Subscription Agreements](pages/gcp_subscription_agreements.md): Tailored resources for large-scale workflows.
-* Storage Solutions: [Google Cloud Storage](pages/gcp_aws_s3.md) and [AWS S3](pages/gcp_aws_s3.md) for Storage.
+* [AWS Enterprise Discount Program](gcp_aws_edp.md): Cost-effective AWS access for cloud computing.
+* [GCP Enterprise Discount Program](gcp_aws_edp.md): Additional access to GCP resources through UC system-wide agreement.
+* [Individual GCP Subscription Agreements](gcp_subscription_agreements.md): Tailored resources for large-scale workflows.
+* Storage Solutions: [Google Cloud Storage](gcp_aws_s3.md) and [AWS S3](gcp_aws_s3.md) for Storage.
 
 ### Currently UCR Subsidized (No Cost)
 
-* [Ursa Major](pages/ursa_major.md): GCP subscription for cloud computing resources, auto-scaling HPC, GKE Clusters with the latest technology, Research Workstations/Servers and Advanced AI and ML platforms
-* Storage Solutions: [Google Drive](pages/Google_Drive.md) and [Google Cloud Storage](Knowledge_Base/Ursa_Major_Research_Storage.md): For storage and collaboration.
+* [Ursa Major](ursa_major.md): GCP subscription for cloud computing resources, auto-scaling HPC, GKE Clusters with the latest technology, Research Workstations/Servers and Advanced AI and ML platforms
+* Storage Solutions: [Google Drive](Google_Drive.md) and [Google Cloud Storage](/Knowledge_Base/Ursa_Major_Secure_Research_Storage.md): For storage and collaboration.
 * [Dryad](https://datadryad.org/stash): For publishing research data for enhanced discoverability and compliance.
 
 
 ### No Cost
 
-* [AWS Cloud Credits](pages/GCP_AWS_Cloud_Credits.md): Credits for AWS usage.
-* [GCP Cloud Credits](pages/GCP_AWS_Cloud_Credits.md): Credits for GCP usage.
-* [Ursa Major Support](pages/ursa_major.md): Collaboration, training, and support for cloud-based research systems.
+* [AWS Cloud Credits](GCP_AWS_Cloud_Credits.md): Credits for AWS usage.
+* [GCP Cloud Credits](GCP_AWS_Cloud_Credits.md): Credits for GCP usage.
+* [Ursa Major Support](ursa_major.md): Collaboration, training, and support for cloud-based research systems.
 
 
 ## On-Premise Resources
@@ -45,26 +45,26 @@ Our model offers a variety of funding support and cost options to facilitate res
 
 ### Subscription-Based
 
-* [HPCC Cluster](pages/HPCC.md): Central Campus High-performance clusters for compute-intensive tasks.
-* [HPCC-GPFS Cluster Storage](pages/hpcc_gpfs.md): High-performance cluster storage.
-* [Ceph Secure Research Storage](pages/ceph_secure_research_storage.md): Additional storage over the base allocation.
+* [HPCC Cluster](HPCC.md): Central Campus High-performance clusters for compute-intensive tasks.
+* [HPCC-GPFS Cluster Storage](hpcc_gpfs.md): High-performance cluster storage.
+* [Ceph Secure Research Storage](ceph_secure_research_storage.md): Additional storage over the base allocation.
 
 
 ### No Cost
 
-* [RCSAS Local Cluster Support](pages/rcsas.md): Custom support for researcher clusters, labs, and storage systems.
-* [Research Computing Research Facilitation and Support](pages/research_facilitation.md): Assistance with research projects grants grants.
-* [Ceph Secure Research Storage](pages/ceph_secure_research_storage.md): Secure central research storage solution for research data on campus.
+* [RCSAS Local Cluster Support](rcsas.md): Custom support for researcher clusters, labs, and storage systems.
+* [Research Computing Research Facilitation and Support](research_facilitation.md): Assistance with research projects grants grants.
+* [Ceph Secure Research Storage](ceph_secure_research_storage.md): Secure central research storage solution for research data on campus.
 
 
 ### Condo Model
 
-* [HPCC Cluster](pages/HPCC.md): Central Campus High-performance clusters for compute-intensive tasks.
-* [HPCC-GPFS Cluster Storage](pages/hpcc_gpfs.md): High-performance cluster storage.
-* [Ceph Secure Research Storage](pages/ceph_secure_research_storage.md): Additional storage over the base allocation.
+* [HPCC Cluster](HPCC.md): Central Campus High-performance clusters for compute-intensive tasks.
+* [HPCC-GPFS Cluster Storage](hpcc_gpfs.md): High-performance cluster storage.
+* [Ceph Secure Research Storage](ceph_secure_research_storage.md): Additional storage over the base allocation.
 
 
 ## Web-Based Resources (Cost)
 
-* [Web-Based Research Tools]([pages/web-based-research-tools.md]): Various tools available for researchers
+* [Web-Based Research Tools]([web-based-research-tools.md]): Various tools available for researchers
 * [CrashPlan Backup](https://www.crashplan.com/): Offers backup services for data protection and disaster recovery.
