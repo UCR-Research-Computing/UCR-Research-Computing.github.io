@@ -3,7 +3,6 @@ description: "Empowering UCRs research community with advanced computing resourc
 remote_theme: zendesk/jekyll-theme-zendesk-garden@main
 
 sidebar:
-  - about
   - label: Computing Resources
     children:
       - hpcc
@@ -37,6 +36,7 @@ sidebar:
   - cost-models
   - research-security
   - policies
+  - about
   - success-stories
   - contact-us
 
