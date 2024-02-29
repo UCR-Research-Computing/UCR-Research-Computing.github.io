@@ -1,7 +1,3 @@
----
-id: home
----
-
 # Welcome to UCR Research Computing
 
 At the University of California, Riverside (UCR), we're committed to empowering our researchers with the most advanced computational resources and support services. Our mission is to drive innovation, facilitate groundbreaking research, and foster an environment where academic excellence thrives.
