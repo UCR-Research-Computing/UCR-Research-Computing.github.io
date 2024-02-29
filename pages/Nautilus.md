@@ -19,6 +19,11 @@ The NRP Nautilus Cluster, part of the National Research Platform, equips researc
 
 ## Getting Started
 
+Contact us to get started and learn more:
+[research-computing@ucr.edu](./pages/mailto:research-computing@ucr.edu) - [UCR Research Computing Slack](./pages/https://ucr-research-compute.slack.com/)
+
+Afterword you can access the system with the following:
+
 - **[Get Access](https://docs.nationalresearchplatform.org/userdocs/start/get-access/)**: Steps to access the Nautilus cluster.
 - **[Quick Start](https://docs.nationalresearchplatform.org/userdocs/start/quickstart/)**: Begin with Nautilus quickly.
 - **[Policies](https://docs.nationalresearchplatform.org/userdocs/start/policies/)**: Important policies for using the cluster.
