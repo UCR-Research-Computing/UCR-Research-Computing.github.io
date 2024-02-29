@@ -2,5 +2,5 @@ title: UCR Research Computing
 theme: jekyll-theme-minimal
 
 # Navigation settings
-header_pages:
+sidebar:
   - about.md
