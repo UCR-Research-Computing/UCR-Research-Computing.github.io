@@ -7,27 +7,26 @@ sidebar:
   - label: Research Computing Resources
     children:
       - hpcc
-      - CRIS Cluster
-      - CAN Cluster
+      - cris-luster
+      - can-cluster
       - nautilus
-      - Ursa Major: GCP Subscription
-      - GCP and AWS Discount Programs
-      - GCP and AWS Cloud Credits
+      - ursa-major
+      - gcp-aws-edp
+      - gcp-aws-cloud-credits
   - label: Research Data Storage
     children:
       - label: Cloud-Based Storage Solutions
         children:
-          - Google Drive
-          - GCS (Google Cloud Storage)
-          - AWS S3
+          - google-dive
+          - gcs-aws-s3
       - label: High-Performance Computing Storage
         children:
-          - HPCC - GPFS
+          - hpcc-gpfs
       - label: Special-Purpose Storage Solutions
         children:
-          - Ceph-Based Secure Central Campus Research Storage
-          - Dryad (Research Data Repository)
-          - CrashPlan Backup
+          - ceph-secure-research-storage
+          - dryad
+          - crashplan
   - label: Services
     children:
       - High-Performance Computing
