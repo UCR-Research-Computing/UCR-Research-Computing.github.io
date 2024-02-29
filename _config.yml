@@ -1,6 +1,6 @@
 title: UCR Research Computing
-description: "Empowering UCR's research community with advanced computing resources, training, and support."
-remote_theme: pages-themes/cayman@v0.2.0
+description: "Empowering UCRs research community with advanced computing resources, training, and support."
+theme: jekyll-theme-minimal
 
 # Build settings
 markdown: kramdown
