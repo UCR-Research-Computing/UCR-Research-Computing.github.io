@@ -1,46 +1,61 @@
-## Cutting-Edge Research Computing ##
+---
+id: home
+---
 
-**Modern Research requires advanced computing and data management resources** 
+# Welcome to UCR Research Computing
 
-With the support of important campus partners such as BCOE, CHASS, ITS, the Library, and RED, UCR's Research Computing Team is dedicated to removing barriers and fostering collaboration among researchers by supporting their research technology needs. This includes providing access to cutting-edge technology, resources, and research computing support services, all at no cost to the researcher.
+At the University of California, Riverside (UCR), we're committed to empowering our researchers with the most advanced computational resources and support services. Our mission is to drive innovation, facilitate groundbreaking research, and foster an environment where academic excellence thrives.
 
-The University of California, Riverside is proud to announce its latest partnership with Google Cloud Platform (GCP), code-named Ursa Major, designed to provide the research computing support and resources necessary for our researchers to advance their work and unlock new opportunities for innovation and growth.
+## What We Offer
 
-Through Ursa Major, UCR's researchers will have access to the following new and exciting services:
+### Access to Advanced Computational Resources
+Discover a wide array of computational tools and platforms tailored to support your research endeavors. Through our sidebar navigation, easily access:
 
-* [Research Workstations](Knowledge_Base/Ursa_Major_Research_Workstations.md): Researchers can access high-performance workstations with ample memory and CPU or storage capabilities.
-* [Auto-scaling HPC Clusters](Knowledge_Base/Ursa_Major_HPC_Clusters.md): Researchers can access cutting-edge high-performance computing clusters, equipped with the latest CPUs, GPUs, and large memory configurations.
-* [Research AI and Machine Learning Services](Knowledge_Base/Ursa_Major_Research_Services.md): Researchers can leverage Vertex.ai, Google's AI and Machine Learning platform, as well as other services, to support their research endeavors.
-* [Secure Research Storage](Knowledge_Base/Ursa_Major_Research_Storage.md): Researchers will have access to secure and optimized storage solutions, ensuring the safekeeping of their valuable research data.
+- **Computing Resources**: High-Performance Computing Center (HPCC), Ursa Major, NSF ACCESS, Nautilus, NSF OSG, and GCP/AWS Cloud Credits.
+- **Data Storage Solutions**: Google Drive, Ursa Major Data, GCS/AWS S3, HPCC GPFS, Ceph Secure Research Storage, Dryad, and Backup Solutions.
+- **Comprehensive Support**: From research computing consultations to optimizing research environments, our support services are designed to address your every need.
+- **Training and Development**: Enhance your computational skills through workshops, webinars, online courses, and a wealth of documentation and guides.
 
-This partnership with Google Cloud Platform is a major milestone for UCR, representing a significant investment in the future of research at our university. Our Research Computing Team is committed to providing a secure research computing infrastructure and research support services that will drive increased research output, grant funding, campus income, and prestige. This, in turn, will lead to the hiring of new faculty, positioning UCR as a leading R1 research university.
+### Collaboration Opportunities
+Join a vibrant community of researchers, IT professionals, and external partners. Through collaboration and sharing of best practices, we aim to advance the frontiers of research and innovation at UCR.
 
-## Lets get started! ##
+## Featured Initiatives
 
-* [Ursa Major HPC Clusters](Knowledge_Base/Ursa_Major_HPC_Clusters.md)
-* [Ursa Major Research Workstations](Knowledge_Base/Ursa_Major_Research_Workstations.md)
-* [Ursa Major Research Computing Services](Knowledge_Base/Ursa_Major_Research_Services.md)
-* [Ursa Major Secure Research Storage](Knowledge_Base/Ursa_Major_Research_Storage.md)
+### Ursa Major: A Partnership with Google Cloud Platform
+Unlock the full potential of cloud computing with Ursa Major, our groundbreaking initiative that offers advanced computing resources at no cost to UCR researchers.
 
-## Resources for your Research ##
+### Research Security: Safeguarding Your Data
+In collaboration with UCR's Information Security Team, we provide comprehensive consulting on securing your research data, ensuring compliance with regulations and protecting your intellectual property.
 
-* [Policies](Knowledge_Base/Ursa_Major_Policy.md)
-* [Knowledge Base](Knowledge_Base)
-* [Training and Workshops](Knowledge_Base/README.md#Training_and_Workshops)
+### HPCC: The Backbone of Computational Research
+The High-Performance Computing Center (HPCC) is our premier resource for compute-intensive research workflows, supporting a wide range of disciplines with its advanced infrastructure.
 
-Contact us for help or to learn more!
-[research-computing@ucr.edu](mailto:research-computing@ucr.edu) - [UCR Research Computing Slack](https://ucr-research-compute.slack.com/)
+### NSF Compute Resources
+Gain access to national-scale computing infrastructure through NSF ACCESS, Nautilus, and the Open Science Grid (OSG), supporting a wide range of computational and data-intensive research projects.
+
+## Get Started
+
+## How to Access Resources
+
+Whether you're new to research computing or looking to expand your project's computational capabilities, we invite you to Explore the sidebar to navigate through our extensive offerings available. Connect with us to learn more and embark on your next research adventure.
+
+| Compute | Storage | Support |
+|---------|---------|---------|
+| [ACCESS Program](nsf_access.md) | [Google Drive](Google_Drive.md) | [Research Computing Consultation](research-computing-consultation.md) |
+| [Open Science Grid](open_science_grid.md) | [GCS and AWS S3](gcs_aws_s3.md) | [Software and Application Support](software-and-application-support.md) |
+| [NRP Nautilus Cluster](Nautilus.md) | [HPCC-GPFS](hpcc_gpfs.md) | [Computing and Research Infrastructure Support](computing-and-research-infrastructure-support.md) |
+| [AWS Enterprise Discount Program](gcp_aws_edp.md) | [Ceph Secure Research Storage](ceph_secure_research_storage.md) | [Grant Collaboration and Innovation](grant-collaboration-and-innovation.md) |
+| [GCP Enterprise Discount Program](gcp_aws_edp.md) | [Ursa Major Data](ursa_major_data.md) | [Optimizing Research Environments](optimizing-research-environments.md) |
+| [Individual GCP Subscription Agreements](gcp_subscription_agreements.md) | [Dryad](https://datadryad.org/stash) | [Workshops and Webinars](workshops-and-webinars.md) |
+| [Ursa Major](ursa_major.md) | [Backup](backup.md) | [Online Courses](online-courses.md) |
+| [AWS Cloud Credits](GCP_and_AWS_Cloud_Credits.md) |  | [Documentation and Guides](documentation-and-guides.md) |
+| [GCP Cloud Credits](GCP_and_AWS_Cloud_Credits.md) |  | [Ursa Major Support](ursa_major.md)  |
 
 
-### Partners
-* [Research IT Leaders](Knowledge_Base/Research_IT_Leaders)
-* [The UCR Library](https://library.ucr.edu/)
-* [MARLAN AND ROSEMARY BOURNS COLLEGE OF ENGINEERING (BCOE)](https://www.engr.ucr.edu/)
-* [College of Humanities, Arts, and Social Sciences (CHASS)](https://chass.ucr.edu/)
-* [School of Medicine (SOM)](https://medschool.ucr.edu/)
-* [The Office of Research and Economic Development (RED)](https://research.ucr.edu/)
-* [School of Business](https://business.ucr.edu/)
-* [School of Public Policy](https://spp.ucr.edu/)
-* [XCITE](https://xcite.ucr.edu/)
+## Stay Informed
 
+Stay up-to-date with the latest news, workshops, and updates from UCR Research Computing. Join our community and contribute to the cutting edge of research at UCR.
 
+[Subscribe to Our Newsletter](#subscribe)
+
+Welcome to the future of research computing at UCR. Let's innovate together.
