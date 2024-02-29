@@ -1,6 +1,9 @@
 title: UCR Research Computing
+description: "Empowering UCR's research community with advanced computing resources, training, and support."
 theme: jekyll-theme-minimal
 
-# Navigation settings
-sidebar:
-  - about.md
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
