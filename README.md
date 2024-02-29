@@ -6,7 +6,7 @@ At the University of California, Riverside (UCR), we're committed to empowering 
 ## What We Offer
 
 ### Access to Advanced Computational Resources
-Discover a wide array of computational tools and platforms tailored to support your research endeavors. Through our sidebar navigation, easily access:
+Discover a wide array of computational tools and platforms tailored to support your research endeavors. Through our sidebar navigation, and in the table below, you can explore our offerings:
 
 | Compute | Storage | Support |
 |---------|---------|---------|
@@ -23,19 +23,9 @@ Discover a wide array of computational tools and platforms tailored to support y
 ### Collaboration Opportunities
 Join a vibrant community of researchers, IT professionals, and external partners. Through collaboration and sharing of best practices, we aim to advance the frontiers of research and innovation at UCR.
 
-## Featured Initiatives
+## Flexable Funding and Cost Models
 
-### Ursa Major: A Partnership with Google Cloud Platform
-Unlock the full potential of cloud computing with Ursa Major, our groundbreaking initiative that offers advanced computing resources at no cost to UCR researchers.
-
-### Research Security: Safeguarding Your Data
-In collaboration with UCR's Information Security Team, we provide comprehensive consulting on securing your research data, ensuring compliance with regulations and protecting your intellectual property.
-
-### HPCC: The Backbone of Computational Research
-The High-Performance Computing Center (HPCC) is our premier resource for compute-intensive research workflows, supporting a wide range of disciplines with its advanced infrastructure.
-
-### NSF Compute Resources
-Gain access to national-scale computing infrastructure through NSF ACCESS, Nautilus, and the Open Science Grid (OSG), supporting a wide range of computational and data-intensive research projects.
+Our model offers a variety of funding support and cost options to facilitate research endeavors across all disciplines. These options include System-Wide Discounted Rates, UCR Subsidized Access, the Condo Model for shared resources, No-Cost Access for specific initiatives, and Direct Cost Options for project-specific funding. This approach ensures flexibility, promoting the efficient use of resources and supporting a range of research activities, from nascent inquiries to extensive, data-driven projects.
 
 ## Get Started
 
