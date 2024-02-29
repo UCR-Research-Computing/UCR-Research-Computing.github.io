@@ -3,45 +3,24 @@ id: about
 ---
 
 
-# About Us - UCR Research Computing
+# About Us
 
 ## Introduction
-At the University of California Riverside (UCR), we're leading the charge in academic research by leveraging the power of computational resources through our Research Computing services. Our mission is to empower researchers, faculty, and students across disciplines to make groundbreaking discoveries.
 
-## Mission
-To enhance UCR's research capabilities by providing advanced computational resources, expert support, and fostering an inclusive research community.
+At the University of California, Riverside (UCR), we are at the forefront of academic research, pushing the boundaries of knowledge and innovation. Our Research Computing services play a crucial role in empowering researchers, faculty, and students by providing comprehensive computational tools and resources through the Ursa Major initiative.
 
-## Vision
-Positioning UCR as a leader in research and innovation through advanced computing technologies and collaborative efforts that break traditional boundaries.
+## Mission and Vision
 
-## Our Services
-- **Accelerate Discovery**: Offering access to high-performance computing (HPC), cloud computing, and specialized computing clusters.
-- **Foster Collaboration**: Creating a cohesive ecosystem for cross-disciplinary work.
-- **Enhance Research Productivity**: Providing training and personalized support.
-- **Sustain Technological Advancement**: Ensuring continuous improvement and adoption of sustainable technologies.
-- **Support the Research Mission**: Aligning closely with the needs of our researchers.
+**Mission**: To enhance UCR's research capabilities with state-of-the-art computational resources, expert support, and a collaborative environment, empowering researchers to achieve groundbreaking discoveries.
 
-## Compute Resources
-- Ursa Major: Campus-wide GCP subscription for cloud computing.
-- High-Performance Computing Center (HPCC): For compute-intensive tasks.
-- Specialized clusters for diverse research needs..
+**Vision**: To position UCR as a leader in research and innovation, leveraging advanced computing technologies and fostering collaborations across disciplines.
 
-## Research Storage
-Offering a range of cloud-based and high-performance computing storage solutions to meet the diverse needs of our research community.
+## Goals and Objectives
 
-## Supporting Excellence
-Our dedicated team offers technical expertise, software support, and infrastructure optimization to enhance research across all phases.
+- **Accelerate Discovery**: Offering access to HPC resources, cloud solutions, and specialized computing clusters to speed up scientific discovery.
+- **Foster Collaboration**: Creating a cohesive ecosystem with ITS, BCOE, CNAS, and other stakeholders for cross-disciplinary collaboration.
+- **Enhance Research Productivity**: Providing training, outreach, and support to improve computational skills and research productivity.
+- **Sustain Technological Advancement**: Committing to infrastructure upgrades and sustainable technologies to keep UCR at the technological forefront.
+- **Support the Research Mission**: Aligning services with researcher needs through unified management and a Faculty Governance Committee.
 
-## Training and Education
-Tailored workshops, symposiums, and one-on-one consultations to boost computational skills and project planning.
-
-## Governance and Community Engagement
-Promoting transparency and inclusivity through a collaborative governance structure and active community engagement.
-
-## Commitment to Security and Compliance
-Ensuring the highest standards of data security and regulatory compliance to foster a secure research environment.
-
-## Success Stories
-Illustrating the impact of our resources on research productivity and discovery through testimonials from our community.
-
-UCR Research Computing is committed to fostering innovation and excellence in research. Join us in pushing the boundaries of knowledge and technology.
+Together, we aim to support UCR's broader goals for research excellence, technological advancement, and community impact.
