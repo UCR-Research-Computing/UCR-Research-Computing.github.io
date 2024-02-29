@@ -11,7 +11,7 @@ Our model offers a variety of funding support and cost options to facilitate res
 
 ## NSF-Based Resources (No Cost)
 
-* [ACCESS Program](nsf-access.md): Provides no-cost access to advanced computing systems and services, funded by the NSF.
+* [ACCESS Program](nsf_access.md): Provides no-cost access to advanced computing systems and services, funded by the NSF.
 * [Open Science Grid](open_science_grid.md):: Access to distributed high-throughput computing resources.
 * [NRP Nautilus Cluster](Nautilus.md): Access to regional HPC resources via the Pacific Research Platform.
 
@@ -24,19 +24,19 @@ Our model offers a variety of funding support and cost options to facilitate res
 * [AWS Enterprise Discount Program](gcp_aws_edp.md): Cost-effective AWS access for cloud computing.
 * [GCP Enterprise Discount Program](gcp_aws_edp.md): Additional access to GCP resources through UC system-wide agreement.
 * [Individual GCP Subscription Agreements](gcp_subscription_agreements.md): Tailored resources for large-scale workflows.
-* Storage Solutions: [Google Cloud Storage](gcp_aws_s3.md) and [AWS S3](gcp_aws_s3.md) for Storage.
+* Storage Solutions: [Google Cloud Storage](gcs_aws_s3.md) and [AWS S3](gcs_aws_s3.md) for Storage.
 
 ### Currently UCR Subsidized (No Cost)
 
 * [Ursa Major](ursa_major.md): GCP subscription for cloud computing resources, auto-scaling HPC, GKE Clusters with the latest technology, Research Workstations/Servers and Advanced AI and ML platforms
-* Storage Solutions: [Google Drive](Google_Drive.md) and [Google Cloud Storage](/Knowledge_Base/Ursa_Major_Secure_Research_Storage.md): For storage and collaboration.
+* Storage Solutions: [Google Drive](Google_Drive.md) and [Ursa Major Secure Research Storage](/Knowledge_Base/Ursa_Major_Research_Storage.md): For storage and collaboration.
 * [Dryad](https://datadryad.org/stash): For publishing research data for enhanced discoverability and compliance.
 
 
 ### No Cost
 
-* [AWS Cloud Credits](GCP_AWS_Cloud_Credits.md): Credits for AWS usage.
-* [GCP Cloud Credits](GCP_AWS_Cloud_Credits.md): Credits for GCP usage.
+* [AWS Cloud Credits](GCP_and_AWS_Cloud_Credits.md): Credits for AWS usage.
+* [GCP Cloud Credits](GCP_and_AWS_Cloud_Credits.md): Credits for GCP usage.
 * [Ursa Major Support](ursa_major.md): Collaboration, training, and support for cloud-based research systems.
 
 
@@ -66,5 +66,5 @@ Our model offers a variety of funding support and cost options to facilitate res
 
 ## Web-Based Resources (Cost)
 
-* [Web-Based Research Tools]([web-based-research-tools.md]): Various tools available for researchers
-* [CrashPlan Backup](https://www.crashplan.com/): Offers backup services for data protection and disaster recovery.
+* [Web-Based Research Tools](web-based-research-tools.md): Various tools available for researchers
+* [CrashPlan Backup](backup.md): Offers backup services for data protection and disaster recovery.
