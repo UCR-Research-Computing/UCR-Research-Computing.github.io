@@ -15,6 +15,7 @@ sidebar:
       - nsf-osg
       - gcp-aws-edp
       - gcp-aws-cloud-credits
+      - on-prem-facilities
   - label: Data Storage
     children:
       - storage-overview
