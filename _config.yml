@@ -16,6 +16,8 @@ sidebar:
       - gcp-aws-cloud-credits
   - label: Data Storage
     children:
+      - storage-overview
+      - ursa-major-storage
       - google-drive
       - ursa-major-data
       - gcs-aws-s3

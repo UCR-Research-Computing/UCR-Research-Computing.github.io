@@ -1,5 +1,5 @@
 ---
-id: Storage Overview
+id: storage-overview
 title: Storage Overview
 sidebar_label: Storage Overview
 ---
