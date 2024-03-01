@@ -15,6 +15,32 @@ The HPCC at our campus hosts thousands of research and scientific software appli
 - **Custom Software Installs**: For specific software needs, reach out to our support team via [support@hpcc.ucr.edu](mailto:support@hpcc.ucr.edu).
 - **Software Modules**: Explore the wide range of software available on the HPCC Cluster through our [HPCC Software page](https://hpcc.ucr.edu/about/software/).
 
+### Ursa Major: Revolutionizing Research Computing at UCR
+
+**Ursa Major**, in partnership with Google Cloud Platform (GCP), marks a transformative leap in research computing at the University of California, Riverside. This initiative is designed to significantly enhance the research computing landscape, providing cutting-edge tools and services that cater to the diverse needs of our academic community. Through Ursa Major, we aim to empower researchers with unparalleled computing capabilities, fostering innovation, accelerating research outcomes, and cementing UCR's position as a leader in academic research.
+
+#### Key Services of Ursa Major:
+
+- **Secure Research Workstations**: Tailored high-performance workstations equipped with advanced memory, CPU, and storage options to meet individual research demands.
+
+- **Auto-scaling High-Performance Computing (HPC) Clusters**: On-demand access to scalable HPC clusters featuring the latest in CPU and GPU technology for complex computational tasks.
+
+- **Infinity Scaling Databases**: Dynamic database solutions that scale seamlessly with your research project's evolving requirements.
+
+- **AI and Machine Learning Services**: Leverage Google's Vertex.ai and other premier AI/ML platforms to push the boundaries of research innovation.
+
+- **Web Servers and Secure Research Storage**: Optimized web servers and storage solutions designed to meet the stringent security needs of research data.
+
+#### Integration with Software and Application Support:
+
+Ursa Major seamlessly integrates with our existing software and application support services, ensuring that researchers have access to a comprehensive suite of tools necessary for their work.
+
+- **High-Performance Computing Center (HPCC)**: The backbone of our computational research, now enhanced with Ursa Major's cloud capabilities, offers thousands of applications and custom software installs to meet every research need.
+
+- **Jupyter Lab/Notebooks**: Ursa Major expands our JupyterLab offerings, incorporating powerful cloud-based computational resources, including Linux desktop environments, GPUs, and CPUs, directly accessible through the Nautilus Cluster and Google Colab.
+
+- **Qualtrics and REDCap**: Ursa Major enhances data collection and survey capabilities, ensuring secure, efficient, and scalable solutions for electronic data capture.
+
 ### Jupyter Lab/Notebooks
 
 JupyterLab offers an interactive development environment for a variety of workflows, supporting data science, scientific computing, and machine learning projects.

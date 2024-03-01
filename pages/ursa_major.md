@@ -19,6 +19,28 @@ Through Ursa Major, UCR's researchers will have access to the following new and 
 
 This partnership with Google Cloud Platform is a major milestone for UCR, representing a significant investment in the future of research at our university. Our Research Computing Team is committed to providing a secure research computing infrastructure and research support services that will drive increased research output, grant funding, campus income, and prestige. This, in turn, will lead to the hiring of new faculty, positioning UCR as a leading R1 research university.
 
+#### Leveraging Cloud Computing for Research:
+
+Ursa Major is a testament to UCR's commitment to harnessing the power of cloud computing for research. Through this initiative, researchers can:
+
+- **Access Scalable Resources**: Instantly scale computing resources to match project demands without the need for upfront hardware investments.
+
+- **Accelerate Research Outcomes**: Utilize state-of-the-art computational tools and platforms to significantly reduce the time from research conception to publication.
+
+- **Collaborate Globally**: Facilitate seamless collaboration with researchers worldwide through cloud-based platforms, breaking down geographical and institutional barriers.
+
+- **Secure Data Management**: Benefit from robust security protocols and compliance measures inherent in cloud platforms, ensuring the safety and integrity of research data.
+
+#### Getting Started with Ursa Major:
+
+To begin leveraging Ursa Major for your research, visit our dedicated portal for detailed documentation, tutorials, and FAQs. Our support team is available to assist with onboarding, providing personalized consultations to ensure you make the most of the available resources.
+
+#### Future-Proofing Research at UCR:
+
+Ursa Major is not just an initiative; it's a commitment to future-proofing research at UCR. By adopting cloud computing technologies today, we are setting the stage for tomorrow's innovations, ready to meet the challenges of an ever-evolving research landscape.
+
+For further information, training sessions, and support regarding Ursa Major, please contact our research computing team. Together, let's explore the frontiers of research and innovation at UCR.
+
 ### Lets get started! ###
 
 * [Ursa Major HPC Clusters](../Knowledge_Base/Ursa_Major_HPC_Clusters.md)
