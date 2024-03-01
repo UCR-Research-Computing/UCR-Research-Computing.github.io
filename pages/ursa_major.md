@@ -24,11 +24,8 @@ This partnership with Google Cloud Platform is a major milestone for UCR, repres
 Ursa Major is a testament to UCR's commitment to harnessing the power of cloud computing for research. Through this initiative, researchers can:
 
 - **Access Scalable Resources**: Instantly scale computing resources to match project demands without the need for upfront hardware investments.
-
 - **Accelerate Research Outcomes**: Utilize state-of-the-art computational tools and platforms to significantly reduce the time from research conception to publication.
-
 - **Collaborate Globally**: Facilitate seamless collaboration with researchers worldwide through cloud-based platforms, breaking down geographical and institutional barriers.
-
 - **Secure Data Management**: Benefit from robust security protocols and compliance measures inherent in cloud platforms, ensuring the safety and integrity of research data.
 
 #### Getting Started with Ursa Major:

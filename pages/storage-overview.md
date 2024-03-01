@@ -4,66 +4,23 @@ title: Storage Overview
 sidebar_label: Storage Overview
 ---
 
-# University of California, Riverside - Research Computing Overview
-
-## Table of Contents
-- [Research Computing Policies](#research-computing-policies)
-- [Ursa Major](#ursa-major)
-- [Software and Application Support](#software-and-application-support)
-- [Open Science Grid](#open-science-grid)
-- [Storage Overview](#storage-overview)
-
-## Research Computing Policies
-
-### Overview
-The University of California, Riverside (UCR) supports the research community with advanced computing resources, data management services, and collaboration tools. This section outlines the policies and strategic initiatives for research computing facilities and services at UCR.
-
-### General Policies
-- **Access**: Available to all UCR faculty, researchers, and graduate students.
-- **Fair Use**: Users must use resources responsibly and considerately.
-
-[Full Policy Details](https://researchcomputing.ucr.edu/policies)
-
-## Ursa Major
-
-### Overview
-UCR's Ursa Major, in partnership with Google Cloud Platform (GCP), revolutionizes research computing by offering comprehensive services, enhancing productivity and campus prestige.
-
-### Key Services
-- Secure Research Workstations
-- Auto-scaling HPC Clusters
-- AI and ML Services
-
-[Learn More about Ursa Major](https://ursamajor.ucr.edu)
-
-## Software and Application Support
-
-### High-Performance Computing Center (HPCC)
-- **Custom Software Installs**: Email support@hpcc.ucr.edu.
-- **Software Modules**: Explore the [HPCC Software page](https://hpcc.ucr.edu/software).
-
-### Jupyter Lab/Notebooks
-- Nautilus Cluster Jupyter Lab - Free access to Linux desktop, GPUs, CPUs, Python, R, Markdown.
-- Google Colab - Free, with GPUs, CPUs, Python, R, Markdown integration.
-
-[UCR Research Computing Examples on GitHub](https://github.com/UCR-Research-Computing)
-
-### Qualtrics
-- Free for UCR Researchers and Staff.
-- [Start your surveys with Qualtrics](http://ucriverside.qualtrics.com).
-
-### REDCap
-- Secure web application for data capture in research studies.
-- [Access REDCap at UCR](https://redcap.ucr.edu).
-
-## Open Science Grid
-
-### Overview
-The OSG Consortium advances open science through distributed High Throughput Computing, offering shared computing and data capacity for distributed high-throughput computing (dHTC).
-
-[Learn More about OSG](https://opensciencegrid.org)
-
 ## Storage Overview
+
+# UCR Research Computing Storage Overview
+
+## Introduction
+
+At the University of California, Riverside (UCR), our strategic vision for research computing is aligned with the highest standards set by leading American Association of Universities (AAU). Our commitment is to provide an advanced, comprehensive storage infrastructure that supports our vibrant research community's diverse needs, fosters innovation, and enhances collaboration within and beyond campus borders.
+
+## Strategic Goals and Objectives
+
+Our storage strategy is crafted to support the broad spectrum of research activities at UCR, ensuring that our infrastructure not only meets current demands but is also poised for future advancements in research methodologies and data-intensive sciences. The core objectives of our storage solutions include:
+
+- **Enhancing Research Productivity and Innovation**: By offering a variety of storage solutions, we aim to streamline research workflows, thereby accelerating discovery and innovation.
+- **Ensuring Data Integrity and Security**: With a focus on secure storage options, we prioritize the protection of sensitive research data through compliance with federal regulations and university policies.
+- **Promoting Open Science and Collaboration**: By facilitating easy access to data and supporting data sharing practices, we encourage collaborative research efforts and contribute to the global advancement of knowledge.
+
+## UCR Research Storage Resources
 
 UCR offers diverse storage solutions to meet the needs of various research projects. For a detailed comparison of available storage solutions, view the [Storage Solutions Comparison Sheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vTvztWU2sZNbFEznVGUcCKwRK7xRrIUndqoDAKCWIBHPuhfUhbESQIvUMnuGM6Ugg/pubhtml?widget=true&headers=false).
 
@@ -97,8 +54,61 @@ UCR offers diverse storage solutions to meet the needs of various research proje
 | Share files outside of UCR               | Yes                                  | Yes                                   | Yes                                   | Yes                                                                                                                                       | Yes                                                                                                                                                              | Read-only            | No                                 | No                                                                                                                                           |
 | Data Encryption?                         | Yes                                  | Yes                                   | Yes &#8203;``【oaicite:0】``&#8203;
 
-
-
 [Detailed Storage Comparison](https://docs.google.com/spreadsheets/d/e/2PACX-1vTvztWU2sZNbFEznVGUcCKwRK7xRrIUndqoDAKCWIBHPuhfUhbESQIvUMnuGM6Ugg/pubhtml?widget=true&headers=false)
 
 For more information on research computing services at UCR, visit our [website](https://researchcomputing.ucr.edu) or contact our support team.
+
+### Ursa Major Storage
+
+The Ursa Major project, in partnership with Google Cloud Platform (GCP), offers expansive cloud storage solutions that cater to all types of research data. This initiative is designed to enhance storage flexibility, scalability, and access, supporting both high-performance computing needs and everyday research data management.
+
+- [Learn more about Ursa Major Storage](https://ursa-major.ucr.edu/storage)
+
+### Google Drive
+
+Google Drive provides a collaborative environment for storing, sharing, and editing documents, spreadsheets, and presentations. Integrated with UCR's G Suite, Google Drive is a versatile tool for managing research projects and facilitating teamwork.
+
+- [Access Google Drive](https://drive.google.com)
+
+### Ursa Major Data
+
+Ursa Major Data is focused on leveraging the data processing and analytics capabilities of GCP to support data-intensive research projects. It offers an ecosystem of tools for data analysis, machine learning, and visualization.
+
+- [Explore Ursa Major Data Services](https://ursa-major.ucr.edu/data-services)
+
+### GCS & AWS S3
+
+We offer access to Google Cloud Storage (GCS) and Amazon Web Services (AWS) S3 for scalable and secure cloud storage solutions. These platforms are ideal for storing large datasets, with robust data management and access controls.
+
+- [GCS Information](https://cloud.google.com/storage)
+- [AWS S3 Details](https://aws.amazon.com/s3/)
+
+### HPCC - GPFS
+
+The High-Performance Computing Center's General Parallel File System (GPFS) is tailored for computational research requiring high-speed access to large datasets. It supports the demanding I/O requirements of HPC applications.
+
+- [HPCC GPFS Overview](https://hpcc.ucr.edu/gpfs)
+
+### Ceph Secure Research Storage
+
+Ceph provides a highly reliable and scalable storage solution for the secure management of large volumes of data. It is particularly suited for research projects that require enhanced data protection measures.
+
+- [Ceph Storage Details](https://ceph.ucr.edu/secure-storage)
+
+### Dryad
+
+Dryad is an open-source, research data repository that promotes the discoverability, reuse, and citation of research data across all disciplines. It supports UCR's commitment to open science and data sharing.
+
+- [Submit to Dryad](https://datadryad.org/stash)
+
+### Backup Solutions
+
+Ensuring the longevity and integrity of research data, we offer comprehensive backup solutions. These include campus-wide services like CrashPlan for endpoint backup and specialized options for critical research data.
+
+- [CrashPlan Backup Service](https://crashplan.ucr.edu)
+
+## Conclusion
+
+UCR's research storage solutions are designed with the strategic intent to empower our researchers with the tools they need to excel in their fields, collaborate effectively, and contribute to the global body of knowledge. We are committed to continually evolving our infrastructure to meet the dynamic needs of our research community and uphold our position as a leading institution within the AAU and beyond.
+
+For detailed information on accessing and utilizing these storage resources, please visit the [UCR Research Computing website](https://researchcomputing.ucr.edu) or contact our support team.
