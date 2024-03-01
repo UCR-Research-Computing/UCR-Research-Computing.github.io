@@ -43,7 +43,7 @@ Resources and services that the University of California, Riverside (UCR) provid
 * [Dryad](https://datadryad.org/stash): For publishing research data for enhanced discoverability and compliance.
 
 
-### No Cost Research Credits
+### No Cost Cloud Research Credits
 
 Cloud research credits available to the University of California, Riverside (UCR) community, provided by cloud service providers like Amazon Web Services (AWS) and Google Cloud Platform (GCP). These credits allow researchers, students, and faculty to access advanced cloud computing resources for their projects without incurring costs. The initiative supports a wide array of research and educational activities by offering free access to computing power, data storage, and analytics tools. By applying for these credits, UCR community members can utilize cutting-edge technology for innovative research, fostering an environment of exploration and learning at no financial burden. This approach promotes accessibility to advanced resources, supporting UCR's commitment to advancing academic and research excellence.
 
@@ -89,7 +89,7 @@ The Condo Model fosters a sense of community and shared investment in research i
 
 ## Web-Based Resources
 
-"Web-Based Research Tools and Resources (Cost)" at the University of California, Riverside (UCR) are online services available to researchers for a fee. These tools are paid for by the researchers and include functionalities like data analysis, visualization, and collaboration, essential for supporting research activities. Accessing these resources allows UCR researchers to use advanced technologies for their projects, enhancing productivity and innovation.
+"Web-Based Research Tools and Resources" at the University of California, Riverside (UCR) are online services available to researchers for a fee. These tools are paid for by the researchers and include functionalities like data analysis, visualization, and collaboration, essential for supporting research activities. Accessing these resources allows UCR researchers to use advanced technologies for their projects, enhancing productivity and innovation.
 
 * [Web-Based Research Tools](web-based-research-tools.md): Various tools available for researchers
 * [CrashPlan Backup](backup.md): Offers backup services for data protection and disaster recovery.
