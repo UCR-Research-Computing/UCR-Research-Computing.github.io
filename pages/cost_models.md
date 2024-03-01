@@ -93,3 +93,31 @@ The Condo Model fosters a sense of community and shared investment in research i
 
 * [Web-Based Research Tools](web-based-research-tools.md): Various tools available for researchers
 * [CrashPlan Backup](backup.md): Offers backup services for data protection and disaster recovery.
+
+
+| Resource Name                                   | System-Wide Discounted | Currently UCR Subsidized | Subscription-Based | Condo Model | No Cost | Cost |
+|-------------------------------------------------|------------------------|--------------------------|--------------------|-------------|---------|------|
+| **NSF-Based Resources**                         |                        |                          |                    |             |         |      |
+| ACCESS Program                                  |                        |                          |                    |             | ✔       |      |
+| Open Science Grid                               |                        |                          |                    |             | ✔       |      |
+| NRP Nautilus Cluster                            |                        |                          |                    |             | ✔       |      |
+| **Cloud Resources**                             |                        |                          |                    |             |         |      |
+| AWS Enterprise Discount Program                 | ✔                      |                          |                    |             |         | ✔    |
+| GCP Enterprise Discount Program                 | ✔                      |                          |                    |             |         | ✔    |
+| Individual GCP Subscription Agreements          |                        |                          |                    |             |         | ✔    |
+| Google Cloud Storage and AWS S3 for Storage     |                        |                          |                    |             |         | ✔    |
+| Ursa Major                                      |                        | ✔                        |                    |             | ✔       |      |
+| Google Drive and Ursa Major Secure Storage      |                        | ✔                        |                    |             | ✔       |      |
+| Dryad                                           |                        | ✔                        |                    |             | ✔       |      |
+| AWS Cloud Credits                               |                        |                          |                    |             | ✔       |      |
+| GCP Cloud Credits                               |                        |                          |                    |             | ✔       |      |
+| Ursa Major Support                              |                        | ✔                        |                    |             | ✔       |      |
+| **On-Premise Resources**                        |                        |                          |                    |             |         |      |
+| HPCC Cluster                                    |                        |                          | ✔                  | ✔           |         |      |
+| HPCC-GPFS Cluster Storage                       |                        |                          | ✔                  | ✔           |         |      |
+| Ceph Secure Research Storage                    |                        |                          | ✔                  | ✔           |         |      |
+| RCSAS Local Cluster Support                     |                        |                          |                    |             | ✔       |      |
+| Research Facilitation and Support               |                        |                          |                    |             | ✔       |      |
+| **Web-Based Resources**                         |                        |                          |                    |             |         |      |
+| Web-Based Research Tools                        |                        |                          |                    |             |         | ✔    |
+| CrashPlan Backup                                |                        |                          |                    |             |         | ✔    |
