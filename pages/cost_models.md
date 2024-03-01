@@ -95,6 +95,8 @@ The Condo Model fosters a sense of community and shared investment in research i
 * [CrashPlan Backup](backup.md): Offers backup services for data protection and disaster recovery.
 
 
+Below is a resource to cost model matrix:
+
 | Resource Name                                   | System-Wide Discounted | Currently UCR Subsidized | Subscription-Based | Condo Model | No Cost | Cost |
 |-------------------------------------------------|------------------------|--------------------------|--------------------|-------------|---------|------|
 | **NSF-Based Resources**                         |                        |                          |                    |             |         |      |
