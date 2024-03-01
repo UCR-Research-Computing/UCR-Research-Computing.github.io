@@ -4,7 +4,7 @@ title: Grant Collaboration
 sidebar_label: Grant Collaboration
 ---
 
-# Grant Collaboration
+## Grant Collaboration
 
 At the University of California, Riverside (UCR), our commitment extends beyond providing cutting-edge computational resources. We aim to support our researchers in securing and managing grants effectively through a collaborative and resource-rich environment.
 

@@ -4,7 +4,7 @@ title: High-Performance Computing Center
 sidebar_label: High-Performance Computing Center
 ---
 
-# High-Performance Computing Center (HPCC)
+## High-Performance Computing Center (HPCC)
 
 The High-Performance Computing Center (HPCC) at UCR is a pivotal resource offering state-of-the-art research computing infrastructure and training at a low cost to all UCR researchers and affiliates. Supporting over 150 research groups and more than 800 active users, the HPCC is extensively utilized for both research and instruction across various disciplines, including computational studies, statistics, life sciences, and engineering.
 
