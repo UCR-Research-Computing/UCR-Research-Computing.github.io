@@ -16,7 +16,7 @@ GCP provides cloud credits for faculty and researchers working on eligible proje
 - **Eligibility:** Faculty, researchers, and students conducting research or educational projects.
 - **Application Process:** Applicants must submit a proposal outlining their project and its alignment with GCP's eligibility criteria.
 - **Credit Amount:** The credit amount varies based on the project scope and requirements.
-- **How to Apply:** Visit the [GCP Research Credits page](https://cloud.google.com/research-credits/) for more information and application instructions.
+- **How to Apply:** Visit the [GCP Research Credits page](https://cloud.google.com/edu/researchers?hl=en) for more information and application instructions.
 
 ## AWS Cloud Credits for Research
 
