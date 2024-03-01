@@ -1,5 +1,5 @@
 ---
-id: computing-and-research-infrastructure-support
+id: infrastructure-support
 title: Research Infrastructure Support
 sidebar_label: Research Infrastructure Support
 ---

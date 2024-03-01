@@ -17,6 +17,7 @@ Enhance the capacity for complex computational tasks, simulations, and analyses 
 
 - **Slurm:** For efficient workload management and resource allocation in HPC environments.
 - **OpenMPI:** Facilitates parallel computing, enabling researchers to run large-scale computational simulations.
+- **Open OnDemand:** Provides easy web-based access to HPC resources, allowing researchers to submit jobs, manage files, and access applications through a browser without the need for command-line interactions.
 
 ### Data Analysis and Visualization
 
@@ -25,23 +26,23 @@ Provide tools for processing, analyzing, and visualizing large datasets to deriv
 - **R/RStudio:** Offers a comprehensive environment for statistical computing and graphics.
 - **Python (Pandas, NumPy):** Essential libraries for data manipulation and analysis.
 - **MATLAB:** Supports numerical computation, visualization, and programming.
-- **Tableau:** Enables the creation of interactive data visualizations.
 
 ### Cloud Computing Platforms
 
 Offer scalable and flexible computing resources via the cloud, supporting a range of research activities without the need for direct management.
 
-- **AWS (Amazon Web Services)**
-- **Google Cloud Platform (GCP)**
-- **Microsoft Azure**
+- **AWS (Amazon Web Services):** Provides a comprehensive, evolving cloud computing platform.
+- **Google Cloud Platform (GCP):** UCR's Ursa Major initiative partners with GCP to deliver advanced cloud computing capabilities, integrating state-of-the-art tools and services to support research computing needs effectively.
 
 ### Machine Learning and Artificial Intelligence
 
 Equip researchers with the tools to develop algorithms capable of learning from data, making predictions, or automating decisions.
 
-- **TensorFlow:** Open-source framework for machine learning.
-- **PyTorch:** Library for Python, facilitating machine learning projects.
+- **TensorFlow:** Open-source framework for machine learning, ideal for building and training neural networks.
+- **PyTorch:** Library for Python, facilitating machine learning projects with dynamic computation graphs.
 - **Scikit-learn:** Machine learning library for Python, suitable for data mining and analysis.
+- **Vertex AI / Gemini API:** Provides a unified UI and API for managing resources across various machine learning services, simplifying model training and inference workflows.
+- **Large Language Models (LLM):** Enable advanced natural language processing tasks, from text generation to sentiment analysis, leveraging pre-trained models for high accuracy and efficiency.
 
 ### Computational Biology and Chemistry
 

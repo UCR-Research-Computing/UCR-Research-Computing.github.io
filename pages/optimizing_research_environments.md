@@ -1,5 +1,5 @@
 ---
-id: optimizing-research-environments
+id: lab-support
 title: Lab Support
 sidebar_label: Lab Support
 ---

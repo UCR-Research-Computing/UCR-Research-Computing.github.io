@@ -31,9 +31,9 @@ sidebar:
     children:
       - research-facilitation
       - software-support
-      - computing-and-research-infrastructure-support
-      - grant-collaboration-and-innovation
-      - optimizing-research-environments 
+      - infrastructure-support
+      - grant-collaboration
+      - lab-support
   - label: Training
     children:
       - workshops-and-webinars
