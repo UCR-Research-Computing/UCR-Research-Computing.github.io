@@ -6,40 +6,23 @@ id: dryad
 
 Dryad is a research data repository that allows UCR researchers to publish and archive their data for enhanced discoverability and compliance. This platform supports the principles of open science by making research data accessible to the broader scientific community, facilitating collaboration and contributing to the advancement of knowledge.
 
-## Dryad: Driving Discovery Through Open Data
+Dryad empowers UCR researchers by archiving and making their research data openly accessible, aligning with open science principles for global collaboration and accelerated discovery.
 
-Dryad is dedicated to advancing the open availability and routine reuse of research data, fostering the acceleration of discovery and the translation of research into societal benefits. platform supports the principles of open science by making it simpler to share, discover, use, and cite research data across all domains.
+## Highlights of Dryad
 
-## Core Services
+## Highlights of Dryad
 
-### Data Curation
+- **Broad Domain Support:** Accepts data across all research fields, especially benefiting areas without specialized repositories. [Learn more](https://datadryad.org/stash)
+- **Creative Commons Licensing:** Advocates for CC0 licensing, promoting unrestricted use and easier citation of research data. [View licensing details](https://creativecommons.org/share-your-work/public-domain/cc0/)
+- **Enhanced Discoverability:** Through data curation and publishing services, Dryad increases the visibility and impact of research data within the academic community. [Discover published datasets](https://datadryad.org/stash/discover)
+- **Commitment to Open Science:** Collaborates with organizations to link datasets with broader research outputs, embodying a comprehensive approach to open science. [Explore Dryad's open science initiatives](https://datadryad.org/stash/our_work)
+- **Visit Dryad:** To start sharing and discovering research data, [click here](https://datadryad.org/stash).
 
-- **Objective:** Ensure the metadata quality, verify the accessibility and usability of data, and confirm licensing for open sharing.
-- **Impact:** Supports authors in preparing their data for publication while ensuring it meets the highest standards for open data.
+## Getting Started with Dryad
 
-### Data Publishing
+1. **Evaluate Your Data:** Consider the scope and field of your research data to ensure it aligns with Dryad's submission criteria.
+2. **Prepare Your Data:** Use Dryad's data curation services to ensure your data meets quality, accessibility, and licensing standards.
+3. **Submit Your Data:** Follow the straightforward submission process to publish your data on Dryad, receiving a DOI for enhanced discoverability and citation.
+4. **Engage with the Community:** Leverage Dryad's platform to connect with a global network of researchers, fostering collaboration and furthering scientific inquiry.
 
-- **Objective:** Enhance the discoverability of data, link data with other research outputs, promote data citation, and value data contributions.
-- **Impact:** Makes data an integral part of the scholarly record, increasing its visibility and utility in the research community.
-
-### The Dryad Platform
-
-- **Features:** Offers an intuitive publishing experience for authors, seamlessly integrates with publisher workflows, and is built on open-se software accessible via an open API.
-- **Advantages:** Streamlines the data publication process, ensuring data is easily shared and connected with broader research outputs.
-
-## Open to All Research Domains
-
-Dryad serves the entire research spectrum, welcoming data submissions from all fields, particularly where specialized repositories do not exist and data can be openly shared. We champion the publication of data under a Creative Commons Public Domain License (CC0), advocating for the unrestricted use and citation of research data.
-
-## Commitment to Open Science
-
-process is exclusively dedicated to research data, working in harmony with like-minded organizations to enable the release and interconnection of related research outputs. Dryad is instrumental in linking datasets with software, supplementary information, research articles, preprints, data management plans, and more, ensuring a comprehensive and integrated approach to open science.
-
-## Key Takeaways
-
-- **Open Publication:** Dryad simplifies the sharing of research data, ensuring it is open, discoverable, and usable.
-- **Data Curation:** We provide expert curation services to prepare data for open publication, ensuring quality and compliance with open data standards.
-- **Wide Domain Support:** Regardless of research field, Dryad offers a platform for data sharing, particularly in areas lacking specialized repositories.
-- **Creative Commons Licensing:** Emphasizing the importance of open access, Dryad publishes data under CC0, facilitating free use and citation.
-
-Dryad is at the forefront of the movement towards a more open and collaborative research ecosystem, where data is freely available, driving innovation and discovery for the benefit of society.
+Dryad stands at the forefront of the open science movement, providing a pivotal platform where freely available data propels innovation and societal progress. By participating, UCR researchers contribute to a more open, collaborative, and impactful research ecosystem.
