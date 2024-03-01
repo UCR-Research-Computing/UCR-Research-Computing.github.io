@@ -29,7 +29,7 @@ sidebar:
       - backup
   - label: Support
     children:
-      - research-computing-consultation
+      - research-facilitation
       - software-and-application-support
       - computing-and-research-infrastructure-support
       - grant-collaboration-and-innovation
