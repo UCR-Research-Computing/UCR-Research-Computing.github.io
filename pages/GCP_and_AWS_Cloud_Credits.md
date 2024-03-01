@@ -1,5 +1,7 @@
 ---
 id: gcp-aws-cloud-credits
+title: Cloud Computing Credits
+sidebar_label: Cloud Computing Credits
 ---
 
 

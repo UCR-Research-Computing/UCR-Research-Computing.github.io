@@ -1,5 +1,7 @@
 ---
 id: optimizing-research-environments
+title: Optimizing Research Environments
+sidebar_label: Optimizing Research Environments
 ---
 
 # Research Lab Support

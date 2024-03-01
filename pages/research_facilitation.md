@@ -1,5 +1,7 @@
 ---
 id: research-computing-consultation
+title: Research Computing Consultation
+sidebar_label: Research Computing Consultation
 ---
 
 # Research Facilitation

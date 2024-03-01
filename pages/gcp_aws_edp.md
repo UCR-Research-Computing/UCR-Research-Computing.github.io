@@ -1,5 +1,8 @@
 ---
 id: gcp-aws-edp
+title: Cloud Computing Discounts
+sidebar_label: Cloud Computing Discounts
+description: Cloud Computing Discounts
 ---
 # Cloud Computing Discounts
 

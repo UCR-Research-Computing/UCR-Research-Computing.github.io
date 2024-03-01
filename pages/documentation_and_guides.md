@@ -1,5 +1,7 @@
 ---
 id: documentation-and-guides
+title: Documentation and Guides
+sidebar_label: Documentation and Guides
 ---
 
 # Documentation and Guides

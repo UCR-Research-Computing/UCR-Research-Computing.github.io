@@ -1,5 +1,7 @@
 ---
 id: dryad
+title: Dryad
+sidebar_label: Dryad
 ---
 
 # Dryad

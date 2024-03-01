@@ -1,6 +1,7 @@
 ---
 id: google-drive
-title: "Google Drive"
+title: Google Drive
+sidebar_label: Google Drive
 ---
 
 # Google Drive at UCR

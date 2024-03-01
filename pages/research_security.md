@@ -1,5 +1,7 @@
 ---
 id: research-security
+title: Research Security
+sidebar_label: Research Security
 ---
 
 # Security

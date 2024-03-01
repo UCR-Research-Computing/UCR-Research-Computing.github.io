@@ -1,3 +1,10 @@
+---
+id: ursa-major-policy
+title: Ursa Major Policy
+sidebar_label: Ursa Major Policy
+---
+
+
 # Ursa Major Policy
 
 To ensure the responsible and ethical use of Ursa Major services, the following policies have been established. These policies outline the terms of access, usage, support, privacy, ownership, security, and stewardship for Ursa Major. We strongly advise all users to read and understand these policies before using Ursa Major services.

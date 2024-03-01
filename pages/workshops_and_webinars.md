@@ -1,5 +1,7 @@
 ---
 id: workshops-and-webinars
+title: Workshops and Webinars  
+sidebar_label: Workshops and Webinars
 ---
 
 # Workshops and Webinars

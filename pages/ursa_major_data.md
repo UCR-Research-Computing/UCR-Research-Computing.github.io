@@ -1,5 +1,7 @@
 ---
 id: ursa-major-data
+title: Ursa Major Data
+sidebar_label: Ursa Major Data
 ---
 
 # Ursa Major Data

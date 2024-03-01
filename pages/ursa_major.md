@@ -1,5 +1,7 @@
 ---
 id: ursa-major
+title: Ursa Major
+sidebar_label: Ursa Major
 ---
 
 # Ursa Major

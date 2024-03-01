@@ -1,6 +1,7 @@
 ---
 id: gcs-aws-s3
 title: GCS and AWS S3
+sidebar_label: GCS and AWS S3
 ---
 
 # Google Cloud Storage (GCS) and Amazon Web Services (AWS) S3: Cloud Storage Solutions

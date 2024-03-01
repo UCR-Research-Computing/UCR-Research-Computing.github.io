@@ -1,5 +1,7 @@
 ---
 id: hpcc
+title: High-Performance Computing Center
+sidebar_label: High-Performance Computing Center
 ---
 
 # High-Performance Computing Center (HPCC)

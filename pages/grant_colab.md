@@ -1,5 +1,7 @@
 ---
 id: grant-collaboration-and-innovation
+title: Grant Collaboration
+sidebar_label: Grant Collaboration
 ---
 
 # Grant Collaboration

@@ -1,6 +1,8 @@
 ---
 id: ceph-secure-research-storage
-title: "Ceph Secure Research Storage"
+title: Ceph Secure Research Storage
+sidebar_label: Ceph Secure Research Storage
+description: Ceph-Based Central Campus Research Storage Solution
 ---
 
 # Ceph-Based Central Campus Research Storage Solution

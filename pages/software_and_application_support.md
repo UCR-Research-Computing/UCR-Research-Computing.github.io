@@ -1,5 +1,7 @@
 ---
 id: software-and-application-support
+title: Software and Application Support
+sidebar_label: Software and Application Support
 ---
 
 # Software and Application Support

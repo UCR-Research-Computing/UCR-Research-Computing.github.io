@@ -1,5 +1,7 @@
 ---
 id: cost-models
+title: Cost Models
+sidebar_label: Cost Models
 ---
 
 # Cost Models

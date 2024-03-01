@@ -1,5 +1,7 @@
 ---
 id: nautilus
+title: NRP Nautilus Cluster
+sidebar_label: NRP Nautilus Cluster
 ---
 
 # NRP Nautilus Cluster

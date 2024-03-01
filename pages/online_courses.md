@@ -1,6 +1,9 @@
 ---
 id: online-courses
+title: Online Courses
+sidebar_label: Online Courses
 ---
+
 
 # Online Courses
 

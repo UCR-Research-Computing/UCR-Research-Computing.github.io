@@ -1,6 +1,9 @@
 ---
 id: hpcc-gpfs
+title: HPCC GPFS
+sidebar_label: HPCC GPFS
 ---
+
 
 # HPCC GPFS
 
