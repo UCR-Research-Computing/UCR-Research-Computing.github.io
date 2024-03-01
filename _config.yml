@@ -34,12 +34,14 @@ sidebar:
       - infrastructure-support
       - grant-collaboration
       - lab-support
+      - knowledge-base
   - label: Training
     children:
       - workshops-and-webinars
       - online-courses
       - documentation-and-guides
   - research-security
+  - knowledge-base
   - cost-models
   - policies
   - about

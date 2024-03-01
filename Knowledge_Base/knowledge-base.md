@@ -4,51 +4,59 @@ title: Knowledge Base
 sidebar_label: Knowledge Base
 ---
 
-# Knowledge Base #
+## Introduction
 
-* ## [Computing](#Computing)
-    * ### [Ursa_Major](#ursa_major)
-        * #### [Clusters](#Clusters)
-            * [Available HPC Clusters](Available_Clusters.md)
-            * [How to: Launch an Ursa Major Cluster](How_To_Launch_a_Ursa_Major_Cluster.md)
-            * [How to: Connect to your HPC Cluster and Submit a Sample Job](how_to_connect_to_hpc_cluster_run_sample_job.md)              
-            * [How to: Configure a UCR Ursa Major Cluster](https://github.com/UCR-Research-Computing/UCR-Ursa-Major-Cluster-Blueprints) 
-            * [Ursa Major Job Script Examples](https://github.com/UCR-Research-Computing/UCR-Ursa-Major-Slurm-Job-Scripts)
-            * [Research Software available on a Ursa Major Cluster.](https://spack.readthedocs.io/en/latest/package_list.html)
-        * #### [Workstations](#Workstations)
-            * [Ursa Major Research Workstations](Ursa_Major_Research_Workstations.md)
-            * [How to: Launch a Ursa Major Research Workstation](Ursa_Major_Research_Workstations_How_to_Launch.md)
-            * [How to: Connect to a Ursa Major Research Workstation](Ursa_Major_Research_Workstations_How_to_Connect.md)
-        * #### [AI_ML_Services](#AL_ML_Services)
-            * [Ursa Major Reseach Services](Ursa_Major_Research_Services.md)
-    * ### [Local_Research_Systems](#Local_Research_Systems)
-        * [UCR Research Computing System Administration Service](UCR_Research_Computing_System_Administration_Service.md)
-        * [UCR Research Computing System Administration Service MOU](https://docs.google.com/document/d/19nYYXakruAbg1pxKybpSddSz8p1TBiBc/edit?usp=sharing&ouid=115996119773834121624&rtpof=true&sd=true)
-    * ### [Regional_and_National_Systems](#Regional_and_National_Systems)
-        * [The_Nautilus_Cluster](The_Nautilus_Cluster.md)
-        * [ACCESS_Systems](ACCESS_Systems.md)
-* ## [Storage](#Storage)
-    * ### [Local_Lab_Storage](#Local_Lab_Storage.md)
-    * ### [Ursa_Major_Secure_Research_Storage](Ursa_Major_Secure_Research_Storage.md)
-        * [How to: Create a Ursa Major Research Storage Bucket](Ursa_Major_Research_Storage_How_to_Create_Bucket.md)
-        * [How to: Access a Ursa Major Research Storage Bucket](Ursa_Major_Research_Storage_How_to_Access_Bucket.md)
-        * [How to: Mount Google Cloud Storage on a Linux Workstation or Cluster](how_to_mount_google_cloud_storage.md)  
-        * [How to: Mount Google Drive on a Linux Workstation or Cluster](how_to_mount_google_drive.md)  
-    * ### [Google_Drive](#Google_Drive.md)
-* ## [Security](#Security)
-    * [UCR_Data_Security_Plans](UCR_Data_Security_Plans.md)
-* ## [Software](#Software)
-    * [How to: Install and Run R JAGS on a Ursa Major HPC Cluster](R-JAGS.md)
-    * [Ask Chatgpt to help you make input files for molecular dynamics simulation packages](md_simulation_input_files_chatpgt.md)
-* ## [Information](#Information)
-    * [Linux_Manual](Linux_Manual.md)
-    * [Available_Resources](Resources.md)
-    * [Policy](Ursa_Major_Policy.md)
+Welcome to the UCR Research Computing Knowledge Base
 
-<script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-    Chatbot.init({
-        chatflowid: "84362af6-fde0-4758-8f68-6566f1ca6ff4",
-        apiHost: "http://34.70.75.7:3000",
-    })
-</script>
+Explore our comprehensive Knowledge Base to leverage the full spectrum of research computing resources at UCR. From computing clusters and workstations to secure storage solutions and software, find everything you need to advance your research.
+
+## Computing Resources
+
+#### Ursa Major
+Dive into the capabilities of Ursa Major, including clusters, workstations, and AI/ML services.
+
+##### Clusters
+- [Available HPC Clusters](Available_Clusters.md): Discover the HPC clusters at your disposal.
+- [Launching an Ursa Major Cluster](How_To_Launch_a_Ursa_Major_Cluster.md): Step-by-step guide to start your cluster.
+- [Connecting to HPC Cluster & Running a Sample Job](how_to_connect_to_hpc_cluster_run_sample_job.md): Learn to connect and submit jobs.
+- [Configuring a UCR Ursa Major Cluster](https://github.com/UCR-Research-Computing/UCR-Ursa-Major-Cluster-Blueprints): Configuration best practices.
+- [Ursa Major Job Script Examples](https://github.com/UCR-Research-Computing/UCR-Ursa-Major-Slurm-Job-Scripts): Sample scripts for job submission.
+- [Research Software on Ursa Major Cluster](https://spack.readthedocs.io/en/latest/package_list.html): Comprehensive software list.
+
+##### Workstations
+- [Ursa Major Research Workstations](Ursa_Major_Research_Workstations.md): Overview of research workstations.
+- [Launching a Ursa Major Research Workstation](Ursa_Major_Research_Workstations_How_to_Launch.md): How to start a workstation.
+- [Connecting to a Ursa Major Research Workstation](Ursa_Major_Research_Workstations_How_to_Connect.md): Connection instructions.
+
+##### AI & ML Services
+- [Ursa Major Research Services](Ursa_Major_Research_Services.md): AI and ML services provided.
+
+#### Local and National Systems
+- [UCR RCSAS](UCR_Research_Computing_System_Administration_Service.md): Introduction to RCSAS.
+- [RCSAS MOU](https://docs.google.com/document/d/19nYYXakruAbg1pxKybpSddSz8p1TBiBc/edit?usp=sharing&ouid=115996119773834121624&rtpof=true&sd=true): Service agreement details.
+- [The Nautilus Cluster](The_Nautilus_Cluster.md): Info on Nautilus within the Pacific Research Platform.
+- [ACCESS Systems](ACCESS_Systems.md): Access to national computational resources.
+
+## Storage Solutions
+
+#### Local Lab Storage
+- [Local Lab Storage](Local_Lab_Storage.md): Storage options for labs.
+
+#### Ursa Major Secure Research Storage
+- [Creating a Ursa Major Storage Bucket](Ursa_Major_Research_Storage_How_to_Create_Bucket.md): Setup guide.
+- [Accessing Ursa Major Storage](Ursa_Major_Research_Storage_How_to_Access_Bucket.md): How to access your storage.
+- [Mounting Google Cloud Storage](how_to_mount_google_cloud_storage.md): Integration instructions.
+- [Mounting Google Drive](how_to_mount_google_drive.md): Access Google Drive on Linux systems.
+
+#### Google Drive and Google Cloud Storage and AWS S3
+- [Using Google Drive](Google_Drive.md): Best practices for researchers.
+
+### Software
+
+- [Installing R JAGS on Ursa Major](R-JAGS.md): Installation guide.
+- [Molecular Dynamics Simulation Input Files with ChatGPT](md_simulation_input_files_chatpgt.md): How ChatGPT can assist.
+
+### General Information
+
+- [Linux Manual](Linux_Manual.md): Basics of using Linux in research computing.
+- [Ursa Major Policy](Ursa_Major_Policy.md): Policy document for using Ursa Major resources.
