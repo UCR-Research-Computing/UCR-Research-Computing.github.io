@@ -5,40 +5,55 @@ sidebar_label: Ceph Secure Research Storage
 description: Ceph-Based Central Campus Research Storage Solution
 ---
 
-# Ceph-Based Central Campus Research Storage Solution
+Given the detailed information about the upcoming Ceph-Based Central Campus Research Storage Solution at the University of California, Riverside (UCR), here's how to summarize and organize this content effectively for a webpage or informational document:
 
-The University of California, Riverside (UCR) is thrilled to announce an upcoming significant enhancement to our research computing infrastructure: the **Ceph-Based Central Campus Research Storage Solution**. This initiative, funded by an NSF CC* grant, is set to provide a scalable, resilient, and flexible storage solution designed to meet the diverse needs of our research community.
+---
 
-## Key Features
+## UCR's Ceph-Based Research Storage Solution
 
-- **Use Case:** Offers a scalable, resilient, and flexible storage solution for a wide range of research needs.
-- **Capacity:** Boasts 2.2PB of usable storage, with 20% integrated with the NRP Nautilus cluster for enhanced data processing capabilities.
-- **Connectivity:** Seamlessly connects to researchers' laptops, servers, storage systems, and research equipment, all securely through NFS, CIFS, and S3 interfaces.
-- **Cost:** Provides base allocations ranging from 200GB to 10TB at no cost, with additional storage available at $30 per TB per year.
+### Introduction
 
-## Distribution Strategy
+UC Riverside is excited to introduce a significant enhancement to our research infrastructure: the Ceph-Based Central Campus Research Storage Solution. Funded by an NSF CC* grant, this initiative aims to provide scalable, resilient, and flexible storage tailored to the diverse needs of our research community.
 
-Given UCR's research faculty numbers approximately 800-1000 members, a fair and equitable distribution strategy is essential:
+### Key Features
 
-### Base Allocation Scenario
+- **Scalable Storage**: 2.2PB of usable storage, integrating 20% with the NRP Nautilus cluster for advanced data processing.
+- **Wide Connectivity**: Secure connections via NFS, CIFS, and S3 interfaces to various devices and systems.
+- **Cost-Effective**: Base allocations from 200GB to 10TB at no cost, with additional storage at $30 per TB per year.
 
-- Each faculty member receives an equal base amount of storage, with potential adjustments based on specific research needs and project scale.
-- Initial equitable distribution offers each faculty member approximately 1TB to 1.5TB of storage.
+### Distribution Strategy
 
-### Merit and Need-Based Allocation
+To ensure fair access among UCR’s 800-1000 research faculty:
 
-- Additional allocations beyond the base amount are governed by an application process, evaluating the project's scope, data requirements, and potential research impact.
+- **Base Allocation**: Equitable initial storage allocation, adjustable based on research demands.
+- **Merit and Need-Based Allocation**: Applications reviewed for scope, data needs, and impact.
+- **Affordable Expansion**: Options to purchase additional storage at a nominal rate.
 
-### Cost for Additional Storage
+### Enhancements and Integrations
 
-- Faculties seeking to expand their storage allocation beyond the initial provision can do so by covering the additional cost of $30 per TB per year.
-- Funds generated from paid storage subscriptions contribute to a dedicated fund for system sustainability, refresh, and expansion.
+- **Nautilus Integration**: Seamless data transfer with a 100G connection via CENIC’s CalREN network.
+- **Federated Identities**: Secure access management using Shibboleth and CILogon, promoting collaboration within the Pacific Research Platform.
 
-## Benefits
+### Cybersecurity Measures
 
-This Ceph-based storage solution ensures flexibility and scalability, catering to the evolving storage needs of diverse research projects. By providing a robust infrastructure for data storage, UCR aims to support the research lifecycle at every stage, enabling seamless collaboration, ensuring data compliance, and fostering an environment where research can thrive without constraints.
+A comprehensive strategy featuring:
 
-## Getting Started
+- **Layered Security Model**: Incorporates encryption and network segmentation.
+- **Regular Assessments**: To ensure adherence to IS-3 Standards and safeguard data integrity.
+
+### Performance and Training
+
+- **Benchmarking**: To measure storage performance and system adoption.
+- **Training Sessions**: Scheduled soon after system launch, with ongoing workshops and resources.
+
+### Future Plans
+
+- **Strategic Expansion**: Consideration for network and storage capability enhancements.
+- **Resilience and Redundancy**: Emphasis on system reliability and data accessibility.
+
+---
+
+### Getting Started
 
 For researchers interested in leveraging the Ceph-Based Central Campus Research Storage Solution:
 
