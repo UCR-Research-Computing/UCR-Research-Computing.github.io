@@ -5,53 +5,64 @@ sidebar_label: Overview
 description: UCR Research Computing Compute Resources Overview
 ---
 
-# UCR Research Computing Compute Resources Overview
+# UCR Research Computing Compute Resources
 
-The University of California, Riverside (UCR) provides an extensive range of computational resources to support the diverse computational needs of its research community. These resources span from local high-performance computing clusters to national grid computing platforms and cloud computing services, ensuring researchers have the computational power required for their cutting-edge research.
+The University of California, Riverside (UCR) equips its research community with a comprehensive suite of computational resources to meet the varied demands of cutting-edge research. From local high-performance computing clusters to expansive national grid computing platforms and versatile cloud computing services, UCR ensures that researchers have the computational firepower needed to drive forward their innovative projects.
 
-## Available Compute Resources
+## Explore Our Campus's Compute Resources
 
 ### High-Performance Computing Center (HPCC)
 
-- **Summary**: UCR's HPCC offers a robust infrastructure for high-performance computing, featuring thousands of CPUs and GPUs to support intensive computational tasks and data analysis projects.
-- **Access**: Available to all UCR faculty, researchers, and graduate students.
-- [Learn More About HPCC](https://hpcc.ucr.edu/)
+UCR's HPCC is a powerhouse for high-performance computing, equipped with thousands of CPUs and GPUs designed for demanding computational tasks and data analysis projects.
 
-### Ursa Major
+- **Access for**: UCR faculty, researchers, and graduate students.
+- [Learn more about HPCC](https://hpcc.ucr.edu/)
 
-- **Summary**: Through UCR's partnership with Google Cloud Platform, Ursa Major provides advanced cloud computing resources, including auto-scaling compute clusters and machine learning services.
-- **Access**: Contact Research Computing for access details.
-- [Explore Ursa Major](https://ursa-major.ucr.edu/)
+### Ursa Major & Cloud Computing
 
-### NSF ACCESS
+In collaboration with Google Cloud Platform, Ursa Major offers state-of-the-art cloud computing resources, such as auto-scaling compute clusters and advanced machine learning services.
 
-- **Summary**: The ACCESS program, funded by the National Science Foundation, grants UCR researchers access to national computational resources, enhancing their ability to conduct large-scale scientific research.
-- **Access**: Applications for ACCESS resources are submitted through the NSF.
-- [Find Out More About NSF ACCESS](https://www.access-ci.org/)
+- **How to Access**: Contact Research Computing.
+- [Explore Ursa Major’s offerings](ursa_major.md)
 
-### Nautilus
+### National Resources
 
-- **Summary**: Part of the Pacific Research Platform, Nautilus facilitates high-speed data transfer and collaborative research with computational resources optimized for data-intensive science.
-- **Access**: Available to researchers involved in collaborative projects across the Pacific Research Platform.
-- [Learn About Nautilus](https://nautilus.optiputer.net/)
+#### NSF ACCESS
 
-### NSF OSG (Open Science Grid)
+The ACCESS program provides UCR researchers with access to computational resources on a national scale, supporting grand scientific inquiries.
 
-- **Summary**: The Open Science Grid offers distributed high-throughput computing resources, supporting a wide range of scientific projects from various disciplines.
-- **Access**: UCR researchers can tap into OSG resources for computationally intensive tasks.
-- [Discover NSF OSG](https://opensciencegrid.org/)
+- **Application**: Through the NSF.
+- [Discover more about NSF ACCESS](https://www.access-ci.org/)
 
-### GCP and AWS EDP (Enterprise Discount Program)
+#### Nautilus & Pacific Research Platform
 
-- **Summary**: UCR researchers can leverage cloud computing services from Google Cloud Platform and Amazon Web Services at discounted rates through the Enterprise Discount Program.
-- **Access**: Contact Research Computing for details on how to utilize these discounts.
-- [More on GCP and AWS EDP](https://cloud.google.com/)
+Nautilus enables fast data transfer and collaborative research, offering resources tailored for data-intensive science.
 
-### GCP and AWS Cloud Credits
+- **For**: Researchers in collaborative projects within the Pacific Research Platform.
+- [Learn about Nautilus](https://nautilus.optiputer.net/)
 
-- **Summary**: Cloud Credits programs from GCP and AWS offer financial support to researchers, providing credit awards that can be used towards cloud computing services.
-- **Access**: Researchers can apply for credits as part of specific GCP and AWS programs.
-- [Apply for GCP Cloud Credits](https://cloud.google.com/research-credits/)
-- [Apply for AWS Cloud Credits](https://aws.amazon.com/research-credits/)
+#### Open Science Grid (OSG)
 
-For assistance in selecting the most appropriate compute resource for your research or to request access, please reach out to the UCR Research Computing team at research-computing@ucr.edu.
+OSG provides distributed high-throughput computing resources across various scientific domains, facilitating a broad spectrum of research projects.
+
+- **Available to**: All UCR researchers.
+- [Discover the Open Science Grid](https://opensciencegrid.org/)
+
+### Cloud Services Discounts & Credits
+
+#### GCP and AWS Enterprise Discount Program (EDP)
+
+Secure cloud computing services at reduced rates from Google Cloud Platform and Amazon Web Services, enhancing your research with cloud capabilities.
+
+- **How to Utilize**: Reach out to Research Computing.
+- [More on GCP and AWS EDP](gcp_aws_edp.md)
+
+#### Cloud Credits for Research
+
+GCP and AWS Cloud Credits offer financial support for your research, providing credits for cloud services to fuel your projects.
+
+- **Apply for Credits**: Through specific GCP and AWS programs.
+- [GCP Cloud Credits](https://cloud.google.com/research-credits/)
+- [AWS Cloud Credits](https://aws.amazon.com/research-credits/)
+
+For guidance on selecting the right compute resource for your research or to request access, please contact the UCR Research Computing team at research-computing@ucr.edu. Our experts are here to support you in harnessing these powerful computational tools for your research endeavors.
