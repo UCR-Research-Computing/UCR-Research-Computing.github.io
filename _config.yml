@@ -46,8 +46,6 @@ sidebar:
   - success-stories
   - contact-us
 
-
-
 # Build settings
 markdown: kramdown
 plugins:
