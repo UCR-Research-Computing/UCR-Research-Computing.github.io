@@ -1,15 +1,7 @@
 ---
 id: gcp-aws-edp
 ---
-
 # Cloud Computing Discounts
-
----
-id: cloud-computing-system-wide-discounts
-title: "Cloud Computing: System-Wide Discounts"
----
-
-# Cloud Computing: System-Wide Discounts
 
 The University of California, Riverside (UCR) has secured system-wide discount agreements with leading cloud service providers, including Amazon Web Services (AWS), Google Cloud Platform (GCP), and Microsoft Azure. These agreements are designed to support the diverse needs of our research and academic community by providing cost-effective access to powerful computing resources.
 
@@ -65,7 +57,7 @@ To take advantage of these discounts and integrate cloud computing resources int
 
 GCP and Azure follow similar procedures in this regard.
 
-For detailed instructions on accessing these discounts and to start using cloud computing resources for your research or instructional needs, please visit the respective links provided above.
+For detailed instructions on accessing these discounts and to start using cloud computing resources for your research or instructional needs, please rearch out to us.
 
 ## Support and Consultation
 

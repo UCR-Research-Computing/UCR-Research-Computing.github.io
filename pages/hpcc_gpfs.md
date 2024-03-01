@@ -15,5 +15,5 @@ Accessibility: Windows, Mac/Apple, Web Browsers, Linux Command Line, Smart Phone
 
 More Info:
 
-[HPCC Storage Rates](http://hpcc.ucr.edu/rates.html#big-data-storage)
+[HPCC Storage Rates](http://hpcc.ucr.edu/rates.html#big-data-storage) | 
 [HPCC Storage Hardware](http://hpcc.ucr.edu/index.html#hpc-hardware)
