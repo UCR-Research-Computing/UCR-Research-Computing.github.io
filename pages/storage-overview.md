@@ -1,0 +1,104 @@
+---
+id: Storage Overview
+title: Storage Overview
+sidebar_label: Storage Overview
+---
+
+# University of California, Riverside - Research Computing Overview
+
+## Table of Contents
+- [Research Computing Policies](#research-computing-policies)
+- [Ursa Major](#ursa-major)
+- [Software and Application Support](#software-and-application-support)
+- [Open Science Grid](#open-science-grid)
+- [Storage Overview](#storage-overview)
+
+## Research Computing Policies
+
+### Overview
+The University of California, Riverside (UCR) supports the research community with advanced computing resources, data management services, and collaboration tools. This section outlines the policies and strategic initiatives for research computing facilities and services at UCR.
+
+### General Policies
+- **Access**: Available to all UCR faculty, researchers, and graduate students.
+- **Fair Use**: Users must use resources responsibly and considerately.
+
+[Full Policy Details](https://researchcomputing.ucr.edu/policies)
+
+## Ursa Major
+
+### Overview
+UCR's Ursa Major, in partnership with Google Cloud Platform (GCP), revolutionizes research computing by offering comprehensive services, enhancing productivity and campus prestige.
+
+### Key Services
+- Secure Research Workstations
+- Auto-scaling HPC Clusters
+- AI and ML Services
+
+[Learn More about Ursa Major](https://ursamajor.ucr.edu)
+
+## Software and Application Support
+
+### High-Performance Computing Center (HPCC)
+- **Custom Software Installs**: Email support@hpcc.ucr.edu.
+- **Software Modules**: Explore the [HPCC Software page](https://hpcc.ucr.edu/software).
+
+### Jupyter Lab/Notebooks
+- Nautilus Cluster Jupyter Lab - Free access to Linux desktop, GPUs, CPUs, Python, R, Markdown.
+- Google Colab - Free, with GPUs, CPUs, Python, R, Markdown integration.
+
+[UCR Research Computing Examples on GitHub](https://github.com/UCR-Research-Computing)
+
+### Qualtrics
+- Free for UCR Researchers and Staff.
+- [Start your surveys with Qualtrics](http://ucriverside.qualtrics.com).
+
+### REDCap
+- Secure web application for data capture in research studies.
+- [Access REDCap at UCR](https://redcap.ucr.edu).
+
+## Open Science Grid
+
+### Overview
+The OSG Consortium advances open science through distributed High Throughput Computing, offering shared computing and data capacity for distributed high-throughput computing (dHTC).
+
+[Learn More about OSG](https://opensciencegrid.org)
+
+## Storage Overview
+
+UCR offers diverse storage solutions to meet the needs of various research projects. For a detailed comparison of available storage solutions, view the [Storage Solutions Comparison Sheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vTvztWU2sZNbFEznVGUcCKwRK7xRrIUndqoDAKCWIBHPuhfUhbESQIvUMnuGM6Ugg/pubhtml?widget=true&headers=false).
+
+### Storage Feature/Cost Matrix
+
+| Feature                                  | OneDrive                             | Google Drive                          | HPCC - GPFS                           | GCP (GCS)                                                                                                                                 | AWS S3                                                                                                                                                            | Yuja                 | SDSC Qumulo                          | Crashplan Backup                                                                                                                             |
+|------------------------------------------|--------------------------------------|---------------------------------------|---------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------|-------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| Default Storage (free/included)          | Faculty/Staff - 100GB                | Faculty/Staff - 100GB, Students - 25GB| 20GB                                  | 0                                                                                                                                         | 0                                                                                                                                                                | 80TB campus storage  | 200TB minimum                        | N/A                                                                                                                                          |
+| User cost for initial/included storage   | $0                                   | $0                                    | $1000/yr                              | $0                                                                                                                                        | $0                                                                                                                                                               | $0                   | $1166/mo for initial 200TB          | $0                                                                                                                                           |
+| Cost to purchase additional storage      | $300/10TB/mo, $3600/10TB/yr           | $300/10TB/mo, $3600/10TB/yr            | TB plan: $1000/10TB/yr, GB plan: $25/100GB/yr | Standard - $20/TB/mo, Nearline - $10/TB/mo, Coldline - $4/TB/mo, Archive - $1.20/TB/mo                           | Standard - $23/TB/mo, Std Infreq - $12.50/TB/mo, One Zone - $10/TB/mo, Glacier Instant - $4/TB/mo, Glacier Flex - $3.60/TB/mo, Glacier Deep - $1/TB/mo  | TBD                  | $5.83/TB/mo                          | Essential - $3/200GB/mo, $1/100GB/mo additional, Professional - $8/Unlimited/mo                                     |
+| How to Purchase                          | Managed centrally, additional storage up to quota can be requested at no charge. | Managed centrally, additional storage up to quota can be requested at no charge. | Directly from HPCC                                | Various options, including direct billing from Google and Subscription Service agreements. See [GCP Pricing](https://cloud.google.com/storage/pricing) for details. | Direct purchase available with Amazon discounts. See [AWS Pricing](https://aws.amazon.com/s3/pricing/) for details.                                                  | Centrally managed    | TBD                                 | Direct purchase available.                                                                                                                     |
+| Normalized Cost for 1TB / annually       | $360                                 | $360                                  | $100                                  | Standard - $240, Nearline - $120, Coldline - $48, Archive - $14.4 [^1][^2]                                      | Standard - $276, Std Infreq - $150, One Zone - $120, Glacier Instant - $48, Glacier Flex - $43.20, Glacier Deep - $12 [^3][^4][^5]                                 | TBD                  | $70                                  | Essential - $132, Professional - $88                                                                               |
+| Replicated / backed up                   | Yes                                  | Yes                                   | Yes                                   | Yes                                                                                                                                       | Yes                                                                                                                                                              | TBD                  | Snapshots                           | Yes                                                                                                                                          |
+| Durability / Availability                | 3, minimum                           | 3, minimum                            | 3 / 3                                 | 11 / 4 (durability / availability)                                                                                                        | 11 / 4 (durability / availability)                                                                                                                                  | 4/TBD                | 3 / 3                               | 3 / 3                                                                                                                                        |
+| Access protocols                         |                                      |                                       |                                       |                                                                                                                                           |                                                                                                                                                                  |                      |                                    |                                                                                                                                              |
+| NFS                                      | No                                   | No                                    | No                                    | No                                                                                                                                        | No                                                                                                                                                               | No                   | Yes                                | No                                                                                                                                           |
+| CIFS / SMB                               |                                      | No                                    | No                                    | No                                                                                                                                        | No                                                                                                                                                               |                      | Yes                                | No                                                                                                                                           |
+| S3                                       | No                                   | No                                    | No                                    | Yes                                                                                                                                       | Yes                                                                                                                                                              | No                   | Yes                                | No                                                                                                                                           |
+| Web / HTTP                               | Yes                                  | Yes                                   | No                                    | Yes                                                                                                                                       | Yes                                                                                                                                                              | Yes                  | No                                 | No                                                                                                                                           |
+| FTP / SFTP / FTPS / ssh / scp / sshfs    | No                                   | No                                    | Yes                                   | No                                                                                                                                        | No                                                                                                                                                               | No                   | No                                 | No                                                                                                                                           |
+| Proprietary / App                        | OneDrive client, CyberDuck            | Google Drive client, CyberDuck         | CyberDuck                             | gsutil / gcloud CLI, CyberDuck                                                                                                             | Desktop client, CyberDuck                                                                                                                                             | Only for recording/upload, not for access | CyberDuck                           | Crashplan App                                                                                                                                |
+| Rclone supported?                        | Yes                                  | Yes                                   | Yes                                   | Yes                                                                                                                                       | Yes                                                                                                                                                              | No                   | Yes                                | No                                                                                                                                           |
+|                                          |                                      |                                       |                                       |                                                                                                                                           |                                                                                                                                                                  |                      |                                    |                                                                                                                                              |
+| Folder Sharing                           | Yes                                  | Yes                                   | Yes                                   | Yes                                                                                                                                       | Yes                                                                                                                                                              | Yes, with other users within Yuja only | Yes                                | No                                                                                                                                           |
+| Web Browser access                       | Yes                                  | Yes                                   | No                                    | Yes                                                                                                                                       | Yes                                                                                                                                                              | Yes                  | No                                 | No                                                                                                                                           |
+| Real-time Collaboration                  | Yes                                  | Yes                                   | Yes                                   | No                                                                                                                                        | Yes                                                                                                                                                              | No                   | No                                 | No                                                                                                                                           |
+| File Size limit                          | 15GB                                 | 570GB                                 | 5TB                                   | 5TB                                                                                                                                       | 5TB                                                                                                                                                              | No                   | 5TB                                | 5TB                                                                                                                                          |
+| File Versioning / snapshots              | Yes                                  | Yes                                   | No                                    | Yes                                                                                                                                       | Yes                                                                                                                                                              | No* (for video files ability to revert to original) | Yes                              |                                                                                                                                                |
+| Office Integration                       | Yes                                  | Yes                                   | No                                    | No                                                                                                                                        | No                                                                                                                                                               | No                   | No                                 | No                                                                                                                                           |
+| File Deletion Retention                  | 30 days                              | 25 days                               | 30 days                               | Yes                                                                                                                                       | 25 days                                                                                                                                                           | User recycle bin, admin can set retention, currently 60 days | 30 days                            | Unlimited                                                                                                                                    |
+| Share files outside of UCR               | Yes                                  | Yes                                   | Yes                                   | Yes                                                                                                                                       | Yes                                                                                                                                                              | Read-only            | No                                 | No                                                                                                                                           |
+| Data Encryption?                         | Yes                                  | Yes                                   | Yes &#8203;``【oaicite:0】``&#8203;
+
+
+
+[Detailed Storage Comparison](https://docs.google.com/spreadsheets/d/e/2PACX-1vTvztWU2sZNbFEznVGUcCKwRK7xRrIUndqoDAKCWIBHPuhfUhbESQIvUMnuGM6Ugg/pubhtml?widget=true&headers=false)
+
+For more information on research computing services at UCR, visit our [website](https://researchcomputing.ucr.edu) or contact our support team.
