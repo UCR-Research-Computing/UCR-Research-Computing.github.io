@@ -4,7 +4,7 @@ title: Knowledge Base
 sidebar_label: Knowledge Base
 ---
 
-## Introduction
+## Research Computing Knowledge Base
 
 Welcome to the UCR Research Computing Knowledge Base
 
