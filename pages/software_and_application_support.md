@@ -3,105 +3,84 @@ id: software-support
 title: Software Support
 sidebar_label: Software Support
 ---
+# UCR Research Computing Software Support
 
-## Software and Application Support
+## Introduction
 
-We provide comprehensive support for a wide range of software tools and applications essential for modern research, including AWS, Google Cloud, and JupyterLab/Notebooks. Our aim is to assist researchers in finding the most suitable software solutions, streamlining their research processes, and enhancing productivity.
+The University of California, Riverside (UCR) fosters an environment of innovation and excellence in research across all disciplines. UCR's Research Computing Software Support is designed to empower our research community with access to computational tools and resources, aligning with our goals, objectives, and the campus strategy. This document outlines the key categories of software support provided to ensure researchers have the technological capabilities to advance their work.
 
-### High-Performance Computing Center (HPCC)
+## Categories of Supported Software
 
-The HPCC at our campus hosts thousands of research and scientific software applications, available to enhance your research capabilities.
+### High-Performance Computing (HPC)
 
-- **Custom Software Installs**: For specific software needs, reach out to our support team via [support@hpcc.ucr.edu](mailto:support@hpcc.ucr.edu).
-- **Software Modules**: Explore the wide range of software available on the HPCC Cluster through our [HPCC Software page](https://hpcc.ucr.edu/about/software/).
+Enhance the capacity for complex computational tasks, simulations, and analyses through access to powerful computing resources.
 
-### Ursa Major: Revolutionizing Research Computing at UCR
+- **Slurm:** For efficient workload management and resource allocation in HPC environments.
+- **OpenMPI:** Facilitates parallel computing, enabling researchers to run large-scale computational simulations.
 
-**Ursa Major**, in partnership with Google Cloud Platform (GCP), marks a transformative leap in research computing at the University of California, Riverside. This initiative is designed to significantly enhance the research computing landscape, providing cutting-edge tools and services that cater to the diverse needs of our academic community. Through Ursa Major, we aim to empower researchers with unparalleled computing capabilities, fostering innovation, accelerating research outcomes, and cementing UCR's position as a leader in academic research.
+### Data Analysis and Visualization
 
-#### Key Services of Ursa Major:
+Provide tools for processing, analyzing, and visualizing large datasets to derive insights and disseminate findings effectively.
 
-- **Secure Research Workstations**: Tailored high-performance workstations equipped with advanced memory, CPU, and storage options to meet individual research demands.
-- **Auto-scaling High-Performance Computing (HPC) Clusters**: On-demand access to scalable HPC clusters featuring the latest in CPU and GPU technology for complex computational tasks.
-- **Infinity Scaling Databases**: Dynamic database solutions that scale seamlessly with your research project's evolving requirements.
-- **AI and Machine Learning Services**: Leverage Google's Vertex.ai and other premier AI/ML platforms to push the boundaries of research innovation.
-- **Web Servers and Secure Research Storage**: Optimized web servers and storage solutions designed to meet the stringent security needs of research data.
+- **R/RStudio:** Offers a comprehensive environment for statistical computing and graphics.
+- **Python (Pandas, NumPy):** Essential libraries for data manipulation and analysis.
+- **MATLAB:** Supports numerical computation, visualization, and programming.
+- **Tableau:** Enables the creation of interactive data visualizations.
 
-#### Integration with Software and Application Support:
+### Cloud Computing Platforms
 
-Ursa Major seamlessly integrates with our existing software and application support services, ensuring that researchers have access to a comprehensive suite of tools necessary for their work.
+Offer scalable and flexible computing resources via the cloud, supporting a range of research activities without the need for direct management.
 
-- **High-Performance Computing Center (HPCC)**: The backbone of our computational research, now enhanced with Ursa Major's cloud capabilities, offers thousands of applications and custom software installs to meet every research need.
-- **Jupyter Lab/Notebooks**: Ursa Major expands our JupyterLab offerings, incorporating powerful cloud-based computational resources, including Linux desktop environments, GPUs, and CPUs, directly accessible through the Nautilus Cluster and Google Colab.
-- **Qualtrics and REDCap**: Ursa Major enhances data collection and survey capabilities, ensuring secure, efficient, and scalable solutions for electronic data capture.
+- **AWS (Amazon Web Services)**
+- **Google Cloud Platform (GCP)**
+- **Microsoft Azure**
 
-### Jupyter Lab/Notebooks
+### Machine Learning and Artificial Intelligence
 
-JupyterLab offers an interactive development environment for a variety of workflows, supporting data science, scientific computing, and machine learning projects.
+Equip researchers with the tools to develop algorithms capable of learning from data, making predictions, or automating decisions.
 
-- **Nautilus Cluster Jupyter Lab - Free!**: Access features like Linux desktop, GPUs, CPUs, Python, R, Markdown, and more. [Explore Jupyter Lab on Nautilus](https://docs.nationalresearchplatform.org/userdocs/jupyter/jupyterhub/).
-- **Google Colab - Free!**: An introduction to Colab and Python, TensorFlow with GPU, and more. [Start with Google Colab](https://colab.research.google.com/).
-- **UCR Research Computing Examples**: Discover how to leverage GPUs, CPUs, Python, R, and Markdown in your research. [Check out our GitHub](https://github.com/UCR-Research-Computing/Useful-Google-Colab-Notebooks).
+- **TensorFlow:** Open-source framework for machine learning.
+- **PyTorch:** Library for Python, facilitating machine learning projects.
+- **Scikit-learn:** Machine learning library for Python, suitable for data mining and analysis.
 
-### Qualtrics
+### Computational Biology and Chemistry
 
-Qualtrics is a leading web-based platform for surveys, feedback, and polls, accessible to UCR Researchers and Staff for free.
+Support specialized research in genomics, proteomics, molecular modeling, and quantum chemistry with dedicated software.
 
-- **Access Qualtrics**: [Start your surveys with Qualtrics](http://ucriverside.qualtrics.com).
-- **Learn More**: Great documentation available from [Berkeley D-Lab](https://dlab.berkeley.edu/data-resources/qualtrics).
+- **BLAST:** Tool for biological sequence comparison.
+- **GROMACS:** Molecular dynamics package for particle simulations.
+- **Autodock:** Automated docking tools for predicting molecular interactions.
 
-To include the specific link to UCR's REDCap instance:
+### Geographic Information Systems (GIS)
 
----
+Facilitate the storage, analysis, and visualization of geographic and spatial data.
 
-### REDCap at UCR
+- **ArcGIS:** Comprehensive geographic information system.
+- **QGIS:** Open-source GIS platform for managing and visualizing geographic information.
 
-**REDCap** (Research Electronic Data Capture) is a secure web application designed to support data capture for research studies, offering an intuitive interface for creating and managing online surveys and databases. At the University of California, Riverside, REDCap is freely available to all researchers, streamlining the process of electronic data collection while ensuring data security and compliance with regulatory standards.
+### Software Development Tools
 
-#### Key Features of REDCap
+Provide tools that support the development, collaboration, and version control of software projects relevant to research.
 
-- **Secure and web-based:** Allows for data collection anywhere with internet access.
-- **User-friendly:** Intuitive interface for designing research studies without needing programming knowledge.
-- **Versatile:** Supports a wide range of data types and study designs.
-- **Compliant:** Meets stringent security standards to protect sensitive information.
+- **Git:** Version control system for tracking changes in source code.
+- **Docker:** Platform for deploying applications in containers, ensuring consistency across environments.
 
-#### Getting Started with REDCap at UCR
+### Jupyter Notebooks and Google Colab
 
-To access UCR's REDCap for your research needs, visit [redcap.ucr.edu](https://redcap.ucr.edu). This platform is designed to facilitate easy setup and management of your research data, from the creation of surveys to the secure collection and storage of responses.
+Jupyter Notebooks and Google Colab are interactive platforms that allow for the creation and sharing of documents with live code, visualizations, and text. Supporting languages like Python, R, and Julia, they are ideal for data analysis, machine learning, and more. Jupyter Notebooks can be run locally or on servers, while Google Colab offers cloud-based access to powerful computing resources, such as GPUs. Both facilitate collaborative research, enabling easy sharing and editing among peers.
 
-For assistance or more information on utilizing REDCap for your projects, please reach out to our support team.
+- **Jupyter Notebooks:** Enables the creation of documents that contain live code, visualizations, and narrative text.
+- **Google Colab:** A cloud-based platform that allows for the creation of Jupyter notebooks with the added benefit of free access to GPUs and TPUs, facilitating advanced computations, machine learning projects, and collaborative research without requiring local resource setup.
 
-### RStudio
+## Implementation and Support
 
-RStudio provides an environment for R, supporting direct code execution, plotting, debugging, and more.
+The UCR Research Computing team is committed to implementing these software solutions and providing ongoing support to enhance the research capabilities of our community. We offer workshops, consultations, and troubleshooting assistance to ensure effective use of these tools.
 
-- **R Studio Cloud - Free**: Perfect for limited, occasional use, offering up to 15 projects and 15 project hours per month. [Explore R Studio Cloud](#).
+## Getting Started
 
-### TensorFlow Hub
+For more information or to request support, please contact the UCR Research Computing team:
 
-TensorFlow Hub serves as a library for reusable machine learning models, helping to accelerate your projects with TensorFlow.
+- **Email:** research-computing@ucr.edu
+- **Website:** [UCR Research Computing](https://researchcomputing.ucr.edu/)
 
-- **Explore TensorFlow Examples**: [Google Colab TensorFlow Examples](https://colab.research.google.com/github/tensorflow/hub/blob/master/examples/colab/tf2_image_retraining.ipynb).
-
-### UCR Site Licenses
-
-Access a variety of applications covered by UCR campus licenses, tailored to support your research needs.
-Visit the [Site License website](https://its.ucr.edu/software) for more information.
-
-### Data Management
-
-#### FigShare
-
-A comprehensive repository for storing, sharing, and discovering research outputs.
-
-- **For various roles**: [Explore FigShare](https://figshare.com/).
-
-#### iRODS: Data Management Model
-
-iRODS simplifies data management across eight capabilities, supporting automated ingest, tiering, synchronization, and more.
-
-- **Data Management Patterns**: [Learn about iRODS capabilities](https://irods.org/).
-
-For further details and to explore useful notebooks, visit our [GitHub repository](https://github.com/YourGitHubLink).
-
-Replace placeholders (like `#` for links and `YourGitHubLink` for your actual GitHub repository link) with actual URLs to make the resources accessible to users.
+UCR Research Computing Software Support aligns with the university's strategic goals of promoting cutting-edge research and innovation, ensuring our researchers are equipped with the necessary tools to achieve breakthroughs and advance knowledge across disciplines.
