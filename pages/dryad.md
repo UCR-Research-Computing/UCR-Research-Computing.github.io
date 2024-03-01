@@ -12,8 +12,6 @@ Dryad empowers UCR researchers by archiving and making their research data openl
 
 ## Highlights of Dryad
 
-## Highlights of Dryad
-
 - **Broad Domain Support:** Accepts data across all research fields, especially benefiting areas without specialized repositories. [Learn more](https://datadryad.org/stash)
 - **Creative Commons Licensing:** Advocates for CC0 licensing, promoting unrestricted use and easier citation of research data. [View licensing details](https://creativecommons.org/share-your-work/public-domain/cc0/)
 - **Enhanced Discoverability:** Through data curation and publishing services, Dryad increases the visibility and impact of research data within the academic community. [Discover published datasets](https://datadryad.org/stash/discover)

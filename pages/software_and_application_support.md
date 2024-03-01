@@ -22,13 +22,9 @@ The HPCC at our campus hosts thousands of research and scientific software appli
 #### Key Services of Ursa Major:
 
 - **Secure Research Workstations**: Tailored high-performance workstations equipped with advanced memory, CPU, and storage options to meet individual research demands.
-
 - **Auto-scaling High-Performance Computing (HPC) Clusters**: On-demand access to scalable HPC clusters featuring the latest in CPU and GPU technology for complex computational tasks.
-
 - **Infinity Scaling Databases**: Dynamic database solutions that scale seamlessly with your research project's evolving requirements.
-
 - **AI and Machine Learning Services**: Leverage Google's Vertex.ai and other premier AI/ML platforms to push the boundaries of research innovation.
-
 - **Web Servers and Secure Research Storage**: Optimized web servers and storage solutions designed to meet the stringent security needs of research data.
 
 #### Integration with Software and Application Support:
@@ -36,9 +32,7 @@ The HPCC at our campus hosts thousands of research and scientific software appli
 Ursa Major seamlessly integrates with our existing software and application support services, ensuring that researchers have access to a comprehensive suite of tools necessary for their work.
 
 - **High-Performance Computing Center (HPCC)**: The backbone of our computational research, now enhanced with Ursa Major's cloud capabilities, offers thousands of applications and custom software installs to meet every research need.
-
 - **Jupyter Lab/Notebooks**: Ursa Major expands our JupyterLab offerings, incorporating powerful cloud-based computational resources, including Linux desktop environments, GPUs, and CPUs, directly accessible through the Nautilus Cluster and Google Colab.
-
 - **Qualtrics and REDCap**: Ursa Major enhances data collection and survey capabilities, ensuring secure, efficient, and scalable solutions for electronic data capture.
 
 ### Jupyter Lab/Notebooks
