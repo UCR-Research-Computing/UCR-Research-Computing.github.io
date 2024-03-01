@@ -40,6 +40,17 @@ No. ACCESS provides support to accommodate various levels of computing needs, fr
 - Accessing GPUs for machine learning in diverse research fields.
 - Engaging in code optimization and high-performance computing classes.
 
+### Project Types
+There are four different project types to choose from: Explore, Discover, Accelerate, and Maximize. And if you’re not sure, you can always start with an Explore project and upgrade as you learn more about your resource needs. Even if you know you’ll eventually need a Maximize project, you can begin with a smaller project so you can get started while you wait for the next semi-annual round of Maximize proposals to be reviewed. The table below compares the key features of each of the different project types.
+
+- **EXPLORE** : Great for resource evaluation, graduate student projects, small classes and training events, benchmarking, code development and porting, and similar small-scale uses.
+
+- **DISCOVER** : Designed for research grants with modest resource needs, Campus Champions, large classes and training events, NSF graduate fellowships, benchmarking and code testing at scale, and gateway development.
+
+- **ACCELERATE** : Best for experienced users with mid-scale resource needs, consolidating multi-grant programs, collaborative projects, preparing for Maximize ACCESS requests, and gateways with growing communities.
+
+- **MAXIMIZE** : The choice for large-scale research activities that need more resources than the limit for Accelerate ACCESS projects.
+
 ### Cost
 ACCESS resources and services are generally free for academic and research purposes, with certain exceptions for commercial use.
 
