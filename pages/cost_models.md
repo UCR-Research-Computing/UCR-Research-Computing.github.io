@@ -4,23 +4,20 @@ title: Cost Models
 sidebar_label: Cost Models
 ---
 
-# Cost Models
+## Cost Models
 
 We prioritize strategic alignment with our university's mission and the practical needs of accessing computational resources. Our funding support and cost models are designed to advance research by providing equitable access to state-of-the-art computational tools. Drawing from industry best practices and our strategic objectives, we have crafted a cost model framework that caters to the diverse requirements of our dynamic research community.
 
 Our model offers a variety of funding support and cost options to facilitate research endeavors across all disciplines. These options include System-Wide Discounted Rates, UCR Subsidized Access, the Condo Model for shared resources, No-Cost Access for specific initiatives, and Direct Cost Options for project-specific funding. This approach ensures flexibility, promoting the efficient use of resources and supporting a range of research activities, from nascent inquiries to extensive, data-driven projects.
 
 
-## NSF-Based Resources
+### NSF-Based Resources
 
 NSF-Based Resources are tailored to boost the research capabilities of the scientific community across a wide range of disciplines, and they're provided at no cost to researchers. This is made possible by funding from the National Science Foundation (NSF), a US government agency that backs fundamental research and education in all non-medical fields of science and engineering. Through this support, the NSF seeks to push the boundaries of knowledge, drive innovation, and tackle societal challenges, all without imposing any financial burden on researchers.
 
 * [ACCESS Program](nsf_access.md): Provides no-cost access to advanced computing systems and services, funded by the NSF.
 * [Open Science Grid](open_science_grid.md):: Access to distributed high-throughput computing resources.
 * [NRP Nautilus Cluster](Nautilus.md): Access to regional HPC resources via the Pacific Research Platform.
-
-
-## Cloud Resources
 
 
 ### System-Wide Discounted
@@ -50,8 +47,6 @@ Cloud research credits available to the University of California, Riverside (UCR
 * [AWS Cloud Credits](GCP_and_AWS_Cloud_Credits.md): Credits for AWS usage.
 * [GCP Cloud Credits](GCP_and_AWS_Cloud_Credits.md): Credits for GCP usage.
 
-## On-Premise Resources
-
 ### Subscription-Based
 
 Some on-premises services offered by the University of California, Riverside (UCR) that require a subscription fee for access. These services typically include access to high-performance computing (HPC) clusters, specialized software, and secure research storage solutions that are physically located on campus. By adopting a subscription-based model, UCR ensures that these critical resources are sustainably funded and maintained, allowing for ongoing upgrades and support.
@@ -63,7 +58,7 @@ This model allows researchers, faculty, and students to access powerful computat
 * [Ceph Secure Research Storage](ceph_secure_research_storage.md): Additional storage over the base allocation.
 
 
-### No Cost
+### On-Prem No Cost
 
 "On-Prem No Cost" signifies the University of California, Riverside (UCR) offering certain on-premises research support services and a base amount of Ceph research storage at no charge to its community. This arrangement includes access to local high-performance computing support, research facilitation services, and a foundational level of secure data storage without incurring any direct costs to the users. These resources are designed to support a wide range of academic and research activities, enabling faculty, students, and researchers to leverage essential computing and storage capabilities for their projects.
 
@@ -87,7 +82,7 @@ The Condo Model fosters a sense of community and shared investment in research i
 * [Ceph Secure Research Storage](ceph_secure_research_storage.md): Additional storage over the base allocation.
 
 
-## Web-Based Resources
+### Web-Based Resources
 
 "Web-Based Research Tools and Resources" at the University of California, Riverside (UCR) are online services available to researchers for a fee. These tools are paid for by the researchers and include functionalities like data analysis, visualization, and collaboration, essential for supporting research activities. Accessing these resources allows UCR researchers to use advanced technologies for their projects, enhancing productivity and innovation.
 
