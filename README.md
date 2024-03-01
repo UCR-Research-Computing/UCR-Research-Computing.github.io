@@ -3,9 +3,8 @@
 
 At the University of California, Riverside (UCR), we're committed to empowering our researchers with the most advanced computational resources and support services. Our mission is to drive innovation, facilitate groundbreaking research, and foster an environment where academic excellence thrives.
 
-## What We Offer
+### Research Computing Resources and Support
 
-### Access to Advanced Computational Resources, Support and Research Facilitation
 Discover a wide array of computational tools and platforms tailored to support your research endeavors. Through our sidebar navigation, and in the table below, you can explore our offerings:
 
 | Compute | Storage | Support |
@@ -25,32 +24,20 @@ Discover a wide array of computational tools and platforms tailored to support y
 The University of California, Riverside (UCR) provides a comprehensive and flexible approach to funding and cost models for research computing, designed to support the diverse needs of the research community. Here's an overview of the available cost models:
 
 - **System-Wide Discounted Rates**: UCR has established agreements with major cloud service providers (AWS, GCP, Azure) to offer cloud computing resources at reduced rates, benefiting the entire UCR community.
-
 - **UCR Subsidized Access**: Certain resources and services, including cloud computing resources and high-performance computing platforms, are provided at no cost to end users, subsidized by UCR to support academic and research projects.
-
 - **Condo Model**: This collaborative model allows faculty and departments to contribute financially to HPC resources in exchange for priority access and a portion of the computing capacity, promoting efficient resource use and community investment in research infrastructure.
-
 - **No-Cost Access**: Specific initiatives, such as the Ursa Major project in partnership with GCP, provide cutting-edge computing tools and services at no cost, aiming to revolutionize research computing at UCR.
-
 - **Direct Cost Options**: For projects requiring specialized or additional resources, direct cost options are available, offering project-specific funding solutions to meet unique research needs.
 
-## Training, Workshops and Resources
+### Training, Workshops, and Resources
 
-Committed to empowering its research community by providing comprehensive training and educational resources in research computing. Our goal is to enhance the skills and knowledge of researchers, enabling them to effectively utilize advanced computing tools and technologies in their work. Below is a summary of the training opportunities available to UCR researchers, faculty, and students.
+The University of California, Riverside (UCR) is dedicated to empowering its research community by offering comprehensive training and educational resources in research computing. Our aim is to boost the skills and knowledge of our researchers, facilitating their effective use of advanced computing tools and technologies. Below is a summary of the training opportunities available:
 
-## Workshop Series
+- [Workshop Series](./pages/workshops_and_webinars.md): A series of workshops introducing various aspects of research computing, covering topics from high-performance computing (HPC) and cloud computing platforms to programming languages, data analysis, and machine learning.
+- [Online Learning Resources](./pages/online-courses.md): A wealth of online tutorials, courses, and documentation is available for self-paced learning in research computing, covering a wide range of topics suitable for the diverse schedules and learning styles of our community.
+- [Documentation and Guides](./pages/documentation_and_guides.md): Researchers can access a comprehensive collection of guides, tutorials, and documentation designed to support both research computing and cloud computing projects, helping to advance their work.
 
-UCR offers a series of workshops designed to introduce participants to various aspects of research computing. These workshops cover a wide range of topics, from introductory sessions on high-performance computing (HPC) and cloud computing platforms to advanced tutorials on specific programming languages, data analysis techniques, and machine learning applications.
-
-## Online Learning Resources
-
-UCR researchers have access to a wealth of online learning resources, including tutorials, courses, and documentation, to support self-paced learning in research computing. These resources cover a broad spectrum of topics and are accessible anytime to accommodate the diverse schedules and learning preferences of our research community.
-
-## Documentation and Guides
-
-UCR researchers have access to a comprehensive collection of resources designed to support your research computing and cloud computing projects. Browse through our curated lists of guides, tutorials, and documentation to find the information you need to advance your work.
-
-## Research Computing Facilitation
+### Research Computing Facilitation
 
 UCR Research Computing provides one-on-one facilitation services to assist researchers in identifying the most appropriate computing resources, optimizing their research workflows, and overcoming technical challenges. Our facilitators work closely with researchers to ensure they can effectively apply the skills learned in training to their research projects.
 
