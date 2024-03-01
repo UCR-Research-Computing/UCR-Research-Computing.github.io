@@ -48,7 +48,7 @@ For further information, training sessions, and support regarding Ursa Major, pl
 ### Ursa Major Resources ###
 
 * [Ursa Major Policy](../Knowledge_Base/Ursa_Major_Policy.md)
-* [Knowledge Base](Knowledge_Base)
+* [Knowledge Base](../Knowledge_Base)
 * [Training and Workshops](../Knowledge_Base/README.md#Training_and_Workshops)
 
 Contact us for help or to learn more!

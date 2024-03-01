@@ -9,10 +9,10 @@ sidebar_label: NSF ACCESS
 The Advanced Cyberinfrastructure Coordination Ecosystem: Services & Support (ACCESS) is an initiative by the National Science Foundation (NSF) designed to enhance computational and data-intensive research across all scientific disciplines.
 
 ### Key Links
-- [ALLOCATIONS](https://allocations.access-ci.org/): Explore how to request computational resources.
-- [SUPPORT](https://support.access-ci.org/): Find assistance and helpdesk services.
-- [OPERATIONS](https://operations.access-ci.org/): Understand the operational aspects of ACCESS resources.
-- [METRICS](https://metrics.access-ci.org/): View performance and usage metrics of ACCESS projects.
+- [Allocations](https://allocations.access-ci.org/): Explore how to request computational resources.
+- [Support](https://support.access-ci.org/): Find assistance and helpdesk services.
+- [Operations](https://operations.access-ci.org/): Understand the operational aspects of ACCESS resources.
+- [Metrics](https://metrics.access-ci.org/): View performance and usage metrics of ACCESS projects.
 
 ### Getting Started with ACCESS
 - [Home](https://access-ci.org/): Discover more about ACCESS and its offerings.
