@@ -34,7 +34,6 @@ sidebar:
       - infrastructure-support
       - grant-collaboration
       - lab-support
-      - knowledge-base
   - label: Training
     children:
       - workshops-and-webinars
