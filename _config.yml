@@ -7,6 +7,7 @@ search_enabled: true
 sidebar:
   - label: Computing
     children:
+      - computing-resources-overview
       - hpcc
       - ursa-major
       - nsf-access
