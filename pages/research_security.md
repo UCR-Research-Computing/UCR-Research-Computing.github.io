@@ -28,10 +28,19 @@ We encourage researchers to connect with the Research Computing Team to explore 
 
 Understanding and adhering to security policies and regulations is critical for safeguarding research data. Our team provides guidance on key standards including:
 
-- **[CMMC (Cybersecurity Maturity Model Certification)](https://dodcio.defense.gov/CMMC/Model/)**: Framework to protect the defense industrial base from cybersecurity threats.
-- **[UC IS-3](http://policy.ucop.edu/doc/7000543/BFB-IS-3)**: University of California's policy on information security, outlining the standards for protecting institutional and personal information.
-- **[NIST 800-171](https://www.nist.gov/blogs/manufacturing-innovation-blog/what-nist-sp-800-171-and-who-needs-follow-it-0)**: Provides requirements for protecting controlled unclassified information in non-federal systems and organizations.
-- **[NSPM-33](https://trumpwhitehouse.archives.gov/presidential-actions/presidential-memorandum-united-states-government-supported-research-development-national-security-policy/)**: National Security Presidential Memorandum on improving the security of National Security, Defense, and Intelligence Community systems.
+## Security Policies and Regulations
+
+Understanding and adhering to security policies and regulations is critical for safeguarding research data. Our team provides guidance on key standards including:
+
+- **[CMMC (Cybersecurity Maturity Model Certification)](https://dodcio.defense.gov/CMMC/Model/)**: A framework designed to protect the defense industrial base from cybersecurity threats. CMMC outlines a comprehensive range of cybersecurity standards and best practices to ensure the security and resilience of defense-related information and technologies.
+
+- **[UC IS-3](http://policy.ucop.edu/doc/7000543/BFB-IS-3)**: The University of California's policy on information security, which sets forth the standards for protecting institutional and personal information across all UC campuses. This policy mandates a proactive approach to information security management, risk assessment, and incident response.
+
+- **[NIST 800-171](https://www.nist.gov/blogs/manufacturing-innovation-blog/what-nist-sp-800-171-and-who-needs-follow-it-0)**: Provides guidelines for protecting controlled unclassified information (CUI) in non-federal systems and organizations. NIST 800-171 is critical for research projects that handle sensitive information, ensuring that data security practices align with federal standards for information confidentiality, integrity, and availability.
+
+- **[NSPM-33](https://trumpwhitehouse.archives.gov/presidential-actions/presidential-memorandum-united-states-government-supported-research-development-national-security-policy/)**: A National Security Presidential Memorandum focused on improving the security of systems related to National Security, Defense, and the Intelligence Community. NSPM-33 emphasizes the importance of securing research and development activities against espionage, theft, and exploitation.
+
+Adherence to these standards is essential for maintaining the integrity and security of research activities at UCR. Our dedicated team is available to assist researchers in understanding these regulations and implementing the necessary security measures to comply with them. For more guidance or to discuss how these standards apply to your research, please reach out to our support team.
 
 ## Computing Resources and Security
 

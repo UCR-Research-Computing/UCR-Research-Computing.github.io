@@ -5,11 +5,7 @@ sidebar_label: About Us
 ---
 
 
-# About Us
-
 # Research Computing at the University of California, Riverside
-
-## Introduction
 
 UCR is committed to enhancing its research computing infrastructure to bolster the capabilities of its vibrant research community. With strategic alliances and pioneering endeavors such as Ursa Major, along with a full spectrum of research computing services, we aim to boost research efficiency, encourage collaborative efforts, and secure UCR's position as a leader in both academic and research domains. This document presents our strategic direction, major initiatives, and the leadership actions guiding research computing at UCR.
 
