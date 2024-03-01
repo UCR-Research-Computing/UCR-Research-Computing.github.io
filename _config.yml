@@ -30,7 +30,7 @@ sidebar:
   - label: Support
     children:
       - research-facilitation
-      - software-and-application-support
+      - software-support
       - computing-and-research-infrastructure-support
       - grant-collaboration-and-innovation
       - optimizing-research-environments 

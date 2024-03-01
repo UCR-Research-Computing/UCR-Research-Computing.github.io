@@ -1,10 +1,10 @@
 ---
-id: software-and-application-support
-title: Software and Application Support
-sidebar_label: Software and Application Support
+id: software-support
+title: Software Support
+sidebar_label: Software Support
 ---
 
-# Software and Application Support
+## Software and Application Support
 
 We provide comprehensive support for a wide range of software tools and applications essential for modern research, including AWS, Google Cloud, and JupyterLab/Notebooks. Our aim is to assist researchers in finding the most suitable software solutions, streamlining their research processes, and enhancing productivity.
 
