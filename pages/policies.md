@@ -8,26 +8,26 @@ Based on the provided information and the context of UCR's research computing po
 
 ## Resource Policies
 
-### High-Performance Computing (HPC) and Cloud Computing Services
+#### High-Performance Computing (HPC) and Cloud Computing Services
 
 - **Access and Usage**: UCR offers HPC resources based on project needs, prioritizing significant research impact and computational demand. Cloud computing services, in partnership with major providers, offer discounted rates and customized solutions for research projects.
 - **UCR-Ursa Major Policy**: This initiative provides no-cost access to GCP's advanced computing resources. Researchers can apply for Ursa Major through an internal review process, with allocations based on the project's scope and potential for innovation.
 
-### Data Management and Storage
+#### Data Management and Storage
 
 - **Solutions and Plans**: UCR supports a range of storage solutions from high-speed local storage for active projects to long-term archival options. Researchers are required to submit data management plans for projects exceeding a certain data size threshold, ensuring alignment with best practices and regulatory requirements.
 
 ## Support Policies
 
-### Research Computing System Administration Service (RCSAS)
+#### Research Computing System Administration Service (RCSAS)
 
 - **Comprehensive Support**: RCSAS support includes system design consultation, performance optimization, and security compliance checks. The service operates on a tiered support model, offering basic support to all research projects and advanced, dedicated support for projects with specific needs.
 
-### General Research Facilitation and Support
+#### Research Facilitation and Support
 
 - **Empowerment Through Education**: UCR provides a calendar of workshops and training sessions each quarter, covering topics from introductory computing to advanced machine learning techniques. Research facilitation services are available by appointment, offering personalized advice on computing strategies, software selection, and workflow optimization.
 
-## General Security Policies
+## Security Policies
 
 - **Security Policies and Regulations**: UCR's research computing environment adheres to several key security standards to protect sensitive data:
     - **[CMMC (Cybersecurity Maturity Model Certification)](https://dodcio.defense.gov/CMMC/Model/)**: A framework designed to protect the defense industrial base from cybersecurity threats. CMMC outlines a comprehensive range of cybersecurity standards and best practices to ensure the security and resilience of defense-related information and technologies.
@@ -36,7 +36,7 @@ Based on the provided information and the context of UCR's research computing po
     - **[NSPM-33](https://trumpwhitehouse.archives.gov/presidential-actions/presidential-memorandum-united-states-government-supported-research-development-national-security-policy/)**: A National Security Presidential Memorandum focused on improving the security of systems related to National Security, Defense, and the Intelligence Community. NSPM-33 emphasizes the importance of securing research and development activities against espionage, theft, and exploitation.
 
 
-### Service Level Agreements (SLAs)
+## Service Level Agreements (SLAs)
 
 - **Expectations for Major Services**: SLAs for HPC resources guarantee a 99% uptime, excluding scheduled maintenance. Cloud services offer response times within 24 hours for critical issues. RCSAS commits to resolving standard support requests within 3 business days. Training and facilitation services provide post-session support for up to two weeks to address follow-up questions.
 
