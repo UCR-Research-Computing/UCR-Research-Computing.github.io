@@ -4,24 +4,20 @@ title: Research Infrastructure Support
 sidebar_label: Research Infrastructure Support
 ---
 
-# Research Infrastructure Support
+## Research Infrastructure Support
 
-The University of California, Riverside (UCR) is committed to advancing its research capabilities through dedicated support for on-premises research clusters and major research computing systems. Our Research Computing System Administration Service (RCSAS), spearheaded by Chuck Forsyth, focuses on the design, construction, and administration of these critical infrastructures to enhance security, reliability, and innovation across various research domains.
+The University of California, Riverside (UCR) is committed to advancing its research capabilities through dedicated support for on-premises research clusters and major research computing systems. Our Research Computing System Administration Service (RCSAS), focuses on the design, construction, and administration of these critical infrastructures to enhance security, reliability, and innovation across various research domains.
 
-## Research Computing System Administration Service (RCSAS)
+### Research Computing System Administration Service (RCSAS)
 
 RCSAS plays a pivotal role in supporting UCR faculty and researchers by managing the backbone of our research infrastructure—on-prem research clusters and major computing systems. This initiative aims to consolidate support for campus research systems, ensuring they meet the highest standards of security and performance.
-
-## Key Highlights
 
 - **Purpose:** RCSAS is dedicated to constructing and managing robust research computing environments that meet the specific needs of UCR's research community, emphasizing enhanced security and innovation.
 - **Scope:** Our service encompasses the entire lifecycle of research computing systems, from initial design to ongoing administration, excluding backups and hardware hosting.
 - **Responsibilities:** The division of responsibilities between Research Computing and researchers ensures a collaborative approach to system design, software management, and troubleshooting.
 - **Stakeholders:** Leadership includes Charles Greer, Assoc. Vice Chancellor for Research, and Chuck Forsyth, Director of Research Computing, among others.
 
-## Objectives
-
-### Business/Research Objectives
+### Research Objectives
 
 - Extend RCSAS support to encompass all faculty and researchers at UCR.
 - Optimize research outcomes by providing robust computing infrastructure.
@@ -33,8 +29,6 @@ RCSAS plays a pivotal role in supporting UCR faculty and researchers by managing
 - Implement standardized hardware and software configurations to streamline system design and construction.
 - Ensure all research computing systems comply with IS-3 P2 Security controls or higher.
 - Leverage scalable administration tools and knowledge bases for efficient support.
-
-## Activities
 
 ### In-Scope Activities
 

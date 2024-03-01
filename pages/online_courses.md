@@ -34,10 +34,10 @@ Watch our selection of tutorial videos to get started with GCP and HPC, featurin
 
 Discover more through our curated playlists, compiling valuable video content from trusted sources on GCP, HPC, and research computing. We're constantly updating and adding new content, so check back often to find the latest resources.
 
-- **Everything Research Computing**: A collection of videos covering all aspects of research computing. [View Playlist](https://youtube.com/playlist?list=PLwj4XLXUayCrPIPakys7EyxH_WBVJi1y4&si=4NkIiMcW6piigEId)
-- **GCP Fundamentals**: A collection of videos covering the fundamentals of GCP. [View Playlist](https://youtube.com/playlist?list=PLIivdWyY5sqKh1gDR0WpP9iIOY00IE0xL&si=CdKAQTeXZZjYnzKM)
-- **Research Computing Essentials**: Videos on essential tools and techniques for effective research computing. [View Playlist](https://youtube.com/playlist?list=PLeCQbAbRSKR-HplPyeR35ZSy_nyxWTRm5&si=MbGcgWVVenqjIWPE)
-- **Machine Learning**: Explore machine learning methods in computing to elevate your research projects. [View Playlist](https://youtube.com/playlist?list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v&si=9Hz--OxnSMejvlSh)
+- [**Everything Research Computing**](https://youtube.com/playlist?list=PLwj4XLXUayCrPIPakys7EyxH_WBVJi1y4&si=4NkIiMcW6piigEId): A collection of videos covering all aspects of research computing.
+- [**GCP Fundamentals**](https://youtube.com/playlist?list=PLIivdWyY5sqKh1gDR0WpP9iIOY00IE0xL&si=CdKAQTeXZZjYnzKM): A collection of videos covering the fundamentals of GCP.
+- [**Research Computing Essentials**](https://youtube.com/playlist?list=PLeCQbAbRSKR-HplPyeR35ZSy_nyxWTRm5&si=MbGcgWVVenqjIWPE): Videos on essential tools and techniques for effective research computing.
+- [**Machine Learning**](https://youtube.com/playlist?list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v&si=9Hz--OxnSMejvlSh): Explore machine learning methods in computing to elevate your research projects.
 
 ### Other Online Course Locations
 
