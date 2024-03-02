@@ -12,7 +12,7 @@ Welcome to our Documentation and Guides page. Here, you'll find a comprehensive 
 
 | Guide Title                          | Description                                              | Link                  |
 |--------------------------------------|----------------------------------------------------------|-----------------------|
-| Introduction to Research Computing   | A beginner's guide to concepts and tools in research computing. | [View Guide](#) |
+| Introduction to Research Computing   | A beginner's guide to concepts and tools in research computing. | [View Guide](../Knowledge_Base/intro-research-computing-guide.md) |
 | Getting Started with GCP             | Step-by-step instructions to set up your GCP account and start using cloud resources. | [View Guide](#) |
 | Basic HPC Usage                      | Essentials for using high-performance computing systems effectively. | [View Guide](#) |
 

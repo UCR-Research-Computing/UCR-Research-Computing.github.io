@@ -8,7 +8,7 @@ sidebar_label: Software Support
 
 The University of California, Riverside (UCR) fosters an environment of innovation and excellence in research across all disciplines. UCR's Research Computing Software Support is designed to empower our research community with access to computational tools and resources, aligning with our goals, objectives, and the campus strategy. This document outlines the key categories of software support provided to ensure researchers have the technological capabilities to advance their work.
 
-### Categories and Examples of Supported Software
+### Examples of Supported Software
 
 See our [Knowledge Base](../Knowledge_Base/knowledge-base.md) for more information on specific software.
 
