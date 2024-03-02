@@ -5,17 +5,11 @@ sidebar_label: Ceph Secure Research Storage
 description: Ceph-Based Central Campus Research Storage Solution
 ---
 
-Given the detailed information about the upcoming Ceph-Based Central Campus Research Storage Solution at the University of California, Riverside (UCR), here's how to summarize and organize this content effectively for a webpage or informational document:
-
----
-
 ## UCR's Ceph-Based Research Storage Solution
-
-### Introduction
 
 UC Riverside is excited to introduce a significant enhancement to our research infrastructure: the Ceph-Based Central Campus Research Storage Solution. Funded by an NSF CC* grant, this initiative aims to provide scalable, resilient, and flexible storage tailored to the diverse needs of our research community.
 
-### Key Features
+### Secure Central Campus Research Storage
 
 - **Scalable Storage**: 2.2PB of usable storage, integrating 20% with the NRP Nautilus cluster for advanced data processing.
 - **Wide Connectivity**: Secure connections via NFS, CIFS, and S3 interfaces to various devices and systems.
@@ -58,7 +52,8 @@ A comprehensive strategy featuring:
 For researchers interested in leveraging the Ceph-Based Central Campus Research Storage Solution:
 
 1. **Evaluate Your Storage Needs:** Consider the size and access patterns of your data.
-2. **Apply for Allocation:** Submit an application detailing your project's scope and storage requirements.
+2. **Engauge with the Research Computing Team:** Meet with the Research Computing Team to discuss your project's scope and storage requirements.
 3. **Migrate or Upload Your Data:** Start utilizing the storage solution for your research projects.
 
-For more information on the Ceph-Based Central Campus Research Storage Solution or to apply for an allocation, please contact the Research Computing Team at UCR.
+Contact us for help or to learn more!
+[research-computing@ucr.edu](mailto:research-computing@ucr.edu) - [UCR Research Computing Slack](https://ucr-research-compute.slack.com/)

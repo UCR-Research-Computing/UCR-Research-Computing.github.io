@@ -17,6 +17,8 @@ RCSAS plays a pivotal role in supporting UCR faculty and researchers by managing
 - **Responsibilities:** The division of responsibilities between Research Computing and researchers ensures a collaborative approach to system design, software management, and troubleshooting.
 - **Stakeholders:** Leadership includes Charles Greer, Assoc. Vice Chancellor for Research, and Chuck Forsyth, Director of Research Computing, among others.
 
+**[RCSAS MOU](https://docs.google.com/document/d/1eD8p5CLpMsq6gdfAoHnx_xoY0i_3Ovha2IBrEhiYaIo/edit?usp=sharing)**
+
 ### Research Objectives
 
 - Extend RCSAS support to encompass all faculty and researchers at UCR.

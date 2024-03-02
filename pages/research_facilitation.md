@@ -25,7 +25,6 @@ Our facilitators work closely with researchers to understand their specific need
 
 To learn more about Research Computing Facilitation at UCR or to schedule a consultation, please contact:
 
-- **Email**: research-computing@ucr.edu
-- **Join Our Community**: [UCR Research Computing Slack](https://ucr-research-compute.slack.com/)
+[research-computing@ucr.edu](mailto:research-computing@ucr.edu) - [UCR Research Computing Slack](https://ucr-research-compute.slack.com/)
 
 At UCR, we’re dedicated to empowering our researchers with the tools, knowledge, and support needed to achieve groundbreaking discoveries. Explore how Research Computing Facilitation can transform your research today.

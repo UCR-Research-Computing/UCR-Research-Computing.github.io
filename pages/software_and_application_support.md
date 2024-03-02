@@ -78,7 +78,4 @@ Jupyter Notebooks and Google Colab are interactive platforms that allow for the 
 
 For more information or to request support, please contact the UCR Research Computing team:
 
-- **Email:** research-computing@ucr.edu
-- **Website:** [UCR Research Computing](https://researchcomputing.ucr.edu/)
-
-UCR Research Computing Software Support aligns with the university's strategic goals of promoting cutting-edge research and innovation, ensuring our researchers are equipped with the necessary tools to achieve breakthroughs and advance knowledge across disciplines.
+[research-computing@ucr.edu](mailto:research-computing@ucr.edu) - [UCR Research Computing Slack](https://ucr-research-compute.slack.com/)

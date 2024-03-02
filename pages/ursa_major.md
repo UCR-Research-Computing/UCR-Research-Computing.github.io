@@ -46,8 +46,8 @@ Ursa Major is a testament to UCR's commitment to harnessing the power of cloud c
 ### Ursa Major Resources ###
 
 * [Ursa Major Policy](../Knowledge_Base/Ursa_Major_Policy.md)
-* [Knowledge Base](../Knowledge_Base)
-* [Training and Workshops](../Knowledge_Base/README.md#Training_and_Workshops)
+* [Knowledge Base](../Knowledge_Base/knowledge-base.md)
+* [Training and Workshops](../pages/workshops_and_webinars.md)
 
 Contact us for help or to learn more!
 [research-computing@ucr.edu](mailto:research-computing@ucr.edu) - [UCR Research Computing Slack](https://ucr-research-compute.slack.com/)
