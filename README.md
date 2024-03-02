@@ -53,10 +53,4 @@ For more information, please contact us at:
 
 Welcome to the future of research computing at UCR. Let's innovate together.
 
-<script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-    Chatbot.init({
-        chatflowid: "2fd8a8a2-af9e-4466-9f66-27f6af7c0202",
-        apiHost: "http://34.70.75.7:3000",
-    })
-</script>
+{% include chatbot.html %}
