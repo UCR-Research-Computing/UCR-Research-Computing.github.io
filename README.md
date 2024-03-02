@@ -34,7 +34,7 @@ The University of California, Riverside (UCR) provides a comprehensive and flexi
 The University of California, Riverside (UCR) is dedicated to empowering its research community by offering comprehensive training and educational resources in research computing. Our aim is to boost the skills and knowledge of our researchers, facilitating their effective use of advanced computing tools and technologies. Below is a summary of the training opportunities available:
 
 - [Workshop Series](./pages/workshops_and_webinars.md): A series of workshops introducing various aspects of research computing, covering topics from high-performance computing (HPC) and cloud computing platforms to programming languages, data analysis, and machine learning.
-- [Online Learning Resources](./pages/online-courses.md): A wealth of online tutorials, courses, and documentation is available for self-paced learning in research computing, covering a wide range of topics suitable for the diverse schedules and learning styles of our community.
+- [Online Learning Resources](./pages/online_courses.md): A wealth of online tutorials, courses, and documentation is available for self-paced learning in research computing, covering a wide range of topics suitable for the diverse schedules and learning styles of our community.
 - [Documentation and Guides](./pages/documentation_and_guides.md): Researchers can access a comprehensive collection of guides, tutorials, and documentation designed to support both research computing and cloud computing projects, helping to advance their work.
 
 ### Research Computing Facilitation
