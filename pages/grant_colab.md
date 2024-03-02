@@ -18,13 +18,15 @@ UCR's array of computational resources, including high-performance computing (HP
 
 ### Premier Campus Facilities
 
-Our state-of-the-art campus facilities support a broad spectrum of research activities. Detailed in our "Facilities, Equipment, and Other Resources" document, these facilities not only house essential computational resources but also provide an ideal environment for research collaboration.
+Our state-of-the-art campus facilities, including the Campus Data Center, Bourns College of Engineering Data Center, and the Genomics Data Center, support a wide range of research activities across disciplines at the University of California, Riverside (UCR). These on-premises data centers are outfitted with the latest in computing and storage technology to meet the diverse needs of UCR's vibrant research community. Upgrades and modernization efforts, particularly at the School of Medicine Education Building’s Data Center, aim to enhance data accessibility and computational efficiency. Tailored to facilitate specific areas of research, these facilities offer resources such as high-performance computing, efficient cooling systems, and robust power capacities. The relocation of the High-Performance Computing Center to the newly renovated School of Medicine Data Center represents a significant enhancement of our computing infrastructure, enabling support for data-intensive research through additional clusters and improved networking capabilities. These premier facilities exemplify UCR’s dedication to promoting research excellence and innovation, providing an optimal environment for collaboration and technological progress. For more detailed information, please refer to our [UCR Facilities, Equipment and Other Resources](https://docs.google.com/document/d/1RnK6ifJdQyiTRPS7RQhEJIyI9yl0L1OSIA36DbB9nE4/edit?usp=sharing) document or visit our [on-prem facilities page](./on-prem-facilities.md).
+
+[UCR Research Network Map](https://www.google.com/maps/d/u/0/viewer?mid=1S7OMAHp160ysAQ1lv5EAFvwRvQrMXXsZ&hl=en&ll=33.97349853705288%2C-117.32628710552207&z=17) (Note: Google Maps access requires a personal account login; UCR Google Accounts may not have access.)
 
 ### Grant Resources
 
- * [UCR Campus CI Plan](https://docs.google.com/document/d/1vldZNIs0aSeW_pJ8qnOPw4rCEOTs1G0GiauEObfPryc/edit?usp=sharing)
- * [UCR Facilities, Equipment and Other Resources](https://docs.google.com/document/d/1RnK6ifJdQyiTRPS7RQhEJIyI9yl0L1OSIA36DbB9nE4/edit?usp=sharing)
- * [UCR NSF Budget Template](https://docs.google.com/spreadsheets/d/18nOpvPMo8uIVoxSCzNpfWxAsPhVGo7yh/edit#gid=797007624)
+* [UCR Campus CI Plan](https://docs.google.com/document/d/1vldZNIs0aSeW_pJ8qnOPw4rCEOTs1G0GiauEObfPryc/edit?usp=sharing)
+* [UCR Facilities, Equipment and Other Resources](https://docs.google.com/document/d/1RnK6ifJdQyiTRPS7RQhEJIyI9yl0L1OSIA36DbB9nE4/edit?usp=sharing)
+* [UCR NSF Budget Template](https://docs.google.com/spreadsheets/d/18nOpvPMo8uIVoxSCzNpfWxAsPhVGo7yh/edit#gid=797007624)
 * [NSF Proposal & Award Policies & Procedures Guide (PAPPG) (NSF 24-1)](https://nsf-gov-resources.nsf.gov/files/nsf24_1.pdf)
 
 ### Focused Grant Opportunities
@@ -34,19 +36,12 @@ The University of California Riverside (UCR) is dedicated to advancing its resea
 To this end, UCR's research computing strategy includes a focused interest in the following standing grant opportunities, which align with our mission to foster an environment of innovation and high-caliber research:
 
 - **Cyberinfrastructure for Sustained Scientific Innovation (CSSI):** Aims at revolutionizing research capabilities through innovative cyberinfrastructure, enhancing computational resources, data storage, and networking infrastructure.
-
 - **Cyberlearning and Future Learning Technologies (Cyberlearning):** Focuses on integrating advanced learning technologies into research methodologies, benefiting both students and faculty with new collaboration avenues.
-
 - **Cybersecurity Innovation for Cyberinfrastructure (CICI):** Committed to elevating cybersecurity measures to protect research data and infrastructure against emerging threats.
-
 - **Enabling Access to Cloud Computing Resources for CISE Research and Education:** Harnesses cloud computing to bolster computational capabilities for a broad spectrum of scientific inquiries and educational endeavors.
-
 - **Campus Cyberinfrastructure (CC):** Supports robust campus networking and cyberinfrastructure development, crucial for high-speed, reliable access to computational resources.
-
 - **Accelerating Research through International Network-to-Network Collaborations (AccelNet):** Enhances research impact through international collaborations, addressing global scientific challenges.
-
 - **Secure and Trustworthy Cyberspace (SaTC):** Aims at innovative cybersecurity solutions to ensure the integrity and security of cyberinfrastructure and research data.
-
 - **CISE Core Programs, Large Projects:** Encourages large-scale, transformative research projects in computer and information science and engineering, leading technological advancements.
 
 UCR's strategic interest in these grant opportunities reflects our commitment to leveraging national and international programs to enhance our research computing infrastructure and capabilities. Through these endeavors, we aim to not only support our current research needs but also anticipate and prepare for the future demands of scientific inquiry. Our goal is to create a robust, secure, and innovative research environment that fosters discovery, learning, and collaboration at the highest levels.

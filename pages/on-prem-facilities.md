@@ -5,11 +5,11 @@ sidebar_label: On-Prem Facilities
 ---
 
 
-# UCR Research Computing On-Premises Facilities Overview
+## UCR Research Computing On-Premises Facilities
 
 The University of California, Riverside (UCR) is equipped with state-of-the-art on-premises data centers and facilities, designed to support the advanced computing needs of our vibrant research community. These facilities, including the Campus Data Center, Bourns College of Engineering Data Center, and the Genomics Data Center, play a pivotal role in enabling high-performance computing, data storage, and collaborative research projects across disciplines.
 
-## Campus Data Center in the School of Medicine Education Building
+### Campus Data Center in the School of Medicine Education Building (SOM DC)
 
 - **Location**: School of Medicine Education Building
 - **Overview**: Serving as the nucleus of research computing at UCR, this facility is currently undergoing modernization to meet the growing demands of the university's research initiatives. It is being equipped with advanced storage nodes to enhance data accessibility and computational efficiency for researchers across all disciplines.
@@ -18,7 +18,7 @@ The University of California, Riverside (UCR) is equipped with state-of-the-art 
   - 500 kW of battery-backed power
   - Campus chilled water cooling system for efficient temperature management
 
-## Bourns College of Engineering Data Center (BCOE DC) in Chung Hall
+### Bourns College of Engineering Data Center (BCOE DC) in Chung Hall
 
 - **Location**: Chung Hall, Bourns College of Engineering
 - **Overview**: Dedicated to supporting the engineering research community, this facility provides essential computational resources and storage capabilities. It is strategically equipped to ensure that engineering researchers have seamless access to the tools and data necessary for their projects.
@@ -27,13 +27,13 @@ The University of California, Riverside (UCR) is equipped with state-of-the-art 
   - Approximately 200 kW power capacity
   - Hosting half of the Ceph storage solution
 
-## Genomics Data Center
+### Genomics Data Center
 
 - **Overview**: With the HPCC's transition to the newly renovated School of Medicine Data Center (SOMDC), the Genomics Data Center's future role is under consideration. It currently supports a significant portion of HPCC's operations, with a power capacity of about 250 kW.
 - **Features**:
   - Potential reevaluation of its function with HPCC's move
 
-## High-Performance Computing Center (HPCC) Transition to SOMDC
+##### High-Performance Computing Center (HPCC) Transition to SOMDC
 
 - **New Location**: School of Medicine Data Center (SOMDC)
 - **Overview**: The HPCC is set to move to the SOMDC, which has been recently renovated to offer top-notch facilities for research computing. This move signifies a strategic enhancement of UCR's computing capabilities to support data-intensive research.
@@ -42,7 +42,7 @@ The University of California, Riverside (UCR) is equipped with state-of-the-art 
   - Advanced cooling with campus chilled water
   - Hosting of additional research clusters and Ceph storage
 
-## Additional Research Clusters and Infrastructure in SOMDC
+##### Additional Research Clusters and Infrastructure in SOMDC
 
 - **Research Clusters**: SOMDC hosts seven research clusters owned by researchers and supported by Research Computing via the RCSAS, highlighting the collaborative nature of UCR's research computing efforts.
 - **Core Networking**: The facility houses the core routing and networking equipment for the Science DMZ, facilitating high-speed data transfer and connectivity within the research network.
