@@ -25,6 +25,6 @@ To discover how our Research Lab Support services can benefit your lab or to dis
 - **Email**: [research-computing@ucr.edu](mailto:research-computing@ucr.edu)
 - **Join Our Community**: [UCR Research Computing Slack](https://ucr-research-compute.slack.com/)
 
-We are here to empower your research with the necessary computing resources and support, aiming to achieve excellence and innovation in all research activities. Let's work together to enhance the impact of your research.
+We are here to empower your research with the necessary computing resources and support, aiming to achieve excellence and innovation in all research activities. Let's work together to enhance the impact of your research. Check out ***Ursa Major Ask*** our AI Chat Bot in beta: <a href="http://34.70.75.7:3000/chatbot/0528881e-633f-4e5a-a6df-7a41e74df4e7" target="_blank">Ursa Major Ask</a>
 
 ---

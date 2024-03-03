@@ -41,3 +41,5 @@ Based on the provided information and the context of UCR's research computing po
 - **Expectations for Major Services**: SLAs for HPC resources guarantee a 99% uptime, excluding scheduled maintenance. Cloud services offer response times within 24 hours for critical issues. RCSAS commits to resolving standard support requests within 3 business days. Training and facilitation services provide post-session support for up to two weeks to address follow-up questions.
 
 These details provide a structured overview of the policies and support mechanisms in place at UCR to facilitate high-caliber research computing while ensuring security and compliance with relevant standards and regulations.
+
+Check out ***Ursa Major Ask*** our AI Chat Bot in beta: <a href="http://34.70.75.7:3000/chatbot/0528881e-633f-4e5a-a6df-7a41e74df4e7" target="_blank">Ursa Major Ask</a>
