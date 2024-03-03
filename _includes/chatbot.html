@@ -1,12 +1,17 @@
 <!-- _includes/chatbot.html -->
 
-<script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-    Chatbot.init({
-        chatflowid: "0a631035-d59f-4a16-9939-ccaa27d0b6e7",
-        apiHost: "http://34.70.75.7:3000",
-    })
-</script>
+
+<div style="width: 400px; height: 600px;">
+    <flowise-fullchatbot></flowise-fullchatbot>
+    <script type="module">
+        import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+        Chatbot.initFull({
+            chatflowid: "0528881e-633f-4e5a-a6df-7a41e74df4e7",
+            apiHost: "http://34.70.75.7:3000",
+        })
+    </script>
+  </div>
+
 
 <div style="width: 300px; height: 200px;">
     <script async id="asciicast-hG0XEvk90BHcYmDDGw1AKon5R" src="https://asciinema.org/a/hG0XEvk90BHcYmDDGw1AKon5R.js"></script>
