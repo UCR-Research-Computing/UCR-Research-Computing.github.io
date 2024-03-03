@@ -28,9 +28,9 @@ Leverage powerful software tools designed to harness the full potential of HPC c
 
 | Software                                       | Use Case                    | Example Command                                                                 |
 |------------------------------------------------|-----------------------------|---------------------------------------------------------------------------------|
-| [TensorFlow](#)                                | Deep Learning               | `tensorflow_model_server --port=8500 --model_name=my_model --model_base_path=/models/my_model` |
-| [PyTorch](#)                                   | Machine Learning Models     | `python -m torch.distributed.launch --nproc_per_node=NUM_GPUS_YOU_HAVE my_train_script.py`    |
-| [Horovod](#)                                   | Distributed Training        | `horovodrun -np 4 -H localhost:4 python train.py`                               |
+| [TensorFlow](https://www.tensorflow.org/)                                | Deep Learning               | `tensorflow_model_server --port=8500 --model_name=my_model --model_base_path=/models/my_model` |
+| [PyTorch](https://pytorch.org/)                                   | Machine Learning Models     | `python -m torch.distributed.launch --nproc_per_node=NUM_GPUS_YOU_HAVE my_train_script.py`    |
+| [Horovod](https://horovod.ai/)                                   | Distributed Training        | `horovodrun -np 4 -H localhost:4 python train.py`                               |
 | [CUDA](#)                                      | Parallel Computing          | `nvcc my_cuda_program.cu -o my_cuda_program`                                    |
 | [Hugging Face Transformers](#)                 | Natural Language Processing | `transformers-cli convert --model_type bert --tf_checkpoint /path/to/checkpoint --config /path/to/bert_config.json --pytorch_dump_output /path/to/pytorch_model.bin` |
 
@@ -38,22 +38,22 @@ Leverage powerful software tools designed to harness the full potential of HPC c
 
 | Software                                       | Use Case                    | Example Command                                                                 |
 |------------------------------------------------|-----------------------------|---------------------------------------------------------------------------------|
-| [AlphaFold](#)                                 | Protein Structure Prediction| `alphafold --fasta_path=my_sequence.fasta --output_dir=output`                  |
-| [FreeSurfer](#)                                | Neuroimaging Analysis       | `recon-all -s subject_name -i input_volume.nii -all`                            |
+| [AlphaFold](https://github.com/google-deepmind/alphafold)                                 | Protein Structure Prediction| `alphafold --fasta_path=my_sequence.fasta --output_dir=output`                  |
+| [FreeSurfer](https://surfer.nmr.mgh.harvard.edu/)                                | Neuroimaging Analysis       | `recon-all -s subject_name -i input_volume.nii -all`                            |
 
 ### Earth Science
 
 | Software                                       | Use Case                    | Example Command                                                                 |
 |------------------------------------------------|-----------------------------|---------------------------------------------------------------------------------|
-| [GDAL](#)                                      | Geospatial Data Processing  | `gdal_translate -of GTiff input.tif output.tif`                                 |
-| [Pangeo](#)                                    | Climate and Ocean Science   | Example usage involves deploying Pangeo on cloud platforms for scalable data processing. |
+| [GDAL](https://gdal.org/)                                      | Geospatial Data Processing  | `gdal_translate -of GTiff input.tif output.tif`                                 |
+| [Pangeo](https://pangeo.io/)                                    | Climate and Ocean Science   | Example usage involves deploying Pangeo on cloud platforms for scalable data processing. |
 
 ### Chemistry & Physics
 
 | Software                                       | Use Case                    | Example Command                                                                 |
 |------------------------------------------------|-----------------------------|---------------------------------------------------------------------------------|
-| [GROMACS](#)                                   | Molecular Dynamics          | `gmx mdrun -s topol.tpr -deffnm output`                                         |
-| [Quantum ESPRESSO](#)                          | Materials Modeling          | `pw.x -in Si.scf.in > Si.scf.out`                                               |
+| [GROMACS](https://www.gromacs.org/)                                   | Molecular Dynamics          | `gmx mdrun -s topol.tpr -deffnm output`                                         |
+| [Quantum ESPRESSO](https://www.quantum-espresso.org/)                          | Materials Modeling          | `pw.x -in Si.scf.in > Si.scf.out`                                               |
 
 ### Humanities & Social Sciences
 
@@ -175,3 +175,18 @@ These LLM resources are designed to push the boundaries of digital creativity an
 - [UCR Research Computing Knowledge Base](#) - Find specific examples and tutorials tailored to UCR's research computing environment.
 
 ---
+
+
+<!-- 
+Visual Appeal Enhancements:
+1. Featured AI Chatbots: Add icons next to each chatbot name for visual differentiation. Consider adding screenshots of chatbot interfaces for a preview of user interaction.
+2. Popular AI & ML Software Tools for HPC Clusters: Include screenshots or logos next to each software tool for quick identification. Visual cues could also indicate the most suitable software tools for specific research domains.
+3. Top Open Source AI Models: Place visual representations, such as output examples or model architecture diagrams, next to each model's description to aid in understanding model capabilities and potential applications.
+4. Key AI Domains and Applications: Use icons to represent each domain (e.g., speech bubble for NLP, eye for computer vision) to make the document more navigable and engaging.
+
+Interactive Elements Integration:
+1. Development Tools for AI Innovation: Embed tutorial videos or clickable demos for tools like LangChain, Vector Stores, and Embedding Tools, showcasing setup environments, examples of code execution, or interactive demos.
+2. Image & Video Generation Resources: Provide clickable demos for tools such as DALL·E 3, Stable Diffusion, and Kaiber AI, where users can input text prompts and see generated images or video snippets.
+3. Music Generation and Voice Cloning and Synthesis: Offer samples of generated music or synthesized voice clips for direct listening on the page. Include interactive elements for experimenting with different inputs to generate custom audio samples.
+4. Useful Links & Resources: Incorporate QR codes or short interactive tutorials on how to effectively navigate and utilize these platforms, helping users to quickly access and familiarize themselves with valuable resources.
+-->
