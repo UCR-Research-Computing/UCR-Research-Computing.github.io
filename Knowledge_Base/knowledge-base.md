@@ -30,6 +30,7 @@ Dive into the capabilities of Ursa Major, including clusters, workstations, and 
 
 ##### AI & ML Services
 - [Ursa Major Research Services](Ursa_Major_Research_Services.md): AI and ML services provided.
+- [LLM Inference Settings](llm_inference_settings.md): How to adjust LLM Inference Output.
 
 #### Local and National Systems
 - [UCR RCSAS](UCR_Research_Computing_System_Administration_Service.md): Introduction to RCSAS.
