@@ -7,17 +7,20 @@ At the University of California, Riverside (UCR), we're committed to empowering 
 
 Discover a wide array of computational tools and platforms tailored to support your research endeavors. Through our sidebar navigation, and in the table below, you can explore our offerings: Check out ***Ursa Major Ask*** our AI Chat Bot in beta: <a href="http://34.70.75.7:3000/chatbot/0528881e-633f-4e5a-a6df-7a41e74df4e7" target="_blank">Ursa Major Ask</a>
 
-| Compute | Storage | Support |
-|---------|---------|---------|
-| [ACCESS Program](./pages/nsf_access.md) | [Google Drive](./pages/Google_Drive.md) | [Research Computing Consultation](./pages/research-computing-consultation.md) |
-| [Open Science Grid](./pages/open_science_grid.md) | [GCS and AWS S3](./pages/gcs_aws_s3.md) | [Software and Application Support](./pages/software-and-application-support.md) |
-| [NRP Nautilus Cluster](./pages/Nautilus.md) | [HPCC-GPFS](./pages/hpcc_gpfs.md) | [Computing and Research Infrastructure Support](./pages/computing-and-research-infrastructure-support.md) |
-| [AWS Enterprise Discount Program](./pages/gcp_aws_edp.md) | [Ceph Secure Research Storage](./pages/ceph_secure_research_storage.md) | [Grant Collaboration and Innovation](./pages/grant-collaboration-and-innovation.md) |
-| [GCP Enterprise Discount Program](./pages/gcp_aws_edp.md) | [Ursa Major Data](./pages/ursa_major_data.md) | [Optimizing Research Environments](./pages/optimizing-research-environments.md) |
-| [Individual GCP Subscription Agreements](./pages/gcp_subscription_agreements.md) | [Dryad](https://datadryad.org/stash) | [Workshops and Webinars](./pages/workshops-and-webinars.md) |
-| [Ursa Major](./pages/ursa_major.md) | [Backup](./pages/backup.md) | [Online Courses](./pages/online-courses.md) |
+| Compute                                          | Storage                                  | Support                                                 |
+|--------------------------------------------------|------------------------------------------|---------------------------------------------------------|
+| [HPCC](hpcc.ucr.edu)                             | [HPCC-GPFS](./pages/hpcc_gpfs.md)        | [Research Infrastructure Support](./pages/computing-and-research-infrastructure-support.md) |
+| [Ursa Major](./pages/ursa_major.md)              | [Ursa Major Data](./pages/ursa_major_data.md) | [Ursa Major Support](./pages/ursa_major.md)             |
+| [NRP Nautilus Cluster](./pages/Nautilus.md)      | [Ceph Secure Research Storage](./pages/ceph_secure_research_storage.md) | [Lab Support](./pages/optimizing-research-environments.md) |
+| [ACCESS Program](./pages/nsf_access.md)          | [Google Drive](./pages/Google_Drive.md)  | [Research Computing Consultation](./pages/research-computing-consultation.md) |
+| [Open Science Grid](./pages/open_science_grid.md)| [GCS and AWS S3](./pages/gcs_aws_s3.md)  | [Software and Application Support](./pages/software-and-application-support.md) |
+| [AWS Enterprise Discount Program](./pages/gcp_aws_edp.md) | [Dryad](https://datadryad.org/stash)     | [Grant Collaboration](./pages/grant-collaboration-and-innovation.md) |
+| [GCP Enterprise Discount Program](./pages/gcp_aws_edp.md) | [Backup](./pages/backup.md)              | [Workshops and Webinars](./pages/workshops-and-webinars.md) |
+| [Individual GCP Subscription Agreements](./pages/gcp_subscription_agreements.md) |  | [Online Courses](./pages/online-courses.md)            |
 | [AWS Cloud Credits](./pages/GCP_and_AWS_Cloud_Credits.md) |  | [Documentation and Guides](./pages/documentation-and-guides.md) |
-| [GCP Cloud Credits](./pages/GCP_and_AWS_Cloud_Credits.md) |  | [Ursa Major Support](./pages/ursa_major.md)  |
+| [GCP Cloud Credits](./pages/GCP_and_AWS_Cloud_Credits.md) |  |  |
+
+
 
 ### Flexable Cost Models
 
