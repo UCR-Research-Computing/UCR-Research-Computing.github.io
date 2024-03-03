@@ -10,4 +10,4 @@ sidebar_label: SSH to access
 
 
 
-{% include chatbot.html %}
+{% include ascii.html %}
