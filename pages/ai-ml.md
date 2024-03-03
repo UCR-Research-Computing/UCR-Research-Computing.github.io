@@ -14,7 +14,7 @@ Explore the capabilities of the leading AI chatbots and find the perfect match f
 
 | Chatbot                                | Specialization                     | Description                                                                                     |
 |----------------------------------------|------------------------------------|-------------------------------------------------------------------------------------------------|
-| [Groq.com](https://groq.com/)          | Speed & Efficiency                 | Offers lightning-fast computations, ideal for complex ML models.                                |
+| [Groq](https://groq.com/)          | Speed & Efficiency                 | Offers lightning-fast computations, ideal for complex ML models.                                |
 | [Perplexity](https://www.perplexity.ai/) | Natural Language Understanding    | Excels in understanding and generating human-like text, perfect for NLP tasks.                  |
 | [Genimi](https://gemini.google.com/)   | Creative Content                   | Best for creative content generation, including writing, art, and music composition.            |
 | [ChatGPT](https://chat.openai.com/)    | Versatile Conversations            | Known for its versatility in engaging in detailed conversations and providing informative responses. |
