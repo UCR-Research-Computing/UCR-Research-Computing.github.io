@@ -10,7 +10,7 @@ Welcome to the UCR Research Computing AI and ML Hub, your gateway to exploring a
 
 ## Featured AI Chatbots
 
-> :warning: **Warning:** Ensure you have the necessary permissions before using AI chatbots with sensitive or proprietary data.
+> **Warning:** Ensure you have the necessary permissions before using AI chatbots with sensitive or proprietary data.
 
 Explore the capabilities of the leading AI chatbots and find the perfect match for your research needs.
 
@@ -26,7 +26,7 @@ Explore the capabilities of the leading AI chatbots and find the perfect match f
 
 Leverage powerful software tools designed to harness the full potential of HPC clusters for AI and ML tasks, across various domains.
 
-> :memo: **Note:** Installation and usage of some HPC tools may require advanced configuration. Consult the documentation or seek expert advice if needed.
+> **Note:** Installation and usage of some HPC tools may require advanced configuration. Consult the documentation or seek expert advice if needed.
 
 ### General Purpose and Cross-Domain Tools
 
@@ -104,7 +104,7 @@ These sections aim to provide a comprehensive overview and easy access to explor
 
 
 
-**AI-Powered Research Assistants**
+#### **AI-Powered Research Assistants**
 
 | Tool Name                                     | Description                                                                                                   | Application in Research                                                  |
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
@@ -113,7 +113,7 @@ These sections aim to provide a comprehensive overview and easy access to explor
 
 ### Development Tools for AI Innovation
 
-**LangChain: Language Model Applications**
+#### **LangChain: Language Model Applications**
 
 | Tool Name                                     | Description                                                                                                 | Usage in AI Development                                                  |
 |------------------------------------------------|-------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
@@ -123,7 +123,7 @@ These sections aim to provide a comprehensive overview and easy access to explor
 | [Tokenization Libraries](https://smltar.com/tokenization.html)                   | Libraries that support the conversion of text into tokens, suitable for language models.                    | Essential for preparing data for training and fine-tuning AI models.      |
 | [Fine-Tuning & Hosting](https://medium.com/@gkarthikkumar517/fine-tuning-of-llms-in-gcp-vertex-ai-a8afb86a3511)                    | Tools for customizing pre-trained models and hosting them for inference.                                    | Allows for the customization and deployment of AI models for specific tasks. |
 
-> :bulb: **Tip:** Experiment with different development tools to find the best fit for your project's needs. Innovation often comes from trying out new approaches.
+> **Tip:** Experiment with different development tools to find the best fit for your project's needs. Innovation often comes from trying out new approaches.
 
 ---
 
