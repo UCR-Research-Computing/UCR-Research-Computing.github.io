@@ -1,1 +1,13 @@
-[![asciicast](https://asciinema.org/a/hG0XEvk90BHcYmDDGw1AKon5R.svg)](https://asciinema.org/a/hG0XEvk90BHcYmDDGw1AKon5R)
+---
+id: ssh-to-access
+title: SSH to access
+sidebar_label: SSH to access
+---
+
+
+## SSH to access
+
+
+
+
+{% include chatbot.html %}

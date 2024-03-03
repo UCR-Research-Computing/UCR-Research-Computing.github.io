@@ -53,4 +53,4 @@ For more information, please contact us at:
 
 Welcome to the future of research computing at UCR. Let's innovate together.
 
-{% include chatbot.html %}
+
