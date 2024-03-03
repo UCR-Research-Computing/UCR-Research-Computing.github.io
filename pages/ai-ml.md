@@ -10,9 +10,9 @@ Welcome to the UCR Research Computing AI and ML Hub, your gateway to exploring a
 
 ## Featured AI Chatbots
 
-> **Warning:** Ensure you have the necessary permissions before using AI chatbots with sensitive or proprietary data.
-
 Explore the capabilities of the leading AI chatbots and find the perfect match for your research needs.
+
+> **Warning:** Ensure you have the necessary permissions before using AI chatbots with sensitive or proprietary data.
 
 | Chatbot                                | Specialization                     | Description                                                                                     |
 |----------------------------------------|------------------------------------|-------------------------------------------------------------------------------------------------|
@@ -108,20 +108,20 @@ These sections aim to provide a comprehensive overview and easy access to explor
 
 | Tool Name                                     | Description                                                                                                   | Application in Research                                                  |
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
-| [NotebookLM](https://notebooklm.google.com/)            | An AI-first notebook designed to help users summarize information, understand complex ideas, and brainstorm new connections. | Ideal for synthesizing facts and generating document guides.              |
+| [Notebook LM](https://notebooklm.google.com/)            | An AI-first notebook designed to help users summarize information, understand complex ideas, and brainstorm new connections. | Ideal for synthesizing facts and generating document guides.              |
 | Other Tool                                    | Description of the tool                                                                                       | How it assists in specific research tasks                                |
 
-### Development Tools for AI Innovation
-
-#### **LangChain: Language Model Applications**
+### **Large Language Model Development Tools**
 
 | Tool Name                                     | Description                                                                                                 | Usage in AI Development                                                  |
 |------------------------------------------------|-------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| [Flowwise](https://flowiseai.com/)                    | A software platform for building LLM applications on custom data, demonstrated to answer questions from PDFs.   | Enables the creation and deployment of LLM applications on various data sources. |
 | [LangChain](https://python.langchain.com/docs/get_started/introduction)                                | A framework for building applications around language models, simplifying embedding, tokenization, and more. | Facilitates the creation and deployment of LLM-based applications.       |
 | [Vector Stores](https://docs.flowiseai.com/integrations/langchain/vector-stores)                            | Solutions for storing and retrieving vectors, essential for models like RAG.                               | Enhances the efficiency of retrieval-augmented generation models.        |
 | [Embedding Tools](https://docs.flowiseai.com/integrations/langchain/embeddings)                          | Tools for creating vector embeddings of textual data.                                                       | Used in processing text for NLP models and improving model understanding. |
 | [Tokenization Libraries](https://smltar.com/tokenization.html)                   | Libraries that support the conversion of text into tokens, suitable for language models.                    | Essential for preparing data for training and fine-tuning AI models.      |
 | [Fine-Tuning & Hosting](https://medium.com/@gkarthikkumar517/fine-tuning-of-llms-in-gcp-vertex-ai-a8afb86a3511)                    | Tools for customizing pre-trained models and hosting them for inference.                                    | Allows for the customization and deployment of AI models for specific tasks. |
+
 
 > **Tip:** Experiment with different development tools to find the best fit for your project's needs. Innovation often comes from trying out new approaches.
 
