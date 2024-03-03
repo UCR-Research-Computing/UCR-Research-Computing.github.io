@@ -127,7 +127,7 @@ These sections aim to provide a comprehensive overview and easy access to explor
 
 Dive into the forefront of AI-driven creativity with tools designed for generating stunning images and videos. These platforms offer innovative solutions, from creating detailed artworks to producing dynamic videos, catering to a range of creative needs. This section highlights some of the most advanced tools available for artists, creators, and researchers looking to explore the limits of digital creativity and automated content creation.
 
-**Image Generation**
+##### **Image Generation**
 
 Explore the latest in AI-powered image generation, where these tools leverage deep learning models to transform textual descriptions into vivid, high-resolution images. From generating unique artworks to designing specific visuals, these platforms enable an unprecedented level of creative expression.
 
@@ -137,7 +137,7 @@ Explore the latest in AI-powered image generation, where these tools leverage de
 | [Stable Diffusion](https://stability.ai/)    | Image Synthesis           | State-of-the-art image synthesis from user inputs, perfect for creating detailed and imaginative visuals. |
 | [MidJourney](https://www.midjourney.com/)    | Artistic Image Creation   | Creates artistic images and visualizations based on textual descriptions, blending art and AI.            |
 
-**Video Generation**
+##### **Video Generation**
 
 The realm of video generation is being transformed by AI, making it possible to produce engaging and dynamic videos from simple descriptions. These tools are revolutionizing content creation, offering new ways to create educational, entertaining, and promotional videos with minimal effort.
 
@@ -147,7 +147,7 @@ The realm of video generation is being transformed by AI, making it possible to 
 | [DeepBrain AI](https://www.deepbrain.io/)   | Video Synthesis           | Produces lifelike AI-generated videos, including virtual human content, for a range of applications.     |
 | [OpenAI's Sora](https://openai.com/sora)     | Video Generation          | (Upcoming) Promises to revolutionize video creation with AI, generating videos from descriptions.        |
 
-**Music Generation**
+##### **Music Generation**
 
 AI is also making waves in the music industry, enabling creators to generate unique compositions, experiment with sound, and even innovate in the realm of music production. These tools provide a new avenue for musical exploration and creativity.
 
@@ -157,7 +157,7 @@ AI is also making waves in the music industry, enabling creators to generate uni
 | [Google's Magenta](https://magenta.tensorflow.org/) | Music & Art Innovation | A research project exploring the role of AI in the process of creating art and music.                    |
 | [Google Labs' Music FX](https://labs.google/experiments/) | Music Effects & Tools    | Offers a suite of experimental music tools and effects designed to expand creative possibilities through AI. |
 
-**Voice Cloning and Synthesis**
+##### **Voice Cloning and Synthesis**
 
 Voice cloning and synthesis technologies are breaking new ground, offering tools to create realistic and customizable voiceovers and audio content. From enhancing accessibility to enabling more natural and engaging user experiences, these tools are at the forefront of audio innovation.
 
