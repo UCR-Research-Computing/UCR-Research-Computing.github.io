@@ -8,9 +8,9 @@ sidebar_label: AI/ML Hub
 
 Welcome to the UCR Research Computing AI and ML Hub, your gateway to exploring artificial intelligence and machine learning resources. Dive into the latest technologies, tools, and platforms designed to empower your research and innovation.
 
-## Featured AI Chatbots
+## Featured: AI Chatbots
 
-Explore the capabilities of the leading AI chatbots and find the perfect match for your research needs.
+Leading AI chatbots for your research needs.
 
 > **Warning:** Ensure you have the necessary permissions before using AI chatbots with sensitive or proprietary data.
 
@@ -22,11 +22,11 @@ Explore the capabilities of the leading AI chatbots and find the perfect match f
 | [ChatGPT](https://chat.openai.com/)    | Versatile Conversations            | Known for its versatility in engaging in detailed conversations and providing informative responses. |
 | [Claude](https://www.claude.ai/)       | Contextual Understanding           | Stands out for its deep contextual understanding, making it great for nuanced dialogues.        |
 
-## Popular AI & ML Software Tools for HPC Clusters
+## AI & ML Software Tools for Researchers
 
 Leverage powerful software tools designed to harness the full potential of HPC clusters for AI and ML tasks, across various domains.
 
-> **Note:** Installation and usage of some HPC tools may require advanced configuration. Consult the documentation or seek expert advice if needed.
+> **Note:** Installation and usage of some HPC tools may require advanced configuration.  Contact us! [research-computing@ucr.edu](mailto:research-computing@ucr.edu)
 
 ### General Purpose and Cross-Domain Tools
 
@@ -36,7 +36,7 @@ Leverage powerful software tools designed to harness the full potential of HPC c
 | [PyTorch](https://pytorch.org/)                                   | Machine Learning Models     | `python -m torch.distributed.launch --nproc_per_node=NUM_GPUS_YOU_HAVE my_train_script.py`    |
 | [Horovod](https://horovod.ai/)                                   | Distributed Training        | `horovodrun -np 4 -H localhost:4 python train.py`                               |
 | [CUDA](#)                                      | Parallel Computing          | `nvcc my_cuda_program.cu -o my_cuda_program`                                    |
-| [Hugging Face Transformers](#)                 | Natural Language Processing | `transformers-cli convert --model_type bert --tf_checkpoint /path/to/checkpoint --config /path/to/bert_config.json --pytorch_dump_output /path/to/pytorch_model.bin` |
+| [Hugging Face Transformers](https://huggingface.co/docs/transformers/en/index)                 | Natural Language Processing | `transformers-cli convert --model_type bert --tf_checkpoint /path/to/checkpoint --config /path/to/bert_config.json --pytorch_dump_output /path/to/pytorch_model.bin` |
 
 ### Life Sciences & Biology
 
@@ -70,7 +70,7 @@ Leverage powerful software tools designed to harness the full potential of HPC c
 
 
 
-### Top Open Source AI Models
+## Top Open Source AI Models
 Explore a handpicked selection of top open-source AI models that are driving innovation across various domains. From sophisticated text generation to dynamic text-to-image models, these contributions represent the cutting edge of AI research and application.
 
 | Name | Description | Name | Description |
@@ -81,7 +81,7 @@ Explore a handpicked selection of top open-source AI models that are driving inn
 | [google/gemma-2b](https://huggingface.co/google/gemma-2b) | Text Generation | [stabilityai/stable-video-diffusion-img2vid-xt](https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt) | Image-to-Video |
 | [stabilityai/stable-cascade](https://huggingface.co/stabilityai/stable-cascade) | Text-to-Image | [meta-llama/Llama-2-7b-chat-hf](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf) | Text Generation |
 
-### Key AI Domains and Applications
+### AI Models by Domains and Applications
 This section outlines critical areas within AI, including natural language processing, audio processing, computer vision, and multimodal systems. Discover the transformative power of AI through these domains, each linking to foundational tasks and state-of-the-art models.
 
 | Natural Language Processing          | Audio Processing                       | Computer Vision                        | Multimodal                              |
@@ -98,20 +98,7 @@ This section outlines critical areas within AI, including natural language proce
 |  |  | [Knowledge Distillation for Computer Vision](https://huggingface.co/docs/transformers/en/tasks/knowledge_distillation_for_image_classification) |  |
 
 
-These sections aim to provide a comprehensive overview and easy access to explore and utilize the potential of AI across a broad spectrum of applications and research areas.
-
-### Research-Focused AI Tools
-
-
-
-#### **AI-Powered Research Assistants**
-
-| Tool Name                                     | Description                                                                                                   | Application in Research                                                  |
-|------------------------------------------------|---------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
-| [Notebook LM](https://notebooklm.google.com/)            | An AI-first notebook designed to help users summarize information, understand complex ideas, and brainstorm new connections. | Ideal for synthesizing facts and generating document guides.              |
-| Other Tool                                    | Description of the tool                                                                                       | How it assists in specific research tasks                                |
-
-### **Large Language Model Development Tools**
+## **Large Language Model Development Tools**
 
 | Tool Name                                     | Description                                                                                                 | Usage in AI Development                                                  |
 |------------------------------------------------|-------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
@@ -127,9 +114,16 @@ These sections aim to provide a comprehensive overview and easy access to explor
 
 ---
 
-### Image & Video Generation Resources
+## Other Online AI Tools
 
-Dive into the forefront of AI-driven creativity with tools designed for generating stunning images and videos. These platforms offer innovative solutions, from creating detailed artworks to producing dynamic videos, catering to a range of creative needs. This section highlights some of the most advanced tools available for artists, creators, and researchers looking to explore the limits of digital creativity and automated content creation.
+#### RAG Enabled Tools
+
+| Tool Name                                     | Description                                                                                                   | Application in Research                                                  |
+|------------------------------------------------|---------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| [Notebook LM](https://notebooklm.google.com/)            | An AI-first notebook designed to help users summarize information, understand complex ideas, and brainstorm new connections. | Ideal for synthesizing facts and generating document guides.              |
+| Other Tool                                    | Description of the tool                                                                                       | How it assists in specific research tasks                                |
+
+---
 
 #### **Image Generation**
 
