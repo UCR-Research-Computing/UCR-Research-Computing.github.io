@@ -26,11 +26,11 @@ Aligned with UCR's strategic goals, our research computing services are designed
 This serves as a guide for the strategic development and enhancement of research computing services at UCR, outlining our commitment to equipping our research community with the computational resources and support necessary to excel in an increasingly digital and interconnected world.
 
 
-### Enterprise Research Computing Strategy
+## Enterprise Research Computing Strategy
 
 The University of California, Riverside (UCR) is poised at the edge of a transformative era in research computing. As we navigate this pivotal juncture, our strategic vision is guided by our recent accomplishments, including our induction into the Association of American Universities (AAU) and our recognition as a Hispanic Serving Institution. These milestones underscore our commitment to inclusive, high-quality research and position us as a significant academic influencer. Our strategic plan is designed to bolster our infrastructure, enabling us to meet global academic challenges and the specific needs of our diverse community, thereby enhancing our regional impact and promoting socioeconomic growth in Southern California.
 
-#### Strategic Goals
+### Strategic Goals
 
 **Strategic Goal 1: Increased Faculty Engagement**  
 We aim to deepen faculty engagement and collaboration, fostering a robust partnership between UCR researchers and IT support staff. This goal is vital for customizing research computing services to meet the unique challenges and needs of our academic community.
@@ -47,7 +47,7 @@ Developing comprehensive training and support for research computing technologie
 **Strategic Goal 5: Sustainable and Future-Proof Infrastructure**  
 Incorporating sustainability into our research computing operations and ensuring our infrastructure's adaptability to future technologies are strategic imperatives. This approach guarantees that UCR's research computing remains environmentally responsible and technologically relevant.
 
-#### Initiatives and Metrics
+### Initiatives and Metrics
 
 - **Faculty Engagement**: Establish the IT Research Advisory Board, increase participation in research talks, and strengthen grant acquisition partnerships. Metrics include the number of advisory board meetings, events attended, and grants applied for with IT collaboration.
 - **Data Management and Storage**: Implement encrypted storage solutions, develop tiered storage systems, and integrate storage with research tools. Metrics involve compliance audit results, usage rates of storage tiers, and rates of FAIR compliant datasets.
@@ -55,7 +55,7 @@ Incorporating sustainability into our research computing operations and ensuring
 - **Training and Support**: Create workshops for research computing tools, establish helpdesk services, and distribute online resources. Metrics encompass the number of training programs conducted, support queries resolved, and user proficiency improvements.
 - **Sustainable Infrastructure**: Implement energy-efficient technologies, regularly update computing technologies, and plan for scalable infrastructure development. Metrics focus on reductions in energy consumption, frequency of technology upgrades, and infrastructure utilization rates.
 
-### Strategic Alignment
+## Strategic Alignment
 
 Our Enterprise Research Computing Strategy aligns with UCR's broader goals of academic excellence, societal impact, and technological leadership. Through this strategic framework, we are committed to enhancing our research computing capabilities, fostering an inclusive and collaborative academic community, and driving innovation that contributes to global knowledge and societal well-being.
 
@@ -112,23 +112,23 @@ The RCSAS MOU covers a wide range of aspects related to the administration of re
 
 By establishing the RCSAS MOU, UCR commits to fostering a collaborative, efficient, and innovative research computing environment. This agreement ensures that research computing systems are managed in a way that aligns with the university's strategic goals for research excellence, security, and technological advancement, while also addressing the evolving needs of UCR's diverse research community.
 
-## Grant Collaboration
+### Grant Collaboration
 
 At the University of California, Riverside (UCR), our dedication to advancing research extends into the realm of securing and effectively managing grants. Through collaborative efforts and providing a wealth of resources, we aim to support our researchers in navigating the complexities of grant acquisition and management.
 
-### Strategic Partnerships
+#### Strategic Partnerships
 
 We cultivate strategic partnerships between researchers and our Research Computing team, ensuring comprehensive support from the initial planning stages to the completion of projects. This collaborative approach is vital for developing compelling grant proposals that stand out and securing the necessary funding for groundbreaking research.
 
-### Advanced Computational Resources
+#### Advanced Computational Resources
 
 UCR offers a wide range of computational resources, including our High-Performance Computing (HPC) platforms and the Ursa Major project with Google Cloud Platform. These tools are crucial for enhancing research efficiency and fostering innovation, making UCR's grant proposals more competitive.
 
-### Premier Campus Facilities
+#### Premier Campus Facilities
 
 Our premier campus facilities, such as the Campus Data Center, Bourns College of Engineering Data Center, and the Genomics Data Center, support diverse research activities. Equipped with the latest computing and storage technology, these facilities provide the necessary infrastructure to facilitate cutting-edge research across various disciplines.
 
-### Focused Grant Opportunities
+#### Focused Grant Opportunities
 
 UCR actively seeks out focused grant opportunities that align with our mission to enhance research capabilities and infrastructure:
 
@@ -143,11 +143,11 @@ UCR actively seeks out focused grant opportunities that align with our mission t
 
 UCR’s commitment to leveraging these grant opportunities underlines our dedication to propelling our research computing infrastructure forward. By fostering an environment of innovation and excellence, we aim to support our researchers in making significant contributions to their fields and beyond.
 
-## Comprehensive Research Computing Support
+### Comprehensive Research Computing Support
 
 At the University of California, Riverside (UCR), we understand that the foundation of groundbreaking research is not just access to advanced computational resources but also robust support and a vibrant community of collaboration. Our comprehensive research computing support strategy is designed to ensure that our researchers have the tools, knowledge, and community needed to excel in their projects.
 
-### Integrated Strategy
+#### Integrated Strategy
 
 Our approach to research computing support involves a holistic strategy that encompasses the deployment and management of computational resources across cloud-based and hybrid environments. This strategy is meticulously aligned with UCR's broad research goals, ensuring that computational resources effectively meet the diverse needs of our research community. Key elements include:
 
@@ -155,7 +155,7 @@ Our approach to research computing support involves a holistic strategy that enc
 - **Infrastructure Alignment with Research Goals**: Ensuring that our computational infrastructure is not only state-of-the-art but also directly supports the research objectives of UCR's faculty and students. This involves continuous evaluation and upgrading of our systems to cater to the evolving demands of academic research.
 - **Seamless Access and Management**: Simplifying access to and management of research computing resources through user-friendly portals, streamlined authentication processes, and robust support systems. This ensures that researchers can focus on their work without the burden of technical complexities.
 
-### Community and Collaboration
+#### Community and Collaboration
 
 A key aspect of our strategy is to strengthen the research computing community at UCR, fostering an environment where engagement, training, and collaboration are actively encouraged. We aim to build a cohesive ecosystem that supports the sharing of knowledge and resources. Initiatives include:
 
