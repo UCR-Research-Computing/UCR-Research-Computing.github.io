@@ -4,7 +4,9 @@ title: Policies
 sidebar_label: Policies
 ---
 
-## Compute Resource Policies
+# Policies
+
+Welcome to the University of California, Riverside (UCR) Research Computing Policies page. Here, you'll find a comprehensive guide to the policies and procedures governing the use of research computing resources at UCR. Our aim is to support our vibrant research community by providing clear guidelines on access to High-Performance Computing (HPC) resources, cloud computing services, data management practices, and much more. These policies are designed to ensure that all researchers have the tools and information they need to conduct their work efficiently, securely, and in compliance with both university and federal regulations. Whether you're looking to leverage the power of UCR's HPC clusters, access cloud platforms like Google Cloud Platform (GCP) and Amazon Web Services (AWS), or understand your responsibilities regarding data management, you'll find all the necessary information here. Additionally, we offer insights into the support structures in place to assist you with your computing needs, from system administration to grant collaboration and lab support. For the latest updates and more detailed information, we invite you to explore our dedicated Research Computing website and discover how our policies and resources can enhance your research endeavors at UCR.
 
 ## Compute Resource Policies
 

@@ -9,6 +9,9 @@ sidebar_label: On-Prem Facilities
 
 The University of California, Riverside (UCR) is equipped with state-of-the-art on-premises data centers and facilities, designed to support the advanced computing needs of our vibrant research community. These facilities, including the Campus Data Center, Bourns College of Engineering Data Center, and the Genomics Data Center, play a pivotal role in enabling high-performance computing, data storage, and collaborative research projects across disciplines.
 
+* [UCR Campus CI Plan](https://docs.google.com/document/d/1vldZNIs0aSeW_pJ8qnOPw4rCEOTs1G0GiauEObfPryc/edit?usp=sharing)
+* [UCR Facilities, Equipment and Other Resources](https://docs.google.com/document/d/1RnK6ifJdQyiTRPS7RQhEJIyI9yl0L1OSIA36DbB9nE4/edit?usp=sharing)
+
 ### Campus Data Center in the School of Medicine Education Building (SOM DC)
 
 - **Location**: School of Medicine Education Building

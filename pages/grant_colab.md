@@ -35,14 +35,14 @@ The University of California Riverside (UCR) is dedicated to advancing its resea
 
 To this end, UCR's research computing strategy includes a focused interest in the following standing grant opportunities, which align with our mission to foster an environment of innovation and high-caliber research:
 
-- **Cyberinfrastructure for Sustained Scientific Innovation (CSSI):** Aims at revolutionizing research capabilities through innovative cyberinfrastructure, enhancing computational resources, data storage, and networking infrastructure.
-- **Cyberlearning and Future Learning Technologies (Cyberlearning):** Focuses on integrating advanced learning technologies into research methodologies, benefiting both students and faculty with new collaboration avenues.
-- **Cybersecurity Innovation for Cyberinfrastructure (CICI):** Committed to elevating cybersecurity measures to protect research data and infrastructure against emerging threats.
-- **Enabling Access to Cloud Computing Resources for CISE Research and Education:** Harnesses cloud computing to bolster computational capabilities for a broad spectrum of scientific inquiries and educational endeavors.
-- **Campus Cyberinfrastructure (CC):** Supports robust campus networking and cyberinfrastructure development, crucial for high-speed, reliable access to computational resources.
-- **Accelerating Research through International Network-to-Network Collaborations (AccelNet):** Enhances research impact through international collaborations, addressing global scientific challenges.
-- **Secure and Trustworthy Cyberspace (SaTC):** Aims at innovative cybersecurity solutions to ensure the integrity and security of cyberinfrastructure and research data.
-- **CISE Core Programs, Large Projects:** Encourages large-scale, transformative research projects in computer and information science and engineering, leading technological advancements.
+- [**Cyberinfrastructure for Sustained Scientific Innovation (CSSI)**](https://www.nsf.gov/pubs/2022/nsf22632/nsf22632.htm): Aims to revolutionize research capabilities through innovative cyberinfrastructure.
+- [**Cyberlearning and Future Learning Technologies (Cyberlearning)**](https://www.nsf.gov/funding/pgm_summ.jsp?pims_id=504984): Focuses on integrating advanced learning technologies into research methodologies.
+- [**Cybersecurity Innovation for Cyberinfrastructure (CICI)**](https://www.nsf.gov/pubs/2023/nsf23517/nsf23517.htm): Dedicated to enhancing cybersecurity measures for research data and infrastructure.
+- [**Enabling Access to Cloud Computing Resources for CISE Research and Education**](https://www.nsf.gov/funding/pgm_summ.jsp?pims_id=505686): Utilizes cloud computing to bolster computational capabilities for scientific inquiries.
+- [**Campus Cyberinfrastructure (CC)**](https://www.nsf.gov/funding/pgm_summ.jsp?pims_id=504748): Supports the development of robust campus networking and cyberinfrastructure.
+- [**Accelerating Research through International Network-to-Network Collaborations (AccelNet)**](https://www.nsf.gov/funding/pgm_summ.jsp?pims_id=505602): Enhances research impact through international collaborations.
+- [**Secure and Trustworthy Cyberspace (SaTC)**](https://www.nsf.gov/pubs/2022/nsf22517/nsf22517.htm): Innovates cybersecurity solutions to protect research data.
+- [**Computer and Information Science and Engineering (CISE): Core Programs, Large Projects**](https://www.nsf.gov/pubs/2023/nsf23524/nsf23524.htm): Encourages transformative research projects in computer and information science.
 
 UCR's strategic interest in these grant opportunities reflects our commitment to leveraging national and international programs to enhance our research computing infrastructure and capabilities. Through these endeavors, we aim to not only support our current research needs but also anticipate and prepare for the future demands of scientific inquiry. Our goal is to create a robust, secure, and innovative research environment that fosters discovery, learning, and collaboration at the highest levels.
 
