@@ -14,13 +14,14 @@ Leading AI chatbots for your research needs.
 
 > **Warning:** Ensure you have the necessary permissions before using AI chatbots with sensitive or proprietary data.
 
-| Chatbot                                | Specialization                     | Description                                                                                     |
-|----------------------------------------|------------------------------------|-------------------------------------------------------------------------------------------------|
-| [Groq](https://groq.com/)          | Speed & Efficiency                 | Offers lightning-fast computations, ideal for complex ML models.                                |
-| [Perplexity](https://www.perplexity.ai/) | Natural Language Understanding    | Excels in understanding and generating human-like text, perfect for NLP tasks.                  |
-| [Genimi](https://gemini.google.com/)   | Creative Content                   | Best for creative content generation, including writing, art, and music composition.            |
-| [ChatGPT](https://chat.openai.com/)    | Versatile Conversations            | Known for its versatility in engaging in detailed conversations and providing informative responses. |
-| [Claude](https://www.claude.ai/)       | Contextual Understanding           | Stands out for its deep contextual understanding, making it great for nuanced dialogues.        |
+| Chatbot                                | Description                                                                                     |
+|----------------------------------------|-------------------------------------------------------------------------------------------------|
+| [Groq](https://groq.com/)          | Offers lightning-fast computations, ideal for complex ML models.                                |
+| [Perplexity](https://www.perplexity.ai/) | Excels in understanding and generating human-like text, perfect for NLP tasks.                  |
+| [Genimi](https://gemini.google.com/)   | Best for creative content generation, including writing, art, and music composition.            |
+| [ChatGPT](https://chat.openai.com/)    | Known for its versatility in engaging in detailed conversations and providing informative responses. |
+| [Claude](https://www.claude.ai/)       | Stands out for its deep contextual understanding, making it great for nuanced dialogues.        |
+
 
 ## AI & ML Software Tools for Researchers
 
