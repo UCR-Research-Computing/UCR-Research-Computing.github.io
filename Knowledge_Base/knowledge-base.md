@@ -56,5 +56,6 @@ Welcome to the UCR Research Computing Knowledge Base. Explore our comprehensive 
 
 - [Ursa Major Research Services](Ursa_Major_Research_Services.md): AI and ML services provided by Ursa Major.
 - [LLM Inference Settings](llm_inference_settings.md): Adjusting LLM inference output for research purposes.
+- [How to host offline Open Source LLMs](ollama-how-to.md): Install Ollama and host offline Open Source LLMs
 
 For further details and updates, please visit our dedicated UCR Research Computing website or contact our support team.
