@@ -8,6 +8,9 @@ sidebar_label: AI/ML Hub
 
 Welcome to the UCR Research Computing AI and ML Hub, your gateway to exploring artificial intelligence and machine learning resources. Dive into the latest technologies, tools, and platforms designed to empower your research and innovation.
 
+### Featured How-To:
+How to run your own copy of a open source LLM on UCR Ursa Major or your workstation right now! [How To run offline LLMs](../Knowledge_Base/ollama-how-to.md) see it in action [Here](http://34.68.17.18:3000/)
+
 ## Featured: AI Chatbots
 
 Leading AI chatbots for your research needs.
