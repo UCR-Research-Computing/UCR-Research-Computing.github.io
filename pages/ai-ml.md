@@ -75,6 +75,8 @@ Leverage powerful software tools designed to harness the full potential of HPC c
 ## Top Open Source AI Models
 Explore a handpicked selection of top open-source AI models that are driving innovation across various domains. From sophisticated text generation to dynamic text-to-image models, these contributions represent the cutting edge of AI research and application.
 
+### Featured How-To:  How to run your own copy of a opensource LLM on UCR Ursa Major or your workstation right now! [How To run offline LLM models](../Knowledge_Base/ollama-how-to.md)
+
 | Name | Description | Name | Description |
 |------|-------------|------|-------------|
 | [google/gemma-7b](https://huggingface.co/google/gemma-7b) | Text Generation | [ByteDance/SDXL-Lightning](https://huggingface.co/ByteDance/SDXL-Lightning) | Text-to-Image |
