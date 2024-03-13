@@ -61,3 +61,4 @@ Ollama supports a variety of models, including but not limited to:
 - **CLI Reference**: Employ commands such as `ollama create`, `ollama pull`, `ollama rm`, `ollama cp`, and `ollama list` for model management on your workstation.
 
 By adhering to these instructions, you're well-equipped to run and interact with a broad range of open-source LLM models securely and privately on a GPU workstation within the UCR Research Computing environment.
+
