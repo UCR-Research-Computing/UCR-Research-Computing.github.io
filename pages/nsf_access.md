@@ -8,6 +8,15 @@ sidebar_label: NSF ACCESS
 
 The Advanced Cyberinfrastructure Coordination Ecosystem: Services & Support (ACCESS) is an initiative by the National Science Foundation (NSF) designed to enhance computational and data-intensive research across all scientific disciplines.
 
+### ACCESS Resources
+ACCESS resource providers offer a wide range of cyberinfrastructure assets and specialized support. Some of the many resources in the ACCESS portfolio include:
+
+**Compute resources** – High-performance computing clusters (GPU and CPU based) accessed by logging in to front-end nodes. Researchers can install their application software and run batch computing jobs under a scheduler on these resources.
+**Storage resources** – Data storage systems for storing and managing large amounts of data.
+**Cloud resources** – Cloud infrastructure where researchers can launch and run virtual machines.
+**Specialized support** – Tools to streamline your research: science gateways, hosted workflow, remote access web portal, and more.
+
+
 ### Key Links
 - [Allocations](https://allocations.access-ci.org/): Explore how to request computational resources.
 - [Support](https://support.access-ci.org/): Find assistance and helpdesk services.
