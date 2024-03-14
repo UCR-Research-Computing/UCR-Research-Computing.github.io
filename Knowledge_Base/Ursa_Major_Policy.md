@@ -26,18 +26,19 @@ In our commitment to fostering an environment of research excellence and innovat
 
 This approach ensures that resources are not only allocated fairly but also used to drive forward the most impactful research projects. By doing so, we aim to not only advance UCR's research agenda but also attract significant grant funding. This, in turn, bolsters our campus's research infrastructure, attracts top-tier talent, and ultimately, enhances the prestige and competitiveness of UCR within the academic community.
 
-- Tiered resource allocation:
-    * Tiered allocation system based on factors such as project maturity, cloud experience, project timing, or project funding. Allocating more resources to time bound and/or high value resource needs. While still providing some access to resources for long running, exploratory or early-stage projects.
-    * Allow researchers to request an allocation for GCP resources for specific periods of time, ensuring that resources are available when needed and reducing the risk of resource contention among researchers.
-- Prioritize projects based on research impact
-    * Allocate resources to projects with high potential impact, innovative research projects, or those with strong potential for future funding.
-Set maximum running resource quotas per allocation:
-    * This can vary among projects, and would be based on requested resources, such as compute, storage, etc.
-- Monitor resource usage and adjust allocations:
-    * Regularly monitor the usage of GCP resources by RC Team and researchers themselves to identify inefficiencies, unused allocations, or bottlenecks. Adjust the allocations based on actual usage patterns to optimize the utilization of the budget.
-    * This may involve reconfiguring resources in use to better fit the performance needs of the project, which may require short maintenance windows where running jobs, simulations, etc may need to be stopped to make the requisite changes.
-- Continuously evaluate and optimize allocations:
-    * Regularly review the effectiveness of the allocation strategy and make adjustments as necessary to ensure optimal use of the GCP Subscription.
+##### Tiered resource allocation:
+* Tiered allocation system based on factors such as project maturity, cloud experience, project timing, or project funding. Allocating more resources to time bound and/or high value resource needs. While still providing some access to resources for long running, exploratory or early-stage projects.
+* Allow researchers to request an allocation for GCP resources for specific periods of time, ensuring that resources are available when needed and reducing the risk of resource contention among researchers.
+##### Project prioritization:
+* Prioritize projects based on research impact
+* Allocate resources to projects with high potential impact, innovative research projects, or those with strong potential for future funding.
+##### Set maximum running resource quotas per allocation:
+* This can vary among projects, and would be based on requested resources, such as compute, storage, etc.
+##### Monitor resource usage and adjust allocations:
+* Regularly monitor the usage of GCP resources by RC Team and researchers themselves to identify inefficiencies, unused allocations, or bottlenecks. Adjust the allocations based on actual usage patterns to optimize the utilization of the budget.
+* This may involve reconfiguring resources in use to better fit the performance needs of the project, which may require short maintenance windows where running jobs, simulations, etc may need to be stopped to make the requisite changes.
+##### Continuously evaluate and optimize allocations:
+* Regularly review the effectiveness of the allocation strategy and make adjustments as necessary to ensure optimal use of the GCP Subscription.
 
 By implementing these ideas, the university can allocate the Ursa Major campus budget fairly and effectively across as many researchers as possible, maximizing the return on investment and promoting efficient use of resources.
 
