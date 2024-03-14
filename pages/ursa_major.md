@@ -6,7 +6,9 @@ sidebar_label: Ursa Major
 
 ## Ursa Major
 
-**Modern Research requires advanced computing and data management resources** 
+**Modern Research requires advanced computing and data management resources**
+
+#### Ursa Major Resources
 
 The University of California, Riverside is proud to announce its latest partnership with Google Cloud Platform (GCP), code-named Ursa Major, designed to provide the research computing support and resources necessary for our researchers to advance their work and unlock new opportunities for innovation and growth.
 
@@ -27,23 +29,12 @@ UCR's strategic approach to Ursa Major resource allocation ensures equitable acc
 - **Resource Quotas**: Custom quotas for compute and storage, adjusted for efficiency and project needs.
 - **Monitoring and Optimization**: Continuous review of resource use to maximize efficiency and support diverse research needs.
 
-## **How to Begin:**
+#### **How to Begin:**
 
 Submit your Ursa Major resource allocation request through our **[Allocation Form](https://forms.gle/GDbr5FbPjykAvB3N8)**. The Research Computing Team will review your project's allocation requet and available resources to approve your allocation. Once approved, you will receive an email with your allocation details and you can begin using your resources.
 
-#### Leveraging Cloud Computing for Research:
 
-Ursa Major is a testament to UCR's commitment to harnessing the power of cloud computing for research. Through this initiative, researchers can:
-
-- **Access Scalable Resources**: Instantly scale computing resources to match project demands without the need for upfront hardware investments.
-- **Accelerate Research Outcomes**: Utilize state-of-the-art computational tools and platforms to significantly reduce the time from research conception to publication.
-- **Collaborate Globally**: Facilitate seamless collaboration with researchers worldwide through cloud-based platforms, breaking down geographical and institutional barriers.
-- **Secure Data Management**: Benefit from robust security protocols and compliance measures inherent in cloud platforms, ensuring the safety and integrity of research data.
-
-
-
-
-### Ursa Major Resources ###
+#### Ursa Major Links ###
 
 * [Ursa Major Policy](../Knowledge_Base/Ursa_Major_Policy.md)
 * [Knowledge Base](../Knowledge_Base/knowledge-base.md)
