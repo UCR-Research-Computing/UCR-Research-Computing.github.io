@@ -50,15 +50,110 @@ Ollama supports a variety of models, including but not limited to:
 
 **Note:** You should have at least 8 GB of RAM available to run the 7B models, 16 GB to run the 13B models, and 32 GB to run the 33B models.
 
-### Customizing Models
+## Customize a Model
 
-- **Import GGUF Models**: Create a `Modelfile` with a `FROM` instruction specifying the local filepath to the model you wish to import.
-- **Create and Run Custom Models**: Utilize `ollama create` and `ollama run` commands to construct and initiate your custom model.
+### Import from GGUF
 
-### Further Customizations and Commands
+Ollama supports importing GGUF models in the `Modelfile`:
 
-- **Customize a Prompt**: Models can be personalized with specific prompts to produce tailored responses.
-- **CLI Reference**: Employ commands such as `ollama create`, `ollama pull`, `ollama rm`, `ollama cp`, and `ollama list` for model management on your workstation.
+- **Create a `Modelfile`**: With a `FROM` instruction with the local filepath to the model you want to import.
 
-By adhering to these instructions, you're well-equipped to run and interact with a broad range of open-source LLM models securely and privately on a GPU workstation within the UCR Research Computing environment.
+    ```plaintext
+    FROM ./vicuna-33b.Q4_0.gguf
+    ```
 
+- **Create the model in Ollama**:
+
+    ```bash
+    ollama create example -f Modelfile
+    ```
+
+- **Run the model**:
+
+    ```bash
+    ollama run example
+    ```
+
+### Import from PyTorch or Safetensors
+
+See the guide on importing models for more information.
+
+### Customize a Prompt
+
+Models from the Ollama library can be customized with a prompt. For example, to customize the llama2 model:
+
+1. **Pull the model**:
+
+    ```bash
+    ollama pull llama2
+    ```
+
+2. **Create a `Modelfile`**:
+
+    ```plaintext
+    FROM llama2
+    
+    # set the temperature to 1 [higher is more creative, lower is more coherent]
+    PARAMETER temperature 1
+    
+    # set the system message
+    SYSTEM """
+    You are Mario from Super Mario Bros. Answer as Mario, the assistant, only.
+    """
+    ```
+
+3. **Next, create and run the model**:
+
+    ```bash
+    ollama create mario -f ./Modelfile
+    ollama run mario
+    ```
+
+    ```plaintext
+    >>> hi
+    Hello! It's your friend Mario.
+    ```
+
+For more examples, see the examples directory. For more information on working with a `Modelfile`, see the Modelfile documentation.
+
+### CLI Reference
+
+- **Create a model**: `ollama create` is used to create a model from a `Modelfile`.
+
+    ```bash
+    ollama create mymodel -f ./Modelfile
+    ```
+
+- **Pull a model**: `ollama pull llama2`
+
+    This command can also be used to update a local model. Only the diff will be pulled.
+
+- **Remove a model**: `ollama rm llama2`
+
+- **Copy a model**: `ollama cp llama2 my-llama2`
+
+- **Multiline input**: For multiline input, you can wrap text with `"""`:
+
+    ```plaintext
+    >>> """Hello,
+    ... world!
+    ... """
+    I'm a basic program that prints the famous "Hello, world!" message to the console.
+    ```
+
+- **Multimodal models**:
+
+    ```plaintext
+    >>> What's in this image? /Users/jmorgan/Desktop/smile.png
+    The image features a yellow smiley face, which is likely the central focus of the picture.
+    ```
+
+- **Pass in prompt as arguments**:
+
+    ```bash
+    $ ollama run llama2 "Summarize this file: $(cat README.md)"
+    ```
+
+    Ollama is a lightweight, extensible framework for building and running language models on the local machine. It provides a simple API for creating, running, and managing models, as well as a library of pre-built models that can be easily used in a variety of applications.
+
+- **List models on your computer**: `ollama list`
