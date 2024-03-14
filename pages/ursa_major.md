@@ -29,9 +29,36 @@ UCR's strategic approach to Ursa Major resource allocation ensures equitable acc
 - **Resource Quotas**: Custom quotas for compute and storage, adjusted for efficiency and project needs.
 - **Monitoring and Optimization**: Continuous review of resource use to maximize efficiency and support diverse research needs.
 
-#### **How to Begin:**
+##### Tiered Allocation
+
+UCR's strategic approach to Ursa Major resource allocation ensures equitable access for researchers, prioritizing projects with significant potential for impact. The framework supports both high-value and exploratory projects through a tiered system, optimizing cloud resource distribution and enhancing research capabilities.
+
+Explore Tier: Allocated 20% of our total allocation pool. Designed for novel, long-term uses without a time-bound element, encouraging exploratory and innovative research.
+
+Project Tier: Receives 40% to 60% of our allocation pool. This tier is both value and time-bound, intended for substantial research projects that demonstrate potential value through grants, papers, or publications. Allocation scheduling is strategic to accommodate and optimize large project resources.
+
+Campus Tier: Initially allocated 20% of the pool, with potential to expand to 40%. Reserved for the Campus ITS Infrasture, this tier allows flexible usage within its limit, supporting internal technological advancements and infrastructure needs.
+
+##### **Resource Quotas:**
 
 Submit your Ursa Major resource allocation request through our **[Allocation Form](https://forms.gle/GDbr5FbPjykAvB3N8)**. The Research Computing Team will review your project's allocation requet and available resources to approve your allocation. Once approved, you will receive an email with your allocation details and you can begin using your resources.
+
+##### **Monitoring and Optimization:**
+
+To ensure the efficient use of resources and to support our researchers in the best possible manner, UCR's Research Computing team has implemented a comprehensive monitoring and optimization strategy for Ursa Major resource allocations. This approach enables us to track resource usage in real-time, identify bottlenecks, and optimize allocations to support a wide range of research activities effectively.
+
+Researchers and the ITS team can access detailed analytics and insights into their resource usage through the following Ursa Major Dashboards:
+
+| Dashboard                                                                                                                  | Description                                                                                                                  |
+|----------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| [**Cloud Storage Dashboard**](https://console.cloud.google.com/monitoring/dashboards/resourceList/gcs_bucket)              | Provides insights into the storage utilization across all projects, including data ingress and egress, helping to optimize storage strategies. |
+| [**Disks Dashboard**](https://console.cloud.google.com/monitoring/dashboards/resourceList/gce_disk)                        | Offers a detailed view of disk usage and performance metrics, enabling teams to manage and scale disk resources efficiently. |
+| [**Infrastructure Summary Dashboard**](https://console.cloud.google.com/monitoring/dashboards/summary/infrastructure)      | A comprehensive overview of the entire GCP infrastructure, highlighting usage patterns, available resources, and potential optimization opportunities. |
+| [**VM Instances Dashboard**](https://console.cloud.google.com/monitoring/dashboards/resourceList/gce_instance)             | Tracks the performance and usage of virtual machine instances, facilitating the effective management of compute resources.  |
+| [**Logs Dashboard**](https://console.cloud.google.com/monitoring/dashboards/resourceList/logs)                             | Enables tracking of application and system logs, crucial for debugging and understanding system behaviors.                   |
+| [**Allocation Spend Dashboard**](https://console.cloud.google.com/billing/019E1F-BADE9B-60248B/reports)                    | *Coming Soon*: A future dashboard that will provide detailed insights into the allocation spend, helping to track and manage budgetary aspects of projects. |
+
+These dashboards are integral tools for maintaining an optimal balance between resource availability and research demands, ensuring that UCR's research community has the computational resources they need, when they need them. By providing real-time data, we empower our researchers and IT staff to make informed decisions, leading to more efficient and productive research outcomes.
 
 
 #### Ursa Major Links ###
