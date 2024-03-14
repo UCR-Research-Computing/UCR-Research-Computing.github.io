@@ -29,9 +29,11 @@ UCR's strategic approach to Ursa Major resource allocation ensures equitable acc
 - **Project Tier:** Receives 40% to 60% of our allocation pool. This tier is both value and time-bound, intended for substantial research projects that demonstrate potential value through grants, papers, or publications. Allocation scheduling is strategic to accommodate and optimize large project resources.
 - **Campus Tier:** Initially allocated 20% of the pool, with potential to expand to 40%. Reserved for the Campus ITS Infrastucture, this tier allows flexible usage within its limit, supporting internal technological advancements and infrastructure needs.
 
-#### **Requesting and Allocation:**
+#### **Requesting a URSa Major Resource Allocation:**
 
-Submit your Ursa Major resource allocation request through our: **[Allocation Form](https://forms.gle/GDbr5FbPjykAvB3N8)**.
+Submit your Ursa Major resource allocation request through our:
+- **[Allocation Form](https://forms.gle/GDbr5FbPjykAvB3N8)**
+
 The Research Computing Team will review your project's allocation requet and available resources to approve your allocation. Once approved, you will receive an email with your allocation details and you can begin using your resources.
 
 #### **Monitoring Allocations:**
