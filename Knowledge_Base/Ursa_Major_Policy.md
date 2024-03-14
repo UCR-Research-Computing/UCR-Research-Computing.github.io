@@ -41,13 +41,35 @@ This approach ensures that resources are not only allocated fairly but also used
 
 By implementing these ideas, the university can allocate the Ursa Major campus budget fairly and effectively across as many researchers as possible, maximizing the return on investment and promoting efficient use of resources.
 
+### Ursa Major Resource Allocation Framework
 
-## Obtaining a Ursa Major Resource Allocation:
+UCR's strategic approach to Ursa Major resource allocation ensures equitable access for researchers, prioritizing projects with significant potential for impact. The framework supports both high-value and exploratory projects through a tiered system, optimizing cloud resource distribution and enhancing research capabilities.
+
+- **Explore Tier:** Allocated 20% of our total allocation pool. Designed for novel, long-term uses without a time-bound element, encouraging exploratory and innovative research.
+- **Project Tier:** Receives 40% to 60% of our allocation pool. This tier is both value and time-bound, intended for substantial research projects that demonstrate potential value through grants, papers, or publications. Allocation scheduling is strategic to accommodate and optimize large project resources.
+- **Campus Tier:** Initially allocated 20% of the pool, with potential to expand to 40%. Reserved for the Campus ITS Infrastucture, this tier allows flexible usage within its limit, supporting internal technological advancements and infrastructure needs.
+
+### Obtaining a Ursa Major Resource Allocation:
 
 1. Researchers submit an allocation request [Here](https://forms.gle/usMEn3F9db7rHVhR9) or through the Ursa Major section of the Research Computing Web Portal or ITS Service Now, providing essential details about their research project and the specific services required.  This may include software needs, hardware requirements, storage capacity needs, etc, and length of time needed.
 2. The Research Computing Team will schedule an intake meeting with the lab to understand their research needs and discuss how an Ursa Major allocation can be beneficial.
 3. The Research Computing Team will review the request, considering the project's needs, the alignment of resources and services requested, and the availability of Ursa Major resources to accommodate the proposed allocation.
 4. If the request is approved, the researcher will receive a confirmation email with access instructions and follow-up meetings will be scheduled to facilitate research collaboration and support.
+
+### **Monitoring Allocations:**
+
+To ensure the efficient use of resources and to support our researchers in the best possible manner, UCR's Research Computing team has implemented a comprehensive monitoring and optimization strategy for Ursa Major resource allocations. This approach enables us to track resource usage in real-time, identify bottlenecks, and optimize allocations to support a wide range of research activities effectively.
+
+Researchers and the ITS team can access detailed analytics and insights into their resource usage through the following Ursa Major Dashboards:
+
+| Dashboard                                                                                                                  | Description                                                                                                                  |
+|----------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| [Cloud Storage Dashboard](https://console.cloud.google.com/monitoring/dashboards/resourceList/gcs_bucket)              | Provides insights into the storage utilization across all projects, including data ingress and egress, helping to optimize storage strategies. |
+| [Disks Dashboard](https://console.cloud.google.com/monitoring/dashboards/resourceList/gce_disk)                        | Offers a detailed view of disk usage and performance metrics, enabling teams to manage and scale disk resources efficiently. |
+| [Infrastructure Summary Dashboard](https://console.cloud.google.com/monitoring/dashboards/summary/infrastructure)      | A comprehensive overview of the entire GCP infrastructure, highlighting usage patterns, available resources, and potential optimization opportunities. |
+| [VM Instances Dashboard](https://console.cloud.google.com/monitoring/dashboards/resourceList/gce_instance)             | Tracks the performance and usage of virtual machine instances, facilitating the effective management of compute resources.  |
+| [Logs Dashboard](https://console.cloud.google.com/monitoring/dashboards/resourceList/logs)                             | Enables tracking of application and system logs, crucial for debugging and understanding system behaviors.                   |
+| [Allocation Spend Dashboard](https://console.cloud.google.com/billing/019E1F-BADE9B-60248B/reports)                    | *Coming Soon*: A future dashboard that will provide detailed insights into the allocation spend, helping to track and manage budgetary aspects of projects. |
 
 
 ## Limitations or Restrictions on Access:
