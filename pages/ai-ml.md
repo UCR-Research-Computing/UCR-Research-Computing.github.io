@@ -21,7 +21,7 @@ Leading AI chatbots for your research needs.
 |----------------------------------------|-------------------------------------------------------------------------------------------------|
 | [Groq](https://groq.com/)          | Offers lightning-fast computations, ideal for complex ML models.                                |
 | [Perplexity](https://www.perplexity.ai/) | Excels in understanding and generating human-like text, perfect for NLP tasks.                  |
-| [Genimi](https://gemini.google.com/)   | Best for creative content generation, including writing, art, and music composition.            |
+| [Gemini](https://gemini.google.com/)   | Best for creative content generation, including writing, art, and music composition.            |
 | [ChatGPT](https://chat.openai.com/)    | Known for its versatility in engaging in detailed conversations and providing informative responses. |
 | [Claude](https://www.claude.ai/)       | Stands out for its deep contextual understanding, making it great for nuanced dialogues.        |
 | [Pi.ai](https://pi.ai/talk)       | Pi.ai is a personal AI assistant offering empathetic conversations, factual information, and emotional support to users, with a user-friendly interface accessible on various platforms.        |
