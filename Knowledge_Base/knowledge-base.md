@@ -23,12 +23,19 @@ Welcome to the UCR Research Computing Knowledge Base. Explore our comprehensive 
 - [Launching an Ursa Major Cluster](How_To_Launch_a_Ursa_Major_Cluster.md): Guide to starting your cluster.
 - [Connecting to HPC Cluster & Running a Sample Job](how_to_connect_to_hpc_cluster_run_sample_job.md): Connecting and job submission instructions.
 - [Ursa Major Job Script Examples](https://github.com/UCR-Research-Computing/UCR-Ursa-Major-Slurm-Job-Scripts): Sample scripts for job submission.
+- [Ursa Major HPC Cluster Templates](https://github.com/UCR-Research-Computing/UCR-Ursa-Major-Cluster-Blueprints): Templates for creating new clusters.
+- [HPCC User Tools](https://github.com/UCR-Research-Computing/HPCC-User-Utils]: Useful tools for HPCC users.
+
+
 
 #### Kubernetes Clusters
 - [The Nautilus Cluster](The_Nautilus_Cluster.md): Information on using Nautilus within the Pacific Research Platform.
+- [Example YAML files for the Nautilus Cluster](https://github.com/UCR-Research-Computing/Nautilus-Cluster-Example-Yaml-Files): Example YAML files for Nautilus Cluster.
+
 
 #### Jupyter Notebooks/Google Colab
-- Detailed guides and best practices for using Jupyter Notebooks and Google Colab are under development.
+- [Usefull Jupyter Notebooks and Colab Notebooks](https://github.com/UCR-Research-Computing/Useful-Google-Colab-Notebooks]: Useful Jupyter Notebooks and Colab Notebooks.
+
 
 #### Cloud GCP and AWS
 - [Mounting Google Cloud Storage](how_to_mount_google_cloud_storage.md): Integration instructions for Google Cloud Storage.
