@@ -1,8 +1,8 @@
 ---
 id: ceph-secure-research-storage
-title: Ceph Secure Research Storage
-sidebar_label: Ceph Secure Research Storage
-description: Ceph-Based Central Campus Research Storage Solution
+title: Ceph Research Storage (Ceph RDS)
+sidebar_label: Ceph Research Storage
+description: Ceph-Based Central Campus Research Storage Solution (Ceph RDS)
 ---
 
 ## UCR's Ceph Research Storage Solution (Ceph RDS)
