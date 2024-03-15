@@ -61,7 +61,6 @@ Ollama supports importing GGUF models in the `Modelfile`:
     FROM ./vicuna-33b.Q4_0.gguf
     ```
 - **Create the model in Ollama**:
-
     ```bash
     ollama create example -f Modelfile
     ```
