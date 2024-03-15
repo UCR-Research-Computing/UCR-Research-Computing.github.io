@@ -65,7 +65,7 @@ For more information on research computing services at UCR, visit our [website](
 
 UCR Research Computing recognizes the diverse storage needs of our research community and has adopted a tiered storage approach to ensure that researchers have access to the appropriate solutions for their specific requirements. This approach is designed to provide a comprehensive and flexible storage ecosystem that supports the entire research lifecycle, from data generation and analysis to collaboration and long-term preservation.
 
-### Tier 1: Ceph RDS – Foundation for Research Data
+### Tier 1: Ceph RDS – Foundation for Research Data (arriving later this year)
 
 The Ceph Research Data Service (Ceph RDS) serves as the foundation for research data storage at UCR. This highly scalable and secure storage solution is designed to meet the evolving needs of our researchers, providing a robust platform for storing, managing, and accessing large datasets.
 
@@ -133,7 +133,7 @@ The High-Performance Computing Center's General Parallel File System (GPFS) is t
 
 ### Ceph Secure Research Storage
 
-Ceph provides a highly reliable and scalable storage solution for the secure management of large volumes of data. It is particularly suited for research projects that require enhanced data protection measures.
+Ceph provides a highly reliable and scalable storage solution for the secure management of large volumes of data. It is particularly suited for research projects that require enhanced data protection measures. Arriving later this year.
 
 - [Ceph Storage Details](https://ceph.ucr.edu/secure-storage)
 
