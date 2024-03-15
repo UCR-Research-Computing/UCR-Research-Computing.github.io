@@ -23,6 +23,8 @@ Welcome to our Documentation and Guides page. Here, you'll find a comprehensive 
 | Data Analysis on GCP                 | How to perform data analysis using GCP's BigQuery and Data Studio. | [View Tutorial](#) |
 | HPC Job Scheduling                   | Learn how to schedule and manage jobs in an HPC environment. | [View Tutorial](#) |
 | Secure Data Storage and Transfer     | Best practices for securely storing and transferring research data. | [View Tutorial](#) |
+| How-to host Offline LLMs             | Learn how to host offline language models on GCP. | [View Tutorial](../Knowledge_Base/ollama-how-to.md) |
+
 
 ### Reference Documentation
 
