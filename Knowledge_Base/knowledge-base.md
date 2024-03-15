@@ -27,7 +27,6 @@ Welcome to the UCR Research Computing Knowledge Base. Explore our comprehensive 
 - [HPCC User Tools](https://github.com/UCR-Research-Computing/HPCC-User-Utils]: Useful tools for HPCC users.
 
 
-
 #### Kubernetes Clusters
 - [The Nautilus Cluster](The_Nautilus_Cluster.md): Information on using Nautilus within the Pacific Research Platform.
 - [Example YAML files for the Nautilus Cluster](https://github.com/UCR-Research-Computing/Nautilus-Cluster-Example-Yaml-Files): Example YAML files for Nautilus Cluster.
@@ -54,10 +53,14 @@ Welcome to the UCR Research Computing Knowledge Base. Explore our comprehensive 
 - [Research Software on Ursa Major Cluster](https://spack.readthedocs.io/en/latest/package_list.html): Comprehensive list of available research software.
 - [Installing R JAGS on Ursa Major](R-JAGS.md): Step-by-step installation guide.
 - [Molecular Dynamics Simulation Input Files with ChatGPT](md_simulation_input_files_chatpgt.md): Utilizing ChatGPT for simulation inputs.
+- [UCR Research Computing Github Org](https://github.com/UCR-Research-Computing): The UCR Research Computing Github Organization page.
+- [How-to Offline LLMs]:(./ollama-how-to.md): Install Ollama and host offline Open Source LLMs
+
 
 ### Training
 
-- Training resources and workshop schedules are currently being compiled and will be available soon.
+- [UCR Research Computing Overview](https://docs.google.com/presentation/d/e/2PACX-1vQaCJAlyQ2zdtu9dROaZZ5SZWEU_dEW49klE-stzFLWDHKNvaGlhDEqFTFu2xs6nw/pub?start=false&loop=false&delayms=3000): Overview of UCR Research Computing.
+- [Campus Information Security Team Meeting Winter 2023](https://docs.google.com/presentation/d/e/2PACX-1vRqjZ3mc576V0tKfMCSxEXt1ehXfxDU2b_SJ-s4hHt49LG3WszP3ZS5O5SZLd2ldQ/pub?start=false&loop=false&delayms=3000)
 
 ### Security
 
