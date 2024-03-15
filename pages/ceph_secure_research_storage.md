@@ -7,7 +7,7 @@ description: Ceph-Based Central Campus Research Storage Solution (Ceph RDS)
 
 ## UCR's Ceph Research Storage Solution (Ceph RDS)
 
-UC Riverside is excited to introduce a significant enhancement to our research infrastructure: the Ceph-Based Central Campus Research Storage Solution. Funded by an NSF CC* grant, this initiative aims to provide scalable, resilient, and flexible storage tailored to the diverse needs of our research community.
+UC Riverside is excited to introduce a significant enhancement to our research infrastructure: the Ceph-Based Central Campus Research Storage Solution. Funded by an NSF CC* grant, this initiative aims to provide scalable, resilient, and flexible storage tailored to the diverse needs of our research community. This will arrive later this year.
 
 ### Secure, Central, Campus-Wide, Research Storage
 
