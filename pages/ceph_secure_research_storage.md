@@ -13,7 +13,7 @@ UC Riverside is excited to introduce a significant enhancement to our research i
 
 - **Scalable Storage**: 2.2PB of usable storage, integrating 20% with the NRP Nautilus cluster for advanced data processing.
 - **Wide Connectivity**: Secure connections via NFS, CIFS, and S3 interfaces to various devices and systems.
-- **Cost-Effective**: Base allocations from 200GB to 10TB at no cost, with additional storage at $30 per TB per year.
+- **Cost-Effective**: Base allocations from 100GB to 1TB at no cost, with additional storage at $30 per TB per year.
 
 ### Distribution Strategy
 
@@ -27,7 +27,7 @@ To ensure fair access among UCR’s 800-1000 research faculty:
 
 | Feature                              | Ceph RDS                                                 | Description                                                                                                     |
 |--------------------------------------|----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
-| Default Storage (free/included)      | 200GB - 2TB (based on project needs)                     | Initial storage allocation based on project requirements, ranging from 200GB to 2TB.                          |
+| Default Storage (free/included)      | 100GB - 1TB (based on project needs)                     | Initial storage allocation based on project requirements, ranging from 200GB to 2TB.                          |
 | Cost for additional storage          | $30/TB/year                                              | Cost-effective pricing for additional storage at $30 per TB per year.                                        |
 | How to Purchase                      | Allocated based on project needs                        | Storage is allocated based on project needs, ensuring efficient resource utilization.                        |
 | Normalized Cost for 1TB / annually   | $30                                                      | The normalized cost for 1TB of storage per year is $30, providing excellent value.                          |
