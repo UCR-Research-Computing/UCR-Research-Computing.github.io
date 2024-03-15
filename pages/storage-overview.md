@@ -61,6 +61,51 @@ UCR offers diverse storage solutions to meet the needs of various research proje
 
 For more information on research computing services at UCR, visit our [website](https://researchcomputing.ucr.edu) or contact our support team.
 
+## Tiered Research Storage Approach
+
+UCR Research Computing recognizes the diverse storage needs of our research community and has adopted a tiered storage approach to ensure that researchers have access to the appropriate solutions for their specific requirements. This approach is designed to provide a comprehensive and flexible storage ecosystem that supports the entire research lifecycle, from data generation and analysis to collaboration and long-term preservation.
+
+### Tier 1: Ceph RDS – Foundation for Research Data
+
+The Ceph Research Data Service (Ceph RDS) serves as the foundation for research data storage at UCR. This highly scalable and secure storage solution is designed to meet the evolving needs of our researchers, providing a robust platform for storing, managing, and accessing large datasets.
+
+Ceph RDS offers the following key benefits:
+
+- **Scalability**: Starting with an initial capacity of 2 PB, the Ceph RDS can seamlessly scale to accommodate growing data storage requirements.
+- **Data Integrity and Security**: With 8k + 4m erasure coding and encryption, Ceph RDS ensures the highest levels of data integrity and security, making it suitable for sensitive research data.
+- **Performance**: Leveraging high IOPS NVMe-backed storage pools, Ceph RDS delivers the performance required for data-intensive research workloads.
+- **Accessibility**: Ceph RDS supports a wide range of access protocols, including NFS, CIFS/SMB, S3, and various file transfer protocols, enabling seamless integration with existing research 
+- **Campus Integration**: Ceph RDS connects directly to the High-Performance Computing Center (HPCC), campus clusters, and centers providing a tightly integrated storage solution for computational research and analysis.
+
+By establishing Ceph RDS as the foundation for research data storage, UCR ensures that researchers have access to a robust, secure, and scalable storage solution that can support their data-intensive projects.
+
+### Tier 2: Google Drive – Collaboration and Document Management
+
+Google Drive serves as the next tier in UCR's research storage approach, focused on enabling efficient collaboration and document management. Tightly integrated with UCR's G Suite, Google Drive provides a user-friendly environment for storing, sharing, and editing various file types, including documents, spreadsheets, and presentations.
+
+Key benefits of Google Drive include:
+
+- **Collaboration**: Real-time collaboration features facilitate seamless teamwork and enable researchers to work on shared documents simultaneously.
+- **Ease of Access**: With web-based access and integration with various productivity tools, Google Drive offers convenient access to research materials from any location.
+- **Interoperability**: Google Drive supports interoperability with web-based services like the Open Science Framework (OSF), enabling researchers to leverage additional tools for research management and dissemination.
+
+While Ceph RDS serves as the foundation for research data storage, Google Drive complements this by providing a focused solution for document management and small file sharing, enhancing collaboration and productivity within research teams.
+
+### Tier 3: Cloud and Backup Storage – Scalable and Secure
+
+UCR recognizes the importance of providing cost-effective and secure storage solutions for various research needs, including long-term archiving, data backup, and cloud-based storage. To address these requirements, UCR offers access to cloud storage platforms like Google Cloud Storage (GCS) and Amazon Web Services (AWS) S3, as well as backup solutions like CrashPlan.
+
+These storage solutions offer the following benefits:
+
+- **Scalability**: Cloud storage platforms like GCS and AWS S3 provide virtually unlimited scalability, enabling researchers to store and manage large datasets without capacity constraints.
+- **Cost-Effectiveness**: UCR has negotiated discounted pricing for these storage solutions, making them cost-effective options for researchers.
+- **Data Protection**: Backup solutions like CrashPlan ensure the longevity and integrity of research data by providing reliable backup and recovery capabilities.
+- **Flexibility**: With various storage classes and access options, these solutions can accommodate a wide range of research needs, from frequently accessed data to long-term archiving.
+
+By incorporating cloud and backup storage into the tiered approach, UCR empowers researchers with flexible, secure, and cost-effective storage solutions tailored to their specific project requirements.
+
+This tiered research storage approach ensures that UCR's researchers have access to the most appropriate storage solutions for their needs, enabling them to focus on their research while benefiting from a robust, secure, and collaborative storage ecosystem.
+
 ### Ursa Major Storage
 
 The Ursa Major project, in partnership with Google Cloud Platform (GCP), offers expansive cloud storage solutions that cater to all types of research data. This initiative is designed to enhance storage flexibility, scalability, and access, supporting both high-performance computing needs and everyday research data management.
@@ -72,12 +117,6 @@ The Ursa Major project, in partnership with Google Cloud Platform (GCP), offers 
 Google Drive provides a collaborative environment for storing, sharing, and editing documents, spreadsheets, and presentations. Integrated with UCR's G Suite, Google Drive is a versatile tool for managing research projects and facilitating teamwork.
 
 - [Access Google Drive](https://drive.google.com)
-
-### Ursa Major Data
-
-Ursa Major Data is focused on leveraging the data processing and analytics capabilities of GCP to support data-intensive research projects. It offers an ecosystem of tools for data analysis, machine learning, and visualization.
-
-- [Explore Ursa Major Data Services](https://ursa-major.ucr.edu/data-services)
 
 ### GCS & AWS S3
 
