@@ -5,7 +5,7 @@ sidebar_label: Knowledge Base
 ---
 
 <img src="../assets/welcome.jpg" alt="Banner Image" style="max-width: 100%; height: auto;">
-<img src="../assets/welcome.jpg" alt="Banner Image" style="width: 100%; object-fit: cover; height: 150px;">
+<img src="../assets/welcome.jpg" alt="Banner Image" style="width: 100%; object-fit: scale-down; height: 150px;">
 
 
 
