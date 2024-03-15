@@ -41,8 +41,8 @@ Here's the complete table incorporating the "Past Events" section along with the
 
 | Event Title                   | Recorded On  | Description                                                                                           | Access Link       |
 |-------------------------------|--------------|-------------------------------------------------------------------------------------------------------|-------------------|
-| Cybersecurity Best Practices  | January 20, 2024 | A comprehensive overview of current cybersecurity threats and practical strategies to protect personal and organizational data. | [Watch here](#) |
-| Effective Project Management  | February 10, 2024 | Learn the fundamentals of effective project management, including planning, execution, and team leadership. | [Watch here](#) |
+| UCR Research Computing Overview  | January 20, 2023 | A comprehensive overview of UCR Research Computing Service. | [Watch here](https://docs.google.com/presentation/d/e/2PACX-1vQaCJAlyQ2zdtu9dROaZZ5SZWEU_dEW49klE-stzFLWDHKNvaGlhDEqFTFu2xs6nw/pub?start=false&loop=false&delayms=3000) |
+| Campus Information Security Team Meeting Winter 2023  | February 10, 2023 | Learn the fundamentals of UCR Research Security. | [Watch here](https://docs.google.com/presentation/d/e/2PACX-1vRqjZ3mc576V0tKfMCSxEXt1ehXfxDU2b_SJ-s4hHt49LG3WszP3ZS5O5SZLd2ldQ/pub?start=false&loop=false&delayms=3000) |
 
 ---
 
