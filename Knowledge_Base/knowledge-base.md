@@ -17,6 +17,7 @@ Welcome to the UCR Research Computing Knowledge Base. Explore our comprehensive 
 #### Workstations/Servers
 - [Ursa Major Research Workstations](Ursa_Major_Research_Workstations.md): Overview and launch instructions for research workstations.
 - [Connecting to a Ursa Major Research Workstation](Ursa_Major_Research_Workstations_How_to_Connect.md): Connection instructions.
+- [How to: Launch a Ursa Major Research Workstation](Ursa_Major_Research_Workstations_How_to_Launch.md)
 
 #### HPC Clusters
 - [Available HPC Clusters](Available_Clusters.md): Discover available HPC clusters.
@@ -25,6 +26,7 @@ Welcome to the UCR Research Computing Knowledge Base. Explore our comprehensive 
 - [Ursa Major Job Script Examples](https://github.com/UCR-Research-Computing/UCR-Ursa-Major-Slurm-Job-Scripts): Sample scripts for job submission.
 - [Ursa Major HPC Cluster Templates](https://github.com/UCR-Research-Computing/UCR-Ursa-Major-Cluster-Blueprints): Templates for creating new clusters.
 - [HPCC User Tools](https://github.com/UCR-Research-Computing/HPCC-User-Utils]: Useful tools for HPCC users.
+- [ACCESS_Systems](../pages/nsf_access.md)
 
 
 #### Kubernetes Clusters
@@ -35,10 +37,14 @@ Welcome to the UCR Research Computing Knowledge Base. Explore our comprehensive 
 #### Jupyter Notebooks/Google Colab
 - [Usefull Jupyter Notebooks and Colab Notebooks](https://github.com/UCR-Research-Computing/Useful-Google-Colab-Notebooks]: Useful Jupyter Notebooks and Colab Notebooks.
 
-
-#### Cloud GCP and AWS
+#### Cloud: Ursa Major, GCP and AWS
+- [Ursa_Major_Secure_Research_Storage](Ursa_Major_Secure_Research_Storage.md)
 - [Mounting Google Cloud Storage](how_to_mount_google_cloud_storage.md): Integration instructions for Google Cloud Storage.
 - [Google Drive and Google Cloud Storage and AWS S3](Google_Drive.md): Using Google Drive for research and best practices for AWS S3.
+- [How to: Create a Ursa Major Research Storage Bucket](Ursa_Major_Research_Storage_How_to_Create_Bucket.md)
+- [How to: Access a Ursa Major Research Storage Bucket](Ursa_Major_Research_Storage_How_to_Access_Bucket.md)
+- [How to: Mount Google Cloud Storage on a Linux Workstation or Cluster](how_to_mount_google_cloud_storage.md): Integration instructions for Google Cloud Storage.
+- [How to: Mount Google Drive on a Linux Workstation or Cluster](how_to_mount_google_drive.md)
 
 #### On-Prem
 - [Local Lab Storage](Local_Lab_Storage.md): Storage options and best practices for labs.
