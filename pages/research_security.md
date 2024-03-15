@@ -38,15 +38,17 @@ Adherence to these standards is essential for maintaining the integrity and secu
 
 #### Data Security Plan (DSP)
 
+<div style="float: right; margin-left: 20px; margin-bottom: 10px; max-width: 50%;">
+  <img src="../assets/dsp.jpg" alt="Researchers discussing the Research Data Security Plan" style="width: 100%; object-fit: scale-down; height: auto; max-height: 160px;">
+</div>
+
 At UCR Research Computing, we understand the critical importance of safeguarding your research data. To this end, we offer assistance in developing a **Data Security Plan (DSP)** tailored to your project's specific needs. A DSP is a comprehensive document that outlines the Roles, Responsibilities, Policies, Processes, and Controls essential for the protection of your data. It serves as a blueprint to ensure that your research is conducted securely, in compliance with relevant standards, and with the utmost safety.
 
-<div class="image-wrap">
-  <img src="../assets/" alt="Researchers discussing the Research Data Security Plan">
-</div>For research projects classified under **P3** and **P4** levels—which involve sensitive data containing **Personal Identifiable Information (PII)** necessitating a security plan—we adhere to a detailed template to guide the creation of your DSP. This template is designed with the aim of securing the highest levels of data sensitivity and ensuring compliance with both internal and external security requirements.
+For research projects classified under **P3** and **P4** levels—which involve sensitive data containing **Personal Identifiable Information (PII)** necessitating a security plan—we adhere to a detailed template to guide the creation of your DSP. This template is designed with the aim of securing the highest levels of data sensitivity and ensuring compliance with both internal and external security requirements.
 
 #### **[UCR Data Security Plan Template](https://docs.google.com/document/d/17oO97C_AtGzAsno6se8MYcZlqfiv3BpvPurFnVosi_0/edit?usp=sharing):** Our template facilitates the creation of Data Security Plans at UCR, providing a structured approach to identify and mitigate risks associated with handling sensitive data. 
 
-> For projects classified under **P1** and **P2** levels, which involve data without Personal Identifiable Information (PII), **nothing is requiered**. We are building a streamlined and modified version of the DSP template. This adaptation reflects the reduced risk and security requirements associated with these levels of data sensitivity.
+For projects classified under **P1** and **P2** levels, which involve data without Personal Identifiable Information (PII), **nothing is requiered**. We are building a streamlined and modified version of the DSP template. This adaptation reflects the reduced risk and security requirements associated with these levels of data sensitivity.
 
 Our commitment at UCR Research Computing extends to collaborating closely with your lab and the UCR Information Security Office (ISO) team. This collaboration ensures that we provide comprehensive support in planning and conducting your secure research as smoothly and efficiently as possible.
     
