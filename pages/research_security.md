@@ -39,7 +39,7 @@ Adherence to these standards is essential for maintaining the integrity and secu
 #### Data Security Plan (DSP)
 
 <div style="float: right; margin-left: 20px; margin-bottom: 10px; max-width: 50%;">
-  <img src="../assets/dsp.jpg" alt="Researchers discussing the Research Data Security Plan" style="width: 100%; object-fit: scale-down; height: auto; max-height: 160px;">
+  <img src="../assets/dsp.jpg" alt="Researchers discussing the Research Data Security Plan" style="width: 100%; object-fit: scale-down; height: auto; max-height: 360px;">
 </div>
 
 At UCR Research Computing, we understand the critical importance of safeguarding your research data. To this end, we offer assistance in developing a **Data Security Plan (DSP)** tailored to your project's specific needs. A DSP is a comprehensive document that outlines the Roles, Responsibilities, Policies, Processes, and Controls essential for the protection of your data. It serves as a blueprint to ensure that your research is conducted securely, in compliance with relevant standards, and with the utmost safety.
