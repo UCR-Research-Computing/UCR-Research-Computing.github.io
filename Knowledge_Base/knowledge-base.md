@@ -54,7 +54,7 @@ Welcome to the UCR Research Computing Knowledge Base. Explore our comprehensive 
 - [Installing R JAGS on Ursa Major](R-JAGS.md): Step-by-step installation guide.
 - [Molecular Dynamics Simulation Input Files with ChatGPT](md_simulation_input_files_chatpgt.md): Utilizing ChatGPT for simulation inputs.
 - [UCR Research Computing Github Org](https://github.com/UCR-Research-Computing): The UCR Research Computing Github Organization page.
-- [How-to Offline LLMs]:(./ollama-how-to.md): Install Ollama and host offline Open Source LLMs
+- [How-to Offline LLMs](./ollama-how-to.md): Install Ollama and host offline Open Source LLMs
 
 
 ### Training
