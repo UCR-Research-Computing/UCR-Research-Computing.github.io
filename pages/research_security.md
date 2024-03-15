@@ -4,6 +4,8 @@ title: Research Security
 sidebar_label: Research Security
 ---
 
+<img src="../assets/security.jpg" alt="Banner Image" style="width: 100%; object-fit: scale-down; height: auto; max-height: 400px;">
+
 ## Research Security
 
 At the University of California, Riverside (UCR), ensuring the security of research data is a priority. We work closely with UCR's Information Security Team to provide comprehensive consulting services on securing your research projects. Our goal is to ensure that all research activities meet the highest standards of data security, complying with relevant regulations and university policies.
