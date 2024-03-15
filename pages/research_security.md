@@ -46,7 +46,8 @@ At UCR Research Computing, we understand the critical importance of safeguarding
 
 For research projects classified under **P3** and **P4** levels—which involve sensitive data containing **Personal Identifiable Information (PII)** necessitating a security plan—we adhere to a detailed template to guide the creation of your DSP. This template is designed with the aim of securing the highest levels of data sensitivity and ensuring compliance with both internal and external security requirements.
 
-#### **[UCR Data Security Plan Template](https://docs.google.com/document/d/17oO97C_AtGzAsno6se8MYcZlqfiv3BpvPurFnVosi_0/edit?usp=sharing):** Our template facilitates the creation of Data Security Plans at UCR, providing a structured approach to identify and mitigate risks associated with handling sensitive data. 
+- **[UCR Data Security Plan Template](https://docs.google.com/document/d/17oO97C_AtGzAsno6se8MYcZlqfiv3BpvPurFnVosi_0/edit?usp=sharing):** 
+Our template facilitates the creation of Data Security Plans at UCR, providing a structured approach to identify and mitigate risks associated with handling sensitive data. 
 
 For projects classified under **P1** and **P2** levels, which involve data without Personal Identifiable Information (PII), **nothing is requiered**. We are building a streamlined and modified version of the DSP template. This adaptation reflects the reduced risk and security requirements associated with these levels of data sensitivity.
 
