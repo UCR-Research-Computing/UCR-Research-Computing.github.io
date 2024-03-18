@@ -45,6 +45,7 @@ Welcome to the UCR Research Computing Knowledge Base. Explore our comprehensive 
 - [How to: Access a Ursa Major Research Storage Bucket](Ursa_Major_Research_Storage_How_to_Access_Bucket.md)
 - [How to: Mount Google Cloud Storage on a Linux Workstation or Cluster](how_to_mount_google_cloud_storage.md): Integration instructions for Google Cloud Storage.
 - [How to: Mount Google Drive on a Linux Workstation or Cluster](how_to_mount_google_drive.md)
+- [How to: S3 Auto Migrate and Delete](./how-to-s3-auto-migrate-delete.md)
 
 #### On-Prem
 - [Local Lab Storage](Local_Lab_Storage.md): Storage options and best practices for labs.
