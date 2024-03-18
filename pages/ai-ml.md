@@ -152,6 +152,7 @@ The realm of video generation is being transformed by AI, making it possible to 
 | [Kaiber AI](https://kaiber.ai/)             | Video Generation          | Transforms textual descriptions into engaging videos, simplifying content creation.                      |
 | [DeepBrain AI](https://www.deepbrain.io/)   | Video Synthesis           | Produces lifelike AI-generated videos, including virtual human content, for a range of applications.     |
 | [OpenAI's Sora](https://openai.com/sora)     | Video Generation          | (Upcoming) Promises to revolutionize video creation with AI, generating videos from descriptions.        |
+| [Haiper AI](https://haiper.ai/)              | Video Creation            | Develops AI products for video creation, enabling users to express themselves creatively on social media. |
 
 #### **Music Generation**
 
