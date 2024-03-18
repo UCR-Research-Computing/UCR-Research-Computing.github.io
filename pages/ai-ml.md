@@ -15,7 +15,7 @@ How to run your own copy of a open source LLM on UCR Ursa Major or your workstat
 
 Leading AI chatbots for your research needs.
 
-> **Warning:** Ensure you have the necessary permissions before using AI chatbots with sensitive or proprietary data.
+> **Warning:** Ensure you have the necessary permissions or take the appropriate steps before using AI chatbots with sensitive or proprietary data.
 
 | Chatbot                                | Description                                                                                     |
 |----------------------------------------|-------------------------------------------------------------------------------------------------|
