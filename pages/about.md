@@ -98,7 +98,7 @@ The primary objective of the RCSAS MOU is to clearly define the roles, responsib
 
 - **Clarification of Roles and Responsibilities**: Establishing clear delineations between the duties of UCR faculty, researchers, and the IT department in the management and use of research computing systems. This ensures that all parties understand their obligations and the standards they must adhere to.
 - **Financial Framework**: Outlining a transparent financial model for the funding, maintenance, and expansion of research computing resources. This model addresses the allocation of costs between the university, individual departments, and external funding sources.
-- **Governance Structure**: Setting up a governance structure that involves faculty in decision-making processes related to research computing policies, infrastructure investments, and the prioritization of IT support services.
+- **Governance Structure**: Setting up a governance structure that involves faculty in decision-making processes related to research computing guidelines, infrastructure investments, and the prioritization of IT support services.
 
 #### Scope
 
