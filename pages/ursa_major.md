@@ -53,7 +53,7 @@ Researchers and the ITS team can access detailed analytics and insights into the
 
 ### Ursa Major Links ###
 
-* [Ursa Major Policy](../Knowledge_Base/Ursa_Major_Policy.md)
+* [Ursa Major Guidelines](../Knowledge_Base/Ursa_Major_Policy.md)
 * [Knowledge Base](../Knowledge_Base/knowledge-base.md)
 * [Training and Workshops](../pages/workshops_and_webinars.md)
 
