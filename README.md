@@ -7,7 +7,6 @@ At the University of California, Riverside (UCR), we're committed to empowering 
 
 Discover a wide array of computational tools and platforms tailored to support your research endeavors. Through our sidebar navigation, and in the table below, you can explore our offerings: 
 - Search with the Search Bar
-- Check out <a href="http://34.70.75.7:3000/chatbot/0528881e-633f-4e5a-a6df-7a41e74df4e7" target="_blank">**Ursa Major Ask**</a> our AI Chat Bot in beta.
 
 | Compute                                          | Storage                                  | Support                                                 |
 |--------------------------------------------------|------------------------------------------|---------------------------------------------------------|

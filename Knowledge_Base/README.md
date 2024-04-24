@@ -10,7 +10,7 @@ sidebar_label: Knowledge Base
 
 ## Research Computing Knowledge Base
 
-Welcome to the UCR Research Computing Knowledge Base. Explore our comprehensive repository to leverage the full spectrum of research computing resources at UCR, from computing clusters and workstations to secure storage solutions and software. Browse by category below or use the search bar in the upper right corner. Also, check out ***Ursa Major Ask***, our AI Chat Bot in beta: [Ursa Major Ask](http://34.70.75.7:3000/chatbot/0528881e-633f-4e5a-a6df-7a41e74df4e7).
+Welcome to the UCR Research Computing Knowledge Base. Explore our comprehensive repository to leverage the full spectrum of research computing resources at UCR, from computing clusters and workstations to secure storage solutions and software. Browse by category below or use the search bar in the upper right corner.
 
 ### Computing and Storage
 

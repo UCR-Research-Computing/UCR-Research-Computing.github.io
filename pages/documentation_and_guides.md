@@ -6,7 +6,7 @@ sidebar_label: Documentation and Guides
 
 ## Documentation and Guides
 
-Welcome to our Documentation and Guides page. Here, you'll find a comprehensive collection of resources designed to support your research computing and cloud computing projects. Browse through our curated lists of guides, tutorials, and documentation to find the information you need to advance your work. Check out ***Ursa Major Ask*** our AI Chat Bot in beta: <a href="http://34.70.75.7:3000/chatbot/0528881e-633f-4e5a-a6df-7a41e74df4e7" target="_blank">Ursa Major Ask</a>
+Welcome to our Documentation and Guides page. Here, you'll find a comprehensive collection of resources designed to support your research computing and cloud computing projects. Browse through our curated lists of guides, tutorials, and documentation to find the information you need to advance your work.
 
 ### Getting Started Guides
 

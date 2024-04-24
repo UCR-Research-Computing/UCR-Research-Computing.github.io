@@ -59,6 +59,4 @@ These Guidelines collectively ensure that UCR researchers have comprehensive acc
 
 - **[Campus Policies](https://compliance.ucr.edu/policies)**: Guidelines and procedures are foundational at UCR.  Guidelines show us what type of place UCR is–how we are to treat one another, and how we can expect to be treated.  Guidelines and procedures show us how we are expected to do certain aspects of our jobs, and how we conduct ourselves when representing the university.
 
-For further details and updates, please visit our dedicated UCR Research Computing website and check out ***Ursa Major Ask***, our AI Chat Bot in beta: [Ursa Major Ask](http://34.70.75.7:3000/chatbot/0528881e-633f-4e5a-a6df-7a41e74df4e7).
-
 
