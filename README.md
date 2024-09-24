@@ -10,7 +10,7 @@ Discover a wide array of computational tools and platforms tailored to support y
 
 | Compute                                          | Storage                                  | Support                                                 |
 |--------------------------------------------------|------------------------------------------|---------------------------------------------------------|
-| [HPCC](hpcc.ucr.edu)                             | [HPCC-GPFS](./pages/hpcc_gpfs.md)        | [Research Infrastructure Support](./pages/computing-and-research-infrastructure-support.md) |
+| [HPCC](hpcc.ucr.edu)                             | [HPCC-GPFS](./pages/hpcc_gpfs.md)        | [Research Infrastructure Support](./pages/research_infrastructure_support.md) |
 | [Ursa Major](./pages/ursa_major.md)              | [Ursa Major Data](./pages/ursa_major_data.md) | [Ursa Major Support](./pages/ursa_major.md)             |
 | [NRP Nautilus Cluster](./pages/Nautilus.md)      | [Ceph Secure Research Storage](./pages/ceph_secure_research_storage.md) | [Lab Support](./pages/optimizing-research-environments.md) |
 | [ACCESS Program](./pages/nsf_access.md)          | [Google Drive](./pages/Google_Drive.md)  | [Research Computing Consultation](./pages/research-computing-consultation.md) |
