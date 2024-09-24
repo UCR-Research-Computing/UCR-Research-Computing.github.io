@@ -12,13 +12,13 @@ Discover a wide array of computational tools and platforms tailored to support y
 |--------------------------------------------------|------------------------------------------|---------------------------------------------------------|
 | [HPCC](hpcc.ucr.edu)                             | [HPCC-GPFS](./pages/hpcc_gpfs.md)        | [Research Infrastructure Support](./pages/research_infrastructure_support.md) |
 | [Ursa Major](./pages/ursa_major.md)              | [Ursa Major Data](./pages/ursa_major_data.md) | [Ursa Major Support](./pages/ursa_major.md)             |
-| [NRP Nautilus Cluster](./pages/Nautilus.md)      | [Ceph Secure Research Storage](./pages/ceph_secure_research_storage.md) | [Lab Support](./pages/optimizing-research-environments.md) |
-| [ACCESS Program](./pages/nsf_access.md)          | [Google Drive](./pages/Google_Drive.md)  | [Research Computing Consultation](./pages/research-computing-consultation.md) |
-| [Open Science Grid](./pages/open_science_grid.md)| [GCS and AWS S3](./pages/gcs_aws_s3.md)  | [Software and Application Support](./pages/software-and-application-support.md) |
-| [AWS Enterprise Discount Program](./pages/gcp_aws_edp.md) | [Dryad](https://datadryad.org/stash)     | [Grant Collaboration](./pages/grant-collaboration-and-innovation.md) |
-| [GCP Enterprise Discount Program](./pages/gcp_aws_edp.md) | [Backup](./pages/backup.md)              | [Workshops and Webinars](./pages/workshops-and-webinars.md) |
-| [Individual GCP Subscription Agreements](./pages/gcp_subscription_agreements.md) |  | [Online Courses](./pages/online-courses.md)            |
-| [AWS Cloud Credits](./pages/GCP_and_AWS_Cloud_Credits.md) |  | [Documentation and Guides](./pages/documentation-and-guides.md) |
+| [NRP Nautilus Cluster](./pages/Nautilus.md)      | [Ceph Secure Research Storage](./pages/ceph_secure_research_storage.md) | [Lab Support](./pages/lab-support.md) |
+| [ACCESS Program](./pages/nsf_access.md)          | [Google Drive](./pages/Google_Drive.md)  | [Research Computing Consultation](./pages/research_facilitation.md) |
+| [Open Science Grid](./pages/open_science_grid.md)| [GCS and AWS S3](./pages/gcs_aws_s3.md)  | [Software and Application Support](./pages/software_and_application_support.md) |
+| [AWS Enterprise Discount Program](./pages/gcp_aws_edp.md) | [Dryad](https://datadryad.org/stash)     | [Grant Collaboration](./pages/grant_colab.md) |
+| [GCP Enterprise Discount Program](./pages/gcp_aws_edp.md) | [Backup](./pages/backup.md)              | [Workshops and Webinars](./pages/workshops_and_webinars.md) |
+| [Individual GCP Subscription Agreements](./pages/gcp_subscription_agreements.md) |  | [Online Courses](./pages/online_courses.md)            |
+| [AWS Cloud Credits](./pages/GCP_and_AWS_Cloud_Credits.md) |  | [Documentation and Guides](./pages/documentation_and_guides.md) |
 | [GCP Cloud Credits](./pages/GCP_and_AWS_Cloud_Credits.md) |  |  |
 
 
