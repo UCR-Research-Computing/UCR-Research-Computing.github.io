@@ -25,8 +25,8 @@ This partnership with Google Cloud Platform is a major milestone for UCR, repres
 
 UCR's strategic approach to Ursa Major resource allocation ensures equitable access for researchers, prioritizing projects with significant potential for impact. The framework supports both high-value and exploratory projects through a allocation system, optimizing cloud resource distribution and enhancing research capabilities.
 
-- **Explore:** These allocations are designed for small and exploratory use.
-- **Advanced:** This allocation is both value and time-bound, intended for substantial research projects that demonstrate potential value through grants, papers, or publications. Allocation scheduling is strategic to accommodate and optimize large project resources.
+- **Explore Allocations:** These allocations are designed for small and exploratory use.
+- **Advanced Allocations:** This allocation is both value and time-bound, intended for substantial research projects that demonstrate potential value through grants, papers, or publications. Allocation scheduling is strategic to accommodate and optimize large project resources.
 
 #### **Requesting a URS Major Resource Allocation:**
 
