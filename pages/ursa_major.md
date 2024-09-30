@@ -23,18 +23,19 @@ This partnership with Google Cloud Platform is a major milestone for UCR, repres
 
 ### Ursa Major Resource Allocation Framework
 
-UCR's strategic approach to Ursa Major resource allocation ensures equitable access for researchers, prioritizing projects with significant potential for impact. The framework supports both high-value and exploratory projects through a tiered system, optimizing cloud resource distribution and enhancing research capabilities.
+UCR's strategic approach to Ursa Major resource allocation ensures equitable access for researchers, prioritizing projects with significant potential for impact. The framework supports both high-value and exploratory projects through a allocation system, optimizing cloud resource distribution and enhancing research capabilities.
 
-- **Explore Tier:** Allocated 20% of our total allocation pool. Designed for novel, long-term uses without a time-bound element, encouraging exploratory and innovative research.
-- **Project Tier:** Receives 40% to 60% of our allocation pool. This tier is both value and time-bound, intended for substantial research projects that demonstrate potential value through grants, papers, or publications. Allocation scheduling is strategic to accommodate and optimize large project resources.
-- **Campus Tier:** Initially allocated 20% of the pool, with potential to expand to 40%. Reserved for the Campus ITS Infrastucture, this tier allows flexible usage within its limit, supporting internal technological advancements and infrastructure needs.
+- **Explore:** These allocations are designed for small and exploratory use.
+- **Advanced:** This allocation is both value and time-bound, intended for substantial research projects that demonstrate potential value through grants, papers, or publications. Allocation scheduling is strategic to accommodate and optimize large project resources.
 
 #### **Requesting a URS Major Resource Allocation:**
 
-Submit your Ursa Major resource allocation request through our:
-- **[Allocation Form](https://forms.gle/GDbr5FbPjykAvB3N8)**
+Submit your Ursa Major Allocation request here:
 
-The Research Computing Team will review your project's allocation requet and available resources to approve your allocation. Once approved, you will receive an email with your allocation details and you can begin using your resources.
+- **[Explore Allocation](https://docs.google.com/forms/d/e/1FAIpQLSclKhikqwHOWhDDJV5tNAGGFdoqpkx8sdWnudLBhXWlj5NofA/viewform?usp=sf_link)**
+- **[Advanced Allocation](https://docs.google.com/forms/d/e/1FAIpQLSd40G615UwddDPpnUTRLmdJcysXhZ_RUXBYEGICQCYWQmK8_A/viewform?usp=sf_link)**
+
+The Research Advisory Board will review your project's allocation requets and the available resources to approve your allocation. Once approved, you will receive an email with your allocation details and you can begin using your resources.
 
 #### **Monitoring Allocations:**
 
