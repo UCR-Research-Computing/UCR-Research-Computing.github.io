@@ -12,7 +12,7 @@ Discover a wide array of computational tools and platforms tailored to support y
 |--------------------------------------------------|------------------------------------------|---------------------------------------------------------|
 | [HPCC](hpcc.ucr.edu)                             | [HPCC-GPFS](./pages/hpcc_gpfs.md)        | [Research Infrastructure Support](./pages/research_infrastructure_support.md) |
 | [Ursa Major](./pages/ursa_major.md)              | [Ursa Major Data](./pages/ursa_major_data.md) | [Ursa Major Support](./pages/ursa_major.md)             |
-| [NRP Nautilus Cluster](./pages/Nautilus.md)      | [Ceph Secure Research Storage](./pages/ceph_secure_research_storage.md) | [Lab Support](./pages/lab-support.md) |
+| [NRP Nautilus Cluster](./pages/Nautilus.md)      | [Ceph Research Data Storage](./pages/ceph_secure_research_storage.md) | [Lab Support](./pages/lab-support.md) |
 | [ACCESS Program](./pages/nsf_access.md)          | [Google Drive](./pages/Google_Drive.md)  | [Research Computing Consultation](./pages/research_facilitation.md) |
 | [Open Science Grid](./pages/open_science_grid.md)| [GCS and AWS S3](./pages/gcs_aws_s3.md)  | [Software and Application Support](./pages/software_and_application_support.md) |
 | [AWS Enterprise Discount Program](./pages/gcp_aws_edp.md) | [Dryad](https://datadryad.org/stash)     | [Grant Collaboration](./pages/grant_colab.md) |
