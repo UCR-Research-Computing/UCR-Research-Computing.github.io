@@ -20,43 +20,30 @@ The University of California, Riverside’s Ursa Major service is available to a
 
 ## Resource Allocation
 
-To promote fair and equitable access to Ursa Major services for all researchers, the following resource allocation approach has been established. This approach outlines the process of resource allocation, ensuring that the available resources are distributed fairly among the researchers while taking into account the specific needs and requirements of each project.
+To promote fair and equitable access to Ursa Major services for all researchers, we have established a tiered resource allocation approach. This approach ensures that available resources are distributed fairly among researchers, taking into account the specific needs and requirements of each project.
 
-In our commitment to fostering an environment of research excellence and innovation at UCR, we've developed a strategic framework for the allocation of Ursa Major services. This framework is designed to ensure all researchers have equitable access to advanced cloud resources, aligning with our broader objectives of enhancing research capabilities and securing more grant funding. By prioritizing projects that demonstrate significant potential for academic and societal impact, and showcasing the transformative applications of cloud technology, we aim to optimize the distribution of resources across the research community.
+Our commitment to fostering research excellence and innovation at UCR led us to develop this strategic framework for allocating Ursa Major services. This framework ensures equitable access to advanced cloud resources for all researchers, aligning with our objectives of enhancing research capabilities and securing more grant funding. By prioritizing projects with significant potential for academic and societal impact, and showcasing cloud technology's transformative applications, we aim to optimize resource distribution across the research community.
 
-This approach ensures that resources are not only allocated fairly but also used to drive forward the most impactful research projects. By doing so, we aim to not only advance UCR's research agenda but also attract significant grant funding. This, in turn, bolsters our campus's research infrastructure, attracts top-tier talent, and ultimately, enhances the prestige and competitiveness of UCR within the academic community.
-
-##### Tiered resource allocation:
-* Tiered allocation system based on factors such as project maturity, cloud experience, project timing, or project funding. Allocating more resources to time bound and/or high value resource needs. While still providing some access to resources for long running, exploratory or early-stage projects.
-* Allow researchers to request an allocation for GCP resources for specific periods of time, ensuring that resources are available when needed and reducing the risk of resource contention among researchers.
-##### Project prioritization:
-* Prioritize projects based on research impact
-* Allocate resources to projects with high potential impact, innovative research projects, or those with strong potential for future funding.
-##### Set maximum running resource quotas per allocation:
-* This can vary among projects, and would be based on requested resources, such as compute, storage, etc.
-##### Monitor resource usage and adjust allocations:
-* Regularly monitor the usage of GCP resources by RC Team and researchers themselves to identify inefficiencies, unused allocations, or bottlenecks. Adjust the allocations based on actual usage patterns to optimize the utilization of the budget.
-* This may involve reconfiguring resources in use to better fit the performance needs of the project, which may require short maintenance windows where running jobs, simulations, etc may need to be stopped to make the requisite changes.
-##### Continuously evaluate and optimize allocations:
-* Regularly review the effectiveness of the allocation strategy and make adjustments as necessary to ensure optimal use of the GCP Subscription.
-
-By implementing these ideas, the university can allocate the Ursa Major campus budget fairly and effectively across as many researchers as possible, maximizing the return on investment and promoting efficient use of resources.
+This approach ensures that resources are allocated fairly and used to drive impactful research projects, advancing UCR's research agenda and attracting significant grant funding. This strengthens our research infrastructure, attracts top talent, and enhances UCR's prestige and competitiveness.
 
 ### Ursa Major Resource Allocation Framework
 
 UCR's strategic approach to Ursa Major resource allocation ensures equitable access for researchers, prioritizing projects with significant potential for impact. The framework supports both high-value and exploratory projects through a tiered system, optimizing cloud resource distribution and enhancing research capabilities.
 
-- **Explore Allocation:** These allocations are designed for small and exploratory use.
-- **Advanced Allocation:** This allocation is both value and time-bound, intended for substantial research projects that demonstrate potential value through grants, papers, or publications. Allocation scheduling is strategic to accommodate and optimize large project resources.
+#### Allocation Tiers
 
-#### **Requesting a URS Major Resource Allocation:**
+* **Explore Tier:** This tier provides a baseline level of resources suitable for researchers who are new to GCP or conducting small-scale experiments and projects. This tier allows for experimentation with various cloud technologies, small-scale storage needs, and testing code before deploying on a larger scale within the Advanced Tier.
+* **Advanced Tier:** This tier is designed for researchers with larger-scale projects and higher resource demands, including moderate to high use of GPUs and most high-performance computing (HPC) needs involving large CPU and memory usage. Access to this tier will be granted based on a proposal review process conducted by a faculty panel.
+* **Researcher-Focused Subscription Agreement Tier:** This tier, funded by the researcher, offers a dedicated GCP environment managed by ITS in close collaboration with Google. The use cases for this tier are limited only by the funding available on the subscription agreement. This includes use of GPUs, HPC workloads, AI model training, and more.
+
+#### Requesting a URS Major Resource Allocation:
 
 Submit your Ursa Major Allocation request here:
 
 - **[Explore Allocation](https://docs.google.com/forms/d/e/1FAIpQLSclKhikqwHOWhDDJV5tNAGGFdoqpkx8sdWnudLBhXWlj5NofA/viewform?usp=sf_link)**
 - **[Advanced Allocation](https://docs.google.com/forms/d/e/1FAIpQLSd40G615UwddDPpnUTRLmdJcysXhZ_RUXBYEGICQCYWQmK8_A/viewform?usp=sf_link)**
 
-The Research Advisory Board will review your project's allocation requets and the available resources to approve your allocation. Once approved, you will receive an email with your allocation details and you can begin using your resources.
+The Research Advisory Board will review your project's allocation request and the available resources to approve your allocation. Once approved, you will receive an email with your allocation details and you can begin using your resources.
 
 ### **Monitoring Allocations:**
 
