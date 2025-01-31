@@ -23,19 +23,22 @@ This partnership with Google Cloud Platform is a major milestone for UCR, repres
 
 ### Ursa Major Resource Allocation Framework
 
-UCR's strategic approach to Ursa Major resource allocation ensures equitable access for researchers, prioritizing projects with significant potential for impact. The framework supports both high-value and exploratory projects through a allocation system, optimizing cloud resource distribution and enhancing research capabilities.
+UCR's strategic approach to Ursa Major resource allocation ensures equitable access for researchers, prioritizing projects with significant potential for impact. The framework supports both high-value and exploratory projects through a tiered allocation system, optimizing cloud resource distribution and enhancing research capabilities.
 
-- **Explore Allocations:** These allocations are designed for small and exploratory use.
-- **Advanced Allocations:** This allocation is both value and time-bound, intended for substantial research projects that demonstrate potential value through grants, papers, or publications. Allocation scheduling is strategic to accommodate and optimize large project resources.
+#### Allocation Tiers
 
-#### **Requesting a URS Major Resource Allocation:**
+* **Explore Tier:** This tier provides a baseline level of resources suitable for researchers who are new to GCP or conducting small-scale experiments and projects. This tier allows for experimentation with various cloud technologies, small-scale storage needs, and testing code before deploying on a larger scale within the Advanced Tier.
+* **Advanced Tier:** This tier is designed for researchers with larger-scale projects and higher resource demands, including moderate to high use of GPUs and most high-performance computing (HPC) needs involving large CPU and memory usage. Access to this tier will be granted based on a proposal review process conducted by a faculty panel.
+* **Researcher-Focused Subscription Agreement Tier:** This tier, funded by the researcher, offers a dedicated GCP environment managed by ITS in close collaboration with Google. The use cases for this tier are limited only by the funding available on the subscription agreement. This includes use of GPUs, HPC workloads, AI model training, and more.
+
+#### Requesting a URS Major Resource Allocation:
 
 Submit your Ursa Major Allocation request here:
 
 - **[Explore Allocation](https://docs.google.com/forms/d/e/1FAIpQLSclKhikqwHOWhDDJV5tNAGGFdoqpkx8sdWnudLBhXWlj5NofA/viewform?usp=sf_link)**
 - **[Advanced Allocation](https://docs.google.com/forms/d/e/1FAIpQLSd40G615UwddDPpnUTRLmdJcysXhZ_RUXBYEGICQCYWQmK8_A/viewform?usp=sf_link)**
 
-The Research Advisory Board will review your project's allocation requets and the available resources to approve your allocation. Once approved, you will receive an email with your allocation details and you can begin using your resources.
+The Research Advisory Board will review your project's allocation request and the available resources to approve your allocation. Once approved, you will receive an email with your allocation details and you can begin using your resources.
 
 #### **Monitoring Allocations:**
 
