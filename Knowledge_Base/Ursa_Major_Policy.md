@@ -4,151 +4,178 @@ title: Ursa Major Guidelines
 sidebar_label: Ursa Major Guidelines
 ---
 
-# Ursa Major Guidelines
+# 🌟 Ursa Major Guidelines  
 
-To ensure the responsible and ethical use of Ursa Major services, the following guidelines have been established. These guidelines outline the terms of access, usage, support, privacy, ownership, security, and stewardship for Ursa Major. We strongly advise all users to read and understand these guidelines before using Ursa Major services.
+Ursa Major is UCR’s cloud computing platform, providing **scalable access to Google Cloud Platform (GCP)** for academic research.  
 
----
-
-# Access Guidelines
-
-## Eligibility
-
-The University of California, Riverside’s Ursa Major service is available to all researchers affiliated with the university. This includes faculty, staff, postdoctoral researchers, and students affiliated with research activities. The researcher must have a campus NetID and must have completed the necessary training and DocuSign to use the Ursa Major services.
-
-## Resource Allocation
-
-Ursa Major services operate under a **tiered resource allocation model** to ensure fair and sustainable access for all researchers. This approach balances introductory research needs with larger-scale computational demands.
-
-### **Ursa Major Resource Allocation Tiers**
-
-- **Explore Tier:** Provides a baseline level of resources suitable for introductory research, experimentation, and small-scale projects. Researchers at this tier receive a **$1,500 credit**, which supports approximately three months of usage at an estimated spend rate of **$15/day**. This includes Compute Engine, Cloud Storage, Cloud Functions, Cloud Run, and AI/ML tools such as Vertex AI (excluding Marketplace). Budget tracking alerts will be sent at **50%, 75%, 95%, and 100%** usage levels.
-  
-- **Advanced Tier:** Designed for projects with larger-scale computing demands, including moderate-to-high GPU usage and HPC needs. Access requires an application and review by the Research Advisory Board. Factors such as resource availability, timing, and research value (publications, grants, output) will be considered.
-
-- **Researcher-Focused Subscription Agreement Tier:** A dedicated GCP environment funded by the researcher, managed by ITS in collaboration with Google. This tier allows unrestricted use of GPUs, HPC workloads, AI model training, and more, subject only to available funding.
-
-### **Requesting an Ursa Major Allocation**
-
-Submit your allocation request using the links below:
-
-- **[Explore Allocation Request](https://docs.google.com/forms/d/e/1FAIpQLSclKhikqwHOWhDDJV5tNAGGFdoqpkx8sdWnudLBhXWlj5NofA/viewform?usp=sf_link)**
-- **[Advanced Allocation Request](https://docs.google.com/forms/d/e/1FAIpQLSd40G615UwddDPpnUTRLmdJcysXhZ_RUXBYEGICQCYWQmK8_A/viewform?usp=sf_link)**
-
-The Research Advisory Board will review applications and approve them based on available resources.
-
-### **Policy on Exceeding Allocations**
-
-- If a project's resource usage exceeds the **Explore Tier** limit, the billing account will be **temporarily placed on hold**. Systems will be shut down, and storage access will be blocked.
-- **No data will be deleted or destroyed.** Researchers will be contacted and given time to retrieve data before applying for a new allocation.
-- Once all projects transition to the **Explore Tier**, the Advanced Tier request process will open (expected early March).
-
-### **Alternative Computing Resources**
-
-While waiting for Advanced Tier allocations, researchers can explore the following alternative computing resources:
-
-- **NSF ACCESS Program** (streamlined application available)
-- **Open Science Grid**
-- **NSF Nautilus Cluster**
-- **Campus High Performance Computing Cluster**
-- **Other external resources recommended by the Research Computing Team**
-
-For assistance, contact **[research-computing@ucr.edu](mailto:research-computing@ucr.edu)**.
+These guidelines outline:  
+✔ **How to access Ursa Major**  
+✔ **Resource allocation & usage policies**  
+✔ **Support options**  
 
 ---
 
-# Usage Guidelines
-
-Ursa Major services are intended for **academic research purposes only** and must not be used for commercial or personal purposes. 
-
-### **Appropriate Use Guidelines:**
-- Compliance with all **relevant laws and regulations**, including data privacy and intellectual property laws.
-- No interference with service functionality or security breaches.
-- Storing or transmitting **sensitive/confidential data** requires prior authorization and security measures.
-
-### **Consequences of Misuse:**
-- **Access termination**
-- **Revocation of allocated resources**
-- **Legal and financial liability**
-- **Reputational harm to UCR and the researcher**
+## **🔍 Quick Reference – What You Need to Know**
+| Feature | Details |
+|---------|---------|
+| **Explore Tier** | $1,500 (3 months) – Baseline access for small projects |
+| **Advanced Tier** | For large-scale projects – Requires proposal |
+| **Shutdown Policy** | 🚨 Get a **7-14 day grace period** before full shutdown |
+| **Support** | Contact **[research-computing@ucr.edu](mailto:research-computing@ucr.edu)** |
 
 ---
 
-# Support Guidelines
+# **🔑 Access & Eligibility**  
 
-The Research Computing Team provides **best-effort technical support** for Ursa Major users. 
+### **Who Can Use Ursa Major?**  
+✔ **All UCR-affiliated researchers** (faculty, postdocs, grad students, research staff)  
+✔ Requires a **UCR NetID** & **completion of basic training**  
 
-### **Support Availability**
-- Response times and resolutions follow the **Memorandum of Understanding (MOU)** and **Service Level Agreement (SLA)**.
-- Regular **research lab meetings** will be scheduled for troubleshooting and collaboration.
-
-### **Escalation Process**
-- If an issue remains unresolved, researchers may escalate their case to a higher level within the **Research Computing Team**.
-
----
-
-# Privacy Guidelines
-
-Ursa Major adheres to **strict privacy and security protocols** to protect researcher data.
-
-### **Data Protection Measures**
-- Encryption of data **at rest and in transit**.
-- Access controls and **role-based permissions**.
-- Compliance with **University of California policies** and **Google Cloud security standards**.
-
-### **Data Access & Sharing**
-- The **Research Computing Team** will **not** access researcher data except when necessary for performance, compliance, or security purposes.
-- Researchers must **control access permissions** to their data and comply with all **privacy regulations**.
+### **How to Get Started?**  
+🔹 **New users:** Request an allocation based on research needs:  
+- [📋 Explore Allocation Request](https://docs.google.com/forms/d/e/1FAIpQLSclKhikqwHOWhDDJV5tNAGGFdoqpkx8sdWnudLBhXWlj5NofA/viewform?usp=sf_link)  
+- [📋 Advanced Allocation Request](https://docs.google.com/forms/d/e/1FAIpQLSd40G615UwddDPpnUTRLmdJcysXhZ_RUXBYEGICQCYWQmK8_A/viewform?usp=sf_link)  
 
 ---
 
-# Ownership Guidelines
+# **📊 Resource Allocation Model**  
 
-Research data generated through Ursa Major services is **co-owned by UCR and the researcher**, unless stated otherwise.
+Ursa Major operates on a **tiered allocation system** to ensure fair access to all researchers.  
 
-### **Researcher Responsibilities**
-- Secure **storage and access control** of data.
-- Adherence to **data protection regulations**.
-- Compliance with **funding agreements** and **university policies**.
+## 🚀 **Allocation Tiers**  
 
----
+### **🔹 Explore Tier** (Default Access)  
+- **Designed for small-scale projects & early experimentation**  
+- **$1,500 credit** (~3 months at **$15/day**)  
+- Covers **Compute Engine, Cloud Storage, Cloud Functions, AI/ML tools**  
 
-# Security Guidelines
+💡 **You'll receive email alerts** when you hit **50%, 75%, 95%, and 100%** of your budget.  
 
-Ursa Major incorporates industry-standard security controls to **protect research integrity**.
+### **🔸 Advanced Tier** (For Larger Projects)  
+- **For research requiring GPUs, HPC, or extended computing resources**  
+- **Requires application & review** by the Research Advisory Board  
+- **Rolling approval process** (no batch delays!)  
 
-### **Security Measures**
-- **Encryption:** All data is encrypted both **at rest and in transit**.
-- **Access Control:** Strict **role-based access** and **two-factor authentication**.
-- **Vulnerability Management:** Regular security audits and **patch management**.
-- **Incident Response:** **Immediate action and escalation procedures** for security breaches.
-
-### **Incident Reporting**
-Researchers must report **suspected security incidents** immediately to the **Research Computing Team**.
+### **🔹 Researcher-Funded Tier**  
+- **Dedicated GCP environment**, fully funded by the researcher  
+- No predefined limits—resources scale based on funding  
 
 ---
 
-# Stewardship Guidelines
+# **🔄 What Happens If You Run Out of Resources?**  
 
-The **Research Computing Team** ensures the sustainability and maintenance of Ursa Major.
+🚨 **No immediate shutdowns!** If you reach your limit:  
+✔ You get a **7-14 day grace period** to retrieve data & apply for more resources  
+✔ **Data is NOT deleted**, just temporarily locked  
 
-### **Ongoing Maintenance & Upgrades**
-- **System monitoring** for performance optimization.
-- **Software updates** and **security patching**.
-- **Data retention enforcement**.
+### **📢 Need More? Here’s How to Request More Resources**
+1. **Check your current usage** in your dashboard 📊  
+2. **Submit a request**:  
+   - **[📋 Advanced Tier Form](#)**  
+3. **Approval process:**  
+   - **Rolling approvals – no long waits** ⏳  
+   - Expect a response in **X business days**  
 
-### **Sustainability Efforts**
-- Disaster recovery planning (if required).
-- Continuous monitoring to maintain efficiency **within allocated resources**.
-- Researcher dashboards for **real-time allocation tracking**.
+📩 **Questions? Email [research-computing@ucr.edu](mailto:research-computing@ucr.edu)**  
 
 ---
 
-# Conclusion
+# **🚀 Alternative Computing Resources**  
 
-Ursa Major provides **cutting-edge research computing infrastructure** to **empower UCR researchers**. By adhering to these guidelines, researchers ensure **fair and responsible** use of Ursa Major, contributing to UCR’s **prestige and competitiveness in research**.
+If you **hit your limit** and need additional resources, Ursa Major **can help transition your work** to other systems:  
+✔ **NSF ACCESS Program** (expedited applications)  
+✔ **Open Science Grid**  
+✔ **Campus HPC Cluster**  
 
-For assistance or inquiries, contact **[research-computing@ucr.edu](mailto:research-computing@ucr.edu)**.
+💡 Need help migrating your work? **We provide data transfer support.**  
+
+---
+
+# **✅ Appropriate Use Guidelines**  
+
+✔ **Allowed Uses:**  
+- Research computing, data processing, AI/ML training  
+- Collaboration with UCR researchers & partners  
+- Secure data storage for approved projects  
+
+🚨 **Prohibited Uses:**  
+❌ **Commercial or personal projects**  
+❌ **Violating UCR IT security policies**  
+❌ **Storing/transmitting sensitive data without approval**  
+
+---
+
+# **🛠 Support & Researcher Help**  
+
+📢 **Dedicated Research Support Team**  
+- **Real humans, not just an inbox.**  
+- Ursa Major researchers get **priority help** for urgent issues.  
+
+### **⏳ Response Time Expectations**  
+| Issue Type | Expected Response Time |
+|------------|------------------------|
+| Routine Questions | 1-2 business days |
+| Technical Troubleshooting | 2-4 business days |
+| Allocation Requests | **Rolling approval** |
+| Urgent Issues | **Same-day escalation** |
+
+📩 **Need help? Email:** [research-computing@ucr.edu](mailto:research-computing@ucr.edu)  
+
+---
+
+# **🔒 Data Privacy, Ownership & Security**  
+
+✔ **You own your research data** – UCR & Google **have zero claims** to IP.  
+✔ **End-to-end encryption** protects all data (at rest & in transit).  
+✔ **Strict access control** (two-factor authentication required).  
+
+⏳ **Data Retention Policy:**  
+- After expiration, **data is retained for 60-90 days** before deletion.  
+- You’ll receive **reminder emails before data is erased**.  
+
+---
+
+# **📡 Monitoring & Usage Dashboards**  
+
+📊 **Track Your Resources in Real-Time!**  
+- See **current usage, estimated time remaining, and cost forecasts.**  
+- Get **predictive alerts** before hitting limits.  
+
+📩 **Monthly Email Reports:**  
+✔ Automatic usage summaries & optimization tips  
+
+---
+
+# **🤔 FAQ – Frequently Asked Questions**  
+
+**Q: What happens if I run out of resources?**  
+A: You get a **7-14 day grace period** to retrieve data or apply for an extension.  
+
+**Q: How long does Advanced Tier approval take?**  
+A: **Rolling approvals – no long wait times.**  
+
+**Q: Can I store sensitive data on Ursa Major?**  
+A: **No**, unless you have **explicit approval**.  
+
+---
+
+# **📌 Next Steps – What Should You Do Now?**  
+
+🔹 **New User?** Start with an **[📋 Explorer Tier Request](#)**  
+🔹 **Need More Resources?** Submit an **[📋 Advanced Tier Request](#)**  
+🔹 **Questions?** Contact **[research-computing@ucr.edu](mailto:research-computing@ucr.edu)**  
+
+---
+
+### **🎯 Final Thoughts – Why This Matters**  
+
+Ursa Major is here to **empower your research**, not block it.  
+✔ **No surprise shutdowns** – grace periods & warnings in place  
+✔ **Faster approvals** – rolling Advanced Tier reviews  
+✔ **Dedicated research support team** – real help, real people  
+✔ **Seamless transitions to alternative resources** when needed  
+
+We’re committed to **making research computing work for you.** 🚀  
 
 ---
 
