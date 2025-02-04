@@ -4,281 +4,151 @@ title: Ursa Major Guidelines
 sidebar_label: Ursa Major Guidelines
 ---
 
-
 # Ursa Major Guidelines
 
 To ensure the responsible and ethical use of Ursa Major services, the following guidelines have been established. These guidelines outline the terms of access, usage, support, privacy, ownership, security, and stewardship for Ursa Major. We strongly advise all users to read and understand these guidelines before using Ursa Major services.
 
+---
 
 # Access Guidelines
 
-
 ## Eligibility
 
-The University of California, Riverside’s Ursa Major service is available to all researchers affiliated with the university. This includes faculty, staff, postdoctoral researchers, and students affiliated with research activities . The researcher must have a campus NetID and must have completed the necessary training and DocuSign  to use the Ursa Major services.
-
+The University of California, Riverside’s Ursa Major service is available to all researchers affiliated with the university. This includes faculty, staff, postdoctoral researchers, and students affiliated with research activities. The researcher must have a campus NetID and must have completed the necessary training and DocuSign to use the Ursa Major services.
 
 ## Resource Allocation
 
-To promote fair and equitable access to Ursa Major services for all researchers, we have established a tiered resource allocation approach. This approach ensures that available resources are distributed fairly among researchers, taking into account the specific needs and requirements of each project.
+Ursa Major services operate under a **tiered resource allocation model** to ensure fair and sustainable access for all researchers. This approach balances introductory research needs with larger-scale computational demands.
 
-Our commitment to fostering research excellence and innovation at UCR led us to develop this strategic framework for allocating Ursa Major services. This framework ensures equitable access to advanced cloud resources for all researchers, aligning with our objectives of enhancing research capabilities and securing more grant funding. By prioritizing projects with significant potential for academic and societal impact, and showcasing cloud technology's transformative applications, we aim to optimize resource distribution across the research community.
+### **Ursa Major Resource Allocation Tiers**
 
-This approach ensures that resources are allocated fairly and used to drive impactful research projects, advancing UCR's research agenda and attracting significant grant funding. This strengthens our research infrastructure, attracts top talent, and enhances UCR's prestige and competitiveness.
+- **Explore Tier:** Provides a baseline level of resources suitable for introductory research, experimentation, and small-scale projects. Researchers at this tier receive a **$1,500 credit**, which supports approximately three months of usage at an estimated spend rate of **$15/day**. This includes Compute Engine, Cloud Storage, Cloud Functions, Cloud Run, and AI/ML tools such as Vertex AI (excluding Marketplace). Budget tracking alerts will be sent at **50%, 75%, 95%, and 100%** usage levels.
+  
+- **Advanced Tier:** Designed for projects with larger-scale computing demands, including moderate-to-high GPU usage and HPC needs. Access requires an application and review by the Research Advisory Board. Factors such as resource availability, timing, and research value (publications, grants, output) will be considered.
 
-### Ursa Major Resource Allocation Framework
+- **Researcher-Focused Subscription Agreement Tier:** A dedicated GCP environment funded by the researcher, managed by ITS in collaboration with Google. This tier allows unrestricted use of GPUs, HPC workloads, AI model training, and more, subject only to available funding.
 
-UCR's strategic approach to Ursa Major resource allocation ensures equitable access for researchers, prioritizing projects with significant potential for impact. The framework supports both high-value and exploratory projects through a tiered system, optimizing cloud resource distribution and enhancing research capabilities.
+### **Requesting an Ursa Major Allocation**
 
-#### Allocation Tiers
+Submit your allocation request using the links below:
 
-* **Explore Tier:** This tier provides a baseline level of resources suitable for researchers who are new to GCP or conducting small-scale experiments and projects. This tier allows for experimentation with various cloud technologies, small-scale storage needs, and testing code before deploying on a larger scale within the Advanced Tier.
-* **Advanced Tier:** This tier is designed for researchers with larger-scale projects and higher resource demands, including moderate to high use of GPUs and most high-performance computing (HPC) needs involving large CPU and memory usage. Access to this tier will be granted based on a proposal review process conducted by a faculty panel.
-* **Researcher-Focused Subscription Agreement Tier:** This tier, funded by the researcher, offers a dedicated GCP environment managed by ITS in close collaboration with Google. The use cases for this tier are limited only by the funding available on the subscription agreement. This includes use of GPUs, HPC workloads, AI model training, and more.
+- **[Explore Allocation Request](https://docs.google.com/forms/d/e/1FAIpQLSclKhikqwHOWhDDJV5tNAGGFdoqpkx8sdWnudLBhXWlj5NofA/viewform?usp=sf_link)**
+- **[Advanced Allocation Request](https://docs.google.com/forms/d/e/1FAIpQLSd40G615UwddDPpnUTRLmdJcysXhZ_RUXBYEGICQCYWQmK8_A/viewform?usp=sf_link)**
 
-#### Requesting a URS Major Resource Allocation:
+The Research Advisory Board will review applications and approve them based on available resources.
 
-Submit your Ursa Major Allocation request here:
+### **Policy on Exceeding Allocations**
 
-- **[Explore Allocation](https://docs.google.com/forms/d/e/1FAIpQLSclKhikqwHOWhDDJV5tNAGGFdoqpkx8sdWnudLBhXWlj5NofA/viewform?usp=sf_link)**
-- **[Advanced Allocation](https://docs.google.com/forms/d/e/1FAIpQLSd40G615UwddDPpnUTRLmdJcysXhZ_RUXBYEGICQCYWQmK8_A/viewform?usp=sf_link)**
+- If a project's resource usage exceeds the **Explore Tier** limit, the billing account will be **temporarily placed on hold**. Systems will be shut down, and storage access will be blocked.
+- **No data will be deleted or destroyed.** Researchers will be contacted and given time to retrieve data before applying for a new allocation.
+- Once all projects transition to the **Explore Tier**, the Advanced Tier request process will open (expected early March).
 
-The Research Advisory Board will review your project's allocation request and the available resources to approve your allocation. Once approved, you will receive an email with your allocation details and you can begin using your resources.
+### **Alternative Computing Resources**
 
-### **Monitoring Allocations:**
+While waiting for Advanced Tier allocations, researchers can explore the following alternative computing resources:
 
-To ensure the efficient use of resources and to support our researchers in the best possible manner, UCR's Research Computing team has implemented a comprehensive monitoring and optimization strategy for Ursa Major resource allocations. This approach enables us to track resource usage in real-time, identify bottlenecks, and optimize allocations to support a wide range of research activities effectively.
+- **NSF ACCESS Program** (streamlined application available)
+- **Open Science Grid**
+- **NSF Nautilus Cluster**
+- **Campus High Performance Computing Cluster**
+- **Other external resources recommended by the Research Computing Team**
 
-Researchers and the ITS team can access detailed analytics and insights into their resource usage through the following Ursa Major Dashboards:
+For assistance, contact **[research-computing@ucr.edu](mailto:research-computing@ucr.edu)**.
 
-| Dashboard                                                                                                                  | Description                                                                                                                  |
-|----------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
-| [Cloud Storage Dashboard](https://console.cloud.google.com/monitoring/dashboards/resourceList/gcs_bucket)              | Provides insights into the storage utilization across all projects, including data ingress and egress, helping to optimize storage strategies. |
-| [Disks Dashboard](https://console.cloud.google.com/monitoring/dashboards/resourceList/gce_disk)                        | Offers a detailed view of disk usage and performance metrics, enabling teams to manage and scale disk resources efficiently. |
-| [Infrastructure Summary Dashboard](https://console.cloud.google.com/monitoring/dashboards/summary/infrastructure)      | A comprehensive overview of the entire GCP infrastructure, highlighting usage patterns, available resources, and potential optimization opportunities. |
-| [VM Instances Dashboard](https://console.cloud.google.com/monitoring/dashboards/resourceList/gce_instance)             | Tracks the performance and usage of virtual machine instances, facilitating the effective management of compute resources.  |
-| [Logs Dashboard](https://console.cloud.google.com/monitoring/dashboards/resourceList/logs)                             | Enables tracking of application and system logs, crucial for debugging and understanding system behaviors.                   |
-| [Allocation Spend Dashboard](https://console.cloud.google.com/billing/019E1F-BADE9B-60248B/reports)                    | *Coming Soon*: A future dashboard that will provide detailed insights into the allocation spend, helping to track and manage budgetary aspects of projects. |
-
-
-## Limitations or Restrictions on Access:
-
-
-
-1. Ursa Major services are available for research purposes only, with access limited or restricted based on specific services, campus resource allocation, and project allocation limits.
-2. Researchers are expected to use the services in accordance with the University of California, Riverside's information security guidelines and procedures.
-3. The Ursa Major team reserves the right to revoke or restrict access to services if a researcher is found to be in violation of University or Ursa Major guidelines.
-
-By implementing this fair resource allocation approach, the University ensures that Ursa Major services are accessible and supportive for all researchers while maintaining responsible usage of resources and prioritizing research collaboration.
-
+---
 
 # Usage Guidelines
 
-Ursa Major services are intended to support academic research at UCR. The services are available to UCR researchers for the purpose of advancing their research projects and producing high-quality research outcomes.
+Ursa Major services are intended for **academic research purposes only** and must not be used for commercial or personal purposes. 
 
+### **Appropriate Use Guidelines:**
+- Compliance with all **relevant laws and regulations**, including data privacy and intellectual property laws.
+- No interference with service functionality or security breaches.
+- Storing or transmitting **sensitive/confidential data** requires prior authorization and security measures.
 
-## Guidelines for Appropriate Use of Ursa Major Services:
+### **Consequences of Misuse:**
+- **Access termination**
+- **Revocation of allocated resources**
+- **Legal and financial liability**
+- **Reputational harm to UCR and the researcher**
 
-
-
-* Ursa Major services must be used for academic research purposes only and must not be used for commercial or personal purposes.
-* Researchers are responsible for ensuring that their use of Ursa Major services complies with all relevant laws and regulations, including but not limited to data privacy and intellectual property laws.
-* Researchers must also ensure that their use of Ursa Major services does not interfere with the normal functioning of the services or compromise the security of the data stored on the services.
-* Researchers must not store or transmit any sensitive or confidential information on Ursa Major services unless they have obtained proper authorization and taken appropriate measures to protect the information.
-
-
-## Explanation of Consequences for Misuse of Ursa Major Services:
-
-Misuse of Ursa Major services can have serious consequences, which may include, but is not limited to:
-
-
-
-* Termination of access to Ursa Major services.
-* Termination of allocated resources.
-* Potential legal action against the researcher for violations of data privacy or intellectual property laws.
-* Potential financial liability for damages caused by misuse of Ursa Major services against security guidelines.
-* Reputational harm to the researcher and UCR.
-
-The UCR Research Computing Team reserves the right to monitor and enforce this usage Guidelines, and to take appropriate action in response to any violations. Researchers who have any questions or concerns about this Guidelines are encouraged to contact the UCR Research Computing Team for clarification.
-
+---
 
 # Support Guidelines
 
-The University of California, Riverside is committed to providing its research community with the necessary support to make the most of its partnership with Google Cloud Platform (GCP) through Ursa Major. The Research Computing Team is dedicated to helping researchers overcome any technical issues they may encounter while using Ursa Major services.
+The Research Computing Team provides **best-effort technical support** for Ursa Major users. 
 
+### **Support Availability**
+- Response times and resolutions follow the **Memorandum of Understanding (MOU)** and **Service Level Agreement (SLA)**.
+- Regular **research lab meetings** will be scheduled for troubleshooting and collaboration.
 
-## Support Available to Researchers Using Ursa Major Services
+### **Escalation Process**
+- If an issue remains unresolved, researchers may escalate their case to a higher level within the **Research Computing Team**.
 
-The Research Computing Team is committed to providing technical support to researchers using Ursa Major services. To address any technical issues encountered while using Ursa Major services, researchers can reach out to the team for assistance. In cases requiring advanced support, the team can collaborate with Google Cloud Platform (GCP) for further guidance. The Research Computing Team will respond to support issues in accordance with the Memorandum of Understanding (MOU) and Service Level Agreement (SLA) in place.
-
-In order to facilitate support and collaboration, the Research Computing Team will schedule a series of meetings with the research lab. These meetings will allow for open communication, ensuring that researchers receive the necessary support and assistance throughout their projects.
-
-While the team will provide best-effort support, it is important to note that they cannot guarantee a solution to every problem. Researchers are encouraged to familiarize themselves with the resources and documentation available on the Ursa Major and GCP websites to make the most of the services offered. This information will help researchers use Ursa Major services effectively and efficiently.
-
-
-## Response Time and Resolution Time for Support Requests
-
-The Research Computing Team will respond to support issues in accordance with the Memorandum of Understanding (MOU) and Service Level Agreement (SLA) in place.
-
-The Research Computing Team will make every effort to respond to support requests in a timely manner. The response time will depend on the complexity of the issue and the workload of the team. Once a support request is received, the Research Computing Team will work to resolve the issue as quickly as possible. The resolution time will depend on the complexity of the issue and the resources available to the team.
-
-
-## Escalation Process for Unresolved Support Issues
-
-In the event that a support issue is not resolved to the satisfaction of the researcher, the researcher may escalate the issue to a higher level of the Research Computing Team. The escalation process will depend on the nature of the issue and the resources available to the team. The Research Computing Team will make every effort to resolve escalated issues in a timely and satisfactory manner.
-
-This support Guidelines is subject to change without notice. The Research Computing Team reserves the right to modify the Guidelines at any time to ensure the effective and efficient operation of Ursa Major services.
-
+---
 
 # Privacy Guidelines
 
-The University of California, Riverside (UCR) is committed to protecting the privacy of its researchers and the data they store on Ursa Major services. The Research Computing Team recognizes the importance of privacy and takes necessary measures to secure the data stored on Ursa Major services. In this Guidelines, we outline the privacy practices of Ursa Major and the responsibilities of researchers in protecting the privacy of their data.
+Ursa Major adheres to **strict privacy and security protocols** to protect researcher data.
 
+### **Data Protection Measures**
+- Encryption of data **at rest and in transit**.
+- Access controls and **role-based permissions**.
+- Compliance with **University of California policies** and **Google Cloud security standards**.
 
-## Explanation of how Ursa Major protects researcher data
+### **Data Access & Sharing**
+- The **Research Computing Team** will **not** access researcher data except when necessary for performance, compliance, or security purposes.
+- Researchers must **control access permissions** to their data and comply with all **privacy regulations**.
 
-Ursa Major implements strong technical, administrative, and physical security controls to protect researcher data from unauthorized access, use, disclosure, and destruction. This includes access controls, encryption, firewalls, and regular security audits. The Research Computing Team also implements strict data access and sharing guidelines to ensure that researcher data is only accessed by authorized personnel for legitimate purposes.
-
-
-## Description of the data management and storage practices used by Ursa Major
-
-Ursa Major uses Google Cloud Platform (GCP) for data management and storage, which provides a secure and scalable infrastructure for researcher data. Researchers can store their data in the form of research workstations, high-performance computing clusters, databases, and web servers, among other services. 
-
-
-## Explanation of the data access and sharing guidelines for Ursa Major
-
-Ursa Major implements strict data access and sharing guidelines to ensure that researcher data is protected. The Research Computing Team will not access or use researcher data unless necessary for the performance of their duties or in response to a valid request from law enforcement. Researchers are responsible for ensuring that their data complies with all relevant privacy laws and regulations, and for controlling access to their data. Researchers may share their data with others in accordance with relevant privacy laws and regulations, but must ensure that the recipients of the data have the necessary permissions and comply with the same privacy guidelines as Ursa Major.
-
-In conclusion, Ursa Major is committed to protecting the privacy of its researchers and the data they store on its services. The Research Computing Team implements strong technical and administrative controls, as well as strict data access and sharing guidelines, to ensure that researcher data is secure and protected.
-
+---
 
 # Ownership Guidelines
 
+Research data generated through Ursa Major services is **co-owned by UCR and the researcher**, unless stated otherwise.
 
-## Ursa Major Ownership Guidelines for Research Data
+### **Researcher Responsibilities**
+- Secure **storage and access control** of data.
+- Adherence to **data protection regulations**.
+- Compliance with **funding agreements** and **university policies**.
 
-The research data generated through the use of Ursa Major services is owned by the University of California, Riverside (UCR) and the researcher unless otherwise agreed upon. This ownership Guidelines applies to all research data generated by researchers at UCR, regardless of the source of funding or the type of research being conducted.
-
-
-## Researchers’ Rights and Responsibilities
-
-Researchers at UCR have the right to access and use their own research data for their own research purposes, subject to any restrictions imposed by law or other agreements. They are also responsible for ensuring that the data is used in an ethical and responsible manner, in accordance with the relevant data protection and privacy regulations.
-
-Researchers must comply with the terms and conditions of their contracts with UCR and any other agreements related to the use of Ursa Major services. They are also responsible for ensuring that the research data is securely stored and protected from unauthorized access or use.
-
-
-## Restrictions on the Use or Sharing of Research Data
-
-Research data generated through the use of Ursa Major services may be subject to restrictions on its use or sharing, as determined by UCR, the source of funding, or other agreements. In such cases, researchers must comply with the relevant restrictions and obtain any necessary approvals or permissions before accessing or using the data.
-
-It is also important to note that the hardware and systems provided by Ursa Major are owned by Google and rented by UCR. Researchers must comply with the terms and conditions of their agreements with Google and UCR, which may include restrictions on the use or sharing of the hardware or systems.
-
+---
 
 # Security Guidelines
 
-The University of California, Riverside is committed to providing secure research computing infrastructure and support services to increase innovation, breadth, and scale for UCR’s researchers through its partnership with Google Cloud Platform (GCP). The code name for this groundbreaking partnership is Ursa Major. The UCR Research Computing Team is responsible for ensuring the security of Ursa Major services and the data stored on the services.
+Ursa Major incorporates industry-standard security controls to **protect research integrity**.
 
+### **Security Measures**
+- **Encryption:** All data is encrypted both **at rest and in transit**.
+- **Access Control:** Strict **role-based access** and **two-factor authentication**.
+- **Vulnerability Management:** Regular security audits and **patch management**.
+- **Incident Response:** **Immediate action and escalation procedures** for security breaches.
 
-## Measures in Place to Protect the Confidentiality, Integrity, and Availability of Researcher Data:
+### **Incident Reporting**
+Researchers must report **suspected security incidents** immediately to the **Research Computing Team**.
 
-The UCR Research Computing Team has implemented a number of technical and administrative controls to protect the confidentiality, integrity, and availability of researcher data stored on Ursa Major services. These controls include but are not limited to:
-
-Encryption: All data stored on Ursa Major services is encrypted both at rest and in transit, to protect against unauthorized access and disclosure. Access Controls: Access to Ursa Major services and data stored on the services is strictly controlled, and is granted only to authorized researchers based on their role and need. In addition to these technical controls, the UCR Research Computing Team has established guidelines and procedures to ensure that researchers understand their responsibilities and obligations with respect to the security of the data stored on Ursa Major services.
-
-
-## Incident Response and Reporting Procedures for Security Incidents:
-
-In the event of a security incident, the UCR Research Computing Team will work with Google Cloud Platform to investigate and respond to the incident, in accordance with established incident response procedures. Researchers who suspect a security incident has occurred must immediately report the incident to the UCR Research Computing Team.
-
-The UCR Research Computing Team will also work with relevant stakeholders, including UCR’s Information Security Office and Google Cloud Platform, to ensure that appropriate remediation measures are taken, and that any necessary notifications are made in accordance with applicable laws and regulations.
-
-
-## Access Control:
-
-Access to sensitive information and data is restricted to authorized personnel only. All users are assigned unique login credentials and are required to use strong passwords. Access rights and permissions are reviewed regularly and updated as necessary to ensure that only authorized personnel have access to sensitive information and data.
-
-
-## Encryption:
-
-All sensitive information and data transmitted or stored on our systems is encrypted using industry-standard encryption algorithms. This includes data transmitted over networks, stored on hard drives, and backup tapes.
-
-
-## Vulnerability Management:
-
-Ursa Major Engineering regularly assesses its systems for vulnerabilities and implements patches and upgrades to address any potential risks. We also engage in regular penetration testing to identify and remediate any potential security weaknesses.
-
-
-## Incident Response:
-
-In the event of a security breach, Ursa Major Engineering has an incident response plan in place to quickly contain and resolve the issue. We will also notify affected clients and users as soon as possible.
-
-
-## Training and Awareness:
-
-Ursa Major Engineering provides regular training and awareness programs to educate employees on security best practices and to ensure that they are aware of the importance of protecting sensitive information and data.
-
-The UCR Research Computing Team provides security training and awareness programs for researchers using Ursa Major services, to help ensure that they understand their responsibilities and obligations with respect to the security of the data stored on Ursa Major services.
-
-These programs cover topics such as:
-
-
-
-* Understanding the risks associated with storing and accessing research data on cloud services.
-* Best practices for protecting confidential and sensitive research data.
-* Understanding the importance of secure access controls, and the role of strong passwords and two-factor authentication.
-
-This security Guidelines is reviewed regularly and updated as necessary to ensure that we are taking the necessary steps to protect the sensitive information and data of our clients and users. By adhering to this Guidelines, Ursa Major Engineering ensures the confidentiality, integrity, and availability of sensitive information and data.
-
+---
 
 # Stewardship Guidelines
 
-The Ursa Major system is a critical component of the research computing infrastructure and is used by a large number of researchers for data storage and analysis. In order to ensure the long-term sustainability and maintenance of these services, the Research Computing Team is responsible for the management and maintenance of Ursa Major. This Guidelines outlines the roles and responsibilities of the Research Computing Team in maintaining and updating Ursa Major services.
+The **Research Computing Team** ensures the sustainability and maintenance of Ursa Major.
 
+### **Ongoing Maintenance & Upgrades**
+- **System monitoring** for performance optimization.
+- **Software updates** and **security patching**.
+- **Data retention enforcement**.
 
-## Responsibility for Maintenance and Management of Ursa Major Services:
+### **Sustainability Efforts**
+- Disaster recovery planning (if required).
+- Continuous monitoring to maintain efficiency **within allocated resources**.
+- Researcher dashboards for **real-time allocation tracking**.
 
-The Research Computing Team is responsible for ensuring the availability and accessibility of Ursa Major services to researchers. This includes the following responsibilities:
-
-
-
-* Monitoring the system to ensure that it is functioning properly and is available to researchers.
-* Responding to any system issues or outages in a timely manner.
-* Ensuring that the system is secure and protected from unauthorized access.
-* Ensuring that data stored on Ursa Major is protected by the resilience of Google Cloud.
-* Implementing and enforcing data retention guidelines to ensure that data is properly managed and disposed of when necessary.
-* Keeping the system up-to-date with the latest software where possible.
-* Providing user support and training as needed.
-
-
-## Processes for Updating and Upgrading Ursa Major Services:
-
-The Research Computing Team will implement the following processes for updating and upgrading Ursa Major services:
-
-
-
-* Keeping the system software up-to-date where possible to ensure the stability and performance of the system.
-* Conducting regular testing and evaluation of new software and hardware upgrades to ensure compatibility with Ursa Major services.
-* Providing regular updates to researchers on upcoming upgrades and changes to Ursa Major services.
-* Coordinating with researchers to minimize the impact of upgrades on their research activities.
-* Conducting regular data migrations to ensure that data is properly stored and protected.
-
-
-## Sustainability Plans for Ursa Major Services:
-
-The Research Computing Team will implement the following sustainability plan for Ursa Major services:
-
-
-
-* Help researchers develop and implement disaster recovery plans to ensure that Ursa Major services are available even in the event of a disaster. If needed by the project.
-* Google ensures that the system has adequate backup power and cooling to maintain system availability during power outages or other disruptions.
-* Regularly monitoring system utilization and making changes to the system as needed to ensure that it remains efficient and scalable while remaining within the lab’s allocation and the campus limits.
-* Providing a researcher or lab dashboard to help show allocation and resources usage along with the value Ursa Major provides to the lab.
-
-The Ursa Major system is a critical component of the research computing infrastructure and the Research Computing Team is responsible for ensuring its long-term sustainability and maintenance. This Guidelines outlines the roles and responsibilities of the Research Computing Team in maintaining and updating Ursa Major services and provides a framework for ensuring the sustainability and continuity of these services. By following this Guidelines, the Research Computing Team will ensure that Ursa Major service allocations are available and accessible to researchers, and that data stored on Ursa Major is protected and properly managed.
-
+---
 
 # Conclusion
 
-The impact and benefits of Ursa Major are significant and wide-ranging, from improving the quality of research outputs and enabling the discovery of new insights and knowledge, to facilitating the development of new technologies and products. Ursa Major helps UCR researchers to overcome technological limitations and enables them to engage in cutting-edge research that has the potential to make a real impact on the world.
+Ursa Major provides **cutting-edge research computing infrastructure** to **empower UCR researchers**. By adhering to these guidelines, researchers ensure **fair and responsible** use of Ursa Major, contributing to UCR’s **prestige and competitiveness in research**.
 
-Finally, the commitment of the UCR Research Computing Team to providing secure and impactful research computing support is commendable. Their focus on providing a reliable and secure research computing environment that supports the needs of UCR researchers is essential to advancing the university’s research mission and to fostering a thriving research community at UCR. With their dedication and expertise, the UCR Research Computing Team is ensuring that UCR remains at the forefront of innovation and discovery.
+For assistance or inquiries, contact **[research-computing@ucr.edu](mailto:research-computing@ucr.edu)**.
+
+---
+
