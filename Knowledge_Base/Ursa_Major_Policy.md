@@ -99,6 +99,7 @@ Ursa Major is for **academic research purposes only**.
 - Escalation process: If your issue isn’t resolved within **5 business days**, you can request an escalation to a senior research computing advisor.  
 
 ### ⏳ **Response Time Expectations**  
+
 | Issue Type | Expected Response Time |
 |------------|------------------------|
 | Routine Questions | 1-2 business days |
