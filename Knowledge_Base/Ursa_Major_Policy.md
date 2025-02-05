@@ -6,163 +6,165 @@ sidebar_label: Ursa Major Guidelines
 
 # Ursa Major Guidelines  
 
-Ursa Major is UCR’s cloud computing resource designed to support **academic research** by providing scalable access to Google Cloud Platform (GCP). These guidelines ensure **fair, secure, and efficient** access while maximizing research impact. 
+## **Overview**  
 
-This document outlines **how to access resources, allocation policies, usage guidelines, and support options**—all designed to be transparent, fair, and researcher-friendly.
+Ursa Major is the **University of California, Riverside’s (UCR) cloud computing resource** for research, providing scalable access to **Google Cloud Platform (GCP)**. These guidelines are designed to ensure the **equitable, responsible, and efficient** use of Ursa Major resources while supporting high-impact research at UCR.
 
----
-
-# 🔑 **Access & Eligibility**  
-
-## Who Can Use Ursa Major?  
-- **All UCR-affiliated researchers**, including faculty, postdocs, graduate students, and research staff.  
-- A **UCR NetID** and **completion of basic training** is required.  
-
-## How Do I Request Access?  
-- Submit an **allocation request** based on your research needs:  
-  - [Explore Allocation Request](https://docs.google.com/forms/d/e/1FAIpQLSclKhikqwHOWhDDJV5tNAGGFdoqpkx8sdWnudLBhXWlj5NofA/viewform?usp=sf_link)  
-  - [Advanced Allocation Request](https://docs.google.com/forms/d/e/1FAIpQLSd40G615UwddDPpnUTRLmdJcysXhZ_RUXBYEGICQCYWQmK8_A/viewform?usp=sf_link)  
+This document outlines the following:  
+- **Eligibility and Access**
+- **Resource Allocation Policies (Explore & Advanced Tiers)**
+- **Application Processes and Review Cycles**
+- **Usage Guidelines and Compliance**
+- **Support, Privacy, and Security Measures**
+- **Future Planning for Ursa Major Resources**
 
 ---
 
-# 📊 **Resource Allocation Model**  
+# **1. Eligibility & Access**  
 
-Ursa Major operates on a **tiered allocation system** to **balance accessibility and resource efficiency**.
+## **Who Can Use Ursa Major?**  
+Ursa Major is available to **all UCR-affiliated researchers**, including:  
+- **Faculty members**
+- **Postdoctoral researchers**
+- **Graduate students** (if affiliated with a research project)  
+- **Staff members** conducting research-related activities  
 
-## 🚀 **Allocation Tiers**  
+### **How to Get Started**  
+To use Ursa Major, researchers must:  
+1. Have an **active UCR NetID**.  
+2. Complete the required **Ursa Major training and acknowledgment process**.  
+3. Submit an allocation request according to their research needs (details below).  
 
-### 🔹 **Explore Tier** (Default Access)  
-- **Designed for introductory research and small projects**  
-- **$1,500 credit** (approx. **3 months at $15/day**)  
-- Includes: Compute Engine, Cloud Storage, Cloud Functions, AI/ML tools (Vertex AI), and other **core GCP services** (excludes Marketplace).  
-- 🔔 **Automatic notifications at 50%, 75%, 95%, and 100% of budget usage**.  
-
-### 🔸 **Advanced Tier** (For Larger Projects)  
-- **For research with moderate to high computational demands** (e.g., HPC, GPUs).  
-- Requires **application & review** by the Research Advisory Board.  
-- **Rolling approval process** (no waiting for faculty panel meetings).  
-- **Auto-extension** for qualifying research if nearing Explorer Tier limits.  
-
-### 🔹 **Researcher-Funded Tier**  
-- **Dedicated GCP environment, fully funded by the researcher.**  
-- No predefined limits—scaling depends on funding availability.  
+Researchers will be assigned **either an Explore Tier or Advanced Tier allocation** based on their proposal and needs.
 
 ---
 
-# 🛑 **What Happens If You Exceed Your Allocation?**  
+# **2. Resource Allocation Model**  
 
-## ✅ **Grace Periods & Extensions**  
-- If your allocation **runs out**, you get a **7-14 day grace period** to **retrieve data, submit an extension request, or transition to Advanced Tier**.  
-- **No immediate shutdowns**—your data will remain accessible for retrieval.  
+Ursa Major operates on a **tiered resource allocation system** to balance equitable access while supporting diverse research requirements.  
 
-## 🔄 **Seamless Transition to Alternatives**  
-- If Advanced Tier approval is delayed, researchers will be **auto-referred** to alternative resources:  
-  - **NSF ACCESS Program** (expedited application process)  
-  - **Open Science Grid**  
-  - **Campus High-Performance Computing Cluster**  
-- We offer **data migration assistance** for moving workloads.  
+## **2.1 Allocation Tiers**  
 
----
+### **Explore Tier (Default Allocation)**  
+The **Explore Tier** is designed for **introductory research, small-scale projects, and early experimentation** with cloud resources.  
 
-# ✅ **Appropriate Use Guidelines**  
+#### **Key Details:**
+- **$1,500 credit allocation** (~3 months of usage at ~$15/day)
+- Covers **Compute Engine, Cloud Storage, Cloud Functions, AI/ML tools (Vertex AI), and other core GCP services**  
+- **No application review required** (automatic approval)
+- **Usage alerts at 50%, 75%, 95%, and 100% of the budget**
 
-Ursa Major is for **academic research purposes only**.  
-
-### ✅ **Allowed Uses:**  
-✔️ Research computing, data processing, AI/ML training  
-✔️ Collaboration with UCR researchers & partners  
-✔️ Secure data storage for approved projects  
-
-### 🚫 **Prohibited Uses:**  
-❌ **Commercial or personal projects**  
-❌ **Activities violating UCR IT security policies**  
-❌ **Storing/transmitting sensitive data without authorization**  
+Researchers can monitor their usage through the **Ursa Major dashboard**.  
 
 ---
 
-# ⚠ **What Happens If You Misuse Ursa Major?**  
+### **Advanced Tier (For Larger Projects)**
+The **Advanced Tier** is intended for researchers with **high-performance computing (HPC), GPU-intensive workloads, and large-scale cloud research projects**.
 
-### 🚨 **Consequences of Policy Violations:**  
-- **Warnings & opportunity for correction** before any action is taken.  
-- Repeat or severe misuse may result in **resource suspension**.  
-- Legal and financial liability **only applies in cases of intentional violations** (e.g., fraudulent use, unauthorized access).  
-
-📩 Have concerns? **Contact research-computing@ucr.edu** for policy clarification.  
+#### **Key Details:**
+- **Requires application & faculty panel review** (see below for structure)
+- Allocations are granted on **a quarterly cycle** with **defined application deadlines**
+- Advanced allocations are **not processed immediately** but **reviewed as a group** to ensure fair distribution
+- Applicants must submit **a proposal detailing their resource needs, research impact, and estimated costs**  
 
 ---
 
-# 🛠 **Support & Researcher Advocacy**  
+## **2.2 Advanced Tier Application Process & Review Structure**  
 
-### 🏆 **Dedicated Research Support Team**  
-- **Real people, not just an email inbox.**  
-- Ursa Major researchers get **priority consultation** for urgent issues.  
-- Escalation process: If your issue isn’t resolved within **5 business days**, you can request an escalation to a senior research computing advisor.  
+### **🔹 How & When to Apply for an Advanced Allocation**
+Advanced allocations follow a **structured quarterly application and review process**, ensuring fairness and predictability.  
 
-### ⏳ **Response Time Expectations**  
+#### **Initial Allocation Period (March – June 2025)**
+- The **first Advanced Tier application window** opens **March 1, 2025**.  
+- Applications must be submitted **by March 14, 2025** for consideration.  
+- Reviews will take place between **March 15 – March 25, 2025**.  
+- Allocations will be **approved and available starting April 1, 2025**.  
 
+#### **Quarterly Allocation Cycles**
+After the **initial allocation period**, Advanced Tier applications will follow a **standard quarterly review**:  
+
+| Application Deadline | Review Period | Allocations Start |  
+|----------------------|--------------|-------------------|  
+| **March 14** | March 15 – March 25 | **April 1 – June 30** |  
+| **June 14** | June 15 – June 25 | **July 1 – September 30** |  
+| **September 14** | September 15 – September 25 | **October 1 – December 31** |  
+
+**Applicants will receive notification of acceptance or denial within 5 business days after the review period ends.**
+
+---
+
+### **🔹 Faculty Panel Review & Allocation Limits**  
+
+Advanced allocations will be **reviewed by a faculty panel**, but with a **tiered review structure** to streamline approvals:  
+
+#### **Review Structure:**  
+1. **Small to Medium Requests (≤$5,000/quarter):**  
+   - Reviewed by **Ursa Major administrative staff** (does not require faculty panel approval).  
+   - Quick turnaround **within 7 days** of submission.  
+
+2. **Large Requests (>$5,000/quarter or high-impact projects):**  
+   - Reviewed by a **faculty panel** on a quarterly cycle.  
+   - Faculty must evaluate **scientific merit, impact, and feasibility**.  
+   - **Resource availability is a key factor** in decision-making.  
+
+#### **Total Resource Pool & Approval Limits**  
+- **Total budget available per quarter:** **$X,000/day for ALL Advanced allocations combined.**  
+- Faculty reviewers **must allocate within this budget**—requests exceeding the available funding will be deferred or revised.  
+
+---
+
+# **3. What Happens if You Run Out of Resources?**  
+
+If a research project **reaches the limit of its allocation**, the following applies:
+
+1. **Explore Tier Users:**  
+   - Receive **a 7-14 day grace period** for data retrieval.  
+   - Can apply for an **Advanced allocation** before reaching 95% usage.  
+
+2. **Advanced Tier Users:**  
+   - Must **submit a renewal request** before the next review cycle if continued access is required.  
+   - If **budget is depleted before the next allocation cycle**, researchers can request **temporary reduced-access extensions** (reviewed case-by-case).  
+
+---
+
+# **4. Support & Assistance**  
+
+### **Who to Contact for Help**  
+For technical or allocation issues, contact **Ursa Major Research Support**:  
+📩 **Email:** [research-computing@ucr.edu](mailto:research-computing@ucr.edu)  
+
+### **Response Time Expectations**
 | Issue Type | Expected Response Time |
 |------------|------------------------|
 | Routine Questions | 1-2 business days |
 | Technical Troubleshooting | 2-4 business days |
-| Allocation Requests | **Rolling approval (no batch delays)** |
-| Urgent Issues (e.g., unexpected shutdowns) | **Same-day escalation** |
-
-📩 **Contact: [research-computing@ucr.edu](mailto:research-computing@ucr.edu)**  
+| Advanced Allocation Review | **Quarterly review cycle** |
+| Urgent Issues (e.g., shutdown prevention) | **Same-day escalation** |
 
 ---
 
-# 🔒 **Data Privacy, Ownership & Security**  
+# **5. Security, Data Privacy, & Future Planning**  
 
-## **Who Owns Your Research Data?**  
-- **You** own your data. **UCR & Google have zero claims to research IP.**  
-- **No unauthorized access**—your data is not monitored, used, or shared by Ursa Major or Google without your explicit consent.  
+### **Data Ownership & Privacy**  
+- **All research data remains the property of the researcher/UCR.**  
+- **No unauthorized access or monitoring**—Google & UCR **do not claim ownership or review your data**.  
+- **Government/legal requests** for data require researcher notification **unless legally restricted**.  
 
-## 🔐 **Security Measures**  
-- **End-to-end encryption** (at rest & in transit).  
-- **Strict access control** (two-factor authentication required).  
-- **Regular vulnerability testing** to prevent breaches.  
-
-## ⏳ **Data Retention & Deletion Policy**  
-- After an allocation expires, **data is retained for 60-90 days** before deletion.  
-- You will receive **reminder emails** before deletion occurs.  
+### **Planning Beyond the Current Contract**  
+The current Ursa Major contract expires in **11 months**. The university is actively planning for the **next phase of cloud resource availability**. Updates will be provided as decisions are made regarding **renewals, funding, and resource expansions**.
 
 ---
 
-# 📊 **Monitoring & Usage Dashboards**  
+# **6. Next Steps: How to Proceed**  
 
-### 📡 **Real-Time Budget & Resource Tracking**  
-- **Live dashboard** showing current usage, estimated time remaining, and recommendations.  
-- **Predictive alerts** when resources are running low.  
-
-### 📩 **Monthly Personalized Usage Reports**  
-- Receive **automatic monthly email summaries** with spending breakdowns and optimization tips.  
+✅ **New User?** Start with an **[Explore Tier Request](#)**  
+✅ **Need More Resources?** Apply for an **[Advanced Tier Allocation](#)**  
+✅ **Questions?** Contact **[research-computing@ucr.edu](mailto:research-computing@ucr.edu)**  
 
 ---
 
-# 🔄 **Sustainability & Long-Term Planning**  
+### **Final Thoughts**  
+Ursa Major is designed to **streamline research computing access at UCR**. By following a **structured allocation process**, we ensure that **all researchers have fair access** while maintaining **sustainable resource availability**.  
 
-## 🏗 **Continuous System Improvements**  
-- Regular upgrades & security updates.  
-- Researcher feedback incorporated into **annual service reviews**.  
-
-## 📊 **Planned Enhancements**  
-- 🔜 **Real-time forecasting tools** (ETA: next quarter)  
-- 🔜 **Automated approval system for low-risk Advanced Tier requests**  
-
----
-
-# 🎯 **Final Thoughts: A Researcher-Centered Approach**  
-
-Ursa Major is designed to **enable**, not obstruct, research at UCR.  
-
-✔ **No surprise shutdowns**—grace periods & proactive notifications  
-✔ **Faster approvals**—rolling Advanced Tier reviews  
-✔ **Clear IP & security policies**—you own your data  
-✔ **Seamless transitions to alternative resources** when needed  
-✔ **Dedicated research support team**—real people, real help  
-
-### **Questions? Need Help?**
-📩 **Email: [research-computing@ucr.edu](mailto:research-computing@ucr.edu)**  
-
----
+For further questions, reach out to the Ursa Major team.  
 
