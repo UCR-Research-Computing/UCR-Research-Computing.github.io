@@ -134,6 +134,7 @@ For technical or allocation issues, contact **Ursa Major Research Support**:
 📩 **Email:** [research-computing@ucr.edu](mailto:research-computing@ucr.edu)  
 
 ### **Response Time Expectations**
+
 | Issue Type | Expected Response Time |
 |------------|------------------------|
 | Routine Questions | 1-2 business days |
