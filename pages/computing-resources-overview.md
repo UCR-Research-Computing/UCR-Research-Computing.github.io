@@ -1,8 +1,3 @@
----
-id: computing-resources-overview
-title: UCR Research Computing Compute Resources Overview
-description: UCR Research Computing Compute Resources Overview
----
 
 ## UCR Research Computing Compute Resources
 
