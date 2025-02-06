@@ -1,7 +1,7 @@
 ---
 id: computing-resources-overview
 title: UCR Research Computing Compute Resources Overview
-sidebar_label: Overview
+#sidebar_label: Overview
 description: UCR Research Computing Compute Resources Overview
 ---
 
