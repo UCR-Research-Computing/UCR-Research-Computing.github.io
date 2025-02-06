@@ -6,37 +6,49 @@ sidebar_label: Google Drive
 
 ## Google Drive at UCR
 
-Google Drive stands as a cornerstone in the University of California, Riverside (UCR)'s research computing strategy, offering a secure and versatile platform for storing, sharing, and collaborating on files and documents. It is specifically recommended for files such as documents and data necessary for collaboration, aligning with the broader UCR strategy for research computing and campus infrastructure.
+Google Drive is a cornerstone of UCR’s research computing strategy, providing a secure and versatile platform for storing, sharing, and collaborating on files and documents. It is ideally suited for documents, spreadsheets, presentations, and collaborative files—helping streamline workflows and promote effective communication both within UCR and with external partners.
 
 ### Key Features
 
 - **Cost:** Free for UCR faculty, researchers, and students.
-- **Storage:** Unlimited storage with a daily upload limit of 570 GB.
-- **Accessibility:** Accessible via Windows, macOS, Web Browsers, Linux Command Line, Smart Phones, and integrates with the Open Science Framework.
-- **Collaboration:** Enables easy sharing and real-time collaboration within the UCR community and with external partners.
-- **Security:** Offers robust security features, ensuring the protection of sensitive data.
+- **Storage:**  
+  - Faculty/Staff/Graduate Students: 100 GB  
+  - Undergraduate Students: 25 GB
+- **Accessibility:**  
+  - Supported on Windows, macOS, and Linux (via the command line).  
+  - Accessible via web browsers and smart phones.  
+  - Integrates seamlessly with the Open Science Framework.
+- **Collaboration:** Enables easy file sharing and real-time collaboration among UCR community members and external partners.
+- **Security:** Offers robust security features to protect sensitive data.
 
 ### Strategic Use within UCR
 
-As part of UCR's research computing strategy and campus-wide approach to data management, Google Drive is recommended for:
+As part of UCR’s comprehensive data management strategy, Google Drive is recommended for:
 
-- **Documents and Collaborative Files:** Ideal for storing and sharing documents, spreadsheets, presentations, and files needed for collaboration.
-- **Not for Large Data or Datasets:** For large-scale data or datasets, the [Ceph Secure Research Storage](ceph-secure-research-storage.md) is the recommended solution, providing a scalable and secure environment for data-intensive research projects.
+- **Documents and Collaborative Files:**  
+  Ideal for storing and sharing documents, spreadsheets, presentations, and files that support collaborative work.
+- **Not for Large Datasets:**  
+  For research projects requiring storage of large-scale data or datasets, please use [Ceph Secure Research Storage](ceph-secure-research-storage.md) for its scalable and secure environment.
 
 ### Getting Started
 
-For a comprehensive guide and FAQs on utilizing Google Drive at UCR, refer to the following resources on the [UCR ITS Support Portal](https://ucrsupport.service-now.com/ucr_portal/):
+For detailed guidance and FAQs on using Google Drive at UCR, please refer to the resources available on the [UCR ITS Support Portal](https://ucrsupport.service-now.com/ucr_portal/):
 
-- [Guide to using Google Drive](https://ucrsupport.service-now.com/ucr_portal/?id=kb_article&sys_id=0f55d6ad1bbb489826bd635bbc4bcbc5)
+- [Guide to Using Google Drive](https://ucrsupport.service-now.com/ucr_portal/?id=kb_article&sys_id=0f55d6ad1bbb489826bd635bbc4bcbc5)
 - [General Information & FAQ](https://ucrsupport.service-now.com/ucr_portal/?id=kb_article&sys_id=c35c53a91b35cc54750b11bebd4bcba2)
-- [How to install Google Drive on Managed Desktop](https://ucrsupport.service-now.com/ucr_portal/?id=kb_article&sys_id=6344f4b5dba5f7800d74755a8c96193f)
-- [Storing/Sharing Files Saved in Google Drive](https://ucrsupport.service-now.com/ucr_portal/?id=kb_article&sys_id=53e1a7751beec898f3444158dc4bcb1e)
+- [How to Install Google Drive on Managed Desktop](https://ucrsupport.service-now.com/ucr_portal/?id=kb_article&sys_id=6344f4b5dba5f7800d74755a8c96193f)
+- [Storing and Sharing Files in Google Drive](https://ucrsupport.service-now.com/ucr_portal/?id=kb_article&sys_id=53e1a7751beec898f3444158dc4bcb1e)
 
 ### Best Practices
 
-- **Organize Data:** Use folders to systematically organize your files for efficient access and management.
-- **Mindful Sharing:** Adjust sharing settings carefully to maintain the confidentiality of sensitive information.
-- **Regular Backups:** Create backups of critical data periodically, despite Google Drive's robust security.
-- **Leverage Training:** Utilize training resources to enhance your efficiency in using Google Drive for research and academic purposes.
+- **Organize Your Data:**  
+  Create folders to systematically organize your files for easy access and management.
+- **Mindful Sharing:**  
+  Adjust sharing settings carefully to maintain confidentiality and ensure that only authorized users can access sensitive data.
+- **Regular Backups:**  
+  Although Google Drive includes robust security, it is a good practice to periodically back up critical data.
+- **Utilize Training Resources:**  
+  Take advantage of available training materials and tutorials to enhance your proficiency with Google Drive and related productivity tools.
 
-Google Drive is an integral part of the UCR community's digital toolkit, facilitating seamless collaboration and efficient data management across various academic and research activities. Its strategic use is vital for maximizing productivity and ensuring the secure handling of collaborative files and documents within the UCR research ecosystem.
+Google Drive is an essential component of UCR’s digital toolkit, facilitating seamless collaboration and efficient data management across academic and research activities. Its strategic use is vital for maximizing productivity and ensuring the secure handling of collaborative files within the UCR research ecosystem.
+
