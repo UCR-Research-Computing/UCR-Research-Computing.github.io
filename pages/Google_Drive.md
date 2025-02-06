@@ -10,7 +10,6 @@ Google Drive is a cornerstone of UCR’s research computing strategy, providing 
 
 ### Key Features
 
-- **Cost:** Free for UCR faculty, researchers, and students.
 - **Storage:**  
   - Faculty/Staff/Graduate Students: 100 GB  
   - Undergraduate Students: 25 GB
