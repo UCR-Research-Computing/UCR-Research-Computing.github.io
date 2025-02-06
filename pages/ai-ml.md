@@ -189,29 +189,3 @@ Leverage state-of-the-art voice technologies for realistic audio production:
 ---
 
 *For additional support or inquiries, please contact [research-computing@ucr.edu](mailto:research-computing@ucr.edu).*
-
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-

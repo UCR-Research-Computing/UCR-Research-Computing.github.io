@@ -100,4 +100,3 @@ Ceph RDS is poised to become the foundational storage solution for high-performa
 UCR’s storage solutions are designed to offer robust, secure, and scalable options that meet the diverse needs of our research community—from everyday document management to high-performance, data-intensive research workloads. Whether using the standard storage plans, purchasing additional capacity, or preparing for the upcoming Ceph Secure Research Storage solution, UCR is committed to providing the right tools to support your academic and research endeavors.
 
 For more detailed information on accessing and utilizing these storage resources, please visit the [UCR Research Computing website](https://researchcomputing.ucr.edu) or contact our support team.
-
