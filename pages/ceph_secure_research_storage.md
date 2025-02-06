@@ -90,9 +90,8 @@ A Ceph storage system offers a host of benefits and functionalities critical for
 - **Layered Security Model:** Combines advanced encryption, network segmentation, and routine security assessments to keep your data safe.
 - **Data Lifecycle Management:** Features automated backups, file versioning, and configurable deletion retention to protect and preserve your research data over time.
 
-### Performance and Support
+### Support
 
-- **Benchmarking:** Detailed performance metrics and benchmarks ensure you understand the speed and reliability of data access.
 - **Dedicated Support:** Our support team is available via multiple channels to promptly resolve any issues, minimizing disruptions to your work.
 - **Comprehensive Training:** Access quick-start guides, video tutorials, and scheduled workshops designed to help you get up and running quickly with Ceph RDS.
 
