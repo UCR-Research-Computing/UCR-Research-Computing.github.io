@@ -4,47 +4,94 @@ title: Open Science Grid
 sidebar_label: Open Science Grid
 ---
 
-
 # Open Science Grid (OSG) Overview
 
-The Open Science Grid (OSG) represents a pivotal effort in advancing open science through the principles and practices of distributed High Throughput Computing (dHTC). By fostering a consortium dedicated to bolstering the state of the art in dHTC, OSG plays a critical role in enabling significant scientific advancements across a variety of disciplines.
+The **Open Science Grid (OSG)** is a nationwide, distributed high-throughput computing (dHTC) platform that empowers researchers with scalable compute and data resources. By pooling resources from multiple institutions, OSG accelerates scientific discovery while reducing the overhead of maintaining local clusters.
 
-## The OSG Consortium
+---
 
-OSG's ecosystem is built upon a consortium model, bringing together researchers, computing resources, and institutions under a collective mission to support open science. The consortium orchestrates pools of shared computing and data capacity, each tailored to the specific needs of different research communities. This collaborative framework ensures that a diverse array of scientific inquiries can leverage high-throughput computing to accelerate discovery and innovation.
+## Why OSG Matters for Your Research
 
-### Governance and Management
-- The **OSG Council** oversees the consortium, aligning OSG's offerings with the scientific goals of its stakeholders, including research communities and resource providers.
-- The **Executive Team** manages the core OSG Team, comprising members from various institutions responsible for delivering the essential technologies and services for dHTC.
+- **Accelerate Discovery:** Run thousands of concurrent jobs and process massive datasets efficiently.
+- **Scale On Demand:** Leverage multi-petabyte compute power without the need for in-house infrastructure.
+- **Cost-Effective:** Minimize costs by sharing resources and reducing administrative burdens.
+- **Foster Collaboration:** Connect with a national community of experts and resource providers.
 
-### Funding and Support
-As of January 2022, the core OSG Team receives funding primarily through the NSF PATh project (#2030508) and the IRIS-HEP project (#1836650), alongside in-kind contributions from DOE national laboratories and other entities.
+---
 
-## Distributed High Throughput Computing (dHTC)
+## The OSG Ecosystem
 
-OSG specializes in distributed high-throughput computing, a methodology that optimizes the execution of numerous self-contained tasks across a vast array of computing resources. This approach maximizes computational efficiency and enables the handling of large-scale scientific problems.
+### Collaborative Consortium
 
-## The OSG Fabric of Services
+- **Resource Providers:** Universities, national labs, and research institutions share spare cycles and storage.
+- **Research Communities:** Diverse disciplines—from particle physics to genomics—benefit from high-throughput computing.
+- **Governance & Support:** 
+  - The **OSG Council** sets strategic priorities.
+  - The **Executive Team** manages daily operations.
+  - Funding comes from NSF initiatives (e.g., NSF PATh #2030508) and other partners.
 
-The OSG provides an array of open-source software, technologies, and services designed to meet the dHTC compute requirements of the research community. These offerings enable the creation and operation of virtual clusters, or "pools," from shared computing and data resources, facilitating seamless access for researchers.
+### Distributed High Throughput Computing (dHTC)
 
-### Key Technologies and Services
-- **Global Research Accounting (GRACC)**: Delivers metrics on capacity contributions and usage across OSG pools, offering detailed insights for institutions and research projects.
-- **Open Science Pool (OSPool)**: Offers dHTC capacity to research projects in the US, supported by NSF through the PATh project. Access is provided through institutional access points or the OSG Portal.
+OSG’s dHTC model allows you to:
+- **Run Parallel Tasks:** Distribute independent jobs across thousands of nodes.
+- **Optimize Throughput:** Automatically match jobs to available resources.
+- **Support Varied Workloads:** Easily switch between data analysis, simulations, and more.
 
-## OSG's Impact on Research
+---
 
-By democratizing access to computing resources, OSG empowers researchers from various fields to tackle complex scientific questions with unprecedented efficiency. The consortium's dedication to open science principles ensures that these resources are utilized in a manner that promotes collaboration, transparency, and the broad dissemination of scientific knowledge.
+## Key Technologies and Services
 
-### Getting Started with OSG
+- **Virtual Clusters:** Build your own “virtual cluster” by tapping into shared computing resources.
+- **Global Research Accounting (GRACC):** Monitor your job performance and resource usage with detailed metrics.
+- **Open Science Pool (OSPool):** Access NSF-supported compute capacity through institutional access points or the OSG Portal.
+- **Standardized Job Tools:** Use familiar interfaces and scripts to submit, monitor, and manage jobs seamlessly.
 
-Researchers interested in leveraging OSG's resources for their projects can learn more about the available pools, technologies, and access methods by visiting the [OSG documentation](https://opensciencegrid.org/docs/) and exploring the [OSG Site Admin documentation](https://opensciencegrid.org/docs/site/) for specific software details.
+---
 
-OSG's commitment to supporting open science through distributed computing continues to be a cornerstone of its mission, enabling the research community to achieve remarkable advancements and innovations.
+## How OSG Benefits R1 Researchers
 
-Knowledge Base
-* [OSG Documentation](https://opensciencegrid.org/docs/)
-* [OSG Site Admin Documentation](https://opensciencegrid.org/docs/site/)
-* [Submitting Jobs to OSG](../Knowledge_Base/submit-job-to-osg.md)
+- **Scalable Research Projects:** Easily scale experiments from pilot studies to full-scale analyses.
+- **Rapid Prototyping:** Test ideas quickly on a robust computing infrastructure.
+- **Cost Savings:** Leverage shared resources to reduce overall research computing costs.
+- **Interdisciplinary Collaboration:** Work with experts across fields and institutions to drive innovative research.
 
-For more information about OSG, including how to contribute or utilize its resources, please visit the [Open Science Grid website](https://opensciencegrid.org/).
+---
+
+## Getting Started with OSG
+
+1. **Explore the Documentation**
+   - [OSG Documentation](https://opensciencegrid.org/docs/)
+   - [OSG Site Admin Documentation](https://opensciencegrid.org/docs/site/)
+
+2. **Register and Request Access**
+   - Contact your institutional OSG administrator.
+   - Follow online registration instructions on the OSG portal.
+
+3. **Launch Your Workload**
+   - Submit your first job using familiar tools.
+   - Monitor performance with GRACC and optimize your usage.
+
+---
+
+## Success Stories
+
+Researchers have used OSG to:
+- **Process Petabytes of Data:** Accelerate analyses without local supercomputers.
+- **Run Large-Scale Simulations:** Reduce simulation times through massive parallelism.
+- **Enhance Collaboration:** Share resources and expertise across disciplines.
+
+---
+
+## Learn More
+
+- **Knowledge Base:**  
+  * [OSG Documentation](https://opensciencegrid.org/docs/)  
+  * [OSG Site Admin Documentation](https://opensciencegrid.org/docs/site/)  
+  * [Submitting Jobs to OSG](../Knowledge_Base/submit-job-to-osg.md)
+
+- **Visit the [Open Science Grid Website](https://opensciencegrid.org/)** for additional details, upcoming events, and contribution opportunities.
+
+---
+
+For further questions or support, please contact your institutional OSG representative or visit the OSG support portal.
+
