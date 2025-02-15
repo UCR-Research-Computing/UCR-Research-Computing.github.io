@@ -6,78 +6,86 @@ sidebar_label: Knowledge Base
 
 <img src="../assets/welcome.jpg" alt="Banner Image" style="width: 100%; object-fit: scale-down; height: auto; max-height: 400px;">
 
+# UCR Research Computing Knowledge Base
 
+Welcome to the UCR Research Computing Knowledge Base! This comprehensive resource hub provides information and guides for all aspects of research computing at UCR, from getting started to advanced topics.  Use the categories below or the search bar above to find the information you need.
 
-## Research Computing Knowledge Base
+## Getting Started
 
-Welcome to the UCR Research Computing Knowledge Base. Explore our comprehensive repository to leverage the full spectrum of research computing resources at UCR, from computing clusters and workstations to secure storage solutions and software. Browse by category below or use the search bar in the upper right corner.
+*   [Introduction to Research Computing at UCR](intro-research-computing-guide.md)  *(Combined with your existing "Introduction to Research Computing" link)*
+*   [Setting up your Research Computing Account](account-setup.md) *(Consider creating this guide)*
+*   [Getting Started with GCP](gcp-getting-started.md) *(Created a dedicated GCP getting started guide)*
+*   [Basic HPC Usage](basic-hpc-usage.md) *(Created a dedicated Basic HPC Usage guide)*
+*   [Connecting to UCR Research Computing Resources](connecting-to-resources.md) *(Combine workstation and HPC connection info here)*
+*   [Research Computing Policies and Guidelines](research-computing-policies.md) *(Combine security and general policies here)*
 
-### Computing and Storage
+## Computing Resources
 
-#### Workstations/Servers
-- [Ursa Major Research Workstations](Ursa_Major_Research_Workstations.md): Overview and launch instructions for research workstations.
-- [Connecting to a Ursa Major Research Workstation](Ursa_Major_Research_Workstations_How_to_Connect.md): Connection instructions.
-- [How to: Launch a Ursa Major Research Workstation](Ursa_Major_Research_Workstations_How_to_Launch.md)
+### High-Performance Computing (HPC)
 
-#### HPC Clusters
-- [Available HPC Clusters](Available_Clusters.md): Discover available HPC clusters.
-- [Launching an Ursa Major Cluster](How_To_Launch_a_Ursa_Major_Cluster.md): Guide to starting your cluster.
-- [Connecting to HPC Cluster & Running a Sample Job](how_to_connect_to_hpc_cluster_run_sample_job.md): Connecting and job submission instructions.
-- [Ursa Major Job Script Examples](https://github.com/UCR-Research-Computing/UCR-Ursa-Major-Slurm-Job-Scripts): Sample scripts for job submission.
-- [Ursa Major HPC Cluster Templates](https://github.com/UCR-Research-Computing/UCR-Ursa-Major-Cluster-Blueprints): Templates for creating new clusters.
-- [HPCC User Tools](https://github.com/UCR-Research-Computing/HPCC-User-Utils): Useful tools for HPCC users.
-- [ACCESS_Systems](../pages/nsf_access.md)
+*   [Available HPC Clusters (Ursa Major, etc.)](Available_Clusters.md)
+*   [Launching and Managing HPC Clusters](How_To_Launch_a_Ursa_Major_Cluster.md) *(Combine launching and management info)*
+*   [HPC Job Scheduling (Slurm)](how_to_connect_to_hpc_cluster_run_sample_job.md) *(Focus on Slurm and job management)*
+*   [Ursa Major Job Script Examples](https://github.com/UCR-Research-Computing/UCR-Ursa-Major-Slurm-Job-Scripts)
+*   [Ursa Major HPC Cluster Templates](https://github.com/UCR-Research-Computing/UCR-Ursa-Major-Cluster-Blueprints)
+*   [HPCC User Tools](https://github.com/UCR-Research-Computing/HPCC-User-Utils)
+*   [ACCESS Systems](ACCESS_Systems.md)
+*   [HPC Systems User Guide](hpc-user-guide.md) *(Created a guide from your "Reference Documentation" section)*
 
+### Cloud Computing (GCP, AWS)
 
-#### Kubernetes Clusters
-- [The Nautilus Cluster](The_Nautilus_Cluster.md): Information on using Nautilus within the Pacific Research Platform.
-- [Example YAML files for the Nautilus Cluster](https://github.com/UCR-Research-Computing/Nautilus-Cluster-Example-Yaml-Files): Example YAML files for Nautilus Cluster.
+*   [Using Google Cloud Platform (GCP)](gcp-usage.md) *(Create a general GCP usage guide)*
+*   [Mounting Google Cloud Storage](how_to_mount_google_cloud_storage.md)
+*   [Google Drive and Google Cloud Storage and AWS S3](Google_Drive.md)
+*   [Creating a Budget for a Ursa Major/Cloud Project](Ursa_Major_Project_Budget_Creation.md)  *(Make this more general for cloud projects)*
+*   [AWS for Research Computing](aws-usage.md) *(Consider creating an AWS usage guide)*
+*   [GCP Documentation](https://cloud.google.com/docs) *(From your "Reference Documentation")*
+*   [Data Analysis on GCP](data-analysis-gcp.md) *(From your "Tutorials" section)*
 
+### Other Computing Resources
 
-#### Jupyter Notebooks/Google Colab
-- [Usefull Jupyter Notebooks and Colab Notebooks](https://github.com/UCR-Research-Computing/Useful-Google-Colab-Notebooks]: Useful Jupyter Notebooks and Colab Notebooks.
+*   [Ursa Major Research Workstations](Ursa_Major_Research_Workstations.md)
+*   [The Nautilus Cluster (Kubernetes)](The_Nautilus_Cluster.md)
+*   [Example YAML files for the Nautilus Cluster](https://github.com/UCR-Research-Computing/Nautilus-Cluster-Example-Yaml-Files)
+*   [Jupyter Notebooks and Google Colab](https://github.com/UCR-Research-Computing/Useful-Google-Colab-Notebooks)
+*   [Local Lab Storage](Local_Lab_Storage.md)
 
-#### Cloud: Ursa Major, GCP and AWS
-- [Ursa_Major_Secure_Research_Storage](Ursa_Major_Secure_Research_Storage.md)
-- [Mounting Google Cloud Storage](how_to_mount_google_cloud_storage.md): Integration instructions for Google Cloud Storage.
-- [Google Drive and Google Cloud Storage and AWS S3](Google_Drive.md): Using Google Drive for research and best practices for AWS S3.
-- [How to: Create a Ursa Major Research Storage Bucket](Ursa_Major_Research_Storage_How_to_Create_Bucket.md)
-- [How to: Access a Ursa Major Research Storage Bucket](Ursa_Major_Research_Storage_How_to_Access_Bucket.md)
-- [How to: Mount Google Cloud Storage on a Linux Workstation or Cluster](how_to_mount_google_cloud_storage.md): Integration instructions for Google Cloud Storage.
-- [How to: Mount Google Drive on a Linux Workstation or Cluster](how_to_mount_google_drive.md)
-- [How to: S3 Auto Migrate and Delete](./how-to-s3-auto-migrate-delete.md)
-- [How to: Create a Budget for a Ursa Major Project](Ursa_Major_Project_Budget_Creation.md)
+## Data Storage
 
-#### On-Prem
-- [Local Lab Storage](Local_Lab_Storage.md): Storage options and best practices for labs.
+*   [Ursa Major Secure Research Storage](Ursa_Major_Secure_Research_Storage.md)
+*   [How to: Create/Access a Ursa Major Research Storage Bucket](Ursa_Major_Research_Storage_How_to_Create_Bucket.md) *(Combine create and access info)*
+*   [S3 Auto Migrate and Delete](./how-to-s3-auto-migrate-delete.md)
+*   [Secure Data Storage and Transfer](secure-data-storage.md) *(From your "Tutorials" section)*
 
-### Support
+## Software and Tools
 
-- [UCR RCSAS](UCR_Research_Computing_System_Administration_Service.md): Overview of the Research Computing System Administration Service.
-- [RCSAS MOU](https://docs.google.com/document/d/19nYYXakruAbg1pxKybpSddSz8p1TBiBc/edit?usp=sharing&ouid=115996119773834121624&rtpof=true&sd=true): Service agreement details for RCSAS.
+*   [Research Software on Ursa Major Cluster](https://spack.readthedocs.io/en/latest/package_list.html)
+*   [Installing R JAGS on Ursa Major](R-JAGS.md)
+*   [Molecular Dynamics Simulation Input Files with ChatGPT](md_simulation_input_files_chatpgt.md)
+*   [UCR Research Computing Github Org](https://github.com/UCR-Research-Computing):
+*   [Offline LLMs (Ollama)](ollama-how-to.md) *(Rename for clarity)*
+*   [Research Software Directory](software-directory.md) *(From your "Reference Documentation")*
 
-### Software
+## AI/Machine Learning
 
-- [Research Software on Ursa Major Cluster](https://spack.readthedocs.io/en/latest/package_list.html): Comprehensive list of available research software.
-- [Installing R JAGS on Ursa Major](R-JAGS.md): Step-by-step installation guide.
-- [Molecular Dynamics Simulation Input Files with ChatGPT](md_simulation_input_files_chatpgt.md): Utilizing ChatGPT for simulation inputs.
-- [UCR Research Computing Github Org](https://github.com/UCR-Research-Computing): The UCR Research Computing Github Organization page.
-- [How-to Offline LLMs](./ollama-how-to.md): Install Ollama and host offline Open Source LLMs
+*   [Ursa Major Research Services for AI/ML](Ursa_Major_Research_Services.md) *(Focus on AI/ML services)*
+*   [LLM Inference Settings](llm_inference_settings.md)
+*   [How to host offline Open Source LLMs](ollama-how-to.md) *(Duplicate, consider removing)*
 
+## Support and Training
 
-### Training
+*   [UCR Research Computing System Administration Service (RCSAS)](UCR_Research_Computing_System_Administration_Service.md)
+*   [RCSAS MOU](https://docs.google.com/document/d/19nYYXakruAbg1pxKybpSddSz8p1TBiBc/edit?usp=sharing&ouid=115996119773834121624&rtpof=true&sd=true)
+*   [Training Materials and Workshops](training-materials.md) *(Create a dedicated training page)*
+*   [UCR Research Computing Overview](https://docs.google.com/presentation/d/e/2PACX-1vQaCJAlyQ2zdtu9dROaZZ5SZWEU_dEW49klE-stzFLWDHKNvaGlhDEqFTFu2xs6nw/pub?start=false&loop=false&delayms=3000)
+*   [Campus Information Security Team Meeting Winter 2023](https://docs.google.com/presentation/d/e/2PACX-1vRqjZ3mc576V0tKfMCSxEXt1ehXfxDU2b_SJ-s4hHt49LG3WszP3ZS5O5SZLd2ldQ/pub?start=false&loop=false&delayms=3000)
 
-- [UCR Research Computing Overview](https://docs.google.com/presentation/d/e/2PACX-1vQaCJAlyQ2zdtu9dROaZZ5SZWEU_dEW49klE-stzFLWDHKNvaGlhDEqFTFu2xs6nw/pub?start=false&loop=false&delayms=3000): Overview of UCR Research Computing.
-- [Campus Information Security Team Meeting Winter 2023](https://docs.google.com/presentation/d/e/2PACX-1vRqjZ3mc576V0tKfMCSxEXt1ehXfxDU2b_SJ-s4hHt49LG3WszP3ZS5O5SZLd2ldQ/pub?start=false&loop=false&delayms=3000)
+## Security
 
-### Security
+*   [Ursa Major Policy](Ursa_Major_Policy.md) *(Already linked in Getting Started, can keep or remove)*
+*   [Data Security in Research Computing](data-security-research.md) *(From your "Best Practices" section)*
 
-- [Ursa Major Policy](Ursa_Major_Policy.md): Security policies and guidelines for using Ursa Major resources.
+## Best Practices
 
-### AI/ML
-
-- [Ursa Major Research Services](Ursa_Major_Research_Services.md): AI and ML services provided by Ursa Major.
-- [LLM Inference Settings](llm_inference_settings.md): Adjusting LLM inference output for research purposes.
-- [How to host offline Open Source LLMs](ollama-how-to.md): Install Ollama and host offline Open Source LLMs
-
-For further details and updates, please visit our dedicated UCR Research Computing website or contact our support team.
+*   [Cloud Cost Management](cloud-cost-management.md) *(From your "Best Practices" section)*
+*   [Collaborative Research using Cloud Platforms](collaborative-research.md)  *(From your "Best Practices" section)*
