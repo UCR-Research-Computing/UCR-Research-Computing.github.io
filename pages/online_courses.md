@@ -1,10 +1,3 @@
----
-id: online-courses
-title: Online Training
-sidebar_label: Online Training
----
-
-
 ## Online Training Hub
 
 Welcome to our Research Computing and Cloud Computing Training Hub, your go-to resource for enhancing your skills in high-performance computing, cloud computing with Google Cloud Platform (GCP), and other research technologies. Explore our curated collection of courses, tutorials, and video resources designed to support your research endeavors.
