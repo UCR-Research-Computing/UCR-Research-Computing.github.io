@@ -1,9 +1,3 @@
----
-id: documentation-and-guides
-title: Documentation and Guides
-sidebar_label: Documentation and Guides
----
-
 ## Documentation and Guides
 
 Welcome to our Documentation and Guides page. Here, you'll find a comprehensive collection of resources designed to support your research computing and cloud computing projects. Browse through our curated lists of guides, tutorials, and documentation to find the information you need to advance your work.
