@@ -169,21 +169,3 @@ The current Ursa Major contract expires in **11 months**. The university is acti
 ✅ **New User?** Start with an **[Explore Tier Request](#)**  
 ✅ **Need More Resources?** Apply for an **[Advanced Tier Allocation](#)**  
 ✅ **Questions?** Contact **[research-computing@ucr.edu](mailto:research-computing@ucr.edu)**
-
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-
