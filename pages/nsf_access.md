@@ -4,6 +4,8 @@ title: NSF ACCESS
 sidebar_label: NSF ACCESS
 ---
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
 # NSF ACCESS
 
 The Advanced Cyberinfrastructure Coordination Ecosystem: Services & Support (ACCESS) is an initiative by the National Science Foundation (NSF) designed to enhance computational and data-intensive research across all scientific disciplines.
@@ -37,6 +39,24 @@ ACCESS, funded by the NSF, offers a broad spectrum of advanced computing systems
 - Expertise and Support: Assistance to utilize resources effectively and achieve research goals.
 - Scientific Applications and Gateways: Specialized software and interfaces to streamline research workflows.
 - Education and Training: Workshops, courses, and resources for skill development.
+
+<div id="resource-catalog-react"></div>
+<script type="module">
+    const baseUrl = "https://esm.sh/@xras/ui@onramps_v1/dist";
+    import {
+        onRampsResourceCatalog,
+        shadowTarget,
+    } from "https://esm.sh/@xras/ui@onramps_v1/dist/xras-ui.js";
+    onRampsResourceCatalog({
+        target: shadowTarget(
+            document.getElementById("resource-catalog-react"),
+            { accessStyles: true, baseUrl }
+        ),
+        onRamps: true,
+        baseUrl
+    });
+</script>
+
 
 #### Eligibility
 U.S. researchers, educators, students, and international collaborators are eligible to use ACCESS resources, adhering to NSF and ACCESS policies. Commercial organizations may also qualify under specific policies.
