@@ -37,8 +37,7 @@ Ursa Major is available to **all UCR-affiliated researchers**, including:
 To use Ursa Major, researchers must:
 
 1. Have an **active UCR NetID**.
-2. Complete the required **Ursa Major training and acknowledgment process**.
-3. Submit an allocation request according to their research needs (details below).
+2. Submit an allocation request according to their research needs (details below).
 
 Researchers will be assigned **either an Explore Tier or Advanced Tier allocation** based on their proposal and needs.
 
