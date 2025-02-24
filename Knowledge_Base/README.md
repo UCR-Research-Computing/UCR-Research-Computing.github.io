@@ -20,6 +20,7 @@ Welcome to the UCR Research Computing Knowledge Base! This comprehensive resourc
 ### High-Performance Computing (HPC)
 
 *   [Available HPC Clusters (Ursa Major, etc.)](Available_Clusters.md)
+*   [BLAST Searches on the HPCC Cluster](blast.md)
 *   [Launching and Managing HPC Clusters](How_To_Launch_a_Ursa_Major_Cluster.md)
 *   [Launching Custom Ursa Major Cluster](Launch_Custom_Ursa_Major_Cluster.md)
 *   [HPC Job Scheduling (Slurm)](how_to_connect_to_hpc_cluster_run_sample_job.md)
