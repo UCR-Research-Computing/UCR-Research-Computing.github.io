@@ -4,7 +4,7 @@ title: Cost Models
 sidebar_label: Cost Models
 ---
 
-<img src="../assets/cost-model-icon.jpeg" alt="Banner Image" style="width: 50%; object-fit: scale-down; height: auto; max-height: 100px;">
+<img src="../assets/cost-model-icon.jpeg" alt="Banner Image" style="width: 50%; object-fit: scale-down; height: auto; max-height: 300px;">
 
 ## Cost Models
 
