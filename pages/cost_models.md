@@ -18,8 +18,8 @@ Our model offers a variety of funding support and cost options to facilitate res
 NSF-Based Resources are tailored to boost the research capabilities of the scientific community across a wide range of disciplines, and they're provided at no cost to researchers. This is made possible by funding from the National Science Foundation (NSF), a US government agency that backs fundamental research and education in all non-medical fields of science and engineering. Through this support, the NSF seeks to push the boundaries of knowledge, drive innovation, and tackle societal challenges, all without imposing any financial burden on researchers.
 
 * [ACCESS Program](nsf_access.md): Provides no-cost access to advanced computing systems and services, funded by the NSF.
-* [Open Science Grid](open_science_grid.md):: Access to distributed high-throughput computing resources.
-* [NRP Nautilus Cluster](Nautilus.md): Access to regional HPC resources via the Pacific Research Platform.
+* [Open Science Grid](open_science_grid.md):: Provides no-cost access to distributed high-throughput computing resources.
+* [NRP Nautilus Cluster](Nautilus.md): Provides no-cost access to regional HPC resources via the Pacific Research Platform.
 
 
 ### System-Wide Discounted
