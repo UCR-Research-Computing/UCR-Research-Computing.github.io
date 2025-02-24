@@ -40,24 +40,6 @@ ACCESS, funded by the NSF, offers a broad spectrum of advanced computing systems
 - Scientific Applications and Gateways: Specialized software and interfaces to streamline research workflows.
 - Education and Training: Workshops, courses, and resources for skill development.
 
-<div id="resource-catalog-react"></div>
-<script type="module">
-    const baseUrl = "https://esm.sh/@xras/ui@onramps_v1/dist";
-    import {
-        onRampsResourceCatalog,
-        shadowTarget,
-    } from "https://esm.sh/@xras/ui@onramps_v1/dist/xras-ui.js";
-    onRampsResourceCatalog({
-        target: shadowTarget(
-            document.getElementById("resource-catalog-react"),
-            { accessStyles: true, baseUrl }
-        ),
-        onRamps: true,
-        baseUrl
-    });
-</script>
-
-
 #### Eligibility
 U.S. researchers, educators, students, and international collaborators are eligible to use ACCESS resources, adhering to NSF and ACCESS policies. Commercial organizations may also qualify under specific policies.
 
@@ -91,3 +73,22 @@ When including ACCESS in funding proposals or research materials, specific langu
 Visit the [Get Started](https://access-ci.org/about/get-started/) page for a guide on accessing and using ACCESS resources effectively.
 
 ACCESS is supported by several NSF awards, reflecting the commitment to advancing U.S. research capabilities through enhanced cyberinfrastructure.
+
+# ACCESS Systems Available Detailed:
+
+<div id="resource-catalog-react"></div>
+<script type="module">
+    const baseUrl = "https://esm.sh/@xras/ui@onramps_v1/dist";
+    import {
+        onRampsResourceCatalog,
+        shadowTarget,
+    } from "https://esm.sh/@xras/ui@onramps_v1/dist/xras-ui.js";
+    onRampsResourceCatalog({
+        target: shadowTarget(
+            document.getElementById("resource-catalog-react"),
+            { accessStyles: true, baseUrl }
+        ),
+        onRamps: true,
+        baseUrl
+    });
+</script>
