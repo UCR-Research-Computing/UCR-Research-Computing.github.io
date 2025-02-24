@@ -66,6 +66,7 @@ Welcome to the UCR Research Computing Knowledge Base! This comprehensive resourc
 *   [Local Lab Storage](Local_Lab_Storage.md)
 *   [On-Prem Facilities](../pages/on-prem-facilities.md)
 *   [Web-Based Research Tools](../pages/web-based-research-tools.md)
+*   [Accessing SDSC Comet and Running a Test Job](sdsc-comet-connect.md)
 
 ## Data Storage
 
