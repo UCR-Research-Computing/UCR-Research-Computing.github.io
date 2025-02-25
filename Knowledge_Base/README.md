@@ -104,6 +104,7 @@ Welcome to the UCR Research Computing Knowledge Base! This comprehensive resourc
 *   [Resources](Resources.md)
 *   [Online Courses](../pages/online_courses.md)
 *   [Workshops and Webinars](../pages/workshops_and_webinars.md)
+*   [Emerging Research Computing Trends at R1s](Emerging_Research_Computing_Trends_at_R1s.md)
 
 ## Policies and Security
 
