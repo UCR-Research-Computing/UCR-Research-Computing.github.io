@@ -28,6 +28,7 @@ Welcome to the UCR Research Computing Knowledge Base! This comprehensive resourc
 *   [HPCC](../pages/HPCC.md)
 *   [Building an HPC Cluster](../pages/Building_an_HPC_Cluster.md)
 *   [Comprehensive Guide to Warewulf HPC Cluster Deployment](../pages/Comprehensive_Guide_to_Warewulf_HPC_Cluster_Deploy.md)
+*   [Building R1 AAU Research Cluster](R1_AAU_Research_HPC_Cluster.md)
 *   [Open Science Grid](../pages/open_science_grid.md)
 *   [Submit Job to OSG](submit-job-to-osg.md)
 
