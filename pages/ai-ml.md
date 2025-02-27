@@ -13,7 +13,7 @@ Welcome to the UCR Research Computing AI and ML Hub—your gateway to cutting-ed
 ### Featured How-To
 **Run Your Own Open-Source LLM Today**  
 Learn how to run your own copy of an open-source large language model on UCR Ursa Major or your workstation.  
-[How To Run Offline LLMs](../Knowledge_Base/ollama-how-to.md) · See it in action [Here](http://34.68.17.18:3000/)
+[How To Run Offline LLMs](../Knowledge_Base/ollama-how-to.md) 
 
 ---
 
