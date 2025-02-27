@@ -24,11 +24,10 @@ Explore the leading AI chatbots designed to support your research needs.
 
 | Chatbot                                   | Description                                                                                     |
 |-------------------------------------------|-------------------------------------------------------------------------------------------------|
-| [ChatGPT (GPT-4)](https://chat.openai.com/) | Versatile and widely adopted for detailed conversations, research assistance, and creative tasks. |
+| [ChatGPT](https://chat.openai.com/) | Versatile and widely adopted for detailed conversations, research assistance, and creative tasks. |
 | [Claude](https://www.claude.ai/)            | Renowned for its contextual understanding and nuance in dialogue, ideal for complex inquiries.  |
 | [Gemini](https://gemini.google.com/)        | Excels in creative content generation, including writing, art, and multimedia synthesis.         |
 | [Perplexity](https://www.perplexity.ai/)      | Specializes in natural language queries with quick, informative responses.                        |
-| [Pi.ai](https://pi.ai/talk)                  | A personal AI assistant that offers empathetic conversations and factual information across platforms. |
 | [Bing Chat](https://www.bing.com/chat)        | Integrates with Microsoft’s search and AI ecosystem, offering real-time data insights and responses. |
 
 ---
