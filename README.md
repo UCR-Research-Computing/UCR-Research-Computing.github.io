@@ -26,6 +26,4 @@ For more information, please contact us at:
 
 [research-computing@ucr.edu](./pages/mailto:research-computing@ucr.edu) - [UCR Research Computing Slack](./pages/https://ucr-research-compute.slack.com/)
 
-Welcome to Research Computing at UCR.
-
 
