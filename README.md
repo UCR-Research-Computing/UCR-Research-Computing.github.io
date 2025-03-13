@@ -8,7 +8,7 @@ Discover a wide array of computational tools and platforms tailored to support y
 
 | Compute                                          | Storage                                  | Support                                                 |
 |--------------------------------------------------|------------------------------------------|---------------------------------------------------------|
-| [Campus HPC Cluster (HPCC)](hpcc.ucr.edu)        | [Campus HPC Cluster Storage](./pages/hpcc_gpfs.md)        | [Research Infrastructure Support](./pages/research_infrastructure_support.md) |
+| [Campus HPC Cluster (HPCC)](./pages/HPCC.md)        | [Campus HPC Cluster Storage](./pages/hpcc_gpfs.md)        | [Research Infrastructure Support](./pages/research_infrastructure_support.md) |
 | [Ursa Major - Cloud Computing](./pages/ursa_major.md) | [Ursa Major Cloud Storage](./pages/ursa_major_data.md) | [Ursa Major Support](./pages/ursa_major.md)             |
 | [NSF - Nautilus Cluster](./pages/Nautilus.md)      | [Ceph Research Data Storage (coming soon)](./pages/ceph_secure_research_storage.md) | [Research Computing Facilitation](./pages/research_facilitation.md) |
 | [NSF - HPC Clusters - ACCESS](./pages/nsf_access.md)  | [Google Drive](./pages/Google_Drive.md)  | [Knowledge Base](./Knowledge_Base/README.md)  |
