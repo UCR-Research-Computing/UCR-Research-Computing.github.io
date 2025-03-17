@@ -408,21 +408,33 @@
     }
 
     function exportConfig() {
+      // Create clean config without Leaflet objects
       const config = {
-        sensors: JSON.parse(localStorage.getItem('sensors') || '[]'),
-        gateways: JSON.parse(localStorage.getItem('gateways') || '[]')
+        sensors: sensors.map(sensor => ({
+          id: sensor.id,
+          type: sensor.type,
+          env: sensor.env,
+          latlng: sensor.latlng,
+          radius: sensor.radius,
+          color: sensor.color
+        })),
+        gateways: gateways.map(gateway => ({
+          id: gateway.id,
+          latlng: gateway.latlng
+        }))
       };
-      
+  
       const dataStr = JSON.stringify(config, null, 2);
-      const dataBlob = new Blob([dataStr], {type: 'application/json'});
+      const dataBlob = new Blob([dataStr], { type: 'application/json' });
       const url = URL.createObjectURL(dataBlob);
-      
+  
       const link = document.createElement('a');
       link.href = url;
-      link.download = `lorawan-config-${new Date().toISOString()}.json`;
+      link.download = `lorawan-config-${new Date().toISOString().slice(0,10)}.json`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
+      URL.revokeObjectURL(url);
     }
 
     document.getElementById('fileInput').addEventListener('change', function(e) {
