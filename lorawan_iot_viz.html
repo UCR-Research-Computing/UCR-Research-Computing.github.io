@@ -114,9 +114,18 @@
       border-radius: 4px;
       cursor: pointer;
     }
-    .info-section ul {
-      line-height: 1.6;
-      margin: 10px 0;
+    .info-section h4 {
+      color: #002855;
+      margin-top: 20px;
+    }
+    .considerations-list {
+      columns: 2;
+      margin: 15px 0;
+    }
+    @media (max-width: 768px) {
+      .considerations-list {
+        columns: 1;
+      }
     }
   </style>
 </head>
@@ -152,7 +161,6 @@
           <option value="urban">Urban</option>
           <option value="suburban">Suburban</option>
           <option value="rural">Rural</option>
-          <option value="desert">Desert</option>
         </select>
       </label>
       
@@ -177,17 +185,60 @@
       <h3>About This Page</h3>
       <p>This page provides a visualization of the LoRaWAN network coverage for sensors and gateways in various environments. Users can add sensors and gateways to the map, adjust their positions, and see the coverage area based on the selected environment.</p>
 
-      <h3>What is LoRaWAN?</h3>
-      <p>LoRaWAN (Long Range Wide Area Network) is a type of wireless communication protocol designed for low-power, long-range communication. It is widely used in Internet of Things (IoT) applications to connect sensors and devices over large areas with minimal power consumption.</p>
+      <h3>LoRaWAN Coverage Characteristics</h3>
+      
+      <h4>Urban Areas</h4>
+      <p><strong>Range:</strong> 2-5 km</p>
+      <p>In dense urban environments with tall buildings, expect coverage to be on the lower end of this range. Signal penetration through concrete structures can be challenging.</p>
 
-      <h3>LoRaWAN Coverage Radii</h3>
-      <p>The coverage radius of LoRaWAN varies depending on the environment:</p>
-      <ul>
-        <li><strong>Urban:</strong> Typically around 2 km, but can extend up to 10 km with optimal gateway placement.</li>
-        <li><strong>Suburban:</strong> Around 945 m, with the potential to reach up to 10.937 km in favorable conditions.</li>
-        <li><strong>Rural:</strong> Generally around 6.5 km, with the possibility of exceeding 20 km with line-of-sight connections.</li>
-        <li><strong>Desert:</strong> Can achieve coverage of 10 km or more, depending on terrain and gateway placement.</li>
-      </ul>
+      <h4>Suburban Areas</h4>
+      <p><strong>Range:</strong> 10-15 km</p>
+      <p>Suburban environments typically offer better coverage than urban areas due to fewer obstacles, though tree coverage and building placement can still affect signal quality.</p>
+
+      <h4>Rural Areas</h4>
+      <p><strong>Range:</strong> Up to 20 km</p>
+      <p>In open rural areas with minimal obstructions, LoRaWAN can achieve its longest ranges. Line-of-sight deployments can sometimes exceed 20 km.</p>
+
+      <h3>Additional Considerations</h3>
+      <div class="considerations-list">
+        <div>
+          <h4>Gateway Placement</h4>
+          <p>Optimizing gateway positions can improve coverage by 40-60%. For multi-story buildings:</p>
+          <ul>
+            <li>Mount near the building's core</li>
+            <li>Use horizontally aligned antennas</li>
+            <li>Elevate above surrounding structures</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Antenna Selection</h4>
+          <ul>
+            <li>High-gain antennas can boost coverage by 25-30%</li>
+            <li>Rooftop mounting preferred</li>
+            <li>Consider omnidirectional vs directional</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Environmental Factors</h4>
+          <ul>
+            <li>Concrete walls: 10-20 dB attenuation</li>
+            <li>Forests: 5-15 dB signal scattering</li>
+            <li>Hilly terrain: 10-30% range reduction</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Data Rate Optimization</h4>
+          <ul>
+            <li>Spreading Factors (SF7-SF12)</li>
+            <li>SF7: 5 kbps, ~2 km range</li>
+            <li>SF12: 250 bps, ~20 km range</li>
+            <li>Adaptive Data Rate (ADR) recommended</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -217,10 +268,9 @@
     };
 
     const environmentRadii = {
-      urban: 2000,
-      suburban: 3500,
-      rural: 5000,
-      desert: 7000
+      urban: 5000,
+      suburban: 15000,
+      rural: 20000
     };
 
     sensors.forEach(restoreSensor);
