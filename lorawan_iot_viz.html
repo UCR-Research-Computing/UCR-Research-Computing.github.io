@@ -99,6 +99,25 @@
       padding: 15px;
       margin-top: 20px;
     }
+    .import-export {
+      margin: 20px 0;
+      display: flex;
+      gap: 10px;
+    }
+    #fileInput {
+      display: none;
+    }
+    .file-input-label {
+      background-color: #00457c;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .info-section ul {
+      line-height: 1.6;
+      margin: 10px 0;
+    }
   </style>
 </head>
 <body>
@@ -139,6 +158,14 @@
       
       <button id="addSensorBtn">Add Sensor</button>
       <button id="addGatewayBtn">Add Gateway</button>
+
+      <div class="import-export">
+        <button onclick="exportConfig()">Export Config</button>
+        <label class="file-input-label">
+          Import Config
+          <input type="file" id="fileInput" accept=".json">
+        </label>
+      </div>
     </div>
 
     <div class="sensor-list">
@@ -148,7 +175,19 @@
 
     <div class="info-section">
       <h3>About This Page</h3>
-      <p>This visualization shows LoRaWAN network coverage for UC Riverside's IoT infrastructure. Add sensors and gateways to see coverage areas in different environments.</p>
+      <p>This page provides a visualization of the LoRaWAN network coverage for sensors and gateways in various environments. Users can add sensors and gateways to the map, adjust their positions, and see the coverage area based on the selected environment.</p>
+
+      <h3>What is LoRaWAN?</h3>
+      <p>LoRaWAN (Long Range Wide Area Network) is a type of wireless communication protocol designed for low-power, long-range communication. It is widely used in Internet of Things (IoT) applications to connect sensors and devices over large areas with minimal power consumption.</p>
+
+      <h3>LoRaWAN Coverage Radii</h3>
+      <p>The coverage radius of LoRaWAN varies depending on the environment:</p>
+      <ul>
+        <li><strong>Urban:</strong> Typically around 2 km, but can extend up to 10 km with optimal gateway placement.</li>
+        <li><strong>Suburban:</strong> Around 945 m, with the potential to reach up to 10.937 km in favorable conditions.</li>
+        <li><strong>Rural:</strong> Generally around 6.5 km, with the possibility of exceeding 20 km with line-of-sight connections.</li>
+        <li><strong>Desert:</strong> Can achieve coverage of 10 km or more, depending on terrain and gateway placement.</li>
+      </ul>
     </div>
   </div>
 
@@ -158,22 +197,18 @@
     <p>&copy; 2025 University of California, Riverside. All rights reserved.</p>
   </footer>
 
-
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Map initialization
     const map = L.map('map').setView([33.975367, -117.328523], 13);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap'
     }).addTo(map);
 
-    // State management
     let addingMode = null;
     const sensors = JSON.parse(localStorage.getItem('sensors')) || [];
     const gateways = JSON.parse(localStorage.getItem('gateways')) || [];
     
-    // Configuration
     const sensorColors = {
       temperature: '#ff4444',
       humidity: '#44ff44',
@@ -188,11 +223,9 @@
       desert: 7000
     };
 
-    // Load existing devices
     sensors.forEach(restoreSensor);
     gateways.forEach(restoreGateway);
 
-    // Event handlers
     map.on('click', handleMapClick);
     document.getElementById('addSensorBtn').addEventListener('click', () => setAddingMode('sensor'));
     document.getElementById('addGatewayBtn').addEventListener('click', () => setAddingMode('gateway'));
@@ -323,6 +356,47 @@
       localStorage.setItem('sensors', JSON.stringify(sensors));
       localStorage.setItem('gateways', JSON.stringify(gateways));
     }
+
+    function exportConfig() {
+      const config = {
+        sensors: JSON.parse(localStorage.getItem('sensors') || '[]'),
+        gateways: JSON.parse(localStorage.getItem('gateways') || '[]')
+      };
+      
+      const dataStr = JSON.stringify(config, null, 2);
+      const dataBlob = new Blob([dataStr], {type: 'application/json'});
+      const url = URL.createObjectURL(dataBlob);
+      
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `lorawan-config-${new Date().toISOString()}.json`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    document.getElementById('fileInput').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const config = JSON.parse(e.target.result);
+          
+          if (!config.sensors || !config.gateways) {
+            throw new Error('Invalid config file format');
+          }
+
+          localStorage.setItem('sensors', JSON.stringify(config.sensors));
+          localStorage.setItem('gateways', JSON.stringify(config.gateways));
+          window.location.reload();
+        } catch (error) {
+          alert('Error importing config: ' + error.message);
+        }
+      };
+      reader.readAsText(file);
+    });
 
     updateSensorList();
   });
