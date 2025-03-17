@@ -3,33 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LoRaWAN Network Visualization</title>
+  <title>UC Riverside LoRaWAN Network</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <style>
-    body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
-    #map { height: 500px; width: 100%; }
-    .controls { 
-      margin: 20px;
-      padding: 15px;
-      background: white;
-      border-radius: 5px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
     }
-    .sensor-list { 
-      margin: 20px;
+    header {
+      background-color: #002855;
+      color: #ffcc33;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #00457c;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    #map {
+      width: 100%;
+      height: 500px;
+      margin: 20px 0;
+    }
+    .controls {
+      padding: 15px;
+      background: #f9f9f9;
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+    .sensor-list {
+      margin-top: 20px;
       padding: 15px;
       border: 1px solid #ddd;
       border-radius: 5px;
     }
-    .sensor-item { 
-      display: flex; 
-      justify-content: space-between; 
+    .sensor-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 10px;
       border-bottom: 1px solid #eee;
     }
     #status {
       position: fixed;
-      top: 20px;
+      top: 100px;
       left: 50%;
       transform: translateX(-50%);
       background: #fff;
@@ -38,16 +73,50 @@
       border-radius: 5px;
       z-index: 1000;
       display: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    .config-section {
-      margin: 20px;
+    button {
+      background-color: #00457c;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #002855;
+    }
+    select {
+      padding: 6px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      margin: 5px 0;
+    }
+    footer {
+      background-color: #002855;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <div id="map"></div>
+  <header>
+    <h1>UC Riverside LoRaWAN Network</h1>
+    <p>Visualizing Sensor and Gateway Coverage</p>
+  </header>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Sensors</a>
+    <a href="#">Gateways</a>
+    <a href="#">Contact</a>
+  </nav>
 
-  <div class="config-section">
+  <div class="container">
+    <div id="map"></div>
+
     <div class="controls">
       <h3>Device Configuration</h3>
       <label>Sensor Type:
@@ -68,17 +137,27 @@
         </select>
       </label>
       
-      <button id="addSensorBtn" style="margin-top: 10px;">Add Sensor</button>
-      <button id="addGatewayBtn" style="margin-top: 5px;">Add Gateway</button>
+      <button id="addSensorBtn">Add Sensor</button>
+      <button id="addGatewayBtn">Add Gateway</button>
     </div>
 
     <div class="sensor-list">
       <h3>Installed Sensors</h3>
       <div id="sensorList"></div>
     </div>
+
+    <div class="info-section">
+      <h3>About This Page</h3>
+      <p>This visualization shows LoRaWAN network coverage for UC Riverside's IoT infrastructure. Add sensors and gateways to see coverage areas in different environments.</p>
+    </div>
   </div>
 
   <div id="status"></div>
+
+  <footer>
+    <p>&copy; 2025 University of California, Riverside. All rights reserved.</p>
+  </footer>
+
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
