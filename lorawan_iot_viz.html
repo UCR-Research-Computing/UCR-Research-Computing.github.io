@@ -1,270 +1,252 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LoRaWAN Sensor Range Visualization</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LoRaWAN Network Visualization</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fff;
-    }
-    header {
-      background-color: #002855;
-      color: #ffcc33;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      background-color: #00457c;
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .container {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 20px;
-      background: white;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-    }
-    #map {
-      width: 100%;
-      height: 500px;
-    }
-    .sensor-list {
-      margin-top: 10px;
-      max-height: 200px;
-      overflow-y: auto;
-      border: 1px solid #ccc;
-      padding: 10px;
-    }
-    .sensor-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 5px;
-      border-bottom: 1px solid #ddd;
-    }
-    footer {
-      background-color: #002855;
-      color: white;
-      text-align: center;
+    body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    #map { height: 500px; width: 100%; }
+    .controls { 
+      margin: 20px;
       padding: 15px;
-      margin-top: 20px;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
-    .info-section {
-      margin-top: 20px;
-      padding: 20px;
-      background-color: #f9f9f9;
-      border-radius: 10px;
+    .sensor-list { 
+      margin: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .sensor-item { 
+      display: flex; 
+      justify-content: space-between; 
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    #status {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      padding: 10px 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      z-index: 1000;
+      display: none;
+    }
+    .config-section {
+      margin: 20px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>UC Riverside LoRaWAN Network</h1>
-    <p>Visualizing Sensor and Gateway Coverage</p>
-  </header>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Sensors</a>
-    <a href="#">Gateways</a>
-    <a href="#">Contact</a>
-  </nav>
-  <div class="container">
-    <h2>LoRaWAN Coverage Map</h2>
-    <div id="map"></div>
-    <label for="environment">Environment:</label>
-    <select id="environment">
-      <option value="urban">Urban</option>
-      <option value="suburban">Suburban</option>
-      <option value="rural">Rural</option>
-      <option value="desert">Desert</option>
-    </select>
-    <button id="addGatewayBtn">Add LoRaWAN Gateway</button>
-    <select id="sensorType">
-      <option value="temperature">Temperature</option>
-      <option value="humidity">Humidity</option>
-      <option value="airQuality">Air Quality</option>
-      <option value="power">Power</option>
-      <option value="chemical">Chemical</option>
-      <option value="earthquake">Earthquake</option>
-      <option value="laserDistance">Laser Distance</option>
-      <option value="sun">Sunlight Sensor</option>
-    </select>
-    <button id="addSensorBtn">Add Sensor</button>
-    <div id="sensorList" class="sensor-list"><h3>Active Sensors</h3></div>
-    <div class="info-section">
-      <h3>About This Page</h3>
-      <p>This page provides a visualization of the LoRaWAN network coverage for sensors and gateways in various environments. Users can add sensors and gateways to the map, adjust their positions, and see the coverage area based on the selected environment.</p>
-      <h3>What is LoRaWAN?</h3>
-      <p>LoRaWAN (Long Range Wide Area Network) is a type of wireless communication protocol designed for low-power, long-range communication. It is widely used in Internet of Things (IoT) applications to connect sensors and devices over large areas with minimal power consumption.</p>
-      <h3>LoRaWAN Coverage Radii</h3>
-      <p>The coverage radius of LoRaWAN varies depending on the environment:</p>
-      <ul>
-        <li><strong>Urban:</strong> Typically around 2 km, but can extend up to 10 km with optimal gateway placement.</li>
-        <li><strong>Suburban:</strong> Around 945 m, with the potential to reach up to 10.937 km in favorable conditions.</li>
-        <li><strong>Rural:</strong> Generally around 6.5 km, with the possibility of exceeding 20 km with line-of-sight connections.</li>
-        <li><strong>Desert:</strong> Can achieve coverage of 10 km or more, depending on terrain and gateway placement.</li>
-      </ul>
+  <div id="map"></div>
+
+  <div class="config-section">
+    <div class="controls">
+      <h3>Device Configuration</h3>
+      <label>Sensor Type:
+        <select id="sensorType">
+          <option value="temperature">Temperature</option>
+          <option value="humidity">Humidity</option>
+          <option value="airQuality">Air Quality</option>
+          <option value="power">Power</option>
+        </select>
+      </label>
+      
+      <label>Environment:
+        <select id="environment">
+          <option value="urban">Urban</option>
+          <option value="suburban">Suburban</option>
+          <option value="rural">Rural</option>
+          <option value="desert">Desert</option>
+        </select>
+      </label>
+      
+      <button id="addSensorBtn" style="margin-top: 10px;">Add Sensor</button>
+      <button id="addGatewayBtn" style="margin-top: 5px;">Add Gateway</button>
+    </div>
+
+    <div class="sensor-list">
+      <h3>Installed Sensors</h3>
+      <div id="sensorList"></div>
     </div>
   </div>
-  <footer>
-    <p>&copy; 2025 University of California, Riverside. All rights reserved.</p>
-  </footer>
+
+  <div id="status"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var map = L.map('map').setView([33.975367, -117.328523], 13);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '© OpenStreetMap'
+  document.addEventListener('DOMContentLoaded', () => {
+    // Map initialization
+    const map = L.map('map').setView([33.975367, -117.328523], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    // State management
+    let addingMode = null;
+    const sensors = JSON.parse(localStorage.getItem('sensors')) || [];
+    const gateways = JSON.parse(localStorage.getItem('gateways')) || [];
+    
+    // Configuration
+    const sensorColors = {
+      temperature: '#ff4444',
+      humidity: '#44ff44',
+      airQuality: '#4444ff',
+      power: '#ffaa00'
+    };
+
+    const environmentRadii = {
+      urban: 2000,
+      suburban: 3500,
+      rural: 5000,
+      desert: 7000
+    };
+
+    // Load existing devices
+    sensors.forEach(restoreSensor);
+    gateways.forEach(restoreGateway);
+
+    // Event handlers
+    map.on('click', handleMapClick);
+    document.getElementById('addSensorBtn').addEventListener('click', () => setAddingMode('sensor'));
+    document.getElementById('addGatewayBtn').addEventListener('click', () => setAddingMode('gateway'));
+
+    function setAddingMode(mode) {
+      addingMode = mode;
+      map.getContainer().style.cursor = 'crosshair';
+      showStatus(`Click map to place ${mode}`);
+    }
+
+    function handleMapClick(e) {
+      if (!addingMode) return;
+      
+      if (addingMode === 'sensor') {
+        addSensor(e.latlng);
+      } else {
+        addGateway(e.latlng);
+      }
+      exitAddingMode();
+    }
+
+    function addSensor(latlng) {
+      const type = document.getElementById('sensorType').value;
+      const env = document.getElementById('environment').value;
+      
+      const sensor = {
+        id: Date.now(),
+        type,
+        env,
+        latlng,
+        radius: environmentRadii[env],
+        color: sensorColors[type]
+      };
+
+      createSensorMarker(sensor);
+      sensors.push(sensor);
+      updateSensorList();
+      saveToStorage();
+    }
+
+    function createSensorMarker(sensor) {
+      sensor.marker = L.marker(sensor.latlng, { draggable: true })
+        .bindPopup(`${sensor.type} (${sensor.env})`)
+        .addTo(map);
+      
+      sensor.circle = L.circle(sensor.latlng, {
+        radius: sensor.radius,
+        color: sensor.color,
+        fillOpacity: 0.2
       }).addTo(map);
 
-      var sensors = JSON.parse(localStorage.getItem('sensors')) || [];
-      var gateways = JSON.parse(localStorage.getItem('gateways')) || [];
-      var sensorColors = {
-        temperature: 'red',
-        humidity: 'green',
-        airQuality: 'blue',
-        power: 'orange',
-        chemical: 'purple',
-        earthquake: 'brown',
-        laserDistance: 'cyan',
-        sun: 'yellow'
+      sensor.marker.on('dragend', (e) => {
+        const newPos = e.target.getLatLng();
+        sensor.latlng = newPos;
+        sensor.circle.setLatLng(newPos);
+        saveToStorage();
+      });
+    }
+
+    function addGateway(latlng) {
+      const gateway = {
+        id: Date.now(),
+        latlng,
+        marker: L.marker(latlng, { draggable: true })
+          .bindPopup('Gateway')
+          .addTo(map)
       };
 
-      var environmentRadii = {
-        urban: 2000,
-        suburban: 3500,
-        rural: 5000,
-        desert: 7000
-      };
-
-      function addSensor() {
-        var type = document.getElementById('sensorType').value;
-        var env = document.getElementById('environment').value;
-        var center = map.getCenter();
-        var radius = environmentRadii[env];
-        var marker = L.marker(center, { draggable: true }).addTo(map)
-          .bindPopup(`${type.toUpperCase()} - ${env.toUpperCase()}`)
-          .openPopup();
-
-        var coverageCircle = L.circle(center, {
-          radius: radius,
-          color: sensorColors[type],
-          fillOpacity: 0.2
-        }).addTo(map);
-
-        var sensor = { id: Date.now(), type, env, marker, circle: coverageCircle };
-        sensors.push(sensor);
-        updateSensorList();
-        saveSensorsToLocalStorage();
-
-        marker.on('dragend', function(event) {
-          var position = marker.getLatLng();
-          coverageCircle.setLatLng(position);
-          marker.setLatLng(position, { draggable: true });
-          saveSensorsToLocalStorage();
-        });
-      }
-
-      function addGateway() {
-        var center = map.getCenter();
-        var gatewayMarker = L.marker(center, { draggable: true }).addTo(map)
-          .bindPopup('LoRaWAN Gateway')
-          .openPopup();
-
-        var gateway = { id: Date.now(), marker: gatewayMarker };
-        gateways.push(gateway);
-        saveGatewaysToLocalStorage();
-
-        gatewayMarker.on('dragend', function(event) {
-          var position = gatewayMarker.getLatLng();
-          gatewayMarker.setLatLng(position, { draggable: true });
-          saveGatewaysToLocalStorage();
-        });
-      }
-
-      function updateSensorList() {
-        var sensorListEl = document.getElementById('sensorList');
-        sensorListEl.innerHTML = '<h3>Active Sensors</h3>';
-        sensors.forEach((sensor, index) => {
-          var sensorItem = document.createElement('div');
-          sensorItem.className = 'sensor-item';
-          sensorItem.innerHTML = `${sensor.type.toUpperCase()} (${sensor.env.toUpperCase()}) <button onclick="removeSensor(${index})">Remove</button>`;
-          sensorListEl.appendChild(sensorItem);
-        });
-      }
-
-      function removeSensor(index) {
-        map.removeLayer(sensors[index].marker);
-        map.removeLayer(sensors[index].circle);
-        sensors.splice(index, 1);
-        updateSensorList();
-        saveSensorsToLocalStorage();
-      }
-
-      function saveSensorsToLocalStorage() {
-        localStorage.setItem('sensors', JSON.stringify(sensors));
-      }
-
-      function saveGatewaysToLocalStorage() {
-        localStorage.setItem('gateways', JSON.stringify(gateways));
-      }
-
-      document.getElementById('addSensorBtn').addEventListener('click', addSensor);
-      document.getElementById('addGatewayBtn').addEventListener('click', addGateway);
-
-      // Load sensors from local storage
-      sensors.forEach(sensor => {
-        var latLng = sensor.marker._latlng;
-        sensor.marker = L.marker(latLng, { draggable: true }).addTo(map)
-          .bindPopup(`${sensor.type.toUpperCase()} - ${sensor.env.toUpperCase()}`)
-          .openPopup();
-
-        sensor.circle = L.circle(latLng, {
-          radius: environmentRadii[sensor.env],
-          color: sensorColors[sensor.type],
-          fillOpacity: 0.2
-        }).addTo(map);
-
-        sensor.marker.on('dragend', function(event) {
-          var position = sensor.marker.getLatLng();
-          sensor.circle.setLatLng(position);
-          sensor.marker.setLatLng(position, { draggable: true });
-          saveSensorsToLocalStorage();
-        });
+      gateway.marker.on('dragend', (e) => {
+        gateway.latlng = e.target.getLatLng();
+        saveToStorage();
       });
 
-      // Load gateways from local storage
-      gateways.forEach(gateway => {
-        var latLng = gateway.marker._latlng;
-        gateway.marker = L.marker(latLng, { draggable: true }).addTo(map)
-          .bindPopup('LoRaWAN Gateway')
-          .openPopup();
+      gateways.push(gateway);
+      saveToStorage();
+    }
 
-        gateway.marker.on('dragend', function(event) {
-          var position = gateway.marker.getLatLng();
-          gateway.marker.setLatLng(position, { draggable: true });
-          saveGatewaysToLocalStorage();
-        });
+    function restoreSensor(sensor) {
+      sensor.latlng = L.latLng(sensor.latlng);
+      createSensorMarker(sensor);
+    }
+
+    function restoreGateway(gateway) {
+      gateway.latlng = L.latLng(gateway.latlng);
+      gateway.marker = L.marker(gateway.latlng, { draggable: true })
+        .bindPopup('Gateway')
+        .addTo(map);
+      
+      gateway.marker.on('dragend', (e) => {
+        gateway.latlng = e.target.getLatLng();
+        saveToStorage();
       });
+    }
 
+    function updateSensorList() {
+      const list = document.getElementById('sensorList');
+      list.innerHTML = sensors.map((sensor, index) => `
+        <div class="sensor-item">
+          <span>${sensor.type} (${sensor.env})</span>
+          <button onclick="removeSensor(${index})">Remove</button>
+        </div>
+      `).join('');
+    }
+
+    window.removeSensor = (index) => {
+      const sensor = sensors[index];
+      map.removeLayer(sensor.marker);
+      map.removeLayer(sensor.circle);
+      sensors.splice(index, 1);
       updateSensorList();
-    });
+      saveToStorage();
+    }
+
+    function exitAddingMode() {
+      addingMode = null;
+      map.getContainer().style.cursor = '';
+      document.getElementById('status').style.display = 'none';
+    }
+
+    function showStatus(message) {
+      const status = document.getElementById('status');
+      status.textContent = message;
+      status.style.display = 'block';
+      setTimeout(() => status.style.display = 'none', 2000);
+    }
+
+    function saveToStorage() {
+      localStorage.setItem('sensors', JSON.stringify(sensors));
+      localStorage.setItem('gateways', JSON.stringify(gateways));
+    }
+
+    updateSensorList();
+  });
   </script>
 </body>
 </html>
