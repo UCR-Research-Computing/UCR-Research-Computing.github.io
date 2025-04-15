@@ -88,7 +88,7 @@ Ceph Secure Research Storage (Ceph RDS) is our next-generation storage platform 
 - **Scalability:** Starting with an initial capacity of 2 PB, Ceph RDS will seamlessly scale to accommodate growing data storage requirements.
 - **Data Integrity and Security:** Utilizing 8k + 4m erasure coding and robust encryption, it ensures the highest levels of data protection.
 - **High Performance:** Built on NVMe-backed storage pools to deliver the IOPS required for data-intensive research workloads.
-- **Broad Accessibility:** Supports multiple access protocols (NFS, CIFS/SMB, S3, FTP/SFTP, etc.) and integrates directly with the HPCC and other campus clusters.
+- **Broad Accessibility:** Supports multiple access protocols (NFS,S3) and integrates directly with the HPCC and other campus clusters.
 
 Ceph RDS is poised to become the foundational storage solution for high-performance research projects at UCR, complementing our existing platforms while providing enhanced security, performance, and scalability.
 
