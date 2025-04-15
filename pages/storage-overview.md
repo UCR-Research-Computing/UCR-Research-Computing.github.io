@@ -22,8 +22,6 @@ These are the primary, no-cost or included storage offerings available to UCR us
 | **Authorized UCR Customers** | Staff, Faculty, Students                                                                                | Staff, Faculty, Students                                                                          | Faculty, Students                                                                                             | Staff, Faculty, Students (provisioned individually)                                                                          | Staff, Faculty, Students                               | Faculty, Students (academic, non-research) | UC System                                                |
 
 
-[View Detailed Storage Comparison](https://docs.google.com/spreadsheets/d/e/2PACX-1vTvztWU2sZNbFEznVGUcCKwRK7xRrIUndqoDAKCWIBHPuhfUhbESQIvUMnuGM6Ugg/pubhtml?widget=true&headers=false)
-
 ---
 
 ## Standard Storage Technical Specifications
