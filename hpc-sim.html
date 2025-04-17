@@ -64,15 +64,15 @@ let nodes=[], connections=[]; const utilHist=[]; let lastSample=0;
 function initNodes(){
   nodes = [
     {id:'Laptop',   x:100, y:300},            //0
-    {id:'Login',    x:250, y:300},            //1
-    {id:'Head',     x:400, y:300},            //2
+    {id:'Login Node',    x:250, y:300},            //1
+    {id:'Head Node',     x:400, y:300},            //2
     {id:'Internet', x:175, y:300},            //3 cloud ellipse
   ];
   const rackX = [650,750], ys=[100,200,300,400,500];
   for(let r=0;r<2;r++) for(let i=0;i<5;i++)
     nodes.push({id:`Compute ${r*5+i+1}`, x:rackX[r], y:ys[i], freeCores:64});   //4‑13
-  nodes.push({id:'GPFS',      x:400, y:500}); //14
-  nodes.push({id:'IB Switch', x:550, y:300}); //15 rectangle
+  nodes.push({id:'Storage',      x:400, y:500}); //14
+  nodes.push({id:'IB', x:550, y:300}); //15 rectangle
 
   // links
   connections=[
