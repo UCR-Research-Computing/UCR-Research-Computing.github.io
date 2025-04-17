@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HPC Workflow Simulator – Internet & InfiniBand Fabric</title>
+  <style>
+    body { margin: 0; padding: 20px; background: #1e1e2f; color: #fafafa; font-family: Arial, sans-serif; }
+    h1    { text-align: center; }
+    #description, #controls, #jobList { max-width: 900px; margin: 0 auto 20px; }
+    #simulator { display: block; margin: 0 auto; background: #2e2e44; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+    #jobList li { background: #344263; margin: 4px 0; padding: 6px 10px; border-radius: 4px; }
+    #tooltip { position: absolute; background: rgba(0,0,0,0.8); color:#fff; padding:8px; border-radius:4px; font-size:12px; pointer-events:none; display:none; z-index:10; max-width:220px; }
+  </style>
+</head>
+<body>
+  <h1>HPC Workflow Simulator</h1>
+  <div id="description">
+    <p>This demo illustrates how research jobs traverse a <strong>Slurm</strong> cluster:</p>
+    <ul>
+      <li><strong>Internet cloud</strong> links your laptop to the campus <em>Login node</em>.</li>
+      <li>The <em>Login</em> and <em>Head</em> nodes communicate over <strong>Ethernet</strong>.</li>
+      <li>An <strong>InfiniBand switch (rectangle)</strong> fans out to 10 compute nodes and high‑speed <em>GPFS</em> storage.</li>
+      <li>Jobs run for <strong>20 seconds per node</strong>; multi‑node jobs generate extra cross‑node IB traffic.</li>
+      <li>Up to 20 jobs may run concurrently; extras queue until enough free cores are available.</li>
+      <li>Hover nodes for live stats (cores, packets); cyan packets show real‑time network flow.</li>
+    </ul>
+    <h3 style="margin-top:12px">Quick Scenarios to Try</h3>
+    <table style="border-collapse:collapse;font-size:13px">
+      <thead><tr><th style="border-bottom:1px solid #888;padding:4px 8px;text-align:left">Scenario</th><th style="border-bottom:1px solid #888;padding:4px 8px;text-align:left">Cores</th><th style="border-bottom:1px solid #888;padding:4px 8px;text-align:left">What to Watch</th></tr></thead>
+      <tbody>
+        <tr><td style="padding:4px 8px">Single‑core “hello world”</td><td style="padding:4px 8px">1</td><td style="padding:4px 8px">One compute node blips; minimal GPFS traffic.</td></tr>
+        <tr><td style="padding:4px 8px">Single‑node full load</td><td style="padding:4px 8px">64</td><td style="padding:4px 8px">One node hits 100 % utilisation.</td></tr>
+        <tr><td style="padding:4px 8px">Two‑node MPI test</td><td style="padding:4px 8px">128</td><td style="padding:4px 8px">Cross‑node IB packets between two compute nodes.</td></tr>
+        <tr><td style="padding:4px 8px">One rack (5 nodes)</td><td style="padding:4px 8px">320</td><td style="padding:4px 8px">Half the cluster active, IB switch busy.</td></tr>
+        <tr><td style="padding:4px 8px">Cluster‑wide flood</td><td style="padding:4px 8px">640</td><td style="padding:4px 8px">All compute nodes + GPFS at 100 %.</td></tr>
+        <tr><td style="padding:4px 8px">Queue pressure</td><td style="padding:4px 8px">25 jobs × 32</td><td style="padding:4px 8px">20 run, 5 wait—observe queue dynamics.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="controls">
+    <label for="coresInput">Cores (1 ‑ 640):</label>
+    <input id="coresInput" type="number" min="1" max="640" value="64" />
+    <button id="startBtn">Submit Job</button>
+  </div>
+
+  <canvas id="simulator" width="900" height="600"></canvas>
+  <ul id="jobList"></ul>
+  <div id="tooltip"></div>
+
+<script>
+/* ---------- Constants & DOM ---------- */
+const MAX_RUNNING = 20;
+const canvas = document.getElementById('simulator');
+const ctx     = canvas.getContext('2d');
+const coresIn = document.getElementById('coresInput');
+const startBtn= document.getElementById('startBtn');
+const jobList = document.getElementById('jobList');
+const tooltip = document.getElementById('tooltip');
+
+/* ---------- Cluster Topology ---------- */
+let nodes=[], connections=[]; const utilHist=[]; let lastSample=0;
+function initNodes(){
+  nodes = [
+    {id:'Laptop',   x:100, y:300},            //0
+    {id:'Login',    x:250, y:300},            //1
+    {id:'Head',     x:400, y:300},            //2
+    {id:'Internet', x:175, y:300},            //3 cloud ellipse
+  ];
+  const rackX = [650,750], ys=[100,200,300,400,500];
+  for(let r=0;r<2;r++) for(let i=0;i<5;i++)
+    nodes.push({id:`Compute ${r*5+i+1}`, x:rackX[r], y:ys[i], freeCores:64});   //4‑13
+  nodes.push({id:'GPFS',      x:400, y:500}); //14
+  nodes.push({id:'IB Switch', x:550, y:300}); //15 rectangle
+
+  // links
+  connections=[
+    {a:0,b:3,type:'cloud'}, {a:3,b:1,type:'cloud'},       // Internet
+    {a:1,b:2,type:'eth'},                                   // Ethernet
+  ];
+  const peers=[1,2,14]; for(let i=4;i<14;i++) peers.push(i);
+  peers.forEach(p=>connections.push({a:15,b:p,type:'ib'})); // IB star
+
+  utilHist.length=0; nodes.forEach(()=>utilHist.push([]));
+}
+initNodes();
+
+/* ---------- Timings ---------- */
+const durations={submit:1000, schedule:1000, compute:20000, return:1000};
+const totalDur = durations.submit+durations.schedule+durations.compute+durations.return*2;
+
+/* ---------- Job & Packet State ---------- */
+let nextId=1, jobs=[], packets=[];
+function tryAlloc(job){
+  let need=job.cores; const alloc=[];
+  for(let i=4;i<14&&need>0;i++){
+    const avail=nodes[i].freeCores;
+    if(avail){const use=Math.min(avail,need); nodes[i].freeCores-=use; alloc.push({nodeIndex:i, cores:use}); need-=use;}
+  }
+  if(!need){ job.alloc=alloc; job.start=performance.now(); job.stage=-1; job.status='running'; }
+  else{ alloc.forEach(a=>nodes[a.nodeIndex].freeCores+=a.cores); job.status='queued'; }
+}
+function submitJob(cores){ const j={id:nextId++, cores:+cores, alloc:[], status:'new'}; tryAlloc(j); if(j.status==='new') j.status='queued'; jobs.push(j); renderJobs(); }
+
+/* ---------- UI ---------- */
+function renderJobs(){ jobList.innerHTML='';
+  jobs.filter(j=>j.status==='running').forEach(j=>{ const li=document.createElement('li'); li.textContent=`▶ Job ${j.id}: ${j.cores}`; jobList.append(li);});
+  jobs.filter(j=>j.status==='queued').forEach(j=>{ const li=document.createElement('li'); li.textContent=`⏳ Job ${j.id}: ${j.cores} (waiting)`; jobList.append(li);}); }
+
+/* ---------- Packets ---------- */
+function pkt(f,t,d){ packets.push({from:f,to:t,start:performance.now(),duration:d}); }
+function spawn(job,st){
+  if(st===0){ pkt(0,3,durations.submit/2); pkt(3,1,durations.submit/2); }
+  else if(st===1){ [[1,2],[1,15],[2,15]].forEach(p=>pkt(...p,durations.schedule)); }
+  else if(st===2){ job.alloc.forEach(a=>{ pkt(2,15,durations.compute); pkt(15,a.nodeIndex,durations.compute); pkt(a.nodeIndex,15,durations.compute/2); pkt(15,14,durations.compute/2); }); [[1,15],[15,14],[2,15]].forEach(p=>pkt(...p,durations.compute)); if(job.alloc.length>1){ for(let i=0;i<job.alloc.length;i++) for(let j=i+1;j<job.alloc.length;j++){ const n1=job.alloc[i].nodeIndex, n2=job.alloc[j].nodeIndex; pkt(n1,15,durations.compute/2); pkt(15,n2,durations.compute/2); }} }
+  else if(st===3){ [[2,1],[1,15],[2,15]].forEach(p=>pkt(...p,durations.return)); }
+  else if(st===4){ pkt(1,0,durations.return); }
+}
+
+/* ---------- Tooltip ---------- */
+canvas.addEventListener('mousemove',e=>{
+  const r=canvas.getBoundingClientRect(); const mx=e.clientX-r.left, my=e.clientY-r.top; let idx=-1;
+  nodes.forEach((n,i)=>{if(Math.hypot(mx-n.x,my-n.y)<40) idx=i;});
+  if(idx>=0){ const n=nodes[idx]; const used=(idx>=4&&idx<14)?64-n.freeCores:null; const pk=packets.filter(p=>p.from===idx||p.to===idx).length;
+    tooltip.style.left=e.pageX+10+'px'; tooltip.style.top=e.pageY+10+'px'; tooltip.innerHTML=`<strong>${n.id}</strong><br>`+(used!==null?`Cores: ${used}/64<br>`:'')+`Packets: ${pk}`; tooltip.style.display='block'; }
+  else tooltip.style.display='none'; });
+
+/* ---------- Main Loop ---------- */
+function animate(){
+  const now=performance.now(); ctx.clearRect(0,0,canvas.width,canvas.height);
+  // links
+  connections.forEach(({a,b,type})=>{ ctx.beginPath(); ctx.moveTo(nodes[a].x,nodes[a].y); ctx.lineTo(nodes[b].x,nodes[b].y); ctx.strokeStyle= type==='cloud'?'#888': type==='ib'?'#00e5ff':'#fff'; ctx.setLineDash(type==='cloud'?[6,4]:[]); ctx.stroke(); ctx.setLineDash([]); });
+
+  // per‑node utilisation
+  const use=Array(nodes.length).fill(0); let total=0;
+  for(let i=4;i<14;i++){ const used=64-nodes[i].freeCores; use[i]=(used/64)*100; total+=used; }
+  use[14]=(total/640)*100; use[1]=use[2]=use[15]=use[14];
+  if(now-lastSample>500){ nodes.forEach((_,i)=>{utilHist[i].push(use[i]); if(utilHist[i].length>180) utilHist[i].shift();}); lastSample=now; }
+
+  // schedule queued
+  if(jobs.filter(j=>j.status==='running').length<MAX_RUNNING){ jobs.filter(j=>j.status==='queued').forEach(j=>{ if(j.status==='queued') tryAlloc(j); }); }
+
+  const act=Array(nodes.length).fill(false);
+  jobs=jobs.filter(job=>{
+    if(job.status!=='running') return true;
+    const el=now-job.start; let st;
+    if(el<durations.submit) st=0; else if(el<durations.submit+durations.schedule) st=1; else if(el<durations.submit+durations.schedule+durations.compute) st=2; else if(el<totalDur-durations.return) st=3; else if(el<totalDur) st=4; else { job.alloc.forEach(a=>nodes[a.nodeIndex].freeCores+=a.cores); job.status='done'; return false; }
+    if(st!==job.stage){ spawn(job,st); job.stage=st; }
+    if(st===0){ act[0]=act[3]=act[1]=true; }
+    else if(st===1){ act[1]=act[2]=act[15]=true; }
+    else if(st===2){ job.alloc.forEach(a=>act[a.nodeIndex]=true); act[14]=act[15]=act[1]=act[2]=true; }
+    else if(st>=3){ act[1]=act[2]=act[14]=act[15]=true; }
+    // payload bubbles
+    ctx.fillStyle='#ffc107';
+    if(st===2){ job.alloc.forEach(a=>{ctx.beginPath();ctx.arc(nodes[a.nodeIndex].x,nodes[a.nodeIndex].y,10,0,Math.PI*2);ctx.fill();}); }
+    else {
+      const phases=[ [0,3,durations.submit/2,0], [3,1,durations.submit/2,durations.submit/2], [1,2,durations.schedule,durations.submit], [2,1,durations.return,durations.submit+durations.schedule+durations.compute], [1,0,durations.return,durations.submit+durations.schedule+durations.compute+durations.return] ];
+      const idx={0:0,1:2,3:3,4:4}[st] ?? 1; const [f,t,d,off]=phases[idx]; const prog=(el-off)/d; const x=nodes[f].x+(nodes[t].x-nodes[f].x)*prog; const y=nodes[f].y+(nodes[t].y-nodes[f].y)*prog; ctx.beginPath();ctx.arc(x,y,10,0,Math.PI*2);ctx.fill();
+    }
+    return true;
+  });
+  renderJobs();
+
+  // packets
+  packets = packets.filter(p => {
+    const t = (now - p.start) / p.duration;
+    if (t < 0) return true;
+    if (t > 1) return false;
+    const x = nodes[p.from].x + (nodes[p.to].x - nodes[p.from].x) * t;
+    const y = nodes[p.from].y + (nodes[p.to].y - nodes[p.from].y) * t;
+    ctx.fillStyle = '#00e5ff';
+    ctx.beginPath();
+    ctx.arc(x, y, 6, 0, Math.PI * 2);
+    ctx.fill();
+    return true;
+  });
+
+  // ---------- Draw Nodes ----------
+  nodes.forEach((n, i) => {
+    const pulse = act[i] ? 5 * Math.sin(now / 200) : 0;
+    const r = 40 + (act[i] ? pulse : 0);
+    ctx.fillStyle = act[i] ? '#ffd54f' : '#4e8cff';
+
+    if (i === 3) {
+      // Internet cloud (ellipse)
+      ctx.setLineDash([5, 3]);
+      ctx.strokeStyle = '#888';
+      ctx.beginPath();
+      ctx.ellipse(n.x, n.y, 45, 28, 0, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('Internet', n.x, n.y + 4);
+    } else if (i === 15) {
+      // IB switch (small rectangle)
+      const w = 50, h = 20;
+      ctx.fillStyle = act[i] ? '#ffd54f' : '#4e8cff';
+      ctx.fillRect(n.x - w / 2, n.y - h / 2, w, h);
+      ctx.strokeStyle = '#fff';
+      ctx.strokeRect(n.x - w / 2, n.y - h / 2, w, h);
+      ctx.fillStyle = '#fff';
+      ctx.font = '10px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('IB', n.x, n.y + 3);
+    } else {
+      // Regular node bubble
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(n.id, n.x, n.y + 4);
+    }
+
+    // Utilisation bars (only when active & relevant)
+    if (act[i] && (i >= 4 || [1, 2, 14, 15].includes(i))) {
+      const pct = use[i] || 0;
+      const bw = 60, bh = 6;
+      const bx = n.x - bw / 2, by = n.y + 45;
+      ctx.strokeStyle = '#fff';
+      ctx.strokeRect(bx, by, bw, bh);
+      ctx.fillStyle = '#ffcc4e';
+      ctx.fillRect(bx, by, bw * (pct / 100), bh);
+    }
+  });
+
+  requestAnimationFrame(animate);
+}
+
+startBtn.addEventListener('click', () => submitJob(parseInt(coresIn.value || coresInput.value, 10)));
+animate();
+</script>
+</body>
+</html>
