@@ -217,11 +217,7 @@ At the University of California, Riverside (UCR), the Research Computing team is
 
 ### Core Team Dynamics
 
-- **Director of Research Computing**: The Director orchestrates the development, deployment, and management of research computing services across UCR. This pivotal role involves harmonizing the efforts of the research computing team with the needs and goals of the university's research community.
-
-- **Student Workers**:
-  - **Matthew Chung**: As a research facilitator and system administrator, Matthew is instrumental in assisting with the technical aspects of research computing. He also leads the student High-Performance Computing (HPC) Club, engaging students across disciplines in the exploration and application of HPC concepts.
-  - **Keerthi**: Serving as a programmer, Keerthi contributes to the team by developing software solutions that enhance UCR's research computing infrastructure. Both Matthew and Keerthi, as student workers, embody the spirit of innovation and dedication that drives the research computing team forward.
+- **AD of Research Computing**: Chuck Forsyth; The AD orchestrates the development, deployment, and management of research computing services across UCR. This pivotal role involves harmonizing the efforts of the research computing team with the needs and goals of the university's research community.
 
 - **Lead Research Facilitator**: Bart Kats, in his role as Lead Research Facilitator, is vital in providing expertise and support to researchers. By guiding access to computational resources and delivering tailored training, Bart ensures that researchers can effectively leverage technology in their work.
 
@@ -229,7 +225,7 @@ At the University of California, Riverside (UCR), the Research Computing team is
 
 - **ITS Systems, Network, and Security Teams**: The Research Computing team collaborates closely with these ITS teams, integrating their specialized skills and resources to maintain a secure, reliable, and high-performance computing environment for research.
 
-- **Research IT Leaders (RITL)**: Collaborating with RITLs from other schools and groups within UCR, the Research Computing team benefits from a broad network of expertise and support, enhancing the university's research computing capabilities.
+- **Campus Research IT Staff**: Collaborating with other schools and groups within UCR, the Research Computing team benefits from a broad network of expertise and support, enhancing the university's research computing capabilities.
 
 ### Guiding Coalitions
 
