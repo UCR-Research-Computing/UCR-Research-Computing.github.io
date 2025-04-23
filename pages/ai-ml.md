@@ -4,9 +4,9 @@ title: AI/ML Hub
 sidebar_label: AI/ML Hub
 ---
 
-## AI/ML Hub
+## Research Computing AI and ML Resources
 
-Welcome to the UCR Research Computing AI and ML Hub—your gateway to cutting-edge artificial intelligence and machine learning resources. Explore the latest technologies, open-source models, and software platforms that empower your research and innovation.
+Welcome to UCR Research Computing Artificial Intelligence (AI) and Machine Learning (ML) Resources. Explore the latest technologies, open-source models, and software platforms that empower your research and innovation.
 
 ---
 
@@ -17,18 +17,29 @@ Learn how to run your own copy of an open-source large language model on UCR Urs
 
 ---
 
-## Featured: AI Chatbots
+Explore the leading AI chatbots designed to support your research needs.
 
-Explore the leading AI chatbots designed to support your research needs.  
 > **Warning:** Ensure you have the necessary permissions and take appropriate steps before using AI chatbots with sensitive or proprietary data.
 
-| Chatbot                                   | Description                                                                                     |
+---
+
+## Featured Chatbot: Google Gemini
+
+Google Gemini is our featured AI chatbot for supporting your research needs. Its advanced natural language understanding and generation capabilities are highly effective for synthesizing complex information, drafting reports, analyzing text, and exploring diverse research topics.
+
+**Crucial Privacy Information:** We have a Business Associate Agreement (BAA) in place with Google for our institutional use of Gemini. This agreement contractually guarantees that any data you input into Google Gemini through our designated channels will *not* be used by Google for training its AI models. Your research data remains private and confidential, aligning with our commitment to data security and privacy.
+
+[Link to Google Gemini](https://gemini.google.com/)
+
+---
+
+### Other Recommended AI Chatbots
+
+| Chatbot                                   | Description                                                                                     |
 |-------------------------------------------|-------------------------------------------------------------------------------------------------|
 | [ChatGPT](https://chat.openai.com/) | Versatile and widely adopted for detailed conversations, research assistance, and creative tasks. |
-| [Claude](https://www.claude.ai/)            | Renowned for its contextual understanding and nuance in dialogue, ideal for complex inquiries.  |
-| [Gemini](https://gemini.google.com/)        | Excels in creative content generation, including writing, art, and multimedia synthesis.         |
-| [Perplexity](https://www.perplexity.ai/)      | Specializes in natural language queries with quick, informative responses.                        |
-| [Bing Chat](https://www.bing.com/chat)        | Integrates with Microsoft’s search and AI ecosystem, offering real-time data insights and responses. |
+| [Claude](https://www.claude.ai/)            | Renowned for its contextual understanding and nuance in dialogue, ideal for complex inquiries.  |
+| [Perplexity](https://www.perplexity.ai/)      | Specializes in natural language queries with quick, informative responses, often citing sources.  |
 
 ---
 
