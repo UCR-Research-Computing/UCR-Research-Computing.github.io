@@ -32,19 +32,19 @@ The University of California, Riverside (UCR) is poised at the edge of a transfo
 
 ### Strategic Goals
 
-**Strategic Goal 1: Increased Faculty Engagement**  
+**Increased Faculty Engagement**  
 We aim to deepen faculty engagement and collaboration, fostering a robust partnership between UCR researchers and IT support staff. This goal is vital for customizing research computing services to meet the unique challenges and needs of our academic community.
 
-**Strategic Goal 2: Comprehensive Data Management and Storage**  
+**Comprehensive Data Management and Storage**  
 Our focus on implementing scalable and secure data storage solutions is essential for advancing research collaboration, ensuring data protection compliance, and enhancing research workflows. This strategic objective supports our commitment to information security, user experience, and operational efficiency.
 
-**Strategic Goal 3: Advanced Research Computing Infrastructure**  
+**Advanced Research Computing Infrastructure**  
 Upgrading and expanding our research computing infrastructure with state-of-the-art hardware, software, and cloud resources is crucial. This infrastructure enhancement will empower our researchers with advanced computational tools, attracting top-tier talent and reinforcing UCR's academic and research stature.
 
-**Strategic Goal 4: Enhanced Training and Support**  
+**Enhanced Training and Support**  
 Developing comprehensive training and support for research computing technologies is key to maximizing the benefits of our resources. By enhancing researchers' skills and knowledge, we aim to boost research output and innovation across disciplines.
 
-**Strategic Goal 5: Sustainable and Future-Proof Infrastructure**  
+**Sustainable and Future-Proof Infrastructure**  
 Incorporating sustainability into our research computing operations and ensuring our infrastructure's adaptability to future technologies are strategic imperatives. This approach guarantees that UCR's research computing remains environmentally responsible and technologically relevant.
 
 ### Initiatives and Metrics
