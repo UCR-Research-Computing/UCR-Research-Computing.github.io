@@ -4,8 +4,6 @@ title: Cost Models
 sidebar_label: Cost Models
 ---
 
-<img src="../assets/cost-model-icon.jpeg" alt="Banner Image" style="width: 100%; object-fit: scale-down; height: auto; max-height: 400px;">
-
 ## Cost Models
 
 We prioritize strategic alignment with our university's mission and the practical needs of accessing computational resources. Our funding support and cost models are designed to advance research by providing equitable access to state-of-the-art computational tools. Drawing from industry best practices and our strategic objectives, we have crafted a cost model framework that caters to the diverse requirements of our dynamic research community.
