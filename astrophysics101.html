@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrophysics 101: An Interactive Tutorial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter font as a default sans-serif */
+            background-color: #111827; /* Dark background for space theme */
+            color: #e5e7eb; /* Light gray text */
+        }
+        .simulation-container {
+            width: 100%;
+            height: 400px; /* Fixed height for simulation canvases */
+            background-color: #000;
+            border-radius: 0.5rem; /* Rounded corners */
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            position: relative; /* For potential overlay elements if needed */
+            overflow: hidden; /* Ensures canvas stays within bounds */
+        }
+        canvas {
+            display: block; /* Removes extra space below canvas */
+            width: 100% !important; /* Override Three.js inline style */
+            height: 100% !important; /* Override Three.js inline style */
+        }
+        h1, h2, h3 {
+            color: #93c5fd; /* Light blue for headers */
+        }
+        .content-card {
+            background-color: #1f2937; /* Slightly lighter dark for content cards */
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        /* Custom scrollbar for a more modern look (optional) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-gray-900 text-white py-6 shadow-lg">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl font-bold">Astrophysics 101</h1>
+            <p class="mt-2 text-lg text-blue-300">An Interactive Introduction</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+
+        <section class="mb-12 content-card">
+            <h2 class="text-3xl font-semibold mb-4">Welcome, Future Astrophysicist!</h2>
+            <p class="text-lg leading-relaxed">
+                This interactive tutorial is designed to introduce you to some of the fundamental concepts in astrophysics.
+                We'll explore the vastness of space, the mechanics of celestial bodies, the lives of stars, the grandeur of galaxies,
+                and the very fabric of our expanding universe. Each section includes a brief explanation and a simple 3D
+                simulation to help you visualize these amazing phenomena. Let's begin our journey through the cosmos!
+            </p>
+        </section>
+
+        <section id="orbits" class="content-card">
+            <h2 class="text-3xl font-semibold mb-3">1. Celestial Mechanics: The Dance of Planets</h2>
+            <p class="mb-4 text-lg leading-relaxed">
+                Gravity is the invisible force that governs the motion of everything in the universe, from apples falling
+                to Earth to planets orbiting stars. Johannes Kepler, building on earlier work, formulated laws describing
+                planetary motion. In essence, planets move in elliptical orbits around their star, with the star at one
+                focus of the ellipse. Planets also sweep out equal areas in equal times, meaning they move faster when
+                closer to their star and slower when farther away.
+            </p>
+            <div id="orbit-simulation-container" class="simulation-container">
+                </div>
+            <p class="text-sm text-gray-400 mt-2 text-center"><i>Simulation: A planet (blue) orbiting a central star (yellow). Use your mouse to rotate the view.</i></p>
+        </section>
+
+        <section id="stellar-evolution" class="content-card">
+            <h2 class="text-3xl font-semibold mb-3">2. Stellar Evolution: The Lives of Stars</h2>
+            <p class="mb-4 text-lg leading-relaxed">
+                Stars are not eternal; they are born, live for millions or billions of years, and eventually die.
+                They form from vast clouds of gas and dust called nebulae. Gravity pulls this material together,
+                heating it until nuclear fusion ignites in the core, marking the birth of a star.
+                The star then enters its main sequence phase, fusing hydrogen into helium.
+                What happens next depends on the star's mass. Lower-mass stars like our Sun will eventually swell into
+                red giants, shed their outer layers to form planetary nebulae, and leave behind a dense core called a
+                white dwarf. Massive stars live shorter, more dramatic lives, ending in spectacular supernova explosions
+                that can leave behind neutron stars or black holes.
+            </p>
+            <div id="stellar-evolution-simulation-container" class="simulation-container">
+                </div>
+            <p class="text-sm text-gray-400 mt-2 text-center"><i>Simulation: A highly simplified visual representation of a star's life stages. Observe changes in size and color.</i></p>
+        </section>
+
+        <section id="galaxies" class="content-card">
+            <h2 class="text-3xl font-semibold mb-3">3. Galaxies: Cosmic Islands</h2>
+            <p class="mb-4 text-lg leading-relaxed">
+                Galaxies are colossal systems containing billions or even trillions of stars, along with gas, dust, and
+                dark matter, all bound together by gravity. They come in various shapes and sizes, including spiral
+                galaxies (like our Milky Way), elliptical galaxies, and irregular galaxies. Spiral galaxies are
+                characterized by a central bulge, spiral arms where new stars are often formed, and a surrounding halo.
+                Understanding galaxies helps us comprehend the large-scale structure of the universe.
+            </p>
+            <div id="galaxy-simulation-container" class="simulation-container">
+                </div>
+            <p class="text-sm text-gray-400 mt-2 text-center"><i>Simulation: A particle system forming a rotating spiral galaxy. Use your mouse to rotate the view.</i></p>
+        </section>
+
+        <section id="cosmology" class="content-card">
+            <h2 class="text-3xl font-semibold mb-3">4. Cosmology: The Expanding Universe</h2>
+            <p class="mb-4 text-lg leading-relaxed">
+                Cosmology is the study of the origin, evolution, and ultimate fate of the universe. One of the most
+                profound discoveries in cosmology is that the universe is expanding. In the 1920s, Edwin Hubble observed
+                that distant galaxies are moving away from us, and the farther away they are, the faster they are receding.
+                This is known as Hubble's Law. This expansion implies that the universe was much smaller and denser in the
+                past, leading to the Big Bang theory.
+            </p>
+            <div id="expansion-simulation-container" class="simulation-container">
+                </div>
+            <p class="text-sm text-gray-400 mt-2 text-center"><i>Simulation: Particles moving away from a central point. Notice how particles farther away appear to move faster.</i></p>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8 text-center">
+        <p>&copy; <span id="currentYear"></span> Astrophysics 101 Tutorial. For educational purposes.</p>
+        <p class="text-sm text-gray-400">Simulations created with Three.js.</p>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // --- Utility function to handle window resizing for Three.js scenes ---
+        function setupResponsiveCanvas(camera, renderer, container) {
+            function onResize() {
+                // Get the new dimensions of the container
+                const width = container.clientWidth;
+                const height = container.clientHeight;
+
+                // Update camera aspect ratio and projection matrix
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+
+                // Update renderer size
+                renderer.setSize(width, height);
+            }
+            // Attach event listener
+            window.addEventListener('resize', onResize);
+            // Call it once to set initial size
+            onResize();
+            return onResize; // Return the handler if we need to remove it later
+        }
+
+
+        // --- Simulation 1: Planetary Orbit ---
+        function initOrbitSimulation() {
+            const container = document.getElementById('orbit-simulation-container');
+            if (!container) return;
+
+            // Scene
+            const scene = new THREE.Scene();
+
+            // Camera
+            const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+            camera.position.z = 15;
+            camera.position.y = 5;
+
+            // Renderer
+            const renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setClearColor(0x000000); // Black background
+            container.appendChild(renderer.domElement);
+            
+            // Responsive canvas setup
+            setupResponsiveCanvas(camera, renderer, container);
+
+            // Controls
+            const controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
+            controls.dampingFactor = 0.05;
+            controls.screenSpacePanning = false;
+            controls.minDistance = 5;
+            controls.maxDistance = 50;
+
+            // Lighting
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+            scene.add(ambientLight);
+            const pointLight = new THREE.PointLight(0xffffff, 1, 100);
+            pointLight.position.set(0, 0, 0); // At the star's position
+            scene.add(pointLight);
+
+            // Star
+            const starGeometry = new THREE.SphereGeometry(2, 32, 32);
+            const starMaterial = new THREE.MeshPhongMaterial({ color: 0xffff00, emissive: 0xffff00, emissiveIntensity: 0.8 });
+            const star = new THREE.Mesh(starGeometry, starMaterial);
+            scene.add(star);
+
+            // Planet
+            const planetGeometry = new THREE.SphereGeometry(0.5, 32, 32);
+            const planetMaterial = new THREE.MeshPhongMaterial({ color: 0x0077ff });
+            const planet = new THREE.Mesh(planetGeometry, planetMaterial);
+            planet.position.x = 7; // Initial position
+            scene.add(planet);
+
+            // Orbit path (optional visual aid)
+            const orbitPathGeometry = new THREE.RingGeometry(6.95, 7.05, 64); // A thin ring
+            const orbitPathMaterial = new THREE.MeshBasicMaterial({ color: 0xaaaaaa, side: THREE.DoubleSide, transparent: true, opacity: 0.3 });
+            const orbitPath = new THREE.Mesh(orbitPathGeometry, orbitPathMaterial);
+            orbitPath.rotation.x = Math.PI / 2; // Rotate to be flat on XZ plane
+            scene.add(orbitPath);
+
+            let angle = 0;
+            const orbitRadius = 7;
+            const orbitSpeed = 0.01;
+
+            // Animation loop
+            function animateOrbit() {
+                requestAnimationFrame(animateOrbit);
+
+                // Orbiting motion
+                angle += orbitSpeed;
+                planet.position.x = Math.cos(angle) * orbitRadius;
+                planet.position.z = Math.sin(angle) * orbitRadius;
+                planet.rotation.y += 0.01; // Planet's own rotation
+
+                star.rotation.y += 0.002; // Star's own rotation
+
+                controls.update(); // only required if controls.enableDamping = true, or if controls.autoRotate = true
+                renderer.render(scene, camera);
+            }
+            animateOrbit();
+        }
+
+        // --- Simulation 2: Stellar Evolution (Simplified Visual) ---
+        function initStellarEvolutionSimulation() {
+            const container = document.getElementById('stellar-evolution-simulation-container');
+            if (!container) return;
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+            camera.position.z = 10;
+            camera.position.y = 2;
+            camera.lookAt(0,0,0);
+
+
+            const renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setClearColor(0x000000);
+            container.appendChild(renderer.domElement);
+            setupResponsiveCanvas(camera, renderer, container);
+
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+            scene.add(ambientLight);
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            directionalLight.position.set(5, 10, 7.5);
+            scene.add(directionalLight);
+
+            const starGeometry = new THREE.SphereGeometry(1, 32, 32); // Initial size
+            const starMaterial = new THREE.MeshPhongMaterial({ color: 0xaaaaff }); // Young star color (e.g., blueish)
+            const star = new THREE.Mesh(starGeometry, starMaterial);
+            scene.add(star);
+
+            let stage = 0; // 0: Nebula (particles), 1: Young Star, 2: Main Sequence, 3: Red Giant, 4: White Dwarf / Supernova flash
+            let stageTimer = 0;
+            const stageDuration = 200; // Frames per stage
+
+            // Simple particle system for nebula
+            let nebulaParticles;
+            const particleCount = 200;
+            const particlesGeometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+            const colors = new Float32Array(particleCount * 3); // For varied particle colors
+            const color = new THREE.Color();
+
+            for (let i = 0; i < particleCount * 3; i += 3) {
+                positions[i] = (Math.random() - 0.5) * 15; // x
+                positions[i + 1] = (Math.random() - 0.5) * 15; // y
+                positions[i + 2] = (Math.random() - 0.5) * 15; // z
+                
+                color.setHSL(Math.random() * 0.2 + 0.5, 0.8, Math.random() * 0.5 + 0.3); // Purples, blues, pinks
+                colors[i] = color.r;
+                colors[i+1] = color.g;
+                colors[i+2] = color.b;
+            }
+            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+            const particleMaterial = new THREE.PointsMaterial({ size: 0.2, vertexColors: true, transparent: true, opacity: 0.7 });
+            nebulaParticles = new THREE.Points(particlesGeometry, particleMaterial);
+            nebulaParticles.visible = true; // Start with nebula
+            star.visible = false; // Star initially hidden
+            scene.add(nebulaParticles);
+
+
+            function animateStellarEvolution() {
+                requestAnimationFrame(animateStellarEvolution);
+                stageTimer++;
+
+                if (stageTimer > stageDuration) {
+                    stageTimer = 0;
+                    stage = (stage + 1) % 6; // Cycle through stages
+
+                    switch (stage) {
+                        case 0: // Nebula forming
+                            nebulaParticles.visible = true;
+                            star.visible = false;
+                            // Reset particle positions to spread out
+                            for (let i = 0; i < particleCount * 3; i += 3) {
+                                positions[i] = (Math.random() - 0.5) * 15;
+                                positions[i + 1] = (Math.random() - 0.5) * 15;
+                                positions[i + 2] = (Math.random() - 0.5) * 15;
+                            }
+                            particlesGeometry.attributes.position.needsUpdate = true;
+                            nebulaParticles.material.opacity = 0.7;
+                            break;
+                        case 1: // Nebula condensing -> Young Star
+                            nebulaParticles.visible = true;
+                            star.visible = true;
+                            star.scale.set(0.1, 0.1, 0.1); // Very small
+                            star.material.color.setHex(0xaaaaff); // Blueish
+                            star.material.emissive.setHex(0xaaaaff);
+                            star.material.emissiveIntensity = 0.5;
+                            break;
+                        case 2: // Main Sequence
+                            nebulaParticles.visible = false; // Nebula gone
+                            star.visible = true;
+                            star.scale.set(1, 1, 1); // Normal size
+                            star.material.color.setHex(0xffffaa); // Yellowish-white
+                            star.material.emissive.setHex(0xffffaa);
+                            star.material.emissiveIntensity = 0.7;
+                            break;
+                        case 3: // Red Giant
+                            star.scale.set(3, 3, 3); // Larger
+                            star.material.color.setHex(0xff6600); // Orange-Red
+                            star.material.emissive.setHex(0xff6600);
+                            star.material.emissiveIntensity = 0.6;
+                            break;
+                        case 4: // White Dwarf (or placeholder for end-state)
+                            star.scale.set(0.3, 0.3, 0.3); // Smaller, dense
+                            star.material.color.setHex(0xffffff); // White
+                            star.material.emissive.setHex(0xffffff);
+                            star.material.emissiveIntensity = 0.9;
+                            break;
+                        case 5: // Supernova flash (for massive stars) / Fade out (for smaller)
+                            // This is a quick visual effect
+                            star.scale.set(0.1, 0.1, 0.1); // Shrink then briefly expand
+                            star.material.color.setHex(0xffffff);
+                            star.material.emissive.setHex(0xffffff);
+                            star.material.emissiveIntensity = 2.0; // Bright flash
+                            setTimeout(() => { // Fade after flash
+                                star.material.emissiveIntensity = 0.1;
+                                star.scale.set(0.05, 0.05, 0.05);
+                            }, 500); // Flash duration
+                            // Then loop back to nebula
+                            break;
+                    }
+                }
+
+                // Animate nebula condensing
+                if (stage === 1 && nebulaParticles.visible) {
+                    const positions = nebulaParticles.geometry.attributes.position.array;
+                    for (let i = 0; i < positions.length; i++) {
+                        positions[i] *= 0.98; // Move particles towards center
+                    }
+                    nebulaParticles.geometry.attributes.position.needsUpdate = true;
+                    nebulaParticles.material.opacity *= 0.99; // Fade out nebula
+                    if (nebulaParticles.material.opacity < 0.05) nebulaParticles.visible = false;
+
+                    // Grow the star as nebula condenses
+                    if (star.scale.x < 1) {
+                        star.scale.x += 0.01;
+                        star.scale.y += 0.01;
+                        star.scale.z += 0.01;
+                    }
+                }
+                
+                star.rotation.y += 0.005;
+                if (nebulaParticles.visible) nebulaParticles.rotation.y += 0.002;
+
+                renderer.render(scene, camera);
+            }
+            animateStellarEvolution();
+        }
+
+        // --- Simulation 3: Galaxy (Particle System) ---
+        function initGalaxySimulation() {
+            const container = document.getElementById('galaxy-simulation-container');
+            if (!container) return;
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 2000);
+            camera.position.z = 350;
+            camera.position.y = 100;
+
+            const renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setClearColor(0x000000);
+            container.appendChild(renderer.domElement);
+            setupResponsiveCanvas(camera, renderer, container);
+
+            const controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.05;
+            controls.minDistance = 50;
+            controls.maxDistance = 1000;
+
+            const particleCount = 20000; // More particles for a denser galaxy
+            const particlesGeometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+            const colors = new Float32Array(particleCount * 3);
+            const velocities = []; // Store individual particle velocities/properties for complex motion
+
+            const color = new THREE.Color();
+            const galaxyRadius = 200;
+            const armCount = 4; // Number of spiral arms
+            const armTightness = 0.5; // How tightly wound the arms are
+            const bulgeFraction = 0.2; // Fraction of stars in the central bulge
+
+            for (let i = 0; i < particleCount; i++) {
+                const i3 = i * 3;
+                let r, angle, x, y, z;
+
+                // Distribute some particles in a central bulge
+                if (Math.random() < bulgeFraction) {
+                    r = Math.random() * galaxyRadius * 0.3; // Smaller radius for bulge
+                    const phi = Math.acos((2 * Math.random()) - 1); // inclination
+                    const theta = Math.random() * Math.PI * 2; // azimuth
+                    x = r * Math.sin(phi) * Math.cos(theta);
+                    y = r * Math.sin(phi) * Math.sin(theta) * 0.5; // Flatten the bulge a bit
+                    z = r * Math.cos(phi);
+                    color.setHSL(0.1 + Math.random() * 0.1, 0.9, 0.7 + Math.random() * 0.2); // Yellowish/Orangish for bulge
+                } else { // Distribute particles in spiral arms
+                    r = Math.random() * galaxyRadius;
+                    const armIndex = Math.floor(Math.random() * armCount);
+                    angle = (r / galaxyRadius) * armTightness * Math.PI * 2 + (armIndex / armCount) * Math.PI * 2;
+                    angle += (Math.random() - 0.5) * 0.5; // Add some randomness to arm shape
+
+                    x = r * Math.cos(angle);
+                    z = r * Math.sin(angle);
+                    y = (Math.random() - 0.5) * 20; // Spread them out vertically a bit (disk thickness)
+                    color.setHSL(0.55 + Math.random() * 0.15, 0.9, 0.6 + Math.random() * 0.3); // Bluish/White for arms
+                }
+
+                positions[i3] = x;
+                positions[i3 + 1] = y;
+                positions[i3 + 2] = z;
+
+                colors[i3] = color.r;
+                colors[i3 + 1] = color.g;
+                colors[i3 + 2] = color.b;
+
+                // Store initial angle and radius for rotation
+                velocities.push({
+                    initialRadius: Math.sqrt(x*x + z*z), // Distance from Y axis
+                    initialAngle: Math.atan2(z, x),
+                    angularSpeed: (0.001 + Math.random() * 0.005) * (galaxyRadius / (Math.sqrt(x*x + z*z) + 10)) // Differential rotation
+                });
+            }
+
+            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+            const particleMaterial = new THREE.PointsMaterial({
+                size: 1.5,
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.8,
+                blending: THREE.AdditiveBlending // Brighter where particles overlap
+            });
+            const galaxy = new THREE.Points(particlesGeometry, particleMaterial);
+            scene.add(galaxy);
+
+
+            function animateGalaxy() {
+                requestAnimationFrame(animateGalaxy);
+                const positions = galaxy.geometry.attributes.position.array;
+
+                for (let i = 0; i < particleCount; i++) {
+                    const i3 = i * 3;
+                    const particleProps = velocities[i];
+                    
+                    particleProps.initialAngle += particleProps.angularSpeed;
+
+                    positions[i3] = particleProps.initialRadius * Math.cos(particleProps.initialAngle); // x
+                    positions[i3 + 2] = particleProps.initialRadius * Math.sin(particleProps.initialAngle); // z
+                }
+                galaxy.geometry.attributes.position.needsUpdate = true;
+                // galaxy.rotation.y += 0.0005; // Overall slight rotation of the coordinate system if needed
+
+                controls.update();
+                renderer.render(scene, camera);
+            }
+            animateGalaxy();
+        }
+
+        // --- Simulation 4: Universe Expansion ---
+        function initExpansionSimulation() {
+            const container = document.getElementById('expansion-simulation-container');
+            if (!container) return;
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 2000);
+            camera.position.z = 150; // Start a bit further out
+
+            const renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setClearColor(0x000000);
+            container.appendChild(renderer.domElement);
+            setupResponsiveCanvas(camera, renderer, container);
+            
+            // No OrbitControls here, fixed view is better for this concept
+
+            const particleCount = 500;
+            const particlesGeometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+            const initialPositions = []; // To store original positions for reset or scaling
+            const velocities = []; // Store expansion speeds
+
+            const color = new THREE.Color();
+            const colors = new Float32Array(particleCount * 3);
+
+
+            for (let i = 0; i < particleCount; i++) {
+                const i3 = i * 3;
+                const x = (Math.random() - 0.5) * 200; // Initial spread
+                const y = (Math.random() - 0.5) * 200;
+                const z = (Math.random() - 0.5) * 200;
+
+                positions[i3] = x;
+                positions[i3 + 1] = y;
+                positions[i3 + 2] = z;
+                initialPositions.push(new THREE.Vector3(x,y,z));
+
+                // Speed proportional to initial distance from origin (simplified Hubble's Law)
+                const dist = Math.sqrt(x*x + y*y + z*z);
+                const speedFactor = 0.0005; // Base speed factor
+                velocities.push(new THREE.Vector3(x,y,z).normalize().multiplyScalar(dist * speedFactor));
+                
+                // Color particles based on initial distance (optional, for visual cue)
+                color.setHSL(0.7 - (dist / 200) * 0.4, 1.0, 0.5 + (dist / 200) * 0.3); // Blues to reds
+                colors[i3] = color.r;
+                colors[i3+1] = color.g;
+                colors[i3+2] = color.b;
+            }
+
+            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+            const particleMaterial = new THREE.PointsMaterial({ size: 1.5, vertexColors: true });
+            const particleSystem = new THREE.Points(particlesGeometry, particleMaterial);
+            scene.add(particleSystem);
+
+            let expansionFactor = 1.0;
+            let time = 0;
+
+            function animateExpansion() {
+                requestAnimationFrame(animateExpansion);
+                time += 0.05; // Simulate time passing
+
+                const currentPositions = particleSystem.geometry.attributes.position.array;
+                for (let i = 0; i < particleCount; i++) {
+                    const i3 = i * 3;
+                    const initialPos = initialPositions[i];
+                    const vel = velocities[i]; // This velocity is a direction * base_speed_factor * initial_dist
+
+                    // New position = initial_pos + velocity_direction * (initial_dist * speed_factor) * time
+                    // This makes particles move along their initial vector from origin,
+                    // and their effective "speed" (distance covered per unit time) increases with initial distance.
+                    currentPositions[i3] = initialPos.x + vel.x * time * 50; // Scaled time for visible effect
+                    currentPositions[i3 + 1] = initialPos.y + vel.y * time * 50;
+                    currentPositions[i3 + 2] = initialPos.z + vel.z * time * 50;
+                }
+                particleSystem.geometry.attributes.position.needsUpdate = true;
+
+                // Optional: Slowly zoom camera out to keep particles in view
+                // camera.position.z += 0.05;
+                // camera.lookAt(scene.position);
+
+
+                // Reset if particles go too far (for continuous viewing)
+                if (time > 80) { // Reset condition
+                    time = 0;
+                    for (let i = 0; i < particleCount; i++) {
+                        const i3 = i * 3;
+                        currentPositions[i3] = initialPositions[i].x;
+                        currentPositions[i3 + 1] = initialPositions[i].y;
+                        currentPositions[i3 + 2] = initialPositions[i].z;
+                    }
+                }
+                
+                renderer.render(scene, camera);
+            }
+            animateExpansion();
+        }
+
+
+        // --- Initialize all simulations on window load ---
+        window.onload = function() {
+            initOrbitSimulation();
+            initStellarEvolutionSimulation();
+            initGalaxySimulation();
+            initExpansionSimulation();
+        };
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth's Long-Term Carbon Cycle Tutorial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            color: #1e293b; /* Dark slate text */
+        }
+        .simulation-container {
+            width: 100%;
+            height: 300px;
+            background-color: #e2e8f0; /* Lighter slate for canvas background */
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            position: relative; /* For potential overlay elements */
+            overflow: hidden; /* Ensures content fits rounded corners */
+        }
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #0f172a; /* Very dark blue, almost black */
+        }
+        .content-card {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        .control-panel label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .control-panel input[type="range"] {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        .control-panel button {
+            background-color: #3b82f6; /* Blue-500 */
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        .control-panel button:hover {
+            background-color: #2563eb; /* Blue-600 */
+        }
+        .control-panel .param-value {
+            font-weight: bold;
+            color: #1d4ed8; /* Blue-700 */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-slate-800 text-white py-8 shadow-lg">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl font-bold">Earth's Long-Term Carbon Cycle</h1>
+            <p class="mt-2 text-lg text-slate-300">An Interactive Tutorial</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+
+        <section id="introduction" class="content-card">
+            <h2 class="text-3xl font-semibold mb-4">Welcome!</h2>
+            <p class="mb-2">This tutorial explores the Earth's carbon cycle, focusing on the slow, geological processes that operate over millions of years. Carbon is essential for life and plays a crucial role in regulating Earth's climate.</p>
+            <p class="mb-2">The carbon cycle involves various <strong class="text-sky-600">reservoirs</strong> (where carbon is stored) and <strong class="text-teal-600">fluxes</strong> (processes that move carbon between reservoirs). We'll explore these concepts using text, diagrams, and interactive simulations.</p>
+            <p>Understanding the long-term carbon cycle helps us comprehend past climate changes and provides context for current anthropogenic impacts.</p>
+        </section>
+
+        <section id="reservoirs" class="content-card">
+            <h2 class="text-3xl font-semibold mb-6">1. Carbon Reservoirs</h2>
+            <p class="mb-6">Carbon is stored in several major reservoirs. The amount of carbon in each reservoir and the time it stays there (residence time) vary greatly.</p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2">1.1 Atmosphere</h3>
+                    <p class="mb-3 text-sm">Carbon in the atmosphere is primarily as carbon dioxide (CO<sub>2</sub>) and methane (CH<sub>4</sub>). It's a relatively small reservoir but highly active and crucial for climate.</p>
+                    <div id="atmosphere-sim" class="simulation-container"></div>
+                    <div class="control-panel mt-2">
+                        <label for="co2SliderAtmosphere">Atmospheric CO<sub>2</sub> Level (Conceptual): <span id="co2ValueAtmosphere" class="param-value">50</span>%</label>
+                        <input type="range" id="co2SliderAtmosphere" min="10" max="100" value="50" class="w-full">
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2">1.2 Oceans</h3>
+                    <p class="mb-3 text-sm">The oceans are a major carbon sink, holding significantly more carbon than the atmosphere. Carbon is present as dissolved CO<sub>2</sub>, bicarbonate, and carbonate ions.</p>
+                    <div id="ocean-sim" class="simulation-container"></div>
+                     <div class="control-panel mt-2">
+                        <label for="oceanTempSlider">Ocean Surface Temperature (Conceptual): <span id="oceanTempValue" class="param-value">50</span>%</label>
+                        <input type="range" id="oceanTempSlider" min="0" max="100" value="50" class="w-full">
+                        <p class="text-xs text-gray-500 italic">Higher temperatures generally reduce CO2 solubility.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2">1.3 Land (Biosphere & Soils)</h3>
+                    <p class="mb-3 text-sm">This reservoir includes carbon in living organisms (plants, animals), dead organic matter, and soils. Photosynthesis and respiration are key processes.</p>
+                    <div id="land-sim" class="simulation-container"></div>
+                    <div class="control-panel mt-2">
+                        <label for="plantGrowthSlider">Plant Activity Level: <span id="plantGrowthValue" class="param-value">50</span>%</label>
+                        <input type="range" id="plantGrowthSlider" min="0" max="100" value="50" class="w-full">
+                         <p class="text-xs text-gray-500 italic">Higher activity means more CO2 uptake (conceptual).</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2">1.4 Lithosphere (Rocks)</h3>
+                    <p class="mb-3 text-sm">The largest carbon reservoir by far is the Earth's lithosphere, primarily in carbonate rocks (limestone, dolomite) and kerogen (organic carbon in sedimentary rocks). Carbon cycles very slowly through this reservoir.</p>
+                    <div id="lithosphere-sim" class="simulation-container"></div>
+                    <p class="text-center text-sm mt-2 text-gray-600">Conceptual view of carbon locked in rock strata.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="fluxes" class="content-card">
+            <h2 class="text-3xl font-semibold mb-6">2. Key Processes (Fluxes)</h2>
+            <p class="mb-6">Fluxes are the processes that move carbon between reservoirs. Over geological timescales, volcanic activity, chemical weathering, and organic carbon burial are dominant.</p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2">2.1 Volcanic Outgassing</h3>
+                    <p class="mb-3 text-sm">Volcanoes release CO<sub>2</sub> from the Earth's mantle and crust into the atmosphere. This is a primary natural source of atmospheric CO<sub>2</sub> over long timescales.</p>
+                    <div id="volcanism-sim" class="simulation-container"></div>
+                    <div class="control-panel mt-2 text-center">
+                        <button id="eruptButton">Trigger Volcanic Eruption</button>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2">2.2 Chemical Weathering</h3>
+                    <p class="mb-3 text-sm">Silicate rocks react with CO<sub>2</sub> (via carbonic acid in rainwater). This process removes CO<sub>2</sub> from the atmosphere, eventually transporting it to the oceans where it can form carbonate sediments.</p>
+                    <div id="weathering-sim" class="simulation-container"></div>
+                    <div class="control-panel mt-2">
+                        <label for="weatheringRateSlider">Weathering Intensity: <span id="weatheringRateValue" class="param-value">50</span>%</label>
+                        <input type="range" id="weatheringRateSlider" min="10" max="100" value="50" class="w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="long-term-model" class="content-card">
+            <h2 class="text-3xl font-semibold mb-4">3. Long-Term Carbon Cycle Model</h2>
+            <p class="mb-4">This simplified model simulates the interplay of major long-term carbon fluxes and their impact on atmospheric CO<sub>2</sub> over millions of years. Adjust the parameters and observe the changes.</p>
+            
+            <div class="grid lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-1 control-panel bg-slate-50 p-4 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold mb-3">Model Controls</h3>
+                    
+                    <div>
+                        <label for="volcanicInputSlider">Volcanic CO<sub>2</sub> Input Rate: <span id="volcanicInputValue" class="param-value">5</span></label>
+                        <input type="range" id="volcanicInputSlider" min="1" max="20" value="5" step="0.5">
+                        <p class="text-xs text-gray-500 italic mb-3">Arbitrary units representing relative CO2 input.</p>
+                    </div>
+                    
+                    <div>
+                        <label for="weatheringEfficiencySlider">Weathering Efficiency Factor: <span id="weatheringEfficiencyValue" class="param-value">1.0</span></label>
+                        <input type="range" id="weatheringEfficiencySlider" min="0.1" max="2.5" value="1.0" step="0.1">
+                        <p class="text-xs text-gray-500 italic mb-3">Higher values mean faster CO2 drawdown by weathering.</p>
+                    </div>
+
+                    <div>
+                        <label for="organicBurialSlider">Organic Carbon Burial Rate: <span id="organicBurialValue" class="param-value">1</span></label>
+                        <input type="range" id="organicBurialSlider" min="0.1" max="5" value="1" step="0.1">
+                        <p class="text-xs text-gray-500 italic mb-3">Relative rate of organic carbon being removed from the active cycle.</p>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <button id="runModelButton" class="w-full mb-2">Run Simulation</button>
+                        <button id="resetModelButton" class="w-full bg-red-500 hover:bg-red-600">Reset</button>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-4 italic">Simulation runs for a conceptual 100 million years.</p>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <p class="text-center mb-2 font-medium">Conceptual Earth & Atmosphere CO<sub>2</sub> Level</p>
+                    <div id="longTermEarthSim" class="simulation-container h-48 md:h-64 mb-6"></div>
+                    <p class="text-center mb-2 font-medium">Atmospheric CO<sub>2</sub> Over Millions of Years</p>
+                    <div class="chart-container">
+                        <canvas id="longTermCo2Chart"></canvas>
+                    </div>
+                </div>
+            </div>
+             <div id="model-explanation" class="mt-6 p-4 bg-sky-50 border border-sky-200 rounded-lg">
+                <h4 class="text-lg font-semibold text-sky-700 mb-2">Interpreting the Model:</h4>
+                <p class="text-sm text-sky-600 mb-1">This is a highly simplified model. In reality, these processes are interconnected in complex ways, involving temperature feedbacks, tectonic cycles, and biological evolution.</p>
+                <ul class="list-disc list-inside text-sm text-sky-600 space-y-1">
+                    <li><strong class="font-medium">Volcanic Input:</strong> Adds CO<sub>2</sub> to the atmosphere. Higher rates tend to increase atmospheric CO<sub>2</sub>.</li>
+                    <li><strong class="font-medium">Weathering Efficiency:</strong> Represents how effectively CO<sub>2</sub> is removed by chemical weathering. This process is thought to be sensitive to temperature and CO<sub>2</sub> levels themselves (a negative feedback).</li>
+                    <li><strong class="font-medium">Organic Carbon Burial:</strong> Sequesters carbon in sediments, removing it from the atmosphere-ocean system for long periods.</li>
+                </ul>
+                <p class="text-sm text-sky-600 mt-2">Observe how different settings lead to different equilibrium CO<sub>2</sub> levels or how the system responds to perturbations.</p>
+            </div>
+        </section>
+
+        <section id="conclusion" class="content-card">
+            <h2 class="text-3xl font-semibold mb-4">Conclusion</h2>
+            <p class="mb-2">The Earth's long-term carbon cycle is a complex system of reservoirs and fluxes that has regulated our planet's climate for billions of years. Processes like volcanism, weathering, and organic carbon burial operate on timescales of millions of years, shaping the atmospheric CO<sub>2</sub> concentration and thus global temperatures.</p>
+            <p class="mb-2">While these natural cycles are slow, understanding them is crucial for contextualizing the rapid changes occurring due to human activities. The geological record shows that Earth's climate has varied significantly in the past, often linked to changes in the carbon cycle.</p>
+            <p>We hope this interactive tutorial has provided you with a better understanding of these fundamental Earth processes.</p>
+        </section>
+    </main>
+
+    <footer class="bg-slate-800 text-white py-6 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-sm text-slate-400">&copy; 2025 Earth Science Department. University Class Tutorial.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Ensure DOM is fully loaded before running scripts
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Helper function for Three.js scene setup ---
+            function setupBasicScene(containerId) {
+                const container = document.getElementById(containerId);
+                if (!container) {
+                    console.error('Container not found for ID:', containerId);
+                    return null;
+                }
+                const scene = new THREE.Scene();
+                scene.background = new THREE.Color(0xe2e8f0); // Match container background
+
+                const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+                camera.position.z = 5;
+
+                const renderer = new THREE.WebGLRenderer({ antialias: true });
+                renderer.setSize(container.clientWidth, container.clientHeight);
+                container.appendChild(renderer.domElement);
+                
+                // Handle window resize
+                window.addEventListener('resize', () => {
+                    if (container.clientWidth > 0 && container.clientHeight > 0) {
+                        camera.aspect = container.clientWidth / container.clientHeight;
+                        camera.updateProjectionMatrix();
+                        renderer.setSize(container.clientWidth, container.clientHeight);
+                    }
+                }, false);
+
+                return { scene, camera, renderer, container };
+            }
+
+            // --- 1.1 Atmosphere Simulation ---
+            const atmSetup = setupBasicScene('atmosphere-sim');
+            if (atmSetup) {
+                const { scene: atmScene, camera: atmCamera, renderer: atmRenderer } = atmSetup;
+                const particleMaterial = new THREE.PointsMaterial({ color: 0x3b82f6, size: 0.05 });
+                const particlesGeometry = new THREE.BufferGeometry();
+                const particleCount = 500;
+                const posArray = new Float32Array(particleCount * 3);
+                for (let i = 0; i < particleCount * 3; i++) {
+                    posArray[i] = (Math.random() - 0.5) * 5; // Distribute in a cube
+                }
+                particlesGeometry.setAttribute('position', new THREE.Float32BufferAttribute(posArray, 3));
+                const atmParticles = new THREE.Points(particlesGeometry, particleMaterial);
+                atmScene.add(atmParticles);
+                atmCamera.position.z = 3;
+
+                const co2SliderAtmosphere = document.getElementById('co2SliderAtmosphere');
+                const co2ValueAtmosphere = document.getElementById('co2ValueAtmosphere');
+                
+                function updateAtmosphereParticles() {
+                    const intensity = parseInt(co2SliderAtmosphere.value) / 100;
+                    co2ValueAtmosphere.textContent = co2SliderAtmosphere.value;
+                    const newParticleCount = Math.floor(intensity * particleCount * 2); // Max 2x particles
+                    const newPosArray = new Float32Array(newParticleCount * 3);
+                     for (let i = 0; i < newParticleCount * 3; i++) {
+                        newPosArray[i] = (Math.random() - 0.5) * (4 + intensity * 2) ; // Spread changes with intensity
+                    }
+                    atmParticles.geometry.setAttribute('position', new THREE.Float32BufferAttribute(newPosArray, 3));
+                    atmParticles.geometry.attributes.position.needsUpdate = true;
+                }
+                co2SliderAtmosphere.addEventListener('input', updateAtmosphereParticles);
+                updateAtmosphereParticles(); // Initial call
+
+                function animateAtmosphere() {
+                    requestAnimationFrame(animateAtmosphere);
+                    atmParticles.rotation.y += 0.002;
+                    atmRenderer.render(atmScene, atmCamera);
+                }
+                animateAtmosphere();
+            }
+
+            // --- 1.2 Ocean Simulation ---
+            const oceanSetup = setupBasicScene('ocean-sim');
+            if (oceanSetup) {
+                const { scene: oceanScene, camera: oceanCamera, renderer: oceanRenderer } = oceanSetup;
+                const planeGeometry = new THREE.PlaneGeometry(6, 4, 20, 20);
+                const planeMaterial = new THREE.MeshPhongMaterial({ color: 0x60a5fa, side: THREE.DoubleSide, flatShading: true });
+                const oceanPlane = new THREE.Mesh(planeGeometry, planeMaterial);
+                oceanPlane.rotation.x = -Math.PI / 3;
+                oceanScene.add(oceanPlane);
+
+                const ambientLightOcean = new THREE.AmbientLight(0xffffff, 0.5);
+                oceanScene.add(ambientLightOcean);
+                const directionalLightOcean = new THREE.DirectionalLight(0xffffff, 0.8);
+                directionalLightOcean.position.set(1, 1, 1);
+                oceanScene.add(directionalLightOcean);
+                
+                oceanCamera.position.set(0, 2, 4);
+                oceanCamera.lookAt(0,0,0);
+
+                // CO2 particles above/in ocean
+                const oceanParticles = [];
+                const oceanParticleMaterial = new THREE.PointsMaterial({ color: 0x1e3a8a, size: 0.08 });
+                for (let i = 0; i < 100; i++) {
+                    const particle = new THREE.Vector3(
+                        (Math.random() - 0.5) * 6,
+                        (Math.random() * 2), // Start above or slightly in ocean
+                        (Math.random() - 0.5) * 4
+                    );
+                    oceanParticles.push(particle);
+                }
+                const oceanParticlesGeometry = new THREE.BufferGeometry().setFromPoints(oceanParticles);
+                const oceanPoints = new THREE.Points(oceanParticlesGeometry, oceanParticleMaterial);
+                oceanScene.add(oceanPoints);
+
+                const oceanTempSlider = document.getElementById('oceanTempSlider');
+                const oceanTempValue = document.getElementById('oceanTempValue');
+                let targetYMultiplier = 0.5; // 0 = all dissolved, 1 = all in air
+
+                oceanTempSlider.addEventListener('input', () => {
+                    oceanTempValue.textContent = oceanTempSlider.value;
+                    // Higher temp = less dissolved = particles higher up
+                    targetYMultiplier = 0.2 + (parseInt(oceanTempSlider.value) / 100) * 0.8; 
+                });
+
+
+                function animateOcean() {
+                    requestAnimationFrame(animateOcean);
+                    // Animate waves (vertices of the plane)
+                    const time = Date.now() * 0.0005;
+                    const positions = oceanPlane.geometry.attributes.position;
+                    for (let i = 0; i < positions.count; i++) {
+                        const y = Math.sin(i / 5 + (time * 3)) * 0.15;
+                        positions.setY(i, y);
+                    }
+                    positions.needsUpdate = true;
+
+                    // Animate CO2 particles
+                    const particlePositions = oceanPoints.geometry.attributes.position;
+                    for (let i = 0; i < particlePositions.count; i++) {
+                        const currentY = particlePositions.getY(i);
+                        const targetY = (Math.random() - (1-targetYMultiplier)) * 2; // More randomness
+                        particlePositions.setY(i, currentY + (targetY - currentY) * 0.01); // Slow transition
+                        // Keep particles generally above the main plane surface
+                         if (particlePositions.getY(i) < -0.2) particlePositions.setY(i, -0.2 + Math.random()*0.1);
+                    }
+                    particlePositions.needsUpdate = true;
+
+                    oceanRenderer.render(oceanScene, oceanCamera);
+                }
+                animateOcean();
+            }
+
+            // --- 1.3 Land (Biosphere & Soils) Simulation ---
+            const landSetup = setupBasicScene('land-sim');
+            if (landSetup) {
+                const { scene: landScene, camera: landCamera, renderer: landRenderer } = landSetup;
+                const groundGeometry = new THREE.PlaneGeometry(6, 6);
+                const groundMaterial = new THREE.MeshLambertMaterial({ color: 0x84cc16 }); // Lime green
+                const ground = new THREE.Mesh(groundGeometry, groundMaterial);
+                ground.rotation.x = -Math.PI / 2;
+                ground.position.y = -1.5;
+                landScene.add(ground);
+
+                const ambientLightLand = new THREE.AmbientLight(0xffffff, 0.6);
+                landScene.add(ambientLightLand);
+                const directionalLightLand = new THREE.DirectionalLight(0xffffff, 0.7);
+                directionalLightLand.position.set(1, 2, 1);
+                landScene.add(directionalLightLand);
+
+                const trees = new THREE.Group();
+                const treeMaterial = new THREE.MeshLambertMaterial({ color: 0x22c55e }); // Green
+                const trunkMaterial = new THREE.MeshLambertMaterial({ color: 0x78350f }); // Brown
+                for (let i = 0; i < 5; i++) {
+                    const trunkGeometry = new THREE.CylinderGeometry(0.1, 0.15, 1, 8);
+                    const trunk = new THREE.Mesh(trunkGeometry, trunkMaterial);
+                    const foliageGeometry = new THREE.SphereGeometry(0.5, 8, 6);
+                    const foliage = new THREE.Mesh(foliageGeometry, treeMaterial);
+                    foliage.position.y = 0.75;
+                    const tree = new THREE.Group();
+                    tree.add(trunk);
+                    tree.add(foliage);
+                    tree.position.set((Math.random() - 0.5) * 4, -1, (Math.random() - 0.5) * 4);
+                    trees.add(tree);
+                }
+                landScene.add(trees);
+                landCamera.position.set(0,1,5);
+                landCamera.lookAt(0,0,0);
+
+                const plantGrowthSlider = document.getElementById('plantGrowthSlider');
+                const plantGrowthValue = document.getElementById('plantGrowthValue');
+
+                plantGrowthSlider.addEventListener('input', () => {
+                    plantGrowthValue.textContent = plantGrowthSlider.value;
+                    const scale = 0.5 + (parseInt(plantGrowthSlider.value) / 100) * 1.0; // Scale from 0.5 to 1.5
+                    trees.children.forEach(tree => {
+                        tree.scale.set(scale, scale, scale);
+                    });
+                });
+                plantGrowthSlider.dispatchEvent(new Event('input')); // Initial call
+
+                function animateLand() {
+                    requestAnimationFrame(animateLand);
+                    landRenderer.render(landScene, landCamera);
+                }
+                animateLand();
+            }
+            
+            // --- 1.4 Lithosphere (Rocks) Simulation ---
+            const lithoSetup = setupBasicScene('lithosphere-sim');
+            if (lithoSetup) {
+                const { scene: lithoScene, camera: lithoCamera, renderer: lithoRenderer } = lithoSetup;
+                const strataGroup = new THREE.Group();
+                const strataColors = [0x808080, 0xA9A9A9, 0x696969, 0x778899, 0x708090]; // Greys and slates
+                const layerHeight = 0.5;
+                for (let i = 0; i < 5; i++) {
+                    const strataGeometry = new THREE.BoxGeometry(5, layerHeight, 2);
+                    const strataMaterial = new THREE.MeshLambertMaterial({ color: strataColors[i % strataColors.length] });
+                    const stratum = new THREE.Mesh(strataGeometry, strataMaterial);
+                    stratum.position.y = -1 + i * layerHeight - (layerHeight * 5 / 2) + layerHeight/2; // Stack them
+                    strataGroup.add(stratum);
+                }
+                lithoScene.add(strataGroup);
+                lithoScene.add(new THREE.AmbientLight(0xffffff, 0.7));
+                const dirLightLitho = new THREE.DirectionalLight(0xffffff, 0.5);
+                dirLightLitho.position.set(1,2,3);
+                lithoScene.add(dirLightLitho);
+                lithoCamera.position.set(0, 0, 6);
+                lithoCamera.lookAt(strataGroup.position);
+
+                function animateLithosphere() {
+                    requestAnimationFrame(animateLithosphere);
+                    strataGroup.rotation.y += 0.001; // Slow rotation
+                    lithoRenderer.render(lithoScene, lithoCamera);
+                }
+                animateLithosphere();
+            }
+
+            // --- 2.1 Volcanism Simulation ---
+            const volcanismSetup = setupBasicScene('volcanism-sim');
+            if (volcanismSetup) {
+                const { scene: volcScene, camera: volcCamera, renderer: volcRenderer, container: volcContainer } = volcanismSetup;
+                const coneGeometry = new THREE.ConeGeometry(1, 2, 16);
+                const coneMaterial = new THREE.MeshLambertMaterial({ color: 0x504030 }); // Dark brown
+                const volcano = new THREE.Mesh(coneGeometry, coneMaterial);
+                volcano.position.y = -1;
+                volcScene.add(volcano);
+
+                volcScene.add(new THREE.AmbientLight(0xffffff, 0.5));
+                const dirLightVolc = new THREE.DirectionalLight(0xffffff, 0.8);
+                dirLightVolc.position.set(2,3,2);
+                volcScene.add(dirLightVolc);
+                volcCamera.position.set(0,1,5);
+
+                const smokeParticles = [];
+                const smokeMaterial = new THREE.PointsMaterial({ color: 0x888888, size: 0.15, transparent: true, opacity: 0.5 });
+                const smokeGeometry = new THREE.BufferGeometry();
+                const smokePoints = new THREE.Points(smokeGeometry, smokeMaterial);
+                volcScene.add(smokePoints);
+
+                document.getElementById('eruptButton').addEventListener('click', () => {
+                    for (let i = 0; i < 50; i++) { // Create 50 particles per eruption
+                        smokeParticles.push({
+                            position: new THREE.Vector3(
+                                (Math.random() - 0.5) * 0.2, // Emerge from cone top
+                                0.1, // Start slightly above cone tip
+                                (Math.random() - 0.5) * 0.2
+                            ),
+                            velocity: new THREE.Vector3(
+                                (Math.random() - 0.5) * 0.02,
+                                Math.random() * 0.05 + 0.02, // Upwards
+                                (Math.random() - 0.5) * 0.02
+                            ),
+                            life: 100 + Math.random() * 100 // Frames to live
+                        });
+                    }
+                });
+
+                function animateVolcanism() {
+                    requestAnimationFrame(animateVolcanism);
+                    const currentPositions = [];
+                    for (let i = smokeParticles.length - 1; i >= 0; i--) {
+                        const p = smokeParticles[i];
+                        p.position.add(p.velocity);
+                        p.life--;
+                        if (p.life > 0) {
+                            currentPositions.push(p.position.x, p.position.y, p.position.z);
+                        } else {
+                            smokeParticles.splice(i, 1); // Remove dead particle
+                        }
+                    }
+                    if (currentPositions.length > 0) {
+                        smokePoints.geometry.setAttribute('position', new THREE.Float32BufferAttribute(currentPositions, 3));
+                        smokePoints.geometry.attributes.position.needsUpdate = true;
+                    } else { // Clear geometry if no particles
+                         smokePoints.geometry.setAttribute('position', new THREE.Float32BufferAttribute([], 3));
+                         smokePoints.geometry.attributes.position.needsUpdate = true;
+                    }
+                    volcRenderer.render(volcScene, volcCamera);
+                }
+                animateVolcanism();
+            }
+            
+            // --- 2.2 Weathering Simulation ---
+            const weatheringSetup = setupBasicScene('weathering-sim');
+            if (weatheringSetup) {
+                const { scene: weatherScene, camera: weatherCamera, renderer: weatherRenderer } = weatheringSetup;
+                const rockGeometry = new THREE.BoxGeometry(2, 1.5, 1.5);
+                const rockMaterial = new THREE.MeshLambertMaterial({ color: 0x9ca3af }); // Gray
+                const rock = new THREE.Mesh(rockGeometry, rockMaterial);
+                rock.position.y = -0.5;
+                weatherScene.add(rock);
+
+                weatherScene.add(new THREE.AmbientLight(0xffffff, 0.6));
+                const dirLightWeather = new THREE.DirectionalLight(0xffffff, 0.7);
+                dirLightWeather.position.set(1,3,2);
+                weatherScene.add(dirLightWeather);
+                weatherCamera.position.set(0,1,4);
+
+                const rainParticles = [];
+                const rainMaterial = new THREE.PointsMaterial({ color: 0x60a5fa, size: 0.05 }); // Blue
+                const rainGeometry = new THREE.BufferGeometry();
+                const rainPoints = new THREE.Points(rainGeometry, rainMaterial);
+                weatherScene.add(rainPoints);
+                
+                const weatheringRateSlider = document.getElementById('weatheringRateSlider');
+                const weatheringRateValue = document.getElementById('weatheringRateValue');
+                let rainIntensity = 50;
+
+                weatheringRateSlider.addEventListener('input', () => {
+                    weatheringRateValue.textContent = weatheringRateSlider.value;
+                    rainIntensity = parseInt(weatheringRateSlider.value);
+                });
+                weatheringRateSlider.dispatchEvent(new Event('input'));
+
+
+                function animateWeathering() {
+                    requestAnimationFrame(animateWeathering);
+                    // Add new rain particles based on intensity
+                    if (Math.random() < rainIntensity / 200) { // Control spawn rate
+                         for(let k=0; k < Math.ceil(rainIntensity/20); k++){ // More particles for higher intensity
+                            rainParticles.push({
+                                position: new THREE.Vector3(
+                                    (Math.random() - 0.5) * 3, // Wider spawn area
+                                    2.5, // Start from top
+                                    (Math.random() - 0.5) * 2
+                                ),
+                                velocity: new THREE.Vector3(0, -0.05 - (Math.random()*0.05), 0) // Fall down
+                            });
+                         }
+                    }
+
+                    const currentRainPositions = [];
+                    for (let i = rainParticles.length - 1; i >= 0; i--) {
+                        const p = rainParticles[i];
+                        p.position.add(p.velocity);
+                        // If particle hits the "rock" or goes below a certain y
+                        if (p.position.y < -1.2 || 
+                            (p.position.y < (rock.position.y + 0.75) && Math.abs(p.position.x) < 1 && Math.abs(p.position.z) < 0.75)) {
+                            rainParticles.splice(i, 1); // Remove particle
+                        } else {
+                            currentRainPositions.push(p.position.x, p.position.y, p.position.z);
+                        }
+                    }
+                     if (currentRainPositions.length > 0) {
+                        rainPoints.geometry.setAttribute('position', new THREE.Float32BufferAttribute(currentRainPositions, 3));
+                    } else {
+                        rainPoints.geometry.setAttribute('position', new THREE.Float32BufferAttribute([],3));
+                    }
+                    rainPoints.geometry.attributes.position.needsUpdate = true;
+                    
+                    weatherRenderer.render(weatherScene, weatherCamera);
+                }
+                animateWeathering();
+            }
+
+
+            // --- 3. Long-Term Carbon Cycle Model ---
+            const longTermSimSetup = setupBasicScene('longTermEarthSim');
+            let earthAtmosphereMesh;
+            if (longTermSimSetup) {
+                const { scene: earthSimScene, camera: earthSimCamera, renderer: earthSimRenderer } = longTermSimSetup;
+                
+                const earthGeometry = new THREE.SphereGeometry(1, 32, 32);
+                const earthMaterial = new THREE.MeshPhongMaterial({ color: 0x4f46e5 }); // Indigo for Earth
+                const earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
+                earthSimScene.add(earthMesh);
+
+                const atmosphereGeometry = new THREE.SphereGeometry(1.1, 32, 32);
+                // Start with a base color, opacity will change
+                const atmosphereMaterial = new THREE.MeshPhongMaterial({ 
+                    color: 0x60a5fa, // Light blue
+                    transparent: true, 
+                    opacity: 0.3 
+                });
+                earthAtmosphereMesh = new THREE.Mesh(atmosphereGeometry, atmosphereMaterial);
+                earthSimScene.add(earthAtmosphereMesh);
+
+                earthSimScene.add(new THREE.AmbientLight(0xffffff, 0.5));
+                const dirLightEarth = new THREE.DirectionalLight(0xffffff, 1);
+                dirLightEarth.position.set(2, 2, 2);
+                earthSimScene.add(dirLightEarth);
+                earthSimCamera.position.z = 3;
+
+                function animateLongTermEarth() {
+                    requestAnimationFrame(animateLongTermEarth);
+                    earthMesh.rotation.y += 0.005;
+                    earthSimRenderer.render(earthSimScene, earthSimCamera);
+                }
+                animateLongTermEarth();
+            }
+
+            const volcanicInputSlider = document.getElementById('volcanicInputSlider');
+            const weatheringEfficiencySlider = document.getElementById('weatheringEfficiencySlider');
+            const organicBurialSlider = document.getElementById('organicBurialSlider');
+            const volcanicInputValue = document.getElementById('volcanicInputValue');
+            const weatheringEfficiencyValue = document.getElementById('weatheringEfficiencyValue');
+            const organicBurialValue = document.getElementById('organicBurialValue');
+            const runModelButton = document.getElementById('runModelButton');
+            const resetModelButton = document.getElementById('resetModelButton');
+
+            volcanicInputSlider.addEventListener('input', () => volcanicInputValue.textContent = volcanicInputSlider.value);
+            weatheringEfficiencySlider.addEventListener('input', () => weatheringEfficiencyValue.textContent = weatheringEfficiencySlider.value);
+            organicBurialSlider.addEventListener('input', () => organicBurialValue.textContent = organicBurialSlider.value);
+            
+            // Initialize slider values
+            volcanicInputValue.textContent = volcanicInputSlider.value;
+            weatheringEfficiencyValue.textContent = weatheringEfficiencySlider.value;
+            organicBurialValue.textContent = organicBurialSlider.value;
+
+            let co2Chart;
+            const chartCtx = document.getElementById('longTermCo2Chart').getContext('2d');
+
+            function initChart() {
+                if (co2Chart) {
+                    co2Chart.destroy();
+                }
+                co2Chart = new Chart(chartCtx, {
+                    type: 'line',
+                    data: {
+                        labels: [], // Time in millions of years
+                        datasets: [{
+                            label: 'Atmospheric CO2 (Conceptual Units)',
+                            data: [],
+                            borderColor: 'rgb(75, 192, 192)',
+                            tension: 0.1,
+                            fill: false
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: { title: { display: true, text: 'Time (Millions of Years)' } },
+                            y: { title: { display: true, text: 'CO2 Level' } }
+                        },
+                        animation: {
+                            duration: 0 // Disable animation for faster updates during simulation
+                        }
+                    }
+                });
+            }
+            initChart(); // Initialize chart on page load
+
+            function runLongTermModel() {
+                const V_in = parseFloat(volcanicInputSlider.value); // Volcanic input
+                const W_eff = parseFloat(weatheringEfficiencySlider.value); // Weathering efficiency
+                const B_org = parseFloat(organicBurialSlider.value); // Organic burial
+
+                let CO2_atm = 280; // Initial CO2 (e.g. pre-industrial like level, arbitrary units)
+                const timeSteps = 100; // Simulate 100 steps (e.g., 1 step = 1 million years)
+                const co2Data = [];
+                const timeLabels = [];
+
+                // Simplified model equations (conceptual)
+                // dCO2/dt = Volcanic_Input - Weathering_Removal - Organic_Burial_Removal
+                // Weathering_Removal = W_eff * CO2_atm^0.5 (CO2 dependence, very simplified)
+                // Organic_Burial_Removal = B_org (constant for simplicity, can be CO2/T dependent)
+
+                for (let t = 0; t <= timeSteps; t++) {
+                    co2Data.push(CO2_atm);
+                    timeLabels.push(t); // Each step is 1Ma conceptually
+
+                    const weathering_flux = W_eff * Math.sqrt(Math.max(0, CO2_atm / 100)); // Scaled, ensure positive
+                    const organic_burial_flux = B_org;
+                    
+                    const dCO2_dt = V_in - weathering_flux - organic_burial_flux;
+                    
+                    CO2_atm += dCO2_dt * 0.5; // dt is 1 (for 1 Ma step), 0.5 is a damping/scaling factor
+                    CO2_atm = Math.max(10, CO2_atm); // Prevent CO2 from going too low/negative
+                }
+
+                co2Chart.data.labels = timeLabels;
+                co2Chart.data.datasets[0].data = co2Data;
+                co2Chart.update();
+
+                // Update atmosphere visualization (conceptual)
+                if (earthAtmosphereMesh) {
+                    const finalCO2 = co2Data[co2Data.length - 1];
+                    // Normalize CO2 to a range (e.g. 0 to 1000) for opacity
+                    const minCO2 = 50; const maxCO2 = 1000;
+                    const normalizedCO2 = Math.min(1, Math.max(0, (finalCO2 - minCO2) / (maxCO2 - minCO2)));
+                    earthAtmosphereMesh.material.opacity = 0.1 + normalizedCO2 * 0.6; // Opacity from 0.1 to 0.7
+                    earthAtmosphereMesh.material.color.setHSL(0.6, 0.8, 0.5 + normalizedCO2 * 0.2); // Color shift: more intense blue/purple with higher CO2
+                }
+            }
+            
+            runModelButton.addEventListener('click', runLongTermModel);
+            resetModelButton.addEventListener('click', () => {
+                // Reset sliders to default values (can be defined or use their initial HTML values)
+                volcanicInputSlider.value = 5;
+                weatheringEfficiencySlider.value = 1.0;
+                organicBurialSlider.value = 1;
+                volcanicInputValue.textContent = volcanicInputSlider.value;
+                weatheringEfficiencyValue.textContent = weatheringEfficiencySlider.value;
+                organicBurialValue.textContent = organicBurialSlider.value;
+                
+                initChart(); // Clears the chart
+                if (earthAtmosphereMesh) { // Reset atmosphere visual
+                    earthAtmosphereMesh.material.opacity = 0.3;
+                    earthAtmosphereMesh.material.color.setHex(0x60a5fa);
+                }
+            });
+            
+            // Run model once on load with default values
+            runLongTermModel();
+
+        }); // End DOMContentLoaded
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Climate Modeling Tutorial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+        }
+        .simulation-container {
+            width: 100%;
+            height: 300px; /* Fixed height for simulation canvases */
+            background-color: #000; /* Black background for simulations */
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            position: relative; /* For potential overlay elements */
+        }
+        .chart-container {
+            width: 100%;
+            height: 300px; /* Fixed height for chart canvases */
+            background-color: #fff;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #1e3a8a; /* Dark blue for headings */
+        }
+        .control-panel label {
+            color: #374151; /* Dark gray for labels */
+        }
+        .control-panel input[type="range"] {
+            cursor: pointer;
+        }
+        .content-card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        /* Ensure Inter font is loaded if not available system-wide */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-4">Interactive Climate Modeling Tutorial</h1>
+            <p class="text-lg text-gray-600">Explore fundamental climate concepts through simple simulations and visualizations.</p>
+        </header>
+
+        <section id="greenhouse-effect" class="content-card">
+            <h2 class="text-3xl font-semibold mb-4">1. The Greenhouse Effect</h2>
+            <p class="mb-4 text-gray-700">
+                The greenhouse effect is a natural process that warms the Earth's surface. Certain gases in the atmosphere, known as greenhouse gases (GHGs) like Carbon Dioxide (CO<sub>2</sub>) and Methane (CH<sub>4</sub>), trap some of the Earth's outgoing infrared radiation, preventing it from escaping into space. This trapped energy keeps the planet warmer than it would be otherwise.
+                Human activities, primarily burning fossil fuels, have significantly increased the concentration of these gases, enhancing the greenhouse effect and leading to global warming.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Simulation: Earth's Energy Balance</h3>
+                    <div id="sim1-container" class="simulation-container"></div>
+                    <div class="control-panel mt-4">
+                        <label for="ghg-slider" class="block mb-2 font-medium">Greenhouse Gas Concentration:</label>
+                        <input type="range" id="ghg-slider" min="0" max="100" value="30" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                        <p class="text-sm text-gray-500 mt-1">Low (0) to High (100). Current: <span id="ghg-value">30</span></p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Chart: Temperature vs. GHG Level</h3>
+                    <div class="chart-container">
+                        <canvas id="chart1"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="albedo" class="content-card">
+            <h2 class="text-3xl font-semibold mb-4">2. Albedo: Surface Reflectivity</h2>
+            <p class="mb-4 text-gray-700">
+                Albedo is a measure of how much solar radiation is reflected by a surface. Lighter surfaces, like snow and ice, have a high albedo (reflect a lot of sunlight), while darker surfaces, like oceans and forests, have a low albedo (absorb more sunlight).
+                Changes in albedo can significantly impact Earth's temperature. For example, melting ice caps reduce Earth's overall albedo, leading to more absorption of solar energy and further warming (a positive feedback loop).
+            </p>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Simulation: Reflecting Sunlight</h3>
+                    <div id="sim2-container" class="simulation-container"></div>
+                    <div class="control-panel mt-4">
+                        <label for="albedo-slider" class="block mb-2 font-medium">Ice Coverage (Albedo):</label>
+                        <input type="range" id="albedo-slider" min="0" max="100" value="50" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                        <p class="text-sm text-gray-500 mt-1">Low Ice/Low Albedo (0) to High Ice/High Albedo (100). Current: <span id="albedo-value">50</span></p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Chart: Temperature vs. Albedo</h3>
+                    <div class="chart-container">
+                        <canvas id="chart2"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solar-forcing" class="content-card">
+            <h2 class="text-3xl font-semibold mb-4">3. Solar Forcing</h2>
+            <p class="mb-4 text-gray-700">
+                Solar forcing refers to changes in the climate system caused by variations in the amount of solar radiation reaching the Earth. The Sun's output is not perfectly constant and can vary over different timescales.
+                While long-term changes in Earth's orbit (Milankovitch cycles) and solar output influence climate over millennia, this simulation focuses on the direct impact of varying solar energy input on Earth's temperature.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Simulation: Solar Energy Input</h3>
+                    <div id="sim3-container" class="simulation-container"></div>
+                    <div class="control-panel mt-4">
+                        <label for="solar-slider" class="block mb-2 font-medium">Solar Input Intensity:</label>
+                        <input type="range" id="solar-slider" min="50" max="150" value="100" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                        <p class="text-sm text-gray-500 mt-1">Lower (50) to Higher (150). Current: <span id="solar-value">100</span>% of average</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Chart: Temperature vs. Solar Input</h3>
+                    <div class="chart-container">
+                        <canvas id="chart3"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-12 py-8 border-t border-gray-300">
+            <p class="text-gray-600">&copy; <span id="currentYear"></span> University Climate Studies. For educational purposes.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // --- Shared Three.js Utility Functions ---
+        function createEarth(radius = 2) {
+            const geometry = new THREE.SphereGeometry(radius, 32, 32);
+            const material = new THREE.MeshPhongMaterial({ color: 0x4A90E2 }); // Blue Earth
+            return new THREE.Mesh(geometry, material);
+        }
+
+        function createSunlight(scene) {
+            const sunlight = new THREE.DirectionalLight(0xffffff, 1.5); // Increased intensity
+            sunlight.position.set(-10, 5, 10);
+            scene.add(sunlight);
+            const ambientLight = new THREE.AmbientLight(0xaaaaaa, 0.5); // Softer ambient
+            scene.add(ambientLight);
+        }
+        
+        // --- Simulation 1: Greenhouse Effect ---
+        const sim1Container = document.getElementById('sim1-container');
+        const ghgSlider = document.getElementById('ghg-slider');
+        const ghgValueDisplay = document.getElementById('ghg-value');
+        let scene1, camera1, renderer1, earth1, atmosphere1;
+        let outgoingRays = []; // To store and manage outgoing IR rays
+
+        // Base temperature and sensitivity for GHG
+        const baseTempGHG = 15; // degrees C (simplified average)
+        const ghgSensitivity = 0.15; // How much temp changes per unit of GHG
+
+        function initSim1() {
+            scene1 = new THREE.Scene();
+            camera1 = new THREE.PerspectiveCamera(75, sim1Container.clientWidth / sim1Container.clientHeight, 0.1, 1000);
+            renderer1 = new THREE.WebGLRenderer({ antialias: true });
+            renderer1.setSize(sim1Container.clientWidth, sim1Container.clientHeight);
+            sim1Container.appendChild(renderer1.domElement);
+
+            earth1 = createEarth();
+            scene1.add(earth1);
+
+            // Simplified atmosphere layer
+            const atmGeometry = new THREE.SphereGeometry(2.2, 32, 32);
+            const atmMaterial = new THREE.MeshPhongMaterial({
+                color: 0x87CEEB, // Light sky blue
+                transparent: true,
+                opacity: 0.3  // Initial opacity
+            });
+            atmosphere1 = new THREE.Mesh(atmGeometry, atmMaterial);
+            scene1.add(atmosphere1);
+
+            createSunlight(scene1);
+            camera1.position.z = 5;
+
+            // Initial ray visualization
+            updateGHGSimulation(); 
+            animateSim1();
+        }
+
+        function updateGHGSimulation() {
+            const ghgLevel = parseInt(ghgSlider.value);
+            ghgValueDisplay.textContent = ghgLevel;
+
+            // Update atmosphere opacity based on GHG level
+            atmosphere1.material.opacity = 0.1 + (ghgLevel / 100) * 0.6; // Opacity from 0.1 to 0.7
+
+            // Clear previous rays
+            outgoingRays.forEach(rayObj => scene1.remove(rayObj.arrow));
+            outgoingRays = [];
+
+            // Simulate outgoing IR radiation and trapping
+            // More rays trapped with higher GHG
+            const numRays = 10;
+            const rayOriginHeight = 2.1; // Just above Earth's surface
+            
+            for (let i = 0; i < numRays; i++) {
+                const phi = Math.random() * Math.PI; // Restricted to one hemisphere for simplicity
+                const theta = Math.random() * Math.PI * 2;
+
+                const origin = new THREE.Vector3(
+                    rayOriginHeight * Math.sin(phi) * Math.cos(theta),
+                    rayOriginHeight * Math.sin(phi) * Math.sin(theta),
+                    rayOriginHeight * Math.cos(phi)
+                );
+                
+                let dir = origin.clone().normalize();
+                let rayLength = 2;
+                let rayColor = 0xff0000; // Red for IR
+
+                // Simple trapping logic: higher GHG means more rays get shorter (trapped)
+                if (Math.random() < ghgLevel / 100) { // Chance of being trapped
+                    rayLength = Math.random() * 0.3 + 0.1; // Shorter, "trapped" ray
+                    rayColor = 0xffa500; // Orange for trapped IR
+                }
+
+                const arrow = new THREE.ArrowHelper(dir, origin, rayLength, rayColor, 0.2, 0.1);
+                scene1.add(arrow);
+                outgoingRays.push({arrow: arrow, originalLength: rayLength, trapped: rayLength < 1.5});
+            }
+            updateChart1();
+        }
+        
+        function animateSim1() {
+            requestAnimationFrame(animateSim1);
+            earth1.rotation.y += 0.002;
+            // Animate rays slightly if needed (e.g., pulsing)
+            outgoingRays.forEach(rayObj => {
+                if(rayObj.trapped) {
+                    rayObj.arrow.scale.setScalar(1 + Math.sin(Date.now() * 0.005 + rayObj.originalLength) * 0.1);
+                }
+            });
+            renderer1.render(scene1, camera1);
+        }
+
+        ghgSlider.addEventListener('input', updateGHGSimulation);
+
+        // --- Chart 1: Temperature vs GHG ---
+        const ctx1 = document.getElementById('chart1').getContext('2d');
+        const chart1 = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: Array.from({length: 101}, (_, i) => i), // GHG levels 0-100
+                datasets: [{
+                    label: 'Global Average Temperature (°C)',
+                    data: [], // To be populated
+                    borderColor: 'rgb(255, 99, 132)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        title: { display: true, text: 'Temperature (°C)' }
+                    },
+                    x: {
+                        title: { display: true, text: 'GHG Concentration (Arbitrary Units)' }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `Temp: ${context.parsed.y.toFixed(1)}°C at GHG ${context.parsed.x}`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        function updateChart1() {
+            const ghgLevel = parseInt(ghgSlider.value);
+            const tempData = Array.from({length: 101}, (_, i) => baseTempGHG + (i * ghgSensitivity));
+            chart1.data.datasets[0].data = tempData;
+            
+            // Highlight current point
+            const currentTemp = baseTempGHG + (ghgLevel * ghgSensitivity);
+            // This is a bit tricky to do directly as a persistent "current point" marker in Chart.js v3/v4
+            // without custom plugins. For simplicity, the slider value itself is the indicator.
+            // We can update a title or annotation if needed.
+            chart1.options.plugins.title = { display: true, text: `Estimated Temp: ${currentTemp.toFixed(1)}°C` };
+            chart1.update();
+        }
+
+
+        // --- Simulation 2: Albedo ---
+        const sim2Container = document.getElementById('sim2-container');
+        const albedoSlider = document.getElementById('albedo-slider');
+        const albedoValueDisplay = document.getElementById('albedo-value');
+        let scene2, camera2, renderer2, earth2, iceCaps; // iceCaps will be a separate mesh
+
+        const baseTempAlbedo = 18; // Slightly higher base for albedo effect demonstration
+        const albedoSensitivity = -0.12; // Temp decreases with higher albedo (more reflection)
+
+        function initSim2() {
+            scene2 = new THREE.Scene();
+            camera2 = new THREE.PerspectiveCamera(75, sim2Container.clientWidth / sim2Container.clientHeight, 0.1, 1000);
+            renderer2 = new THREE.WebGLRenderer({ antialias: true });
+            renderer2.setSize(sim2Container.clientWidth, sim2Container.clientHeight);
+            sim2Container.appendChild(renderer2.domElement);
+
+            earth2 = createEarth(); // Standard blue Earth
+            scene2.add(earth2);
+
+            // Create ice caps material (white)
+            const iceMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff, shininess: 80 });
+            
+            // Create geometry for polar caps. We'll use two caps (north and south).
+            // Using sphere segments that are scaled and positioned.
+            const capSegments = 32;
+            const capRadius = 2.01; // Slightly larger than Earth to sit on top
+
+            // North Cap: phiStart = 0, phiLength = variable
+            const northCapGeom = new THREE.SphereGeometry(capRadius, capSegments, capSegments, 0, Math.PI * 2, 0, Math.PI * 0.25); // Default 1/4 of hemisphere
+            const northCap = new THREE.Mesh(northCapGeom, iceMaterial);
+            
+            // South Cap: phiStart = 0, phiLength = variable, rotated
+            const southCapGeom = new THREE.SphereGeometry(capRadius, capSegments, capSegments, 0, Math.PI * 2, 0, Math.PI * 0.25);
+            const southCap = new THREE.Mesh(southCapGeom, iceMaterial);
+            southCap.rotation.x = Math.PI; // Rotate to cover the south pole
+
+            iceCaps = new THREE.Group();
+            iceCaps.add(northCap);
+            iceCaps.add(southCap);
+            scene2.add(iceCaps);
+
+            createSunlight(scene2);
+            camera2.position.z = 5;
+
+            updateAlbedoSimulation();
+            animateSim2();
+        }
+
+        function updateAlbedoSimulation() {
+            const albedoLevel = parseInt(albedoSlider.value); // 0-100
+            albedoValueDisplay.textContent = albedoLevel;
+
+            // Adjust ice cap size (phiLength of sphere geometry) based on albedoLevel
+            // phiLength controls how much of the sphere segment is drawn, from the top (0) downwards.
+            // Max phiLength for a full hemisphere is Math.PI / 2.
+            // We'll map albedoLevel (0-100) to a phiLength from 0 (no cap) to Math.PI * 0.35 (large cap).
+            const maxPhi = Math.PI * 0.35; 
+            const currentPhi = (albedoLevel / 100) * maxPhi;
+
+            iceCaps.children.forEach(cap => {
+                // We need to recreate geometry for SphereGeometry changes to take effect properly
+                // This is inefficient for real-time, but for a slider it's acceptable.
+                // A better way would be to use morph targets or shaders.
+                const oldCap = cap;
+                const newGeom = new THREE.SphereGeometry(2.01, 32, 32, 0, Math.PI * 2, 0, currentPhi);
+                const newCap = new THREE.Mesh(newGeom, oldCap.material);
+                if (oldCap.rotation.x === Math.PI) newCap.rotation.x = Math.PI; // Preserve south cap rotation
+                
+                iceCaps.remove(oldCap);
+                oldCap.geometry.dispose(); // Clean up old geometry
+                iceCaps.add(newCap);
+            });
+            
+            // Simulate reflected light intensity (e.g., by changing Earth's color slightly or adding more "reflected" particles)
+            // For simplicity, we'll just change the ice cap visibility/size.
+            // A more advanced sim could show more white particles bouncing off with higher albedo.
+
+            updateChart2();
+        }
+
+        function animateSim2() {
+            requestAnimationFrame(animateSim2);
+            earth2.rotation.y += 0.002;
+            iceCaps.rotation.y += 0.002; // Rotate caps with Earth
+            renderer2.render(scene2, camera2);
+        }
+
+        albedoSlider.addEventListener('input', updateAlbedoSimulation);
+
+        // --- Chart 2: Temperature vs Albedo ---
+        const ctx2 = document.getElementById('chart2').getContext('2d');
+        const chart2 = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: Array.from({length: 101}, (_, i) => i), // Albedo levels 0-100
+                datasets: [{
+                    label: 'Global Average Temperature (°C)',
+                    data: [],
+                    borderColor: 'rgb(75, 192, 192)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        title: { display: true, text: 'Temperature (°C)' }
+                    },
+                    x: {
+                        title: { display: true, text: 'Ice Coverage / Albedo (Arbitrary Units)' }
+                    }
+                },
+                 plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `Temp: ${context.parsed.y.toFixed(1)}°C at Albedo ${context.parsed.x}`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        function updateChart2() {
+            const albedoLevel = parseInt(albedoSlider.value);
+            // Temperature decreases as albedo increases
+            const tempData = Array.from({length: 101}, (_, i) => baseTempAlbedo + (i * albedoSensitivity));
+            chart2.data.datasets[0].data = tempData;
+            const currentTemp = baseTempAlbedo + (albedoLevel * albedoSensitivity);
+            chart2.options.plugins.title = { display: true, text: `Estimated Temp: ${currentTemp.toFixed(1)}°C` };
+            chart2.update();
+        }
+
+        // --- Simulation 3: Solar Forcing ---
+        const sim3Container = document.getElementById('sim3-container');
+        const solarSlider = document.getElementById('solar-slider');
+        const solarValueDisplay = document.getElementById('solar-value');
+        let scene3, camera3, renderer3, earth3, sunLight3, sunRepresentation;
+
+        const baseTempSolar = 15; // Base temperature
+        const solarSensitivity = 0.1; // Temp change per % solar input change from 100%
+
+        function initSim3() {
+            scene3 = new THREE.Scene();
+            camera3 = new THREE.PerspectiveCamera(75, sim3Container.clientWidth / sim3Container.clientHeight, 0.1, 1000);
+            renderer3 = new THREE.WebGLRenderer({ antialias: true });
+            renderer3.setSize(sim3Container.clientWidth, sim3Container.clientHeight);
+            sim3Container.appendChild(renderer3.domElement);
+
+            earth3 = createEarth();
+            scene3.add(earth3);
+
+            // Main directional light representing sunlight
+            sunLight3 = new THREE.DirectionalLight(0xffffff, 1.0); // Initial intensity
+            sunLight3.position.set(-10, 2, 5);
+            scene3.add(sunLight3);
+            
+            // Visual representation of the "sun" (optional, could be just the light source)
+            const sunGeom = new THREE.SphereGeometry(0.5, 16, 16);
+            const sunMat = new THREE.MeshBasicMaterial({ color: 0xFFFDE4, emissive: 0xFFFF00 }); // Yellow, emissive
+            sunRepresentation = new THREE.Mesh(sunGeom, sunMat);
+            sunRepresentation.position.set(-10, 2, 5); // Same as light source for visual cue
+            scene3.add(sunRepresentation);
+
+
+            const ambientLight3 = new THREE.AmbientLight(0xaaaaaa, 0.3);
+            scene3.add(ambientLight3);
+
+            camera3.position.z = 5;
+
+            updateSolarSimulation();
+            animateSim3();
+        }
+
+        function updateSolarSimulation() {
+            const solarLevel = parseInt(solarSlider.value); // 50-150
+            solarValueDisplay.textContent = solarLevel;
+
+            // Adjust sunlight intensity
+            // Slider value is a percentage. 100% is normal (intensity 1.0).
+            sunLight3.intensity = (solarLevel / 100) * 1.5; // Base intensity 1.5 for better visual
+            
+            // Adjust visual sun representation (e.g. brightness or size slightly)
+            // For simplicity, we'll change its emissive intensity if possible, or scale
+            sunRepresentation.material.emissiveIntensity = solarLevel / 50; // Scale emissiveness
+            sunRepresentation.scale.setScalar(0.8 + (solarLevel / 100) * 0.4);
+
+
+            // Add visual cues for solar radiation intensity (e.g., more/brighter "rays")
+            // This is complex to do well with ArrowHelper for many rays.
+            // For now, the light intensity on Earth and sun brightness is the main cue.
+
+            updateChart3();
+        }
+
+        function animateSim3() {
+            requestAnimationFrame(animateSim3);
+            earth3.rotation.y += 0.002;
+            renderer3.render(scene3, camera3);
+        }
+
+        solarSlider.addEventListener('input', updateSolarSimulation);
+
+        // --- Chart 3: Temperature vs Solar Input ---
+        const ctx3 = document.getElementById('chart3').getContext('2d');
+        const chart3 = new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: Array.from({length: 101}, (_, i) => i + 50), // Solar input 50-150
+                datasets: [{
+                    label: 'Global Average Temperature (°C)',
+                    data: [],
+                    borderColor: 'rgb(255, 159, 64)',
+                    backgroundColor: 'rgba(255, 159, 64, 0.5)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        title: { display: true, text: 'Temperature (°C)' }
+                    },
+                    x: {
+                        title: { display: true, text: 'Solar Input Intensity (% of Average)' }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `Temp: ${context.parsed.y.toFixed(1)}°C at Solar Input ${context.parsed.x}%`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        function updateChart3() {
+            const solarLevel = parseInt(solarSlider.value);
+            // Temperature increases with solar input
+            // The slider is 50-150. Chart labels are 50-150.
+            // Data points are calculated based on deviation from 100%.
+            const tempData = Array.from({length: 101}, (_, i) => {
+                const currentSolarInput = i + 50; // This is the x-axis value
+                return baseTempSolar + ((currentSolarInput - 100) * solarSensitivity);
+            });
+            chart3.data.datasets[0].data = tempData;
+            const currentTemp = baseTempSolar + ((solarLevel - 100) * solarSensitivity);
+            chart3.options.plugins.title = { display: true, text: `Estimated Temp: ${currentTemp.toFixed(1)}°C` };
+            chart3.update();
+        }
+
+        // --- Initialize all simulations and charts ---
+        // Ensure DOM is fully loaded before initializing Three.js and Chart.js
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                initSim1();
+                updateChart1(); // Initial chart draw
+
+                initSim2();
+                updateChart2(); // Initial chart draw
+
+                initSim3();
+                updateChart3(); // Initial chart draw
+            } catch (error) {
+                console.error("Initialization error:", error);
+                // Display a user-friendly error message on the page
+                const header = document.querySelector('header');
+                const errorMsg = document.createElement('div');
+                errorMsg.innerHTML = `
+                    <p class="text-red-600 bg-red-100 p-4 rounded-lg">
+                        <strong>Error initializing simulations:</strong> ${error.message}. 
+                        Please ensure your browser supports WebGL and JavaScript is enabled. 
+                        Try refreshing the page. If the problem persists, contact the course instructor.
+                    </p>
+                `;
+                if (header) {
+                    header.parentNode.insertBefore(errorMsg, header.nextSibling);
+                } else {
+                    document.body.prepend(errorMsg);
+                }
+            }
+        });
+
+        // --- Handle window resize for responsive simulations ---
+        function onWindowResize() {
+            // Sim 1
+            if (camera1 && renderer1 && sim1Container) {
+                camera1.aspect = sim1Container.clientWidth / sim1Container.clientHeight;
+                camera1.updateProjectionMatrix();
+                renderer1.setSize(sim1Container.clientWidth, sim1Container.clientHeight);
+            }
+            // Sim 2
+            if (camera2 && renderer2 && sim2Container) {
+                camera2.aspect = sim2Container.clientWidth / sim2Container.clientHeight;
+                camera2.updateProjectionMatrix();
+                renderer2.setSize(sim2Container.clientWidth, sim2Container.clientHeight);
+            }
+            // Sim 3
+            if (camera3 && renderer3 && sim3Container) {
+                camera3.aspect = sim3Container.clientWidth / sim3Container.clientHeight;
+                camera3.updateProjectionMatrix();
+                renderer3.setSize(sim3Container.clientWidth, sim3Container.clientHeight);
+            }
+        }
+        window.addEventListener('resize', onWindowResize, false);
+
+    </script>
+</body>
+</html>
+
