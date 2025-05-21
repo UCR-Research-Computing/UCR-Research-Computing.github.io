@@ -8,7 +8,7 @@ sidebar_label: Security
 
 ## Research Security
 
-At the University of California, Riverside (UCR), ensuring the security of research data is a priority. We work closely with UCR's Information Security Team to provide comprehensive consulting services on securing your research projects. Our goal is to ensure that all research activities meet the highest standards of data security, complying with relevant regulations and university policies.
+At the University of California, Riverside (UCR), ensuring the security of research data is a priority. We work closely with UCR's Information Security Team to provide comprehensive consulting services on securing your research projects. Our goal is to ensure that all research activities meet the highest standards of data security, complying with relevant regulations and university policies. Understanding and adhering to records retention policies is also a critical component of responsible data management. For guidance, please refer to the [UC Riverside Research Records Retention: A Quick Guide for Researchers](./ucr_research_records_retention_guide.md).
 
 We assist researchers in several key areas:
 
