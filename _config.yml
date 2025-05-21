@@ -34,7 +34,7 @@ sidebar:
       - infrastructure-support
       - grant-collaboration
       - lab-support
-      - ucr_research_records_retention_guide
+      - ucr-research-records-retention-guide
   - label: Training
     children:
       - workshops-and-webinars
