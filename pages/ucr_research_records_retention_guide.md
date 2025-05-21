@@ -1,5 +1,5 @@
 ---
-id: ucr_research_records_retention_guide
+id: ucr-research-records-retention-guide
 title: UC Riverside Research Records Retention: A Quick Guide for Researchers
 sidebar_label: Research Records Retention
 ---
