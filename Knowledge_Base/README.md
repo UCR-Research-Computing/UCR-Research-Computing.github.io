@@ -54,6 +54,7 @@ Welcome to the UCR Research Computing Knowledge Base! This comprehensive resourc
 *   [LLM Inference Settings](llm-inference-settings.md)
 *   [The Edge AI Revolution](../pages/Edge_AI_Revolution.md)
 *   [Building AI-Optimized High-Performance Computing](../pages/Building_AI-Optimized_High-Performance_Computin.md)
+*   [Gemini for Physics Researchers](Gemini_for_Physics_Researchers.md)
 
 ### Other Computing Resources
 
