@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini for Genomics Researchers at UCR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            color: #1e293b; /* Dark slate text */
+        }
+        h1, h2, h3 {
+            color: #0f172a; /* Very dark blue, almost black */
+        }
+        .content-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .button { /* Basic button style for potential future use */
+            background-color: #3b82f6; /* Blue-500 */
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .button:hover {
+            background-color: #2563eb; /* Blue-600 */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-slate-800 text-white py-8 shadow-lg">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl font-bold">Gemini for Genomics Researchers at UCR</h1>
+            <p class="mt-2 text-lg text-slate-300">Leveraging Large Language Models for Advanced Genomics Research</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+
+        <section id="intro-gemini" class="content-card">
+            <h2 class="text-3xl font-semibold mb-4">Introduction to Gemini for Genomics Research</h2>
+            <p class="text-lg leading-relaxed mb-2">
+                Gemini is an advanced large language model (LLM) developed by Google. It's designed to understand and generate human-like text based on the vast amounts of information it has been trained on. For genomics researchers, Gemini offers exciting possibilities to accelerate discovery, streamline complex data analysis, and even spark new avenues of investigation.
+            </p>
+            <p class="text-lg leading-relaxed mb-2">
+                Potential benefits include:
+            </p>
+            <ul class="list-disc list-inside text-lg mb-2 ml-4">
+                <li><span class="font-semibold">Accelerating Literature Review:</span> Quickly summarize research papers and identify key findings.</li>
+                <li><span class="font-semibold">Generating Hypotheses:</span> Brainstorm potential connections between genes, diseases, and pathways.</li>
+                <li><span class="font-semibold">Assisting with Data Analysis:</span> Get help with coding for bioinformatics tasks or interpreting complex datasets.</li>
+                <li><span class="font-semibold">Drafting Content:</span> Assist in writing grant proposals, manuscripts, and reports.</li>
+            </ul>
+            <p class="text-lg leading-relaxed">
+                UCR Research Computing is supportive of exploring innovative tools like Gemini to enhance research capabilities. We encourage researchers to learn about its potential while being mindful of best practices, especially concerning data privacy and ethics.
+            </p>
+        </section>
+
+        <section id="examples-gemini" class="content-card">
+            <h2 class="text-3xl font-semibold mb-4">Examples of Gemini in Genomics Research</h2>
+            <p class="text-lg leading-relaxed mb-4">Gemini can be a versatile assistant for various genomics research tasks. Below are some examples with hypothetical prompts. Click on each example heading to expand or collapse the content. Remember to adapt and refine prompts for your specific needs.</p>
+
+            <div class="collapsible-section mb-3">
+                <h3 class="toggle-trigger text-2xl font-semibold mb-2 text-sky-700 cursor-pointer hover:text-sky-500">
+                    Literature Review <span class="toggle-indicator text-lg ml-1 font-sans">[+]</span>
+                </h3>
+                <div class="toggle-content hidden pl-4">
+                    <p class="text-lg leading-relaxed mb-2">Gemini can help digest large volumes of scientific literature, identify trends, and find relevant publications. This can save significant time in the initial stages of a research project.</p>
+                    <div class="bg-slate-100 p-3 rounded-md shadow text-sm">
+                        <p class="font-mono"><span class="font-semibold text-slate-600">Example Prompt:</span> "Summarize recent advancements (last 2 years) in using CRISPR-Cas9 for targeted therapy of non-small cell lung cancer. Highlight key challenges and future directions."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-section mt-6 mb-3">
+                <h3 class="toggle-trigger text-2xl font-semibold mb-2 text-sky-700 cursor-pointer hover:text-sky-500">
+                    Grant Proposal Assistance <span class="toggle-indicator text-lg ml-1 font-sans">[+]</span>
+                </h3>
+                <div class="toggle-content hidden pl-4">
+                    <p class="text-lg leading-relaxed mb-2">While Gemini won't write a full grant for you, it can assist in drafting specific sections, refining language for clarity and impact, and checking for consistency.</p>
+                    <div class="bg-slate-100 p-3 rounded-md shadow text-sm">
+                        <p class="font-mono"><span class="font-semibold text-slate-600">Example Prompt:</span> "Help me draft an introductory paragraph for a grant proposal focused on investigating the role of long non-coding RNAs in drought stress response in Arabidopsis. Emphasize the novelty and potential impact of this research."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-section mt-6 mb-3">
+                <h3 class="toggle-trigger text-2xl font-semibold mb-2 text-sky-700 cursor-pointer hover:text-sky-500">
+                    Bioinformatics Code Generation <span class="toggle-indicator text-lg ml-1 font-sans">[+]</span>
+                </h3>
+                <div class="toggle-content hidden pl-4">
+                    <p class="text-lg leading-relaxed mb-2">Gemini can generate or help debug simple scripts for common bioinformatics tasks. It's particularly useful for boilerplate code or translating logic into a specific programming language.</p>
+                    <div class="bg-slate-100 p-3 rounded-md shadow text-sm">
+                        <p class="font-mono"><span class="font-semibold text-slate-600">Example Prompt:</span> "Write a Python script using Biopython to parse a multi-FASTA file ('sequences.fasta') and calculate the length of each sequence. Store the results in a dictionary with sequence ID as key and length as value."</p>
+                    </div>
+                    <p class="text-sm mt-2 text-orange-600"><span class="font-semibold">Note:</span> Always test generated code thoroughly and understand its functionality before using it in critical pipelines.</p>
+                </div>
+            </div>
+
+            <div class="collapsible-section mt-6 mb-3">
+                <h3 class="toggle-trigger text-2xl font-semibold mb-2 text-sky-700 cursor-pointer hover:text-sky-500">
+                    Interpreting Variant Data <span class="toggle-indicator text-lg ml-1 font-sans">[+]</span>
+                </h3>
+                <div class="toggle-content hidden pl-4">
+                    <p class="text-lg leading-relaxed mb-2">Gemini can quickly search and summarize information about specific genetic variants from public databases. However, it is crucial to understand its limitations.</p>
+                    <div class="bg-slate-100 p-3 rounded-md shadow text-sm">
+                        <p class="font-mono"><span class="font-semibold text-slate-600">Example Prompt:</span> "What is known about the clinical significance of the genetic variant rs7412 in the APOE gene, particularly concerning Alzheimer's disease risk?"</p>
+                    </div>
+                    <div class="mt-2 p-3 rounded-md border-l-4 border-red-500 bg-red-50">
+                        <p class="font-semibold text-red-700">Important Disclaimer:</p>
+                        <p class="text-red-600">Gemini is NOT a diagnostic tool. Information retrieved should be verified with peer-reviewed literature and clinical databases by qualified personnel. Do not use it for making clinical decisions.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-section mt-6">
+                <h3 class="toggle-trigger text-2xl font-semibold mb-2 text-sky-700 cursor-pointer hover:text-sky-500">
+                    Experimental Design <span class="toggle-indicator text-lg ml-1 font-sans">[+]</span>
+                </h3>
+                <div class="toggle-content hidden pl-4">
+                    <p class="text-lg leading-relaxed mb-2">Gemini can serve as a brainstorming partner, helping to outline potential experimental steps, suggest controls, or identify alternative approaches you might not have considered.</p>
+                    <div class="bg-slate-100 p-3 rounded-md shadow text-sm">
+                        <p class="font-mono"><span class="font-semibold text-slate-600">Example Prompt:</span> "I have identified a novel protein-protein interaction between Protein X and Protein Y using a yeast two-hybrid screen. Suggest three different experimental approaches I could use to validate this interaction in mammalian cells. For each, briefly list the key steps and controls."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="prompting-strategies" class="content-card">
+            <h2 class="text-3xl font-semibold mb-4">Effective Prompting Strategies for Gemini</h2>
+            <p class="text-lg leading-relaxed mb-3">The quality of output from Gemini heavily depends on the quality of your prompts. Here are some tips to help you write effective prompts for genomics research:</p>
+            <ul class="list-disc list-inside text-lg mb-3 ml-4 space-y-1">
+                <li><strong>Be Specific and Clear:</strong> Vague prompts lead to vague answers. Clearly define what you need.</li>
+                <li><strong>Provide Context:</strong> Include relevant background information, gene names, species, or specific conditions.</li>
+                <li><strong>Define the Desired Output Format:</strong> Ask for the information in a "list", "summary", "table", "Python code block", etc.</li>
+                <li><strong>Iterate and Refine:</strong> Don't expect the perfect answer on the first try. Rephrase your prompt, add details, or ask follow-up questions.</li>
+                <li><strong>Use Personas:</strong> You can guide Gemini's response style by telling it to act as a specific expert (e.g., "Act as an expert bioinformatician specializing in RNA-seq analysis...").</li>
+                <li><strong>Break Down Complex Tasks:</strong> For multi-step problems, ask Gemini to tackle each step separately.</li>
+            </ul>
+
+            <div class="collapsible-section">
+                <h3 class="toggle-trigger text-xl font-semibold mb-2 cursor-pointer hover:text-gray-700">
+                    Good Prompt vs. Bad Prompt Example <span class="toggle-indicator text-base ml-1 font-sans">[+]</span>
+                </h3>
+                <div class="toggle-content hidden grid md:grid-cols-2 gap-4">
+                    <div class="border border-red-300 p-3 rounded-md bg-red-50">
+                        <h4 class="font-semibold text-lg text-red-700 mb-1">Bad Prompt:</h4>
+                        <p class="text-sm italic">"Tell me about gene editing."</p>
+                        <p class="text-xs mt-1 text-red-600">(Too broad, lacks context and desired output.)</p>
+                    </div>
+                    <div class="border border-green-300 p-3 rounded-md bg-green-50">
+                        <h4 class="font-semibold text-lg text-green-700 mb-1">Good Prompt:</h4>
+                        <p class="text-sm italic">"Explain the mechanism of action of CRISPR-Cas9 for gene editing in human cells. Describe potential off-target effects and how they can be minimized. Provide the answer as a concise summary suitable for a graduate-level seminar."</p>
+                        <p class="text-xs mt-1 text-green-600">(Specific, provides context, and defines the expected output format and audience.)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="privacy-ethics" class="content-card">
+            <h2 class="text-3xl font-semibold mb-4">Data Privacy and Ethical Considerations</h2>
+            <p class="text-lg leading-relaxed mb-3">
+                While Gemini offers powerful capabilities, it is paramount to use it responsibly, especially when dealing with genomics data, which can be sensitive.
+            </p>
+            <div class="p-4 rounded-md border-l-4 border-red-600 bg-red-100 mb-4">
+                <h3 class="text-xl font-semibold text-red-800 mb-2">Critical Warning: Do Not Upload Sensitive Data</h3>
+                <p class="text-red-700 leading-relaxed">
+                    <strong>Under no circumstances should sensitive, identifiable patient or human subject data, Protected Health Information (PHI), or any Controlled Unclassified Information (CUI) be uploaded to or processed with public versions of Gemini or other third-party AI models.</strong>
+                    Doing so can lead to data breaches, privacy violations, and non-compliance with federal regulations (e.g., HIPAA) and UCR policies.
+                </p>
+            </div>
+            
+            <h3 class="text-xl font-semibold mb-2">UCR Policies and Guidance:</h3>
+            <p class="text-lg leading-relaxed mb-2">
+                All researchers must adhere to UCR's data security and privacy policies. For detailed information, please consult:
+            </p>
+            <ul class="list-disc list-inside text-lg mb-3 ml-4">
+                <li><a href="Knowledge_Base/UCR_Data_Security_Plans.md" class="text-sky-600 hover:underline">UCR Data Security Plan Guidelines (Placeholder Link)</a></li>
+                <li><a href="Knowledge_Base/README.md" class="text-sky-600 hover:underline">UCR Research Computing Knowledge Base (Placeholder Link)</a></li>
+                <li>Your department's specific data handling protocols.</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold mb-2">Intellectual Property and Proprietary Data:</h3>
+            <p class="text-lg leading-relaxed mb-2">
+                Be mindful of intellectual property when using Gemini. Avoid inputting unpublished research findings, novel algorithms, or other proprietary information into public AI models, as this could compromise your IP rights. Consult with UCR Technology Commercialization if you have questions.
+            </p>
+
+            <h3 class="text-xl font-semibold mb-2">Consultation and Support:</h3>
+            <p class="text-lg leading-relaxed">
+                If you are unsure about how to use Gemini or other AI tools with your research data, especially if it involves any level of sensitivity, please contact <a href="mailto:research-computing@ucr.edu" class="text-sky-600 hover:underline">UCR Research Computing</a> or the UCR Institutional Review Board (IRB) for guidance. We can help you explore options and ensure compliance.
+            </p>
+        </section>
+
+        <section id="useful-links" class="content-card">
+            <h2 class="text-3xl font-semibold mb-4">Useful Links (UCR & External)</h2>
+
+            <div class="mb-6">
+                <h3 class="text-2xl font-semibold mb-2 text-sky-700">UCR Resources</h3>
+                <ul class="list-disc list-inside text-lg ml-4 space-y-1">
+                    <li><a href="../pages/about.md" class="text-sky-600 hover:underline">UCR Research Computing Main Page</a></li>
+                    <li><a href="Knowledge_Base/Ursa_Major_HPC_Clusters.md" class="text-sky-600 hover:underline">UCR HPC Resources (Ursa Major Clusters)</a></li>
+                    <li><a href="Knowledge_Base/Ursa_Major_Research_Storage.md" class="text-sky-600 hover:underline">UCR Research Data Storage Solutions</a></li>
+                    <li><a href="#" class="text-sky-600 hover:underline">UCR Guidelines on AI Usage in Research (Placeholder - To be added when available)</a></li>
+                    <li><a href="https://research.ucr.edu/ori/irb" class="text-sky-600 hover:underline" target="_blank">UCR Institutional Review Board (IRB)</a></li>
+                    <li><a href="https://techcomm.ucr.edu/" class="text-sky-600 hover:underline" target="_blank">UCR Office of Technology Partnerships (IP and Tech Commercialization)</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-semibold mb-2 text-sky-700">External Gemini & LLM Resources</h3>
+                <ul class="list-disc list-inside text-lg ml-4 space-y-1">
+                    <li><a href="https://deepmind.google/technologies/gemini/" class="text-sky-600 hover:underline" target="_blank">Google Gemini Official Page</a></li>
+                    <li><a href="https://ai.google/docs/" class="text-sky-600 hover:underline" target="_blank">Google AI Documentation & Tutorials (Placeholder)</a></li>
+                    <li><a href="https://www.nature.com/articles/d41586-023-02361-7" class="text-sky-600 hover:underline" target="_blank">"How to use ChatGPT and other large language models in science" (Nature, 2023 - Example Article)</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="interactive-simulations" class="content-card">
+            <h2 class="text-3xl font-semibold mb-4">Interactive Simulations (Placeholder)</h2>
+            <p class="text-lg leading-relaxed">Placeholder for future interactive simulations or embedded tools that could demonstrate Gemini's capabilities in a hands-on manner. This section might be developed further as the project progresses. Future interactive simulations could demonstrate prompt engineering for genomics or visualize AI-driven hypothesis generation. If you have ideas, please contact the Research Computing team.</p>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-800 text-white py-6 text-center">
+        <p>&copy; <span id="currentYear"></span> UCR Genomics Research Group. For educational and research purposes.</p>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Collapsible sections script
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleTriggers = document.querySelectorAll('.toggle-trigger');
+
+            toggleTriggers.forEach(trigger => {
+                trigger.addEventListener('click', () => {
+                    const content = trigger.nextElementSibling; // Assumes content div is immediately after trigger h3
+                    const indicator = trigger.querySelector('.toggle-indicator');
+
+                    if (content && content.classList.contains('toggle-content')) {
+                        content.classList.toggle('hidden');
+                        if (content.classList.contains('hidden')) {
+                            indicator.textContent = '[+]';
+                        } else {
+                            indicator.textContent = '[-]';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
