@@ -89,6 +89,7 @@ Welcome to the UCR Research Computing Knowledge Base! This comprehensive resourc
 *   [Molecular Dynamics Simulation Input Files with ChatGPT](md_simulation_input_files_chatpgt.md)
 *   [UCR Research Computing Github Org](https://github.com/UCR-Research-Computing):
 *   [Offline LLMs (Ollama)](ollama-how-to.md)
+*   [UCR Computational Chemistry Software Optimization Report](ucr_comp_chem_report.html): An interactive report detailing the assessment of computational chemistry software, HPC performance, licensing, and recommendations for UCR's software stack.
 *   [Software and Application Support](../pages/software_and_application_support.md)
 
 ## Research Facilitation

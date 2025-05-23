@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCR Computational Chemistry Software Optimization Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Visualization & Content Choices:
+        - Executive Summary/Intro: Text display. Goal: Orient user. Method: HTML text. Interaction: Navigation.
+        - Software Explorer: Interactive filterable list/grid of software packages. Goal: Compare, Explore. Method: JS-rendered HTML cards from structured data. Interaction: Filters (category, license), click to show details in a modal. Library: Vanilla JS.
+        - Comparative Tables (HPC, Licensing, Containerization): HTML tables. Goal: Inform, Compare. Method: Static HTML tables. Interaction: Scroll.
+        - Licensing Cost Chart: Bar chart. Goal: Compare costs. Method: Chart.js canvas. Interaction: Tooltips. Library: Chart.js.
+        - Gemini Tools Section: Text with expandable sections. Goal: Explain integration. Method: HTML text, JS for accordions. Interaction: Click to expand.
+        - UCR Recommendations: Text with expandable sections. Goal: Present strategy. Method: HTML text, JS for accordions. Interaction: Click to expand.
+        - Glossary: HTML list. Goal: Define terms. Method: HTML text. Interaction: Scroll/Search (if implemented).
+        - Appendix Matrices: HTML tables. Goal: Provide detailed reference. Method: Static HTML tables within scrollable divs. Interaction: Scroll.
+        - Justification: This approach balances information density with usability. Interactive elements are focused on areas where exploration adds most value (Software Explorer). Tables and text present detailed information clearly. Chart.js is used for quantitative comparison (costs). NO SVG/Mermaid.
+    -->
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        .nav-link { transition: all 0.3s ease; }
+        .nav-link.active { background-color: #0284c7; color: white; }
+        .nav-link:hover { background-color: #e0f2fe; color: #0c4a6e; }
+        .content-section { display: none; }
+        .content-section.active { display: block; }
+        .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5); }
+        .modal-content { background-color: #fefefe; margin: 5% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 800px; border-radius: 8px; position: relative; }
+        .close-button { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+        .close-button:hover, .close-button:focus { color: black; text-decoration: none; cursor: pointer; }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .chart-container { position: relative; width: 100%; max-width: 700px; margin-left: auto; margin-right: auto; height: 400px; max-height: 450px; }
+        @media (min-width: 768px) { .chart-container { height: 450px; } }
+        table th, table td { border: 1px solid #e5e7eb; padding: 8px; text-align: left; }
+        table th { background-color: #f3f4f6; }
+        .table-container { max-height: 500px; overflow-y: auto; }
+    </style>
+</head>
+<body class="bg-stone-100 text-slate-800">
+    <div class="flex flex-col md:flex-row min-h-screen">
+        <nav class="md:w-64 bg-white shadow-lg p-4 space-y-2">
+            <h1 class="text-2xl font-bold text-sky-700 mb-6 border-b pb-2">UCR ChemSoft Report</h1>
+            <a href="#" class="nav-link block py-2 px-3 rounded-md font-medium text-slate-700" data-section="home">Home</a>
+            <a href="#" class="nav-link block py-2 px-3 rounded-md font-medium text-slate-700" data-section="software-explorer">Software Explorer</a>
+            <a href="#" class="nav-link block py-2 px-3 rounded-md font-medium text-slate-700" data-section="gemini-tools">Gemini Tools Integration</a>
+            <a href="#" class="nav-link block py-2 px-3 rounded-md font-medium text-slate-700" data-section="ucr-recommendations">UCR Recommendations</a>
+            <a href="#" class="nav-link block py-2 px-3 rounded-md font-medium text-slate-700" data-section="data-tables">Comparative Tables</a>
+            <a href="#" class="nav-link block py-2 px-3 rounded-md font-medium text-slate-700" data-section="appendix-matrices">Appendix Matrices</a>
+            <a href="#" class="nav-link block py-2 px-3 rounded-md font-medium text-slate-700" data-section="glossary">Glossary</a>
+        </nav>
+
+        <main class="flex-1 p-6 md:p-10 overflow-y-auto">
+            <section id="home" class="content-section space-y-6">
+                <h2 class="text-3xl font-semibold text-sky-600 border-b pb-2">Welcome to the Interactive Report</h2>
+                <p class="text-lg">This interactive application provides an explorable overview of the "Optimizing UCR's Computational Chemistry Software Stack" report. Use the navigation on the left to explore different sections, including detailed software comparisons, insights on Gemini tool integration, and strategic recommendations for UCR.</p>
+                
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-2xl font-semibold text-slate-700 mb-3">Executive Summary</h3>
+                    <p>This report provides a comprehensive assessment of the computational chemistry software landscape and offers actionable recommendations for optimizing the University of California, Riverside's (UCR) software stack. The analysis identifies leading software packages, evaluates their scientific capabilities, performance on High-Performance Computing (HPC) systems, licensing models, ease of use, and potential for integration with advanced AI/ML tools, referred to herein as "Gemini tools."</p>
+                    <p class="mt-2">Key findings indicate a dynamic field with a strong trend towards powerful, academically free or open-source software, often with robust Python integration, which is crucial for extensibility and AI/ML applications. Commercial packages continue to offer broad capabilities but at significant cost. GPU acceleration is increasingly important for performance, though its effectiveness varies by software and calculation type. Containerization is emerging as a vital strategy for deployment and reproducibility.</p>
+                    <p class="mt-2">High-priority recommendations for UCR include:
+                        1.  Adopting a tiered software portfolio that prioritizes leading free academic/open-source software.
+                        2.  Implementing a robust containerization strategy.
+                        3.  Developing a phased roadmap for integrating Gemini (AI/ML) tools.
+                        4.  Investing in researcher training and community-building.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-2xl font-semibold text-slate-700 mb-3">I. Introduction</h3>
+                    <p>This section of the report (not fully replicated here for brevity) discusses the evolving landscape of computational chemistry, the objectives of optimizing UCR's software ecosystem, and the emerging role of advanced computational tools like "Gemini" in the chemical sciences. It highlights the shift towards computer-driven discovery and the importance of integrating AI/ML capabilities.</p>
+                </div>
+            </section>
+
+            <section id="software-explorer" class="content-section space-y-6">
+                <h2 class="text-3xl font-semibold text-sky-600 border-b pb-2">Software Explorer</h2>
+                <p class="text-lg">Explore various computational chemistry software packages. Use the filters to narrow down your search and click on a software name for more details. This section summarizes information from Section II of the report.</p>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <div>
+                            <label for="filter-category" class="block text-sm font-medium text-slate-700">Category:</label>
+                            <select id="filter-category" class="mt-1 block w-full py-2 px-3 border border-slate-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
+                                <option value="all">All Categories</option>
+                                <option value="QM">Quantum Mechanics (QM)</option>
+                                <option value="MD">Molecular Dynamics (MD) & QM/MM</option>
+                                <option value="SpecializedGPU">Specialized & GPU-Accelerated</option>
+                                <option value="VizWorkflow">Visualization & Workflow</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="filter-license" class="block text-sm font-medium text-slate-700">License Type:</label>
+                            <select id="filter-license" class="mt-1 block w-full py-2 px-3 border border-slate-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
+                                <option value="all">All Licenses</option>
+                                <option value="Commercial">Commercial</option>
+                                <option value="Free Academic">Free Academic</option>
+                                <option value="Open Source">Open Source</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="filter-gpu" class="block text-sm font-medium text-slate-700">GPU Support:</label>
+                            <select id="filter-gpu" class="mt-1 block w-full py-2 px-3 border border-slate-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
+                                <option value="all">Any GPU Support</option>
+                                <option value="Yes">Yes</option>
+                                <option value="Partial/Limited">Partial/Limited</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="software-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        </div>
+                </div>
+            </section>
+
+            <section id="gemini-tools" class="content-section space-y-6">
+                <h2 class="text-3xl font-semibold text-sky-600 border-b pb-2">Leveraging Gemini Tools</h2>
+                <p class="text-lg">This section outlines how "Gemini tools" (advanced AI/ML capabilities) can be integrated into computational chemistry workflows to enhance research, based on Section IV of the report.</p>
+                
+                <div class="bg-white p-6 rounded-lg shadow accordion">
+                    <button class="accordion-button w-full text-left text-xl font-semibold text-slate-700 py-3 flex justify-between items-center">
+                        <span>A. Identifying Integration Points</span>
+                        <span class="accordion-icon text-sky-600 text-2xl">&plus;</span>
+                    </button>
+                    <div class="accordion-content px-3 pb-3 text-slate-600 space-y-2">
+                        <p>AI/ML can be interwoven into various stages:
+                            <ul class="list-disc list-inside ml-4">
+                                <li><strong>Accelerating Discovery with ML:</strong> Rapid property prediction, materials/drug discovery, catalyst design.</li>
+                                <li><strong>Enhancing Simulations with ML:</strong> ML-driven force field development, accelerated sampling, reaction pathway discovery.</li>
+                                <li><strong>Automating Complex Workflows:</strong> High-throughput screening, active learning.</li>
+                                <li><strong>Data Analysis and Interpretation:</strong> Trajectory analysis, spectra interpretation.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow accordion">
+                    <button class="accordion-button w-full text-left text-xl font-semibold text-slate-700 py-3 flex justify-between items-center">
+                        <span>B. Software and Strategies Supporting Integration</span>
+                        <span class="accordion-icon text-sky-600 text-2xl">&plus;</span>
+                    </button>
+                    <div class="accordion-content px-3 pb-3 text-slate-600 space-y-2">
+                        <p>Effective integration requires:
+                            <ul class="list-disc list-inside ml-4">
+                                <li><strong>Python-Centric Ecosystem:</strong> Leveraging Python's AI/ML libraries (TensorFlow, PyTorch) and Python-friendly chemistry software (PySCF, Psi4, ASE, OpenMM).</li>
+                                <li><strong>Workflow Management Systems:</strong> Tools like AiiDA or KNIME for managing complex AI-augmented simulation pipelines.</li>
+                                <li><strong>Standardized Data Formats and APIs:</strong> For seamless data exchange.</li>
+                                <li><strong>Containerization for ML Environments:</strong> Using Docker/Singularity for reproducible ML environments.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+
+                 <div class="bg-white p-6 rounded-lg shadow accordion">
+                    <button class="accordion-button w-full text-left text-xl font-semibold text-slate-700 py-3 flex justify-between items-center">
+                        <span>C. Potential Benefits and Challenges</span>
+                        <span class="accordion-icon text-sky-600 text-2xl">&plus;</span>
+                    </button>
+                    <div class="accordion-content px-3 pb-3 text-slate-600 space-y-2">
+                        <p><strong>Benefits:</strong>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>Accelerated discovery cycles.</li>
+                                <li>Reduced computational cost.</li>
+                                <li>Novel insights from data.</li>
+                                <li>Enhanced accuracy and predictive power.</li>
+                            </ul>
+                        </p>
+                        <p class="mt-2"><strong>Challenges:</strong>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>Data requirements and generation for training ML models.</li>
+                                <li>Model validation and interpretability (avoiding "black box" issues).</li>
+                                <li>Expertise gap requiring interdisciplinary skills.</li>
+                                <li>Infrastructure requirements for AI/ML.</li>
+                                <li>Integration complexity of diverse software tools.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ucr-recommendations" class="content-section space-y-6">
+                <h2 class="text-3xl font-semibold text-sky-600 border-b pb-2">Strategic Recommendations for UCR</h2>
+                <p class="text-lg">This section summarizes the strategic recommendations for UCR's computational chemistry software stack, based on Section V of the report.</p>
+
+                <div class="bg-white p-6 rounded-lg shadow accordion">
+                    <button class="accordion-button w-full text-left text-xl font-semibold text-slate-700 py-3 flex justify-between items-center">
+                        <span>A. Core Software Portfolio</span>
+                        <span class="accordion-icon text-sky-600 text-2xl">&plus;</span>
+                    </button>
+                    <div class="accordion-content px-3 pb-3 text-slate-600 space-y-2">
+                        <p>A tiered approach is recommended:</p>
+                        <ul class="list-disc list-inside ml-4 space-y-1">
+                            <li><strong>Tier 1 (Foundational - Free/Open Source):</strong> ORCA (QM), GROMACS (MD), PySCF/Psi4 (Python-based QM). These should receive comprehensive support.</li>
+                            <li><strong>Tier 2 (Specialized - Mix):</strong> Gaussian (with caution due to cost), VASP/Quantum ESPRESSO (solid-state), AMBER (if existing expertise), NWChem. Support based on research needs.</li>
+                            <li><strong>Tier 3 (Niche/Evaluation - Commercial):</strong> Q-Chem, SCM AMS, Schrödinger Suite, TeraChem. Funded by individual grants for unique needs.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow accordion">
+                    <button class="accordion-button w-full text-left text-xl font-semibold text-slate-700 py-3 flex justify-between items-center">
+                        <span>B. Licensing and Cost Management</span>
+                        <span class="accordion-icon text-sky-600 text-2xl">&plus;</span>
+                    </button>
+                    <div class="accordion-content px-3 pb-3 text-slate-600 space-y-2">
+                         <ul class="list-disc list-inside ml-4">
+                            <li>Prioritize free academic/open-source software.</li>
+                            <li>Strategically license commercial software: evaluate site vs. group licenses, negotiate terms, review usage regularly.</li>
+                            <li>Implement centralized license management and compliance.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow accordion">
+                    <button class="accordion-button w-full text-left text-xl font-semibold text-slate-700 py-3 flex justify-between items-center">
+                        <span>C. HPC Deployment and Best Practices</span>
+                        <span class="accordion-icon text-sky-600 text-2xl">&plus;</span>
+                    </button>
+                    <div class="accordion-content px-3 pb-3 text-slate-600 space-y-2">
+                        <ul class="list-disc list-inside ml-4">
+                            <li>Standardize installation via environment modules.</li>
+                            <li>Embrace containerization with Singularity/Apptainer for simplified deployment and reproducibility.</li>
+                            <li>Optimize job submission with template SLURM scripts and educate users on resource requests.</li>
+                            <li>Promote local node scratch usage for I/O intensive jobs.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow accordion">
+                    <button class="accordion-button w-full text-left text-xl font-semibold text-slate-700 py-3 flex justify-between items-center">
+                        <span>D. Roadmap for Gemini Tool (AI/ML) Integration</span>
+                        <span class="accordion-icon text-sky-600 text-2xl">&plus;</span>
+                    </button>
+                    <div class="accordion-content px-3 pb-3 text-slate-600 space-y-2">
+                        <p>A phased approach:</p>
+                        <ul class="list-disc list-inside ml-4 space-y-1">
+                            <li><strong>Phase 1 (Year 1):</strong> Establish robust Python environments, support pilot ML projects, prioritize Python-centric software.</li>
+                            <li><strong>Phase 2 (Year 2):</strong> Deploy workflow managers (AiiDA, KNIME), develop UCR-specific ML resources, strategize data management.</li>
+                            <li><strong>Phase 3 (Year 3+):</strong> Disseminate successes, explore advanced integrations (cloud AI), foster interdisciplinary collaboration.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow accordion">
+                    <button class="accordion-button w-full text-left text-xl font-semibold text-slate-700 py-3 flex justify-between items-center">
+                        <span>E. Researcher Training, Support, and Community</span>
+                        <span class="accordion-icon text-sky-600 text-2xl">&plus;</span>
+                    </button>
+                    <div class="accordion-content px-3 pb-3 text-slate-600 space-y-2">
+                        <ul class="list-disc list-inside ml-4">
+                            <li>Provide comprehensive documentation and UCR-specific tutorials.</li>
+                            <li>Offer regular software workshops and advanced topics training (GPU, AI/ML).</li>
+                            <li>Ensure dedicated HPC staff expertise and consider a computational chemistry liaison.</li>
+                            <li>Establish a UCR Computational Chemistry User Group for peer support and knowledge sharing.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="data-tables" class="content-section space-y-6">
+                <h2 class="text-3xl font-semibold text-sky-600 border-b pb-2">Comparative Data Tables</h2>
+                <p class="text-lg">This section presents key comparative tables from Section III of the report, including HPC performance benchmarks, licensing costs, and containerization support.</p>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-slate-700 mb-3">Table 1: HPC Performance Benchmark Summary (Selected)</h3>
+                    <p class="text-sm text-slate-500 mb-2">Note: This is a condensed representation. Refer to the full report for details and sources.</p>
+                    <div class="table-container">
+                        <table class="min-w-full divide-y divide-slate-200">
+                            <thead class="bg-slate-50">
+                                <tr>
+                                    <th class="px-4 py-2">Software</th>
+                                    <th class="px-4 py-2">Test Case</th>
+                                    <th class="px-4 py-2">Cores/GPUs</th>
+                                    <th class="px-4 py-2">Performance Metric</th>
+                                    <th class="px-4 py-2">Scalability Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody id="hpc-performance-table-body">
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-slate-700 mb-3">Table 2: Licensing and Academic Cost Comparison (Selected)</h3>
+                     <p class="text-sm text-slate-500 mb-2">Note: This is a condensed representation. Refer to the full report for details and sources.</p>
+                    <div class="table-container mb-6">
+                        <table class="min-w-full divide-y divide-slate-200">
+                            <thead class="bg-slate-50">
+                                <tr>
+                                    <th class="px-4 py-2">Software</th>
+                                    <th class="px-4 py-2">License Type</th>
+                                    <th class="px-4 py-2">Est. Academic Cost (USD)</th>
+                                    <th class="px-4 py-2">Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody id="licensing-cost-table-body">
+                                </tbody>
+                        </table>
+                    </div>
+                    <h4 class="text-lg font-semibold text-slate-700 mb-3">Illustrative Cost Comparison (Commercial Software)</h4>
+                    <div class="chart-container">
+                        <canvas id="licensingCostChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-slate-700 mb-3">Table 3: Containerization Support (Selected)</h3>
+                    <p class="text-sm text-slate-500 mb-2">Note: This is a condensed representation. Refer to the full report for details and sources.</p>
+                    <div class="table-container">
+                        <table class="min-w-full divide-y divide-slate-200">
+                            <thead class="bg-slate-50">
+                                <tr>
+                                    <th class="px-4 py-2">Software</th>
+                                    <th class="px-4 py-2">Official Docker</th>
+                                    <th class="px-4 py-2">Official Singularity/Apptainer</th>
+                                    <th class="px-4 py-2">Notes</th>
+                                </tr>
+                            </thead>
+                           <tbody id="containerization-table-body">
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="appendix-matrices" class="content-section space-y-6">
+                <h2 class="text-3xl font-semibold text-sky-600 border-b pb-2">Appendix: Detailed Feature Matrices</h2>
+                <p class="text-lg">This section provides detailed feature comparison matrices for Quantum Mechanics (QM) and Molecular Dynamics (MD) software packages, as presented in Appendix A of the report. Due to their size, these tables are scrollable.</p>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-slate-700 mb-3">Quantum Mechanics (QM) Software Feature Matrix</h3>
+                    <div class="table-container">
+                        <table class="min-w-full divide-y divide-slate-200 text-xs">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th><th>Gaussian</th><th>ORCA</th><th>GAMESS-US</th><th>NWChem</th><th>Q-Chem</th><th>PySCF</th><th>Psi4</th><th>Quantum ESPRESSO</th><th>VASP</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Primary Methods</td><td>HF, DFT, MPn, CC, CI, ONIOM, Semi-Emp.</td><td>DFT(RIJCOSX), DLPNO-CC, MRCI, CASSCF, HF, MPn</td><td>HF, DFT, MCSCF, GVB, CI, MP2, CC, EFP, FMO</td><td>DFT(GTO/PW), HF, MP2, CC, TDDFT, MD, QM/MM</td><td>DFT, TDDFT, HF, MP2, CC, EOM-CC, CI, ADC</td><td>HF, DFT, MP2, CC, CI, FCI, ADC, TDDFT, PBC</td><td>HF, DFT, MP2, CC, CI, MCSCF, SAPT, ADC</td><td>DFT(PW), MD, DFPT, Spectroscopy</td><td>DFT(PW/PAW), HF, Hybrid, GW, MD</td></tr>
+                                <tr><td>Periodic Support</td><td>Yes (limited)</td><td>No (Crystal-QMMM)</td><td>No</td><td>Yes (PW-DFT)</td><td>No</td><td>Yes (Gamma/k-point)</td><td>No</td><td>Yes (3D)</td><td>Yes (3D)</td></tr>
+                                <tr><td>QM/MM Capability</td><td>Yes (ONIOM)</td><td>Yes (Native ONIOM, QMMM)</td><td>Yes (EFP, Tinker)</td><td>Yes (Native)</td><td>Yes (Janus, ONIOM, EFP)</td><td>Yes (interface)</td><td>Yes (EFP, PCM)</td><td>Yes (interface)</td><td>Yes (limited)</td></tr>
+                                <tr><td>GPU Support</td><td>Yes (HF/DFT)</td><td>No (Neese ORCA)</td><td>Limited</td><td>Yes (some modules)</td><td>Yes (BrianQC)</td><td>Yes (GPU4PySCF)</td><td>Limited (GauXC)</td><td>Yes (CUDA)</td><td>Yes (OpenACC/CUDA)</td></tr>
+                                <tr><td>Python API</td><td>External</td><td>Limited</td><td>Limited</td><td>Yes</td><td>Limited</td><td>Yes (Native)</td><td>Yes (Native)</td><td>Yes (ASE, AiiDA)</td><td>Yes (Py4vasp, AiiDA)</td></tr>
+                                <tr><td>Primary Strengths</td><td>Broad methods</td><td>Accuracy, spectroscopy, free academic</td><td>Free academic, fragmentation</td><td>Scalability, diverse systems</td><td>Advanced DFT/CC, IQMol</td><td>Python dev, flexibility</td><td>Python dev, SAPT</td><td>Solid-state, open-source</td><td>Solid-state standard</td></tr>
+                                <tr><td>Noted Limitations</td><td>Cost, license</td><td>Primarily CPU</td><td>GUI, less optimized</td><td>Complex install</td><td>Cost</td><td>Learning curve</td><td>Shared-memory focus</td><td>Primarily solid-state</td><td>Cost, license mgmt</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow mt-6">
+                    <h3 class="text-xl font-semibold text-slate-700 mb-3">Molecular Dynamics (MD) and QM/MM Software Feature Matrix</h3>
+                    <div class="table-container">
+                        <table class="min-w-full divide-y divide-slate-200 text-xs">
+                            <thead>
+                                <tr>
+                                   <th>Feature</th><th>GROMACS</th><th>AMBER</th><th>CHARMM</th><th>LAMMPS</th><th>OpenMM</th><th>NAMD</th><th>CP2K</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Primary Force Fields</td><td>GROMOS, AMBER, CHARMM, OPLS</td><td>AMBER, GAFF, GLYCAM</td><td>CHARMM, CGenFF</td><td>Various (materials, coarse-grain)</td><td>AMBER, CHARMM</td><td>CHARMM, AMBER</td><td>AMBER, CHARMM (for QM/MM)</td></tr>
+                                <tr><td>QM/MM Capability</td><td>Yes (interface)</td><td>Yes (interface)</td><td>Yes (native/interface)</td><td>Yes (interface)</td><td>Yes (custom forces)</td><td>Yes (interface)</td><td>Yes (extensive DFT-based)</td></tr>
+                                <tr><td>GPU Support</td><td>Yes (Extensive)</td><td>Yes (pmemd.cuda)</td><td>Yes (some modules)</td><td>Yes (GPU package)</td><td>Yes (Primary focus)</td><td>Yes (Extensive)</td><td>Yes (CUDA/OpenCL parts)</td></tr>
+                                <tr><td>Python API</td><td>MDAnalysis, GMXAPI</td><td>pytraj, ParmEd</td><td>pyCHARMM</td><td>Python wrapper</td><td>Yes (Native)</td><td>VMD Tcl/Python</td><td>Limited</td></tr>
+                                <tr><td>Primary Strengths</td><td>Performance, biomol, open-source</td><td>Force fields, biomol, free energy</td><td>Broad capabilities</td><td>Versatility, materials, scaling</td><td>Extensibility, GPU perf, library</td><td>Scalability, biomol, VMD</td><td>AIMD, Condensed phase QM/MM</td></tr>
+                                <tr><td>Noted Limitations</td><td>Force field setup</td><td>pmemd commercial (hist.)</td><td>Commercial, input complexity</td><td>Learning curve</td><td>Less out-of-box</td><td>Primarily biomol</td><td>Complex input</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="glossary" class="content-section space-y-6">
+                <h2 class="text-3xl font-semibold text-sky-600 border-b pb-2">Glossary of Technical Terms</h2>
+                <p class="text-lg">Key technical terms used in the report (Appendix B). This is a partial list for demonstration.</p>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <ul class="list-disc list-inside space-y-1 columns-2 md:columns-3">
+                        <li><strong>ADC:</strong> Algebraic Diagrammatic Construction</li>
+                        <li><strong>AI:</strong> Artificial Intelligence</li>
+                        <li><strong>AIMD:</strong> *Ab initio* Molecular Dynamics</li>
+                        <li><strong>API:</strong> Application Programming Interface</li>
+                        <li><strong>DFT:</strong> Density Functional Theory</li>
+                        <li><strong>GPU:</strong> Graphics Processing Unit</li>
+                        <li><strong>HF:</strong> Hartree-Fock</li>
+                        <li><strong>HPC:</strong> High-Performance Computing</li>
+                        <li><strong>MD:</strong> Molecular Dynamics</li>
+                        <li><strong>ML:</strong> Machine Learning</li>
+                        <li><strong>MM:</strong> Molecular Mechanics</li>
+                        <li><strong>MPI:</strong> Message Passing Interface</li>
+                        <li><strong>QM:</strong> Quantum Mechanics</li>
+                        <li><strong>QM/MM:</strong> Quantum Mechanics/Molecular Mechanics</li>
+                        </ul>
+                </div>
+            </section>
+
+            <div id="softwareModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <h3 id="modal-title" class="text-2xl font-semibold text-sky-700 mb-4"></h3>
+                    <div id="modal-body" class="space-y-3 text-slate-700"></div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+<script>
+    // Data for Software Explorer
+    const softwarePackages = [
+        { 
+            id: "gaussian", name: "Gaussian", category: "QM", license: "Commercial", gpu: "Yes",
+            description: "Widely recognized commercial suite for comprehensive quantum chemistry methods.",
+            strengths: "Broad methods, benchmark reference, ONIOM for QM/MM, spectroscopic properties.",
+            details: {
+                scientific_capabilities: "HF, DFT, MPn, CC, CI, ONIOM, semi-empirical methods. Predicts energies, structures, frequencies, spectroscopic properties.",
+                performance_scalability: "GPU support for HF/DFT. Parallel Linda for multi-node. Can be memory/IO intensive.",
+                licensing_cost: "Commercial, site licenses $6k-$8k+. Individual licenses available.",
+                ease_of_use: "GaussView GUI. Keyword-based input. Extensive documentation.",
+                installation_maintenance: "Pre-compiled binaries or source compilation. TCP Linda for parallelism.",
+                community_support: "Formal technical support. Large user base.",
+                gemini_potential: "Output parsing for ML training data, automating input generation, literature review for methods."
+            }
+        },
+        { 
+            id: "orca", name: "ORCA", category: "QM", license: "Free Academic", gpu: "No",
+            description: "Powerful and versatile quantum chemistry package, free for academic use.",
+            strengths: "Speed, accuracy, extensive features, DLPNO-CCSD(T), transition metals, spectroscopy.",
+            details: {
+                scientific_capabilities: "Efficient DFT (RIJCOSX), HF, MPn, DLPNO-CCSD(T), multireference methods (CASSCF/NEVPT2), QM/MM.",
+                performance_scalability: "Primarily CPU-based, good parallelization with MPI. Known for efficiency.",
+                licensing_cost: "Free for academic use. Commercial licenses via FACCTs GmbH.",
+                ease_of_use: "Easy-to-learn input. Active user forum. Good documentation.",
+                installation_maintenance: "Binaries and source. MPI for parallelism.",
+                community_support: "Very active ORCA forum.",
+                gemini_potential: "Generating high-quality training data (DLPNO) for ML, scripting complex workflows, interpreting spectroscopic outputs."
+            }
+        },
+        { 
+            id: "gamess-us", name: "GAMESS-US", category: "QM", license: "Free Academic", gpu: "Partial/Limited",
+            description: "General-purpose ab initio quantum chemistry package, free for academic users.",
+            strengths: "Broad functionalities, fragmentation methods (EFP, FMO).",
+            details: {
+                scientific_capabilities: "HF, DFT, MCSCF, GVB, CI, MP2, CC, EFP, FMO methods.",
+                performance_scalability: "DDI for parallelism (can use MPI). Some experimental GPU support.",
+                licensing_cost: "Free for academic and industrial use (redistribution restrictions).",
+                ease_of_use: "Keyword-based input. Good documentation. Google Group for support.",
+                installation_maintenance: "Source compilation. Various parallel options.",
+                community_support: "Established Google Group.",
+                gemini_potential: "Automating multi-step calculations (e.g., with AutoGAMESS), parsing outputs for ML, exploring large systems with fragmentation methods."
+            }
+        },
+        { 
+            id: "nwchem", name: "NWChem", category: "QM", license: "Open Source", gpu: "Yes",
+            description: "Open-source suite for scalable HPC, handling diverse systems.",
+            strengths: "Scalability, DFT (Gaussian/plane waves), MD, QM/MM.",
+            details: {
+                scientific_capabilities: "DFT (GTO/PW), HF, MP2, CC, TDDFT, classical MD, QM/MM simulations.",
+                performance_scalability: "Designed for massive parallelism (MPI). CUDA support for some modules (e.g., CCSD(T) part).",
+                licensing_cost: "Open source (ECL 2.0).",
+                ease_of_use: "Text-based input. Python control interface. Good documentation.",
+                installation_maintenance: "Source compilation. Official Docker/Singularity support.",
+                community_support: "Developer support, mailing lists.",
+                gemini_potential: "Managing large-scale HPC campaigns (e.g., with Balsam) for ML data generation, Python scripting for workflows, multimodal analysis of outputs."
+            }
+        },
+        { 
+            id: "qchem", name: "Q-Chem", category: "QM", license: "Commercial", gpu: "Yes",
+            description: "Commercial package with comprehensive methods and fast algorithms for large systems.",
+            strengths: "Vast DFT functionals, HF, MP2, CC, EOM-CC, CI, ADC, QM/MM, IQMol GUI.",
+            details: {
+                scientific_capabilities: "Extensive DFT, HF, MP2, CC (EOM-CC for excited/open-shell), CI, ADC, QM/MM, EFP.",
+                performance_scalability: "Efficient algorithms. GPU acceleration via BrianQC for integrals.",
+                licensing_cost: "Commercial. Tiered academic pricing ($1k - $9.5k+). Q-Cloud AWS options.",
+                ease_of_use: "IQMol GUI. Good documentation and support forums.",
+                installation_maintenance: "Binaries. License server.",
+                community_support: "Q-Chem Talk forum, formal support.",
+                gemini_potential: "High-throughput screening with advanced methods, parsing outputs for ML, developing custom analysis scripts with IQMol scripting."
+            }
+        },
+         { 
+            id: "pyscf", name: "PySCF", category: "QM", license: "Open Source", gpu: "Yes",
+            description: "Python-based open-source quantum chemistry package for ease of development and customizability.",
+            strengths: "Python-native, flexibility, comprehensive methods for molecular and periodic systems.",
+            details: {
+                scientific_capabilities: "Relativistic/non-relativistic HF, DFT (Libxc/XcFun), MP2, CC, CI, FCI, ADC, TDDFT, PBC calculations.",
+                performance_scalability: "MPI modes. GPU acceleration via GPU4PySCF.",
+                licensing_cost: "Open source (Apache-2.0).",
+                ease_of_use: "Python-native, requires Python knowledge. Good documentation.",
+                installation_maintenance: "pip/Conda install. Official Docker images.",
+                community_support: "GitHub issues, community channels.",
+                gemini_potential: "Direct integration with Python ML libraries, developing novel AI-driven methods, custom workflow automation."
+            }
+        },
+        { 
+            id: "psi4", name: "Psi4", category: "QM", license: "Open Source", gpu: "Partial/Limited",
+            description: "Open-source ab initio program with a user-friendly Python front-end.",
+            strengths: "Python integration, efficient multi-core DFT, MP2, CCSD(T), SAPT.",
+            details: {
+                scientific_capabilities: "HF, DFT (Libxc), MP2, CC (up to CCSD(T)), CI, MCSCF, SAPT, ADC, geometry optimization, frequencies.",
+                performance_scalability: "Focus on shared-memory parallelism. GauXC for GPU-accelerated SCF.",
+                licensing_cost: "Open source (LGPLv3).",
+                ease_of_use: "Python front-end simplifies automation. Good documentation and tutorials.",
+                installation_maintenance: "Conda packages. Source compilation.",
+                community_support: "Active forum/Slack, GitHub issues.",
+                gemini_potential: "Automating complex QM workflows with Python, direct use with ML libraries, developing educational materials."
+            }
+        },
+        { 
+            id: "gromacs", name: "GROMACS", category: "MD", license: "Open Source", gpu: "Yes",
+            description: "Versatile and widely used open-source package for high-performance MD simulations.",
+            strengths: "Exceptional performance (especially on GPUs), biomolecules, free energy calculations.",
+            details: {
+                scientific_capabilities: "Classical MD for proteins, lipids, nucleic acids. Supports GROMOS, OPLS, AMBER force fields. Energy minimization, free energy calculations.",
+                performance_scalability: "Highly optimized for parallel architectures (CPU/GPU). Excellent scaling.",
+                licensing_cost: "Open source (LGPL v2.1).",
+                ease_of_use: "Command-line driven. Extensive documentation and tutorials. Large user community.",
+                installation_maintenance: "Source compilation, often with specific optimizations. Official Docker images.",
+                community_support: "Active user and developer forums.",
+                gemini_potential: "Analyzing large trajectory datasets with ML, developing ML-based coarse-grained models, guiding simulations with active learning."
+            }
+        },
+        { 
+            id: "amber", name: "AMBER", category: "MD", license: "Free Academic", gpu: "Yes",
+            description: "Suite of MD programs and force fields, strong for biomolecules.",
+            strengths: "AMBER force fields, simulations of proteins/nucleic acids, QM/MM, free energy calculations.",
+            details: {
+                scientific_capabilities: "Classical MD. AmberTools (free) for setup/analysis. `pmemd` (commercial, but Amber24 free for non-commercial) for high-performance MD.",
+                performance_scalability: "`pmemd.cuda` for dramatic GPU speedups. Good MPI parallelism.",
+                licensing_cost: "AmberTools is free (GPL). Amber24 (pmemd) is free for non-commercial use. Historically commercial.",
+                ease_of_use: "Command-line. Extensive tutorials. Strong community.",
+                installation_maintenance: "Source compilation. AmberMD Docker images for build envs.",
+                community_support: "Mailing lists, forums.",
+                gemini_potential: "ML-enhanced force field development, analyzing simulation ensembles, predicting properties from trajectories."
+            }
+        },
+        {
+            id: "terachem", name: "TeraChem", category: "SpecializedGPU", license: "Commercial", gpu: "Yes",
+            description: "Commercial QM software designed from the ground up for NVIDIA GPUs.",
+            strengths: "High-speed GPU-native QM, large systems, AIMD.",
+            details: {
+                scientific_capabilities: "DFT, HF, CI, AIMD, TDDFT, all optimized for GPUs. Handles large nanoscale biomolecules.",
+                performance_scalability: "Excellent GPU scaling. TCPB client-server interface for integration.",
+                licensing_cost: "Commercial. Academic licenses per machine (from $1,900 for 1-2 machines).",
+                ease_of_use: "Command-line. User guide and manual available.",
+                installation_maintenance: "Binaries for specific CUDA versions. Docker image available.",
+                community_support: "Formal technical support.",
+                gemini_potential: "Generating large QM datasets rapidly for ML, real-time QM/MM with ML, GPU-accelerated active learning loops."
+            }
+        },
+        {
+            id: "avogadro", name: "Avogadro", category: "VizWorkflow", license: "Open Source", gpu: "No",
+            description: "Free, open-source, cross-platform advanced molecule editor and visualizer.",
+            strengths: "Supports input/output for many QM packages (GAMESS, Gaussian, ORCA, NWChem).",
+            details: {
+                scientific_capabilities: "Molecular editing, visualization of structures, orbitals, densities. Input generation for various QM codes.",
+                gemini_potential: "Visual quality checks of structures for ML datasets, generating input for Gemini-driven QM calculations, scripting for batch processing."
+            }
+        },
+        {
+            id: "vmd", name: "VMD", category: "VizWorkflow", license: "Free Academic", gpu: "No", /* GPU used for viz, not calc */
+            description: "Widely used for visualizing and analyzing MD trajectories, especially from NAMD and GROMACS.",
+            strengths: "Powerful trajectory analysis, scripting (Tcl/Python), high-quality molecular graphics.",
+            details: {
+                 scientific_capabilities: "Visualization of molecular structures, densities, MD trajectories. Analysis of structural properties, dynamics.",
+                 gemini_potential: "Extracting features from trajectories for ML, multimodal understanding of visual outputs (e.g., protein folding), generating animations for reports."
+            }
+        },
+        {
+            id: "aiida", name: "AiiDA", category: "VizWorkflow", license: "Open Source", gpu: "N/A",
+            description: "Open-source Python platform for managing, preserving, and sharing computational workflows.",
+            strengths: "High-throughput computations, reproducibility, data provenance, plugin ecosystem.",
+            details: {
+                scientific_capabilities: "Workflow automation for various codes (VASP, QE, GROMACS, Gaussian, etc.). Manages data and job execution.",
+                gemini_potential: "Orchestrating complex AI-augmented workflows (simulation + ML steps), managing large datasets for ML, ensuring reproducibility of AI-driven discovery pipelines."
+            }
+        }
+        // Add more software packages as needed, extracting from the report
+    ];
+
+    // Data for tables (condensed for brevity)
+    const hpcPerformanceData = [
+        { software: "Gaussian 16", testCase: "H₂O, DFT B3LYP", coresGpus: "CPU/GPU", metric: "Meets expected", notes: "GPUs effective for DFT, not MP2/CCSD" },
+        { software: "ORCA 5.0.4", testCase: "C12 Benzene Dimer, PBE0/def2-TZVPP", coresGpus: "1-64 cores", metric: "Best at 16 cores", notes: "Optimal core count varies" },
+        { software: "PySCF (GPU4PySCF)", testCase: "Gly30-50, HF", coresGpus: "1 A100 GPU", metric: "~2 orders speedup vs CPU", notes: "Comparable to GAMESS on A100" },
+        { software: "GROMACS 2022.4", testCase: "ADH Cubic (GPU)", coresGpus: "1 A100 GPU", metric: "A100 >> K80", notes: "No advantage >1 GPU for this benchmark" },
+        { software: "AMBER 22", testCase: "Std Benchmarks (GPU)", coresGpus: "1-4 A100 GPUs", metric: "A100 >> K80", notes: "Significant GPU advantage" },
+    ];
+
+    const licensingCostData = [
+        { software: "Gaussian", license: "Commercial", cost: "$1,000 - $8,000+ (site)", notes: "Linda parallel extra" },
+        { software: "ORCA", license: "Free Academic", cost: "$0 (academic)", notes: "Commercial via FACCTs" },
+        { software: "Q-Chem", license: "Commercial", cost: "$1,050 (seat) - $9,450 (site)", notes: "Q-Cloud options" },
+        { software: "VASP", license: "Commercial", cost: "€1,500 - €2,000 (upgrade)", notes: "Group license" },
+        { software: "PySCF", license: "Open Source", cost: "$0", notes: "Apache-2.0" },
+        { software: "Psi4", license: "Open Source", cost: "$0", notes: "LGPLv3" },
+        { software: "GROMACS", license: "Open Source", cost: "$0", notes: "LGPL v2.1" },
+        { software: "TeraChem", license: "Commercial", cost: "$1,900 (1-2 machines)", notes: "Academic pricing" },
+    ];
+    
+    const containerizationData = [
+        { software: "Gaussian", docker: "No official", singularity: "No official", notes: "User/site built" },
+        { software: "ORCA", docker: "No official", singularity: "`psiflow` provides", notes: "Community images exist" },
+        { software: "NWChem", docker: "Yes (ghcr.io)", singularity: "Yes (ghcr.io)", notes: "Official support" },
+        { software: "Quantum ESPRESSO", docker: "Yes (NVIDIA NGC)", singularity: "Yes (via NGC)", notes: "Optimized GPU containers" },
+        { software: "GROMACS", docker: "Yes (Docker Hub)", singularity: "Yes (via Docker pull)", notes: "Well-supported" },
+        { software: "PySCF", docker: "Yes (Docker Hub)", singularity: "Yes (via Docker pull)", notes: "Official image" },
+    ];
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.content-section');
+        const softwareList = document.getElementById('software-list');
+        const modal = document.getElementById('softwareModal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+        
+        const filterCategory = document.getElementById('filter-category');
+        const filterLicense = document.getElementById('filter-license');
+        const filterGpu = document.getElementById('filter-gpu');
+
+        // Accordion functionality
+        document.querySelectorAll('.accordion-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('.accordion-icon');
+                if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+                    content.style.maxHeight = "0px";
+                    icon.textContent = '+';
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    icon.textContent = '−';
+                }
+            });
+        });
+
+        function displaySoftware(filteredPackages) {
+            softwareList.innerHTML = '';
+            if (!filteredPackages || filteredPackages.length === 0) {
+                softwareList.innerHTML = '<p class="text-slate-500 col-span-full">No software packages match your criteria.</p>';
+                return;
+            }
+            filteredPackages.forEach(pkg => {
+                const card = document.createElement('div');
+                card.className = 'bg-slate-50 p-4 rounded-lg shadow hover:shadow-md transition-shadow cursor-pointer';
+                card.innerHTML = `
+                    <h4 class="text-lg font-semibold text-sky-700">${pkg.name}</h4>
+                    <p class="text-sm text-slate-600">${pkg.description}</p>
+                    <div class="mt-2 text-xs space-y-0.5">
+                        <p><strong>Category:</strong> ${pkg.category}</p>
+                        <p><strong>License:</strong> ${pkg.license}</p>
+                        <p><strong>GPU:</strong> ${pkg.gpu}</p>
+                        <p class="mt-1"><strong>Strengths:</strong> ${pkg.strengths.substring(0,100)}...</p>
+                    </div>
+                `;
+                card.addEventListener('click', () => showModal(pkg));
+                softwareList.appendChild(card);
+            });
+        }
+        
+        function filterAndDisplaySoftware() {
+            const category = filterCategory.value;
+            const license = filterLicense.value;
+            const gpu = filterGpu.value;
+
+            const filtered = softwarePackages.filter(pkg => {
+                return (category === 'all' || pkg.category === category) &&
+                       (license === 'all' || pkg.license === license) &&
+                       (gpu === 'all' || pkg.gpu === gpu);
+            });
+            displaySoftware(filtered);
+        }
+
+        if (filterCategory && filterLicense && filterGpu) {
+            filterCategory.addEventListener('change', filterAndDisplaySoftware);
+            filterLicense.addEventListener('change', filterAndDisplaySoftware);
+            filterGpu.addEventListener('change', filterAndDisplaySoftware);
+        }
+        
+        window.showModal = (pkg) => {
+            modalTitle.textContent = pkg.name;
+            let detailsHtml = `<p><strong>Category:</strong> ${pkg.category}</p>
+                               <p><strong>License:</strong> ${pkg.license}</p>
+                               <p><strong>GPU Support:</strong> ${pkg.gpu}</p>
+                               <p class="mt-2"><strong>Description:</strong> ${pkg.description}</p>
+                               <p class="mt-2"><strong>Key Strengths:</strong> ${pkg.strengths}</p>`;
+            if(pkg.details) {
+                detailsHtml += `<h5 class="font-semibold mt-3 mb-1 text-slate-800">Further Details:</h5>
+                                <ul class="list-disc list-inside space-y-1 text-sm">
+                                    ${pkg.details.scientific_capabilities ? `<li><strong>Scientific Capabilities:</strong> ${pkg.details.scientific_capabilities}</li>` : ''}
+                                    ${pkg.details.performance_scalability ? `<li><strong>Performance & Scalability:</strong> ${pkg.details.performance_scalability}</li>` : ''}
+                                    ${pkg.details.licensing_cost ? `<li><strong>Licensing & Cost:</strong> ${pkg.details.licensing_cost}</li>` : ''}
+                                    ${pkg.details.ease_of_use ? `<li><strong>Ease of Use:</strong> ${pkg.details.ease_of_use}</li>` : ''}
+                                    ${pkg.details.installation_maintenance ? `<li><strong>Installation & Maintenance:</strong> ${pkg.details.installation_maintenance}</li>` : ''}
+                                    ${pkg.details.community_support ? `<li><strong>Community Support:</strong> ${pkg.details.community_support}</li>` : ''}
+                                    ${pkg.details.gemini_potential ? `<li><strong>Potential for Gemini Tool Integration:</strong> ${pkg.details.gemini_potential}</li>` : ''}
+                                </ul>`;
+            }
+            modalBody.innerHTML = detailsHtml;
+            modal.style.display = 'block';
+        }
+
+        window.closeModal = () => {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = (event) => {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        function setActiveSection(sectionId) {
+            sections.forEach(section => {
+                section.classList.remove('active');
+                if (section.id === sectionId) {
+                    section.classList.add('active');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.section === sectionId) {
+                    link.classList.add('active');
+                }
+            });
+            // Special handling for sections that need data rendering
+            if (sectionId === 'software-explorer') filterAndDisplaySoftware();
+            if (sectionId === 'data-tables') renderDataTablesAndCharts();
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                setActiveSection(link.dataset.section);
+            });
+        });
+        
+        function renderDataTablesAndCharts() {
+            const hpcTableBody = document.getElementById('hpc-performance-table-body');
+            hpcTableBody.innerHTML = hpcPerformanceData.map(row => `
+                <tr>
+                    <td class="px-4 py-2">${row.software}</td>
+                    <td class="px-4 py-2 text-xs">${row.testCase}</td>
+                    <td class="px-4 py-2">${row.coresGpus}</td>
+                    <td class="px-4 py-2 text-xs">${row.metric}</td>
+                    <td class="px-4 py-2 text-xs">${row.notes}</td>
+                </tr>
+            `).join('');
+
+            const licensingTableBody = document.getElementById('licensing-cost-table-body');
+            licensingTableBody.innerHTML = licensingCostData.map(row => `
+                <tr>
+                    <td class="px-4 py-2">${row.software}</td>
+                    <td class="px-4 py-2">${row.license}</td>
+                    <td class="px-4 py-2">${row.cost}</td>
+                    <td class="px-4 py-2 text-xs">${row.notes}</td>
+                </tr>
+            `).join('');
+            
+            const containerizationTableBody = document.getElementById('containerization-table-body');
+            containerizationTableBody.innerHTML = containerizationData.map(row => `
+                <tr>
+                    <td class="px-4 py-2">${row.software}</td>
+                    <td class="px-4 py-2">${row.docker}</td>
+                    <td class="px-4 py-2">${row.singularity}</td>
+                    <td class="px-4 py-2 text-xs">${row.notes}</td>
+                </tr>
+            `).join('');
+
+            // Chart.js for Licensing Costs
+            const commercialSoftwareCosts = licensingCostData
+                .filter(pkg => pkg.license === "Commercial" && pkg.cost.includes("$"))
+                .map(pkg => {
+                    // Attempt to parse a numerical low-end cost
+                    const costMatch = pkg.cost.match(/\$?([\d,]+)/);
+                    let costValue = 0;
+                    if (costMatch && costMatch[1]) {
+                        costValue = parseFloat(costMatch[1].replace(/,/g, ''));
+                    } else if (pkg.cost.includes("€")) { // Basic Euro conversion if no dollar value
+                         const euroMatch = pkg.cost.match(/€([\d,]+)/);
+                         if(euroMatch && euroMatch[1]) {
+                            costValue = parseFloat(euroMatch[1].replace(/,/g, '')) * 1.1; // Approx conversion
+                         }
+                    }
+                    return { name: pkg.software, cost: costValue };
+                })
+                .filter(pkg => pkg.cost > 0); // Only include if we got a cost
+
+            const ctx = document.getElementById('licensingCostChart').getContext('2d');
+            if (window.licensingChart instanceof Chart) {
+                window.licensingChart.destroy();
+            }
+            window.licensingChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: commercialSoftwareCosts.map(pkg => pkg.name),
+                    datasets: [{
+                        label: 'Estimated Minimum Academic Cost (USD, approx.)',
+                        data: commercialSoftwareCosts.map(pkg => pkg.cost),
+                        backgroundColor: 'rgba(2, 132, 199, 0.6)', // sky-600
+                        borderColor: 'rgba(2, 132, 199, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            title: { display: true, text: 'Estimated Cost (USD)' }
+                        },
+                        y: {
+                             ticks: { autoSkip: false }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) { label += ': '; }
+                                    if (context.parsed.x !== null) {
+                                        label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.x);
+                                    }
+                                    return label;
+                                }
+                            }
+                        },
+                        legend: { display: true, position: 'top' }
+                    }
+                }
+            });
+        }
+        
+        // Initial setup
+        setActiveSection('home'); // Show home section by default
+    });
+</script>
+</body>
+</html>
