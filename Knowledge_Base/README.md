@@ -91,6 +91,8 @@ Welcome to the UCR Research Computing Knowledge Base! This comprehensive resourc
 *   [UCR Research Computing Github Org](https://github.com/UCR-Research-Computing):
 *   [Offline LLMs (Ollama)](ollama-how-to.md)
 *   [UCR Computational Chemistry Software Optimization Report](ucr_comp_chem_report.html): An interactive report detailing the assessment of computational chemistry software, HPC performance, licensing, and recommendations for UCR's software stack.
+*   [Computational Chemistry Software Stack Infographic](Computational_Chemistry_Software_Stack_Infographic.html): An interactive infographic detailing the assessment of computational chemistry software, HPC performance, licensing, and recommendations for UCR's software stack.
+Computational Chemistry Software Stack Infographic
 *   [Software and Application Support](../pages/software_and_application_support.md)
 
 ## Research Facilitation
