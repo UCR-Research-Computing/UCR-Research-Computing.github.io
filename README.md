@@ -3,7 +3,7 @@
 
 At the University of California, Riverside (UCR), we're committed to empowering our researchers with the most advanced computational resources and support services.
 
-Discover a wide array of computational tools and platforms tailored to support your research endeavors. Through our sidebar navigation, the table below and the **search bar** in the upper right you can explore our offerings: 
+Explore a wide array of computational tools and platforms tailored to support your research endeavors. Through our sidebar navigation, the table below and the **search bar** in the upper right you can explore our offerings: 
 
 
 | Compute                                          | Storage                                  | Support                                                 |

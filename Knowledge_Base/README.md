@@ -8,7 +8,7 @@ sidebar_label: Knowledge Base
 
 # UCR Research Computing Knowledge Base
 
-Welcome to the UCR Research Computing Knowledge Base! This comprehensive resource hub provides information and guides for all aspects of research computing at UCR, from getting started to advanced topics.  Use the categories below or the search bar above to find the information you need.
+Welcome to the UCR Research Computing Knowledge Base! This resource hub provides practical guides, how-to articles, and technical information to help you effectively utilize UCR's research computing resources. Use the categories below or the search bar above to find the information you need.
 
 ## Getting Started
 
@@ -19,7 +19,7 @@ Welcome to the UCR Research Computing Knowledge Base! This comprehensive resourc
 
 ### High-Performance Computing (HPC)
 
-*   [Available HPC Clusters (Ursa Major, etc.)](Available_Clusters.md)
+*   [What is HPC?](What_is_HPC.md)
 *   [BLAST Searches on the HPCC Cluster](blast.md)
 *   [Launching and Managing HPC Clusters](How_To_Launch_a_Ursa_Major_Cluster.md)
 *   [Launching Custom Ursa Major Cluster](Launch_Custom_Ursa_Major_Cluster.md)
@@ -37,12 +37,10 @@ Welcome to the UCR Research Computing Knowledge Base! This comprehensive resourc
 *   [Cloud Computing Overview](../pages/computing-resources-overview.md)
 *   [GCP and AWS Cloud Credits](../pages/GCP_and_AWS_Cloud_Credits.md)
 *   [GCP Subscription Agreements](../pages/gcp_subscription_agreements.md)
-*   [Using Google Cloud Platform (GCP)](./README.md)
 *   [Mounting Google Cloud Storage](how_to_mount_google_cloud_storage.md)
 *   [GCS and AWS S3](../pages/gcs_aws_s3.md)
 *   [Google Drive](../pages/Google_Drive.md)
 *   [Creating a Budget for a Ursa Major/Cloud Project](Ursa_Major_Project_Budget_Creation.md)
-*   [AWS for Research Computing](./README.md)
 *   [Globus Transfer](Globus_Transfer.md)
 *   [gnextnext5](gnextnext5.md)
 
@@ -106,7 +104,6 @@ Computational Chemistry Software Stack Infographic
 *   [Lab Support](../pages/lab-support.md)
 *   [UCR Research Computing System Administration Service (RCSAS)](UCR_Research_Computing_System_Administration_Service.md)
 *   [RCSAS MOU](https://docs.google.com/document/d/19nYYXakruAbg1pxKybpSddSz8p1TBiBc/edit?usp=sharing&ouid=115996119773834121624&rtpof=true&sd=true)
-*   [Research Computing Services](Research_Computing_Services.md)
 *   [Resources](Resources.md)
 *   [Online Courses](../pages/online_courses.md)
 *   [Workshops and Webinars](../pages/workshops_and_webinars.md)
@@ -126,12 +123,8 @@ Computational Chemistry Software Stack Infographic
 
 ## Best Practices
 
-*   [Cloud Cost Management](./README.md)
-*   [Collaborative Research using Cloud Platforms](./README.md)
-*   [Data Security in Research Computing](./README.md)
-*   [Ursa Major Policy](./README.md)
+*   [Data Security in Research Computing](UCR_Data_Security_Plans.md)
+*   [Ursa Major Policy](Ursa_Major_Policy.md)
 *   [SSH to Access](ssh-to-access.md)
 *   [Building a Mature Research Computing Service](../pages/Building_a_Mature_Research_Computing_Service.md)
 *   [Research Infrastructure Support](../pages/research_infrastructure_support.md)
-
-j

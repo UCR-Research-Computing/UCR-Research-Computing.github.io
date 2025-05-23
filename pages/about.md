@@ -75,9 +75,9 @@ The Ursa Major Project is a cornerstone initiative at the University of Californ
 
 #### Key Components
 
-- **Collaboration with Google Cloud Platform (GCP)**: At the heart of the Ursa Major initiative is a groundbreaking partnership with GCP. This collaboration unlocks a suite of advanced computational tools and resources tailored to the needs of academic research. It includes access to high-performance computing (HPC) clusters, cutting-edge AI and ML services, and robust, secure data storage options. By leveraging GCP’s scalable infrastructure, UCR researchers can pursue more ambitious projects, handle larger datasets, and perform complex computations more efficiently than ever before.
-- **Comprehensive Access to Computational Resources**: Through the Ursa Major Project, UCR is able to offer its researchers comprehensive access to a wide array of GCP resources. This includes not only conventional computing power but also specialized services for big data analytics, machine learning model training and inference, and secure, compliant data storage solutions. These resources are available to researchers across all disciplines, facilitating a wide range of scientific inquiries, from genomics and climate modeling to data science and digital humanities.
-- **Enhanced Research Infrastructure**: The Ursa Major initiative also involves significant enhancements to UCR's existing research infrastructure. This includes the integration of GCP resources with on-premise systems, the development of new workflows and tools to streamline access and utilization, and the establishment of best practices for cloud computing in research. These improvements are designed to make it easier for researchers to leverage cloud resources effectively, ensuring that UCR's research community can fully exploit the capabilities of cloud computing.
+- **Collaboration with Google Cloud Platform (GCP)**: Ursa Major leverages a strategic partnership with GCP to provide a suite of advanced computational tools, including HPC clusters, AI/ML services, and secure data storage, enabling researchers to tackle ambitious projects with scalable infrastructure.
+- **Comprehensive Access to Computational Resources**: The initiative offers broad access to GCP resources, supporting diverse research needs from big data analytics to machine learning and secure data storage across all academic disciplines.
+- **Enhanced Research Infrastructure**: Ursa Major enhances UCR's research infrastructure by integrating GCP resources with on-premise systems, developing streamlined workflows, and establishing best practices for cloud computing in research.
 
 #### Strategic Goals
 
@@ -87,6 +87,8 @@ The Ursa Major Project is a cornerstone initiative at the University of Californ
 - **Establishing UCR as a Research Computing Frontrunner**: Ultimately, the Ursa Major initiative positions UCR at the forefront of research computing within the academic community. By embracing cloud computing and forming strategic partnerships, UCR not only enhances its research capabilities but also contributes to the broader academic dialogue on the future of computational research in higher education.
 
 Through the Ursa Major Project, UCR is making a significant investment in the future of research computing, setting a new standard for academic institutions and cementing its role as a leader in the advancement of scientific knowledge and innovation.
+
+For more detailed information about Ursa Major resources, the allocation framework, and how to access these services, please visit the [dedicated Ursa Major page](/pages/ursa_major.md).
 
 ### Research Computing System Administration Service (RCSAS) MOU
 
