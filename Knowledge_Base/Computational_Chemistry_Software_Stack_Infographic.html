@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCR Computational Chemistry Software Stack Optimization</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Narrative & Structure Plan:
+        1. Hero Section: Title, brief intro based on Exec Summary.
+        2. Software Landscape Overview: Categories, Licensing, Key Trends (GPU, Containerization).
+        3. Spotlight on Key Software: Highlights of 3-4 diverse tools.
+        4. The Gemini Advantage: How Gemini tools enhance workflows (HTML/CSS diagram).
+        5. UCR's Recommended Software Stack: Top 3-5 recommendations in cards.
+        6. Future Outlook & Conclusion: Summary of future direction.
+    -->
+    <!-- Visualization Choices Summary (Confirming NO SVG, NO MERMAID JS):
+        - Software Capabilities Distribution: Bar Chart (Chart.js Canvas) - Goal: Compare - Justification: Show counts across categories.
+        - Licensing Model Overview: Donut Chart (Chart.js Canvas) - Goal: Compare/Inform - Justification: Show proportion of license types.
+        - GPU Optimization Trend: Big Number/Text (HTML/CSS) - Goal: Inform - Justification: Clear stat.
+        - Containerization Readiness: Big Number/Text (HTML/CSS) - Goal: Inform - Justification: Clear stat.
+        - Gemini Workflow Enhancement: Diagram (HTML/CSS with Tailwind for boxes/arrows) - Goal: Organize/Inform - Justification: Visual flow of integration. NO SVG, NO MERMAID JS.
+        - Icons for Gemini tools/benefits: Unicode characters or simple HTML/CSS styled elements. NO SVG.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #CAF0F8; /* Palest Blue */
+            color: #03045E; /* Darkest Blue */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+                max-height: 350px;
+            }
+        }
+        .stat-card {
+            background-color: #FFFFFF;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #0077B6, #00B4D8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section-title {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700;
+            color: #0077B6; /* Medium Dark Blue */
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .section-subtitle {
+            font-size: 1.125rem; /* text-lg */
+            color: #03045E; /* Darkest Blue */
+            margin-bottom: 2.5rem;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .card-title {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 600;
+            color: #0077B6; /* Medium Dark Blue */
+            margin-bottom: 0.5rem;
+        }
+        .pill {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px; /* full */
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .primary-pill {
+            background-color: #90E0EF; /* Light Blue */
+            color: #03045E; /* Darkest Blue */
+        }
+        .secondary-pill {
+            background-color: #00B4D8; /* Medium Blue */
+            color: #FFFFFF;
+        }
+        /* Simple arrow for HTML/CSS diagrams */
+        .arrow {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+        }
+        .arrow-right {
+            border-left: 8px solid #0077B6; /* Medium Dark Blue */
+        }
+        .arrow-down {
+             border-left: 6px solid transparent;
+             border-right: 6px solid transparent;
+             border-top: 8px solid #0077B6; /* Medium Dark Blue */
+        }
+
+        /* Sticky Navigation (Optional - basic styling) */
+        #navbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #navbar a {
+            color: #0077B6;
+            transition: color 0.3s ease;
+        }
+        #navbar a:hover, #navbar a.active {
+            color: #03045E;
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav id="navbar">
+        <div class="container mx-auto px-6 py-3 flex justify-center space-x-4 sm:space-x-8">
+            <a href="#overview" class="text-sm sm:text-base font-medium hover:underline">Landscape</a>
+            <a href="#spotlight" class="text-sm sm:text-base font-medium hover:underline">Spotlight</a>
+            <a href="#gemini-advantage" class="text-sm sm:text-base font-medium hover:underline">Gemini Advantage</a>
+            <a href="#recommendations" class="text-sm sm:text-base font-medium hover:underline">Recommendations</a>
+            <a href="#outlook" class="text-sm sm:text-base font-medium hover:underline">Outlook</a>
+        </div>
+    </nav>
+
+    <section class="py-12 md:py-20 bg-gradient-to-br from-[#0077B6] to-[#00B4D8] text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Optimizing UCR's Computational Chemistry Software Stack</h1>
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
+                A strategic assessment of leading software and the transformative potential of Gemini AI integration to enhance research workflows, performance, and cost-efficiency at UCR.
+            </p>
+            <a href="#overview" class="bg-white text-[#0077B6] font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-gray-100 transition duration-300">Explore Insights</a>
+        </div>
+    </section>
+
+    <section id="overview" class="py-12 md:py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">The Computational Chemistry Landscape</h2>
+            <p class="section-subtitle">
+                The field leverages a diverse array of software, blending powerful commercial tools with versatile open-source options. Key trends include GPU acceleration, containerization for HPC, and the rise of multi-methodological software.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="stat-card">
+                    <h3 class="card-title mb-4 text-center">Software Capabilities Distribution</h3>
+                    <p class="text-sm text-gray-600 mb-3 text-center">Number of analyzed packages supporting key methodologies. Many tools are multi-methodological.</p>
+                    <div class="chart-container h-[300px] md:h-[350px]">
+                        <canvas id="capabilitiesChart"></canvas>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <h3 class="card-title mb-4 text-center">Licensing Model Overview</h3>
+                    <p class="text-sm text-gray-600 mb-3 text-center">Distribution of licensing models among the top 13 analyzed software packages.</p>
+                    <div class="chart-container h-[300px] md:h-[350px]">
+                        <canvas id="licensingChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div class="stat-card text-center">
+                    <div class="text-5xl font-bold gradient-text mb-2">90%+</div>
+                    <h3 class="card-title">GPU Optimization</h3>
+                    <p class="text-gray-700">
+                        Over 90% of the analyzed leading software packages offer GPU optimization, critical for performance on modern HPC clusters.
+                    </p>
+                </div>
+                <div class="stat-card text-center">
+                     <div class="text-5xl font-bold gradient-text mb-2">75%+</div>
+                    <h3 class="card-title">Containerization Readiness</h3>
+                    <p class="text-gray-700">
+                        More than 75% of tools show good to excellent containerization support (Docker/Singularity), simplifying deployment and ensuring reproducibility.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="spotlight" class="py-12 md:py-16 bg-[#E0F7FA]">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Spotlight on Key Software</h2>
+            <p class="section-subtitle">
+                A brief look at some of the highly impactful software packages from the UCR assessment, showcasing their diverse strengths.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="stat-card flex flex-col">
+                    <h3 class="card-title">GROMACS</h3>
+                    <p class="text-gray-600 text-sm mb-3">Molecular Dynamics (Biomolecules)</p>
+                    <p class="text-gray-700 flex-grow">Renowned for exceptional speed and scalability, especially on GPUs. Free & open-source, ideal for protein dynamics and membrane simulations.</p>
+                    <div class="mt-4">
+                        <span class="pill primary-pill">Open Source</span>
+                        <span class="pill secondary-pill">High GPU Performance</span>
+                    </div>
+                </div>
+                <div class="stat-card flex flex-col">
+                    <h3 class="card-title">Quantum ESPRESSO</h3>
+                    <p class="text-gray-600 text-sm mb-3">DFT & Materials Science</p>
+                    <p class="text-gray-700 flex-grow">Leading open-source DFT suite for solid-state physics and materials science. Excellent CPU scalability and comprehensive features.</p>
+                     <div class="mt-4">
+                        <span class="pill primary-pill">Open Source</span>
+                        <span class="pill secondary-pill">Top DFT for Materials</span>
+                    </div>
+                </div>
+                <div class="stat-card flex flex-col">
+                    <h3 class="card-title">Gaussian</h3>
+                    <p class="text-gray-600 text-sm mb-3">Quantum Chemistry</p>
+                    <p class="text-gray-700 flex-grow">A foundational commercial package with an unparalleled breadth of quantum chemistry methods and a strong reputation for accuracy.</p>
+                    <div class="mt-4">
+                        <span class="pill primary-pill">Commercial</span>
+                        <span class="pill secondary-pill">Broadest Methods</span>
+                    </div>
+                </div>
+                <div class="stat-card flex flex-col">
+                    <h3 class="card-title">CP2K</h3>
+                     <p class="text-gray-600 text-sm mb-3">Versatile QM/MM, MD, DFT</p>
+                    <p class="text-gray-700 flex-grow">Highly versatile open-source package for multi-scale simulations. Excellent parallel scalability on CPUs and GPUs (with COSMA).</p>
+                     <div class="mt-4">
+                        <span class="pill primary-pill">Open Source</span>
+                        <span class="pill secondary-pill">QM/MM & DFT Power</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gemini-advantage" class="py-12 md:py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">The Gemini Advantage: A Force Multiplier</h2>
+            <p class="section-subtitle">
+                Integrating Gemini's AI capabilities transforms research by automating tasks, accelerating information retrieval, enhancing data analysis, and streamlining communication. This positions AI as a fundamental tool for scientific discovery.
+            </p>
+
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-xl">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="p-3 bg-[#90E0EF] rounded-full mb-3">
+                            <span class="text-2xl">⚙️</span>
+                        </div>
+                        <h4 class="font-semibold text-lg mb-1 text-[#0077B6]">Input & Setup</h4>
+                        <p class="text-sm text-gray-600 mb-2">Automate input file generation, parameter optimization.</p>
+                        <div class="text-left text-sm space-y-1">
+                            <p><strong class="text-[#03045E]">Code Interpreter:</strong> Script input files.</p>
+                            <p><strong class="text-[#03045E]">Web Browse:</strong> Fetch structural data.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center text-center">
+                        <div class="p-3 bg-[#90E0EF] rounded-full mb-3">
+                            <span class="text-2xl">📊</span>
+                        </div>
+                        <h4 class="font-semibold text-lg mb-1 text-[#0077B6]">Analysis & Interpretation</h4>
+                        <p class="text-sm text-gray-600 mb-2">Parse outputs, identify trends, interpret complex data.</p>
+                        <div class="text-left text-sm space-y-1">
+                            <p><strong class="text-[#03045E]">Code Interpreter:</strong> Parse logs, custom analysis.</p>
+                            <p><strong class="text-[#03045E]">Advanced Data Analysis:</strong> Statistical insights, pattern recognition.</p>
+                            <p><strong class="text-[#03045E]">Multimodal:</strong> Interpret visual outputs (structures, spectra).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col items-center text-center">
+                        <div class="p-3 bg-[#90E0EF] rounded-full mb-3">
+                            <span class="text-2xl">✍️</span>
+                        </div>
+                        <h4 class="font-semibold text-lg mb-1 text-[#0077B6]">Reporting & Dissemination</h4>
+                        <p class="text-sm text-gray-600 mb-2">Summarize literature, draft reports, create training materials.</p>
+                        <div class="text-left text-sm space-y-1">
+                            <p><strong class="text-[#03045E]">Language Models:</strong> Summarize papers, draft sections.</p>
+                            <p><strong class="text-[#03045E]">Web Browse:</strong> Aid literature reviews.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex flex-col md:flex-row justify-around items-center space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="text-center md:w-1/3">
+                        <p class="font-semibold text-[#0077B6]">Research Idea & Literature Review</p>
+                        <div class="flex justify-center my-2"><span class="arrow arrow-down md:hidden"></span><span class="arrow arrow-right hidden md:inline-block"></span></div>
+                         <p class="text-xs text-gray-500">Gemini: Web Browse, Language Models</p>
+                    </div>
+                     <div class="text-center md:w-1/3">
+                        <p class="font-semibold text-[#0077B6]">Simulation Setup & Execution</p>
+                        <div class="flex justify-center my-2"><span class="arrow arrow-down md:hidden"></span><span class="arrow arrow-right hidden md:inline-block"></span></div>
+                        <p class="text-xs text-gray-500">Gemini: Code Interpreter</p>
+                    </div>
+                    <div class="text-center md:w-1/3">
+                        <p class="font-semibold text-[#0077B6]">Data Analysis & Reporting</p>
+                        <p class="text-xs text-gray-500 mt-2">Gemini: Code Interpreter, Adv. Data Analysis, Multimodal, Language Models</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <section id="recommendations" class="py-12 md:py-16 bg-[#E0F7FA]">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">UCR's Recommended Software Stack</h2>
+            <p class="section-subtitle">
+                A balanced portfolio approach combining robust open-source tools with strategically selected commercial software to meet diverse research needs effectively.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="stat-card">
+                    <h3 class="card-title">1. GROMACS</h3>
+                    <p class="text-sm text-gray-500 mb-2">Molecular Dynamics</p>
+                    <p class="text-gray-700 mb-3"><strong>Key Benefit:</strong> Exceptional performance and scalability (especially GPU), free & open-source.</p>
+                    <p class="text-gray-700 mb-1"><strong class="text-[#0077B6]">Target Research:</strong> Biomolecular dynamics, protein folding, drug-ligand interactions.</p>
+                    <p class="text-gray-700"><strong class="text-[#0077B6]">Gemini Integration:</strong> Automate `.mdp` file generation (Code Interpreter), analyze free energy landscapes (Advanced Data Analysis).</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3 class="card-title">2. LAMMPS</h3>
+                    <p class="text-sm text-gray-500 mb-2">MD & Materials Science</p>
+                    <p class="text-gray-700 mb-3"><strong>Key Benefit:</strong> Massively parallel, excellent CPU/GPU scalability, free & open-source, QM/MD coupling.</p>
+                    <p class="text-gray-700 mb-1"><strong class="text-[#0077B6]">Target Research:</strong> Materials properties, defect dynamics, nanomaterials, coarse-grained systems.</p>
+                    <p class="text-gray-700"><strong class="text-[#0077B6]">Gemini Integration:</strong> Generate input scripts (Code Interpreter), search for interatomic potentials (Web Browse).</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3 class="card-title">3. Quantum ESPRESSO</h3>
+                    <p class="text-sm text-gray-500 mb-2">DFT & Materials Science</p>
+                    <p class="text-gray-700 mb-3"><strong>Key Benefit:</strong> Leading open-source DFT suite, excellent CPU scalability, comprehensive solid-state features.</p>
+                    <p class="text-gray-700 mb-1"><strong class="text-[#0077B6]">Target Research:</strong> Electronic structure of solids, catalysis, novel materials discovery.</p>
+                    <p class="text-gray-700"><strong class="text-[#0077B6]">Gemini Integration:</strong> Automate `pw.x` input (Code Interpreter), parse band structures (Code Interpreter), find pseudopotentials (Web Browse).</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3 class="card-title">4. Gaussian</h3>
+                    <p class="text-sm text-gray-500 mb-2">Quantum Chemistry</p>
+                    <p class="text-gray-700 mb-3"><strong>Key Benefit:</strong> Unparalleled breadth of methods, strong reputation for accuracy (Commercial).</p>
+                    <p class="text-gray-700 mb-1"><strong class="text-[#0077B6]">Target Research:</strong> Molecular properties, reaction mechanisms, spectroscopy, QM/MM.</p>
+                    <p class="text-gray-700"><strong class="text-[#0077B6]">Gemini Integration:</strong> Generate complex `.com` files (Code Interpreter), interpret spectroscopic outputs (Advanced Data Analysis/Multimodal).</p>
+                </div>
+                
+                <div class="stat-card">
+                    <h3 class="card-title">5. CP2K</h3>
+                    <p class="text-sm text-gray-500 mb-2">Versatile QM/MM, MD, DFT</p>
+                    <p class="text-gray-700 mb-3"><strong>Key Benefit:</strong> Highly versatile open-source tool, excellent CPU/GPU scalability (COSMA), broad QM/MM & DFT.</p>
+                    <p class="text-gray-700 mb-1"><strong class="text-[#0077B6]">Target Research:</strong> Multi-scale modeling, AIMD, solid-state and liquid-phase simulations.</p>
+                    <p class="text-gray-700"><strong class="text-[#0077B6]">Gemini Integration:</strong> Automate QM/MM input (Code Interpreter), analyze metadynamics (Advanced Data Analysis).</p>
+                </div>
+                 <div class="stat-card md:col-span-2 lg:col-span-1 flex flex-col justify-center items-center bg-[#00B4D8] text-white">
+                    <span class="text-3xl mb-3">💡</span>
+                    <h3 class="text-xl font-semibold mb-2 text-center">Strategic Portfolio</h3>
+                    <p class="text-center text-sm">
+                        This mix ensures broad coverage, cost-effectiveness, and cutting-edge capabilities for UCR's diverse research landscape.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="outlook" class="py-12 md:py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Future Outlook & Conclusion</h2>
+            <p class="section-subtitle">
+                The future of computational chemistry is intrinsically linked with AI and HPC. UCR's strategic adoption of a balanced software portfolio, augmented by Gemini's AI capabilities, will propel research to new frontiers.
+            </p>
+            <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-xl">
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    The assessment highlights a dynamic field where open-source tools offer immense value and commercial software provides specialized, high-accuracy capabilities. The key to UCR's success lies in a **balanced portfolio approach**, prioritizing containerized deployment for ease of use and reproducibility, and optimizing software for specific HPC hardware.
+                </p>
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    Crucially, the integration of **Gemini AI represents a paradigm shift**, acting as a force multiplier to accelerate research timelines, deepen data interpretation, and streamline scientific communication. This positions UCR to attract top talent and foster innovative, AI-driven scientific inquiry.
+                </p>
+                <h4 class="font-semibold text-lg text-[#0077B6] mb-3">Key Implementation Steps:</h4>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Prioritize **containerized deployment** (Singularity/Apptainer) for all software.</li>
+                    <li>Conduct **internal benchmarking** for hardware-software optimization.</li>
+                    <li>Implement **strategic licensing management** for commercial tools.</li>
+                    <li>Develop comprehensive **user training programs** for software and Gemini integration.</li>
+                    <li>Initiate **pilot projects** to demonstrate Gemini's practical impact.</li>
+                </ul>
+                <p class="mt-6 font-semibold text-[#03045E]">
+                    By embracing these recommendations, UCR can cultivate a state-of-the-art computational chemistry environment that is powerful, cost-efficient, and intelligently augmented by AI.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 bg-[#03045E] text-white">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-sm">&copy; 2025 University of California, Riverside - Research Computing. All rights reserved.</p>
+            <p class="text-xs mt-1">Infographic based on the "Strategic Optimization of UCR's Computational Chemistry Software Stack" Report.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Chart.js Label Wrapping Function
+        function wrapLabels(label, maxWidth) {
+            const words = label.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            });
+            lines.push(currentLine.trim());
+            return lines.filter(line => line.length > 0);
+        }
+
+        const commonChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            } else {
+                              return label;
+                            }
+                        }
+                    }
+                },
+                legend: {
+                    labels: {
+                        color: '#03045E', // Darkest Blue
+                        font: {
+                            size: 12,
+                            family: 'Inter'
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    ticks: { color: '#03045E', family: 'Inter' },
+                    grid: { color: 'rgba(3, 4, 94, 0.1)' }
+                },
+                x: {
+                    ticks: { color: '#03045E', family: 'Inter' },
+                    grid: { display: false }
+                }
+            }
+        };
+        
+        // Chart 1: Software Capabilities Distribution
+        const capabilitiesCtx = document.getElementById('capabilitiesChart').getContext('2d');
+        const capabilitiesData = {
+            labels: ['Quantum Chemistry', 'Molecular Dynamics', ['Materials', 'Science'], ['QM/MM', '(Hybrid)']].map(l => Array.isArray(l) ? l : wrapLabels(l, 16)),
+            datasets: [{
+                label: 'Number of Packages',
+                data: [8, 6, 7, 4], // QC, MD, MatSci, QM/MM counts
+                backgroundColor: ['#0077B6', '#00B4D8', '#90E0EF', '#03045E'],
+                borderColor: '#FFFFFF',
+                borderWidth: 1
+            }]
+        };
+        new Chart(capabilitiesCtx, {
+            type: 'bar',
+            data: capabilitiesData,
+            options: { ...commonChartOptions, indexAxis: 'y' }
+        });
+
+        // Chart 2: Licensing Model Overview
+        const licensingCtx = document.getElementById('licensingChart').getContext('2d');
+        const licensingData = {
+            labels: [['Open Source', '(Free)'], ['Free for', 'Academic Use'], 'Commercial', ['Free', '(Restricted)']].map(l => Array.isArray(l) ? l : wrapLabels(l, 16)),
+            datasets: [{
+                label: 'Number of Packages',
+                data: [6, 3, 3, 1], // Counts for Open Source, Free Academic, Commercial, Free Restricted
+                backgroundColor: ['#0077B6', '#00B4D8', '#03045E', '#90E0EF'],
+                borderColor: '#FFFFFF',
+                borderWidth: 2,
+                hoverOffset: 4
+            }]
+        };
+        new Chart(licensingCtx, {
+            type: 'doughnut',
+            data: licensingData,
+            options: {
+                ...commonChartOptions,
+                cutout: '60%',
+                plugins: {
+                    ...commonChartOptions.plugins,
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                           ...commonChartOptions.plugins.legend.labels,
+                            boxWidth: 15,
+                            padding: 15
+                        }
+                    }
+                }
+            }
+        });
+
+        // Simple scrollspy for navbar
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll("#navbar a");
+
+        window.onscroll = () => {
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 60) { // 60 is approx navbar height
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href").includes(current)) {
+                    link.classList.add("active");
+                }
+            });
+        };
+
+    </script>
+</body>
+</html>
