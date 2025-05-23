@@ -52,6 +52,7 @@ Welcome to the UCR Research Computing Knowledge Base! This comprehensive resourc
 *   [AI-Optimized HPC Clusters](../pages/ai-hpc-cluster.md)
 *   [Ursa Major Research Services for AI/ML](Ursa_Major_Research_Services.md)
 *   [LLM Inference Settings](llm-inference-settings.md)
+*   [Using Gemini for Genomics Research at UCR](../gemini_genomics_researchers.html)
 *   [The Edge AI Revolution](../pages/Edge_AI_Revolution.md)
 *   [Building AI-Optimized High-Performance Computing](../pages/Building_AI-Optimized_High-Performance_Computin.md)
 *   [Gemini for Physics Researchers](Gemini_for_Physics_Researchers.md)
