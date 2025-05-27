@@ -70,6 +70,7 @@ Welcome to the UCR Research Computing Knowledge Base! This comprehensive resourc
 *   [On-Prem Facilities](../pages/on-prem-facilities.md)
 *   [Web-Based Research Tools](../pages/web-based-research-tools.md)
 *   [Accessing SDSC Comet and Running a Test Job](sdsc-comet-connect.md)
+*   [Solid-State Battery Charging Simulation](../solid_state_battery_sim.html): An interactive p5.js animation demonstrating electron flow during battery charging with different material properties.
 
 ## Data Storage
 
