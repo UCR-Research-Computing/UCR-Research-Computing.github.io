@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solid-State Battery Charging Simulation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+    <script src="battery_sketch.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center main content blocks */
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 25px; /* Increased margin */
+            color: #2c3e50;
+        }
+        #canvas-container {
+            margin-bottom: 20px;
+            display: flex; 
+            justify-content: center; 
+            border: 1px solid #ccc; /* Keep border for canvas */
+            /* Ensure canvas itself doesn't get a border from p5.js if not desired,
+               or style it here if it does. */
+        }
+        /* Container for both controls and description for better layout options */
+        .content-wrapper {
+            display: flex;
+            flex-direction: column; /* Stack controls and description on smaller screens */
+            width: 80%;
+            max-width: 800px; /* Consistent max-width */
+            gap: 20px; /* Space between controls and description if they wrap */
+        }
+
+        #controls-container, #description-container {
+            background-color: #fff;
+            padding: 20px; /* Increased padding */
+            margin-bottom: 0; /* Removed individual margin-bottom as gap handles it */
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Slightly enhanced shadow */
+            width: 100%; /* Take full width of parent */
+            box-sizing: border-box;
+        }
+
+        /* On wider screens, place controls and description side-by-side */
+        @media (min-width: 768px) {
+            .content-wrapper {
+                flex-direction: row; /* Side-by-side */
+                align-items: flex-start; /* Align items to the top */
+            }
+            #controls-container {
+                flex: 1; /* Takes up 1 part of the space */
+            }
+            #description-container {
+                flex: 1.5; /* Takes up 1.5 parts, making it slightly wider */
+            }
+        }
+         /* Specific to controls-container for better internal layout */
+        #controls-container > div {
+            margin-bottom: 15px;
+        }
+        #controls-container > div:last-child {
+            margin-bottom: 0; /* Remove margin for the last control group */
+        }
+
+        label { /* Applied to labels within controls */
+            display: block; /* Make labels take full width */
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333; /* Ensure label color has good contrast */
+        }
+        select, input[type="range"] { /* Removed button from this rule */
+            width: 100%; /* Full width for select and range */
+            padding: 10px; /* Increased padding */
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            box-sizing: border-box; /* Important for width calculation */
+        }
+        button#resetButton { /* Specific styling for the reset button */
+            width: 100%; /* Full width */
+            padding: 10px 15px; /* Adjusted padding */
+            margin-top: 10px; /* Add some space above the button */
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            border: none; /* Remove default border */
+            transition: background-color 0.3s ease;
+        }
+        button#resetButton:hover {
+            background-color: #2980b9;
+        }
+        #voltageValue {
+            display: inline-block;
+            margin-left: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+        ul {
+            padding-left: 20px;
+            margin-top: 5px; /* Space above lists */
+        }
+        li ul {
+           margin-top: 5px;
+           margin-bottom: 10px; /* Space below nested lists */
+        }
+        h2, h3 {
+           color: #2c3e50;
+           margin-top: 15px; /* Space above headings */
+           margin-bottom: 10px; /* Space below headings */
+        }
+        h2:first-child, h3:first-child {
+            margin-top: 0; /* Remove top margin for first heading in a container */
+        }
+        p {
+            margin-bottom: 10px; /* Consistent bottom margin for paragraphs */
+        }
+        p:last-child {
+            margin-bottom: 0; /* Remove margin for last paragraph in a container */
+        }
+    </style>
+</head>
+<body>
+    <h1>Interactive Solid-State Battery Simulation</h1>
+
+    <div id="canvas-container">
+        <!-- p5.js canvas will be dynamically created here -->
+    </div>
+
+    <div class="content-wrapper">
+        <div id="controls-container">
+            <div>
+                <label for="materialSelect">Select Material:</label>
+                <select id="materialSelect">
+                  <option value="default">Default Material</option>
+                  <option value="materialX">Material X</option>
+                  <option value="materialY_coated">Material Y (Coated)</option>
+                </select>
+            </div>
+            <div>
+                <label for="voltageSlider">Charging Voltage Factor:</label>
+                <input type="range" id="voltageSlider" min="0.5" max="2.5" value="1" step="0.1">
+                <span id="voltageValue">1.0</span>
+            </div>
+            <div>
+                <button id="resetButton">Reset Simulation</button>
+            </div>
+        </div>
+
+        <div id="description-container">
+            <h2>About the Simulation</h2>
+            <p>This animation visualizes the movement of electrons from the cathode (left) to the anode (right) within a simplified model of a solid-state battery during its charging cycle. The behavior and characteristics of the battery components and electron flow can be changed by interacting with the controls.</p>
+            
+            <h3>Controls:</h3>
+            <ul>
+              <li><strong>Select Material:</strong> Choose from different hypothetical materials for the battery's electrodes. Each material has unique properties that affect:
+                <ul>
+                  <li>The color of the cathode and anode.</li>
+                  <li>The rate at which electrons are emitted (density of electron flow).</li>
+                  <li>The base speed of the electrons.</li>
+                  <li>The path variability of the electrons.</li>
+                </ul>
+                Selecting a new material will reset the current electron flow. Some materials may also represent the effect of special coatings.
+              </li>
+              <li><strong>Charging Voltage Factor:</strong> Adjust this slider to simulate changes in the applied charging voltage.
+                <ul>
+                  <li>Higher values increase the electron spawn rate and their overall speed, representing a more aggressive charging scenario.</li>
+                  <li>Lower values decrease the electron spawn rate and speed.</li>
+                </ul>
+              </li>
+              <li><strong>Reset Simulation:</strong> Click this button to return all settings to their default state and clear the current electron flow.</li>
+            </ul>
+       
+            <p><em><strong>Note:</strong> This is a conceptual and qualitative simulation designed for educational and illustrative purposes. It simplifies complex electrochemical processes.</em></p>
+        </div>
+    </div>
+
+</body>
+</html>
