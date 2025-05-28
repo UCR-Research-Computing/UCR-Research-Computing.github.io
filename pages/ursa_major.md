@@ -6,20 +6,20 @@ sidebar_label: Ursa Major
 
 ## Ursa Major
 
-**Modern Research requires advanced computing and data management resources**
+Ursa Major is a strategic partnership between the University of California, Riverside (UCR) and Google Cloud Platform (GCP), providing advanced computing and data management resources to support and accelerate research innovation across campus.
 
-The University of California, Riverside is proud to announce its latest partnership with Google Cloud Platform (GCP), code-named Ursa Major, designed to provide the research computing support and resources necessary for our researchers to advance their work and unlock new opportunities for innovation and growth.
+This initiative offers UCR researchers access to a comprehensive suite of scalable, secure, and high-performance computing services.
 
 ### Ursa Major Resources
 
-Through Ursa Major, UCR's researchers will have access to the following new and exciting resources:
+Through Ursa Major, UCR researchers can leverage the following resources:
 
-- **[Research Workstations](../Knowledge_Base/Ursa_Major_Research_Workstations.md)**: Researchers can access high-performance workstations with ample memory and CPU or storage capabilities.
-- **[Auto-scaling HPC Clusters](../Knowledge_Base/Ursa_Major_HPC_Clusters.md)**: Researchers can access cutting-edge high-performance computing clusters, equipped with the latest CPUs, GPUs, and large memory configurations.
-- **[Research AI and Machine Learning Services](../Knowledge_Base/Ursa_Major_Research_Services.md)**: Researchers can leverage Vertex.ai, Google's AI and Machine Learning platform, as well as other services, to support their research endeavors.
-- **[Secure Research Storage](../Knowledge_Base/Ursa_Major_Research_Storage.md)**: Researchers will have access to secure and optimized storage solutions, ensuring the safekeeping of their valuable research data.
+- **[Research Workstations](../Knowledge_Base/Ursa_Major_Research_Workstations.md)**: Access high-performance virtual workstations tailored for demanding computational tasks, featuring ample memory and CPU or storage capabilities.
+- **[Auto-scaling HPC Clusters](../Knowledge_Base/Ursa_Major_HPC_Clusters.md)**: Utilize cutting-edge, auto-scaling high-performance computing (HPC) clusters. These clusters are equipped with the latest CPUs and GPUs, large memory configurations, and are designed for elasticity. They can be configured as personal or lab-based environments, offering customization and connection to high-speed storage solutions. Their ephemeral nature allows for dynamic resource allocation tailored to project needs.
+- **[Research AI and Machine Learning Services](../Knowledge_Base/Ursa_Major_Research_Services.md)**: Leverage Vertex AI, Google's integrated AI and Machine Learning platform, alongside other specialized services to support advanced research endeavors.
+- **[Secure Research Storage](../Knowledge_Base/Ursa_Major_Research_Storage.md)**: Benefit from secure, scalable, and optimized storage solutions designed for the safekeeping and accessibility of valuable research data.
 
-This partnership with Google Cloud Platform is a major milestone for UCR, representing a significant investment in the future of research at our university. Our Research Computing Team is committed to providing a secure research computing infrastructure and research support services that will drive increased research output, grant funding, campus income, and prestige. This, in turn, will lead to the hiring of new faculty, positioning UCR as a leading R1 research university.
+This partnership with Google Cloud Platform represents a significant investment in the future of research at UCR. The Research Computing Team is committed to providing a robust and secure research computing infrastructure, along with dedicated support services. These efforts aim to drive increased research output, enhance grant funding opportunities, contribute to campus income, and elevate UCR's institutional prestige, ultimately supporting the recruitment of new faculty and solidifying UCR's position as a leading R1 research university.
 
 ### Ursa Major Resource Allocation Framework
 
