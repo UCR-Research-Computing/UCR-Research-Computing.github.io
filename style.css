@@ -1,0 +1,543 @@
+/* ==========================================================================
+   Base Styles & Resets
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7f6; /* Light gray background */
+    color: #333; /* Dark gray for text, good contrast */
+    padding: 20px;
+    font-size: 16px; /* Base font size */
+}
+
+/* Accessibility: Clear focus indicators */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #0056b3; /* A slightly darker blue for focus */
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Subtle glow for more visibility */
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+header {
+    background-color: #007bff; /* Primary blue */
+    color: white;
+    padding: 20px 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em; /* Larger for application title */
+    font-weight: 700;
+}
+
+/* Placeholder for UCR Branding/Logo */
+header .ucr-branding {
+    font-weight: bold;
+    font-size: 1.3em;
+    border-radius: 4px;
+}
+
+#user-info {
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+#userIdPlaceholder {
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Controls Section (Filters, Sorting, Add Button)
+   ========================================================================== */
+#controls {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+#controls .filters,
+#controls .sorting {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#controls label {
+    font-weight: 600;
+    color: #333;
+}
+
+#controls select,
+#controls input[type="text"] {
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.95em;
+    background-color: #fff;
+    color: #495057;
+}
+
+#controls input[type="text"] {
+    width: 220px;
+}
+
+#add-new-prompt-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    margin-left: auto;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#add-new-prompt-btn:hover {
+    background-color: #218838;
+}
+
+/* ==========================================================================
+   Prompt Display Area (Gallery)
+   ========================================================================== */
+#prompt-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.prompt-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.prompt-card:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.prompt-card .prompt-thumbnail {
+    width: 60px;
+    height: 60px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8em;
+    color: #495057;
+}
+
+.prompt-card h3 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #0056b3;
+}
+
+.prompt-card .prompt-text-display {
+    font-size: 0.95em;
+    color: #454545;
+    margin-bottom: 15px;
+    flex-grow: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    line-height: 1.5;
+}
+
+.prompt-card .category {
+    font-size: 0.85em;
+    color: #495057;
+    background-color: #e9ecef;
+    padding: 4px 10px;
+    border-radius: 15px;
+    align-self: flex-start;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.prompt-card .keywords {
+    font-size: 0.8em;
+    color: #6c757d;
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.prompt-card .keywords .keyword-tag {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+
+.prompt-card .voting {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.prompt-card .voting .vote-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3em;
+    color: #6c757d;
+    padding: 2px;
+    transition: color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+.prompt-card .voting .vote-btn:hover {
+    color: #007bff;
+    transform: scale(1.1);
+}
+.prompt-card .voting .vote-btn.active-upvote {
+    color: #28a745;
+}
+.prompt-card .voting .vote-btn.active-downvote {
+    color: #dc3545;
+}
+
+.prompt-card .voting .vote-count {
+    font-weight: 600;
+    color: #333;
+    min-width: 25px;
+    text-align: center;
+}
+
+
+.prompt-card .actions button {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: 500;
+    margin-right: 8px;
+    transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.prompt-card .actions button:hover {
+    opacity: 0.85;
+}
+
+.prompt-card .actions button.edit-btn {
+    background-color: #ffc107;
+    color: #333;
+}
+.prompt-card .actions button.edit-btn:hover {
+    background-color: #e0a800;
+    opacity: 1;
+}
+
+.prompt-card .actions button.delete-btn {
+    background-color: #dc3545;
+}
+.prompt-card .actions button.delete-btn:hover {
+    background-color: #c82333;
+    opacity: 1;
+}
+
+/* ==========================================================================
+   Modal Styling (Add/Edit and Confirmation)
+   ========================================================================== */
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 25px 30px;
+    border: 1px solid #adb5bd;
+    width: 90%;
+    max-width: 550px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    position: relative;
+    animation: modalOpen 0.3s ease-out;
+}
+
+@keyframes modalOpen {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-btn {
+    color: #6c757d;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8em;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+}
+
+#modal-title {
+    font-size: 1.6em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#prompt-form div {
+    margin-bottom: 18px;
+}
+
+#prompt-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #495057;
+}
+
+#prompt-form input[type="text"],
+#prompt-form textarea,
+#prompt-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1em;
+    color: #495057;
+}
+
+#prompt-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+#prompt-form button[type="submit"],
+#confirmation-modal button { /* General styling for modal buttons */
+    background-color: #007bff;
+    color: white;
+    padding: 10px 18px; /* Adjusted padding */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500; /* Adjusted weight */
+    transition: background-color 0.2s ease-in-out;
+    min-width: 80px; /* Ensure buttons have some min width */
+}
+
+#prompt-form button[type="submit"]:hover,
+#confirmation-modal button:hover {
+    background-color: #0056b3;
+}
+
+/* Confirmation Modal Specifics */
+#confirmation-modal .modal-content {
+    max-width: 450px; /* Adjusted max-width */
+}
+#confirmation-message {
+    font-size: 1.1em;
+    margin-bottom: 25px; /* Increased margin */
+    color: #333;
+    text-align: center;
+    line-height: 1.5;
+}
+#confirmation-modal .button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px; /* Increased gap */
+}
+#confirmation-modal button {
+    margin: 0;
+}
+
+#confirmation-modal #confirm-no-btn {
+    background-color: #6c757d;
+}
+#confirmation-modal #confirm-no-btn:hover {
+    background-color: #545b62;
+}
+
+/* Alert Mode for Confirmation Modal */
+#confirmation-modal.alert-mode #confirm-yes-btn,
+#confirmation-modal.alert-mode #confirm-no-btn {
+    display: none; /* Hide Yes/No in alert mode */
+}
+#confirmation-modal.alert-mode #alert-ok-btn {
+    display: inline-block; /* Show OK button in alert mode */
+    background-color: #007bff; /* Style like primary button */
+}
+#confirmation-modal.alert-mode #alert-ok-btn:hover {
+    background-color: #0056b3;
+}
+/* Default state for OK button (hidden) */
+#confirmation-modal #alert-ok-btn {
+    display: none;
+}
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.9em;
+    color: #6c757d;
+}
+footer p {
+    margin-bottom: 5px;
+}
+
+/* ==========================================================================
+   Responsive Design Adjustments
+   ========================================================================== */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+        text-align: center;
+    }
+    header h1 {
+        font-size: 1.8em;
+    }
+    header .ucr-branding {
+        font-size: 1.1em;
+    }
+
+    #controls {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    #controls .filters,
+    #controls .sorting {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    #controls input[type="text"],
+    #controls select {
+        width: 100%;
+    }
+
+    #add-new-prompt-btn {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+        padding: 12px;
+    }
+
+    #prompt-gallery {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+    #modal-title {
+        font-size: 1.4em;
+    }
+    #prompt-form button[type="submit"],
+    #confirmation-modal button {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+        font-size: 15px;
+    }
+    header h1 {
+        font-size: 1.6em;
+    }
+
+    .prompt-card {
+        padding: 15px;
+    }
+    .prompt-card h3 {
+        font-size: 1.2em;
+    }
+    .prompt-card .prompt-text-display {
+        font-size: 0.9em;
+        -webkit-line-clamp: 3;
+    }
+    .prompt-card .voting .vote-btn {
+        font-size: 1.2em;
+    }
+
+
+    .close-btn {
+        font-size: 1.6em;
+        top: 10px;
+        right: 15px;
+    }
+    #modal-title {
+        font-size: 1.3em;
+    }
+}

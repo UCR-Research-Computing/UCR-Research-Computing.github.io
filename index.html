@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompt Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>AI Prompt Gallery</h1>
+        <div class="ucr-branding">UCR</div>
+        <div id="user-info">
+            Logged in as: <span id="userIdPlaceholder">loading...</span>
+        </div>
+    </header>
+
+    <section id="controls">
+        <div class="filters">
+            <label for="category-filter">Category:</label>
+            <select id="category-filter">
+                <option value="all">All Categories</option>
+            </select>
+            <label for="keyword-search">Search:</label>
+            <input type="text" id="keyword-search" placeholder="Filter by keyword...">
+        </div>
+        <div class="sorting">
+            <label for="sort-options">Sort by:</label>
+            <select id="sort-options">
+                <option value="" disabled selected>Sort by...</option>
+                <option value="popularity">Most Popular</option>
+                <option value="newest">Newest</option>
+                <option value="alphabetical">Alphabetical (A-Z)</option>
+            </select>
+        </div>
+        <button id="add-new-prompt-btn">Add New Prompt</button>
+    </section>
+
+    <main id="prompt-gallery">
+        <p>Loading prompts...</p>
+    </main>
+
+    <div id="prompt-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modal-title">Add New Prompt</h2>
+            <form id="prompt-form">
+                <input type="hidden" id="prompt-id">
+                <div>
+                    <label for="prompt-title">Title:</label>
+                    <input type="text" id="prompt-title" required>
+                </div>
+                <div>
+                    <label for="prompt-text">Prompt Text:</label>
+                    <textarea id="prompt-text" rows="5" required></textarea>
+                </div>
+                <div>
+                    <label for="prompt-category">Category:</label>
+                    <input type="text" id="prompt-category" placeholder="e.g., Creative Writing, Coding" required>
+                </div>
+                <div>
+                    <label for="prompt-keywords">Keywords (comma-separated):</label>
+                    <input type="text" id="prompt-keywords" placeholder="e.g., python, ai, history">
+                </div>
+                <button type="submit" id="save-prompt-btn">Save Prompt</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="confirmation-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <p id="confirmation-message">Are you sure?</p>
+            <div class="button-group">
+                <button id="confirm-yes-btn">Yes</button>
+                <button id="confirm-no-btn">No</button>
+                <button id="alert-ok-btn" style="display: none;">OK</button> <!-- Added OK button -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>User ID: <span id="user-id-display">loading...</span></p>
+        <p>&copy; 2024 AI Prompt Gallery</p>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
