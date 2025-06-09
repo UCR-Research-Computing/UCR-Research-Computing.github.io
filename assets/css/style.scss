@@ -1,0 +1,9 @@
+// Import the original theme styles (based on build log analysis)
+@import "vendor/tailwind";
+@import "garden";
+@import "search";
+
+// Custom CSS rules
+body {
+  background-color: #FF00FF !important; // A very obvious color for testing
+}
