@@ -52,6 +52,7 @@ Welcome to the UCR Research Computing Knowledge Base. Explore our comprehensive 
 
 - [UCR RCSAS](UCR_Research_Computing_System_Administration_Service.md): Overview of the Research Computing System Administration Service.
 - [RCSAS MOU](https://docs.google.com/document/d/19nYYXakruAbg1pxKybpSddSz8p1TBiBc/edit?usp=sharing&ouid=115996119773834121624&rtpof=true&sd=true): Service agreement details for RCSAS.
+- [UC Riverside Research Records Retention A Quick Guide for Researchers](../pages/ucr_research_records_retention_guide.md)
 
 ### Software
 
