@@ -60,7 +60,7 @@ To take advantage of these discounts and integrate cloud computing resources int
 
 GCP and Azure follow similar procedures in this regard.
 
-For detailed instructions on accessing these discounts and to start using cloud computing resources for your research or instructional needs, please rearch out to us.
+For detailed instructions on accessing these discounts, to engage with Research Computing, and to request cloud resources, please submit the form available at [UCR Support Portal](https://ucrsupport.service-now.com/ucr_portal?id=sc_cat_item&sys_id=550e9fb61b7ebc90609f86e9cd4bcb8d&table=sc_cat_item&searchTerm=cloud). You can also reach out to us for any questions.
 
 ### Support and Consultation
 
