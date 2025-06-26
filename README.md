@@ -42,19 +42,19 @@ Explore a wide array of computational tools and platforms tailored to support yo
       description: "UCR's shared High-Performance Computing Cluster, offering resources for computationally intensive research."
     },
     {
-      name: "Ursa Major - Cloud Computing",
+      name: "Ursa Major - Google Cloud Computing",
       link: "./pages/ursa_major.html",
-      description: "A Kubernetes-based cloud computing platform providing scalable and flexible computing environments."
+      description: "A Google cloud computing platform providing scalable and flexible cloud computing environments. HPC Clusters, GPUs, Workstations, VMs, AI Tools, Gemini"
     },
     {
-      name: "NSF - Nautilus Cluster",
+      name: "Nautilus Cluster",
       link: "./pages/Nautilus.html",
-      description: "A distributed Kubernetes-based cluster for high-throughput computing, part of the Pacific Research Platform."
+      description: "A distributed Kubernetes-based cluster for high-throughput computing, part of the National Research Platform. CPUs, GPUs, LLMs, FPGAs, Jupyter"
     },
     {
-      name: "NSF - HPC Clusters - ACCESS",
+      name: "NSF ACCESS",
       link: "./pages/nsf_access.html",
-      description: "Provides access to national high-performance computing resources through the NSF ACCESS program."
+      description: "Provides access to national high-performance computing resources through the NSF ACCESS program.PC Cluster, GPUS, Workstations, Graphical Evniorments"
     }
   ];
 
