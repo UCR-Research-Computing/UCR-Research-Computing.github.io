@@ -160,20 +160,16 @@ Explore a wide array of computational tools and platforms tailored to support yo
   }
 </script>
 
-<div class="text-center">
 ## Researcher Resources
 
 * [Research Data Security Plans](./pages/research_security.md) for secure research projects.
 * [UCR Facilites Documents](./pages/on-prem-facilities.md) for grant proposals.
-</div>
 
-
-<div class="text-center">
 ## Contact Us
 
 For more information, please contact us at:
 
 [research-computing@ucr.edu](./pages/mailto:research-computing@ucr.edu) - [UCR Research Computing Slack](./pages/https://ucr-research-compute.slack.com/)
-</div>
+
 
 
