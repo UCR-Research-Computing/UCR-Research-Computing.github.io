@@ -1,15 +1,13 @@
 
 # Welcome to UCR Research Computing
 
+<div class="text-center">
 At the University of California, Riverside (UCR), we're committed to empowering our researchers with the most advanced computational resources and support services.
 
-Explore a wide array of computational tools and platforms tailored to support your research endeavors. Through our sidebar navigation, the cards below and the **search bar** in the upper right you can explore our offerings:
+Explore a wide array of computational tools and platforms tailored to support your research endeavors. Through our sidebar navigation and the cards below you can explore our offerings:
+</div>
 
 <div class="container mx-auto px-4 py-8">
-  <div class="mb-8">
-    <input type="text" id="fuzzy-search-bar" placeholder="Search resources by name or description..." class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
-  </div>
-
   <h2 class="text-2xl font-bold text-center text-gray-800 mb-10">Explore Our Resources</h2>
 
   <div class="mb-12">
@@ -104,20 +102,6 @@ Explore a wide array of computational tools and platforms tailored to support yo
     }
   ];
 
-  // Basic fuzzy search function: checks if all characters of searchTerm appear in order in text
-  function fuzzyMatch(searchTerm, text) {
-    if (!searchTerm) return true; // Empty search term matches everything
-    searchTerm = searchTerm.toLowerCase();
-    text = text.toLowerCase();
-    let searchIndex = 0;
-    for (let i = 0; i < text.length && searchIndex < searchTerm.length; i++) {
-      if (searchTerm[searchIndex] === text[i]) {
-        searchIndex++;
-      }
-    }
-    return searchIndex === searchTerm.length;
-  }
-
   function createCard(item) {
     return `
       <div class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col">
@@ -160,27 +144,11 @@ Explore a wide array of computational tools and platforms tailored to support yo
     }
   }
 
-  function filterAndRenderAllCards() {
-    const searchTerm = document.getElementById('fuzzy-search-bar').value;
-
-    const filterOptions = (options) =>
-      options.filter(option =>
-        fuzzyMatch(searchTerm, option.name) || fuzzyMatch(searchTerm, option.description)
-      );
-
-    renderCards(filterOptions(allComputeOptions), 'compute-cards');
-    renderCards(filterOptions(allStorageOptions), 'storage-cards');
-    renderCards(filterOptions(allSupportOptions), 'support-cards');
-  }
-
   // Initial render and event listener setup
   function initializeSearchAndCards() {
-    filterAndRenderAllCards(); // Initial render based on empty search (shows all)
-
-    const searchBar = document.getElementById('fuzzy-search-bar');
-    if (searchBar) {
-      searchBar.addEventListener('input', filterAndRenderAllCards);
-    }
+    renderCards(allComputeOptions, 'compute-cards');
+    renderCards(allStorageOptions, 'storage-cards');
+    renderCards(allSupportOptions, 'support-cards');
   }
 
   // Defer script execution until the DOM is fully loaded
@@ -192,17 +160,20 @@ Explore a wide array of computational tools and platforms tailored to support yo
   }
 </script>
 
+<div class="text-center">
 ## Researcher Resources
 
 * [Research Data Security Plans](./pages/research_security.md) for secure research projects.
 * [UCR Facilites Documents](./pages/on-prem-facilities.md) for grant proposals.
+</div>
 
 
-
+<div class="text-center">
 ## Contact Us
 
 For more information, please contact us at:
 
 [research-computing@ucr.edu](./pages/mailto:research-computing@ucr.edu) - [UCR Research Computing Slack](./pages/https://ucr-research-compute.slack.com/)
+</div>
 
 
