@@ -69,7 +69,6 @@ UCR's Research Computing and IT departments offer support and consultation servi
 For support or to schedule a consultation, please contact:
 
 - **Research Computing Support:** research-computing@ucr.edu
-- **IT Help Desk:** helpdesk@ucr.edu
 
 ---
 
