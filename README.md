@@ -147,7 +147,7 @@ Explore a wide array of computational tools and platforms tailored to support yo
   // Initial render and event listener setup
   function initializeSearchAndCards() {
     renderCards(allComputeOptions, 'compute-cards');
-    renderCards(StorageOptions, 'storage-cards');
+    renderCards(storageOptions, 'storage-cards');
     renderCards(allSupportOptions, 'support-cards');
   }
 
