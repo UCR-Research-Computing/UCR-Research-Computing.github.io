@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Containerization for Reproducible Research</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <style>
+        .code-block {
+            position: relative;
+            background-color: #f5f5f5; /* Light grey background */
+            border: 1px solid #ddd;
+            padding: 1em;
+            border-radius: 5px;
+            margin-bottom: 1em;
+            overflow-x: auto; /* Allow horizontal scrolling for long lines */
+        }
+        .code-block pre {
+            margin: 0;
+            white-space: pre; /* Preserve whitespace and prevent wrapping */
+        }
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .copy-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans leading-relaxed">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="mb-8 text-center">
+            <h1 class="text-4xl font-bold text-blue-600">Containerization for Reproducible Research</h1>
+            <p class="text-xl text-gray-600">A tutorial on using Docker and Singularity</p>
+        </header>
+
+        <article class="bg-white shadow-lg rounded-lg p-6">
+
+            <section class="mb-6">
+                <h2 class="text-2xl font-semibold text-blue-500 mb-3">Introduction: Why Containerization?</h2>
+                <p class="mb-2">
+                    Reproducibility is a cornerstone of scientific research. However, ensuring that computational experiments can be exactly replicated by others (or even by yourself at a later time) can be challenging. Differences in software versions, operating system environments, and dependencies can lead to varying results or outright failures.
+                </p>
+                <p>
+                    Containerization technologies like Docker and Singularity address this challenge by packaging an application and all its dependencies (libraries, system tools, code, and runtime) into a single, isolated unit called a container. This container can then be run consistently across different computing environments.
+                </p>
+            </section>
+
+            <section class="mb-6">
+                <h2 class="text-2xl font-semibold text-blue-500 mb-3">Benefits of Containerization</h2>
+                <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li><strong>Reproducibility:</strong> Ensures that your computational environment is identical every time it runs.</li>
+                    <li><strong>Portability:</strong> Containers can run on any system that supports the containerization platform (e.g., your laptop, a colleague's machine, HPC clusters).</li>
+                    <li><strong>Isolation:</strong> Dependencies for different projects won't conflict, as they are isolated within their respective containers.</li>
+                    <li><strong>Version Control:</strong> Container images can be versioned and stored in registries, allowing you to track changes and revert to previous versions.</li>
+                    <li><strong>Simplified Collaboration:</strong> Share your entire computational environment easily with collaborators.</li>
+                </ul>
+            </section>
+
+            <section class="mb-6">
+                <h2 class="text-2xl font-semibold text-blue-500 mb-3">Docker: The Popular Choice</h2>
+                <p class="mb-2">
+                    Docker is a widely used open-source platform for developing, shipping, and running applications in containers. It uses a client-server architecture, with the Docker client talking to the Docker daemon, which does the heavy lifting of building, running, and distributing containers.
+                </p>
+                <p class="mb-2">
+                    Docker images are built from a `Dockerfile`, a text file that contains a series of instructions on how to assemble the image.
+                </p>
+                <h3 class="text-xl font-medium text-gray-700 mt-4 mb-2">Example: Basic Dockerfile</h3>
+                <p>Here's a simple `Dockerfile` that sets up a Python environment and runs a script:</p>
+                <div class="code-block">
+                    <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                    <pre><code># Use an official Python runtime as a parent image
+FROM python:3.8-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Make port 80 available to the world outside this container
+EXPOSE 80
+
+# Define environment variable
+ENV NAME World
+
+# Run app.py when the container launches
+CMD ["python", "app.py"]</code></pre>
+                </div>
+                <h3 class="text-xl font-medium text-gray-700 mt-4 mb-2">Key Docker Commands:</h3>
+                <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li>`docker build -t my-image .` - Builds an image from a Dockerfile in the current directory.</li>
+                    <li>`docker run my-image` - Runs a command in a new container.</li>
+                    <li>`docker pull ubuntu` - Pulls an image from a registry (e.g., Docker Hub).</li>
+                    <li>`docker push my-username/my-image` - Pushes an image to a registry.</li>
+                    <li>`docker ps` - Lists running containers.</li>
+                </ul>
+                <p class="mt-2">
+                    <strong>Note:</strong> Docker typically requires root privileges to run, which can be a security concern in shared environments like HPC clusters. This is where Singularity often comes in.
+                </p>
+            </section>
+
+            <section class="mb-6">
+                <h2 class="text-2xl font-semibold text-blue-500 mb-3">Singularity: Containerization for HPC</h2>
+                <p class="mb-2">
+                    Singularity (now Apptainer) is a container platform designed for High-Performance Computing (HPC) environments. Its key advantage is that it allows unprivileged users to run containers, addressing the security concerns associated with Docker in multi-tenant systems.
+                </p>
+                <p class="mb-2">
+                    Singularity containers are typically single files (SIF - Singularity Image Format), making them easy to manage and share. Definition files (often named `Singularity.def` or `*.def`) are used to build Singularity images.
+                </p>
+                <h3 class="text-xl font-medium text-gray-700 mt-4 mb-2">Example: Basic Singularity Definition File</h3>
+                <p>This definition file creates a container with a basic Ubuntu setup and some tools:</p>
+                <div class="code-block">
+                    <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                    <pre><code>Bootstrap: docker
+From: ubuntu:20.04
+
+%post
+    apt-get update && apt-get install -y \
+        git \
+        wget \
+        python3 \
+        python3-pip
+    rm -rf /var/lib/apt/lists/*
+
+%environment
+    export LC_ALL=C
+    export PATH=/usr/local/bin:$PATH
+
+%runscript
+    echo "Container is running!"
+    python3 --version</code></pre>
+                </div>
+                <h3 class="text-xl font-medium text-gray-700 mt-4 mb-2">Key Singularity Commands:</h3>
+                <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li>`singularity build my_container.sif my_definition.def` - Builds a SIF image from a definition file.</li>
+                    <li>`singularity run my_container.sif` - Runs the container (executes the `%runscript`).</li>
+                    <li>`singularity exec my_container.sif <command>` - Executes a specific command inside the container.</li>
+                    <li>`singularity pull docker://ubuntu:20.04` - Pulls an image from Docker Hub and converts it to SIF.</li>
+                </ul>
+                <p class="mt-2">
+                    Singularity integrates well with existing HPC schedulers (like Slurm) and file systems.
+                </p>
+            </section>
+
+            <section class="mb-6">
+                <h2 class="text-2xl font-semibold text-blue-500 mb-3">Choosing Between Docker and Singularity</h2>
+                <table class="w-full border-collapse border border-gray-300">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="border border-gray-300 p-2 text-left">Feature</th>
+                            <th class="border border-gray-300 p-2 text-left">Docker</th>
+                            <th class="border border-gray-300 p-2 text-left">Singularity/Apptainer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border border-gray-300 p-2">Primary Use Case</td>
+                            <td class="border border-gray-300 p-2">Application development, microservices</td>
+                            <td class="border border-gray-300 p-2">HPC, scientific computing, unprivileged execution</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">Privileges</td>
+                            <td class="border border-gray-300 p-2">Requires root daemon</td>
+                            <td class="border border-gray-300 p-2">Can be run by unprivileged users</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">Image Format</td>
+                            <td class="border border-gray-300 p-2">Layered filesystem, images from Docker Hub</td>
+                            <td class="border border-gray-300 p-2">Single file (SIF), can convert Docker images</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">Security Model</td>
+                            <td class="border border-gray-300 p-2">User inside container can be root (different from host root)</td>
+                            <td class="border border-gray-300 p-2">User inside container is same as user on host</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">Ecosystem</td>
+                            <td class="border border-gray-300 p-2">Very large, extensive tooling</td>
+                            <td class="border border-gray-300 p-2">Growing, focused on research/HPC needs</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="mb-6">
+                <h2 class="text-2xl font-semibold text-blue-500 mb-3">Three.js Visualization Placeholder</h2>
+                <p class="mb-2">
+                    This section is a placeholder for a Three.js visualization. For example, one could visualize the layers of a Docker container or the relationship between a host system and a Singularity container.
+                </p>
+                <div id="threejs-container" class="w-full h-64 bg-gray-300 border border-gray-400 rounded flex items-center justify-center">
+                    <p class="text-gray-500">Three.js Visualization Area</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-semibold text-blue-500 mb-3">Conclusion</h2>
+                <p>
+                    Containerization with Docker and Singularity provides powerful tools for creating reproducible and portable computational research environments. By packaging your application and its dependencies together, you can ensure consistency across different systems and simplify collaboration. While Docker is popular for general application development, Singularity offers key advantages for HPC and scientific computing, particularly its ability to run containers without root privileges.
+                </p>
+            </section>
+        </article>
+
+        <footer class="mt-8 text-center text-sm text-gray-500">
+            <p>&copy; 2023 Your Research Group/Institution. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function copyCode(button) {
+            const codeBlock = button.parentElement;
+            const pre = codeBlock.querySelector('pre');
+            const code = pre.innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                button.innerText = 'Copied!';
+                setTimeout(() => {
+                    button.innerText = 'Copy';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                button.innerText = 'Failed';
+                 setTimeout(() => {
+                    button.innerText = 'Copy';
+                }, 2000);
+            });
+        }
+
+        // Basic Three.js placeholder script
+        function initThreeJSPlaceholder() {
+            const container = document.getElementById('threejs-container');
+            if (!container || !THREE) {
+                console.log("Three.js container or THREE library not found.");
+                return;
+            }
+
+            const scene = new THREE.Scene();
+            scene.background = new THREE.Color(0xdddddd); // Light grey background for the scene
+
+            const camera = new THREE.PerspectiveCamera(75, container.offsetWidth / container.offsetHeight, 0.1, 1000);
+            camera.position.z = 5;
+
+            const renderer = new THREE.WebGLRenderer();
+            renderer.setSize(container.offsetWidth, container.offsetHeight);
+            container.innerHTML = ''; // Clear the placeholder text
+            container.appendChild(renderer.domElement);
+
+            const geometry = new THREE.BoxGeometry();
+            const material = new THREE.MeshBasicMaterial({ color: 0x0077ff }); // Blue cube
+            const cube = new THREE.Mesh(geometry, material);
+            scene.add(cube);
+
+            function animate() {
+                requestAnimationFrame(animate);
+                cube.rotation.x += 0.01;
+                cube.rotation.y += 0.01;
+                renderer.render(scene, camera);
+            }
+
+            animate();
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                camera.aspect = container.offsetWidth / container.offsetHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(container.offsetWidth, container.offsetHeight);
+            });
+        }
+
+        // Check if THREE is loaded before initializing
+        if (typeof THREE !== 'undefined') {
+            initThreeJSPlaceholder();
+        } else {
+            // If THREE is loaded via CDN, it might take a moment.
+            // A more robust solution might involve waiting for an onload event for the script.
+            window.addEventListener('load', initThreeJSPlaceholder);
+        }
+    </script>
+
+</body>
+</html>
