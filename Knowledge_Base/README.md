@@ -129,3 +129,4 @@ Computational Chemistry Software Stack Infographic
 *   [SSH to Access](ssh-to-access.md)
 *   [Building a Mature Research Computing Service](../pages/Building_a_Mature_Research_Computing_Service.md)
 *   [Research Infrastructure Support](../pages/research_infrastructure_support.md)
+*   [Containerization for Reproducible Research: A tutorial on using Docker or Singularity to create reproducible computational environments for research projects.](Containerization_for_Reproducible_Research.html)
