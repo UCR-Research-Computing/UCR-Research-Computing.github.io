@@ -145,3 +145,4 @@ Welcome to the UCR Research Computing Knowledge Base! This resource hub provides
 *   [Research Infrastructure Support](../pages/research_infrastructure_support.md) - Overview of UCR's RCSAS for on-premise research systems.
 *   [Containerization for Reproducible Research](Containerization_for_Reproducible_Research.html) - A tutorial on using Docker or Singularity to create reproducible computational environments for research projects.
 *   [Infographic: Containerization for Reproducible Research](Infographic_Containerization_for_Reproducible_Research.html) - An infographic visually guiding UCR researchers on best practices for using containerization to achieve reproducible research.
+*   [AI Audio Summary: Containerization for Reproducible Research](https://drive.google.com/file/d/1obmRkM0Fhq_Uhsv4IfF76QkJLzBnZqDq/view?usp=sharing) - An AI-generated audio summary of the containerization and reproducibility report. (MP3)
