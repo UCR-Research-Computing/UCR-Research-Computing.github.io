@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: A UCR Researcher's Guide to Containerization</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1f2937;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 350px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+                max-height: 400px;
+            }
+        }
+        .kpi-card {
+            background-color: #003f5c;
+            color: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .kpi-number {
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 1;
+            color: #ffa600;
+        }
+        .kpi-label {
+            margin-top: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            max-width: 25ch;
+        }
+        .flowchart-step {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 3px solid #374c80;
+            background-color: #ffffff;
+            color: #003f5c;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            min-height: 120px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .flowchart-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .flowchart-arrow {
+            font-size: 3rem;
+            color: #7a5195;
+            font-weight: 900;
+            align-self: center;
+            text-align: center;
+        }
+        .example-tab-btn {
+            transition: all 0.2s ease-in-out;
+            border-bottom: 4px solid transparent;
+            color: #4b5563;
+        }
+        .example-tab-btn.active {
+            border-color: #7a5195;
+            color: #7a5195;
+            font-weight: 700;
+        }
+        .modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 50;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            width: 90%;
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-[#003f5c] text-white p-8 text-center shadow-xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-2 tracking-tight">Encapsulating Discovery at UCR</h1>
+        <p class="text-xl md:text-2xl font-light text-gray-200">A Visual Guide to Reproducible Research with Containers</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8 space-y-20">
+
+        <section id="crisis">
+            <h2 class="text-3xl font-bold text-center mb-4 text-[#003f5c]">The Crisis of Confidence in Computational Science</h2>
+            <p class="text-lg text-center max-w-4xl mx-auto mb-10 text-gray-600">A foundational pillar of science is reproducibility. Yet, a significant portion of computational research cannot be reliably reproduced, eroding trust and hindering progress. This is a challenge we can, and must, address.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="kpi-card">
+                    <div class="kpi-number">70%</div>
+                    <div class="kpi-label">of researchers have failed to reproduce another's experiments.</div>
+                    <p class="text-sm mt-4 text-gray-300 opacity-75">(Source: Nature, 2016 Survey)</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold text-center mb-4 text-[#374c80]">Primary Roots of Irreproducibility</h3>
+                    <div class="chart-container">
+                        <canvas id="reproducibilityCrisisChart"></canvas>
+                    </div>
+                    <p class="text-center text-sm mt-4 text-gray-500">The "works on my machine" syndrome, a result of environmental differences, is a major, addressable cause.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="fair-principles">
+            <h2 class="text-3xl font-bold text-center mb-4 text-[#003f5c]">The FAIR Principles: A Guiding Framework</h2>
+            <p class="text-lg text-center max-w-4xl mx-auto mb-10 text-gray-600">To combat this, the FAIR principles (Findable, Accessible, Interoperable, Reusable) provide a roadmap. Containerization is a key technology that makes computational workflows FAIR.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="border-l-8 border-[#ffa600] p-6 bg-white rounded-lg shadow-md"><h3 class="text-2xl font-bold text-[#003f5c]">Findable</h3><p class="mt-2 text-gray-700">Container images are stored in registries with unique, citable tags.</p></div>
+                <div class="border-l-8 border-[#ff764a] p-6 bg-white rounded-lg shadow-md"><h3 class="text-2xl font-bold text-[#003f5c]">Accessible</h3><p class="mt-2 text-gray-700">The entire software stack runs with a single command, anywhere.</p></div>
+                <div class="border-l-8 border-[#ef5675] p-6 bg-white rounded-lg shadow-md"><h3 class="text-2xl font-bold text-[#003f5c]">Interoperable</h3><p class="mt-2 text-gray-700">OCI-standard images run across platforms, from laptops to the HPCC.</p></div>
+                <div class="border-l-8 border-[#bc5090] p-6 bg-white rounded-lg shadow-md"><h3 class="text-2xl font-bold text-[#003f5c]">Reusable</h3><p class="mt-2 text-gray-700">Encapsulation ensures the environment is reliable, today and tomorrow.</p></div>
+            </div>
+        </section>
+        
+        <section id="workflow" class="bg-gray-100 p-6 md:p-10 rounded-xl shadow-inner">
+            <h2 class="text-3xl font-bold text-center mb-4 text-[#003f5c]">The Ideal UCR Research Workflow</h2>
+            <p class="text-lg text-center max-w-4xl mx-auto mb-10 text-gray-600">This workflow synthesizes the best tools: using a universal standard for definition, a familiar tool for local building, and a secure, high-performance engine for execution on the UCR HPCC.</p>
+            <div class="grid grid-cols-1 md:grid-cols-9 gap-4 items-stretch">
+                <div class="flowchart-step md:col-span-2"><span>1. <b class="block mt-1">Define</b><span class="font-normal text-sm block">with Dockerfile</span></span></div>
+                <div class="flowchart-arrow hidden md:flex items-center justify-center">▶</div>
+                <div class="flowchart-step md:col-span-2"><span>2. <b class="block mt-1">Build & Test</b><span class="font-normal text-sm block">Locally with Docker</span></span></div>
+                <div class="flowchart-arrow hidden md:flex items-center justify-center">▶</div>
+                <div class="flowchart-step md:col-span-2"><span>3. <b class="block mt-1">Share</b><span class="font-normal text-sm block">via Docker Hub</span></span></div>
+                <div class="flowchart-arrow hidden md:flex items-center justify-center">▶</div>
+                <div class="flowchart-step md:col-span-2"><span>4. <b class="block mt-1">Execute at Scale</b><span class="font-normal text-sm block">on UCR HPCC with Apptainer</span></span></div>
+            </div>
+        </section>
+
+        <section id="optimization">
+            <h2 class="text-3xl font-bold text-center mb-10 text-[#003f5c]">Best Practices for Smaller, Faster, Safer Images</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold text-center mb-4 text-[#374c80]">Minimize Image Size with Multi-Stage Builds</h3>
+                    <div class="chart-container">
+                        <canvas id="imageSizeChart"></canvas>
+                    </div>
+                    <p class="text-center text-sm mt-4 text-gray-500">By separating build tools from the final runtime, image size is drastically reduced, improving transfer speeds and security.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg flex flex-col justify-center">
+                    <h3 class="text-xl font-bold text-center mb-4 text-[#374c80]">Optimize Build Speed with Layer Caching</h3>
+                    <p class="text-center text-gray-600 mb-6">Structure your Dockerfile from least to most frequently changing instructions to maximize cache hits and achieve near-instant rebuilds during development.</p>
+                    <div class="space-y-4">
+                        <div class="p-4 rounded-lg bg-red-100 border border-red-300">
+                            <h4 class="font-bold text-red-800">Sub-Optimal ❌</h4>
+                            <p class="text-sm text-red-700">`COPY . .` before `RUN pip install`. Every code change forces a slow dependency re-installation.</p>
+                        </div>
+                        <div class="p-4 rounded-lg bg-green-100 border border-green-300">
+                            <h4 class="font-bold text-green-800">Optimal ✅</h4>
+                            <p class="text-sm text-green-700">`COPY requirements.txt` first, then `RUN pip install`, then `COPY . .`. Dependency layers are cached.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="code-examples">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#003f5c]">Practical Code Examples for UCR Researchers</h2>
+            <div class="flex justify-center border-b-2 border-gray-200 mb-8">
+                <button data-target="workstation-content" class="example-tab-btn active py-3 px-6 font-semibold">Workstation</button>
+                <button data-target="hpc-content" class="example-tab-btn py-3 px-6 font-semibold">UCR HPCC</button>
+                <button data-target="k8s-content" class="example-tab-btn py-3 px-6 font-semibold">Kubernetes</button>
+            </div>
+
+            <div id="workstation-content" class="example-content space-y-8">
+                <div class="code-block-wrapper bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex justify-between items-center mb-2"><h4 class="font-bold text-lg text-[#374c80]">Multi-Stage Dockerfile (Python)</h4><button class="copy-code-btn bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs font-semibold py-1 px-3 rounded-md transition-colors">Copy</button></div>
+                    <pre class="bg-gray-50 text-sm p-4 rounded-md overflow-x-auto"><code class="language-dockerfile"># Stage 1: Build the environment
+FROM python:3.10-slim AS builder
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir --user -r requirements.txt
+
+# Stage 2: Final minimal image
+FROM python:3.10-slim
+WORKDIR /app
+COPY --from=builder /root/.local /root/.local
+COPY . .
+ENV PATH=/root/.local/bin:$PATH
+CMD ["python", "./your_script.py"]</code></pre>
+                </div>
+                <div class="code-block-wrapper bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex justify-between items-center mb-2"><h4 class="font-bold text-lg text-[#374c80]">Interactive Development with Docker</h4><button class="copy-code-btn bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs font-semibold py-1 px-3 rounded-md transition-colors">Copy</button></div>
+                    <pre class="bg-gray-50 text-sm p-4 rounded-md overflow-x-auto"><code class="language-bash"># Build the Docker image from your Dockerfile
+docker build -t my-research-app .
+
+# Run container, mounting your code for live editing
+# Changes on your machine are reflected instantly in the container
+docker run --rm -it -v $(pwd):/app my-research-app bash</code></pre>
+                </div>
+            </div>
+
+            <div id="hpc-content" class="example-content hidden space-y-8">
+                <div class="code-block-wrapper bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex justify-between items-center mb-2"><h4 class="font-bold text-lg text-[#374c80]">UCR HPCC Slurm Script (CPU Job)</h4><button class="copy-code-btn bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs font-semibold py-1 px-3 rounded-md transition-colors">Copy</button></div>
+                    <pre class="bg-gray-50 text-sm p-4 rounded-md overflow-x-auto"><code class="language-bash">#!/bin/bash
+#SBATCH --job-name=apptainer_cpu_job
+#SBATCH --partition=epyc
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=8
+#SBATCH --mem=16G
+#SBATCH --time=02:00:00
+
+# Load the required module on HPCC
+module load singularity
+
+# Path to your SIF image file on the HPCC filesystem
+IMAGE_PATH="/path/to/your/image.sif"
+
+# Execute your research script inside the container
+apptainer exec $IMAGE_PATH \
+  python3 /app/analysis.py --input /data --output /results</code></pre>
+                </div>
+                <div class="code-block-wrapper bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex justify-between items-center mb-2"><h4 class="font-bold text-lg text-[#374c80]">UCR HPCC Slurm Script (GPU Job)</h4><button class="copy-code-btn bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs font-semibold py-1 px-3 rounded-md transition-colors">Copy</button></div>
+                    <pre class="bg-gray-50 text-sm p-4 rounded-md overflow-x-auto"><code class="language-bash">#!/bin/bash
+#SBATCH --job-name=apptainer_gpu_job
+#SBATCH --partition=gpu
+#SBATCH --gres=gpu:1
+#SBATCH --mem=32G
+#SBATCH --time=04:00:00
+
+# Load the required module on HPCC
+module load singularity
+
+# Path to your GPU-enabled SIF image file
+IMAGE_PATH="/path/to/your/gpu_image.sif"
+
+# The --nv flag enables NVIDIA GPU access inside the container
+apptainer exec --nv $IMAGE_PATH \
+  python3 /app/train_model.py</code></pre>
+                </div>
+            </div>
+            
+            <div id="k8s-content" class="example-content hidden space-y-8">
+                 <div class="code-block-wrapper bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex justify-between items-center mb-2"><h4 class="font-bold text-lg text-[#374c80]">Kubernetes Deployment YAML</h4><button class="copy-code-btn bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs font-semibold py-1 px-3 rounded-md transition-colors">Copy</button></div>
+                    <pre class="bg-gray-50 text-sm p-4 rounded-md overflow-x-auto"><code class="language-yaml">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: research-portal-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: research-portal
+  template:
+    metadata:
+      labels:
+        app: research-portal
+    spec:
+      containers:
+      - name: web-container
+        image: your-repo/research-portal:1.0.0
+        ports:
+        - containerPort: 8080</code></pre>
+                </div>
+                <div class="code-block-wrapper bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex justify-between items-center mb-2"><h4 class="font-bold text-lg text-[#374c80]">Kubernetes Service & kubectl Commands</h4><button class="copy-code-btn bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs font-semibold py-1 px-3 rounded-md transition-colors">Copy</button></div>
+                    <pre class="bg-gray-50 text-sm p-4 rounded-md overflow-x-auto"><code class="language-bash"># Expose the deployment with a service
+# (save as service.yaml)
+# ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: research-portal-service
+# spec:
+#   selector:
+#     app: research-portal
+#   ports:
+#     - protocol: TCP
+#       port: 80
+#       targetPort: 8080
+#   type: LoadBalancer
+
+# --- kubectl commands ---
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+
+# Check status
+kubectl get deployments
+kubectl get pods</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="text-center bg-[#003f5c] text-white p-10 rounded-xl shadow-2xl">
+            <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+            <p class="text-lg mb-6 max-w-2xl mx-auto">The UCR Research Computing team is here to help you integrate these powerful tools into your research.</p>
+            <a href="mailto:research-computing@ucr.edu" class="inline-block bg-[#ffa600] text-[#003f5c] font-bold text-lg py-3 px-8 rounded-lg shadow-md hover:bg-yellow-400 transition-transform transform hover:scale-105">Contact Support: research-computing@ucr.edu</a>
+        </section>
+
+    </main>
+    
+    <div id="message-modal" class="modal-backdrop hidden">
+        <div class="modal-content">
+            <h3 id="modal-title" class="text-xl font-bold mb-4 text-[#003f5c]">Notification</h3>
+            <p id="modal-message" class="text-gray-700"></p>
+            <div class="text-right mt-6"><button id="modal-close-btn" class="bg-[#003f5c] text-white font-bold py-2 px-6 rounded-lg hover:bg-[#374c80]">Close</button></div>
+        </div>
+    </div>
+
+    <footer class="text-center p-6 mt-12 bg-gray-100 border-t">
+        <p class="text-sm text-gray-500">&copy; 2025 University of California, Riverside | Infographic promoting best practices in computational science.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const colorPalette = { blue: '#003f5c', purple: '#7a5195', pink: '#bc5090', red: '#ef5675', orange: '#ff764a', yellow: '#ffa600', teal: '#374c80' };
+
+            const processLabels = (labels) => {
+                const MAX_LENGTH = 16;
+                return labels.map(label => {
+                    if (label.length <= MAX_LENGTH) { return label; }
+                    const words = label.split(' ');
+                    const lines = [];
+                    let currentLine = '';
+                    for (const word of words) {
+                        if ((currentLine + ' ' + word).length > MAX_LENGTH && currentLine.length > 0) {
+                            lines.push(currentLine);
+                            currentLine = word;
+                        } else {
+                            currentLine = currentLine ? currentLine + ' ' + word : word;
+                        }
+                    }
+                    lines.push(currentLine);
+                    return lines;
+                });
+            };
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) { return label.join(' '); }
+                return label;
+            };
+
+            const defaultPlugins = {
+                legend: { position: 'top', labels: { font: { size: 12 }, boxWidth: 20 } },
+                tooltip: { callbacks: { title: tooltipTitleCallback }, backgroundColor: '#003f5c', titleFont: { weight: 'bold' }, bodyFont: { size: 12 }, padding: 10, cornerRadius: 4 }
+            };
+            
+            const originalCrisisLabels = ['Environmental Differences', 'Methodological Flaws', 'Systemic Pressures', 'Data/Code Unavailability'];
+            new Chart(document.getElementById('reproducibilityCrisisChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: processLabels(originalCrisisLabels),
+                    datasets: [{
+                        data: [45, 25, 20, 10],
+                        backgroundColor: [colorPalette.blue, colorPalette.purple, colorPalette.red, colorPalette.orange],
+                        borderColor: '#f8fafc',
+                        borderWidth: 4
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                           display: true, position: 'bottom',
+                           labels: {
+                                font: { size: 12 }, boxWidth: 15, padding: 20,
+                                generateLabels: (chart) => {
+                                    const data = chart.data;
+                                    if (data.labels.length && data.datasets.length) {
+                                        return data.labels.map((label, i) => {
+                                            const meta = chart.getDatasetMeta(0);
+                                            const style = meta.controller.getStyle(i);
+                                            return { text: originalCrisisLabels[i], fillStyle: style.backgroundColor, strokeStyle: style.borderColor, lineWidth: style.borderWidth, hidden: isNaN(data.datasets[0].data[i]) || meta.data[i].hidden, index: i };
+                                        });
+                                    }
+                                    return [];
+                                }
+                            }
+                        },
+                        tooltip: defaultPlugins.tooltip
+                    },
+                    cutout: '60%'
+                }
+            });
+
+            new Chart(document.getElementById('imageSizeChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Go Application', 'Python/ML App'],
+                    datasets: [{ label: 'Single-Stage Build', data: [980, 2500], backgroundColor: colorPalette.red, borderRadius: 4 }, { label: 'Multi-Stage Build', data: [15, 600], backgroundColor: colorPalette.blue, borderRadius: 4 }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    scales: { y: { beginAtZero: true, title: { display: true, text: 'Final Image Size (MB)', font: { weight: '600' } } }, x: { grid: { display: false } } },
+                    plugins: defaultPlugins
+                }
+            });
+
+            const messageModal = document.getElementById('message-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalMessage = document.getElementById('modal-message');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+
+            const showModal = (title, message) => {
+                modalTitle.textContent = title;
+                modalMessage.textContent = message;
+                messageModal.classList.remove('hidden');
+            };
+            
+            const closeModal = () => messageModal.classList.add('hidden');
+            modalCloseBtn.addEventListener('click', closeModal);
+            messageModal.addEventListener('click', (e) => {
+                if (e.target === messageModal) { closeModal(); }
+            });
+
+            const exampleTabs = document.querySelectorAll('.example-tab-btn');
+            const exampleContents = document.querySelectorAll('.example-content');
+            exampleTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    exampleTabs.forEach(t => t.classList.remove('active'));
+                    exampleContents.forEach(c => c.classList.add('hidden'));
+                    tab.classList.add('active');
+                    document.getElementById(tab.dataset.target).classList.remove('hidden');
+                });
+            });
+
+            document.querySelectorAll('.copy-code-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const codeBlock = e.target.closest('.code-block-wrapper').querySelector('pre');
+                    const textToCopy = codeBlock.textContent;
+                    const textArea = document.createElement('textarea');
+                    textArea.value = textToCopy;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    try { document.execCommand('copy'); showModal('Success!', 'Code copied to clipboard.'); } catch (err) { showModal('Error', 'Failed to copy code.'); }
+                    document.body.removeChild(textArea);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
