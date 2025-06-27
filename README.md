@@ -164,6 +164,7 @@ Explore a wide array of computational tools and platforms tailored to support yo
 
 * [Research Data Security Plans](./pages/research_security.md) for secure research projects.
 * [UCR Facilites Documents](./pages/on-prem-facilities.md) for grant proposals.
+* [UCR Researcher AI Prompt Gallery](https://ucr-ai-prompt-gallery-492106370716.us-west1.run.app) - A gallery of AI prompts for researchers at UCR, designed to inspire and assist with various research tasks.
 
 ## Contact Us
 
