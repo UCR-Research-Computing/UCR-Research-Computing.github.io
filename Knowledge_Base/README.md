@@ -31,6 +31,7 @@ Welcome to the UCR Research Computing Knowledge Base! This resource hub provides
 *   [Building R1 AAU Research Cluster](R1_AAU_Research_HPC_Cluster.md) - Proposal for an AI HPC cluster, comparing with other R1 university resources.
 *   [Open Science Grid](../pages/open_science_grid.md) - Overview of OSG, its benefits, technologies, and getting started.
 *   [Submit Job to OSG](submit-job-to-osg.md) - Guide to submitting HTCondor jobs to the Open Science Grid.
+*   [How to Log Into SDSC Comet and Run a Test Job](how-to-log-into-sdsc-comet-and-run-a-test-job.md) - Detailed steps for accessing SDSC Comet and submitting a sample job.
 
 ### Cloud Computing
 
@@ -43,6 +44,7 @@ Welcome to the UCR Research Computing Knowledge Base! This resource hub provides
 *   [Creating a Budget for a Ursa Major/Cloud Project](Ursa_Major_Project_Budget_Creation.md) - Guide to setting up GCP budgets with discounts and alerts.
 *   [Globus Transfer](Globus_Transfer.md) - How to use Globus Personal Connect for data transfers between HPCC and external centers.
 *   [Running Genomics Nextflow Pipelines](gnextnext5.md) - Guide to using Nextflow on UCR HPCC for genomics.
+*   [Genomics 101](genomics101.html) - Fundamental concepts and tools in genomics research.
 
 ### AI/ML and Edge Computing
 
@@ -68,9 +70,22 @@ Welcome to the UCR Research Computing Knowledge Base! This resource hub provides
 *   [On-Prem Facilities](../pages/on-prem-facilities.md) - Information on UCR's data centers and on-premise research computing infrastructure.
 *   [Web-Based Research Tools](../pages/web-based-research-tools.md) - Listing of available web-based tools for research.
 *   [Accessing SDSC Comet and Running a Test Job](sdsc-comet-connect.md) - Guide to connecting to SDSC Comet and running a sample Slurm job.
-*   [Solid-State Battery Charging Simulation](../solid_state_battery_sim.html) - An interactive p5.js animation demonstrating electron flow during battery charging with different material properties.
+*   [Using Gemini for Genomics Research at UCR](gemini_genomics_researchers.html) - Guide on leveraging Google Gemini in genomics, with examples and ethical considerations.
+*   [The Edge AI Revolution](../pages/Edge_AI_Revolution.md) - Whitepaper on Edge Computing, AI at the Edge, hardware, software, and challenges.
+*   [Building AI-Optimized High-Performance Computing](../pages/Building_AI-Optimized_High-Performance_Computin.md) - Technical guide to AI-HPC cluster architecture and components for 2025.
+*   [Gemini for Physics Researchers](Gemini_for_Physics_Researchers.md) - Guide on using Google Gemini in physics research, with applications and practical tips.
 
-## Data Storage
+### Interactive Simulations and Visualizations
+
+*   [Astrophysics 101](astrophysics101.html) - Introductory concepts in astrophysics with interactive elements.
+*   [Earth Carbon Model](earthcarbonmodel.html) - A simulation modeling carbon cycles on Earth.
+*   [Earth Model](earthmodel.html) - An interactive model of Earth's systems.
+*   [HPC Simulation Visualizer](hpc-sim.html) - A tool for visualizing HPC job queue and node status (hypothetical description).
+*   [LoRaWAN IoT Visualization](lorawan_iot_viz.html) - Visualizing data from LoRaWAN IoT devices.
+*   [Solid-State Battery Charging Simulation](solid_state_battery_sim.html) - An interactive p5.js animation demonstrating electron flow during battery charging with different material properties.
+*   [Interactive Battery Sketch](battery_sketch.html) - A p5.js visualization of battery charging dynamics, allowing material and voltage adjustments.
+
+### Other Computing Resources
 
 *   [Storage Overview](../pages/storage-overview.md) - Comprehensive guide to UCR's data storage solutions, specs, costs, and upcoming Ceph RDS.
 *   [Ursa Major Secure Research Storage](Ursa_Major_Secure_Research_Storage.md)
