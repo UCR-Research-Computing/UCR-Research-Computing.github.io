@@ -4,9 +4,7 @@ title: Knowledge Base
 sidebar_label: Knowledge Base
 ---
 
-<img src="../assets/welcome.jpg" alt="Banner Image" style="width: 100%; object-fit: scale-down; height: auto; max-height: 400px;">
-
-# UCR Research Computing Knowledge Base
+<img src="../assets/research-computing-knowledgebase.png" alt="Banner Image" style="width: 100%; object-fit: scale-down; height: auto; max-height: 400px;">
 
 Welcome to the UCR Research Computing Knowledge Base! This resource hub provides practical guides, how-to articles, and technical information to help you effectively utilize UCR's research computing resources. Use the categories below or the search bar above to find the information you need.
 
