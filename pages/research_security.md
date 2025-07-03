@@ -4,7 +4,7 @@ title: Security
 sidebar_label: Security
 ---
 
-<img src="../assets/security2.jpg" alt="Banner Image" style="width: 100%; object-fit: scale-down; height: auto; max-height: 400px;">
+<img src="../assets/research-security.png" alt="Banner Image" style="width: 100%; object-fit: scale-down; height: auto; max-height: 400px;">
 
 ## Research Security
 
