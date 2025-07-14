@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Grant Funding Explorer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Chosen Palette: Warm Neutrals & Slate Blue -->
+    <!-- Application Structure Plan: The application is designed as a goal-oriented dashboard. The main view immediately presents the user with three core campus goals (AI/GPU Hardware, HPC/AI Center, Research Network). This task-based approach is more intuitive than mirroring the report's linear structure. Users can then dive into a comprehensive "Grant Explorer" with multi-faceted filtering (by goal, funding source, award size). This is supplemented by a "Funding Analysis" view with charts for high-level comparison and a "Proposal Timeline" for actionable deadline tracking. This structure transforms the report from a static document into a strategic planning tool, allowing users to quickly find relevant grants based on their immediate objectives. -->
+    <!-- Visualization & Content Choices: 
+        - Report Info: Full list of grants, their purpose, funding amounts, deadlines. -> Goal: Organize, Compare. -> Viz/Method: Interactive cards with a multi-filter system (HTML/JS/Tailwind). -> Interaction: Users click filters (goal, source, amount) to dynamically display relevant grant cards. Clicking a card opens a modal with full details. -> Justification: This is the most effective way to sift through a large, dense dataset and allow users to focus only on what's relevant to their specific task. -> Library/Method: Vanilla JS for data handling and DOM manipulation.
+        - Report Info: Grant award amounts. -> Goal: Compare. -> Viz/Method: Bar Chart (Chart.js/Canvas). -> Interaction: A chart visually compares the maximum potential funding across different grant categories (e.g., Government vs. Private). Tooltips on hover provide exact figures. -> Justification: A visual bar chart offers a much quicker and more impactful comparison of funding potential than reading through a table. -> Library/Method: Chart.js.
+        - Report Info: Proposal deadlines. -> Goal: Track Change/Time. -> Viz/Method: A visual timeline (HTML/CSS/Tailwind). -> Interaction: Upcoming deadlines are clearly highlighted. Hovering provides more details. -> Justification: A timeline makes date-based information immediately actionable and easier to process than a list of dates. -> Library/Method: HTML/CSS.
+        - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .active-nav {
+            border-bottom: 2px solid #3b82f6;
+            color: #3b82f6;
+            font-weight: 600;
+        }
+        .inactive-nav {
+            border-bottom: 2px solid transparent;
+        }
+        .grant-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .grant-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+            -webkit-animation-name: fadeIn;
+            -webkit-animation-duration: 0.4s;
+            animation-name: fadeIn;
+            animation-duration: 0.4s
+        }
+        .modal-content {
+            -webkit-animation-name: slideIn;
+            -webkit-animation-duration: 0.4s;
+            animation-name: slideIn;
+            animation-duration: 0.4s
+        }
+        @-webkit-keyframes slideIn {
+            from {bottom: -300px; opacity: 0} 
+            to {bottom: 0; opacity: 1}
+        }
+        @keyframes slideIn {
+            from {bottom: -300px; opacity: 0}
+            to {bottom: 0; opacity: 1}
+        }
+        @-webkit-keyframes fadeIn {
+            from {opacity: 0} 
+            to {opacity: 1}
+        }
+        @keyframes fadeIn {
+            from {opacity: 0} 
+            to {opacity: 1}
+        }
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 40vh;
+            width: 80vw;
+            max-width: 800px;
+            max-height: 400px;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div id="app" class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900">Advanced Cyberinfrastructure Grant Explorer</h1>
+            <p class="mt-2 text-lg text-gray-600">An interactive dashboard for strategic funding discovery.</p>
+        </header>
+
+        <nav class="bg-white rounded-lg shadow-sm p-2 mb-8 sticky top-4 z-50">
+            <ul class="flex justify-center space-x-4 md:space-x-8">
+                <li><button data-view="explorer" class="nav-btn px-4 py-2 text-gray-600 inactive-nav">🔍 Grant Explorer</button></li>
+                <li><button data-view="analysis" class="nav-btn px-4 py-2 text-gray-600 inactive-nav">📊 Funding Analysis</button></li>
+                <li><button data-view="timeline" class="nav-btn px-4 py-2 text-gray-600 inactive-nav">🗓️ Proposal Timeline</button></li>
+            </ul>
+        </nav>
+
+        <main id="main-content">
+            <!-- Views will be rendered here -->
+        </main>
+
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="grantModal" class="modal">
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div id="modal-content" class="modal-content bg-white rounded-lg shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto relative">
+                <!-- Content will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const grantData = [
+            {
+                id: 'cc_star',
+                name: 'NSF Campus Cyberinfrastructure (CC*) Program (NSF 24-530)',
+                agency: 'National Science Foundation (NSF)',
+                source: 'Government',
+                purpose: 'Coordinated campus/regional CI improvements, including network upgrades, computing, and storage. Driven by STEM research needs.',
+                relevance: [
+                    'Increasing our High Performance research network.',
+                    'Enhancing campus researcher clusters with new AI or GPU tools and hardware.',
+                    'Establishing a research support center of excellence in HPC and AI.'
+                ],
+                award_min: 100000,
+                award_max: 1400000,
+                award_text: 'Varies by area: $100k (Strategy) to $1.4M (Region). Total program funding $15M-$20M.',
+                proposal_timing: 'Full Proposal: Oct 15, 2024 (upcoming)',
+                award_timing: 'Within 6 months of deadline',
+                status: 'Upcoming'
+            },
+            {
+                id: 'cssi',
+                name: 'NSF Cyberinfrastructure for Sustained Scientific Innovation (CSSI) (NSF 22-632)',
+                agency: 'National Science Foundation (NSF)',
+                source: 'Government',
+                purpose: 'Flexible funding for evolving CI needs, emphasizing integrated CI services, software, and data services.',
+                relevance: [
+                    'Establishing a research support center of excellence in HPC and AI.'
+                ],
+                award_min: 600000,
+                award_max: 5000000,
+                award_text: 'Elements: up to $600k. Frameworks: $600k-$5M. Total program funding $34M.',
+                proposal_timing: 'Full Proposal: Dec 1, 2025 (upcoming)',
+                award_timing: 'Within 6 months of deadline',
+                status: 'Upcoming'
+            },
+            {
+                id: 'cici',
+                name: 'NSF Cybersecurity Innovation for Cyberinfrastructure (CICI) (NSF 25-531)',
+                agency: 'National Science Foundation (NSF)',
+                source: 'Government',
+                purpose: 'Enhancing security and privacy of CI for scientific discovery, including securing AI-ready data and workflows.',
+                relevance: [
+                    'Establishing a research support center of excellence in HPC and AI.'
+                ],
+                award_min: 600000,
+                award_max: 1200000,
+                award_text: 'Varies by area: $600k (UCSS/RSSD) to $1.2M (TCR). Total program funding $8M-$12M.',
+                proposal_timing: 'Full Proposal: Apr 2, 2025; Jan 21, 2026',
+                award_timing: 'Within 6 months of deadline',
+                status: 'Upcoming'
+            },
+            {
+                id: 'pposs',
+                name: 'NSF Principles and Practice of Scalable Systems (PPoSS) (NSF 22-507)',
+                agency: 'National Science Foundation (NSF)',
+                source: 'Government',
+                purpose: 'Basic research on scalability and correctness of modern applications, systems, and toolchains on heterogeneous architectures. (Program Archived)',
+                relevance: [
+                    'Establishing a research support center of excellence in HPC and AI.'
+                ],
+                award_min: 250000,
+                award_max: 5000000,
+                award_text: 'Planning: up to $250k. LARGE: up to $5M. Total program funding $66M.',
+                proposal_timing: 'Last Full Proposal: Jan 22, 2024 (past)',
+                award_timing: 'Program archived',
+                status: 'Past'
+            },
+            {
+                id: 'mid_scale_ri_1',
+                name: 'NSF Mid-scale Research Infrastructure-1 (Mid-scale RI-1) (NSF 24-598)',
+                agency: 'National Science Foundation (NSF)',
+                source: 'Government',
+                purpose: 'Funds experimental research capabilities ($4M to <$20M), including computational hardware/software.',
+                relevance: [
+                    'Enhancing campus researcher clusters with new AI or GPU tools and hardware.',
+                    'Establishing a research support center of excellence in HPC and AI.'
+                ],
+                award_min: 4000000,
+                award_max: 19999999,
+                award_text: 'Implementation: $4M to <$20M. Design: $400k to <$20M. Total program funding $100M+.',
+                proposal_timing: 'Preliminary Proposal: Nov 18, 2024. Full Proposal (by invitation): Jun 5, 2025.',
+                award_timing: 'Earliest Start: Oct 1 of 2nd FY',
+                status: 'Upcoming'
+            },
+            {
+                id: 'doed_rdi',
+                name: 'U.S. Dept of Education RDI Grant Program (CFDA 84.116H)',
+                agency: 'U.S. Department of Education (DoED)',
+                source: 'Government',
+                purpose: 'Transformational investments in research infrastructure for HBCUs, TCCUs, and MSIs.',
+                relevance: [
+                    'Enhancing campus researcher clusters with new AI or GPU tools and hardware.',
+                    'Establishing a research support center of excellence in HPC and AI.'
+                ],
+                award_min: 1100000,
+                award_max: 5000000,
+                award_text: 'Varies, e.g., $1.1M-$5M.',
+                proposal_timing: 'FY 2024 Deadline: Sep 16, 2024 (past)',
+                award_timing: 'Before Dec 31, 2024',
+                status: 'Past'
+            },
+            {
+                id: 'dod_durip',
+                name: 'DoD Defense University Research Instrumentation Program (DURIP)',
+                agency: 'Department of Defense (DoD)',
+                source: 'Government',
+                purpose: 'Funding for major, state-of-the-art equipment for defense-related research.',
+                relevance: [
+                    'Enhancing campus researcher clusters with new AI or GPU tools and hardware.'
+                ],
+                award_min: 50000,
+                award_max: 3000000,
+                award_text: '$50k-$3M. AFOSR exceptions up to $7M. Total program funding ~$34M.',
+                proposal_timing: 'FY 2026 Full Proposal: Apr 25, 2025',
+                award_timing: 'Not specified',
+                status: 'Upcoming'
+            },
+            {
+                id: 'nih_sig',
+                name: 'NIH Shared Instrumentation Grant (SIG) Program (S10)',
+                agency: 'National Institutes of Health (NIH)',
+                source: 'Government',
+                purpose: 'Purchase/upgrade high-priced instruments for shared-use biomedical research (incl. computer clusters).',
+                relevance: [
+                    'Enhancing campus researcher clusters with new AI or GPU tools and hardware.',
+                    'Establishing a research support center of excellence in HPC and AI.'
+                ],
+                award_min: 50000,
+                award_max: 750000,
+                award_text: '$50k-$750k (no indirect costs).',
+                proposal_timing: 'June 2, 2025',
+                award_timing: 'Not specified',
+                status: 'Upcoming'
+            },
+            {
+                id: 'nih_hei',
+                name: 'NIH High-End Instrumentation (HEI) Grant Program (S10)',
+                agency: 'National Institutes of Health (NIH)',
+                source: 'Government',
+                purpose: 'Purchase/upgrade high-end instruments ($750k-$2M) for shared-use biomedical research.',
+                relevance: [
+                    'Enhancing campus researcher clusters with new AI or GPU tools and hardware.',
+                    'Establishing a research support center of excellence in HPC and AI.'
+                ],
+                award_min: 750001,
+                award_max: 2000000,
+                award_text: '$750,001-$2M (no indirect costs).',
+                proposal_timing: 'Typically aligns with SIG annual cycles (e.g., June 2025)',
+                award_timing: 'Not specified',
+                status: 'Upcoming'
+            },
+            {
+                id: 'google_gara',
+                name: 'Google Academic Research Awards (GARA)',
+                agency: 'Google',
+                source: 'Private',
+                purpose: 'Supports foundational/applied research in computing, including leveraging Google AI for infrastructure.',
+                relevance: [
+                    'Enhancing campus researcher clusters with new AI or GPU tools and hardware.',
+                    'Establishing a research support center of excellence in HPC and AI.'
+                ],
+                award_min: 0,
+                award_max: 150000,
+                award_text: 'Unrestricted gifts up to $150,000.',
+                proposal_timing: 'June 27 - July 17, 2024 (past)',
+                award_timing: 'Announced Oct 3, 2024',
+                status: 'Past'
+            },
+            {
+                id: 'nvidia',
+                name: 'NVIDIA Academic Grant Program',
+                agency: 'NVIDIA',
+                source: 'Private',
+                purpose: 'Provides in-kind GPU computing access and hardware for academic research in AI/HPC.',
+                relevance: [
+                    'Enhancing campus researcher clusters with new AI or GPU tools and hardware.'
+                ],
+                award_min: 0,
+                award_max: 0,
+                award_text: 'In-kind: e.g., GPU hours, DGX Spark, Jetson/RTX kits.',
+                proposal_timing: 'Rolling quarterly deadlines',
+                award_timing: 'Quarterly decisions',
+                status: 'Upcoming'
+            },
+            {
+                id: 'microsoft',
+                name: 'Microsoft Research Academic Programs',
+                agency: 'Microsoft',
+                source: 'Private',
+                purpose: 'Catalyzes research collaboration, provides Azure access for AI/ML.',
+                relevance: [
+                    'Enhancing campus researcher clusters with new AI or GPU tools and hardware.'
+                ],
+                award_min: 0,
+                award_max: 5000000,
+                award_text: 'Varies; e.g., "AI for Good" $5M (Washington state specific).',
+                proposal_timing: 'Varies by program',
+                award_timing: 'Varies by program',
+                status: 'Upcoming'
+            },
+            {
+                id: 'ibm',
+                name: 'IBM Academic Awards Program',
+                agency: 'IBM',
+                source: 'Private',
+                purpose: 'Promotes research & collaboration, including AI for IT infrastructure and enterprise AI.',
+                relevance: [
+                    'Establishing a research support center of excellence in HPC and AI.'
+                ],
+                award_min: 0,
+                award_max: 5000000,
+                award_text: 'Varies; e.g., "Education Security Grants" $5M (in-kind).',
+                proposal_timing: 'Varies by program',
+                award_timing: 'Not specified',
+                status: 'Upcoming'
+            },
+            {
+                id: 'aws',
+                name: 'Amazon Research Awards (AWS AI)',
+                agency: 'Amazon (AWS)',
+                source: 'Private',
+                purpose: 'Funds ML research and use of AWS ML tools.',
+                relevance: [
+                    'Enhancing campus researcher clusters with new AI or GPU tools and hardware.'
+                ],
+                award_min: 0,
+                award_max: 170000,
+                award_text: 'Unrestricted funds (avg $70k) & AWS Credits (avg $100k).',
+                proposal_timing: 'Spring 2025: Mar 19 - May 7, 2025 (past)',
+                award_timing: 'Varies',
+                status: 'Past'
+            },
+             {
+                id: 'czi',
+                name: 'Chan Zuckerberg Initiative (CZI) AI RFA',
+                agency: 'Chan Zuckerberg Initiative',
+                source: 'Private',
+                purpose: 'In-kind GPU resource allocations for large-scale AI/ML models in biological sciences.',
+                relevance: [
+                    'Enhancing campus researcher clusters with new AI or GPU tools and hardware.'
+                ],
+                award_min: 0,
+                award_max: 0,
+                award_text: 'In-kind: minimum 96 GPUs.',
+                proposal_timing: 'Rolling reviews until May 12, 2025 (past)',
+                award_timing: 'Dependent on project scope',
+                status: 'Past'
+            },
+            {
+                id: 'moore',
+                name: 'Gordon and Betty Moore Foundation',
+                agency: 'Moore Foundation',
+                source: 'Private',
+                purpose: 'Supports scientific discovery, including data-driven discovery and data infrastructure.',
+                relevance: [
+                    'Establishing a research support center of excellence in HPC and AI.'
+                ],
+                award_min: 1900000,
+                award_max: 3800000,
+                award_text: 'Varies widely; e.g., $1.9M-$3.8M for science grants.',
+                proposal_timing: 'Rolling/Program-specific',
+                award_timing: 'Varies by program',
+                status: 'Upcoming'
+            },
+            {
+                id: 'schmidt',
+                name: 'Schmidt Futures / Schmidt Sciences',
+                agency: 'Schmidt Futures',
+                source: 'Private',
+                purpose: 'Supports researchers in AI & Advanced Computing for scientific and societal challenges.',
+                relevance: [
+                    'Enhancing campus researcher clusters with new AI or GPU tools and hardware.',
+                    'Establishing a research support center of excellence in HPC and AI.'
+                ],
+                award_min: 500000,
+                award_max: 10000000,
+                award_text: 'Varies; e.g., up to $10M for Virtual Institutes.',
+                proposal_timing: 'Varies by program; multiple deadlines in 2025',
+                award_timing: 'Not specified',
+                status: 'Upcoming'
+            },
+        ];
+
+        const relevanceMap = {
+            'ai-gpu': 'Enhancing campus researcher clusters with new AI or GPU tools and hardware.',
+            'hpc-coe': 'Establishing a research support center of excellence in HPC and AI.',
+            'network': 'Increasing our High Performance research network.'
+        };
+
+        let currentFilters = {
+            relevance: 'all',
+            source: 'all',
+            award: 'all',
+            status: 'all'
+        };
+
+        const formatCurrency = (value) => {
+            if (value >= 1000000) {
+                return `$${(value / 1000000).toFixed(1)}M`;
+            } else if (value >= 1000) {
+                return `$${(value / 1000)}k`;
+            }
+            return `$${value}`;
+        };
+        
+        const getAwardRange = (key) => {
+            switch(key) {
+                case 'under-500k': return {min: 0, max: 499999};
+                case '500k-2m': return {min: 500000, max: 2000000};
+                case 'over-2m': return {min: 2000001, max: Infinity};
+                default: return null;
+            }
+        };
+
+        function renderExplorerView() {
+            const content = document.getElementById('main-content');
+            content.innerHTML = `
+                <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+                    <p class="text-gray-700 mb-4">This dashboard helps you navigate the complex landscape of cyberinfrastructure funding. Start by selecting your primary goal below, or use the comprehensive filters to tailor the grant list to your specific needs. Each card provides a snapshot of a funding opportunity—click on it to see the full details.</p>
+                    <div id="filters" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div>
+                            <label for="relevance-filter" class="block text-sm font-medium text-gray-700 mb-1">Filter by Goal</label>
+                            <select id="relevance-filter" data-filter="relevance" class="filter-select w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                <option value="all">All Goals</option>
+                                <option value="ai-gpu">Enhance AI/GPU Hardware</option>
+                                <option value="hpc-coe">Build HPC/AI Center</option>
+                                <option value="network">Strengthen Research Network</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="source-filter" class="block text-sm font-medium text-gray-700 mb-1">Filter by Source</label>
+                            <select id="source-filter" data-filter="source" class="filter-select w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                <option value="all">All Sources</option>
+                                <option value="Government">Government</option>
+                                <option value="Private">Private</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="award-filter" class="block text-sm font-medium text-gray-700 mb-1">Filter by Award Size</label>
+                            <select id="award-filter" data-filter="award" class="filter-select w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                <option value="all">All Award Sizes</option>
+                                <option value="under-500k">Under $500k</option>
+                                <option value="500k-2m">$500k - $2M</option>
+                                <option value="over-2m">Over $2M</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="status-filter" class="block text-sm font-medium text-gray-700 mb-1">Filter by Status</label>
+                            <select id="status-filter" data-filter="status" class="filter-select w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                <option value="all">All Statuses</option>
+                                <option value="Upcoming">Upcoming Deadline</option>
+                                <option value="Past">Past Deadline</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div id="grant-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Grant cards will be inserted here -->
+                </div>
+                <div id="no-results" class="text-center p-8 bg-white rounded-lg shadow-md mt-8 hidden">
+                    <p class="text-xl text-gray-500">No grants match the current filters.</p>
+                </div>
+            `;
+            applyFilters();
+            addFilterListeners();
+        }
+
+        function renderGrantCards(filteredData) {
+            const grantList = document.getElementById('grant-list');
+            const noResults = document.getElementById('no-results');
+            grantList.innerHTML = '';
+
+            if (filteredData.length === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+            }
+
+            filteredData.forEach(grant => {
+                const card = document.createElement('div');
+                card.className = 'grant-card bg-white rounded-lg shadow-md p-6 cursor-pointer flex flex-col justify-between';
+                card.dataset.id = grant.id;
+
+                const sourceColor = grant.source === 'Government' ? 'bg-blue-100 text-blue-800' : 'bg-green-100 text-green-800';
+                const statusColor = grant.status === 'Upcoming' ? 'text-green-600' : 'text-red-600';
+
+                card.innerHTML = `
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                             <span class="text-xs font-semibold px-2 py-1 rounded-full ${sourceColor}">${grant.source === 'Government' ? '🏛️' : '🏢'} ${grant.source}</span>
+                             <span class="text-xs font-bold ${statusColor}">${grant.status}</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">${grant.name}</h3>
+                        <p class="text-sm text-gray-500 mb-3">${grant.agency}</p>
+                        <p class="text-sm text-gray-700 mb-4">${grant.purpose}</p>
+                    </div>
+                    <div class="mt-auto pt-4 border-t border-gray-200">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-semibold text-gray-800">Award:</span>
+                            <span class="font-mono text-blue-600 font-bold">${grant.award_max > 0 ? `${formatCurrency(grant.award_min)} - ${formatCurrency(grant.award_max)}` : 'In-kind'}</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm mt-2">
+                            <span class="font-semibold text-gray-800">Next Deadline:</span>
+                            <span class="font-semibold text-gray-700">${grant.proposal_timing}</span>
+                        </div>
+                    </div>
+                `;
+                card.addEventListener('click', () => showModal(grant.id));
+                grantList.appendChild(card);
+            });
+        }
+        
+        function applyFilters() {
+            let filteredData = [...grantData];
+
+            if (currentFilters.relevance !== 'all') {
+                const relevanceText = relevanceMap[currentFilters.relevance];
+                filteredData = filteredData.filter(grant => grant.relevance.includes(relevanceText));
+            }
+
+            if (currentFilters.source !== 'all') {
+                filteredData = filteredData.filter(grant => grant.source === currentFilters.source);
+            }
+            
+            if (currentFilters.award !== 'all') {
+                const range = getAwardRange(currentFilters.award);
+                if(range) {
+                    filteredData = filteredData.filter(grant => grant.award_max > 0 && grant.award_max >= range.min && grant.award_max <= range.max);
+                }
+            }
+
+            if (currentFilters.status !== 'all') {
+                filteredData = filteredData.filter(grant => grant.status === currentFilters.status);
+            }
+            
+            renderGrantCards(filteredData);
+        }
+
+        function addFilterListeners() {
+            document.querySelectorAll('.filter-select').forEach(select => {
+                select.addEventListener('change', (e) => {
+                    currentFilters[e.target.dataset.filter] = e.target.value;
+                    applyFilters();
+                });
+            });
+        }
+        
+        let analysisChart = null;
+
+        function renderAnalysisView() {
+            const content = document.getElementById('main-content');
+            content.innerHTML = `
+                 <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+                    <p class="text-gray-700 mb-4">This view provides a high-level analysis of the funding landscape. The chart below compares the maximum potential award amounts across different grant programs, helping you to quickly identify the most substantial funding opportunities. Use this analysis to strategically target grants that align with the financial scale of your project.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-xl font-bold text-center mb-4">Maximum Grant Award Potential</h2>
+                    <div class="chart-container">
+                        <canvas id="awardAnalysisChart"></canvas>
+                    </div>
+                </div>
+            `;
+            
+            const ctx = document.getElementById('awardAnalysisChart').getContext('2d');
+            
+            const chartData = grantData.filter(g => g.award_max > 0).sort((a,b) => b.award_max - a.award_max);
+
+            if (analysisChart) {
+                analysisChart.destroy();
+            }
+
+            analysisChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: chartData.map(g => g.name.length > 30 ? g.name.substring(0, 27) + '...' : g.name),
+                    datasets: [{
+                        label: 'Maximum Award (USD)',
+                        data: chartData.map(g => g.award_max),
+                        backgroundColor: chartData.map(g => g.source === 'Government' ? 'rgba(59, 130, 246, 0.7)' : 'rgba(16, 185, 129, 0.7)'),
+                        borderColor: chartData.map(g => g.source === 'Government' ? 'rgba(59, 130, 246, 1)' : 'rgba(16, 185, 129, 1)'),
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value, index, values) {
+                                    return formatCurrency(value);
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.x !== null) {
+                                        label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.x);
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function renderTimelineView() {
+            const content = document.getElementById('main-content');
+            
+            const upcomingGrants = grantData
+                .filter(grant => grant.status === 'Upcoming' && grant.proposal_timing.match(/\d{4}/))
+                .map(grant => {
+                    const dateMatch = grant.proposal_timing.match(/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s(\d{1,2}),\s(\d{4})/) || grant.proposal_timing.match(/(\w+\s\d{1,2},\s\d{4})/);
+                     let date;
+                    try {
+                        date = new Date(grant.proposal_timing.replace(/(upcoming\)?|preliminary proposal:?|full proposal:?|by invitation:?|FY \d{4})/gi, '').trim());
+                         if (isNaN(date.getTime())) throw new Error('Invalid date');
+                    } catch (e) {
+                         // Fallback for dates like 'Oct 15, 2024'
+                         const parts = grant.proposal_timing.match(/(\w+)\s(\d{1,2}),\s(\d{4})/);
+                         if(parts) date = new Date(`${parts[1]} ${parts[2]}, ${parts[3]}`);
+                         else return null; // Can't parse date
+                    }
+                     return {...grant, date: date};
+                })
+                .filter(grant => grant && !isNaN(grant.date))
+                .sort((a, b) => a.date - b.date);
+
+            let timelineHTML = `
+                <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+                    <p class="text-gray-700 mb-4">Stay ahead of deadlines with this chronological timeline of upcoming grant proposals. Each entry represents a key submission date, allowing you to prioritize your efforts and plan your application strategy effectively. This view is designed to turn funding opportunities into an actionable schedule.</p>
+                </div>
+                <div class="space-y-8">
+            `;
+            
+            if (upcomingGrants.length > 0) {
+                 upcomingGrants.forEach((grant, index) => {
+                    timelineHTML += `
+                        <div class="flex items-start cursor-pointer" onclick="showModal('${grant.id}')">
+                            <div class="flex flex-col items-center mr-4">
+                                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">${index + 1}</div>
+                                <div class="w-px h-full bg-gray-300 mt-2"></div>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-md flex-1 grant-card">
+                                <p class="font-bold text-lg text-blue-600">${grant.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                                <h4 class="font-semibold text-gray-800">${grant.name}</h4>
+                                <p class="text-sm text-gray-600">${grant.proposal_timing}</p>
+                            </div>
+                        </div>
+                    `;
+                });
+            } else {
+                 timelineHTML += `<div class="text-center p-8 bg-white rounded-lg shadow-md"><p class="text-xl text-gray-500">No upcoming grants with specific deadlines found.</p></div>`;
+            }
+           
+            timelineHTML += `</div>`;
+            content.innerHTML = timelineHTML;
+        }
+
+        function showModal(grantId) {
+            const grant = grantData.find(g => g.id === grantId);
+            if (!grant) return;
+
+            const modal = document.getElementById('grantModal');
+            const modalContent = document.getElementById('modal-content');
+            
+            const sourceColor = grant.source === 'Government' ? 'bg-blue-100 text-blue-800' : 'bg-green-100 text-green-800';
+            const statusColor = grant.status === 'Upcoming' ? 'text-green-600' : 'text-red-600';
+
+            modalContent.innerHTML = `
+                <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+                <div class="p-8">
+                    <div class="mb-6">
+                         <span class="text-sm font-semibold px-3 py-1 rounded-full ${sourceColor}">${grant.source === 'Government' ? '🏛️' : '🏢'} ${grant.source}</span>
+                         <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-2">${grant.name}</h2>
+                         <p class="text-lg text-gray-500">${grant.agency}</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 border-t border-b border-gray-200 py-6">
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Award Amount</p>
+                            <p class="text-xl font-bold text-blue-600">${grant.award_text}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Proposal Timing</p>
+                            <p class="text-lg font-semibold text-gray-800">${grant.proposal_timing}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Status</p>
+                            <p class="text-lg font-bold ${statusColor}">${grant.status}</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">Purpose</h4>
+                            <p class="text-gray-700 leading-relaxed">${grant.purpose}</p>
+                        </div>
+                         <div>
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">Strategic Relevance</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                ${grant.relevance.map(r => `<li>${r}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `;
+            modal.style.display = 'block';
+
+            document.getElementById('closeModal').addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+        }
+
+        window.addEventListener('click', (event) => {
+            const modal = document.getElementById('grantModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        document.querySelectorAll('.nav-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const view = e.target.dataset.view;
+                
+                document.querySelectorAll('.nav-btn').forEach(btn => {
+                    btn.classList.remove('active-nav');
+                    btn.classList.add('inactive-nav');
+                });
+                
+                e.target.classList.add('active-nav');
+                e.target.classList.remove('inactive-nav');
+
+                switch (view) {
+                    case 'explorer':
+                        renderExplorerView();
+                        break;
+                    case 'analysis':
+                        renderAnalysisView();
+                        break;
+                    case 'timeline':
+                        renderTimelineView();
+                        break;
+                }
+            });
+        });
+
+        // Initial render
+        document.querySelector('[data-view="explorer"]').click();
+
+    </script>
+</body>
+</html>
+
