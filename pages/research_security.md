@@ -18,8 +18,8 @@ We assist researchers in several key areas:
 
 We encourage researchers to connect with the Research Computing Team to explore how we can support your data security needs.
 
-<details>
-<summary>A Guide to the Safe and Secure Use of Artificial Intelligence in Research</summary>
+<button id="ai-guide-toggle">A Guide to the Safe and Secure Use of Artificial Intelligence in Research</button>
+<div id="ai-guide-content" style="display: none;">
 
 ### Introduction
 Artificial Intelligence (AI) presents transformative opportunities for research across all disciplines at UC Riverside. From analyzing vast datasets to generating novel hypotheses, AI tools can accelerate discovery and innovation. However, the use of AI also introduces new challenges related to data security, privacy, and research integrity.
@@ -164,7 +164,7 @@ This list is a sample of the models available and is subject to change. In addit
 - TabNet: A general model which performs well on a wide range of classification and regression tasks.
 - AutoML Tabular Workflow: A complete AutoML pipeline for classification and regression tasks.
 
-</details>
+</div>
 
 #### Understanding your Research Security
 
@@ -233,3 +233,14 @@ Our commitment at UCR Research Computing extends to collaborating closely with y
 #### Collaboration for Security
 
 Collaborating with UCR's Research Computing Team ensures that your research projects are secure and compliant with the latest data protection standards. Our team is dedicated to supporting UCR researchers in navigating the complexities of research security, offering tailored solutions that meet the unique needs of each project.
+
+<script>
+  document.getElementById('ai-guide-toggle').addEventListener('click', function() {
+    var content = document.getElementById('ai-guide-content');
+    if (content.style.display === 'none') {
+      content.style.display = 'block';
+    } else {
+      content.style.display = 'none';
+    }
+  });
+</script>
