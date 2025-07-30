@@ -82,6 +82,8 @@ Welcome to the UCR Research Computing Knowledge Base! This resource hub provides
 *   [LoRaWAN IoT Visualization](lorawan_iot_viz.html) - Visualizing data from LoRaWAN IoT devices.
 *   [Solid-State Battery Charging Simulation](solid_state_battery_sim.html) - An interactive p5.js animation demonstrating electron flow during battery charging with different material properties.
 *   [Interactive Battery Sketch](battery_sketch.html) - A p5.js visualization of battery charging dynamics, allowing material and voltage adjustments.
+*   [Interactive Guide: Distributed PyTorch with Kubeflow Trainer](interactive_guide_distributed_pytorch_with_kubeflow_trainer.html) - An interactive guide to the official Kubeflow Trainer integration in PyTorch.
+*   [How-To: Distributed PyTorch Training with Kubeflow Trainer](how-to-distributed-pytorch-training-with-kubeflow-trainer.md) - A step-by-step guide to distributed PyTorch training with the Kubeflow Trainer.
 
 ### Other Computing Resources
 
