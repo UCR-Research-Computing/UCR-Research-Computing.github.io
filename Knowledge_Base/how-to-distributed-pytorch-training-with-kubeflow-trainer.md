@@ -1,7 +1,59 @@
-How-To: Distributed PyTorch Training with Kubeflow TrainerThe official integration of Kubeflow Trainer into the PyTorch ecosystem provides a powerful, Kubernetes-native method for running distributed training jobs. This guide will walk you through the essential steps to get started, from setting up your environment to running and monitoring a distributed PyTorch job.1. Core Concepts: What is Happening?Instead of running a training script on a single machine, you will package your PyTorch code into a container and tell Kubeflow how to run it across multiple machines (nodes) in a Kubernetes cluster.Kubernetes: The underlying engine that manages and orchestrates application containers across a cluster of machines.Kubeflow: A machine learning toolkit for Kubernetes.Kubeflow Trainer: The specific component that simplifies running distributed training jobs (like for PyTorch, TensorFlow, etc.) on Kubernetes. It handles the complex networking and setup for you.TrainJob: A custom resource you define in Python. It describes your training job, including the code to run, the number of workers (processes), and the resources (CPU/GPU) they need.2. Prerequisites: Setting Up Your EnvironmentBefore you can run a training job, you need a Kubernetes cluster with the Kubeflow Trainer controller installed. For local development, kind (Kubernetes in Docker) is an excellent choice.A. Install a Local Kubernetes Cluster (with kind)If you don't have a cluster, you can create one locally.Install kind: Follow the official kind installation guide.Create a cluster:kind create cluster
-B. Install the Kubeflow Trainer ControllerApply the controller manifests to your cluster. This installs the necessary components that watch for and manage TrainJob resources.kubectl apply --server-side -k "https://github.com/kubeflow/trainer.git/manifests/overlays/manager?ref=v2.0.0"
-C. Install the Kubeflow Trainer SDKYou'll interact with your cluster using the Python SDK.pip install kubeflow-trainer
-3. Running a Distributed PyTorch Job: Step-by-StepWe will now define a simple PyTorch training function and then use the TrainerClient to run it as a distributed job on our cluster.Step 1: Define Your PyTorch Training FunctionThis is a standard PyTorch training script. The key is that it's written to be aware of the distributed environment, which Kubeflow Trainer sets up automatically. It uses torch.distributed to get the RANK and WORLD_SIZE.This function will be executed on each worker pod in the cluster.# train_function.py
+# How-To: Distributed PyTorch Training with Kubeflow Trainer
+
+The official integration of Kubeflow Trainer into the PyTorch ecosystem provides a powerful, Kubernetes-native method for running distributed training jobs. This guide will walk you through the essential steps to get started, from setting up your environment to running and monitoring a distributed PyTorch job.
+
+## 1. Core Concepts: What is Happening?
+
+Instead of running a training script on a single machine, you will package your PyTorch code into a container and tell Kubeflow how to run it across multiple machines (nodes) in a Kubernetes cluster.
+
+- **Kubernetes**: The underlying engine that manages and orchestrates application containers across a cluster of machines.
+- **Kubeflow**: A machine learning toolkit for Kubernetes.
+- **Kubeflow Trainer**: The specific component that simplifies running distributed training jobs (like for PyTorch, TensorFlow, etc.) on Kubernetes. It handles the complex networking and setup for you.
+- **TrainJob**: A custom resource you define in Python. It describes your training job, including the code to run, the number of workers (processes), and the resources (CPU/GPU) they need.
+
+## 2. Prerequisites: Setting Up Your Environment
+
+Before you can run a training job, you need a Kubernetes cluster with the Kubeflow Trainer controller installed. For local development, `kind` (Kubernetes in Docker) is an excellent choice.
+
+### A. Install a Local Kubernetes Cluster (with kind)
+
+If you don't have a cluster, you can create one locally.
+
+1.  **Install kind**: Follow the [official kind installation guide](https://kind.sigs.k8s.io/docs/user/quick-start/#installation).
+2.  **Create a cluster**:
+    ```bash
+    kind create cluster
+    ```
+
+### B. Install the Kubeflow Trainer Controller
+
+Apply the controller manifests to your cluster. This installs the necessary components that watch for and manage `TrainJob` resources.
+
+```bash
+kubectl apply --server-side -k "https://github.com/kubeflow/trainer.git/manifests/overlays/manager?ref=v2.0.0"
+```
+
+### C. Install the Kubeflow Trainer SDK
+
+You'll interact with your cluster using the Python SDK.
+
+```bash
+pip install kubeflow-trainer
+```
+
+## 3. Running a Distributed PyTorch Job: Step-by-Step
+
+We will now define a simple PyTorch training function and then use the `TrainerClient` to run it as a distributed job on our cluster.
+
+### Step 1: Define Your PyTorch Training Function
+
+This is a standard PyTorch training script. The key is that it's written to be aware of the distributed environment, which Kubeflow Trainer sets up automatically. It uses `torch.distributed` to get the `RANK` and `WORLD_SIZE`.
+
+This function will be executed on each worker pod in the cluster.
+
+**`train_function.py`**
+```python
+# train_function.py
 
 def train_fashion_mnist():
     """
@@ -77,8 +129,15 @@ def train_fashion_mnist():
 
     if rank == 0:
         print("Training complete!")
+```
 
-Step 2: Create and Run the TrainJobNow, from a separate Python script or a Jupyter Notebook, you use the TrainerClient to package and send the train_fashion_mnist function to your cluster.# main_launcher.py
+### Step 2: Create and Run the TrainJob
+
+Now, from a separate Python script or a Jupyter Notebook, you use the `TrainerClient` to package and send the `train_fashion_mnist` function to your cluster.
+
+**`main_launcher.py`**
+```python
+# main_launcher.py
 
 from kubeflow.trainer import TrainerClient
 from train_function import train_fashion_mnist # Import the function
@@ -126,5 +185,17 @@ else:
 # 5. (Optional) Delete the job
 # client.delete_job(job_name)
 # print(f"Job '{job_name}' deleted.")
+```
 
-4. Practical Usage & Next StepsUsing GPUs: To use GPUs, your Kubernetes nodes must have GPUs available and the appropriate drivers installed. Then, simply add "gpu": "1" to the resources_per_worker dictionary.Custom Code and Docker Images: The base_image is key. For real projects, you will need to:Write your Python script(s).Create a Dockerfile that installs your dependencies (pip install -r requirements.txt) and copies your code into the image.Build the Docker image.Push the image to a container registry (like Docker Hub, Google Container Registry, etc.).Use that image path in your create_job call.Advanced Strategies: The Kubeflow Trainer is deeply integrated with the PyTorch ecosystem, supporting advanced distributed strategies like Fully Sharded Data Parallel (FSDP) and integrations with libraries like DeepSpeed and HuggingFace.This new integration significantly lowers the barrier to entry for serious, scalable machine learning development with PyTorch on modern cloud infrastructure.
+## 4. Practical Usage & Next Steps
+
+-   **Using GPUs**: To use GPUs, your Kubernetes nodes must have GPUs available and the appropriate drivers installed. Then, simply add `"gpu": "1"` to the `resources_per_worker` dictionary.
+-   **Custom Code and Docker Images**: The `base_image` is key. For real projects, you will need to:
+    1.  Write your Python script(s).
+    2.  Create a `Dockerfile` that installs your dependencies (`pip install -r requirements.txt`) and copies your code into the image.
+    3.  Build the Docker image.
+    4.  Push the image to a container registry (like Docker Hub, Google Container Registry, etc.).
+    5.  Use that image path in your `create_job` call.
+-   **Advanced Strategies**: The Kubeflow Trainer is deeply integrated with the PyTorch ecosystem, supporting advanced distributed strategies like Fully Sharded Data Parallel (FSDP) and integrations with libraries like DeepSpeed and HuggingFace.
+
+This new integration significantly lowers the barrier to entry for serious, scalable machine learning development with PyTorch on modern cloud infrastructure.
