@@ -18,8 +18,6 @@ We assist researchers in several key areas:
 
 We encourage researchers to connect with the Research Computing Team to explore how we can support your data security needs.
 
-<button id="ai-guide-toggle">A Guide to the Safe and Secure Use of Artificial Intelligence in Research</button>
-<div id="ai-guide-content" style="display: none;">
 
 ### Introduction
 Artificial Intelligence (AI) presents transformative opportunities for research across all disciplines at UC Riverside. From analyzing vast datasets to generating novel hypotheses, AI tools can accelerate discovery and innovation. However, the use of AI also introduces new challenges related to data security, privacy, and research integrity.
@@ -164,7 +162,6 @@ This list is a sample of the models available and is subject to change. In addit
 - TabNet: A general model which performs well on a wide range of classification and regression tasks.
 - AutoML Tabular Workflow: A complete AutoML pipeline for classification and regression tasks.
 
-</div>
 
 #### Understanding your Research Security
 
