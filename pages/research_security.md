@@ -19,7 +19,6 @@ We assist researchers in several key areas:
 We encourage researchers to connect with the Research Computing Team to explore how we can support your data security needs.
 
 <details>
-
 <summary>A Guide to the Safe and Secure Use of Artificial Intelligence in Research</summary>
 
 ### Introduction
@@ -164,7 +163,6 @@ This list is a sample of the models available and is subject to change. In addit
 - Tabular Data
 - TabNet: A general model which performs well on a wide range of classification and regression tasks.
 - AutoML Tabular Workflow: A complete AutoML pipeline for classification and regression tasks.
-
 
 </details>
 
