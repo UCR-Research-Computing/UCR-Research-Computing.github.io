@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCR Research & GCP: Scaling for the Future</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght @400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .stat-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .flow-node {
+            border: 2px solid #3a86ff;
+            background-color: #ffffff;
+        }
+        .flow-line::before {
+            content: '';
+            position: absolute;
+            background-color: #3a86ff;
+            z-index: -1;
+        }
+        .vertical-line::before {
+            left: 50%;
+            width: 2px;
+            top: -2rem;
+            height: 2rem;
+            transform: translateX(-50%);
+        }
+        .horizontal-line::before {
+            top: 50%;
+            height: 2px;
+            transform: translateY(-50%);
+        }
+        .left-line::before {
+            left: 50%;
+            width: 50%;
+        }
+        .right-line::before {
+            right: 50%;
+            width: 50%;
+        }
+    </style>
+</head>
+<body class="text-[#0d3b66]">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <header class="text-center my-12">
+            <h1 class="text-4xl md:text-6xl font-black text-[#0d3b66] uppercase tracking-wide">Ready to Scale</h1>
+            <p class="text-xl md:text-2xl mt-4 text-[#3a86ff] font-bold">UC Riverside's Surging Demand for High-Performance Computing</p>
+        </header>
+
+        <section id="demand-overview" class="my-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <h2 class="text-3xl font-bold mb-4">A Clear & Present Need</h2>
+                    <p class="text-lg mb-6 leading-relaxed">A comprehensive review has identified a significant and growing number of UCR research groups whose work is primed for acceleration. These researchers require immediate access to scalable GPU and TPU resources to push the boundaries of science and innovation.</p>
+                    <div class="flex justify-center md:justify-start space-x-8">
+                        <div>
+                            <p class="text-5xl font-black text-[#8338ec]">16</p>
+                            <p class="text-lg font-bold">Research Groups</p>
+                        </div>
+                        <div>
+                            <p class="text-5xl font-black text-[#fb5607]">9</p>
+                            <p class="text-lg font-bold">High-Demand Projects</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-center mb-4">Demand Level Breakdown</h3>
+                    <div class="chart-container">
+                        <canvas id="demandDonutChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research-areas" class="my-24 bg-white rounded-lg shadow-md p-8">
+            <h2 class="text-3xl font-bold text-center mb-2">Pioneering Research Across Diverse Fields</h2>
+            <p class="text-lg text-center max-w-3xl mx-auto mb-10">The need for advanced computation spans the entire campus, driving innovation in fields from artificial intelligence and robotics to bioinformatics and systems design.</p>
+            <div class="chart-container h-96 max-h-[500px] max-w-4xl">
+                <canvas id="areasBarChart"></canvas>
+            </div>
+        </section>
+        
+        <section id="use-cases" class="my-24">
+            <h2 class="text-3xl font-bold text-center mb-10">Spotlight on High-Impact Research</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="stat-card text-center">
+                    <p class="text-6xl mb-4"></p>
+                    <h3 class="text-2xl font-bold mb-2">Multi-Discipline Acceleration</h3>
+                    <p class="text-lg font-semibold text-[#3a86ff]">Rajiv Gupta</p>
+                    <p class="mt-4 text-base">Requires GPU acceleration for three distinct, complex projects: training ML models for multi-robot path planning, analyzing large-scale genomic sequences in bioinformatics, and using LLMs with reinforcement learning to optimize code layouts.</p>
+                </div>
+                <div class="stat-card text-center">
+                    <p class="text-6xl mb-4"></p>
+                    <h3 class="text-2xl font-bold mb-2">Accelerating Drug Discovery</h3>
+                    <p class="text-lg font-semibold text-[#3a86ff]">Mingxun Wang</p>
+                    <p class="mt-4 text-base">Needs interactive, multi-GPU (4+ A100s) and surge capacity (16+ A100s) to increase experiment iterations from once per day to dozens, dramatically speeding up the development of diffusion models for drug discovery.</p>
+                </div>
+                <div class="stat-card text-center">
+                    <p class="text-6xl mb-4">✍️</p>
+                    <h3 class="text-2xl font-bold mb-2">Next-Generation AI Models</h3>
+                    <p class="text-lg font-semibold text-[#3a86ff]">Greg Ver Steeg</p>
+                    <p class="mt-4 text-base">Research into novel "discrete diffusion models" for parallel text generation is currently blocked by a lack of compute. A single model requires an estimated 1,000 GPU hours to train and validate at a competitive scale.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="strategic-opportunities" class="my-24">
+            <h2 class="text-3xl font-bold text-center mb-16">Campus-Wide Strategic Opportunities</h2>
+            <div class="relative">
+                <div class="flex justify-center mb-8">
+                    <div class="flow-node p-4 rounded-lg shadow-lg text-center w-64">
+                        <h3 class="text-xl font-bold">GCP Renewal</h3>
+                        <p class="text-sm">Unlocks Campus Potential</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-y-12 md:gap-x-4 relative">
+                    <div class="relative flex justify-center md:block">
+                        <div class="flow-node p-3 rounded-lg shadow-md text-center w-48 h-full flex flex-col justify-center relative flow-line vertical-line">
+                            <h4 class="font-bold">Hybrid Cloud Bursting</h4>
+                            <p class="text-xs mt-1">Offload peak demand from on-premise HPCC and BCOE clusters.</p>
+                        </div>
+                    </div>
+                    <div class="relative flex justify-center md:block">
+                        <div class="flow-node p-3 rounded-lg shadow-md text-center w-48 h-full flex flex-col justify-center relative flow-line vertical-line">
+                            <h4 class="font-bold">Secure Computing</h4>
+                            <p class="text-xs mt-1">Provide compliant enclaves for sensitive data (PII, medical).</p>
+                        </div>
+                    </div>
+                    <div class="relative flex justify-center md:block">
+                        <div class="flow-node p-3 rounded-lg shadow-md text-center w-48 h-full flex flex-col justify-center relative flow-line vertical-line">
+                            <h4 class="font-bold">Hosted Research Tools</h4>
+                            <p class="text-xs mt-1">Enable public-facing websites and tools with server-side compute.</p>
+                        </div>
+                    </div>
+                    <div class="relative flex justify-center md:block">
+                        <div class="flow-node p-3 rounded-lg shadow-md text-center w-48 h-full flex flex-col justify-center relative flow-line vertical-line">
+                            <h4 class="font-bold">Democratized GPU Access</h4>
+                            <p class="text-xs mt-1">Offer paid Colab access for courses and smaller projects.</p>
+                        </div>
+                    </div>
+                    <div class="relative flex justify-center md:block">
+                        <div class="flow-node p-3 rounded-lg shadow-md text-center w-48 h-full flex flex-col justify-center relative flow-line vertical-line">
+                            <h4 class="font-bold">LLM & GenAI APIs</h4>
+                            <p class="text-xs mt-1">Streamline access to Gemini and other foundation models.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-20 mb-10 border-t-2 border-[#3a86ff] pt-8">
+            <p class="text-lg font-bold">Investing in GCP is investing in the future of research at UC Riverside.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+
+        const wrapLabel = (label) => {
+            const maxLength = 16;
+            if (label.length <= maxLength) return label;
+            
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+
+            words.forEach(word => {
+                if ((currentLine + word).length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            });
+            lines.push(currentLine.trim());
+            return lines;
+        };
+
+        const demandDonutCtx = document.getElementById('demandDonutChart').getContext('2d');
+        new Chart(demandDonutCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['High', 'Medium', 'Low', 'TBD'],
+                datasets: [{
+                    label: 'Demand Level',
+                    data: [9, 4, 1, 2],
+                    backgroundColor: [
+                        '#fb5607',
+                        '#ffbe0b',
+                        '#3a86ff',
+                        '#8338ec'
+                    ],
+                    borderColor: '#f0f4f8',
+                    borderWidth: 4,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                },
+                cutout: '60%'
+            }
+        });
+
+        const areasBarCtx = document.getElementById('areasBarChart').getContext('2d');
+        const originalLabels = [
+            'LLMs, VLMs, & Embodied AI', 
+            'Bioinformatics & Drug Discovery', 
+            'Robotics & Path Planning', 
+            'ML Systems & Hardware',
+            'Data Mining & Analysis'
+        ];
+        new Chart(areasBarCtx, {
+            type: 'bar',
+            data: {
+                labels: originalLabels.map(wrapLabel),
+                datasets: [{
+                    label: 'Number of Research Groups',
+                    data: [8, 3, 2, 3, 1],
+                    backgroundColor: [
+                        '#3a86ff',
+                        '#8338ec',
+                        '#fb5607',
+                        '#ffbe0b',
+                        '#ef5675'
+                    ],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                           stepSize: 1
+                        }
+                    },
+                    y: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

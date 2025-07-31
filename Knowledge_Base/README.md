@@ -44,6 +44,10 @@ Welcome to the UCR Research Computing Knowledge Base! This resource hub provides
 *   [Running Genomics Nextflow Pipelines](gnextnext5.md) - Guide to using Nextflow on UCR HPCC for genomics.
 *   [Genomics 101](genomics101.html) - Fundamental concepts and tools in genomics research.
 
+### GCP Scaling and Strategy
+
+*   [UCR Research & GCP: Scaling for the Future](ucr-research-gcp-scaling.html) - An interactive report on the growing demand for GPU and TPU resources at UCR, highlighting key research projects and strategic opportunities with Google Cloud Platform.
+
 ### AI/ML and Edge Computing
 
 *   [AI/ML Overview](../pages/ai-ml.md) - UCR's AI/ML Hub, covering LLMs, chatbots, software tools, and models.
