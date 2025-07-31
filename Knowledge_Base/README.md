@@ -134,6 +134,7 @@ Welcome to the UCR Research Computing Knowledge Base! This resource hub provides
 *   [Ursa Major Policy](Ursa_Major_Policy.md) - Detailed guidelines for UCR's Ursa Major (GCP) service.
 *   [UCR Data Security Plans](UCR_Data_Security_Plans.md)
 *   [Research Security](../pages/research_security.md) - UCR guidelines on data security plans, classification, and compliance (IS-3, NIST, CMMC).
+*   [A Guide to the Safe and Secure Use of Artificial Intelligence in Research](AI-Safe-Secure-Research.md) - A comprehensive guide for UCR researchers on the approved use of AI models and infrastructure.
 *   [Backup](../pages/backup.md) - Overview of UCR's data backup solutions including cloud archival and endpoint protection.
 *   [Cost Models](../pages/cost_models.md) - Explanation of funding and cost models for UCR research computing resources.
 *   [GCP, AWS, EDP](../pages/gcp_aws_edp.md) - Information on UCR's Enterprise Discount Programs for Google Cloud, AWS, and Azure.
