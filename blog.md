@@ -45,7 +45,7 @@ title: Blog
         <div class="meta">By {{ post.author }} on {{ post.date | date: "%B %d, %Y" }}</div>
         <p>{{ post.description }}</p>
         <a href="{{ post.gdoc_url }}" target="_blank" class="btn btn-primary">Open in New Tab</a>
-        <button class="btn btn-secondary preview-btn" data-gdoc-url="{{ post.gdoc_embed_url }}">Preview Here</button>
+        <button class="btn btn-secondary preview-btn" data-gdoc-url="{{ post.gdoc_url }}?embedded=true">Preview Here</button>
         <div class="preview-area" style="display: none;"></div>
     </div>
 {% endfor %}
