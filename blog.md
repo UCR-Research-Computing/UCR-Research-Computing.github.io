@@ -37,50 +37,39 @@ title: Blog
 
 # Research Computing Blog
 
-<div id="blog-posts"></div>
+<div id="blog-posts">
+{% assign sorted_posts = site.data.blog_posts | sort: "date" | reverse %}
+{% for post in sorted_posts %}
+    <div class="blog-card">
+        <h2>{{ post.title }}</h2>
+        <div class="meta">By {{ post.author }} on {{ post.date | date: "%B %d, %Y" }}</div>
+        <p>{{ post.description }}</p>
+        {% assign gdoc_url_embed = post.gdoc_url | replace: "/edit?usp=sharing", "/pub?embedded=true" %}
+        <a href="{{ post.gdoc_url }}" target="_blank" class="btn btn-primary">Open in New Tab</a>
+        <button class="btn btn-secondary preview-btn" data-gdoc-url="{{ gdoc_url_embed }}">Preview Here</button>
+        <div class="preview-area" style="display: none;"></div>
+    </div>
+{% endfor %}
+</div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        fetch('/_data/blog_posts.json')
-            .then(response => response.json())
-            .then(posts => {
-                const postsContainer = document.getElementById('blog-posts');
-                posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-                posts.forEach(post => {
-                    const postElement = document.createElement('div');
-                    postElement.className = 'blog-card';
-
-                    const gdoc_url_embed = post.gdoc_url.replace("/edit?usp=sharing", "/pub?embedded=true");
-
-                    postElement.innerHTML = `
-                        <h2>${post.title}</h2>
-                        <div class="meta">By ${post.author} on ${post.date}</div>
-                        <p>${post.description}</p>
-                        <a href="${post.gdoc_url}" target="_blank" class="btn btn-primary">Open in New Tab</a>
-                        <button class="btn btn-secondary preview-btn" data-gdoc-url="${gdoc_url_embed}">Preview Here</button>
-                        <div class="preview-area" style="display: none;"></div>
-                    `;
-                    postsContainer.appendChild(postElement);
-                });
-
-                document.querySelectorAll('.preview-btn').forEach(button => {
-                    button.addEventListener('click', function() {
-                        const previewArea = this.nextElementSibling;
-                        if (previewArea.style.display === 'none') {
-                            const iframe = document.createElement('iframe');
-                            iframe.src = this.dataset.gdocUrl;
-                            previewArea.innerHTML = '';
-                            previewArea.appendChild(iframe);
-                            previewArea.style.display = 'block';
-                            this.textContent = 'Close Preview';
-                        } else {
-                            previewArea.style.display = 'none';
-                            previewArea.innerHTML = '';
-                            this.textContent = 'Preview Here';
-                        }
-                    });
-                });
-            });
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.preview-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const previewArea = this.nextElementSibling;
+            if (previewArea.style.display === 'none') {
+                const iframe = document.createElement('iframe');
+                iframe.src = this.dataset.gdocUrl;
+                previewArea.innerHTML = '';
+                previewArea.appendChild(iframe);
+                previewArea.style.display = 'block';
+                this.textContent = 'Close Preview';
+            } else {
+                previewArea.style.display = 'none';
+                previewArea.innerHTML = '';
+                this.textContent = 'Preview Here';
+            }
+        });
     });
+});
 </script>
