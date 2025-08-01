@@ -44,9 +44,8 @@ title: Blog
         <h2>{{ post.title }}</h2>
         <div class="meta">By {{ post.author }} on {{ post.date | date: "%B %d, %Y" }}</div>
         <p>{{ post.description }}</p>
-        {% assign gdoc_url_embed = post.gdoc_url | replace: "/edit?usp=sharing", "/pub?embedded=true" %}
         <a href="{{ post.gdoc_url }}" target="_blank" class="btn btn-primary">Open in New Tab</a>
-        <button class="btn btn-secondary preview-btn" data-gdoc-url="{{ gdoc_url_embed }}">Preview Here</button>
+        <button class="btn btn-secondary preview-btn" data-gdoc-url="{{ post.gdoc_embed_url }}">Preview Here</button>
         <div class="preview-area" style="display: none;"></div>
     </div>
 {% endfor %}
