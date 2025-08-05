@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCR Strategy for NSF CSSI Grant (nsf-22-632)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght @400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #0a9396, #005f73);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .flow-arrow {
+            font-size: 2rem;
+            color: #94d2bd;
+            line-height: 1;
+        }
+        .stat-card h3 {
+            color: #005f73;
+        }
+        .stat-card p {
+            color: #ca6702;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 text-center">
+            <h1 class="text-2xl md:text-4xl font-extrabold tracking-tight gradient-text">UCR's Vision for Cyberinfrastructure</h1>
+            <p class="text-md md:text-lg text-gray-600 mt-1">A Strategic Proposal for the NSF CSSI Grant (nsf-22-632)</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section id="intro" class="text-center mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="stat-card bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-5xl font-black">70%</h3>
+                    <p class="mt-2 font-semibold text-lg">Growth in Research Funding</p>
+                    <p class="text-sm text-gray-500">Over the past decade</p>
+                </div>
+                <div class="stat-card bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-5xl font-black">AAU</h3>
+                    <p class="mt-2 font-semibold text-lg">Member Institution</p>
+                    <p class="text-sm text-gray-500">Recognized for research excellence</p>
+                </div>
+                <div class="stat-card bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-5xl font-black">HSI</h3>
+                    <p class="mt-2 font-semibold text-lg">Hispanic Serving Institution</p>
+                    <p class="text-sm text-gray-500">1 of only 4 in the AAU</p>
+                </div>
+            </div>
+            <p class="max-w-4xl mx-auto mt-8 text-lg text-gray-700">The University of California, Riverside is at a pivotal moment. With remarkable growth and prestigious recognition, we are poised to address the next frontier of scientific discovery. To do so, we must invest in a holistic, campus-wide cyberinfrastructure. This document outlines three synergistic, high-impact proposal options for the NSF CSSI "Framework Implementations" grant.</p>
+        </section>
+
+        <section id="vision" class="mb-16 bg-white p-8 rounded-lg shadow-xl">
+            <h2 class="text-3xl font-bold text-center mb-6 gradient-text">UCR's Three-Tenet CI Strategy</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+                <div class="text-center p-4 border-2 border-dashed border-gray-200 rounded-lg">
+                    <div class="text-5xl mb-2">⚙️</div>
+                    <h3 class="text-xl font-bold text-[#005f73]">Platform</h3>
+                    <p class="text-gray-600 max-w-xs">Foundational infrastructure to streamline data and computational tasks.</p>
+                </div>
+                <div class="flow-arrow hidden md:block">&rarr;</div>
+                <div class="flow-arrow md:hidden">&darr;</div>
+                <div class="text-center p-4 border-2 border-dashed border-gray-200 rounded-lg">
+                    <div class="text-5xl mb-2"></div>
+                    <h3 class="text-xl font-bold text-[#0a9396]">Portal</h3>
+                    <p class="text-gray-600 max-w-xs">A one-stop center for researchers to discover and harness resources.</p>
+                </div>
+                <div class="flow-arrow hidden md:block">&rarr;</div>
+                 <div class="flow-arrow md:hidden">&darr;</div>
+                <div class="text-center p-4 border-2 border-dashed border-gray-200 rounded-lg">
+                    <div class="text-5xl mb-2">‍</div>
+                    <h3 class="text-xl font-bold text-[#94d2bd]">Enablement</h3>
+                    <p class="text-gray-600 max-w-xs">Holistic training and mentorship to uplift researchers and students.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <div id="option1" class="bg-white p-6 rounded-lg shadow-lg lg:col-span-1">
+                <h3 class="text-2xl font-bold text-[#005f73] border-b-4 border-[#ee9b00] pb-2 mb-4">Option 1: AI-Optimized Cyberinfrastructure </h3>
+                <p class="text-gray-600 mb-4">Establish a robust CI foundation for AI/ML by deploying an on-premises GPU cluster, a shared Ceph data fabric, and implementing modern DevOps practices like containerization and Infrastructure as Code (IaC).</p>
+                <div class="chart-container h-80 md:h-96">
+                    <canvas id="option1Chart"></canvas>
+                </div>
+                 <p class="text-center text-sm text-gray-500 mt-2">Proposed Budget Allocation by Area</p>
+                <div class="mt-6">
+                    <h4 class="font-bold text-lg text-[#005f73]">Key Stakeholders & Co-PIs:</h4>
+                    <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
+                        <li>**Amit Roy Chowdhury, PhD** (Robotics)</li>
+                        <li>**Bir Bhanu, PhD** (Computer Vision)</li>
+                        <li>**Ahmed Eldawy, PhD** (Big Data)</li>
+                        <li>**Sika Zheng, PhD** (Bioinformatics)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="option2" class="bg-white p-6 rounded-lg shadow-lg lg:col-span-1">
+                <h3 class="text-2xl font-bold text-[#0a9396] border-b-4 border-[#ca6702] pb-2 mb-4">Option 2: Network Modernization </h3>
+                <p class="text-gray-600 mb-4">Address the critical bottleneck of "aging, end-of-life" network gear by upgrading to a 400G backbone and 100G connections, enabling massive data movement for all data-intensive research.</p>
+                <div class="chart-container h-80 md:h-96">
+                    <canvas id="option2Chart"></canvas>
+                </div>
+                <p class="text-center text-sm text-gray-500 mt-2">Network Capacity Upgrade</p>
+                <div class="mt-6">
+                    <h4 class="font-bold text-lg text-[#0a9396]">Key Stakeholders & Co-PIs:</h4>
+                    <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
+                        <li>**David Oglesby, PhD** (Geophysics)</li>
+                        <li>**Laura Sales, PhD** (Astrophysics)</li>
+                        <li>**Jason Stajich, PhD** (Genomics)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="option3" class="bg-white p-6 rounded-lg shadow-lg lg:col-span-1">
+                <h3 class="text-2xl font-bold text-[#94d2bd] border-b-4 border-[#bb3e03] pb-2 mb-4">Option 3: Workforce Enablement ‍</h3>
+                <p class="text-gray-600 mb-4">A human-centered initiative leveraging UCR's unique HSI status to broaden participation in STEM through training, mentorship, and dedicated support, creating the next generation of CI creators.</p>
+                <div class="chart-container h-80 md:h-96">
+                    <canvas id="option3Chart"></canvas>
+                </div>
+                <p class="text-center text-sm text-gray-500 mt-2">UCR's Unique Position in the AAU</p>
+                <div class="mt-6">
+                    <h4 class="font-bold text-lg text-[#94d2bd]">Key Stakeholders & Co-PIs:</h4>
+                    <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
+                        <li>**Thomas Girke, PhD** (HPCC Director)</li>
+                        <li>**Joseph Kahne, PhD** (School of Education)</li>
+                        <li>**S. Venkatadriagaram, PhD** (Teaching Prof.)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <section id="synergy" class="mt-16 bg-white p-8 rounded-lg shadow-xl">
+            <h2 class="text-3xl font-bold text-center mb-6 gradient-text">A Unified, Synergistic Approach</h2>
+            <p class="max-w-4xl mx-auto text-center text-lg text-gray-700 mb-8">While each option is powerful, the most competitive strategy is a unified **Frameworks Implementation** proposal that integrates all three. A modernized network is the foundation for a powerful AI platform, and a comprehensive enablement program ensures this investment is fully realized by a diverse and skilled research community.</p>
+            <div class="relative h-64 md:h-80 w-full max-w-3xl mx-auto">
+                <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-40 h-40 md:w-56 md:h-56 bg-[#005f73] bg-opacity-70 rounded-full flex items-center justify-center text-white p-4 text-center font-bold">AI Platform </div>
+                <div class="absolute top-1/2 right-1/4 -translate-x-1/2 -translate-y-1/2 w-40 h-40 md:w-56 md:h-56 bg-[#0a9396] bg-opacity-70 rounded-full flex items-center justify-center text-white p-4 text-center font-bold">Network </div>
+                <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 md:w-56 md:h-56 bg-[#94d2bd] bg-opacity-70 rounded-full flex items-center justify-center text-white p-4 text-center font-bold">Enablement ‍</div>
+            </div>
+             <p class="text-center font-bold text-xl text-[#ae2012] mt-8">This integrated vision directly addresses UCR's strategic needs, national priorities, and the core goals of the NSF CSSI program.</p>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white mt-16">
+        <div class="container mx-auto px-6 py-4 text-center text-sm">
+            <p>University of California, Riverside | Information Technology Solutions</p>
+        </div>
+    </footer>
+
+    <script>
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+        
+        const wrapLabel = (label) => {
+            const maxLength = 16;
+            if (label.length <= maxLength) return label;
+            
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+
+            words.forEach(word => {
+                if ((currentLine + word).length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            });
+            lines.push(currentLine.trim());
+            return lines;
+        };
+
+        const defaultChartOptions = {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        color: '#4b5563',
+                        font: {
+                            family: "'Inter', sans-serif"
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { color: '#6b7280' },
+                    grid: { color: '#e5e7eb' }
+                },
+                x: {
+                    ticks: { color: '#6b7280' },
+                    grid: { display: false }
+                }
+            }
+        };
+
+        const option1Ctx = document.getElementById('option1Chart').getContext('2d');
+        new Chart(option1Ctx, {
+            type: 'bar',
+            data: {
+                labels: ['GPU Cluster Hardware', 'Data Fabric Storage', 'Personnel & Software', 'IaC/DevOps Implementation'].map(wrapLabel),
+                datasets: [{
+                    label: 'Estimated Budget ($)',
+                    data: [1200000, 600000, 800000, 400000],
+                    backgroundColor: ['#005f73', '#0a9396', '#94d2bd', '#e9d8a6'],
+                    borderColor: '#ffffff',
+                    borderWidth: 2
+                }]
+            },
+            options: { ...defaultChartOptions, indexAxis: 'y' }
+        });
+
+        const option2Ctx = document.getElementById('option2Chart').getContext('2d');
+        new Chart(option2Ctx, {
+            type: 'line',
+            data: {
+                labels: ['Current', 'Year 1', 'Year 2', 'Year 3 (Goal)'],
+                datasets: [{
+                    label: 'Backbone Capacity (Gbps)',
+                    data: [100, 100, 200, 400],
+                    fill: true,
+                    borderColor: '#ca6702',
+                    backgroundColor: 'rgba(202, 103, 2, 0.2)',
+                    tension: 0.1
+                }, {
+                    label: 'Researcher Connection (Gbps)',
+                    data: [10, 40, 100, 100],
+                    fill: false,
+                    borderColor: '#0a9396',
+                    tension: 0.1
+                }]
+            },
+            options: defaultChartOptions
+        });
+
+        const option3Ctx = document.getElementById('option3Chart').getContext('2d');
+        new Chart(option3Ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Other AAU Institutions', 'AAU Hispanic Serving Institutions'],
+                datasets: [{
+                    label: 'AAU HSI Status',
+                    data: [66, 4],
+                    backgroundColor: ['#e5e7eb', '#ae2012'],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#4b5563'
+                        }
+                    },
+                    tooltip: {
+                         callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
