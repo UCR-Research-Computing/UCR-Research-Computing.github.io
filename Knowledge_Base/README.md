@@ -58,6 +58,7 @@ Welcome to the UCR Research Computing Knowledge Base! This resource hub provides
 *   [The Edge AI Revolution](../pages/Edge_AI_Revolution.md) - Whitepaper on Edge Computing, AI at the Edge, hardware, software, and challenges.
 *   [Building AI-Optimized High-Performance Computing](../pages/Building_AI-Optimized_High-Performance_Computin.md) - Technical guide to AI-HPC cluster architecture and components for 2025.
 *   [Gemini for Physics Researchers](Gemini_for_Physics_Researchers.md) - Guide on using Google Gemini in physics research, with applications and practical tips.
+*   [Reinforcement Learning for Genomics on an HPC Cluster](reinforcement_learning_for_genomics.md) - A summary of setting up a reinforcement learning environment for a genomics task on a Slurm-based HPC cluster.
 
 ### Other Computing Resources
 
