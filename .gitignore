@@ -1,3 +1,8 @@
 # Exclude any backup files
 *~
 _site/
+
+# Jekyll/Ruby dependencies
+.bundle/
+Gemfile
+Gemfile.lock
