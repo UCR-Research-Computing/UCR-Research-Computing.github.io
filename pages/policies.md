@@ -33,7 +33,7 @@ These Guidelines collectively ensure that UCR researchers have comprehensive acc
 
 ## Security Guidelines
 
-- **Security Guidelines and Regulations**: UCR's research computing environment adheres to several key security standards to protect sensitive data:
+- **Security Guidelines and Regulations**: UCR's research computing environment are designed to align with several key security standards to protect sensitive data:
     - **[CMMC (Cybersecurity Maturity Model Certification)](https://dodcio.defense.gov/CMMC/Model/)**: A framework designed to protect the defense industrial base from cybersecurity threats. CMMC outlines a comprehensive range of cybersecurity standards and best practices to ensure the security and resilience of defense-related information and technologies.
     - **[UC IS-3](http://policy.ucop.edu/doc/7000543/BFB-IS-3)**: The University of California's policy on information security, which sets forth the standards for protecting institutional and personal information across all UC campuses. This policy mandates a proactive approach to information security management, risk assessment, and incident response.
     - **[NIST 800-171](https://www.nist.gov/blogs/manufacturing-innovation-blog/what-nist-sp-800-171-and-who-needs-follow-it-0)**: Provides guidelines for protecting controlled unclassified information (CUI) in non-federal systems and organizations. NIST 800-171 is critical for research projects that handle sensitive information, ensuring that data security practices align with federal standards for information confidentiality, integrity, and availability.
