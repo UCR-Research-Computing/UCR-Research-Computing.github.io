@@ -15,8 +15,7 @@ UCR Research Computing provides a tiered storage ecosystem designed to support t
 
 ### HPCC – GPFS (Parallel File System)
 *   **Performance:** Ultra-high throughput, optimized for massive parallel jobs.
-*   **Included Storage:** 100 GB for Faculty, Staff, and Grads; 25 GB for Undergrads.
-*   **Expansion:** ~$100/TB/year for dedicated project space.
+*   [HPCC Rates and more info](https://hpcc.ucr.edu/about/overview/rates/)
 *   **Note:** This tier is for "working data." Once analysis is complete, data should be moved to Tier 2 (Project) or Tier 4 (Archive).
 
 ---
