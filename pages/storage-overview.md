@@ -4,94 +4,62 @@ title: Storage Overview
 sidebar_label: Storage Overview
 ---
 
-## Storage at UCR
+## The Research Data Lifecycle at UCR
 
-UCR offers an array of storage solutions to accommodate the varying needs of faculty, students, and staff. Below you will find information about our standard storage plans, technical specifications, additional storage options available for purchase, and our upcoming Ceph Secure Research Storage solution.
-
----
-
-## Standard Storage Options
-
-These are the primary, no-cost or included storage offerings available to UCR users.
-
-| Platform                                  | OneDrive                                                                                                | Google Workspace                                                                                  | HPCC – GPFS                                                                                                   | GCP – GCS                                                                                                                    | AWS S3                                                 | Yuja (Academic Media Only)             | SDSC Qumulo – Universal Scale Storage                    |
-| :---------------------------------------- | :------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------- | :------------------------------------- | :------------------------------------------------------- |
-| **Default Storage (Free/Included)** | Faculty/Staff: 100 GB                                                                                   | Faculty/Staff/Graduate Students: 100 GB;<br>Undergraduate: 25 GB                                | Faculty/Staff/Graduate Students: 100 GB;<br>Undergraduate: 25 GB                                              | 0                                                                                                                        | 0                                                      | 0                                      | 80 TB Campus Storage;<br>200 TB Minimum                  |
-| **User Cost for Initial/Included Storage**| $0                                                                                                      | $0                                                                                                | $1,000/Year                                                                                                   | $0                                                                                                                           | $0                                                     | $0                                     | $1,166/Month for initial 200 TB                         |
-| **How to Purchase** | Centrally managed. Unique research needs should engage ITS directly. | Centrally managed. Unique research needs should engage ITS directly. | Researchers purchase directly from HPCC.                                                                    | Multiple options available via UCR’s GCP subscription (support, credit billing, or Subscription Service agreements). Contact ITS for details. | Available for direct purchase by the unit. UC discounts apply. | Centrally managed.| TBD – Please contact ITS for details.                  |
-| **Authorized UCR Customers** | Staff, Faculty, Students                                                                                | Staff, Faculty, Students                                                                          | Faculty, Students                                                                                             | Staff, Faculty, Students (provisioned individually)                                                                          | Staff, Faculty, Students                               | Faculty, Students (academic, non-research) | UC System                                                |
-
+UCR Research Computing provides a tiered storage ecosystem designed to support the entire lifecycle of your research data. Rather than choosing a single platform, we recommend a **Lifecycle Strategy** where data moves between tiers based on its current utility and access frequency.
 
 ---
 
-## Standard Storage Technical Specifications
+## 🚀 Tier 1: High-Performance Analysis (Hot)
+**Best for:** Active computation, temporary scratch space, and data currently being processed by the HPCC.
 
-Below are the technical specifications for the standard storage platforms:
-
-| **Specification**                 | **OneDrive**                                  | **Google Drive**                                  | **HPCC – GPFS**                      | **GCP – GCS**                                 | **AWS S3**                                  | **Yuja**                                         | **SDSC Qumulo – Universal Scale Storage**        |
-|-----------------------------------|-----------------------------------------------|---------------------------------------------------|--------------------------------------|-----------------------------------------------|---------------------------------------------|--------------------------------------------------|----------------------------------------------------|
-| **Replicated Backup**             | Yes                                           | Yes                                               | Yes                                  | Yes                                           | Yes                                         | TBD                                              | Snapshots                                         |
-| **NFS**                         | No                                            | No                                                | Yes                                  | No                                            | No                                          | No                                               | Yes                                               |
-| **CIFS/SMB**                     | Yes (via OneDrive client, CyberDuck)          | Yes (via Google Drive client, CyberDuck)          | No                                   | No                                            | No                                          | No                                               | Yes                                               |
-| **S3**                           | No                                            | No                                                | No                                   | Yes                                           | Yes                                         | No                                               | Yes                                               |
-| **Web / HTTP**                   | Yes                                           | Yes                                               | No                                   | Yes                                           | Yes                                         | Yes                                              | No                                                |
-| **FTP/SFTP/ssh/scp/sshfs**         | No                                            | No                                                | Yes                                  | No                                            | No                                          | No                                               | No                                                |
-| **Proprietary / App**             | OneDrive client, CyberDuck                    | Google Drive client, CyberDuck                    | CyberDuck                            | gsutil / gcloud CLI, CyberDuck                | Desktop client, CyberDuck                    | For recording/upload (not for direct access)     | CyberDuck                                         |
-| **Rclone Supported?**             | Yes                                           | Yes                                               | Yes                                  | Yes                                           | Yes                                         | No                                               | Yes                                               |
-| **Folder Sharing**                | Yes                                           | Yes                                               | Yes                                  | Yes                                           | Yes                                         | Yes (with other users within Yuja only)          | Yes                                               |
-| **Web Browser Access**            | Yes                                           | Yes                                               | No                                   | Yes                                           | Yes                                         | Yes                                              | No                                                |
-| **Real-Time Collaboration**       | Yes                                           | Yes                                               | Yes                                  | No                                            | Yes                                         | No                                               | No                                                |
-| **File Size Limit**               | 15 GB                                         | 570 GB                                            | 5 TB                                 | 5 TB                                          | 5 TB                                        | Not specified                                    | 5 TB                                             |
-| **File Versioning / Snapshots**   | Yes                                           | Yes                                               | No                                   | Yes                                           | Yes                                         | No* (for video files, ability to revert to original) | Yes                                               |
-| **Office Integration**            | Yes                                           | Yes                                               | No                                   | No                                            | No                                          | No                                               | No                                                |
-| **File Deletion Retention**       | 30 Days                                       | 25 Days                                           | 30 Days                              | Yes                                           | 25 Days                                     | User recycle bin; admin can set retention (currently 60 days) | 30 Days                                         |
-| **Share Files Outside UCR**       | Yes                                           | Yes                                               | Yes                                  | Yes                                           | Yes                                         | Read-only                                       | No                                                |
-| **Data Encryption**               | Yes                                           | Yes                                               | Yes                                  | Yes                                           | Yes                                         | Not sure                                        | Yes                                               |
-| **MFA**                         | Yes                                           | Yes                                               | Yes                                  | Yes                                           | Yes                                         | Possible (via LMS/SSO for some users)            | Yes                                               |
-| **Web SSO Enabled**               | Yes                                           | Yes                                               | No                                   | Yes                                           | No                                          | See above                                       | No                                                |
+### HPCC – GPFS (Parallel File System)
+*   **Performance:** Ultra-high throughput, optimized for massive parallel jobs.
+*   **Included Storage:** 100 GB for Faculty, Staff, and Grads; 25 GB for Undergrads.
+*   **Expansion:** ~$100/TB/year for dedicated project space.
+*   **Note:** This tier is for "working data." Once analysis is complete, data should be moved to Tier 2 (Project) or Tier 4 (Archive).
 
 ---
 
-## Additional Storage Plans
+## 🏢 Tier 2: Active Project Storage (Warm)
+**Best for:** Lab shares, sequencing libraries, instrument data capture, and data that needs to remain "online" for frequent access but isn't actively computing.
 
-For users whose storage needs exceed the default allocations, UCR offers several additional storage plans. These plans are priced on a normalized cost per 1 TB annually and are designed for various use cases.
+### CephRDS (Secure Research Storage) — **[PILOT PHASE]**
+CephRDS is our next-generation, on-premise storage platform designed specifically as the backbone for research project data.
+*   **Status:** Currently in **Pilot**. Ideal for CAREER grants and labs needing high-capacity repositories.
+*   **Scalability:** Starting at 2 PB and designed to scale seamlessly.
+*   **Security:** Built on NVMe-backed storage with 8k + 4m erasure coding and robust encryption.
+*   **Accessibility:** Supports NFS and S3; integrates directly with the HPCC.
 
-| **Platform**                         | **Cost to Purchase Additional Storage**                           | **Normalized Cost for 1TB Annually** | **When to Use**                                                                                                                                                                                                                                                                                  |
-|--------------------------------------|---------------------------------------------------------------------|--------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **OneDrive**                         | $300/10TB/mo; $3,600/10TB/yr                                        | ~$360                                | Primarily used for backing up UCR devices for faculty and staff. If storage needs exceed Microsoft quotas, consider alternative platforms.                                                                                                              |
-| **Google Drive**                     | TBD*                                                               | TBD*                                 | Centrally managed. Recommended as the primary storage platform for students, faculty, and staff docuemnts.                                                |
-| **HPCC – GPFS**                      | $1,000/10TB/yr; $25/100GB/yr                                         | ~$100                                | Ideal for compute-intensive tasks on the HPCC cluster. Engineered for high-speed parallel file system capabilities, serving cluster operations as well as exporting and sharing data within the cluster’s operational scope.                                                                    |
-| **GCP Standard**                     | $20/TB/mo                                                          | ~$240                                | Designed for frequently accessed “hot” data such as streaming, mobile apps, and analytics—where high availability and performance are critical.                                                                                                        |
-| **GCP Nearline**                     | $10/TB/mo                                                          | ~$120                                | For infrequently accessed data (accessed less than once a month), suitable for backups and long-tail multimedia content.                                                                                                                              |
-| **GCP Coldline**                     | $4/TB/mo                                                           | ~$48                                 | For data accessed less than once a quarter. Lower storage costs with higher access fees; ideal for disaster recovery or archival.                                                                                                                     |
-| **GCP Archive**                      | $1.20/TB/mo                                                        | ~$15                                 | The most cost-effective option for data accessed less than once a year. Best for archiving, backup, and disaster recovery, with higher retrieval costs and longer access times.                                                                      |
-| **AWS S3 Standard**                  | $23/TB/mo                                                          | ~$276                                | Default S3 storage class offering high durability, availability, and performance for frequently accessed data (e.g., websites, mobile apps, big data analytics).                                                                                  |
-| **AWS S3 Standard Infrequent Access**| $12.50/TB/mo                                                       | ~$150                                | For data accessed less frequently but needing rapid access when required. Lower storage cost with retrieval charges; suitable for backups and disaster recovery.                                                                                  |
-| **AWS S3 One Zone-Infrequent Access**| $10/TB/mo                                                          | ~$120                                | Similar to Standard-IA but stores data in a single Availability Zone; ideal for secondary backup copies or data that can be easily recreated.                                                                                                          |
-| **AWS S3 Glacier Instant Retrieval** | $4/TB/mo                                                           | ~$48                                 | For long-term storage of infrequently accessed data that requires millisecond retrieval times; cost-effective for archiving with higher retrieval costs.                                                                                           |
-| **AWS S3 Glacier Flexible Retrieval**| $3.60/TB/mo                                                        | ~$43.20                              | Formerly known as Glacier; for archival data where access times of several hours are acceptable. Ideal for compliance and digital media archives.                                                                                                    |
-| **AWS S3 Glacier Deep Archive**      | $1/TB/mo                                                           | ~$12                                 | The lowest-cost option, intended for data accessed once or twice a year. Best suited for long-term preservation.                                                                                                                                       |
-| **Yuja**                           | TBD                                                                | TBD                                  | Primarily used by students to access course media content. Managed by instructors with quotas set by user type.                                                                                                                                          |
-| **SDSC Qumulo – Universal Scale Storage** | $5.83/TB/mo                                                    | ~$70                                 | Suited for everyday research storage needs—similar to an office NAS or extended Shared Drive. Optimized for on-campus use with quick connectivity and data transfer, but not designed for external sharing.                                                   |
-| **CrashPlan Backup (Endpoint Only)** | Essential: $3/200GB/mo; $1/100GB additional<br>Professional: $8/Unlimited/mo       | Essential: ~$132<br>Professional: ~$88 | Optimal for backing up individual endpoints such as faculty and staff workstations. Provides continuous, automatic backups to safeguard against data loss due to hardware failure or accidental deletion. Recommended within the campus network for straightforward recovery. |
-
-> **Note:** Pricing is normalized on an annual basis where applicable. For the most current and detailed pricing information, please contact ITS.
+### SDSC Qumulo – Universal Scale Storage
+*   **Use Case:** Suited for everyday research needs, similar to an office NAS.
+*   **Cost:** ~$70/TB/year (Normalized). Optimized for on-campus use.
 
 ---
 
-## Ceph Secure Research Storage
+## 🤝 Tier 3: Collaboration & Documentation
+**Best for:** Manuscripts, administrative files, protocols, and sharing lightweight files with collaborators.
 
-**Tier 1 – Foundation for Research Data (Arriving Later This Year)**
+### Google Workspace (Google Drive)
+*   **Included:** 100 GB for Faculty, Staff, and Grads.
+*   **Best Practice:** Use for documents and small-scale data sharing. **Not recommended for raw genomic sequencing or multi-TB binary data.**
 
-Ceph Secure Research Storage (Ceph RDS) is our next-generation storage platform designed specifically for research data. It will serve as the backbone of UCR’s storage infrastructure, offering:
+---
 
-- **Scalability:** Starting with an initial capacity of 2 PB, Ceph RDS will seamlessly scale to accommodate growing data storage requirements.
-- **Data Integrity and Security:** Utilizing 8k + 4m erasure coding and robust encryption, it ensures the highest levels of data protection.
-- **High Performance:** Built on NVMe-backed storage pools to deliver the IOPS required for data-intensive research workloads.
-- **Broad Accessibility:** Supports multiple access protocols (NFS,S3) and integrates directly with the HPCC and other campus clusters.
+## ❄️ Tier 4: Long-Term Archive & Compliance (Cold)
+**Best for:** Raw data retention, grant compliance (e.g., NSF/NIH 10-year rules), and disaster recovery.
 
-Ceph RDS is poised to become the foundational storage solution for high-performance research projects at UCR, complementing our existing platforms while providing enhanced security, performance, and scalability.
+### Ursa Major Cloud Storage (GCP Archive)
+*   **Branding:** Part of the **Ursa Major Cloud** ecosystem.
+*   **Cost:** ~$15/TB/year (Our lowest cost per GB).
+*   **Use Case:** "Write once, read never." Perfect for long-term preservation of raw reads or project snapshots.
 
+### AWS S3 Glacier Deep Archive
+*   **Cost:** ~$12/TB/year.
+*   **Use Case:** Alternative for extreme long-term preservation where 12-hour retrieval times are acceptable.
 
+---
 
-For more detailed information on accessing and utilizing these storage resources, please visit the [UCR Research Computing website](https://researchcomputing.ucr.edu) or contact our support team.
+## 💡 Which Tier is Right for You?
+
+If you are unsure how to architect your lab's data flow, please [schedule a consultation](https://researchcomputing.ucr.edu/contact) with our team. We can help you automate the movement of data between these tiers to minimize costs while ensuring maximum data integrity and security.
