@@ -52,7 +52,7 @@ Explore a wide array of computational tools and platforms tailored to support yo
     {
       name: "NSF ACCESS",
       link: "./pages/nsf_access.html",
-      description: "Provides access to national high-performance computing resources through the NSF ACCESS program.PC Cluster, GPUS, Workstations, Graphical Evniorments"
+      description: "Provides access to national high-performance computing resources, including massive-scale clusters and GPUs, through the NSF ACCESS program."
     }
   ];
 
@@ -68,9 +68,9 @@ Explore a wide array of computational tools and platforms tailored to support yo
       description: "Persistent storage options for applications and data within the Ursa Major cloud environment."
     },
     {
-      name: "Ceph Research Data Storage (coming soon)",
+      name: "Ceph Research Data Storage (Pilot Phase)",
       link: "./pages/ceph_secure_research_storage.html",
-      description: "A future scalable and secure storage solution for research data, offering various access protocols."
+      description: "A highly scalable and secure storage solution for research data, currently available for pilot projects."
     },
     {
       name: "Google Drive",
@@ -170,7 +170,7 @@ Explore a wide array of computational tools and platforms tailored to support yo
 
 For more information, please contact us at:
 
-[research-computing@ucr.edu](./pages/mailto:research-computing@ucr.edu) - [UCR Research Computing Slack](./pages/https://ucr-research-compute.slack.com/)
+[research-computing@ucr.edu](mailto:research-computing@ucr.edu) - [UCR Research Computing Slack](https://ucr-research-compute.slack.com/)
 
 
 
