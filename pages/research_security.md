@@ -176,11 +176,28 @@ By default, the systems we build and manage at UCR Research Computing are design
 
 Our team provides guidance on key standards including, but not limited to, the UC IS-3 policy, external regulations from data providers, and state and federal guidelines. Here is an overview of the frameworks we are familiar with and use to guide our research community in working with:
 
-- **UC IS-3**: As part of the UC system, we adhere to the [University of California's policy on information security](https://policy.ucop.edu/doc/7000543/BFB-IS-3), setting forth standards for protecting institutional and personal information across all UC campuses. This internal policy mandates a proactive approach to information security management, risk assessment, and incident response.
-- **External Requirements**: Beyond the UC's internal IS-3 policy, research projects may need to comply with external security requirements from specific data providers (e.g., Cal-Edison, Department of Education), state health departments, or regulations like NIST-800-171 and CMMC. These are crucial for projects that involve data from outside entities with their own security policies.
-    - **[CMMC (Cybersecurity Maturity Model Certification)](https://dodcio.defense.gov/CMMC/Model/)**: Protects the defense industrial base from cybersecurity threats. It outlines cybersecurity standards and best practices for defense-related information and technologies.    
-    - **[NIST 800-171](https://www.nist.gov/blogs/manufacturing-innovation-blog/what-nist-sp-800-171-and-who-needs-follow-it-0)**: Guidelines for protecting controlled unclassified information (CUI) in non-federal systems, ensuring data security practices align with federal standards.    
-    - **[NSPM-33](https://trumpwhitehouse.archives.gov/presidential-actions/presidential-memorandum-united-states-government-supported-research-development-national-security-policy/)**: Focuses on securing systems related to National Security, Defense, and the Intelligence Community against espionage and theft.
+### Meeting Federal Compliance: NIST 800-171 & CMMC
+
+Many federal grant proposals now include strict requirements for data security. We have designed our services to provide the technical foundation researchers need to meet these obligations.
+
+#### **NIST 800-171: The Federal Standard**
+
+This is the most common and foundational requirement for protecting **Controlled Unclassified Information (CUI)**. If your grant is from the **NIH (especially for dbGaP data)**, the **NSF**, or many other federal agencies, your Data Use Agreement (DUA) will likely mandate compliance with NIST 800-171.
+
+*   **Our Solution:** The **UCR Secure Enclave** is the official campus environment purpose-built to meet the technical controls required by NIST 800-171.
+
+#### **CMMC: The Department of Defense (DoD) Standard**
+
+The Cybersecurity Maturity Model Certification (CMMC) is a specific requirement for researchers working on **Department of Defense (DoD)** contracts.
+
+*   **The Key Relationship:** The technical requirements for **CMMC Level 2 are based on NIST 800-171**.
+*   **Our Solution:** By using the UCR Secure Enclave, your lab is operating in an environment that provides the necessary technical foundation to meet CMMC Level 2 controls, enabling you to pursue DoD-funded research. While official CMMC certification is a separate process your lab must undertake, our enclave provides the compliant infrastructure to get you there.
+
+#### **How to Proceed**
+
+Navigating these requirements is complex. If your grant proposal or DUA mentions CUI, NIST 800-171, or CMMC, please contact us immediately. We will work with you and the Information Security Office to develop the required Data Security Plan (DSP).
+
+**Important:** Due to the significant security and monitoring overhead, the UCR Secure Enclave is a **Tier 2 (Direct Recharge)** service and requires a grant-funded Chart of Accounts (COA).
     
 Adherence to these standards is essential for maintaining the integrity and security of research activities at UCR. Our team is available to assist researchers in understanding these regulations and implementing the necessary security measures to comply with them. For more guidance or to discuss how these standards apply to your research, please reach out to our support team.
 
