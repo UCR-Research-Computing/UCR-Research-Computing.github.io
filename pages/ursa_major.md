@@ -6,7 +6,7 @@ sidebar_label: Ursa Major
 
 ## Ursa Major: The Future of Cloud at UCR
 
-Ursa Major is a strategic partnership between the University of California, Riverside (UCR) and Google Cloud Platform (GCP). This initiative is currently undergoing a **strategic realignment** (Project Polaris) to ensure that UCR’s cloud footprint is optimized for high-impact research, data security, and long-term financial sustainability.
+Ursa Major is a strategic partnership between the University of California, Riverside (UCR) and Google Cloud Platform (GCP). This initiative has undergone a **strategic realignment** to ensure that UCR’s cloud footprint is optimized for high-impact research, data security, and long-term financial sustainability.
 
 The goal of Ursa Major is to provide researchers with a "Fine Dining" experience—offering curated, high-performance resources where they are needed most, while ensuring that standard computational tasks are aligned with the most cost-effective campus infrastructure.
 
@@ -16,20 +16,18 @@ Through Ursa Major, UCR researchers can leverage cloud-native capabilities that 
 
 - **[Vertex AI & Machine Learning](../Knowledge_Base/Ursa_Major_Research_Services.md)**: Utilize Google’s flagship AI platform for model training, Generative AI (LLMs), and vector-based research applications.
 - **[Secure Research Enclaves](../Knowledge_Base/Ursa_Major_Research_Workstations.md)**: Access specialized virtual workstations designed for P4/Restricted data compliance (e.g., HIPAA, NIST 800-171) in a high-security cloud environment.
-- **[Petabyte-Scale Analytics](../Knowledge_Base/Ursa_Major_Research_Storage.md)**: Leverage BigQuery for massive dataset analysis and high-throughput data warehousing.
 - **[Strategic Archive Tier](../Knowledge_Base/Ursa_Major_Research_Storage.md)**: Utilize cost-effective, long-term cloud storage for grant compliance and large-scale data retention.
 
 ---
 
-### Ursa Major Resource Allocation Framework (Proposed)
+### Ursa Major Resource Allocation Framework
 
-UCR utilizes a tiered framework to ensure equitable and strategic access to cloud resources. This framework is designed to support the unique funding cycles of academic research while maintaining institutional governance.
+UCR utilizes a strictly tiered framework to ensure equitable and strategic access to cloud resources. This framework is designed to support the unique funding cycles of academic research while maintaining institutional governance and complying with enterprise contract limits.
 
 #### Allocation Tiers
 
-*   **Explore Tier:** Provides a baseline level of resources for researchers new to the cloud or conducting small-scale exploratory experiments. This tier is intended to facilitate testing and code development before moving to larger-scale production environments.
-*   **Advanced Tier (Strategic Allocation):** Designed for high-impact projects with specialized technical requirements (e.g., GenAI, large-scale BigQuery, or Regulated Data). Access to this tier is granted through a proposal review process to ensure the cloud is the most appropriate and sustainable destination for the workload.
-*   **Researcher-Focused Subscription Tier:** This tier allows PIs to leverage their own grant funding to provision dedicated GCP environments. This model is designed to support high-scale workloads (e.g., massive GPU clusters, AI training) while utilizing UCR’s negotiated enterprise-grade security and support.
+*   **Tier 1: Strategic Allocation (Subsidized Pool):** Provides no-cost access to baseline compute (`e2-standard-2`), secure enclaves, and strategic AI services (Gemini API) for eligible projects.
+*   **Tier 2: Commercial Recharge (Direct Billing):** Designed for high-scale or specialized workloads that exceed Tier 1 limits. **All Cloud GPU (A100, L4, T4), high-performance compute (c3, n2), and massive storage workloads must operate in this tier via direct recharge to a grant COA.** Alternatively, researchers are strongly encouraged to utilize the [UCR HPCC](../pages/HPCC.md) for subsidized GPU and HPC access.
 
 ---
 

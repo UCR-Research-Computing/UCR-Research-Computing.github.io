@@ -1,5 +1,7 @@
 ### How to Run an Open-Source Offline AI LLM Model at UCR Research Computing
 
+**⚠️ Financial Warning:** Cloud GPUs (such as the T4 mentioned below) are **not** covered by the Tier 1 Ursa Major subsidy. Following this guide on Google Cloud will trigger a Tier 2 Direct Recharge to your lab's grant COA. If you require no-cost GPU access, please run Ollama on the [UCR HPCC](../pages/HPCC.md) instead.
+
 This comprehensive guide outlines the process for setting up a GPU-enabled workstation on UCR Research Computing's Ursa Major (GCP Console) to run your own copy of an offline AI Large Language Model (LLM), such as Llama 2 or Gemma, with full data privacy.
 
 #### Step 1: Create Your GPU Workstation

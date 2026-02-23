@@ -97,6 +97,7 @@ Discover state-of-the-art open-source models that are driving innovation across 
 
 ### Featured How-To:
 Run your own open-source LLM on UCR Ursa Major or your workstation today!  
+**⚠️ Financial Warning:** Running offline LLMs on Ursa Major requires Cloud GPUs, which are strictly Tier 2 (Direct Recharge) and are not covered by the baseline subsidy. For no-cost GPU access, please utilize the [UCR HPCC](../pages/HPCC.md).  
 [How To Run Offline LLMs](../Knowledge_Base/ollama-how-to.md)
 
 | Name                                          | Description                          | Name                                          | Description                          |

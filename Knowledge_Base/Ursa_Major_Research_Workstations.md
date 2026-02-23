@@ -14,11 +14,10 @@ The cost of using Ursa Major research workstations is free for our researchers, 
 
 Some amaizing ways Ursa Major Research Workstations are amazing:
 
-* Customizable Configurations: Ursa Major's VMs offer flexibility in CPU core count, CPU type, and RAM size, enabling researchers to tailor their systems to their unique research requirements. Whether running simulations, handling data, or conducting demanding computational workloads, researchers can easily configure their systems to fit their needs.
-* High-Performance Computing: Ursa Major's VMs offer a large memory allocation and GPU options, allowing researchers to complete their work more efficiently and quickly. Multiple experiments and simulations can also be run simultaneously, boosting productivity.
-* Free to Researchers: Ursa Major's VMs act as advanced research workstations, and researchers can save on the cost of buying and maintaining high-end hardware. T
-* OS Flexibility: Researchers have a range of operating system options available on Ursa Major's VMs, allowing them to choose the one that best fits their needs. They can continue using familiar tools and software without having to learn new systems or workflows.
-* Persistence for Containers: Ursa Major's VMs offer container persistence, allowing researchers to store data, results, and configurations even if the VM is shut down. This is especially useful for long-term projects and accessing data from anywhere, anytime.
-* GPU Options: Ursa Major offers various GPU options, including top-performing ones, giving researchers the ability to choose the GPU that best fits their needs. This allows for demanding graphical or computational workloads to be run with ease and speed.
-* Scalability: Ursa Major's VMs offer easy scalability, so researchers can add more CPU power, memory, or GPUs as their needs change. Their systems will keep up with the demands of their research with ease.
-* Reliability: Ursa Major's VMs are dependable and backed by strong support, giving researchers the peace of mind that their systems will be operational when needed. With 24/7 support and a global network of data centers, researchers can be confident in their systems' performance.
+* **Customizable Configurations:** Ursa Major's VMs offer flexibility in CPU core count, CPU type, and RAM size, enabling researchers to tailor their systems to their unique research requirements.
+* **Cost-Effective Baseline:** Basic Ursa Major VMs (`e2-standard-2`) are provided at no cost under the Tier 1 subsidy, allowing researchers to save on the cost of buying and maintaining low-end hardware.
+* **OS Flexibility:** Researchers have a range of operating system options available on Ursa Major's VMs, allowing them to choose the one that best fits their needs.
+* **Persistence for Containers:** Ursa Major's VMs offer container persistence, allowing researchers to store data, results, and configurations even if the VM is shut down.
+* **GPU Options (Tier 2 Recharge):** Ursa Major offers various GPU options (A100, L4, T4) for demanding graphical or computational workloads. **Note:** Cloud GPUs are not covered by the university subsidy and require a Tier 2 Direct Recharge agreement. For no-cost GPU access, please utilize the [UCR HPCC](../pages/HPCC.md).
+* **Scalability:** Ursa Major's VMs offer easy scalability, so researchers can add more CPU power, memory, or GPUs (via Tier 2) as their needs change.
+* **Reliability:** Ursa Major's VMs are dependable and backed by strong support, giving researchers the peace of mind that their systems will be operational when needed.

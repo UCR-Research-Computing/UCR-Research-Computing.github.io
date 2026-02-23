@@ -33,8 +33,9 @@ UCR's strategic approach to Ursa Major resource allocation ensures equitable acc
 #### Allocation Tiers
 
 * **Explore Tier:** This tier provides a baseline level of resources suitable for researchers who are new to GCP or conducting small-scale experiments and projects. This tier allows for experimentation with various cloud technologies, small-scale storage needs, and testing code before deploying on a larger scale within the Advanced Tier.
-* **Advanced Tier:** This tier is designed for researchers with larger-scale projects and higher resource demands, including moderate to high use of GPUs and most high-performance computing (HPC) needs involving large CPU and memory usage. Access to this tier will be granted based on a proposal review process conducted by a faculty panel.
-* **Researcher-Focused Subscription Agreement Tier:** This tier, funded by the researcher, offers a dedicated GCP environment managed by ITS in close collaboration with Google. The use cases for this tier are limited only by the funding available on the subscription agreement. This includes use of GPUs, HPC workloads, AI model training, and more.
+* **Tier 1: Strategic Allocation (The "Pool"):** Provides no-cost access to baseline compute (`e2-standard-2`), secure enclaves, and strategic AI services. This tier is strictly for compliant, whitelisted SKUs.
+* **Tier 2: Commercial Recharge (The "Override"):** Designed for high-impact projects with specialized technical requirements that fall outside the Tier 1 subsidy. **All Cloud GPU (A100, L4, T4), high-performance compute (c3, n2), and massive storage workloads must operate in this tier via direct recharge to a grant COA.** For subsidized GPU access, researchers must utilize the UCR HPCC.
+* **Tier 3: Dedicated Subscription Agreement:** This tier, funded entirely by the researcher via a dedicated commitment, offers an isolated GCP environment managed by ITS in close collaboration with Google. The use cases for this tier are limited only by the funding available on the subscription agreement.
 
 #### Requesting a URS Major Resource Allocation:
 

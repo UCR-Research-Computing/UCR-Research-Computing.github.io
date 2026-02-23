@@ -35,7 +35,7 @@ These system-wide discounts make cloud computing more affordable for UCR's resea
 
 Resources and services that the University of California, Riverside (UCR) provides to its community without charging the end users, as UCR covers some or all of the associated costs. This arrangement includes access to specific cloud computing resources, high-performance computing platforms, and storage solutions, among other technological services. By subsidizing these services, UCR aims to eliminate financial barriers that might otherwise prevent students, faculty, and research departments from utilizing essential digital tools and platforms for their academic and research projects.
 
-* [Ursa Major](ursa_major.md): GCP subscription for cloud computing resources, auto-scaling HPC, GKE Clusters with the latest technology, Research Workstations/Servers and Advanced AI and ML platforms
+* [Ursa Major](ursa_major.md): GCP subscription for cloud computing resources. **Tier 1 (Subsidized)** covers basic compute and strategic AI. **Tier 2 (Recharge)** covers auto-scaling HPC, GKE Clusters with the latest technology, Research Workstations/Servers, and Advanced AI/GPU platforms.
 * Storage Solutions: [Google Drive](Google_Drive.md) and [Ursa Major Secure Research Storage](/Knowledge_Base/Ursa_Major_Research_Storage.md): For storage and collaboration.
 * [Dryad](https://datadryad.org/stash): For publishing research data for enhanced discoverability and compliance.
 
