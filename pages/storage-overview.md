@@ -50,8 +50,8 @@ CephRDS is our next-generation, on-premise storage platform designed specificall
 
 ### Ursa Major Cloud Storage (GCP Archive)
 *   **Branding:** Part of the **Ursa Major Cloud** ecosystem.
-*   **Cost:** ~$15/TB/year (Our lowest cost per GB).
-*   **Use Case:** "Write once, read never." Perfect for long-term preservation of raw reads or project snapshots.
+*   **Cost:** Subsidized (Tier 1). No-cost to researchers within reasonable limits.
+*   **Use Case:** "Write once, read never." Perfect for long-term preservation of raw reads or project snapshots required by federal grants.
 
 ### AWS S3 Glacier Deep Archive
 *   **Cost:** ~$12/TB/year.

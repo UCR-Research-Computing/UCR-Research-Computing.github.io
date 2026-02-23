@@ -10,7 +10,7 @@ Ursa Major, the University of California, Riverside (UCR)'s strategic partnershi
 
 ### Available Storage Solutions in GCP
 
-Ursa Major offers access to several GCP storage options, each tailored to different research needs:
+Ursa Major offers access to several GCP storage options, each tailored to different research needs. **Please note:** Under the Ursa Major allocation framework, Coldline Archive storage and small-scale Standard GCS are subsidized (Tier 1). High-performance storage, such as massive Hot/Standard GCS, large Persistent Disks, and Google Filestore, operate under a Direct Recharge model (Tier 2).
 
 #### Google Cloud Storage (GCS)
 
