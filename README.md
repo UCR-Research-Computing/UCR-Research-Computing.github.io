@@ -1,8 +1,3 @@
----
-title: Welcome to UCR Research Computing
-layout: default
----
-
 # Welcome to UCR Research Computing
 
 <div class="text-center">
