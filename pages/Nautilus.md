@@ -21,10 +21,10 @@ For UCR-specific assistance or initial inquiries, please contact:
 For general NRP support and documentation, refer to the following resources:
 - **[NRP Documentation Home](https://nrp.ai/documentation/)**: The main portal for all Nautilus and NRP user guides.
 - **[Getting Access to Nautilus](https://nrp.ai/documentation/userdocs/start/getting-started/)**: Steps to obtain an account and access the Nautilus cluster.
-- **[Nautilus Quick Start Guide](https://nrp.ai/documentation/userdocs/start/quickstart/)**: A beginner's guide to quickly start using Nautilus.
+- **[Nautilus Quick Start Guide](https://nrp.ai/documentation/userdocs/start/getting-started)**: A beginner's guide to quickly start using Nautilus.
 - **[Nautilus Cluster Policies](https://nrp.ai/documentation/userdocs/start/policies/)**: Important operational policies for using the cluster.
 - **[NRP Acceptable Use Policy (AUP)](https://nrp.ai/NRP-AUP.pdf)**: Overall AUP for the National Research Platform.
-- **[NRP/Nautilus FAQ](https://nrp.ai/documentation/userdocs/start/faq/)**: Answers to frequently asked questions about Nautilus.
+- **[NRP/Nautilus FAQ](https://nrp.ai/documentation/userdocs/start/faq)**: Answers to frequently asked questions about Nautilus.
 - **[General NRP FAQs](https://nrp.ai/#faqs)**: Broader questions about the National Research Platform.
 - **[Glossary of Terms](https://nrp.ai/documentation/userdocs/start/glossary/)**: Definitions of common terms used in the NRP ecosystem.
 - **[Asking for Support (Matrix/Chat)](https://nrp.ai/documentation/userdocs/start/support/)**: How to get help from the NRP support team.
@@ -37,38 +37,38 @@ This section provides links to essential documentation for leveraging the capabi
 - **[General Guide to Using Nautilus](https://nrp.ai/documentation/userdocs/start/using-nautilus/)**: An overview of best practices and how to effectively use the platform.
 - **[Introduction to Docker and Containers](https://nrp.ai/documentation/userdocs/tutorial/docker/)**: Fundamental concepts for working with containerized applications.
 - **[Basic Kubernetes on Nautilus](https://nrp.ai/documentation/userdocs/tutorial/basic/)**: Learn the basics of deploying and managing applications with Kubernetes.
-- **[Working with Container Images](https://nrp.ai/documentation/userdocs/tutorial/images/)**: How to find, use, and manage container images, including [Scientific Images](https://nrp.ai/documentation/userdocs/running/sci-img/).
+- **[Working with Container Images](https://nrp.ai/documentation/userdocs/tutorial/images/)**: How to find, use, and manage container images, including [Scientific Images](https://nrp.ai/documentation/userdocs/running/jobssci-img/).
 - **[Scheduling Pods and Jobs](https://nrp.ai/documentation/userdocs/tutorial/scheduling/)**: Understanding how to schedule your workloads effectively.
 - **[Debugging Applications on Nautilus](https://nrp.ai/documentation/userdocs/tutorial/debugging/)**: Tips and techniques for troubleshooting.
 
 ### Running Computational Tasks
-- **[Running GPU Pods](https://nrp.ai/documentation/userdocs/running/gpu-pods/)**: How to request and utilize GPU resources.
-- **[Running Batch Jobs](https://nrp.ai/documentation/userdocs/running/jobs/)**: For non-interactive, compute-intensive tasks. See also: [Optimizing for High I/O Jobs](https://nrp.ai/documentation/userdocs/running/io-jobs/).
-- **[Running CPU-only Jobs](https://nrp.ai/documentation/userdocs/running/cpu-only/)**: For workloads that do not require GPUs.
-- **[Long-running Pods and Services](https://nrp.ai/documentation/userdocs/running/long-idle/)**: Guidelines for services that need to run continuously.
-- **[Monitoring your Pods and Jobs](https://nrp.ai/documentation/userdocs/running/monitoring/)**: Keeping track of your resource usage and job status.
-- For more advanced topics, see the full **[Running on Nautilus Documentation](https://nrp.ai/documentation/userdocs/running/)**.
+- **[Running GPU Pods](https://nrp.ai/documentation/userdocs/running/jobsgpu-pods/)**: How to request and utilize GPU resources.
+- **[Running Batch Jobs](https://nrp.ai/documentation/userdocs/running/jobsjobs/)**: For non-interactive, compute-intensive tasks. See also: [Optimizing for High I/O Jobs](https://nrp.ai/documentation/userdocs/running/jobsio-jobs).
+- **[Running CPU-only Jobs](https://nrp.ai/documentation/userdocs/running/jobscpu-only)**: For workloads that do not require GPUs.
+- **[Long-running Pods and Services](https://nrp.ai/documentation/userdocs/running/jobslong-idle/)**: Guidelines for services that need to run continuously.
+- **[Monitoring your Pods and Jobs](https://nrp.ai/documentation/userdocs/running/jobsmonitoring/)**: Keeping track of your resource usage and job status.
+- For more advanced topics, see the full **[Running on Nautilus Documentation](https://nrp.ai/documentation/userdocs/running/jobs)**.
 
 ### Storage on Nautilus
 Nautilus offers a variety of storage solutions to meet different research needs.
-- **[Storage Options Overview](https://nrp.ai/documentation/userdocs/storage/intro/)**: An introduction to the available storage types.
-- **Ceph FileSystem (FS):** Provides home directories and project spaces. Accessed via `PersistentVolumeClaim` in Kubernetes. ([Details](https://nrp.ai/documentation/userdocs/storage/ceph/))
-- **Ceph S3 Object Storage:** Scalable object storage compatible with the S3 API. ([Details](https://nrp.ai/documentation/userdocs/storage/ceph-s3/))
-- **CVMFS (CernVM File System):** Used for distributing software and data efficiently. ([Details](https://nrp.ai/documentation/userdocs/storage/cvmfs/))
-- **Local Scratch Storage:** Fast, temporary storage available on worker nodes. Data is not persistent. ([Details](https://nrp.ai/documentation/userdocs/storage/local/))
+- **[Storage Options Overview](https://nrp.ai/documentation/userdocs/storage/introintro/)**: An introduction to the available storage types.
+- **Ceph FileSystem (FS):** Provides home directories and project spaces. Accessed via `PersistentVolumeClaim` in Kubernetes. ([Details](https://nrp.ai/documentation/userdocs/storage/introceph/))
+- **Ceph S3 Object Storage:** Scalable object storage compatible with the S3 API. ([Details](https://nrp.ai/documentation/userdocs/storage/introceph-s3/))
+- **CVMFS (CernVM File System):** Used for distributing software and data efficiently. ([Details](https://nrp.ai/documentation/userdocs/storage/introcvmfs/))
+- **Local Scratch Storage:** Fast, temporary storage available on worker nodes. Data is not persistent. ([Details](https://nrp.ai/documentation/userdocs/storage/introlocal/))
 - **Data Management:**
-    - **[Moving Data In and Out](https://nrp.ai/documentation/userdocs/storage/move-data/)**: Includes information on tools like `kubectl cp`, `rclone`, and [Globus Connect](https://nrp.ai/documentation/userdocs/running/globus-connect/).
-    - **[Purging Data](https://nrp.ai/documentation/userdocs/storage/purging/)**: Policies and procedures for data lifecycle management.
-    - **[Managing S3 Tokens/Credentials](https://nrp.ai/documentation/userdocs/storage/jwt-credential/)**.
-- For other storage solutions like Linstor or Nextcloud, refer to the main **[Nautilus Storage Documentation](https://nrp.ai/documentation/userdocs/storage/)**.
+    - **[Moving Data In and Out](https://nrp.ai/documentation/userdocs/storage/intromove-data)**: Includes information on tools like `kubectl cp`, `rclone`, and [Globus Connect](https://nrp.ai/documentation/userdocs/running/jobsglobus-connect/).
+    - **[Purging Data](https://nrp.ai/documentation/userdocs/storage/intropurging/)**: Policies and procedures for data lifecycle management.
+    - **[Managing S3 Tokens/Credentials](https://nrp.ai/documentation/userdocs/storage/introjwt-credential/)**.
+- For other storage solutions like Linstor or Nextcloud, refer to the main **[Nautilus Storage Documentation](https://nrp.ai/documentation/userdocs/storage/intro)**.
 
 ### AI and Machine Learning
 Nautilus is well-equipped for a wide range of AI and Machine Learning workloads.
-- **[Overview of AI/ML on NRP](https://nrp.ai/documentation/userdocs/ai/)**: General information and resources.
-- **[Using GPUs for AI/ML](https://nrp.ai/documentation/userdocs/running/gpu-pods/)**: Essential for training and inference.
-- **[NRP Managed LLM Service](https://nrp.ai/documentation/userdocs/ai/llm-managed/)**: Access pre-configured Large Language Models.
-- **[Running LLMs in JupyterHub](https://nrp.ai/documentation/userdocs/ai/llm-jupyterhub/)**: Integrate LLMs into your Jupyter environment.
-- **[Using Qualcomm Cloud AI 100 Cards](https://nrp.ai/documentation/userdocs/ai/qaic/)**: For specialized AI acceleration.
+- **[Overview of AI/ML on NRP](https://nrp.ai/documentation/userdocs/ai/llm-managed)**: General information and resources.
+- **[Using GPUs for AI/ML](https://nrp.ai/documentation/userdocs/running/jobsgpu-pods/)**: Essential for training and inference.
+- **[NRP Managed LLM Service](https://nrp.ai/documentation/userdocs/ai/llm-managedllm-managed/)**: Access pre-configured Large Language Models.
+- **[Running LLMs in JupyterHub](https://nrp.ai/documentation/userdocs/ai/llm-managedllm-jupyterhub/)**: Integrate LLMs into your Jupyter environment.
+- **[Using Qualcomm Cloud AI 100 Cards](https://nrp.ai/documentation/userdocs/ai/llm-managedqaic/)**: For specialized AI acceleration.
 
 ### Jupyter and Interactive Computing
 - **[Nautilus JupyterHub Service](https://nrp.ai/documentation/userdocs/jupyter/jupyterhub-service/)**: Easy access to JupyterLab instances.
