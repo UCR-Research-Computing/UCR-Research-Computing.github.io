@@ -10,67 +10,51 @@ title: Nexus Ship Status
     <title>Nexus Ship Status</title>
     <style>
         :root {
-            /* Zendesk Garden Light Mode Palette */
-            --bg-base: #f8f9f9;
-            --bg-surface: #ffffff;
-            --text-main: #2f3941;
-            --text-muted: #68737d;
+            --bg-color: #f8f9f9;
+            --card-bg: #ffffff;
+            --text-primary: #2f3941;
+            --text-secondary: #68737d;
             --border-color: #d8dcde;
-            
-            /* Status Colors */
-            --status-ok-text: #0b6b3e;
-            --status-ok-bg: #edf8f4;
-            --status-ok-border: #1a9254;
-            
-            --status-warn-text: #ad5e00;
-            --status-warn-bg: #fff0c7;
-            --status-warn-border: #fca900;
-            
-            --status-fail-text: #cc3340;
-            --status-fail-bg: #fce4e4;
-            --status-fail-border: #e34f5d;
-
-            --status-neutral-text: #0070d2;
-            --status-neutral-bg: #e1f0fe;
-            --status-neutral-border: #1f73b7;
+            --status-ok: #038153;
+            --status-ok-bg: #e3f2e8;
+            --status-warn: #ad5f00;
+            --status-warn-bg: #fcf4e6;
+            --status-fail: #c72a28;
+            --status-fail-bg: #fdf3f2;
+            --status-neutral: #1f73b7;
+            --status-neutral-bg: #eaf3f9;
+            --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
         body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background-color: var(--bg-base);
-            color: var(--text-main);
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
             margin: 0;
             padding: 2rem;
             line-height: 1.5;
         }
 
-        .dashboard-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .header {
+        .dashboard-header {
             margin-bottom: 2rem;
-            padding-bottom: 1rem;
             border-bottom: 2px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
+            padding-bottom: 1rem;
         }
 
-        .header h1 {
+        .dashboard-header h1 {
             margin: 0;
             font-size: 2rem;
-            font-weight: 600;
-            color: var(--text-main);
+            color: var(--text-primary);
         }
 
-        .header .timestamp {
-            color: var(--text-muted);
-            font-size: 0.9rem;
+        .dashboard-header p {
+            margin: 0.5rem 0 0;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
         }
 
-        .grid {
+        .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 1.5rem;
@@ -78,215 +62,285 @@ title: Nexus Ship Status
         }
 
         .card {
-            background-color: var(--bg-surface);
+            background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 1.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .card:hover {
-            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-            transform: translateY(-2px);
+            box-shadow: var(--shadow);
         }
 
         .card-header {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .status-item {
+            margin-bottom: 1.25rem;
+        }
+
+        .status-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .status-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1rem;
+            margin-bottom: 0.25rem;
         }
 
-        .card-title {
-            margin: 0;
-            font-size: 1.1rem;
+        .status-title {
             font-weight: 600;
+            font-size: 1.05rem;
         }
 
         .badge {
             padding: 0.25rem 0.75rem;
-            border-radius: 16px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border: 1px solid transparent;
-        }
-
-        .badge.warn {
-            background-color: var(--status-warn-bg);
-            color: var(--status-warn-text);
-            border-color: var(--status-warn-border);
-        }
-
-        .badge.degraded {
-            background-color: var(--status-warn-bg);
-            color: var(--status-warn-text);
-            border-color: var(--status-warn-border);
-        }
-
-        .badge.nominal {
-            background-color: var(--status-ok-bg);
-            color: var(--status-ok-text);
-            border-color: var(--status-ok-border);
-        }
-
-        .badge.jammed {
-            background-color: var(--status-fail-bg);
-            color: var(--status-fail-text);
-            border-color: var(--status-fail-border);
-        }
-        
-        .badge.neutral {
-            background-color: var(--status-neutral-bg);
-            color: var(--status-neutral-text);
-            border-color: var(--status-neutral-border);
-        }
-
-        .context {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin: 0;
-            flex-grow: 1;
-        }
-
-        .metrics-bar {
-            display: flex;
-            gap: 1.5rem;
-            background-color: var(--bg-surface);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-
-        .metric {
-            flex: 1;
-            border-right: 1px solid var(--border-color);
-        }
-
-        .metric:last-child {
-            border-right: none;
-        }
-
-        .metric-label {
-            display: block;
-            color: var(--text-muted);
+            border-radius: 12px;
             font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .badge.ok { background-color: var(--status-ok-bg); color: var(--status-ok); }
+        .badge.warn { background-color: var(--status-warn-bg); color: var(--status-warn); }
+        .badge.fail { background-color: var(--status-fail-bg); color: var(--status-fail); }
+        .badge.neutral { background-color: var(--status-neutral-bg); color: var(--status-neutral); }
+
+        .status-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .metric-box {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1rem;
+            text-align: center;
         }
 
         .metric-value {
-            display: block;
-            font-size: 1.75rem;
-            font-weight: 300;
-            color: var(--text-main);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--status-neutral);
+            margin-bottom: 0.25rem;
         }
-        
-        .progress-wrapper {
-            margin-top: 1rem;
-            width: 100%;
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .insight-item {
+            margin-bottom: 1rem;
+        }
+
+        .insight-item h4 {
+            margin: 0 0 0.25rem;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .insight-item p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Progress bar styling */
+        .progress-bar-bg {
             background-color: var(--border-color);
             border-radius: 4px;
             height: 8px;
+            width: 100%;
+            margin-top: 0.5rem;
             overflow: hidden;
         }
-        
-        .progress-fill {
+
+        .progress-bar-fill {
+            background-color: var(--status-neutral);
             height: 100%;
-            background-color: var(--status-neutral-border);
-            width: 35%;
         }
+
     </style>
 </head>
 <body>
-    <div class="dashboard-container">
-        <header class="header">
-            <h1>Nexus Ship Status</h1>
-            <div class="timestamp">Real-time Telemetry &bull; February 22, 2026</div>
-        </header>
 
-        <div class="grid">
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">Hull Integrity</h2>
-                    <span class="badge warn">WARN</span>
-                </div>
-                <p class="context">The external posture is stable but accumulating risk from legacy unpatched web assets and public liability exposures.</p>
-            </div>
+    <div class="dashboard-header">
+        <h1>Nexus Ship Status</h1>
+        <p>Real-Time Operations & Engagement Telemetry</p>
+    </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">Power Core</h2>
-                    <span class="badge degraded">Degraded</span>
+    <div class="grid-container">
+        <!-- Ship Systems -->
+        <div class="card" style="grid-column: span 2;">
+            <div class="card-header">Core Systems Telemetry</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                
+                <div class="status-item">
+                    <div class="status-header">
+                        <span class="status-title">Hull Integrity</span>
+                        <span class="badge warn">WARN</span>
+                    </div>
+                    <p class="status-desc">135 cold relationships and 402 pending/risk strategic alignment maps show structural gaps in researcher coverage.</p>
                 </div>
-                <p class="context">Main funding feeds are fluctuating following the retracted PSSA funding offer for the NIMH Secure Enclave.</p>
-            </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">Life Support</h2>
-                    <span class="badge nominal">Nominal</span>
+                <div class="status-item">
+                    <div class="status-header">
+                        <span class="status-title">Power Core</span>
+                        <span class="badge warn">Degraded</span>
+                    </div>
+                    <p class="status-desc">A blocked high-priority task regarding the Garret Anderson PSSA funding retraction for the NIMH Secure Enclave is stalling critical momentum.</p>
                 </div>
-                <p class="context">SOM Data Center environmental controls and physical infrastructure are operating within standard parameters.</p>
-            </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">Navigation</h2>
-                    <span class="badge warn">Calibrating</span>
+                <div class="status-item">
+                    <div class="status-header">
+                        <span class="status-title">Life Support</span>
+                        <span class="badge ok">Nominal</span>
+                    </div>
+                    <p class="status-desc">Faculty touchpoint coverage is at 29.1%, sustaining operations but leaving room for expanded proactive outreach.</p>
                 </div>
-                <p class="context">The Knowledge Graph is still resolving IAM mappings, with 402 researcher alignments currently pending or at risk.</p>
-            </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">Comms</h2>
-                    <span class="badge warn">Standby</span>
+                <div class="status-item">
+                    <div class="status-header">
+                        <span class="status-title">Navigation</span>
+                        <span class="badge warn">Calibrating</span>
+                    </div>
+                    <p class="status-desc">The CephRDS launch plan and Recharge Rate definition are currently in the high-priority queue to chart our next course.</p>
                 </div>
-                <p class="context">Subspace arrays are underutilized, with only 29.1% VIP coverage (16/55) and 135 total connections gone cold.</p>
-            </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">Shields</h2>
-                    <span class="badge warn">Recharging</span>
+                <div class="status-item">
+                    <div class="status-header">
+                        <span class="status-title">Comms</span>
+                        <span class="badge ok">Active</span>
+                    </div>
+                    <p class="status-desc">Numerous healthy researcher interactions and strategic insights successfully recorded today, indicating highly active engagement channels.</p>
                 </div>
-                <p class="context">The NIST 800-171 defensive perimeter is incomplete while the TCGA Secure Enclave provisioning awaits billing authorization.</p>
-            </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">Weapons</h2>
-                    <span class="badge jammed">Jammed</span>
+                <div class="status-item">
+                    <div class="status-header">
+                        <span class="status-title">Shields</span>
+                        <span class="badge warn">Recharging</span>
+                    </div>
+                    <p class="status-desc">Secure Enclave provisioning for Donovan (NIST 800-171) is pending billing ID responses to fortify data protection protocols.</p>
                 </div>
-                <p class="context">Tactical payload delivery is blocked by a high-priority administrative standoff and a backlog of 10 operational targets.</p>
+
+                <div class="status-item">
+                    <div class="status-header">
+                        <span class="status-title">Weapons</span>
+                        <span class="badge fail">Jammed</span>
+                    </div>
+                    <p class="status-desc">The NIMH Secure Enclave PSSA funding retraction requires an immediate, tight response draft to clear the operational blockage.</p>
+                </div>
+
             </div>
         </div>
 
-        <div class="metrics-bar">
-            <div class="metric">
-                <span class="metric-label">Crew Status</span>
-                <span class="metric-value">766 <span style="font-size: 1rem; color: var(--text-muted);">Tracked</span></span>
+        <!-- Resources & Mission -->
+        <div class="card">
+            <div class="card-header">Vessel Resources</div>
+            
+            <div class="status-item">
+                <div class="status-header">
+                    <span class="status-title">Crew Status</span>
+                    <span class="badge neutral">766</span>
+                </div>
+                <p class="status-desc">Total number of researchers actively tracked within the unified database.</p>
             </div>
-            <div class="metric">
-                <span class="metric-label">Cargo (Active Grants)</span>
-                <span class="metric-value">$498,553</span>
+
+            <div class="status-item">
+                <div class="status-header">
+                    <span class="status-title">Cargo</span>
+                    <span class="badge neutral">$498,553</span>
+                </div>
+                <p class="status-desc">Active grant portfolio value representing targeted research funding across 2 active grants.</p>
             </div>
-            <div class="metric">
-                <span class="metric-label">Mission Progress</span>
-                <span class="metric-value">35%</span>
-                <div class="progress-wrapper">
-                    <div class="progress-fill"></div>
+
+            <div class="status-item">
+                <div class="status-header">
+                    <span class="status-title">Mission Progress</span>
+                    <span class="badge neutral">35%</span>
+                </div>
+                <p class="status-desc">Based on 29.1% VIP coverage and multiple critical high-priority projects (CephRDS, Secure Enclaves) advancing through the pipeline.</p>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" style="width: 35%;"></div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="grid-container">
+        <!-- Advanced Metrics -->
+        <div class="card">
+            <div class="card-header">Advanced Metrics</div>
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <div class="metric-value">30%</div>
+                    <div class="metric-label">Engagement Score</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">15%</div>
+                    <div class="metric-label">Funding Velocity</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">60%</div>
+                    <div class="metric-label">Resource Utilization</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">40%</div>
+                    <div class="metric-label">Lab Collaboration</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">70%</div>
+                    <div class="metric-label">Asset Lifecycle</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strategic Insights -->
+        <div class="card">
+            <div class="card-header">Strategic Insights</div>
+            
+            <div class="insight-item">
+                <h4>Emerging Research Trends</h4>
+                <p>High demand for compliant Secure Enclaves (NIST 800-171, NIMH) and scalable storage solutions like CephRDS indicates a critical shift towards heavily regulated data environments.</p>
+            </div>
+
+            <div class="insight-item">
+                <h4>Cross-Lab Synergies</h4>
+                <p>Recent strategic insights generated across diverse departments (Physics, CSE, Psychology, Chemistry) present a prime opportunity to unify computational infrastructure models.</p>
+            </div>
+
+            <div class="insight-item">
+                <h4>Funding Gaps/Opportunities</h4>
+                <p>The retraction of the PSSA funding offer for Garret Anderson highlights an urgent need to secure alternative compliance funding models for Tier 1 research deployments.</p>
+            </div>
+
+            <div class="insight-item">
+                <h4>Resource Bottlenecks</h4>
+                <p>Administrative delays, specifically pending Billing IDs for Secure Enclaves and unresolved CephRDS Recharge Rates, remain the primary constraints on infrastructure deployment.</p>
+            </div>
+
+            <div class="insight-item">
+                <h4>Researcher Network Density</h4>
+                <p>With 135 cold relationships and 402 at risk, targeted engagement campaigns are required to densify the network beyond the current 29% VIP coverage.</p>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
