@@ -45,26 +45,6 @@ Discover a broad range of courses on top online education platforms, covering to
 
 Leverage these platforms to complement your learning experience, broaden your skills, and stay updated with the latest advancements in research computing and cloud technologies.
 
-Latest YouTube Videos on HPC and Research Computing Support (August 2024 - February 2025)
-| Video Title | Channel | Date | Key Focus Areas | Duration | Link |
-|---|---|---|---|---|---|
-| Exascale Era: Breaking Down Frontier's Successor | HPCwire | 2025-02-15 | DOE's 2025 exascale roadmap, thermal management breakthroughs | 42:18 | Watch |
-| AI-Driven HPC: Merging ML Workflows with Traditional Simulations | NVIDIA HPC | 2025-01-30 | CUDA 12.5 features, hybrid AI/HPC workflows | 38:55 | Watch |
-| Campus Research Computing: Building Sustainable Infrastructure | Internet2 | 2024-12-10 | Energy-efficient data center design, cost-sharing models | 29:12 | Watch |
-| Quantum-HPC Hybrid Systems: Early Implementation Case Studies | CERN Computing | 2025-02-08 | Quantum annealing integration, error correction frameworks | 56:31 | Watch |
-| ROCm 6.0 Deep Dive: AMD's Answer to Heterogeneous Computing | AMD Developer Central | 2024-11-25 | MI400 series programming, cross-vendor compatibility | 47:22 | Watch |
-| Research Software Engineering Best Practices | Software Sustainability Institute | 2024-09-15 | CI/CD for HPC, reproducibility techniques | 33:44 | Watch |
-| NSF's Advanced Cyberinfrastructure Coordination Challenge | TACC | 2025-01-12 | ACCESS allocation system updates, training initiatives | 41:17 | Watch |
-| ARM in HPC: Fujitsu's Post-Fugaku Architecture Reveal | HPC-AI Tech | 2024-10-30 | ARMv9-SVE implementation, memory hierarchy innovations | 39:08 | Watch |
-| Containerization Strategies for Multi-Cluster Environments | OpenHPC | 2025-02-20 | Podman vs Singularity, Kubernetes batch extensions | 28:55 | Watch |
-| HPC Workforce Development: Building the Next Generation | SC Conference Series | 2024-12-01 | Curriculum modernization, apprenticeship models | 36:29 | Watch |
-| Energy Proportional Computing: New Metrics for Green HPC | Green500 | 2025-02-18 | PUE alternatives, workload-aware power management | 32:44 | Watch |
-| FPGA Acceleration in Radio Astronomy Pipelines | SKA Observatory | 2024-11-08 | Real-time correlation implementations, open HDL sharing | 44:12 | Watch |
-| Cross-Institutional HPC Authentication Frameworks | InCommon | 2025-01-05 | OAuth 2.1 deployment experiences, MFA challenges | 27:33 | Watch |
-| Post-Moore Law Architectures: Cerebras Wafer-Scale Updates | HPC Garage | 2024-10-15 | Memory bandwidth optimization, cooling solutions | 51:09 | Watch |
-| Research Computing Support Staff Career Pathways | CaRCC | 2025-02-01 | Competency frameworks, promotion criteria standardization | 39:47 | Watch |
-
-
 ### Contact Us
 
 Contact us for help or to learn more!

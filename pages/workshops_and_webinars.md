@@ -17,11 +17,11 @@ Here's the complete table incorporating the "Past Events" section along with the
 
 ### Upcoming Events
 
+Currently, we are transitioning our workshop series. Please check back soon for our Spring and Summer 2026 schedule, or join our [Slack Channel](https://ucr-research-compute.slack.com/) for real-time announcements.
+
 | Event Title               | Date       | Time         | Location       | Description                                                                                                 | Registration Link |
 |---------------------------|------------|--------------|----------------|-------------------------------------------------------------------------------------------------------------|-------------------|
 | Research Computing "Office hours"    | Wednesdays        | 10 to 11 AM  | Online - [Join Zoom Meeting](https://ucr.zoom.us/j/91291166147?pwd=8fsgIuFVgcERjVHetbZWTVFZ4YRVzg.1)  | Join us for Research Computing Office Hours to receive expert support and personalized consultations from the UCR Research Computing team, enhancing your research productivity. | Drop in |
-| Accessing Google Colab    | TBD        | TBD          | Online (Zoom)  | An introductory workshop to familiarize researchers with Google Colab and its capabilities for using Python and GPUs for research. | [Sign up here](#) |
-| Learn about NSF ACCESS    | TBD        | TBD          | Online (Zoom)  | A webinar to educate researchers on the NSF ACCESS program and how to leverage its resources for research.  | [Sign up here](#) |
 
 ### Future Content
 
