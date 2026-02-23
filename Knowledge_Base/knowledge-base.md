@@ -11,6 +11,23 @@ sidebar_label: Knowledge Base
 ## Research Computing Knowledge Base
 
 Welcome to the UCR Research Computing Knowledge Base. Explore our comprehensive repository to leverage the full spectrum of research computing resources at UCR, from computing clusters and workstations to secure storage solutions and software. Browse by category below or use the search bar in the upper right corner. 
+
+### Official Service Guides (KB Series)
+- [KB001: Research Data Storage Strategy](KB001_Research_Data_Storage_Strategy.md)
+- [KB001: AI Cloud Access Request](KB001_AI_Cloud_Access_Request.md)
+- [KB002: Project Activation Welcome](KB002_Project_Activation_Welcome.md)
+- [KB003: Overleaf Account Error](KB003_Overleaf_Account_Error.md)
+- [KB004: HPCC Account Creation](KB004_HPCC_Account_Creation.md)
+- [KB005: Ursa Major Service Tiers](KB005_Ursa_Major_Service_Tiers.md)
+- [KB006: Migrating Compute to HPCC](KB006_Migrating_Compute_to_HPCC.md)
+- [KB006: SOM Clinical Apps](KB006_SOM_Clinical_Apps.md)
+- [KB007: Migrating Data to Archive](KB007_Migrating_Data_to_Archive.md)
+- [KB007: Tier 2 Recharge Workflow](KB007_Tier2_Recharge_Workflow.md)
+- [KB008: Using NAIRR Pilot](KB008_Using_NAIRR_Pilot.md)
+- [KB009: Using NSF ACCESS](KB009_Using_NSF_ACCESS.md)
+- [KB010: Resource Catalog](KB010_Resource_Catalog.md)
+- [KB011: Access Identity](KB011_Access_Identity.md)
+
 ### Computing and Storage
 
 #### Workstations/Servers
