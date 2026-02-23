@@ -1,0 +1,327 @@
+I am initializing the Nexus Ship's Computer dashboard by querying the operational tasks, relationship health, and departmental statistics to gather real-time metrics.
+```html
+---
+layout: default
+title: Nexus Ship Status
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Ship Status Dashboard</title>
+    <style>
+        :root {
+            /* Zendesk Garden / Enterprise Light Mode Palette */
+            --bg-base: #f8f9f9;
+            --bg-surface: #ffffff;
+            --text-main: #1d2b36;
+            --text-muted: #68737d;
+            --border-color: #d8dcde;
+            --status-ok: #038153; /* Green */
+            --status-warn: #ad5f00; /* Amber */
+            --status-fail: #c72a1c; /* Red */
+            --status-neutral: #1f73b7; /* Blue */
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.5;
+        }
+
+        .dashboard-header {
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dashboard-header h1 {
+            margin: 0;
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+
+        .timestamp {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        .card-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Status Colors */
+        .badge {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .badge.ok { background-color: #e3f2ec; color: var(--status-ok); }
+        .badge.warn { background-color: #fcece3; color: var(--status-warn); }
+        .badge.fail { background-color: #fce8e6; color: var(--status-fail); }
+        .badge.neutral { background-color: #e3f2fd; color: var(--status-neutral); }
+
+        .system-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .system-list li {
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .system-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .system-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.25rem;
+        }
+
+        .system-name {
+            font-weight: 600;
+        }
+
+        .system-desc {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .metric-box {
+            background-color: var(--bg-base);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--status-neutral);
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .insights-list {
+            margin: 0;
+            padding-left: 1.25rem;
+        }
+
+        .insights-list li {
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+        
+        .insights-list li strong {
+            color: var(--status-neutral);
+        }
+
+        .quick-stats {
+            display: flex;
+            gap: 1.5rem;
+            background-color: var(--text-main);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        .q-stat {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .q-stat-val {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .q-stat-label {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-header">
+        <h1>Nexus Ship Status</h1>
+        <div class="timestamp">LIVE TELEMETRY // UPDATED REAL-TIME</div>
+    </div>
+
+    <div class="quick-stats">
+        <div class="q-stat">
+            <span class="q-stat-val">766</span>
+            <span class="q-stat-label">Crew Status (Researchers)</span>
+        </div>
+        <div class="q-stat">
+            <span class="q-stat-val">$498,553</span>
+            <span class="q-stat-label">Cargo (Active Grants)</span>
+        </div>
+        <div class="q-stat">
+            <span class="q-stat-val">45%</span>
+            <span class="q-stat-label">Mission Progress</span>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        
+        <!-- Core Systems -->
+        <div class="card" style="grid-column: span 2;">
+            <h2 class="card-title">🚢 Primary Systems</h2>
+            <ul class="system-list">
+                <li>
+                    <div class="system-header">
+                        <span class="system-name">Hull Integrity</span>
+                        <span class="badge warn">WARN</span>
+                    </div>
+                    <p class="system-desc">135 cold relationships and 402 pending strategic alignment maps indicate structural gaps in our researcher network that require patching.</p>
+                </li>
+                <li>
+                    <div class="system-header">
+                        <span class="system-name">Power Core</span>
+                        <span class="badge fail">DEGRADED</span>
+                    </div>
+                    <p class="system-desc">A critical High-Priority blocker exists regarding the NIMH Secure Enclave (Garret Anderson funding retraction), threatening project momentum.</p>
+                </li>
+                <li>
+                    <div class="system-header">
+                        <span class="system-name">Life Support</span>
+                        <span class="badge warn">WARNING</span>
+                    </div>
+                    <p class="system-desc">With 55 VIPs identified but only 29.1% coverage (16 engaged in the last 90 days), key stakeholder engagement is running low on oxygen.</p>
+                </li>
+                <li>
+                    <div class="system-header">
+                        <span class="system-name">Navigation</span>
+                        <span class="badge neutral">CALIBRATING</span>
+                    </div>
+                    <p class="system-desc">Charting a course for the CephRDS launch, actively defining recharge rates and finalizing the Go-Live date strategy.</p>
+                </li>
+                <li>
+                    <div class="system-header">
+                        <span class="system-name">Comms</span>
+                        <span class="badge neutral">STANDBY</span>
+                    </div>
+                    <p class="system-desc">Multiple active transmission channels open awaiting replies regarding storage volumes and access requirements (Ostevik, Zhang, Dong).</p>
+                </li>
+                <li>
+                    <div class="system-header">
+                        <span class="system-name">Shields</span>
+                        <span class="badge ok">ACTIVE</span>
+                    </div>
+                    <p class="system-desc">Secure Enclave provisioning for the NIST 800-171 TCGA project is actively underway, pending final billing ID confirmation.</p>
+                </li>
+                <li>
+                    <div class="system-header">
+                        <span class="system-name">Weapons</span>
+                        <span class="badge fail">JAMMED</span>
+                    </div>
+                    <p class="system-desc">New GCP Project provisioning remains stalled under the Project Polaris administrative freeze, complicating Tier 1 vs Tier 2 pivots.</p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Metrics -->
+        <div class="card">
+            <h2 class="card-title">📈 Advanced Metrics</h2>
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <div class="metric-value">29%</div>
+                    <div class="metric-label">Engagement Score</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">Low</div>
+                    <div class="metric-label">Funding Velocity</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">Mod</div>
+                    <div class="metric-label">Resource Utilization</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">35%</div>
+                    <div class="metric-label">Collaboration Index</div>
+                </div>
+                <div class="metric-box" style="grid-column: span 2;">
+                    <div class="metric-value">60%</div>
+                    <div class="metric-label">Asset Lifecycle Status</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strategic Insights -->
+        <div class="card">
+            <h2 class="card-title">🧠 Strategic Insights</h2>
+            <ul class="insights-list">
+                <li><strong>Emerging Research Trends:</strong> High demand is surfacing for secure enclaves and large-scale data storage (CephRDS) across multiple disciplines simultaneously.</li>
+                <li><strong>Cross-Lab Synergies:</strong> Opportunities exist to consolidate data storage strategies and GCP project architectures based on recent influxes of faculty touchpoints.</li>
+                <li><strong>Funding Gaps/Opportunities:</strong> There is an immediate need to secure COAs for Tier 2 research projects (e.g., CS 180) and resolve the retracted NIMH Secure Enclave funding.</li>
+                <li><strong>Resource Bottlenecks:</strong> Administrative freezes on new GCP projects and stalled billing IDs are bottlenecking critical secure enclave deployments.</li>
+                <li><strong>Researcher Network Density:</strong> With 135 cold relationships and 402 pending strategic alignments, there is a vast, untapped network of researchers lacking dedicated support mapping.</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>
+```
