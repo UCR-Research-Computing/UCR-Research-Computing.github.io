@@ -40,7 +40,7 @@ Welcome to the UCR Research Computing Knowledge Base! This resource hub provides
 *   [Launching Custom Ursa Major Cluster](Launch_Custom_Ursa_Major_Cluster.md) - Links to UCR-specific custom blueprints and Slurm job examples for Ursa Major.
 *   [HPC Job Scheduling (Slurm)](how_to_connect_to_hpc_cluster_run_sample_job.md) - Connecting to GCP HPC clusters and using basic Slurm commands.
 *   [Ursa Major HPC Clusters](Ursa_Major_HPC_Clusters.md) - Overview of UCR's Google Cloud-based, customizable, and scalable HPC service.
-*   [HPCC](../pages/HPCC.md) - Information on UCR's on-premise High-Performance Computing Center resources, access, and policies.
+*   [HPCC](../pages/HPCC.md) - Information on UCR's on-premise High-Performance Computing Center resources, access, and guidelines.
 *   [Building an HPC Cluster](../pages/Building_an_HPC_Cluster.md) - Technical guide on building HPC clusters with Warewulf, Slurm, and modern tools.
 *   [Comprehensive Guide to Warewulf HPC Cluster Deployment](../pages/Comprehensive_Guide_to_Warewulf_HPC_Cluster_Deploy.md) - In-depth guide to Warewulf 4.x, Slurm, and MUNGE deployment.
 *   [Building R1 AAU Research Cluster](R1_AAU_Research_HPC_Cluster.md) - Proposal for an AI HPC cluster, comparing with other R1 university resources.
@@ -147,10 +147,10 @@ Welcome to the UCR Research Computing Knowledge Base! This resource hub provides
 *   [Workshops and Webinars](../pages/workshops_and_webinars.md) - Schedule of UCR Research Computing workshops, webinars, and office hours.
 *   [Emerging Research Computing Trends at R1s](Emerging_Research_Computing_Trends_at_R1s.md) - Analysis of trends, challenges, and best practices at R1 universities.
 
-## Policies and Security
+## Guidelines and Security
 
-*   [Policies](../pages/policies.md) - Central UCR Research Computing guidelines on resources, data, support, security, and SLAs.
-*   [Ursa Major Policy](Ursa_Major_Policy.md) - Detailed guidelines for UCR's Ursa Major (GCP) service.
+*   [Guidelines](../pages/guidelines.md) - Central UCR Research Computing guidelines on resources, data, support, security, and SLAs.
+*   [Ursa Major Guideline](Ursa_Major_Guideline.md) - Detailed guidelines for UCR's Ursa Major (GCP) service.
 *   [UCR Data Security Plans](UCR_Data_Security_Plans.md)
 *   [Research Security](../pages/research_security.md) - UCR guidelines on data security plans, classification, and compliance (IS-3, NIST, CMMC).
 *   [A Guide to the Safe and Secure Use of Artificial Intelligence in Research](AI-Safe-Secure-Research.md) - A comprehensive guide for UCR researchers on the approved use of AI models and infrastructure.
@@ -163,7 +163,7 @@ Welcome to the UCR Research Computing Knowledge Base! This resource hub provides
 ## Best Practices
 
 *   [Data Security in Research Computing](pages/research_security.md) - Guidelines for data security plans, classification, and compliance.
-*   [Ursa Major Policy](Ursa_Major_Policy.md) - Detailed guidelines for UCR's Ursa Major (GCP) service, covering access, usage, data, and security.
+*   [Ursa Major Guideline](Ursa_Major_Guideline.md) - Detailed guidelines for UCR's Ursa Major (GCP) service, covering access, usage, data, and security.
 *   [SSH to Access](ssh-to-access.md) - Basic information on using SSH for accessing resources.
 *   [Building a Mature Research Computing Service](../pages/Building_a_Mature_Research_Computing_Service.md) - Strategies for developing comprehensive RC services at R1 universities.
 *   [Research Infrastructure Support](../pages/research_infrastructure_support.md) - Overview of UCR's RCSAS for on-premise research systems.

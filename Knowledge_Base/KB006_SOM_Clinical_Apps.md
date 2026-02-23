@@ -1,4 +1,4 @@
-# KB006: Clinical & HIPAA Application Hosting Policy (SOM vs. ITS)
+# KB006: Clinical & HIPAA Application Hosting Standard (SOM vs. ITS)
 
 **Scope:** School of Medicine (SOM) Projects, Clinical Data, HIPAA Workloads
 **Audience:** SOM Researchers, Lab Managers, IT Staff
