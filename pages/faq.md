@@ -13,7 +13,7 @@ Welcome to the Research Computing FAQ. If you cannot find the answer to your que
 ### 🌩️ Cloud Computing & Ursa Major
 
 **Q: Are Google Cloud GPUs free under the Ursa Major subsidy?**
-**A:** No. Under the strict Tier 1 subsidy rules (Project Polaris), Ursa Major covers baseline compute (`e2-standard-2`), secure enclaves, and strategic AI (Gemini). All Cloud GPU (A100, L4, T4), high-performance compute (c3, n2), and massive storage workloads must operate via the Tier 2 Direct Recharge model to your grant COA. If you need no-cost GPU access, please utilize the [UCR HPCC](../pages/HPCC.md).
+**A:** No. Under the strict Tier 1 subsidy rules (Project Polaris), Ursa Major covers baseline compute (`e2-standard-2`) and strategic AI (Gemini). All Secure Enclaves (NIST/CMMC), Cloud GPUs (A100, L4, T4), high-performance compute (c3, n2), and massive storage workloads must operate via the Tier 2 Direct Recharge model to your grant COA. If you need no-cost GPU access, please utilize the [UCR HPCC](../pages/HPCC.md).
 
 **Q: How do I request an Ursa Major allocation?**
 **A:** Please review the [Ursa Major Service Tiers](../Knowledge_Base/KB005_Ursa_Major_Service_Tiers.md) and submit a request via our [Intake Form](https://docs.google.com/forms/d/e/1FAIpQLSclKhikqwHOWhDDJV5tNAGGFdoqpkx8sdWnudLBhXWlj5NofA/viewform?usp=sf_link).

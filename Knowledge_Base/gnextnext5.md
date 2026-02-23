@@ -343,7 +343,7 @@ If you encounter issues or have further questions, here are valuable resources:
     *   **Email:** research-computing@ucr.edu
     *   **Slack:** [https://ucr-research-compute.slack.com/](https://ucr-research-compute.slack.com/) (Request access if you are not already a member).
 
-*   **UCR HPCC Documentation:** Refer to this knowledge base article and other documentation provided by UCR Research Computing for information about the HPCC cluster, Slurm, available software modules, and usage policies.
+*   **UCR HPCC Documentation:** Refer to this knowledge base article and other documentation provided by UCR Research Computing for information about the HPCC cluster, Slurm, available software modules, and usage guidelines.
 *   **Nextflow Documentation:** The official Nextflow documentation is comprehensive and a great resource for learning Nextflow concepts, DSL, and features: [https://www.nextflow.io/docs/](https://www.nextflow.io/docs/)
 *   **UCR Research Computing GitHub:** Explore the UCR Research Computing GitHub repository for useful notebooks and examples related to HPC and Nextflow (as mentioned in the provided facts).
 

@@ -19,7 +19,7 @@ This documentation site is organized into two main content directories: `pages` 
     *   Provide links to relevant `Knowledge_Base` articles for specific "how-to" guides or technical details.
     *   Link to official external sites if applicable.
 *   **Resource Summaries:** Pages that aggregate information about groups of resources (e.g., computing resources overview, storage options overview).
-*   **Policies:** Official policy documents related to research computing resources.
+*   **Policies:** Official guideline documents related to research computing resources.
 *   **Contact Information:** Central contact points.
 
 ### `/Knowledge_Base` Directory

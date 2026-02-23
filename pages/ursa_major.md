@@ -26,7 +26,7 @@ UCR utilizes a strictly tiered framework to ensure equitable and strategic acces
 
 #### Allocation Tiers
 
-*   **Tier 1: Strategic Allocation (Subsidized Pool):** Provides no-cost access to baseline compute (`e2-standard-2`), secure enclaves, and strategic AI services (Gemini API) for eligible projects.
+*   **Tier 1: Strategic Allocation (Subsidized Pool):** Provides no-cost access to baseline compute (`e2-standard-2`) and strategic AI services (Gemini API) for eligible projects.
 *   **Tier 2: Commercial Recharge (Direct Billing):** Designed for high-scale or specialized workloads that exceed Tier 1 limits. **All Cloud GPU (A100, L4, T4), high-performance compute (c3, n2), and massive storage workloads must operate in this tier via direct recharge to a grant COA.** Alternatively, researchers are strongly encouraged to utilize the [UCR HPCC](../pages/HPCC.md) for subsidized GPU and HPC access.
 
 ---
@@ -53,7 +53,7 @@ To ensure efficient use of campus resources, the Research Computing team provide
 | [Allocation Spend](https://console.cloud.google.com/billing/019E1F-BADE9B-60248B/reports) | *In Development*: Future dashboard for budgetary tracking. |
 
 ### Ursa Major Strategic Links
-*   [Ursa Major Guidelines](../Knowledge_Base/Ursa_Major_Policy.md)
+*   [Ursa Major Guidelines](../Knowledge_Base/Ursa_Major_Guideline.md)
 *   [Research Data Storage Strategy (KB001)](../Knowledge_Base/KB001_Research_Data_Storage_Strategy.md)
 *   [Training and Workshops](../pages/workshops_and_webinars.md)
 

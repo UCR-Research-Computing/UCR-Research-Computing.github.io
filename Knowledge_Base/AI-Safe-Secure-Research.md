@@ -62,8 +62,8 @@ Properly storing your data is as important as choosing the right AI model and in
 | Protection Level | Approved Storage Solutions | Key Considerations |
 |---|---|---|
 | P1 / P2 | UCR Google Drive, UCR OneDrive, HPCC Storage, Departmental Servers | These solutions are suitable for data that is public or for internal use. |
-| P3 | UCR Google Drive (with appropriate sharing restrictions), HPCC Storage, Secure Departmental Servers | Requires strict access controls. Data should only be shared on a "need-to-know" basis. Encryption is mandatory. |
-| P4 | Must be approved by the Information Security Office. Typically requires a dedicated, secure environment like a secured enclave within Google Cloud or a physically secured, encrypted server. | Do not store P4 data in standard cloud storage or on unencrypted devices. A formal Data Security Plan and risk assessment are required. |
+| P3 | UCR Google Drive (with appropriate sharing restrictions), HPCC Storage, GCP Tier 2 Recharge | Requires strict access controls. Data should only be shared on a "need-to-know" basis. Encryption is mandatory. |
+| P4 | Must be approved by the Information Security Office. Typically requires the **UCR Secure Enclave** (within Google Cloud Tier 2) or, for CHASS researchers only, a physically secured server in the CHASS Server Room. | Do not store P4 data in standard cloud storage or on unencrypted devices. A formal Data Security Plan and risk assessment are required. |
 
 **General Best Practices for All Data Levels:**
 *   **Encryption:** All devices used to store or access P2, P3, and P4 data (laptops, external drives) must be encrypted.

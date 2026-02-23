@@ -3,38 +3,39 @@
 
 The University of California, Riverside (UCR) equips its research community with a comprehensive suite of computational resources to meet the varied demands of cutting-edge research. From local high-performance computing clusters to expansive national grid computing platforms and versatile cloud computing services, UCR ensures that researchers have the computational capabilities needed for their innovative projects.
 
-### High-Performance Computing Center (HPCC)
+### The 4-Tier GPU & Compute Offload Hierarchy
+When advanced compute or GPU workloads exceed the subsidized Tier 1 limits of our cloud environments, researchers are guided through a strategic 4-tier hierarchy to maximize the return on local infrastructure investments before utilizing national resources:
 
-UCR's HPCC is a powerhouse for high-performance computing, equipped with thousands of CPUs and GPUs designed for demanding computational tasks and data analysis projects.
-
+#### 1. High-Performance Computing Center (HPCC) - Primary Offload
+UCR's HPCC is the preferred local destination for high-performance computing, equipped with thousands of CPUs and GPUs designed for demanding computational tasks and data analysis projects.
 - **Access for**: UCR faculty, researchers, and graduate students.
+- **Cost Model**: $1,000/year Flat Rate per Lab.
 - [Learn more about HPCC](HPCC.md)
 
-### Ursa Major & Cloud Computing
-
-In collaboration with Google Cloud Platform, Ursa Major offers state-of-the-art cloud computing resources, such as auto-scaling compute clusters and advanced machine learning services.
-
-- **How to Access**: Contact Research Computing.
-- [Explore Ursa Major’s offerings](ursa_major.md)
-
-### NSF ACCESS
-
-The ACCESS program provides UCR researchers with access to computational resources on a national scale, supporting grand scientific inquiries.
-
-- **Application**: Through the NSF.
-- [Discover more about NSF ACCESS](nsf_access.md)
-
-### Nautilus & Pacific Research Platform
-
-Nautilus enables fast data transfer and collaborative research, offering resources tailored for data-intensive science.
-
+#### 2. Nautilus & Pacific Research Platform - Secondary
+Nautilus enables fast data transfer and collaborative research, serving as a regional/national Kubernetes grid leveraging UCR hardware contributions. It is the best destination for containerized workloads that overflow the local HPCC.
 - **For**: Researchers in collaborative projects within the Pacific Research Platform.
 - [Learn about Nautilus](Nautilus.md)
 
+#### 3. NAIRR Pilot (National AI Resource) - Tertiary
+For specialized, high-end AI allocations when local/regional capacity is insufficient (e.g., massive H100 arrays, exotic accelerators like Cerebras or SambaNova).
+- **Cost**: Free (Competitive Proposal).
+- [Learn about NAIRR Pilot](../Knowledge_Base/KB008_Using_NAIRR_Pilot.md)
+
+#### 4. NSF ACCESS - Quaternary
+The ACCESS program provides UCR researchers with access to traditional national supercomputing grids reserved for massive-scale jobs requiring thousands of compute nodes.
+- **Application**: Through the NSF.
+- [Discover more about NSF ACCESS](nsf_access.md)
+
+---
+
+### Ursa Major & Cloud Computing
+In collaboration with Google Cloud Platform, Ursa Major offers state-of-the-art cloud computing resources. Basic compute and strategic AI services are subsidized, while advanced compute and GPUs are strictly routed to the hierarchy above or provisioned via Direct Recharge.
+- **How to Access**: Contact Research Computing.
+- [Explore Ursa Major’s offerings](ursa_major.md)
+
 ### Open Science Grid (OSG)
-
 OSG provides distributed high-throughput computing resources across various scientific domains, facilitating a broad spectrum of research projects.
-
 - **Available to**: All UCR researchers.
 - [Discover the Open Science Grid](open_science_grid.md)
 

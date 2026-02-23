@@ -8,7 +8,7 @@
 
 ## ☁️ Ursa Major (Google Cloud) - The Baseline
 **Best For:** Generative AI, Compliance, Big Data.
-*   **Strategic (Pool):** Gemini API, Vertex AI, Secure Enclaves, Coldline Archive. *(Subsidized, strict `e2-standard-2` limits apply)*.
+*   **Strategic (Pool):** Gemini API, Vertex AI, Coldline Archive. *(Subsidized, strict `e2-standard-2` limits apply)*.
 *   **Commercial (Recharge):** Custom VMs, Hot Storage. *(Billable to Grant)*.
 *   **Access:** Google Cloud Console (SSO).
 

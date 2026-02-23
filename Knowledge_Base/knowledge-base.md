@@ -87,7 +87,7 @@ Welcome to the UCR Research Computing Knowledge Base. Explore our comprehensive 
 
 ### Security
 
-- [Ursa Major Policy](Ursa_Major_Policy.md): Security policies and guidelines for using Ursa Major resources.
+- [Ursa Major Guideline](Ursa_Major_Guideline.md): Security standards and guidelines for using Ursa Major resources.
 
 ### AI/ML
 

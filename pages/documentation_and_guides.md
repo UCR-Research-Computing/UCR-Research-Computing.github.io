@@ -22,7 +22,7 @@ Welcome to our Documentation and Guides page. Here, you'll find a comprehensive 
 
 | Document Title                       | Description                                              | Link                  |
 |--------------------------------------|----------------------------------------------------------|-----------------------|
-| Official Knowledge Base (KB Series)  | UCR Research Computing's official policies, service tiers, and technical guides. | [Access KB](../Knowledge_Base/knowledge-base.md) |
+| Official Knowledge Base (KB Series)  | UCR Research Computing's official guidelines, service tiers, and technical guides. | [Access KB](../Knowledge_Base/knowledge-base.md) |
 | Resource Catalog                     | A comprehensive list of all local and national compute/storage resources available to UCR researchers. | [View Catalog](../Knowledge_Base/KB010_Resource_Catalog.md) |
 | Research Software Directory          | A catalog of software tools installable via Spack on UCR clusters. | [View Directory](https://spack.readthedocs.io/en/latest/package_list.html) |
 
