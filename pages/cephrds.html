@@ -1,0 +1,179 @@
+---
+layout: default
+title: CephRDS | UCR Research Computing
+---
+
+<!-- Hero Section -->
+<div class="relative bg-white overflow-hidden border-b border-gray-200">
+  <div class="max-w-7xl mx-auto">
+    <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+      <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+        <div class="sm:text-center lg:text-left">
+          <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+            <span class="block xl:inline">CephRDS:</span>
+            <span class="block text-[#003DA5]">Your Data, Amplified.</span>
+          </h1>
+          <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+            Secure, scalable, and high-performance object storage designed specifically to accelerate the UCR research data lifecycle. Whether you are transferring terabytes of genomic data or querying a massive database, CephRDS provides the resilient foundation you need.
+          </p>
+          <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+            <div class="rounded-md shadow">
+              <a href="../Knowledge_Base/kb013-cephrds-onboarding" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#003DA5] hover:bg-blue-800 md:py-4 md:text-lg">
+                Get Started
+              </a>
+            </div>
+            <div class="mt-3 sm:mt-0 sm:ml-3">
+              <a href="#features" class="w-full flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-md text-[#003DA5] bg-white hover:bg-gray-50 md:py-4 md:text-lg">
+                Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+    <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="../assets/images/cephrds_hero.png" alt="Abstract digital data flow">
+  </div>
+</div>
+
+<!-- Service Overview Section -->
+<div class="py-16 bg-gray-50" id="features">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:text-center">
+      <h2 class="text-base text-[#003DA5] font-semibold tracking-wide uppercase">Core Infrastructure</h2>
+      <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        Unified Object Storage for Modern Science
+      </p>
+      <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+        Funded by the NSF CC* program, CephRDS eliminates data silos. It provides a massive, shared data fabric that connects your laboratory instruments directly to the High-Performance Computing Center (HPCC) and the national grid.
+      </p>
+    </div>
+
+    <div class="mt-16">
+      <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+        <!-- Feature 1 -->
+        <div class="relative">
+          <dt>
+            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-[#F2A900] text-white font-bold text-xl">
+              S3
+            </div>
+            <p class="ml-16 text-lg leading-6 font-medium text-gray-900">100% S3 API Compatible</p>
+          </dt>
+          <dd class="mt-2 ml-16 text-base text-gray-500">
+            Write your code once. If your data pipelines use AWS S3 standard libraries like <code>boto3</code>, they will work flawlessly with CephRDS by simply changing the endpoint URL.
+          </dd>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="relative">
+          <dt>
+            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-[#F2A900] text-white">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Extreme Throughput</p>
+          </dt>
+          <dd class="mt-2 ml-16 text-base text-gray-500">
+            Directly connected to the UCR Science DMZ via a 100Gbps network backbone, ensuring your data moves as fast as your computations require.
+          </dd>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="relative">
+          <dt>
+            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-[#F2A900] text-white">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Unmatched Data Durability</p>
+          </dt>
+          <dd class="mt-2 ml-16 text-base text-gray-500">
+            Utilizing an advanced 6+3 Erasure Coding profile, your data is striped across multiple physical drives and nodes. We can sustain multiple simultaneous hardware failures with zero data loss.
+          </dd>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="relative">
+          <dt>
+            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-[#F2A900] text-white">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <p class="ml-16 text-lg leading-6 font-medium text-gray-900">National Federation</p>
+          </dt>
+          <dd class="mt-2 ml-16 text-base text-gray-500">
+            Easily share datasets with external collaborators across the country via our integration with the National Research Platform (NRP) and CILogon.
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</div>
+
+<!-- Architecture Diagram Section -->
+<div class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:text-center mb-10">
+      <h2 class="text-3xl font-extrabold text-gray-900">How It Works</h2>
+      <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">A look under the hood at the CephRDS architecture.</p>
+    </div>
+    <div class="flex justify-center">
+      <img src="../assets/images/cephrds_architecture.png" alt="CephRDS Architecture Diagram" class="rounded-lg shadow-lg border border-gray-200" style="max-width: 100%; height: auto;">
+    </div>
+  </div>
+</div>
+
+<!-- Access Methods Section -->
+<div class="py-16 bg-[#003DA5] text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:text-center mb-12">
+      <h2 class="text-3xl font-extrabold">Connect on Your Terms</h2>
+      <p class="mt-4 max-w-2xl text-xl lg:mx-auto text-blue-100">CephRDS adapts to your workflow, not the other way around.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <div class="bg-blue-800 p-6 rounded-lg">
+        <h3 class="text-xl font-bold mb-3 text-[#F2A900]">CLI & Automation</h3>
+        <p class="text-blue-100 mb-4">Transfer massive datasets instantly using command-line tools like <code>rclone</code>, fully supported on the UCR HPCC.</p>
+        <code>rclone copy my_data cephrds:bucket/</code>
+      </div>
+      <div class="bg-blue-800 p-6 rounded-lg">
+        <h3 class="text-xl font-bold mb-3 text-[#F2A900]">Scientific SDKs</h3>
+        <p class="text-blue-100 mb-4">Integrate directly into your Python, R, or Julia pipelines using standard AWS S3 libraries.</p>
+        <code>import boto3</code>
+      </div>
+      <div class="bg-blue-800 p-6 rounded-lg">
+        <h3 class="text-xl font-bold mb-3 text-[#F2A900]">Visual Interfaces</h3>
+        <p class="text-blue-100 mb-4">Mount your CephRDS bucket as a local drive on your Mac or PC using Cyberduck or Mountain Duck.</p>
+        <span class="text-sm italic text-gray-300">Drag & Drop Simplicity</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Support & CTA Section -->
+<div class="bg-gray-50 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-extrabold text-gray-900 mb-8">Ready to Accelerate Your Research?</h2>
+    
+    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+      <a href="../Knowledge_Base/kb013-cephrds-onboarding" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#003DA5] hover:bg-blue-800">
+        Read the Onboarding Guide (KB013)
+      </a>
+      <a href="https://ucrsupport.service-now.com/ucr_portal" target="_blank" class="inline-flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+        Visit the Support Portal
+      </a>
+      <a href="mailto:research-computing@ucr.edu" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-[#003DA5] bg-blue-100 hover:bg-blue-200">
+        Contact Research Computing
+      </a>
+    </div>
+
+    <div class="text-sm text-gray-500">
+      <p>Need specialized hosting for P4/CUI data? Learn about the <a href="../Knowledge_Base/ucr-data-security-plans" class="text-[#003DA5] underline">UCR Secure Enclave</a>.</p>
+    </div>
+  </div>
+</div>
