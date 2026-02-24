@@ -40,9 +40,6 @@ If you are an external collaborator (e.g., from UCSD, or another institution) wo
 2.  **Provisioning:** Our team will manually generate a unique set of Access/Secret keys scoped strictly to the UCR PI's bucket.
 3.  **Delivery:** The credentials will be securely delivered to the external collaborator.
 
-### C. The National Research Platform (NRP)
-As part of our NSF CC* grant commitment, 20% of the raw cluster capacity has been permanently allocated to the National Research Platform (NRP). NRP administrators have sole authority over how that specific storage pool is distributed to the national grid. UCR Research Computing does not provision user accounts for the NRP allocation.
-
 ---
 
 ## 3. Get Your Token (S3 Keys)
@@ -118,4 +115,4 @@ print(response['Buckets'])
 **A:** You have likely hit your assigned storage or object quota. Please contact support to request a quota increase.
 
 **Q: I lost my Secret Key.**
-**A:** Secret Keys cannot be recovered, only regenerated. Contact support (Internal UCR) or use the NRP Portal (External) to generate a new key pair. You will need to update all your scripts and clients.
+**A:** Secret Keys cannot be recovered, only regenerated. Contact support to generate a new key pair. You will need to update all your scripts and clients.
