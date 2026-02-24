@@ -46,7 +46,7 @@ A Ceph storage system offers a host of benefits and functionalities critical for
 
 ### Secure, Central, Campus-Wide, Research Storage
 
-- **Scalable Storage:** 2.2PB of usable storage, with 20% integrated with the NRP Nautilus cluster for advanced data processing.
+- **Scalable Storage:** 2.2PB of usable storage for advanced data processing.
 - **Wide Connectivity:** Secure access via NFS, CIFS/SMB, and S3 interfaces ensures compatibility with a variety of devices and systems.
 - **Transparent Pricing:** Additional storage is available at a competitive rate of $40 per TB per year, or a one-time purchase of $200 per Usable TB.
 
