@@ -26,20 +26,22 @@ It provides **2 PB** of highly resilient (6+3 Erasure Coded), S3-compatible stor
 
 ## 2. Get Started & Get an Account
 
-We operate a **Split Management** model to provide the best experience depending on your affiliation. 
+We operate a **Split Allocation** model to provide the best experience and ensure security depending on your affiliation. 
 
-### A. UCR Faculty & Internal Labs (The Concierge Path)
+### A. UCR Faculty & Internal Labs
 If you are a UCR PI needing storage for your lab, or migrating from an older system:
-1.  **Request Access:** Email `research-computing@ucr.edu` with your requested storage quota (in TB) and your grant Chart of Accounts (COA) for billing.
+1.  **Request Access:** Email `research-computing@ucr.edu` with your requested storage quota (in TB) and your grant Chart of Accounts (COA) for billing (if exceeding the initial allocation).
 2.  **Provisioning:** Our team will manually provision your account and establish your strict user quota.
 3.  **Credential Delivery:** You will receive your S3 Access Key and Secret Key via a secure, one-time link.
 
-### B. External Collaborators (The Federated Path)
-If you are an external collaborator (e.g., from UCSD, or an NSF ACCESS researcher) working with a UCR lab:
-1.  **Request Access:** You will be invited to the project by the UCR PI.
-2.  **Self-Service Portal:** Navigate to the NRP Federation Portal (link provided in your invitation).
-3.  **Authentication:** Log in via CILogon using your home institution's credentials.
-4.  **Get Keys:** Generate your own S3 Access and Secret keys directly in the portal.
+### B. External Collaborators on UCR Projects
+If you are an external collaborator (e.g., from UCSD, or another institution) working with a UCR lab on data hosted in a UCR bucket, **we do not use an external federation portal.**
+1.  **PI Approval:** The UCR Principal Investigator (PI) must email `research-computing@ucr.edu` or submit a BearHelp ticket explicitly requesting access for you.
+2.  **Provisioning:** Our team will manually generate a unique set of Access/Secret keys scoped strictly to the UCR PI's bucket.
+3.  **Delivery:** The credentials will be securely delivered to the external collaborator.
+
+### C. The National Research Platform (NRP)
+As part of our NSF CC* grant commitment, 20% of the raw cluster capacity has been permanently allocated to the National Research Platform (NRP). NRP administrators have sole authority over how that specific storage pool is distributed to the national grid. UCR Research Computing does not provision user accounts for the NRP allocation.
 
 ---
 
