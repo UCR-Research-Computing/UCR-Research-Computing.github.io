@@ -21,6 +21,8 @@ UCR Research Computing provides a tiered storage ecosystem designed to support t
 *   **Status:** **Coming Soon**.
 *   **Scalability:** 3.2 PB capacity.
 *   **Protocols:** S3, NFS, Globus.
+*   **Cost (Rent):** $40 per TB per year (Operating Funds).
+*   **Cost (Purchase):** $200 per Usable TB for the 5-year hardware lifecycle (One-Time Grant Funds).
 
 ### Ursa Major (Commercial Tier)
 *   **Google Filestore:** High-performance NFS for Cloud VMs.
