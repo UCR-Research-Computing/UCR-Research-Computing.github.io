@@ -10,9 +10,10 @@ Google Drive is a cornerstone of UCR’s research computing strategy, providing 
 
 ### Key Features
 
-- **Storage:**  
-  - Faculty/Staff/Graduate Students: 100 GB  
-  - Undergraduate Students: 25 GB
+- **Storage & Quota Limits:**  
+  - **Individual Drives:** Faculty/Staff/Graduate Students receive 100 GB included. This can be expanded up to a maximum of **1 TB** by submitting a formal request to ITS.
+  - **Shared Drives:** Faculty can create multiple Shared Drives, each with a **1 TB** cap. This is the recommended method for organizing large, project-based datasets without hitting individual quota limits.
+  - **Undergraduate Students:** 25 GB
 - **Accessibility:**  
   - Supported on Windows, macOS, and Linux (via the command line).  
   - Accessible via web browsers and smart phones.  
