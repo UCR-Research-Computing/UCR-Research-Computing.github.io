@@ -175,3 +175,4 @@ Welcome to the UCR Research Computing Knowledge Base! This resource hub provides
 
 *   [Interactive Grant Funding Explorer](2025-grants.html) - An interactive dashboard to explore grant funding opportunities.
 *   [UCR Strategy for NSF CSSI Grant](nsf-cssi-strategy.html) - UCR's strategic proposal for the NSF CSSI Grant, outlining three synergistic, high-impact options for a campus-wide cyberinfrastructure.*   [KB013: CephRDS Onboarding & Access Guide](KB013_CephRDS_Onboarding.md) - Learn how to get an account, generate S3 keys, and connect to CephRDS.
+*   [KB014: UCR Secure Research Enclave Guide](KB014_Secure_Enclave_Guide.md) - Overview, features, and cost structure for researchers.\n*   [KB015: Secure Enclave Project Onboarding Checklist](KB015_Secure_Enclave_Onboarding_Checklist.md) - Internal checklist for provisioning a NIST 800-171 compliant project.
