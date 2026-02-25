@@ -51,7 +51,7 @@ Welcome to the Research Computing FAQ. If you cannot find the answer to your que
 
 ### 🔒 Security & Compliance
 
-**Q: I am working with HIPAA, NIST 800-171, or CUI data. Can I process this on the standard cluster?**
+**Q: I am working with HIPAA, or NIST 800-171 data. Can I process this on the standard cluster?**
 **A:** **No.** Highly regulated data (P4_CRITICAL) requires a formally approved Data Security Plan (DSP) and must be processed within a designated **Secure Enclave**. Please contact us immediately to initiate the enclave provisioning process.
 
 **Q: Can I use ChatGPT or Google Gemini with my unpublished research data?**

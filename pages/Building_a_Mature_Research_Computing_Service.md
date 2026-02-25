@@ -45,7 +45,7 @@ Regulated data handling demands isolated environments like ODU’s Regulated Res
 
 - NIST 800-171/CMMC Level 2 compliance via TiCrypt’s zero-trust architecture
 - 40 TB encrypted storage with automated audit trails
-- Virtual desktops preconfigured for HIPAA/CUI workflows[^8][^19]
+- Virtual desktops preconfigured for HIPAA/NIST 800-171 workflows[^8][^19]
 
 
 ### Cloud and Edge Computing Integration

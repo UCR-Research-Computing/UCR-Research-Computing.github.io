@@ -77,11 +77,11 @@ By default, the systems we build and manage at UCR Research Computing are design
 Many federal grant proposals now include strict requirements for data security. If your grant or DUA involves the Department of Defense (DoD), Department of Energy (DOE), NIH dbGaP, or mandates specific federal compliance frameworks like **CMMC** or **NIST 800-171**, this is handled specially.
 
 *   **Our Solution: The UCR Secure Enclave** 
-    The UCR Secure Enclave is the official campus environment purpose-built to meet the technical controls required by NIST 800-171 and handle CUI (Controlled Unclassified Information) and NIH dbGaP data. By using the UCR Secure Enclave, your lab is operating in an environment that provides the necessary technical foundation to meet CMMC Level 2 controls, enabling you to pursue DoD-funded research.
+    The UCR Secure Enclave is the official campus environment purpose-built to meet the technical controls required by NIST 800-171 Rev 2 and handle NIH dbGaP data. By using the UCR Secure Enclave, your lab is operating in an environment that provides the necessary technical foundation to meet CMMC Level 2 controls, enabling you to pursue DoD-funded research.
 
 #### **How to Proceed**
 
-Navigating these requirements is complex. If your grant proposal or DUA mentions CUI, NIST 800-171, CMMC, or NIH dbGaP, please contact us immediately. We will work with you and the Information Security Office to develop the required Data Security Plan (DSP).
+Navigating these requirements is complex. If your grant proposal or DUA mentions NIST 800-171 Rev 2, CMMC Level 2, or NIH dbGaP, please contact us immediately. We will work with you and the Information Security Office to develop the required Data Security Plan (DSP).
 
 **Important:** Due to the significant security and monitoring overhead, the UCR Secure Enclave is a premium **Tier 2 (Direct Recharge)** service and requires a grant-funded Chart of Accounts (COA). 
 
@@ -91,7 +91,7 @@ Navigating these requirements is complex. If your grant proposal or DUA mentions
 |---------------|----------|-------------|-----------------------------|---------|
 | Compute | **High-Performance Computing Center (HPCC)** | A key resource for intensive computational tasks. | P3 | Suitable for a broad range of research workflows. |
 | Compute | **GCP Tier 2 Recharge** | Standard secure Google Cloud project shells. | P4 | Requires a grant-funded COA. Standard P3/P4 data. |
-| Compute | **UCR Secure Enclave (GCP)** | Highly specialized, locked-down GCP environment. | P4 / NIST 800-171 / CMMC | Tier 2 Recharge. Required for NIH dbGaP, DoD, DOE, CUI. |
+| Compute | **UCR Secure Enclave (GCP)** | Highly specialized, locked-down GCP environment. | P4 / NIST 800-171 Rev 2 / CMMC Level 2 | Tier 2 Recharge. Required for NIH dbGaP, DoD, DOE. |
 | Compute | **CHASS Server Room** | On-premise secure physical hosting. | P4 | Strictly limited to CHASS researchers. No office workstations. |
 | Storage | **HPCC-GPFS Cluster Storage** | High-performance cluster storage attached to the HPCC. | P3 | High-speed, parallel computing storage suitable for compute-intensive tasks. |
 | Storage | **Ceph Secure Research Storage** | Scalable, resilient storage solution designed for diverse research needs. | P3 | Upcoming enhancement to UCR's research computing infrastructure. |
