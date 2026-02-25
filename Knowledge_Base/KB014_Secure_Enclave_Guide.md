@@ -9,15 +9,15 @@ sidebar_label: KB014 - Secure Enclave Guide
 **Last Updated:** February 25, 2026
 
 ## What is the Secure Research Enclave?
-The UCR Secure Research Enclave is a highly protected, cloud-based computing environment designed to support research projects that involve sensitive or regulated data. It provides the necessary technical, administrative, and physical safeguards to meet stringent cybersecurity requirements, such as those mandated by the Department of Defense (NIST 800-171) for handling Controlled Unclassified Information (CUI).
+The UCR Secure Research Enclave is a highly protected, cloud-based computing environment designed to support research projects that involve sensitive or regulated data. It provides the necessary technical, administrative, and physical safeguards to meet stringent cybersecurity requirements, such as those mandated by the Department of Defense for NIST 800-171 Rev 2 compliance.
 
 This service allows you to focus on your research while the university's IT Solutions (ITS) team manages the complex security infrastructure, ensuring your work remains compliant and protected.
 
 ## Who Is This For?
 This environment is specifically for research projects that have contractual or regulatory obligations to protect sensitive data. This includes, but is not limited to:
 
-*   **Department of Defense (DoD)** funded projects involving CUI.
-*   Research involving data subject to **NIST 800-171** or **CMMC Level 2** compliance.
+*   **Department of Defense (DoD)** funded projects requiring enhanced security.
+*   Research involving data subject to **NIST 800-171 Rev 2** or **CMMC Level 2** compliance.
 *   Projects with other sensitive data types that require a managed, high-security environment (consult with us to confirm).
 
 *Note: The current environment is certified only for NIST 800-171 level data. A separate solution for projects with lower-level P3/P4 data is available (e.g., CHASS Server Room for eligible researchers).*

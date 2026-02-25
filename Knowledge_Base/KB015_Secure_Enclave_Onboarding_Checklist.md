@@ -65,7 +65,7 @@ sidebar_label: KB015 - Secure Enclave Checklist
 
 ### 3.2: Data Ingress
 - [ ] **(Chuck)** Work with the researcher to securely transfer the project data into the enclave's Google Cloud Storage bucket.
-    *   *Note: Data often originates from sources like dbGaP (NIH), DOD, NSF, or DOE, and may contain Controlled Unclassified Information (CUI). Data ingress must strictly follow the protocols established in the training.*
+    *   *Note: Data often originates from sources like dbGaP (NIH), DOD, NSF, or DOE, and may be subject to NIST 800-171 Rev 2. Data ingress must strictly follow the protocols established in the training.*
 
 ### 3.3: Final Security & Monitoring Setup
 - [ ] **(Nick)** Configure and verify that all audit logs are being exported to the central log sink.

@@ -6,7 +6,7 @@ sidebar_label: Data Security Plans
 
 # UCR Data Security Plans (DSP) and High-Compliance Research
 
-Conducting research with highly sensitive data—such as P3/P4 classified data, Protected Health Information (HIPAA), Controlled Unclassified Information (CUI), Export Controlled data, or datasets governed by strict Data Use Agreements (DUAs)—requires formal planning and approval. This ensures compliance with University of California policies (like IS-3) and external regulations.
+Conducting research with highly sensitive data—such as P3/P4 classified data, Protected Health Information (HIPAA), NIST 800-171 Rev 2 regulated data, Export Controlled data, or datasets governed by strict Data Use Agreements (DUAs)—requires formal planning and approval. This ensures compliance with University of California policies (like IS-3) and external regulations.
 
 This guide outlines the process for initiating a Data Security Plan (DSP), understanding your responsibilities, and securing the necessary infrastructure.
 
