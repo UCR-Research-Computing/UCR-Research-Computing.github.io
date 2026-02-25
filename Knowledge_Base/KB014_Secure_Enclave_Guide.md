@@ -33,8 +33,9 @@ This environment is specifically for research projects that have contractual or 
 1.  **Initial Consultation:** Contact the Research Computing team to discuss your project's data security requirements. We will review your contract, grant, or Data Use Agreement (DUA).
 2.  **Data Security Plan (DSP) Development:** We will work with you and the campus Information Security Office (ISO) to create a formal Data Security Plan that documents the specific controls and procedures for your project.
 3.  **Billing & MOU:** Provide your project's Chart of Accounts (COA). ITS will then draft a Memorandum of Understanding (MOU) for the recharge services, which you will review and sign.
-4.  **Environment Provisioning:** Once the MOU is signed, ITS will provision a dedicated, isolated workspace for your project within the Secure Enclave.
-5.  **Access Granted:** Our team will provide you and your approved research staff with secure access credentials and instructions.
+4.  **Mandatory Security Training:** Before access is granted, the PI and all authorized researchers must attend a mandatory Zoom training session with Research Computing and the ISO Risk team. This session covers researcher responsibilities, secure access methods, compute rules, and strict protocols for data ingress/egress.
+5.  **Environment Provisioning:** Once the MOU is signed and training is complete, ITS will provision a dedicated, isolated workspace for your project within the Secure Enclave.
+6.  **Access Granted:** Our team will provide you and your approved research staff with secure access credentials and instructions.
 
 ## Cost Structure
 Our goal is to provide this essential service sustainably and transparently. The costs are structured as follows:
