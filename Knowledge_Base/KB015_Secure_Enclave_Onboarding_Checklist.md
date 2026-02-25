@@ -56,18 +56,21 @@ sidebar_label: KB015 - Secure Enclave Checklist
 
 ---
 
-## Phase 3: Data Transfer, Finalization & Hand-off
+## Phase 3: Training, Data Transfer & Hand-off
 
-### 3.1: Data Ingress
+### 3.1: Mandatory Security Training
+- [ ] **(Chuck)** Schedule the mandatory Secure Enclave Training (Zoom) with the PI, their research team, and the ISO Risk team.
+- [ ] **(Chuck/Nick)** Conduct the training, covering: researcher responsibilities, secure access methods, compute environment rules, and strict protocols for data ingress/egress.
+- [ ] **(Chuck)** Log training completion for all authorized users in the CRM (Nexus).
+
+### 3.2: Data Ingress
 - [ ] **(Chuck)** Work with the researcher to securely transfer the project data into the enclave's Google Cloud Storage bucket.
-    *   *Note: Data often originates from sources like dbGaP (NIH), DOD, NSF, or DOE, and may contain Controlled Unclassified Information (CUI).*
+    *   *Note: Data often originates from sources like dbGaP (NIH), DOD, NSF, or DOE, and may contain Controlled Unclassified Information (CUI). Data ingress must strictly follow the protocols established in the training.*
 
-### 3.2: Final Security & Monitoring Setup
+### 3.3: Final Security & Monitoring Setup
 - [ ] **(Nick)** Configure and verify that all audit logs are being exported to the central log sink.
 - [ ] **(Nick)** Configure Security Command Center (SCC) to monitor for threats and vulnerabilities.
 - [ ] **(Charles/Team)** Install and configure endpoint security tools (e.g., Trellix) on all VMs.
 
-### 3.3: Project Hand-off
-- [ ] **(Chuck)** Schedule a final hand-off meeting with the PI and their research team.
-- [ ] **(Chuck/Team)** Walk the team through the access procedures and provide them with the necessary credentials and documentation.
-- [ ] **(Chuck)** Send a final "Project Ready" email summarizing the environment details and linking to relevant documentation.
+### 3.4: Project Hand-off
+- [ ] **(Chuck)** Send a final "Project Ready" email summarizing the environment details and providing the necessary credentials to the trained users.
