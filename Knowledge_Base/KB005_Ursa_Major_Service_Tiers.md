@@ -18,8 +18,8 @@ Ursa Major provides a tiered resource model to ensure sustainable access to clou
 ### Included Resources (Strict Whitelist)
 | Resource | Specification | Notes |
 | :--- | :--- | :--- |
-| **Compute** | `e2-standard-2` | Standard general-purpose VMs. |
-| **GKE** | `e2-standard-4` | Container orchestration clusters. |
+| **Compute** | Standard general-purpose VMs. |
+| **GKE** | Container orchestration clusters. |
 | **Storage (Object)** | `Coldline` Class | Long-term compliance archiving/backups. |
 | **Storage (Object)** | `Standard` Class | Working datasets (small scale). |
 | **Persistent Disk** | Zonal Balanced | VM Boot and local data disks. |
