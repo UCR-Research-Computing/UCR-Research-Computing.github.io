@@ -26,8 +26,8 @@ UCR utilizes a strictly tiered framework to ensure equitable and strategic acces
 
 #### Allocation Tiers
 
-*   **Tier 1: Strategic Allocation (Subsidized Pool):** Provides no-cost access to baseline compute (`e2-standard-2`) and strategic AI services (Gemini API) for eligible projects.
-*   **Tier 2: Commercial Recharge (Direct Billing):** Designed for high-scale or specialized workloads that exceed Tier 1 limits. **All Cloud GPU (A100, L4, T4), high-performance compute (c3, n2), and massive storage workloads must operate in this tier via direct recharge to a grant COA.** Alternatively, researchers are strongly encouraged to utilize the [UCR HPCC](../pages/HPCC.md) for subsidized GPU and HPC access.
+*   **Tier 1: Strategic Allocation (Subsidized Pool):** Provides no-cost access to baseline compute and strategic AI services (Gemini API) for eligible projects.
+*   **Tier 2: Commercial Recharge (Direct Billing):** Designed for high-scale or specialized workloads that exceed Tier 1 limits. **All Cloud GPU (A100, L4, T4), high-performance compute, and massive storage workloads must operate in this tier via direct recharge to a grant COA.** Alternatively, researchers are strongly encouraged to utilize the [UCR HPCC](../pages/HPCC.md) for subsidized GPU and HPC access.
 
 ---
 

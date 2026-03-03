@@ -1,6 +1,6 @@
 ## [UCR Ursa Major HPC](Ursa_Major_HPC_Clusters.md)
 
-**⚠️ Important Notice:** Ursa Major HPC clusters utilize non-whitelisted, high-performance compute SKUs (e.g., c3, n2) and Cloud GPUs. Therefore, this service is **strictly available under the Tier 2 (Direct Recharge) model** and requires a valid grant COA. For subsidized, no-cost HPC and GPU access, researchers must utilize the on-premise [UCR HPCC](../pages/HPCC.md).
+**⚠️ Important Notice:** Ursa Major HPC clusters utilize high-performance compute SKUs and Cloud GPUs. Therefore, this service is **strictly available under the Tier 2 (Direct Recharge) model** and requires a valid grant COA. For subsidized, no-cost HPC and GPU access, researchers must utilize the on-premise [UCR HPCC](../pages/HPCC.md).
 
 **UCR's Ursa Major Research Computing Service.** Ursa Major is powered by Google Cloud and is a game-changing development for UCR's Researcher and their Research. This service is designed to drive research at an increased pace and bring more grants and funding to the University. This service is a massively scalable and innovative approach to providing Research Computing resources, tools, and support as summarized below: Reach out and get started today!
 * Personal, Lab-Based, or Shared HPC Clusters.
