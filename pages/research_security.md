@@ -13,7 +13,7 @@ At the University of California, Riverside (UCR), ensuring the security of resea
 We assist researchers in several key areas:
 
 - **Understanding Your Research Security**: We delve into the specifics of your research to identify any applicable regulations, requirements, and necessary controls.
-- **Data Security Plan**: We aid in developing a Data Security Plan for your project. The DSP outlines Roles, Responsibilities, Guidelines, Processes, and Controls essential for safeguarding your data. For full details on the DSP intake process, see our [UCR Data Security Plans](../Knowledge_Base/ucr-data-security-plans) page.
+- **Data Security Plan**: We aid in developing a Data Security Plan for your project. The DSP outlines Roles, Responsibilities, Guidelines, Processes, and Controls essential for safeguarding your data. For full details on the DSP intake process, see our [UCR Data Security Plans](../Knowledge_Base/UCR_Data_Security_Plans.md) page.
 - **Implementation**: Our team is here to help implement the plans or controls developed, ensuring your research data is secure within approved environments.
 
 We encourage researchers to connect with the Research Computing Team to explore how we can support your data security needs.
@@ -68,7 +68,7 @@ The infrastructure you use to run AI models is directly tied to the level of dat
 
 Understanding and adhering to security policies and regulations is critical for safeguarding research data at UCR. All research data falls under a classification of security level ranging from P1 to P4, refer to the detailed descriptions of each level on the UCOP Security Classification page: [UCOP Information Security Classification Standards](https://security.ucop.edu/policies/institutional-information-and-it-resource-classification.html):
 - **P1/P2** involving data without Personal Identifiable Information (PII)—P1 being public and P2 internal.
-- **P3/P4** categories deal with data containing PII, necessitating a [Data Security Plan](../Knowledge_Base/ucr-data-security-plans), where P3 is classified as sensitive and P4 as confidential.
+- **P3/P4** categories deal with data containing PII, necessitating a [Data Security Plan](../Knowledge_Base/UCR_Data_Security_Plans.md), where P3 is classified as sensitive and P4 as confidential.
 
 By default, the systems we build and manage at UCR Research Computing are designed to comply with the UC IS-3 policy at the P2 level, ensuring a robust foundation for data security and integrity. While our infrastructure supports projects up to P4 level, accommodating the highest levels of data sensitivity, it is important to note that we do not support the handling of US classified data.
 
