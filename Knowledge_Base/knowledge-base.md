@@ -27,6 +27,13 @@ Welcome to the UCR Research Computing Knowledge Base. Explore our comprehensive 
 - [KB009: Using NSF ACCESS](KB009_Using_NSF_ACCESS.md)
 - [KB010: Resource Catalog](KB010_Resource_Catalog.md)
 - [KB011: Access Identity](KB011_Access_Identity.md)
+- [KB013: CephRDS Onboarding](KB013_CephRDS_Onboarding.md)
+- [KB014: Secure Enclave Guide](KB014_Secure_Enclave_Guide.md)
+- [KB015: Secure Enclave Onboarding Checklist](KB015_Secure_Enclave_Onboarding_Checklist.md)
+- [KB016: Secure Enclave Data Ingress](KB016_Secure_Enclave_Data_Ingress.md)
+- [KB017: Overleaf Troubleshooting](KB017_Overleaf_Troubleshooting.md)
+- [KB018: Accessing CephRDS with Python (boto3)](KB018_CephRDS_Python_boto3.md)
+- [KB019: Accessing CephRDS via Graphical S3 Clients](KB019_CephRDS_GUI_Clients.md)
 
 ### Computing and Storage
 
