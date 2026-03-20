@@ -31,6 +31,7 @@ Welcome to the UCR Research Computing Knowledge Base! This resource hub provides
 *   [KB017: Troubleshooting Overleaf Professional Access](KB017_Overleaf_Troubleshooting.md)
 *   [KB018: Accessing CephRDS with Python (boto3)](KB018_CephRDS_Python_boto3.md)
 *   [KB019: Accessing CephRDS via Graphical S3 Clients](KB019_CephRDS_GUI_Clients.md)
+*   [KB020: Mounting CephRDS Buckets as Local Drives](KB020_CephRDS_Mounting_Folders.md)
 
 ## Getting Started
 
