@@ -15,22 +15,29 @@ CephRDS is fully compatible with the Amazon S3 API, meaning you can interact wit
 
 ## Code Example
 
-Below is a standard Python snippet to connect to your CephRDS bucket, list its contents, and upload a file. The crucial step is overriding the default AWS `endpoint_url` with our UCR endpoint.
+Below is a standard Python snippet to connect to your CephRDS bucket, list its contents, and upload a file. Because CephRDS is a private, on-premise cloud, it handles routing differently than standard AWS.
+
+The crucial steps are:
+1.  **Path-Style Addressing:** You must explicitly set `addressing_style='path'` in the configuration.
+2.  **No Region Needed:** You can completely omit the `region_name` parameter.
 
 ```python
 import boto3
+from botocore.client import Config
 
 # Configuration
+ENDPOINT_URL = 'https://rds.ucr.edu'
 ACCESS_KEY = 'your_access_key'
 SECRET_KEY = 'your_secret_key'
-ENDPOINT_URL = 'https://rds.ucr.edu'
 BUCKET_NAME = 'your_bucket_name'
 
 # Initialize the S3 client
+# Note: config=Config(s3={'addressing_style': 'path'}) is crucial for Ceph server
 s3_client = boto3.client('s3',
     endpoint_url=ENDPOINT_URL,
     aws_access_key_id=ACCESS_KEY,
-    aws_secret_access_key=SECRET_KEY
+    aws_secret_access_key=SECRET_KEY,
+    config=Config(s3={'addressing_style': 'path'})
 )
 
 # List objects in the bucket

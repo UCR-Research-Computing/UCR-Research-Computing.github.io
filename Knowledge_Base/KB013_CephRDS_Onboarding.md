@@ -1,74 +1,129 @@
----
-id: kb013-cephrds-onboarding
-title: KB013 - CephRDS Onboarding & Access Guide
-sidebar_label: KB013 - CephRDS Access
----
+# KB013: Connecting to CephRDS (S3 Object Storage)
 
-# KB013: CephRDS Onboarding & Access Guide
+**Category:** Storage & Data
+**Audience:** Researchers, PIs, Students
+**Last Updated:** May 8, 2026
 
-**Scope:** UCR Researchers, External Collaborators
-**Audience:** All Users
-**Last Updated:** March 20, 2026
+## Overview
 
----
+UCR's CephRDS is an S3-compatible object storage system. To access your allocated buckets, you cannot use a traditional network drive mapping (like SMB or NFS). Instead, you must use an S3 client.
 
-## 1. What is CephRDS?
-**Ceph Research Data Service (CephRDS)** is UCR's premier on-premise object storage cluster, funded by the NSF CC* program. 
-It provides **over 2 PB** of highly resilient (6+3 Erasure Coded), S3-compatible storage designed specifically for active research data and large-scale computational workflows.
+This guide provides examples for connecting to the CephRDS endpoint (`https://rds.ucr.edu`) using three common methods: Cyberduck (GUI), Rclone (CLI), and Python (Programmatic).
 
-**Benefits:**
-*   **High Performance:** Direct connection to the campus Science DMZ and HPCC for rapid data transfer.
-*   **Resiliency:** Can survive multiple simultaneous drive or node failures without data loss.
-*   **S3 Compatibility:** Works natively with standard tools like `rclone`, Python (`boto3`), and visual clients (Cyberduck, Universal S3 UI).
-*   **Sustainable Pricing:** Built-in hardware refresh cycles via a **$40/TB/Year** rental rate or a **$200/Usable TB** one-time permanent purchase.
+**Prerequisites:**
+You must have your **Access Key ID** and **Secret Access Key**. If you do not have these, your PI must request them via the Research Computing ticketing system.
 
 ---
 
-## 2. Naming Conventions & Account Structure
+## 1. Using Cyberduck (Graphical Interface)
 
-To clearly distinguish on-premise Ceph storage from other cloud offerings, CephRDS utilizes a standardized naming convention based on the Principal Investigator's (PI) NetID:
+Cyberduck is a free graphical client available for macOS and Windows, ideal for drag-and-drop file transfers.
 
-*   **Lab Account Name:** `ucr-rds-[pi-netid]-lab`
-*   **Storage Buckets:** `ucr-rds-[pi-netid]-lab-hdd` (for standard storage) or `ucr-rds-[pi-netid]-lab-ssd` (for high-performance NVMe storage).
-
-**Access Strategy:** 
-The storage buckets belong to the Lab. If a PI wishes to grant access to a student or collaborator, Research Computing will create a unique account for that individual using their NetID, and grant them specific access permissions (ACLs) to the main Lab bucket. This ensures a clear audit trail for data management.
-
----
-
-## 3. Getting Started & Provisioning
-
-### A. UCR Faculty & Internal Labs
-1.  **Request Access:** Submit a BearHelp ticket to Research Computing requesting CephRDS storage. Include your requested quota (in TB) and your Chart of Accounts (COA) if exceeding the initial subsidized allocation.
-2.  **Provisioning:** Our team will provision your `ucr-rds-[pi-netid]-lab` account and establish your strict hardware quotas.
-3.  **Credential Delivery:** You will receive your S3 Access Key and Secret Key securely. 
-
-### B. Lab Members & External Collaborators
-1.  **PI Approval:** The UCR PI must submit a ticket explicitly requesting access for the individual to their lab bucket.
-2.  **Provisioning:** Our team will generate a unique set of Access/Secret keys for the user, scoped strictly to the UCR PI's bucket.
-
-*Security Warning: Treat your Secret Key like a password. Never commit it to GitHub or share it in plaintext.*
+1. **Download & Install:** Get Cyberduck from [https://cyberduck.io](https://cyberduck.io).
+2. **Open a New Connection:**
+   - Click the **Open Connection** icon.
+   - From the drop-down at the top, select **Amazon S3**.
+3. **Configure Connection:**
+   - **Server:** `rds.ucr.edu`
+   - **Port:** `443`
+   - **Access Key ID:** Paste your Access Key.
+   - **Secret Access Key:** Paste your Secret Key.
+4. **Connect:** Click **Connect**. You will now see your assigned buckets and can drag and drop files.
 
 ---
 
-## 4. Connecting to CephRDS (rds.ucr.edu)
+## 2. Using Rclone (Command Line)
 
-CephRDS uses the **S3 API Protocol**. The official connection endpoint is:
-**`https://rds.ucr.edu`**
+Rclone is a powerful command-line tool for managing cloud storage, ideal for transferring large datasets or scripting backups. It is available on Linux, macOS, Windows, and the UCR HPCC (`module load rclone`).
 
-For specific configuration guides and code examples, please see:
-*   [KB018: Accessing CephRDS with Python (boto3)](KB018_CephRDS_Python_boto3.md)
-*   [KB019: Accessing CephRDS via Graphical S3 Clients](KB019_CephRDS_GUI_Clients.md)
+### Configuration
+
+1. Run the configuration tool:
+   ```bash
+   rclone config
+   ```
+2. Follow the prompts to create a new remote:
+   - **n/s/q>**: Press `n` for New remote.
+   - **name>**: Enter a name (e.g., `ucr-ceph`).
+   - **Storage>**: Select `s3` (Amazon Web Services S3 Compliant Storage).
+   - **provider>**: Select **Ceph** (Ceph Object Gateway). **Do not select "Amazon S3"**.
+   - **env_auth>**: Press `false`.
+   - **access_key_id>**: Enter your Access Key ID.
+   - **secret_access_key>**: Enter your Secret Access Key.
+   - **region>**: Leave blank (press Enter).
+   - **endpoint>**: Enter `https://rds.ucr.edu`.
+   - **location_constraint>**: Leave blank (press Enter).
+   - **acl>**: Leave blank (press Enter).
+   - Advance through the remaining prompts (press Enter for defaults) until you save and exit.
+
+### Basic Commands
+
+*   **List buckets:**
+    ```bash
+    rclone lsd ucr-ceph:
+    ```
+*   **List files in a bucket:**
+    ```bash
+    rclone ls ucr-ceph:your-bucket-name
+    ```
+*   **Copy a local folder to CephRDS (with a progress bar):**
+    ```bash
+    rclone copy /path/to/local/data/ ucr-ceph:your-bucket-name/folder/ -P
+    ```
 
 ---
 
-## 5. Troubleshooting & FAQ
+## 3. Using Python (Boto3)
 
-**Q: I got a "403 Forbidden" error when trying to upload.**
-**A:** You have likely hit your assigned storage quota for your bucket. Please contact Research Computing to request a quota increase.
+To interact with CephRDS programmatically in Python, use the standard AWS SDK (`boto3`). Because CephRDS is a private, on-premise cloud, it handles routing differently than standard AWS.
 
-**Q: Can I use FileZilla?**
-**A:** We recommend FileZilla Pro (which supports S3), Cyberduck, or Universal S3 UI. The free version of FileZilla does not natively support the modern S3 protocols required for CephRDS.
+### Installation
+```bash
+pip install boto3
+```
 
-**Q: I lost my Secret Key.**
-**A:** Secret Keys cannot be recovered, only regenerated. Contact support to generate a new key pair. You will need to update all your scripts and clients with the new key.
+### Python Script Example
+The crucial steps are explicitly setting `addressing_style='path'` and omitting the `region_name`.
+
+```python
+import boto3
+from botocore.client import Config
+
+# Configuration
+ENDPOINT_URL = 'https://rds.ucr.edu'
+ACCESS_KEY = 'your_access_key_here'
+SECRET_KEY = 'your_secret_key_here'
+BUCKET_NAME = 'your-bucket-name'
+
+# Initialize the S3 client
+# Note: config=Config(s3={'addressing_style': 'path'}) is crucial for Ceph server
+s3_client = boto3.client('s3',
+    endpoint_url=ENDPOINT_URL,
+    aws_access_key_id=ACCESS_KEY,
+    aws_secret_access_key=SECRET_KEY,
+    config=Config(s3={'addressing_style': 'path'})
+)
+
+# 1. List files in the bucket
+print(f"Files in bucket '{BUCKET_NAME}':")
+response = s3_client.list_objects_v2(Bucket=BUCKET_NAME)
+if 'Contents' in response:
+    for item in response['Contents']:
+        print(f" - {item['Key']} ({item['Size']} bytes)")
+else:
+    print(" (Bucket is empty)")
+```
+
+# 2. Upload a file
+local_file = 'my_dataset.csv'
+s3_key = 'data/my_dataset.csv'
+print(f"Uploading {local_file} to {s3_key}...")
+s3_client.upload_file(local_file, BUCKET_NAME, s3_key)
+print("Upload complete.")
+
+# 3. Download a file
+download_path = 'downloaded_dataset.csv'
+print(f"Downloading {s3_key} to {download_path}...")
+s3_client.download_file(BUCKET_NAME, s3_key, download_path)
+print("Download complete.")
+```

@@ -8,7 +8,7 @@ sidebar_label: KB020 - CephRDS Mounting
 
 **Scope:** UCR Researchers, External Collaborators
 **Audience:** All Users
-**Last Updated:** March 20, 2026
+**Last Updated:** May 14, 2026
 
 While graphical clients like Cyberduck (KB019) are great for transferring files, you may want to interact with your CephRDS storage exactly like a USB drive or a local hard drive. This allows you to open, edit, and save files directly from your applications (like Word, Python, or R) into the cloud.
 
@@ -22,7 +22,9 @@ Before mounting, you must have `rclone` installed and configured with your CephR
 
 1. **Get your Keys:** You need your provisioned S3 Access Key and Secret Key for CephRDS (`rds.ucr.edu`).
 2. **Install Rclone:** Download and install the core `rclone` engine from [rclone.org](https://rclone.org/downloads/).
-3. **Configure the Remote:** Run `rclone config` in your terminal to set up a remote named `cephrds`. Follow the steps in [KB013](KB013_CephRDS_Onboarding.md) to complete this.
+3. **Configure the Remote:** Run `rclone config` in your terminal to set up a remote named `cephrds`.
+   - When the configuration menu asks for your storage provider, be sure to select **Ceph** (or "Other") rather than "Amazon S3".
+   - Follow the steps in [KB013](KB013_CephRDS_Onboarding.md) to complete this.
 
 ---
 
