@@ -8,10 +8,22 @@
 
 UCR's CephRDS is an S3-compatible object storage system. To access your allocated buckets, you cannot use a traditional network drive mapping (like SMB or NFS). Instead, you must use an S3 client.
 
-This guide provides examples for connecting to the CephRDS endpoint (`https://rds.ucr.edu`) using three common methods: Cyberduck (GUI), Rclone (CLI), and Python (Programmatic).
+This guide provides examples for requesting access and connecting to the CephRDS endpoint (`https://rds.ucr.edu`) using three common methods: Cyberduck (GUI), Rclone (CLI), and Python (Programmatic).
 
-**Prerequisites:**
-You must have your **Access Key ID** and **Secret Access Key**. If you do not have these, your PI must request them via the Research Computing ticketing system.
+---
+
+## 🔑 Account Onboarding & Key Request Workflow
+
+CephRDS S3 Access Keys and Secret Keys are provisioned and managed through a coordinated workflow between Research Computing and ITS Systems Engineering.
+
+### How to Request CephRDS Storage & S3 Keys:
+1. **Submit a Ticket:** The Principal Investigator (PI) or lab lead submits a request to Research Computing via the ServiceNow Portal or email (`forsythc@ucr.edu`).
+2. **Provide Required Lab Details:**
+   - PI / Lab Lead Name & NetID
+   - Department & College
+   - Estimated Initial Storage Quota (e.g., 10 TB, 50 TB, 100 TB)
+   - Authorized Lab Members / NetIDs requiring bucket access
+3. **Provisioning & Secure Key Delivery:** Research Computing routes the ticket to ITS Systems Engineering (Steven / Systems Team). Upon account creation, the S3 Access Key ID and Secret Access Key are securely delivered to the PI via ServiceNow response.
 
 ---
 

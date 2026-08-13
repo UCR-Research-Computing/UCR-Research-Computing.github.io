@@ -19,10 +19,10 @@ This workflow governs the provisioning of Google Cloud projects that require a *
     *   Technical Requirements (APIs, GPUs, etc.)
     *   Full **Chart of Accounts (COA)** string.
 
-### Phase 2: Administrative Setup (Systems Team)
-3.  **Ticket Handoff:** RC creates a structured ServiceNow Task/Request for the **Systems Team** containing the project specs and COA.
-4.  **MOU Issuance:** Systems Team generates a Memorandum of Understanding (MOU) outlining the recharge rates and terms. This is sent to the PI for signature.
-5.  **MOU Execution:** PI signs and returns the MOU.
+### Phase 2: Administrative Setup & MOU Execution (Systems Team + ITS Finance)
+3.  **Ticket Handoff:** RC creates a structured ServiceNow Task/Request for the **Systems Team** (led by Associate Director of Infrastructure Okey Uchendu) containing the project specs and COA.
+4.  **MOU Drafting & Issuance:** Okey's Systems Team and AVC/CFO Shally Gupta's ITS Finance Team together draft the formal Memorandum of Understanding (MOU) outlining the recharge rates, COA string, and terms. Okey's team works directly with the PI to issue the MOU for signature.
+5.  **MOU Execution & Billing ID Creation:** PI signs and returns the executed MOU. Okey's team takes the researcher's COA string, creates a dedicated Google Cloud Billing ID under the UCR Organization, and associates it with the new project.
 
 ### Phase 3: Technical Provisioning (Systems Team)
 6.  **Project Creation:** Upon receipt of the signed MOU, the Systems Team:
