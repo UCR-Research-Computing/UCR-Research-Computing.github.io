@@ -79,7 +79,7 @@ Welcome to the UCR Research Computing Knowledge Base! This resource hub provides
 *   [AI-Optimized HPC Clusters](../pages/ai-hpc-cluster.md) - Whitepaper on designing and building AI-HPC clusters in 2025.
 *   [Ursa Major Research Services for AI/ML](Ursa_Major_Research_Services.md) - Overview of AI/ML services available through UCR's Ursa Major (GCP).
 *   [LLM Inference Settings](llm-inference-settings.md) - Explanation of common inference parameters (Seed, Temperature, Top P/K, etc.).
-*   [Using Gemini for Genomics Research at UCR](gemini_genomics_researchers.html) - Guide on leveraging Google Gemini in genomics, with examples and ethical considerations.
+*   [Using Gemini for Genomics Research at UCR](../gemini_genomics_researchers.html) - Guide on leveraging Google Gemini in genomics, with examples and ethical considerations.
 *   [The Edge AI Revolution](../pages/Edge_AI_Revolution.md) - Whitepaper on Edge Computing, AI at the Edge, hardware, software, and challenges.
 *   [Building AI-Optimized High-Performance Computing](../pages/Building_AI-Optimized_High-Performance_Computin.md) - Technical guide to AI-HPC cluster architecture and components for 2025.
 *   [Gemini for Physics Researchers](Gemini_for_Physics_Researchers.md) - Guide on using Google Gemini in physics research, with applications and practical tips.
@@ -170,7 +170,7 @@ Welcome to the UCR Research Computing Knowledge Base! This resource hub provides
 
 ## Best Practices
 
-*   [Data Security in Research Computing](../pages/research_security.md) - Guidelines for data security plans, classification, and compliance.
+*   [Data Security in Research Computing](pages/research_security.md) - Guidelines for data security plans, classification, and compliance.
 *   [Ursa Major Guideline](Ursa_Major_Guideline.md) - Detailed guidelines for UCR's Ursa Major (GCP) service, covering access, usage, data, and security.
 *   [SSH to Access](ssh-to-access.md) - Basic information on using SSH for accessing resources.
 *   [Building a Mature Research Computing Service](../pages/Building_a_Mature_Research_Computing_Service.md) - Strategies for developing comprehensive RC services at R1 universities.
