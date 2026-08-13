@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KB020 CephRDS Mounting Folders</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 24px;
+            background-color: #ffffff;
+        }
+        h1 { color: #1e3a8a; border-bottom: 2px solid #3b82f6; padding-bottom: 8px; font-size: 1.8rem; }
+        h2 { color: #1e40af; margin-top: 24px; font-size: 1.3rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 4px; }
+        h3 { color: #1f2937; font-size: 1.1rem; margin-top: 18px; }
+        code { background-color: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 0.9em; color: #b91c1c; }
+        pre { background-color: #1e293b; color: #f8fafc; padding: 14px; border-radius: 6px; overflow-x: auto; font-family: monospace; font-size: 0.88em; }
+        pre code { background-color: transparent; color: inherit; padding: 0; }
+        blockquote { background-color: #eff6ff; border-left: 4px solid #3b82f6; padding: 12px 16px; margin: 16px 0; border-radius: 0 6px 6px 0; color: #1e40af; }
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+        th, td { border: 1px solid #d1d5db; padding: 10px; text-align: left; }
+        th { background-color: #f3f4f6; color: #111827; }
+    </style>
+</head>
+<body>
+<p>---</p>
+<p>id: kb020-cephrds-mounting-folders</p>
+<p>title: KB020 - Mounting CephRDS Buckets as Local Drives</p>
+<p>sidebar_label: KB020 - CephRDS Mounting</p>
+<p>---</p>
+
+<h1>KB020: Mounting CephRDS Buckets as Local Drives</h1>
+
+<p>**Scope:** UCR Researchers, External Collaborators</p>
+<p>**Audience:** All Users</p>
+<p>**Last Updated:** May 14, 2026</p>
+
+<p>While graphical clients like Cyberduck (KB019) are great for transferring files, you may want to interact with your CephRDS storage exactly like a USB drive or a local hard drive. This allows you to open, edit, and save files directly from your applications (like Word, Python, or R) into the cloud.</p>
+
+<p>This guide explains how to mount your CephRDS buckets as a local drive for free across all major operating systems using **Rclone**.</p>
+
+<p>---</p>
+
+<h2>1. Prerequisites (All Operating Systems)</h2>
+
+<p>Before mounting, you must have `rclone` installed and configured with your CephRDS credentials.</p>
+
+<p>1. **Get your Keys:** You need your provisioned S3 Access Key and Secret Key for CephRDS (`rds.ucr.edu`).</p>
+<p>2. **Install Rclone:** Download and install the core `rclone` engine from [rclone.org](https://rclone.org/downloads/).</p>
+<p>3. **Configure the Remote:** Run `rclone config` in your terminal to set up a remote named `cephrds`.</p>
+<p>   - When the configuration menu asks for your storage provider, be sure to select **Ceph** (or "Other") rather than "Amazon S3".</p>
+<p>   - Follow the steps in [KB013](KB013_CephRDS_Onboarding.md) to complete this.</p>
+
+<p>---</p>
+
+<h2>2. Mounting on Linux</h2>
+
+<p>Linux natively supports user-space file systems (FUSE), making mounting extremely simple and robust.</p>
+
+<h3>Steps:</h3>
+<p>1.  **Ensure FUSE is installed:** (Usually pre-installed on modern distros like Ubuntu). If missing, run `sudo apt install fuse3`.</p>
+<p>2.  **Create a mount point:** This is an empty folder where your files will appear.</p>
+<p>    ```bash</p>
+<p>    mkdir ~/ceph-drive</p>
+<p>    ```</p>
+<p>3.  **Run the mount command:** </p>
+<p>    ```bash</p>
+<p>    rclone mount cephrds:your_bucket_name ~/ceph-drive --vfs-cache-mode writes --daemon</p>
+<p>    ```</p>
+<p>    *Note: The `--vfs-cache-mode writes` flag ensures files are cached locally and uploaded in the background, providing maximum performance.*</p>
+
+<p>Your files are now available in the `~/ceph-drive` directory!</p>
+
+<p>---</p>
+
+<h2>3. Mounting on macOS</h2>
+
+<p>To mount drives on macOS, Rclone requires an additional open-source extension called **macFUSE**.</p>
+
+<h3>Steps:</h3>
+<p>1.  **Install macFUSE:** Download and install it from [macfuse.github.io](https://osxfuse.github.io/). </p>
+<p>    *(Note: You may need to allow system extensions in your Mac's Security & Privacy settings during installation).*</p>
+<p>2.  **Create a mount point:** Open your Terminal and create an empty folder.</p>
+<p>    ```bash</p>
+<p>    mkdir ~/Desktop/CephRDS</p>
+<p>    ```</p>
+<p>3.  **Run the mount command:**</p>
+<p>    ```bash</p>
+<p>    rclone mount cephrds:your_bucket_name ~/Desktop/CephRDS --vfs-cache-mode writes --daemon</p>
+<p>    ```</p>
+
+<p>You will now see a new volume appear on your Desktop named "CephRDS" that you can browse in Finder.</p>
+
+<p>---</p>
+
+<h2>4. Mounting on Windows</h2>
+
+<p>Windows requires a proxy file system driver to allow Rclone to create a virtual drive letter (like `Z:\`).</p>
+
+<h3>Steps:</h3>
+<p>1.  **Install WinFsp:** Download and install the open-source **Windows File System Proxy (WinFsp)** from [winfsp.dev](https://winfsp.dev/).</p>
+<p>2.  **Run the mount command:** Open Command Prompt or PowerShell. You do not need to create a folder first; Rclone will create a new drive letter automatically.</p>
+<p>    ```powershell</p>
+<p>    rclone mount cephrds:your_bucket_name Z: --vfs-cache-mode writes</p>
+<p>    ```</p>
+<p>    *(Leave the command prompt window open, or run it via a background script).*</p>
+
+<p>Open File Explorer, and you will see a new `Z:` drive containing your CephRDS data!</p>
+
+<p>---</p>
+
+<h2>5. Alternative GUI Wrapper (RcloneView)</h2>
+
+<p>If you find configuring the command line intimidating, the community has built a free, graphical interface for Rclone called **RcloneView**. </p>
+
+<p>It allows you to configure your `rds.ucr.edu` endpoint and click a visual "Mount" button to connect your drives automatically on startup for both Windows and Mac.</p>
+
+</body>
+</html>
