@@ -31,5 +31,5 @@ ACCESS uses "Service Units" (credits) which you exchange for compute time on sup
 2.  **Request "Explore":** Start here. Write a simple abstract (1 paragraph) to get immediate credits.
 3.  **Transfer Credits:** "Exchange" your credits for time on a specific resource (e.g., SDSC Expanse).
 
-**Campus Champion:**
-Chuck Forsyth is UCR's **ACCESS Campus Champion**. He can provide immediate "Startup" allocations and guidance on writing successful proposals.
+**Campus Champion Support:**
+The UCR Research Computing team acts as UCR's **ACCESS Campus Champions**. We provide immediate "Startup" allocations and guidance on writing successful proposals.

@@ -23,10 +23,10 @@ sidebar_label: KB015 - Secure Enclave Checklist
 - [ ] Hold a kickoff meeting with the PI to confirm the need for a Secure Enclave and discuss the shared cost model.
 
 ### 1.2: Financial & Legal Prerequisites
-- [ ] **(Chuck)** Obtain the Chart of Accounts (COA) from the researcher.
-- [ ] **(Okey / Shally)** Systems Team (Okey Uchendu) and ITS Finance (Shally Gupta) together draft the formal Memorandum of Understanding (MOU) using the provided COA.
-- [ ] **(Okey / Chuck / PI)** Okey's team works with the PI to route the MOU for all required signatures (PI, Department Head, etc.).
-- [ ] **(Okey / Steven)** Once the MOU is fully executed, Okey's team takes the COA, creates the unique Google Cloud Billing ID under the UCR Org, and assigns it to the newly created Secure Enclave project.
+- [ ] **(Research Computing)** Obtain the Chart of Accounts (COA) from the researcher.
+- [ ] **(Systems / ITS Finance)** Systems Team and ITS Finance together draft the formal Memorandum of Understanding (MOU) using the provided COA.
+- [ ] **(Systems Team / PI)** Systems team works with the PI to route the MOU for all required signatures (PI, Department Head, etc.).
+- [ ] **(Systems Team)** Once the MOU is fully executed, Systems team takes the COA, creates the unique Google Cloud Billing ID under the UCR Org, and assigns it to the newly created Secure Enclave project.
 
 ### 1.3: Data Security Plan (DSP) Development
 - [ ] **(Chuck)** Generate the initial DSP draft using the AI-powered script/template.

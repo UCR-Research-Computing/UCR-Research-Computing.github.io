@@ -56,7 +56,6 @@ Our goal is to provide this essential service sustainably and transparently. The
 
 ## Contact Us
 To start the conversation or for any questions, please contact:
-**Chuck Forsyth**
-Director, Research Computing
-charles.forsyth@ucr.edu
+**UCR Research Computing Directorate**
+Information Technology Solutions
 research-computing@ucr.edu
