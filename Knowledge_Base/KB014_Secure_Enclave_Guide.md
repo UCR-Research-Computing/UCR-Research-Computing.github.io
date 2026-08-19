@@ -11,8 +11,6 @@ title: KB014 - UCR Secure Research Enclave Guide
 sidebar_label: KB014 - Secure Enclave Guide
 ---
 
-
-
 ## What is the Secure Research Enclave?
 The UCR Secure Research Enclave is a highly protected, cloud-based computing environment designed to support research projects that involve sensitive or regulated data. It provides the necessary technical, administrative, and physical safeguards to meet stringent cybersecurity requirements, such as those mandated by the Department of Defense for NIST 800-171 Rev 2 compliance.
 

@@ -11,7 +11,6 @@ title: "Accessing CephRDS via Graphical S3 Clients"
 parent: Knowledge Base
 ---
 
-
 ![CephRDS S3 Architecture](/assets/images/cephrds_architecture.png)
 
 While command-line tools like `rclone` offer maximum performance, many researchers prefer the ease of a visual, drag-and-drop interface for managing their data.

@@ -62,7 +62,7 @@ gsutil lifecycle set lifecycle.json gs://my-bucket-name
 When uploading new backups, tag them immediately.
 
 ```bash
-# Upload folder
+## Upload folder
 gsutil -m cp -r -c COLDLINE ./my_local_data/ gs://my-archive-bucket/
 ```
 

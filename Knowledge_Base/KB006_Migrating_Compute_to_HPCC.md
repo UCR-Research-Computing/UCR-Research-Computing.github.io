@@ -73,10 +73,10 @@ In the cloud, you leave a VM running 24/7. On HPCC, you submit "Jobs."
 #SBATCH --partition=gpu
 #SBATCH --gres=gpu:1
 
-# Load Apptainer
+## Load Apptainer
 module load apptainer
 
-# Run your script inside the container
+## Run your script inside the container
 apptainer exec --nv my-env.sif python3 /bigdata/labname/username/scripts/run_model.py
 ```
 

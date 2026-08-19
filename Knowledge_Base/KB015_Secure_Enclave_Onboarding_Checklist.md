@@ -11,7 +11,6 @@ title: KB015 - Secure Enclave Project Onboarding Checklist
 sidebar_label: KB015 - Secure Enclave Checklist
 ---
 
-
 **Target Audience:** Research Computing Team, ISO, ITS
 **Purpose:** To provide a complete, step-by-step checklist for fully onboarding a new NIST 800-171 compliant research project into the Secure Enclave, including environment setup, resource configuration, and security documentation.
 

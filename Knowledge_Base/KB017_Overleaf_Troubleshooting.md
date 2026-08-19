@@ -11,8 +11,6 @@ title: KB017 - Troubleshooting Overleaf Professional Access
 sidebar_label: KB017 - Overleaf Pro Access
 ---
 
-
-
 ---
 
 ## 1. The Problem

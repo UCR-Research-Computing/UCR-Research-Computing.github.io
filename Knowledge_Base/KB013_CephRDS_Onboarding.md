@@ -105,14 +105,14 @@ The crucial steps are explicitly setting `addressing_style='path'` and omitting 
 import boto3
 from botocore.client import Config
 
-# Configuration
+## Configuration
 ENDPOINT_URL = 'https://rds.ucr.edu'
 ACCESS_KEY = 'your_access_key_here'
 SECRET_KEY = 'your_secret_key_here'
 BUCKET_NAME = 'your-bucket-name'
 
-# Initialize the S3 client
-# Note: config=Config(s3={'addressing_style': 'path'}) is crucial for Ceph server
+## Initialize the S3 client
+## Note: config=Config(s3={'addressing_style': 'path'}) is crucial for Ceph server
 s3_client = boto3.client('s3',
     endpoint_url=ENDPOINT_URL,
     aws_access_key_id=ACCESS_KEY,
@@ -120,7 +120,7 @@ s3_client = boto3.client('s3',
     config=Config(s3={'addressing_style': 'path'})
 )
 
-# 1. List files in the bucket
+## 1. List files in the bucket
 print(f"Files in bucket '{BUCKET_NAME}':")
 response = s3_client.list_objects_v2(Bucket=BUCKET_NAME)
 if 'Contents' in response:
@@ -130,14 +130,14 @@ else:
     print(" (Bucket is empty)")
 ```
 
-# 2. Upload a file
+## 2. Upload a file
 local_file = 'my_dataset.csv'
 s3_key = 'data/my_dataset.csv'
 print(f"Uploading {local_file} to {s3_key}...")
 s3_client.upload_file(local_file, BUCKET_NAME, s3_key)
 print("Upload complete.")
 
-# 3. Download a file
+## 3. Download a file
 download_path = 'downloaded_dataset.csv'
 print(f"Downloading {s3_key} to {download_path}...")
 s3_client.download_file(BUCKET_NAME, s3_key, download_path)

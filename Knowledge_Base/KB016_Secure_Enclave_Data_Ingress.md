@@ -11,8 +11,6 @@ title: KB016 - Secure Enclave Data Ingress & Decryption Protocol
 sidebar_label: KB016 - Data Ingress Protocol
 ---
 
-
-
 ---
 
 ## 1. The Golden Rule of Data Ingress

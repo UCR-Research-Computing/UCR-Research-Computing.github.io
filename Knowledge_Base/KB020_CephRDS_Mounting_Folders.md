@@ -11,8 +11,6 @@ title: KB020 - Mounting CephRDS Buckets as Local Drives
 sidebar_label: KB020 - CephRDS Mounting
 ---
 
-
-
 While graphical clients like Cyberduck (KB019) are great for transferring files, you may want to interact with your CephRDS storage exactly like a USB drive or a local hard drive. This allows you to open, edit, and save files directly from your applications (like Word, Python, or R) into the cloud.
 
 This guide explains how to mount your CephRDS buckets as a local drive for free across all major operating systems using **Rclone**.

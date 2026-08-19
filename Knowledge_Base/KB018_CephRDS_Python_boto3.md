@@ -11,7 +11,6 @@ title: "Accessing CephRDS with Python (boto3)"
 parent: Knowledge Base
 ---
 
-
 CephRDS is fully compatible with the Amazon S3 API, meaning you can interact with it programmatically using standard S3 libraries like Python's `boto3`.
 
 ## Prerequisites
@@ -31,14 +30,14 @@ The crucial steps are:
 import boto3
 from botocore.client import Config
 
-# Configuration
+## Configuration
 ENDPOINT_URL = 'https://rds.ucr.edu'
 ACCESS_KEY = 'your_access_key'
 SECRET_KEY = 'your_secret_key'
 BUCKET_NAME = 'your_bucket_name'
 
-# Initialize the S3 client
-# Note: config=Config(s3={'addressing_style': 'path'}) is crucial for Ceph server
+## Initialize the S3 client
+## Note: config=Config(s3={'addressing_style': 'path'}) is crucial for Ceph server
 s3_client = boto3.client('s3',
     endpoint_url=ENDPOINT_URL,
     aws_access_key_id=ACCESS_KEY,
@@ -46,13 +45,13 @@ s3_client = boto3.client('s3',
     config=Config(s3={'addressing_style': 'path'})
 )
 
-# List objects in the bucket
+## List objects in the bucket
 response = s3_client.list_objects_v2(Bucket=BUCKET_NAME)
 if 'Contents' in response:
     for obj in response['Contents']:
         print(obj['Key'])
 
-# Upload a file
+## Upload a file
 file_to_upload = 'local_data.csv'
 s3_client.upload_file(file_to_upload, BUCKET_NAME, 'cloud_data.csv')
 print("Upload complete!")
