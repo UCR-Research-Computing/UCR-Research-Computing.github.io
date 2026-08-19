@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KB008: Using NAIRR Pilot for AI Research | UCR Research Computing</title>
+    <style>
+        :root {
+            --ucr-blue: #003da5;
+            --ucr-gold: #ffb81c;
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-cyan: #38bdf8;
+            --accent-green: #4ade80;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background: linear-gradient(135deg, #002266 0%, #003da5 100%);
+            border-bottom: 4px solid var(--ucr-gold);
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            color: #ffffff;
+            margin: 0 0 10px 0;
+            font-size: 2.2rem;
+        }
+        .header .subtitle {
+            color: var(--ucr-gold);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .badge {
+            display: inline-block;
+            background: var(--ucr-gold);
+            color: #000;
+            font-weight: bold;
+            font-size: 0.85rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .card h2 {
+            color: var(--accent-cyan);
+            margin-top: 0;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #334155;
+        }
+        th {
+            background-color: #0f172a;
+            color: var(--ucr-gold);
+        }
+        tr:hover { background-color: #334155; }
+        .track-box {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .track {
+            flex: 1;
+            background: #0f172a;
+            border-left: 4px solid var(--accent-green);
+            padding: 18px;
+            border-radius: 6px;
+        }
+        .track.research { border-left-color: var(--ucr-gold); }
+        .track h3 { margin-top: 0; color: #ffffff; }
+        .btn {
+            display: inline-block;
+            background: var(--ucr-gold);
+            color: #000000;
+            font-weight: bold;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-top: 15px;
+        }
+        .btn:hover { background: #e0a000; }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-muted);
+            border-top: 1px solid #334155;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="badge">KB008 // TIER 3 NATIONAL INFRASTRUCTURE</div>
+    <h1>Using NAIRR Pilot for AI Research at UC Riverside</h1>
+    <div class="subtitle">Zero-Cost Federal H100 GPU Clusters, Wafer-Scale AI Accelerators & Foundation Model APIs</div>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <h2>1. Executive Summary: What is the NAIRR Pilot?</h2>
+        <p>The <b>National Artificial Intelligence Research Resource (NAIRR) Pilot</b> is a $100M+ federal initiative led by the National Science Foundation (NSF) and Department of Energy (DOE) providing <b>zero-cost access</b> to high-performance AI computing, specialized hardware, and foundation model APIs for U.S. researchers.</p>
+        <p>Through <b>UCR Research Computing</b>, faculty can leverage NAIRR to scale AI workloads beyond local campus resources (<i>HPCC</i> and <i>GCP Ursa Major</i>) into national exascale supercomputers and specialized AI accelerators at no charge to their grants.</p>
+    </div>
+
+    <div class="card">
+        <h2>2. NAIRR Resource Portfolio (What You Can Request)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Resource Category</th>
+                    <th>Available Hardware & Platforms</th>
+                    <th>Ideal Research Use Case</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>Exotic AI Accelerators</b></td>
+                    <td><b>Cerebras CS-3</b>, SambaNova SN40L, Groq LPU</td>
+                    <td>Wafer-scale AI training, ultra-low latency inference, & non-GPU chip architectures.</td>
+                </tr>
+                <tr>
+                    <td><b>Massive H100/A100 GPU Clusters</b></td>
+                    <td><b>NCSA DeltaAI</b> (1,200+ H100s), SDSC Expanse, TACC Vista</td>
+                    <td>Multi-node distributed LLM pre-training, fine-tuning, & large vision models.</td>
+                </tr>
+                <tr>
+                    <td><b>Exascale Supercomputers</b></td>
+                    <td><b>ORNL Frontier</b> (DOE Exascale), ALCF Aurora</td>
+                    <td>Climate AI, molecular dynamics, & massive multi-physics simulation campaigns.</td>
+                </tr>
+                <tr>
+                    <td><b>Foundation Model APIs</b></td>
+                    <td>OpenAI, Anthropic Claude, Vertex AI, Hugging Face</td>
+                    <td>Prompt engineering, evaluation benchmarks, & fine-tuning proprietary models.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>3. Allocation Tracks & Application Paths</h2>
+        <div class="track-box">
+            <div class="track">
+                <h3>⚡ Track 1: NAIRR Startup (Fast-Track On-Ramp)</h3>
+                <p><b>Best For:</b> Benchmarking, code testing, and gathering preliminary data for grant proposals.</p>
+                <p><b>Review Time:</b> <b>Fast-tracked (1–2 weeks)</b> with a 2-page proposal.</p>
+                <p><b>Allocation:</b> Up to 5,000 GPU-hours or $5,000 in model API credits.</p>
+            </div>
+            <div class="track research">
+                <h3>🏆 Track 2: NAIRR Research (Full Campaign)</h3>
+                <p><b>Best For:</b> Full research campaigns, large-scale LLM training, and paper publications.</p>
+                <p><b>Review Time:</b> Monthly peer-review cycle.</p>
+                <p><b>Allocation:</b> Up to 100,000+ GPU-hours or Cerebras wafer-scale cluster access.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>4. UCR Research Computing Onboarding Support</h2>
+        <p>UCR Research Computing acts as your <b>institutional bridge</b> to NAIRR Pilot allocations:</p>
+        <ul>
+            <li><b>Proposal Review & Benchmarking:</b> We assist UCR faculty in running scaling benchmarks on <b>HPCC</b> or <b>GCP Ursa Major</b> to include in your NAIRR application.</li>
+            <li><b>Access & Credential Mapping:</b> Once granted, we help configure Globus endpoint transfers, SSH key authentication, and Slurm job scripts for DeltaAI, Expanse, or Cerebras.</li>
+            <li><b>Hybrid Workflow Integration:</b> Run pre-processing on HPCC/Ursa Major, launch massive GPU training on NAIRR DeltaAI, and store results in <b>CephRDS S3</b>.</li>
+        </ul>
+        <a href="https://nairrpilot.org" class="btn" target="_blank">Visit Official NAIRR Portal ➔</a>
+    </div>
+
+</div>
+
+<div class="footer">
+    UC Riverside Information Technology Solutions | Research Computing Directorate<br>
+    © 2026 Regents of the University of California
+</div>
+
+</body>
+</html>

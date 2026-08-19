@@ -20,7 +20,7 @@ Welcome to the UCR Research Computing Knowledge Base! This resource hub provides
 *   [KB006: SOM Clinical Apps](KB006_SOM_Clinical_Apps.md)
 *   [KB007: Migrating Data to Archive](KB007_Migrating_Data_to_Archive.md)
 *   [KB007: Tier 2 Recharge Workflow](KB007_Tier2_Recharge_Workflow.md)
-*   [KB008: Using NAIRR Pilot](KB008_Using_NAIRR_Pilot.md)
+*   [KB008: Using NAIRR Pilot for AI Research](KB008_Using_NAIRR_Pilot.html) ([Markdown Source](KB008_Using_NAIRR_Pilot.md))
 *   [KB009: Using NSF ACCESS](KB009_Using_NSF_ACCESS.md)
 *   [KB010: Resource Catalog](KB010_Resource_Catalog.md)
 *   [KB011: Access Identity](KB011_Access_Identity.md)
