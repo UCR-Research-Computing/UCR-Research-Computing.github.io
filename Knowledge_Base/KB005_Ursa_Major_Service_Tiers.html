@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KB005: Ursa Major Service Tiers & Allocation Guide | UCR Research Computing</title>
+    <style>
+        :root {
+            --ucr-blue: #003da5;
+            --ucr-gold: #ffb81c;
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-cyan: #38bdf8;
+            --accent-green: #4ade80;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background: linear-gradient(135deg, #002266 0%, #003da5 100%);
+            border-bottom: 4px solid var(--ucr-gold);
+            padding: 35px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            color: #ffffff;
+            margin: 0 0 10px 0;
+            font-size: 2.0rem;
+        }
+        .header .subtitle {
+            color: var(--ucr-gold);
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+        .container {
+            max-width: 950px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+        .badge {
+            display: inline-block;
+            background: var(--ucr-gold);
+            color: #000000;
+            font-weight: bold;
+            font-size: 0.85rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .card h2 {
+            color: var(--accent-cyan);
+            margin-top: 0;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 10px;
+        }
+        code, pre {
+            background: #080c14;
+            color: #4ade80;
+            font-family: "JetBrains Mono", Consolas, monospace;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        pre {
+            padding: 15px;
+            overflow-x: auto;
+            border: 1px solid #334155;
+        }
+        a { color: var(--accent-cyan); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .footer {
+            text-align: center;
+            padding: 25px;
+            color: var(--text-muted);
+            border-top: 1px solid #334155;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="badge">KB005 // UCR KNOWLEDGE BASE</div>
+    <h1>KB005: Ursa Major Service Tiers & Allocation Guide</h1>
+    <div class="subtitle">UC Riverside Information Technology Solutions | Research Computing Directorate</div>
+</div>
+
+<div class="container">
+    <div class="card">
+        <pre style="background:transparent; border:none; color:var(--text-light); font-family:inherit; white-space:pre-wrap;"># KB005: Ursa Major Service Tiers & Allocation Guide
+
+**Scope:** Ursa Major (Google Cloud)
+**Audience:** PIs, Researchers, Lab Managers
+**Last Updated:** Feb 17, 2026 (Operational Alignment)
+
+---
+
+## 1. Overview
+Ursa Major provides a tiered resource model to ensure sustainable access to cloud computing for the UCR research community.
+
+---
+
+## 2. Tier 1: Strategic Allocation (The "Pool")
+**Objective:** Democratize access to strategic cloud tools (AI & Archive) that cannot be delivered on-premise.
+**Cost:** Covered by the Campus Shared Pool (Zero cost to PI).
+
+### Included Resources (Strict Whitelist)
+| Resource | Specification | Notes |
+| :--- | :--- | :--- |
+| **Compute** | Standard general-purpose VMs. |
+| **GKE** | Container orchestration clusters. |
+| **Storage (Object)** | `Coldline` Class | Long-term compliance archiving/backups. |
+| **Storage (Object)** | `Standard` Class | Working datasets (small scale). |
+| **Persistent Disk** | Zonal Balanced | VM Boot and local data disks. |
+| **Database** | Cloud SQL | Postgres HA. |
+| **Analytics** | BigQuery | Enterprise Edition. |
+| **AI** | **Gemini API** | Google Models Only (1.5 Pro/Flash). |
+| **Agent Builder** | Vertex AI Search | Subsidized if within standard vector limits. |
+
+### Excluded (Billable Overages)
+**Warning:** The following are **NOT** covered by the subsidy and will trigger a recharge invoice:
+*   **Marketplace Offerings:** 3rd Party Models (Claude, Llama, Mistral) via Vertex AI.
+*   **High-Performance VMs:** `n1`, `c2`, `m1`, `c3` families.
+*   **Cloud GPUs:** `a2`, `t4`, `l4`, `v100`.
+*   **Bare Metal Solution.**
+
+---
+
+## 3. Tier 2: Commercial Recharge (The "Override")
+**Objective:** Support cloud-native workloads that exceed the pool limits or require specialized infrastructure.
+**Cost:** Full pass-through billing to Grant COA at PSSA List Price via ITS.
+
+**Common Tier 2 Resources:**
+*   **Google Filestore (NFS):** Managed high-performance file shares.
+*   **Cloud GPUs:** All NVIDIA GPU types (A100, T4, L4).
+*   **High-Perf VMs:** `n1`, `c2`, `m1`, `c3` families.
+*   **Marketplace Models:** Claude (Anthropic), Llama (Meta) via Vertex AI.
+*   **Instructional Use:** Large-scale courses (unless using Consumer/Free tiers).
+
+---
+
+## 4. Tier 3: Dedicated Subscription (The "Enterprise")
+**Objective:** Large-scale, multi-year projects requiring their own contractual terms.
+**Cost:** **Direct Contract** between the Lab and Google (with ITS administrative oversight).
+
+---
+
+## 5. Strategic GPU & Compute Offload Hierarchy
+When workloads exceed the Tier 1 Ursa Major limits, we enforce a strict 4-tier hierarchy to maximize local ROI before utilizing national resources:
+
+1.  **UCR HPCC (Primary):** The main and preferred destination for displaced GPU and advanced compute workloads. 
+    *   **Standard Access:** $1,000/year Flat Rate per Lab.
+    *   **Hardware Buy-In (CAPEX):** Purchase hardware; we host it at zero ongoing cost.
+2.  **NRP Nautilus Cluster (Secondary):** A regional/national Kubernetes grid leveraging UCR hardware contributions. Best for containerized GPU tasks that overflow HPCC.
+3.  **NAIRR Pilot (Tertiary):** National AI Research Resource. Used for specialized, high-end AI allocations (e.g., massive H100 arrays, exotic accelerators) when local/regional capacity is insufficient.
+4.  **NSF ACCESS (Quaternary):** Traditional national supercomputing grids reserved for massive-scale jobs requiring thousands of nodes.
+</pre>
+    </div>
+</div>
+
+<div class="footer">
+    UC Riverside Information Technology Solutions | Research Computing Directorate<br>
+    © 2026 Regents of the University of California
+</div>
+
+</body>
+</html>

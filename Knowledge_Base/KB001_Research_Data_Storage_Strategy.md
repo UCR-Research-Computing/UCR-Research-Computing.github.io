@@ -1,5 +1,11 @@
 # KB001: UCR Research Data Storage Strategy
 
+**Scope:** Research Computing Services
+**Audience:** UCR Faculty, Postdocs, Researchers & Students
+**Last Updated:** Aug 19, 2026
+
+---
+
 UCR Research Computing provides a tiered storage ecosystem designed to support the entire lifecycle of your research data.
 
 ---

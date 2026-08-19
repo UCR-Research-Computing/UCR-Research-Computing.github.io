@@ -1,6 +1,12 @@
 # KB 002: Project Activation (Welcome)
-**Category:** AI & Cloud Computing (Ursa Major)
+
+**Scope:** Research Computing Services
 **Audience:** BearHelp Tier 1 Support
+**Last Updated:** Aug 19, 2026
+
+---
+
+**Category:** AI & Cloud Computing (Ursa Major)
 
 **Trigger:** Systems Team confirms a new GCP Project (`ucr-ursa-major-...`) is provisioned.
 

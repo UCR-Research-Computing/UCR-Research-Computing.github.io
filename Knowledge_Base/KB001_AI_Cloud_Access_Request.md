@@ -1,6 +1,12 @@
 # KB 001: New AI/Cloud Access Request
-**Category:** AI & Cloud Computing (Ursa Major)
+
+**Scope:** Research Computing Services
 **Audience:** BearHelp Tier 1 Support
+**Last Updated:** Aug 19, 2026
+
+---
+
+**Category:** AI & Cloud Computing (Ursa Major)
 
 **Trigger:** User asks for "Gemini API Access," "Google Cloud (GCP) Project," or "Ursa Major Access."
 

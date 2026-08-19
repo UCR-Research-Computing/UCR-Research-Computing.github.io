@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accessing CephRDS via Graphical S3 Clients | UCR Research Computing</title>
+    <title>KB006: Clinical & HIPAA Application Hosting Standard (SOM vs. ITS) | UCR Research Computing</title>
     <style>
         :root {
             --ucr-blue: #003da5;
@@ -95,62 +95,60 @@
 <body>
 
 <div class="header">
-    <div class="badge">KB019 // UCR KNOWLEDGE BASE</div>
-    <h1>Accessing CephRDS via Graphical S3 Clients</h1>
+    <div class="badge">KB006 // UCR KNOWLEDGE BASE</div>
+    <h1>KB006: Clinical & HIPAA Application Hosting Standard (SOM vs. ITS)</h1>
     <div class="subtitle">UC Riverside Information Technology Solutions | Research Computing Directorate</div>
 </div>
 
 <div class="container">
     <div class="card">
-        <pre style="background:transparent; border:none; color:var(--text-light); font-family:inherit; white-space:pre-wrap;"># Accessing CephRDS via Graphical S3 Clients
+        <pre style="background:transparent; border:none; color:var(--text-light); font-family:inherit; white-space:pre-wrap;"># KB006: Clinical & HIPAA Application Hosting Standard (SOM vs. ITS)
 
-**Scope:** Research Computing Services
-**Audience:** UCR Faculty, Postdocs, Researchers & Students
-**Last Updated:** Aug 19, 2026
+**Scope:** School of Medicine (SOM) Projects, Clinical Data, HIPAA Workloads
+**Audience:** SOM Researchers, Lab Managers, IT Staff
+**Last Updated:** Feb 13, 2026
 
 ---
 
-layout: default
-title: "Accessing CephRDS via Graphical S3 Clients"
-parent: Knowledge Base
+## 1. Primary Service Provider: SOM IT
+The **School of Medicine Information Technology (SOM IT)** is the designated primary service provider for all applications, databases, and workloads involving:
+*   **Clinical Data** (Patient Health Information - PHI).
+*   **HIPAA Compliance** requirements.
+*   **Medical Center Integrations** (Epic, etc.).
+
+**Infrastructure:** SOM IT maintains specialized, HIPAA-compliant environments (typically **Azure HIPAA Zones**) designed for these workflows. 
+**Contact:** Please coordinate with **Jeff Flogerzi** (IT Architect) and **Eduardo Silva** for architectural review.
+
 ---
 
+## 2. Secondary Provider: ITS Research Computing (GCP)
+**UCR Research Computing (ITS)** can provide cloud infrastructure for SOM projects, but strictly under an **Infrastructure-as-a-Service (IaaS)** model. We do **NOT** provide managed HIPAA application hosting.
 
-![CephRDS S3 Architecture](/assets/images/cephrds_architecture.png)
+### The "GCP Shell" Model
+If SOM IT determines that Google Cloud Platform (GCP) is the preferred host, ITS will:
+1.  **Provision:** A "Project Shell" in the Ursa Major organization.
+2.  **Billing:** Link the project to a **Grant COA** (Direct Recharge). **No subsidies** are available for clinical/HIPAA hosting.
+3.  **Network:** Provide standard campus networking.
 
-While command-line tools like `rclone` offer maximum performance, many researchers prefer the ease of a visual, drag-and-drop interface for managing their data.
+### Researcher Responsibilities (The "Self-Managed" Rule)
+The Research Team (PI and Technical Staff) is fully responsible for:
+*   **Security:** Drafting the Data Security Plan (DSP) and obtaining ISO approval.
+*   **Configuration:** Hardening the OS, configuring firewalls, and managing access controls.
+*   **Compliance:** Ensuring all HIPAA/IRB requirements are met.
+*   **Operations:** Patching, monitoring, and backups.
 
-Since CephRDS uses the S3 protocol, you must use an S3-compatible graphical client. 
+**Liability Statement:**
+ITS Research Computing **does not** access, manage, or certify the compliance of data within these projects. All liability for data breaches or compliance failures rests with the PI and their unit (SOM).
 
-## Mac & Windows: Cyberduck
-[Cyberduck](https://cyberduck.io/) is our officially recommended graphical client for macOS and Windows. It is free, open-source, and extremely reliable for managing S3 connections.
+---
 
-### Connection Settings for Cyberduck:
-1. Open Cyberduck and click **Open Connection**.
-2. From the dropdown at the top, select **Amazon S3**.
-3. **Server:** `rds.ucr.edu`
-4. **Port:** `443` (Ensure the URL shows `https://`)
-5. **Access Key ID:** *Enter your provisioned Ceph Access Key*
-6. **Secret Access Key:** *Enter your provisioned Ceph Secret Key*
-7. Click **Connect**.
+## 3. Decision Matrix
 
-## Linux: Universal S3 UI (us3ui)
-For Linux users, we recommend **Universal S3 UI (us3ui)**. It is a lightweight, native, and fast open-source client that handles large bucket listings effortlessly.
-
-### Installation
-You can download the pre-compiled binary for Linux from the [official GitHub repository](https://github.com/pteich/us3ui/releases).
-
-### Connection Settings for us3ui:
-1. Launch the application and click the **+** button to add a new connection.
-2. **Name:** CephRDS (or your preference)
-3. **Endpoint:** `rds.ucr.edu`
-4. **Access Key:** *Enter your provisioned Ceph Access Key*
-5. **Secret Key:** *Enter your provisioned Ceph Secret Key*
-6. **Bucket Name:** *Enter your specific bucket name (e.g., your_netid-hdd-bucket)*
-7. **Region:** *(Leave blank)*
-8. **Prefix:** *(Leave blank)*
-9. **Use SSL (HTTPS):** **MUST BE CHECKED**
-10. Click **Connect**.
+| Requirement | Hosting Provider |
+| :--- | :--- |
+| **Standard Research (Non-Clinical)** | ITS Research Computing (GCP/HPCC) |
+| **Clinical Data / PHI** | **SOM IT (Azure)** |
+| **Clinical App on GCP** | **Self-Managed** (Billable, PI-Owned) |
 </pre>
     </div>
 </div>

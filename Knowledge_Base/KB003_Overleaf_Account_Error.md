@@ -1,6 +1,12 @@
 # KB 003: "Account Already Registered" Error
-**Category:** Overleaf (LaTeX)
+
+**Scope:** Research Computing Services
 **Audience:** BearHelp Tier 1 Support
+**Last Updated:** Aug 19, 2026
+
+---
+
+**Category:** Overleaf (LaTeX)
 
 **Symptom:** User tries to link UCR SSO to Overleaf but sees: *"The email/institution account you tried to add is already registered."*
 **Cause:** User has two accounts: one `netid@ucr.edu` and one departmental alias (e.g., `@ece.ucr.edu`).

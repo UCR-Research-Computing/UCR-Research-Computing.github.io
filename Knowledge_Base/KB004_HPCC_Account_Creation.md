@@ -1,6 +1,12 @@
 # KB 004: Account Creation / Access
-**Category:** High Performance Computing (HPCC)
+
+**Scope:** Research Computing Services
 **Audience:** BearHelp Tier 1 Support
+**Last Updated:** Aug 19, 2026
+
+---
+
+**Category:** High Performance Computing (HPCC)
 
 **Trigger:** User asks "How do I get an HPCC account?"
 **Resolution:**

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accessing CephRDS via Graphical S3 Clients | UCR Research Computing</title>
+    <title>KB017: Troubleshooting Overleaf Professional Access (SSO Entitlement) | UCR Research Computing</title>
     <style>
         :root {
             --ucr-blue: #003da5;
@@ -95,62 +95,53 @@
 <body>
 
 <div class="header">
-    <div class="badge">KB019 // UCR KNOWLEDGE BASE</div>
-    <h1>Accessing CephRDS via Graphical S3 Clients</h1>
+    <div class="badge">KB017 // UCR KNOWLEDGE BASE</div>
+    <h1>KB017: Troubleshooting Overleaf Professional Access (SSO Entitlement)</h1>
     <div class="subtitle">UC Riverside Information Technology Solutions | Research Computing Directorate</div>
 </div>
 
 <div class="container">
     <div class="card">
-        <pre style="background:transparent; border:none; color:var(--text-light); font-family:inherit; white-space:pre-wrap;"># Accessing CephRDS via Graphical S3 Clients
+        <pre style="background:transparent; border:none; color:var(--text-light); font-family:inherit; white-space:pre-wrap;"># KB017: Troubleshooting Overleaf Professional Access (SSO Entitlement)
 
-**Scope:** Research Computing Services
-**Audience:** UCR Faculty, Postdocs, Researchers & Students
-**Last Updated:** Aug 19, 2026
+**Scope:** Overleaf Professional Subscriptions
+**Audience:** BearHelp Tier 1 Support, Faculty, Graduate Students
+**Last Updated:** March 4, 2026
 
 ---
 
-layout: default
-title: "Accessing CephRDS via Graphical S3 Clients"
-parent: Knowledge Base
+id: kb017-overleaf-troubleshooting
+title: KB017 - Troubleshooting Overleaf Professional Access
+sidebar_label: KB017 - Overleaf Pro Access
 ---
 
 
-![CephRDS S3 Architecture](/assets/images/cephrds_architecture.png)
 
-While command-line tools like `rclone` offer maximum performance, many researchers prefer the ease of a visual, drag-and-drop interface for managing their data.
+---
 
-Since CephRDS uses the S3 protocol, you must use an S3-compatible graphical client. 
+## 1. The Problem
+A user (Faculty or Graduate Student) logs into Overleaf but is defaulted to the "Free" version instead of their entitled "Professional" (Pro) tier. 
 
-## Mac & Windows: Cyberduck
-[Cyberduck](https://cyberduck.io/) is our officially recommended graphical client for macOS and Windows. It is free, open-source, and extremely reliable for managing S3 connections.
+## 2. The Cause
+The Overleaf upgrade process is entirely automated based on UCR Single Sign-On (SSO) affiliation. If a user is not seeing their Pro features, their existing Overleaf account is likely not properly linked to the UCR SSO backend to verify their entitlement attribute.
 
-### Connection Settings for Cyberduck:
-1. Open Cyberduck and click **Open Connection**.
-2. From the dropdown at the top, select **Amazon S3**.
-3. **Server:** `rds.ucr.edu`
-4. **Port:** `443` (Ensure the URL shows `https://`)
-5. **Access Key ID:** *Enter your provisioned Ceph Access Key*
-6. **Secret Access Key:** *Enter your provisioned Ceph Secret Key*
-7. Click **Connect**.
+## 3. Troubleshooting Steps (For Tier 1 Support / Users)
 
-## Linux: Universal S3 UI (us3ui)
-For Linux users, we recommend **Universal S3 UI (us3ui)**. It is a lightweight, native, and fast open-source client that handles large bucket listings effortlessly.
+### Step 1: Force SSO Account Linking
+Advise the user to perform the following steps to manually force the SSO link to verify their affiliation:
 
-### Installation
-You can download the pre-compiled binary for Linux from the [official GitHub repository](https://github.com/pteich/us3ui/releases).
+1.  Log in to your existing Overleaf account.
+2.  Navigate to your Account Settings page: [https://www.overleaf.com/user/settings](https://www.overleaf.com/user/settings)
+3.  **If your `@ucr.edu` email is already listed:** Look for a message prompting you to *"Log in and link your Overleaf account to your SSO identity."* Click it and follow the Duo authentication prompts.
+4.  **If your `@ucr.edu` email is NOT listed:** Add your official UCR email address to the account on this settings page, then confirm it by logging in via SSO and Duo. 
 
-### Connection Settings for us3ui:
-1. Launch the application and click the **+** button to add a new connection.
-2. **Name:** CephRDS (or your preference)
-3. **Endpoint:** `rds.ucr.edu`
-4. **Access Key:** *Enter your provisioned Ceph Access Key*
-5. **Secret Key:** *Enter your provisioned Ceph Secret Key*
-6. **Bucket Name:** *Enter your specific bucket name (e.g., your_netid-hdd-bucket)*
-7. **Region:** *(Leave blank)*
-8. **Prefix:** *(Leave blank)*
-9. **Use SSL (HTTPS):** **MUST BE CHECKED**
-10. Click **Connect**.
+### Step 2: Escalation to Vendor (If Step 1 Fails)
+If the user successfully links their account via SSO but is *still* locked out of the Professional tier, it indicates a deep entitlement mapping error on Overleaf's backend system. 
+
+*   **⚠️ Do not escalate to ITS Systems or Research Computing.** UCR IT does not have manual override controls for individual Overleaf licenses.
+*   **Action:** Instruct the user to email **support@overleaf.com** directly. 
+*   **Message Template:** *"My UCR SSO link is active, but it is not triggering the Pro upgrade entitlement on my account."* 
+*   The Overleaf Support Team will manually verify and map their account to the UCR institutional license.
 </pre>
     </div>
 </div>

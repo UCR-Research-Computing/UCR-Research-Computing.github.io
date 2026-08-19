@@ -1,9 +1,14 @@
 # 🌐 KB008: UCR Research Computing Guide to NAIRR Pilot Allocations & National AI Resources
 
+**Scope:** Research Computing Services
+**Audience:** UCR Faculty, Postdocs, Researchers & Students
+**Last Updated:** August 19, 2026
+
+---
+
 **Category:** AI / Machine Learning / Federal Allocations  
 **Service Tier:** Tier 3 National Infrastructure (Federal Bridge)  
 **Target Audience:** UCR Faculty, Postdocs, and PhD Researchers seeking zero-cost H100 GPU clusters, Cerebras Wafer-Scale Accelerators, and Frontier/DeltaAI allocations.  
-**Last Updated:** August 19, 2026  
 
 ---
 

@@ -1,10 +1,16 @@
+# Accessing CephRDS via Graphical S3 Clients
+
+**Scope:** Research Computing Services
+**Audience:** UCR Faculty, Postdocs, Researchers & Students
+**Last Updated:** Aug 19, 2026
+
 ---
+
 layout: default
 title: "Accessing CephRDS via Graphical S3 Clients"
 parent: Knowledge Base
 ---
 
-# Accessing CephRDS via Graphical S3 Clients
 
 ![CephRDS S3 Architecture](/assets/images/cephrds_architecture.png)
 

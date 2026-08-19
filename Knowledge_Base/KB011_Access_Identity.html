@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accessing CephRDS via Graphical S3 Clients | UCR Research Computing</title>
+    <title>KB011: Access & Identity Guide | UCR Research Computing</title>
     <style>
         :root {
             --ucr-blue: #003da5;
@@ -95,62 +95,48 @@
 <body>
 
 <div class="header">
-    <div class="badge">KB019 // UCR KNOWLEDGE BASE</div>
-    <h1>Accessing CephRDS via Graphical S3 Clients</h1>
+    <div class="badge">KB011 // UCR KNOWLEDGE BASE</div>
+    <h1>KB011: Access & Identity Guide</h1>
     <div class="subtitle">UC Riverside Information Technology Solutions | Research Computing Directorate</div>
 </div>
 
 <div class="container">
     <div class="card">
-        <pre style="background:transparent; border:none; color:var(--text-light); font-family:inherit; white-space:pre-wrap;"># Accessing CephRDS via Graphical S3 Clients
+        <pre style="background:transparent; border:none; color:var(--text-light); font-family:inherit; white-space:pre-wrap;"># KB011: Access & Identity Guide
 
-**Scope:** Research Computing Services
-**Audience:** UCR Faculty, Postdocs, Researchers & Students
-**Last Updated:** Aug 19, 2026
+**Scope:** Authentication Methods
+**Audience:** All Users
+**Last Updated:** Feb 9, 2026
 
 ---
 
-layout: default
-title: "Accessing CephRDS via Graphical S3 Clients"
-parent: Knowledge Base
+## 1. Unified Identity Map
+
+We use different authentication methods optimized for each platform. Your **UCR NetID** is the root identity for all.
+
+| Service | Auth Method | Credentials | How to Login |
+| :--- | :--- | :--- | :--- |
+| **HPCC** | **LDAP** | NetID + Password | `ssh netid@cluster.hpcc.ucr.edu` |
+| **Ursa Major (GCP)** | **SSO (Google)** | UCR Email + MFA | `console.cloud.google.com` |
+| **Nautilus** | **CILogon** | UCR Institutional ID | Web Portal / `kubectl` Token |
+| **ACCESS** | **CILogon** | UCR Institutional ID | `access-ci.org` |
+| **ServiceNow** | **SSO (CAS)** | UCR NetID + MFA | `ucrsupport.service-now.com` |
+
 ---
 
+## 2. Common Issues
 
-![CephRDS S3 Architecture](/assets/images/cephrds_architecture.png)
+### "Permission Denied" on HPCC
+*   **Cause:** Your account may not be added to the Slurm partition or your password expired.
+*   **Fix:** Ensure your PI has paid the subscription. Reset UCR password.
 
-While command-line tools like `rclone` offer maximum performance, many researchers prefer the ease of a visual, drag-and-drop interface for managing their data.
+### "No Projects Found" in Google Cloud
+*   **Cause:** You logged in with `@gmail.com` instead of `@ucr.edu`.
+*   **Fix:** Use an Incognito window and sign in with your official university email.
 
-Since CephRDS uses the S3 protocol, you must use an S3-compatible graphical client. 
-
-## Mac & Windows: Cyberduck
-[Cyberduck](https://cyberduck.io/) is our officially recommended graphical client for macOS and Windows. It is free, open-source, and extremely reliable for managing S3 connections.
-
-### Connection Settings for Cyberduck:
-1. Open Cyberduck and click **Open Connection**.
-2. From the dropdown at the top, select **Amazon S3**.
-3. **Server:** `rds.ucr.edu`
-4. **Port:** `443` (Ensure the URL shows `https://`)
-5. **Access Key ID:** *Enter your provisioned Ceph Access Key*
-6. **Secret Access Key:** *Enter your provisioned Ceph Secret Key*
-7. Click **Connect**.
-
-## Linux: Universal S3 UI (us3ui)
-For Linux users, we recommend **Universal S3 UI (us3ui)**. It is a lightweight, native, and fast open-source client that handles large bucket listings effortlessly.
-
-### Installation
-You can download the pre-compiled binary for Linux from the [official GitHub repository](https://github.com/pteich/us3ui/releases).
-
-### Connection Settings for us3ui:
-1. Launch the application and click the **+** button to add a new connection.
-2. **Name:** CephRDS (or your preference)
-3. **Endpoint:** `rds.ucr.edu`
-4. **Access Key:** *Enter your provisioned Ceph Access Key*
-5. **Secret Key:** *Enter your provisioned Ceph Secret Key*
-6. **Bucket Name:** *Enter your specific bucket name (e.g., your_netid-hdd-bucket)*
-7. **Region:** *(Leave blank)*
-8. **Prefix:** *(Leave blank)*
-9. **Use SSL (HTTPS):** **MUST BE CHECKED**
-10. Click **Connect**.
+### "CILogon Failed" on Nautilus
+*   **Cause:** Institutional Identity mapping issue.
+*   **Fix:** Select "University of California, Riverside" from the dropdown list, NOT "Google".
 </pre>
     </div>
 </div>

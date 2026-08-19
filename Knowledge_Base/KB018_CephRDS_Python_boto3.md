@@ -1,10 +1,16 @@
+# Accessing CephRDS with Python (boto3)
+
+**Scope:** Research Computing Services
+**Audience:** UCR Faculty, Postdocs, Researchers & Students
+**Last Updated:** Aug 19, 2026
+
 ---
+
 layout: default
 title: "Accessing CephRDS with Python (boto3)"
 parent: Knowledge Base
 ---
 
-# Accessing CephRDS with Python (boto3)
 
 CephRDS is fully compatible with the Amazon S3 API, meaning you can interact with it programmatically using standard S3 libraries like Python's `boto3`.
 

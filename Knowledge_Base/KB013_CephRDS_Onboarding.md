@@ -1,8 +1,12 @@
 # KB013: Connecting to CephRDS (S3 Object Storage)
 
-**Category:** Storage & Data
+**Scope:** Research Computing Services
 **Audience:** Researchers, PIs, Students
 **Last Updated:** May 8, 2026
+
+---
+
+**Category:** Storage & Data
 
 ## Overview
 

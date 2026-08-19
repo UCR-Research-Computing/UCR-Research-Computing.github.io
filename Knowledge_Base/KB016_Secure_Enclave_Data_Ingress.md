@@ -1,14 +1,17 @@
----
-id: kb016-secure-enclave-data-ingress
-title: KB016 - Secure Enclave Data Ingress & Decryption Protocol
-sidebar_label: KB016 - Data Ingress Protocol
----
-
 # KB016: Secure Enclave Data Ingress & Decryption Protocol
 
 **Scope:** UCR Secure Research Enclave, NIST 800-171 Rev 2, CMMC Level 2, NIH dbGaP, High-Compliance Data Transfers
 **Audience:** Principal Investigators (PIs), Technical Leads, Research Staff
 **Last Updated:** February 26, 2026
+
+---
+
+id: kb016-secure-enclave-data-ingress
+title: KB016 - Secure Enclave Data Ingress & Decryption Protocol
+sidebar_label: KB016 - Data Ingress Protocol
+---
+
+
 
 ---
 

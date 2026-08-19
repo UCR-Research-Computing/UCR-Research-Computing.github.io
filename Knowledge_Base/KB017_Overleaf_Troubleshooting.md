@@ -1,14 +1,17 @@
----
-id: kb017-overleaf-troubleshooting
-title: KB017 - Troubleshooting Overleaf Professional Access
-sidebar_label: KB017 - Overleaf Pro Access
----
-
 # KB017: Troubleshooting Overleaf Professional Access (SSO Entitlement)
 
 **Scope:** Overleaf Professional Subscriptions
 **Audience:** BearHelp Tier 1 Support, Faculty, Graduate Students
 **Last Updated:** March 4, 2026
+
+---
+
+id: kb017-overleaf-troubleshooting
+title: KB017 - Troubleshooting Overleaf Professional Access
+sidebar_label: KB017 - Overleaf Pro Access
+---
+
+
 
 ---
 

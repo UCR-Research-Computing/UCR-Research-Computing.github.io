@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accessing CephRDS via Graphical S3 Clients | UCR Research Computing</title>
+    <title>KB007: Using Ursa Major Archive (Coldline Strategy) | UCR Research Computing</title>
     <style>
         :root {
             --ucr-blue: #003da5;
@@ -95,62 +95,93 @@
 <body>
 
 <div class="header">
-    <div class="badge">KB019 // UCR KNOWLEDGE BASE</div>
-    <h1>Accessing CephRDS via Graphical S3 Clients</h1>
+    <div class="badge">KB007 // UCR KNOWLEDGE BASE</div>
+    <h1>KB007: Using Ursa Major Archive (Coldline Strategy)</h1>
     <div class="subtitle">UC Riverside Information Technology Solutions | Research Computing Directorate</div>
 </div>
 
 <div class="container">
     <div class="card">
-        <pre style="background:transparent; border:none; color:var(--text-light); font-family:inherit; white-space:pre-wrap;"># Accessing CephRDS via Graphical S3 Clients
+        <pre style="background:transparent; border:none; color:var(--text-light); font-family:inherit; white-space:pre-wrap;"># KB007: Using Ursa Major Archive (Coldline Strategy)
 
-**Scope:** Research Computing Services
-**Audience:** UCR Faculty, Postdocs, Researchers & Students
-**Last Updated:** Aug 19, 2026
+**Scope:** Long-Term Data Retention
+**Audience:** Researchers needing compliance archiving or migrating "Zombie" storage.
+**Last Updated:** Feb 9, 2026
 
 ---
 
-layout: default
-title: "Accessing CephRDS via Graphical S3 Clients"
-parent: Knowledge Base
+## 1. Overview
+The **Ursa Major Archive Tier** utilizes Google Cloud **Coldline Storage**. It is designed for data that you need to keep (for grant compliance, reproducibility, or backup) but do not access frequently.
+
+**Key Rule:** Accessing (reading) Coldline data incurs a **Retrieval Fee**. Do not use this for active analysis data. Use it for data you access less than once per quarter.
+
 ---
 
+## 2. Cost Advantage
+*   **Standard Storage:** ~$0.020 per GB/month ($20/TB).
+*   **Coldline Archive:** ~$0.004 per GB/month ($4/TB).
+*   **Savings:** Moving 10 TB from Standard to Coldline saves **~$160/month** ($1,920/year).
 
-![CephRDS S3 Architecture](/assets/images/cephrds_architecture.png)
+---
 
-While command-line tools like `rclone` offer maximum performance, many researchers prefer the ease of a visual, drag-and-drop interface for managing their data.
+## 3. How to Archive Data
 
-Since CephRDS uses the S3 protocol, you must use an S3-compatible graphical client. 
+### Method A: Converting an Existing Bucket (The "In-Place" Archive)
+If you have a Standard bucket (`gs://my-lab-data`) and want to convert it to Archive:
 
-## Mac & Windows: Cyberduck
-[Cyberduck](https://cyberduck.io/) is our officially recommended graphical client for macOS and Windows. It is free, open-source, and extremely reliable for managing S3 connections.
+1.  **Go to GCP Console:** Storage Browser.
+2.  **Select Bucket:** Click the bucket name.
+3.  **Configuration:** Go to the "Configuration" tab.
+4.  **Edit Storage Class:** Change Default Storage Class to **Coldline**.
+    *   *Note:* This applies to *new* objects. To change *existing* objects, use a Lifecycle Rule (Method B).
 
-### Connection Settings for Cyberduck:
-1. Open Cyberduck and click **Open Connection**.
-2. From the dropdown at the top, select **Amazon S3**.
-3. **Server:** `rds.ucr.edu`
-4. **Port:** `443` (Ensure the URL shows `https://`)
-5. **Access Key ID:** *Enter your provisioned Ceph Access Key*
-6. **Secret Access Key:** *Enter your provisioned Ceph Secret Key*
-7. Click **Connect**.
+### Method B: Lifecycle Rule (Automatic Transition)
+Best for moving data that hasn't been touched in 30 days.
 
-## Linux: Universal S3 UI (us3ui)
-For Linux users, we recommend **Universal S3 UI (us3ui)**. It is a lightweight, native, and fast open-source client that handles large bucket listings effortlessly.
+**CLI Command:**
+Create a JSON file `lifecycle.json`:
+```json
+{
+  "rule": [
+    {
+      "action": {
+        "type": "SetStorageClass",
+        "storageClass": "COLDLINE"
+      },
+      "condition": {
+        "age": 30,
+        "matchesStorageClass": ["STANDARD"]
+      }
+    }
+  ]
+}
+```
 
-### Installation
-You can download the pre-compiled binary for Linux from the [official GitHub repository](https://github.com/pteich/us3ui/releases).
+**Apply it:**
+```bash
+gsutil lifecycle set lifecycle.json gs://my-bucket-name
+```
 
-### Connection Settings for us3ui:
-1. Launch the application and click the **+** button to add a new connection.
-2. **Name:** CephRDS (or your preference)
-3. **Endpoint:** `rds.ucr.edu`
-4. **Access Key:** *Enter your provisioned Ceph Access Key*
-5. **Secret Key:** *Enter your provisioned Ceph Secret Key*
-6. **Bucket Name:** *Enter your specific bucket name (e.g., your_netid-hdd-bucket)*
-7. **Region:** *(Leave blank)*
-8. **Prefix:** *(Leave blank)*
-9. **Use SSL (HTTPS):** **MUST BE CHECKED**
-10. Click **Connect**.
+### Method C: Direct Upload to Archive
+When uploading new backups, tag them immediately.
+
+```bash
+# Upload folder
+gsutil -m cp -r -c COLDLINE ./my_local_data/ gs://my-archive-bucket/
+```
+
+---
+
+## 4. Recovering from "Administrative Lock" (Zombie Storage)
+If your project was Locked/Suspended due to orphaned disks:
+
+1.  **Snapshot:** We will create a snapshot of your disk.
+2.  **Export:** We (or you) can export that snapshot to a Coldline Bucket.
+3.  **Delete Disk:** The expensive compute disk is deleted.
+4.  **Result:** You pay for cheap Archive storage ($4/TB) instead of expensive Provisioned Disk ($100/TB).
+
+**To Request Recovery:**
+File a ticket with Research Computing requesting "Snapshot Export to Coldline" for your locked project.
 </pre>
     </div>
 </div>
