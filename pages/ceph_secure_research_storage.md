@@ -21,7 +21,7 @@ A Ceph storage system offers a host of benefits and functionalities critical for
   - *Fault Tolerance:* Built-in replication and erasure coding ensure data durability and minimize downtime in case of hardware failures.
 
 - **Multi-Protocol Access and Seamless Integration:**
-  - *Protocol Support:* Provides access via industry-standard protocols such as NFS, CIFS/SMB, and S3, ensuring easy integration with your existing research tools.
+  - *Protocol Support:* Provides access via S3-compatible object storage APIs, ensuring easy integration with your existing research tools.
   - *APIs and Automation:* Enables programmatic access and automation through APIs and tools like Rclone, simplifying integration with HPC clusters and cloud-based analytics.
 
 - **Enhanced Data Security:**
@@ -47,7 +47,7 @@ A Ceph storage system offers a host of benefits and functionalities critical for
 ### Secure, Central, Campus-Wide, Research Storage
 
 - **Scalable Storage:** 2.2PB of usable storage for advanced data processing.
-- **Wide Connectivity:** Secure access via NFS, CIFS/SMB, and S3 interfaces ensures compatibility with a variety of devices and systems.
+- **Wide Connectivity:** Secure access via S3 interfaces ensures compatibility with a variety of research platforms and analysis pipelines.
 - **Transparent Pricing:** Additional storage is available at a competitive rate of $40 per TB per year, or a one-time purchase of $200 per Usable TB.
 
 ### Ceph RDS Feature Table

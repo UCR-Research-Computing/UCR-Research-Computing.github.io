@@ -28,7 +28,7 @@ CephRDS is our next-generation, on-premise storage platform designed specificall
 *   **Status:** Currently in **Pilot**. Ideal for CAREER grants and labs needing high-capacity repositories.
 *   **Scalability:** Starting at 2 PB and designed to scale seamlessly.
 *   **Security:** Built on NVMe-backed storage with 8k + 4m erasure coding and robust encryption.
-*   **Accessibility:** Supports NFS and S3; integrates directly with the HPCC.
+*   **Accessibility:** S3 object storage; integrates directly with the HPCC.
 
 ### SDSC Qumulo – Universal Scale Storage
 *   **Use Case:** Suited for everyday research needs, similar to an office NAS.

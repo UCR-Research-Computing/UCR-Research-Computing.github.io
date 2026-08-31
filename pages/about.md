@@ -127,7 +127,7 @@ Ceph RDS offers the following key benefits:
 - **Scalability**: Starting with an initial capacity of 2 PB, the Ceph RDS can seamlessly scale to accommodate growing data storage requirements.
 - **Data Integrity and Security**: With 8k + 4m erasure coding and encryption, Ceph RDS ensures the highest levels of data integrity and security, making it suitable for sensitive research data.
 - **Performance**: Leveraging high IOPS NVMe-backed storage pools, Ceph RDS delivers the performance required for data-intensive research workloads.
-- **Accessibility**: Ceph RDS supports a wide range of access protocols, including NFS, CIFS/SMB, S3, and various file transfer protocols, enabling seamless integration with existing research 
+- **Accessibility**: Ceph RDS supports modern S3 object access protocols and file transfer tools, enabling seamless integration with existing research 
 - **Campus Integration**: Ceph RDS connects directly to the High-Performance Computing Center (HPCC), campus clusters, and centers providing a tightly integrated storage solution for computational research and analysis.
 
 By establishing Ceph RDS as the foundation for research data storage, UCR ensures that researchers have access to a robust, secure, and scalable storage solution that can support their data-intensive projects.
