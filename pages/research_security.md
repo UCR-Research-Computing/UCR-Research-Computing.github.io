@@ -20,48 +20,6 @@ We encourage researchers to connect with the Research Computing Team to explore 
 <button id="ai-guide-toggle">A Guide to the Safe and Secure Use of Artificial Intelligence in Research</button>
 <div id="ai-guide-content" style="display: none;">
 
-### Introduction
-Artificial Intelligence (AI) presents transformative opportunities for research across all disciplines at UC Riverside. From analyzing vast datasets to generating novel hypotheses, AI tools can accelerate discovery and innovation. However, the use of AI also introduces new challenges related to data security, privacy, and research integrity.
-This document provides a comprehensive guide for all UCR researchers on the approved use of AI models and infrastructure. It is designed to help you navigate the complexities of using AI in your work while ensuring compliance with University of California policies, particularly the UC Information Security Policy IS-3, and protecting the confidentiality and integrity of of your research data.
-
-### Approved AI Models
-Researchers have access to a wide range of AI models. The appropriate model for your research will depend on your specific needs, the nature of your data, and the approved infrastructure you are using.
-
-#### Closed-Source Models
-**Gemini (via Google Cloud):** Google's Gemini family of models is approved for use within the UCR-managed Google Cloud environment ("Ursa Major"). These models offer state-of-the-art capabilities for a variety of tasks.
-*Data Privacy:* When used within the UCR Google Cloud environment, your data is not used to train Google's models, and your prompts and data remain within the UCR tenant.
-
-#### Open-Source Models
-**Via Vertex AI Model Garden on Google Cloud:** UCR's "Ursa Major" Google Cloud environment provides access to a curated list of open-source models through the Vertex AI Model Garden. This is the recommended way to use open-source models for most research.
-**On-Premise (HPCC or a private system):** Researchers can run open-source models on the UCR High-Performance Computing Center (HPCC) or on their own secure, departmentally-managed systems (subject to strict physical location guidelines).
-
-### What is Vertex AI?
-Vertex AI is Google Cloud's unified machine learning (ML) platform, designed to help researchers and developers build, deploy, and scale ML models more efficiently. It provides a comprehensive suite of tools that support the entire ML lifecycle, from data preparation to model deployment and management, all within a single interface. For UCR researchers, it is the primary gateway to accessing advanced AI capabilities on Google Cloud.
-
-**Key Capabilities of Vertex AI:**
-- **Unified Environment:** It brings together all of Google's cloud services for building ML under one roof, eliminating the need to piece together separate services.
-- **Data Preparation & Labeling:** Provides tools to ingest, analyze, and prepare your datasets for training, including data labeling services to create high-quality training data.
-- **AutoML & Custom Training:** Researchers can use AutoML to automatically train high-quality models with minimal effort and ML expertise, or use Custom Training to have full control over the model architecture and training process using popular frameworks like TensorFlow, PyTorch, and Scikit-learn.
-- **Model Garden:** As mentioned, this is a central repository of pre-trained and open-source models (including from Hugging Face) that can be easily deployed or fine-tuned for specific research tasks.
-- **MLOps Tools:** Vertex AI includes a robust set of MLOps (Machine Learning Operations) features, such as pipelines for automating workflows, a model registry for versioning and management, and monitoring tools to track model performance and detect drift. This helps ensure that your research is reproducible, scalable, and manageable over time.
-- **Generative AI Studio:** A dedicated environment within Vertex AI for prototyping and customizing generative AI models like Gemini. Researchers can design prompts, tune models with their own data, and deploy them for use in applications.
-
-### Approved Infrastructure and Data Usage
-The infrastructure you use to run AI models is directly tied to the level of data protection required for your research. **UCR does not support or approve the use of standalone workstations in individual offices for highly sensitive (P3/P4) data.**
-
-| Infrastructure | Approved Models | P1 Data | P2 Data | P3 Data | P4 Data |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **UCR "Ursa Major" Google Cloud (Tier 1)** | Gemini, Vertex AI | ✅ | ✅ | ❌ | ❌ |
-| **UCR Google Cloud (Tier 2 Recharge)** | Gemini, Vertex AI | ✅ | ✅ | ✅ | ✅ |
-| **UCR High-Performance Computing Center (HPCC)** | Open-Source Models | ✅ | ✅ | ✅ | ❌ |
-| **CHASS Server Room (On-Premise)** | Open-Source Models | ✅ | ✅ | ✅ | ✅ |
-
-**⚠️ Important Considerations for P3/P4 Data:**
-- **P3-P4 Data in Google Cloud:** Standard sensitive research data must go into a GCP Tier 2 Direct Recharge project. It is not covered by the subsidized Tier 1 pool.
-- **P3-P4 Data On-Premise:** On-premise hosting for P3/P4 data is strictly limited to the secure CHASS Server Room for researchers within the College of Humanities, Arts, and Social Sciences (CHASS).
-- **Federal High-Compliance (CMMC, NIST 800-171, NIH dbGaP):** These workloads are restricted exclusively to the **UCR Secure Enclave** (a specialized Tier 2 GCP environment).
-
-</div>
 
 #### Understanding your Research Security
 
@@ -83,18 +41,6 @@ Many federal grant proposals now include strict requirements for data security. 
 Navigating these requirements is complex. If your grant proposal or DUA mentions NIST 800-171 Rev 2, CMMC Level 2, or NIH dbGaP, please contact us immediately. We will work with you and the Information Security Office to develop the required Data Security Plan (DSP).
 
 **Important:** Due to the significant security and monitoring overhead, the UCR Secure Enclave is a premium **Tier 2 (Direct Recharge)** service and requires a grant-funded Chart of Accounts (COA). 
-
-#### Computing Resources and Security Classifications
-
-| Resource Type | Resource | Description | Top Security Classification | Remarks |
-|---------------|----------|-------------|-----------------------------|---------|
-| Compute | **High-Performance Computing Center (HPCC)** | A key resource for intensive computational tasks. | P3 | Suitable for a broad range of research workflows. |
-| Compute | **GCP Tier 2 Recharge** | Standard secure Google Cloud project shells. | P4 | Requires a grant-funded COA. Standard P3/P4 data. |
-| Compute | **UCR Secure Enclave (GCP)** | Highly specialized, locked-down GCP environment. | P4 / NIST 800-171 Rev 2 / CMMC Level 2 | Tier 2 Recharge. Required for NIH dbGaP, DoD, DOE. |
-| Compute | **CHASS Server Room** | On-premise secure physical hosting. | P4 | Strictly limited to CHASS researchers. No office workstations. |
-| Storage | **HPCC-GPFS Cluster Storage** | High-performance cluster storage attached to the HPCC. | P3 | High-speed, parallel computing storage suitable for compute-intensive tasks. |
-| Storage | **Ceph Secure Research Storage** | Scalable, resilient storage solution designed for diverse research needs. | P3 | Upcoming enhancement to UCR's research computing infrastructure. |
-| Storage | **UCR Google Drive** | Cloud-based storage solutions for collaboration. | P3 | P3 data allowed with strict sharing controls. P4 generally prohibited unless authorized by ISO. |
 
 #### Collaboration for Security
 
