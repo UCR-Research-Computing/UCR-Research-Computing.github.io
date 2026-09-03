@@ -12,7 +12,6 @@ At the University of California, Riverside (UCR), ensuring the security of resea
 
 We assist researchers in several key areas:
 
-- **Understanding Your Research Security**: We delve into the specifics of your research to identify any applicable regulations, requirements, and necessary controls.
 - **Data Security Plan**: We aid in developing a Data Security Plan for your project. The DSP outlines Roles, Responsibilities, Guidelines, Processes, and Controls essential for safeguarding your data. For full details on the DSP intake process, see our [UCR Data Security Plans](../Knowledge_Base/UCR_Data_Security_Plans.md) page.
 - **Implementation**: Our team is here to help implement the plans or controls developed, ensuring your research data is secure within approved environments.
 
