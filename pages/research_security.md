@@ -17,10 +17,6 @@ We assist researchers in several key areas:
 
 We encourage researchers to connect with the Research Computing Team to explore how we can support your data security needs.
 
-<button id="ai-guide-toggle">A Guide to the Safe and Secure Use of Artificial Intelligence in Research</button>
-<div id="ai-guide-content" style="display: none;">
-
-
 #### Understanding your Research Security
 
 Understanding and adhering to security policies and regulations is critical for safeguarding research data at UCR. All research data falls under a classification of security level ranging from P1 to P4, refer to the detailed descriptions of each level on the UCOP Security Classification page: [UCOP Information Security Classification Standards](https://security.ucop.edu/policies/institutional-information-and-it-resource-classification.html):
