@@ -67,7 +67,6 @@ By providing these no-cost services, UCR aims to remove financial barriers to re
 * [RCSAS Local Cluster Support](rcsas.md): Custom support for researcher clusters, labs, and storage systems.
 * [Research Computing Research Facilitation and Support](research_facilitation.md): Assistance with research projects grants grants.
 * [Ursa Major Support](ursa_major.md): Collaboration, training, and support for cloud-based research systems.
-* [Ceph Secure Research Storage](ceph_secure_research_storage.md): Secure central research storage solution for research data on campus.
 
 ### Condo Model
 
