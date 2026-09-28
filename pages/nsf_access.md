@@ -19,6 +19,9 @@ ACCESS resource providers offer a wide range of cyberinfrastructure assets and s
 **Specialized support** – Tools to streamline your research: science gateways, hosted workflow, remote access web portal, and more.
 
 
+### Step-by-Step Guide
+New to ACCESS? Our knowledge base article walks through the whole process on your own, from creating an account to launching your first Jetstream2 virtual machine: [KB009: Using NSF ACCESS and Jetstream2](../Knowledge_Base/KB009_Using_NSF_ACCESS.md).
+
 ### Key Links
 - [Allocations](https://allocations.access-ci.org/): Explore how to request computational resources.
 - [Support](https://support.access-ci.org/): Find assistance and helpdesk services.

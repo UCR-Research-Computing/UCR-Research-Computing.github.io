@@ -2,7 +2,7 @@
 
 **Scope:** All Compute & Storage Services
 **Audience:** All Researchers
-**Last Updated:** Feb 22, 2026 (Strategic Hierarchy Alignment)
+**Last Updated:** September 28, 2026 (NSF ACCESS and Jetstream2 entry)
 
 ---
 
@@ -41,7 +41,8 @@
 *   **Access:** Application via nairrpilot.org.
 
 ### 4. 🇺🇸 NSF ACCESS (Quaternary)
-*Traditional national supercomputing grids reserved for massive-scale jobs.*
-**Best For:** Extreme-scale HPC requiring thousands of compute nodes.
-*   **Cost:** Free (Credit Exchange).
-*   **Access:** Application via access-ci.org.
+*National computing resources funded by NSF: supercomputers, GPUs, and the Jetstream2 research cloud.*
+**Best For:** Always-on VMs you fully control (Jetstream2), servers and web services with public IPs, and HPC capacity beyond HPCC.
+*   **Hardware:** Jetstream2 CPU, Large Memory and A100 GPU VMs; national HPC systems such as Anvil, Expanse, Stampede3 and Delta.
+*   **Cost:** Free (start with an Explore project: up to 400,000 credits, decision usually by the next business day).
+*   **Access:** Self-service via access-ci.org. Step-by-step guide: [KB009: Using NSF ACCESS and Jetstream2](KB009_Using_NSF_ACCESS.md).
