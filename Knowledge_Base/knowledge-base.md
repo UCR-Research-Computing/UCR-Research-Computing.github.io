@@ -24,7 +24,7 @@ Welcome to the UCR Research Computing Knowledge Base. Explore our comprehensive 
 - [KB007: Migrating Data to Archive](KB007_Migrating_Data_to_Archive.md)
 - [KB007: Tier 2 Recharge Workflow](KB007_Tier2_Recharge_Workflow.md)
 - [KB008: Using NAIRR Pilot](KB008_Using_NAIRR_Pilot.md)
-- [KB009: Using NSF ACCESS](KB009_Using_NSF_ACCESS.md)
+- [KB009: Using NSF ACCESS and Jetstream2](KB009_Using_NSF_ACCESS.md)
 - [KB010: Resource Catalog](KB010_Resource_Catalog.md)
 - [KB011: Access Identity](KB011_Access_Identity.md)
 - [KB013: CephRDS Onboarding](KB013_CephRDS_Onboarding.md)

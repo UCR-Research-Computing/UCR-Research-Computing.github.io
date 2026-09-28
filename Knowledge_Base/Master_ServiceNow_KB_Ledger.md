@@ -5,7 +5,7 @@
 organization: UC Riverside Research Computing & ITS
 target_portal: ServiceNow Knowledge Base (help.ucr.edu)
 status: Master Publishing Index (KB001 - KB020)
-last_updated: August 12, 2026
+last_updated: September 28, 2026
 ---
 ```
 
@@ -21,7 +21,7 @@ last_updated: August 12, 2026
 | **KB006** | SOM Clinical Applications & Data Security | Security & Clinical | SOM / Health Researchers | Markdown, HTML | 🟢 **Published** |
 | **KB007** | Tier 2 Google Cloud Recharge & MOU Workflow | Cloud & Finance | PIs, Department Chairs | Markdown, HTML | 🟢 **Published** |
 | **KB008** | Accessing NAIRR Pilot GPU Allocations | AI & HPC | AI / Machine Learning PIs | Markdown, HTML | 🟢 **Published** |
-| **KB009** | NSF ACCESS Supercomputing Allocations | AI & HPC | NSF-Funded Researchers | Markdown, HTML | 🟢 **Published** |
+| **KB009** | NSF ACCESS and Jetstream2 Allocations | AI & HPC | All UCR Researchers | Markdown, HTML | 🟢 **Published** |
 | **KB010** | Research Computing Resource Catalog | General Directory | All UCR Faculty & Staff | Markdown, HTML | 🟢 **Published** |
 | **KB011** | Identity & Access Management for Research | IAM & Security | Department Admins, PIs | Markdown, HTML | 🟢 **Published** |
 | **KB012** | Storage Classes & Archival Data Lifecycle | Storage & Data | PIs, Data Managers | Markdown, HTML | 🟢 **Published** |
