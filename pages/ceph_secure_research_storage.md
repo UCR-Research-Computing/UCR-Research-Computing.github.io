@@ -33,7 +33,7 @@ A Ceph storage system offers a host of benefits and functionalities critical for
   - *Automated Backups:* Regular, automated backups ensure your data is consistently preserved and available for recovery.
 
 - **Cost Efficiency and Transparency:**
-  - *Pay-As-You-Go Pricing:* Transparent rental pricing at $40 per TB per year for additional storage. Researchers can also 'purchase' permanent capacity at $200 per Usable TB for the 5-year hardware lifecycle.
+  - *Pay-As-You-Go Pricing:* Transparent rental pricing at $50 per TB per year for additional storage. Researchers can also 'purchase' permanent capacity at $250 per Usable TB for the 5-year hardware lifecycle.
   - *Resource Optimization:* Centralized storage management minimizes redundant data storage and streamlines resource allocation.
 
 - **Support for Advanced Research Workflows:**
@@ -48,16 +48,16 @@ A Ceph storage system offers a host of benefits and functionalities critical for
 
 - **Scalable Storage:** 2.2PB of usable storage for advanced data processing.
 - **Wide Connectivity:** Secure access via S3 interfaces ensures compatibility with a variety of research platforms and analysis pipelines.
-- **Transparent Pricing:** Additional storage is available at a competitive rate of $40 per TB per year, or a one-time purchase of $200 per Usable TB.
+- **Transparent Pricing:** Additional storage is available at a competitive rate of $50 per TB per year, or a one-time purchase of $250 per Usable TB.
 
 ### Ceph RDS Feature Table
 
 | Feature                              | Ceph RDS                                          | Description                                                                                                     |
 |--------------------------------------|---------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| Cost for Additional Storage (Rent)   | $40/TB/year                                       | Cost-effective rental pricing for additional storage at $40 per TB per year.                                    |
-| Cost for Permanent Storage (Purchase)| $200/Usable TB                                    | One-time equipment purchase funding the hardware lifecycle.                                                     |
+| Cost for Additional Storage (Rent)   | $50/TB/year                                       | Cost-effective rental pricing for additional storage at $50 per TB per year.                                    |
+| Cost for Permanent Storage (Purchase)| $250/Usable TB                                    | One-time equipment purchase funding the hardware lifecycle.                                                     |
 | How to Purchase                      | Allocated based on project needs                  | Storage is provided based on individual project requirements for optimal resource utilization.                  |
-| Normalized Cost for 1TB / Annually   | $40                                               | The normalized rental cost for 1TB of storage per year is $40, generating the lifecycle refresh fund.           |
+| Normalized Cost for 1TB / Annually   | $50                                               | The normalized rental cost for 1TB of storage per year is $50, generating the lifecycle refresh fund.           |
 | Replicated / Backed Up               | Yes (8k + 4m erasure coding)                      | Data is secured using advanced erasure coding, ensuring robust protection and data integrity.                     |
 | Durability / Availability            | High (distributed across multiple data centers)   | A distributed architecture ensures high durability and continuous availability.                                 |
 | Access Protocols                     |                                                   |                                                                                                                 |
