@@ -1,0 +1,6 @@
+{%- comment -%} Provenance line for service, policy and KB pages. {%- endcomment -%}
+<div class="reviewed">
+  <span><i class="fa-solid fa-user-check"></i> Owner: {{ page.owner | default: "Research Computing" }}</span>
+  <span><i class="fa-solid fa-calendar-check"></i> Reviewed: {% if page.reviewed %}{{ page.reviewed | date: "%-d %b %Y" }}{% else %}not yet reviewed{% endif %}</span>
+  {% if page.governed_by %}<span><i class="fa-solid fa-file-contract"></i> Governed by: {% if page.governed_url %}<a href="{{ page.governed_url }}">{{ page.governed_by }}</a>{% elsif page.governed_url_rel %}<a href="{{ page.governed_url_rel | relative_url }}">{{ page.governed_by }}</a>{% else %}{{ page.governed_by }}{% endif %}</span>{% endif %}
+</div>

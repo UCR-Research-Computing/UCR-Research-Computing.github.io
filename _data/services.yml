@@ -1,0 +1,175 @@
+# Catalog of services. Drives the home catalog, the finder and the hub pages.
+# t (tags used by filters/finder):
+#   work: batch gpu interactive cloudai containers webservice
+#   data: p12 p34
+#   fund: lab norecharge grant
+#   kind: compute storage secure national help
+# status: Available | Pilot | By review | By application | External
+- id: hpcc
+  name: HPCC cluster
+  url: /services/hpcc/
+  icon: fa-solid fa-server
+  group: Campus compute
+  blurb: "The campus shared cluster for batch jobs, MPI, pipelines and GPU work, scheduled with Slurm. Lab subscription."
+  tags: [Batch, GPU, Slurm]
+  status: Available
+  cost: Lab subscription
+  data: P1-P2
+  terms: HPCC rate sheet
+  t: "compute batch gpu interactive p12 lab"
+- id: ursa-major
+  name: Ursa Major (Google Cloud)
+  url: /services/ursa-major/
+  icon: fa-solid fa-cloud
+  group: Cloud
+  blurb: "AI model access, exotic hardware not available on campus, and archive storage. Other cloud work as recharged projects."
+  tags: [AI access, Exotic hardware, Archive]
+  status: By review
+  cost: Tier 1 + recharge
+  data: Varies
+  terms: Ursa Major guidelines
+  t: "compute cloudai gpu batch webservice interactive storage p12 norecharge lab grant"
+- id: nsf-access
+  name: NSF ACCESS
+  url: /services/nsf-access/
+  icon: fa-solid fa-flag-usa
+  group: National
+  blurb: "National allocations on NSF-funded systems, by application. We can help you apply."
+  tags: [Allocation, GPU, Cloud VMs]
+  status: By application
+  cost: No UCR recharge
+  data: P1-P2
+  terms: ACCESS policies
+  t: "compute national batch gpu interactive cloudai p12 norecharge"
+- id: nairr
+  name: NAIRR Pilot
+  url: /services/nairr/
+  icon: fa-solid fa-brain
+  group: National
+  blurb: "The National AI Research Resource pilot: competitive allocations for AI research."
+  tags: [Allocation, AI, GPU]
+  status: By application
+  cost: No UCR recharge
+  data: P1-P2
+  terms: NAIRR Pilot terms
+  t: "compute national gpu cloudai p12 norecharge"
+- id: nautilus
+  name: NRP Nautilus
+  url: /services/nautilus/
+  icon: fa-solid fa-network-wired
+  group: National
+  blurb: "A shared Kubernetes platform for research and education, run by the National Research Platform."
+  tags: [Containers, GPU, Jupyter]
+  status: External
+  cost: No UCR recharge
+  data: P1 only
+  terms: NRP policies
+  t: "compute national containers gpu interactive p12 norecharge"
+- id: osg
+  name: OSG / OSPool
+  url: /services/osg/
+  icon: fa-solid fa-diagram-project
+  group: National
+  blurb: "Distributed high-throughput computing for many small, independent jobs."
+  tags: [High throughput, Batch]
+  status: External
+  cost: No UCR recharge
+  data: P1-P2
+  terms: OSG policies
+  t: "compute national batch p12 norecharge"
+- id: cloud-discounts
+  name: Cloud accounts (AWS, GCP, Azure)
+  url: /services/cloud-accounts/
+  icon: fa-solid fa-cloud-arrow-up
+  group: Cloud
+  blurb: "Your own cloud account under the University of California agreements, billed to your funds through ITS."
+  tags: [Cloud, Recharge]
+  status: Available
+  cost: Recharge + admin fees
+  data: Varies
+  terms: ITS MOU
+  t: "compute cloudai webservice storage p12 lab grant"
+- id: cephrds
+  name: CephRDS
+  url: /services/cephrds/
+  icon: fa-solid fa-hard-drive
+  group: Storage
+  blurb: "On-campus project storage for lab data, instruments and sequencing libraries, with S3 access."
+  tags: [Object (S3), Project data]
+  status: Pilot
+  cost: Recharge
+  data: P1-P2
+  terms: CephRDS terms (pilot)
+  t: "storage p12 lab grant"
+- id: hpcc-gpfs
+  name: HPCC storage (GPFS)
+  url: /services/hpcc-storage/
+  icon: fa-solid fa-bolt
+  group: Storage
+  blurb: "Fast parallel storage attached to the cluster, for data being actively computed on."
+  tags: [Working data, Parallel]
+  status: Available
+  cost: Recharge
+  data: P1-P2
+  terms: HPCC rate sheet
+  t: "storage batch p12 lab"
+- id: cloud-archive
+  name: Cloud archive (Ursa Major)
+  url: /services/cloud-archive/
+  icon: fa-solid fa-box-archive
+  group: Storage
+  blurb: "Long-term cloud archive for data you must keep but rarely read. Eligibility and limits apply."
+  tags: [Archive, Retention]
+  status: By review
+  cost: See terms
+  data: P1-P2
+  terms: Ursa Major guidelines
+  t: "storage p12 norecharge"
+- id: drive
+  name: Google Drive and OneDrive
+  url: /services/google-drive/
+  icon: fa-brands fa-google-drive
+  group: Storage
+  blurb: "Campus collaboration storage for documents, manuscripts and small files. Managed by ITS."
+  tags: [Collaboration, Documents]
+  status: Available
+  cost: Included
+  data: Check ITS guidance
+  terms: ITS storage page
+  t: "storage p12 norecharge"
+- id: enclave
+  name: Secure research enclave
+  url: /services/secure-enclave/
+  icon: fa-solid fa-lock
+  group: Sensitive data
+  blurb: "A controlled cloud environment for NIST SP 800-171 and CMMC Level 2 work, after review, an approved data security plan and training."
+  tags: [Regulated data, By review]
+  status: By review
+  cost: Setup + annual fee + usage
+  data: Regulated (by review)
+  terms: Enclave guide and MOU
+  t: "secure compute storage p34 grant"
+- id: consulting
+  name: Consulting and facilitation
+  url: /help/
+  icon: fa-solid fa-comments
+  group: Expert help
+  blurb: "Talk through a project, a grant, a data plan or a stuck workflow with the team. Office hours weekly."
+  tags: [Consultation, Office hours]
+  status: Available
+  cost: Ask us
+  data: Any
+  terms: Ask us
+  t: "help batch gpu interactive cloudai containers webservice p12 p34 norecharge lab grant"
+- id: rcsas
+  name: Lab system administration (RCSAS)
+  url: /services/rcsas/
+  icon: fa-solid fa-screwdriver-wrench
+  group: Expert help
+  blurb: "Design and administration of lab-owned clusters and research servers, under an MOU."
+  tags: [Lab systems, MOU]
+  status: By review
+  cost: Per MOU
+  data: P1-P2 (higher by MOU)
+  terms: RCSAS MOU
+  t: "help webservice interactive p12 lab grant"

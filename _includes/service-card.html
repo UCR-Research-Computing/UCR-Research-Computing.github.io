@@ -1,0 +1,13 @@
+{%- comment -%} One catalog card. include.s = an entry from _data/services.yml {%- endcomment -%}
+{%- assign s = include.s -%}
+<a class="rc" href="{{ s.url | relative_url }}" data-t="{{ s.t }}">
+  <div class="meta"><i class="{{ s.icon }}"></i> {{ s.group }}</div>
+  <h3>{{ s.name }}</h3>
+  <p>{{ s.blurb }}</p>
+  <div class="tags">
+    <span class="tag status-{{ s.status | slugify }}">{{ s.status }}</span>
+    <span class="tag cost">{{ s.cost }}</span>
+    <span class="tag sec">Data: {{ s.data }}</span>
+  </div>
+  <div class="rcfoot"><span>Terms: {{ s.terms }}</span><span class="go">Details &gt;</span></div>
+</a>

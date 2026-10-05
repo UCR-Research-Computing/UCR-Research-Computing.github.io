@@ -1,0 +1,90 @@
+---
+title: "UCR Research Computing"
+permalink: /
+hero: false
+raw: true
+description: "Computing, storage, security guidance and expert help for UC Riverside researchers: find the right service, see what it costs, and get started."
+---
+<section class="hero">
+  <div class="container">
+    <div class="kicker">For UCR researchers<span class="ph-hide"> <span class="sep">|</span> Compute <span class="sep">|</span> Storage <span class="sep">|</span> Expert help</span></div>
+    <h1>What do you need for your research today?</h1>
+    <p class="lead">Find the right place to run your work, keep your data, and get help from the Research Computing team.</p>
+    <form class="ask" data-ask role="search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="I need GPUs to train a model" aria-label="Describe what you need" />
+      <button type="submit">Find options</button>
+    </form>
+    <div class="hints">Try: <a href="#" data-ask-hint="sequencing storage">store sequencing data</a><a href="#" data-ask-hint="sensitive data enclave">sensitive data</a><a href="#" data-ask-hint="connect cluster ssh">connect to the cluster</a><a href="#" data-ask-hint="grant">plan a grant</a></div>
+  </div>
+  <div class="slash"></div>
+</section>
+
+<section class="band">
+  <div class="container">
+    <div class="band-head"><div><div class="kicker">Start here</div><h2>I want to...</h2><p class="sub">Six common starting points. Each one walks you to the right service, what it is for, and how to ask for it.</p></div></div>
+    <div class="tasks">
+      <a class="task" href="{{ '/compute/' | relative_url }}"><div class="ic"><i class="fa-solid fa-microchip"></i></div><h3>Run jobs on a cluster</h3><p>Batch simulations, pipelines and GPU work on the campus cluster or national systems.</p><span class="go">Compare compute &gt;</span></a>
+      <a class="task" href="{{ '/storage/' | relative_url }}"><div class="ic"><i class="fa-solid fa-database"></i></div><h3>Store and share lab data</h3><p>Working storage, collaboration space and long-term archive, and which fits which data.</p><span class="go">Compare storage &gt;</span></a>
+      <a class="task" href="{{ '/security/' | relative_url }}"><div class="ic"><i class="fa-solid fa-shield-halved"></i></div><h3>Work with sensitive data</h3><p>Protection levels P1 to P4, data security plans, and controlled environments.</p><span class="go">Security basics &gt;</span></a>
+      <a class="task" href="{{ '/compute/cloud-and-ai/' | relative_url }}"><div class="ic"><i class="fa-solid fa-cloud"></i></div><h3>Use the cloud and AI tools</h3><p>Ursa Major on Google Cloud, campus AI tools, and when cloud is the right choice.</p><span class="go">Cloud and AI &gt;</span></a>
+      <a class="task" href="{{ '/grants/' | relative_url }}"><div class="ic"><i class="fa-solid fa-file-signature"></i></div><h3>Plan a grant</h3><p>Facilities text, budgeting guidance and how to ask for a consultation on your proposal.</p><span class="go">Grant toolkit &gt;</span></a>
+      <a class="task" href="{{ '/get-started/' | relative_url }}"><div class="ic"><i class="fa-solid fa-user-graduate"></i></div><h3>Learn the basics</h3><p>First login, Linux and Slurm, workshops and weekly office hours.</p><span class="go">Get started &gt;</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="band alt">
+  <div class="container" data-catalog>
+    <div class="band-head"><div><div class="kicker">The resource catalog</div><h2>Every service, side by side</h2><p class="sub">Filter by what you need. Each card says what it is for, who can use it, and which published terms apply.</p></div><a class="btn" href="{{ '/compute/' | relative_url }}">Compare compute</a></div>
+    {%- assign all = site.data.services -%}
+    <div class="chips">
+      <button type="button" class="chip on" data-f="all">All<span class="n">{{ all.size }}</span></button>
+      {%- assign fl = "gpu:GPU,storage:Storage,secure:Sensitive data,national:National,norecharge:No UCR recharge,help:Expert help" | split: "," -%}
+      {%- for f in fl -%}{%- assign kv = f | split: ":" -%}{%- assign n = 0 -%}{%- for s in all -%}{%- assign tt = s.t | split: " " -%}{%- if tt contains kv[0] -%}{%- assign n = n | plus: 1 -%}{%- endif -%}{%- endfor -%}
+      <button type="button" class="chip" data-f="{{ kv[0] }}">{{ kv[1] }}<span class="n">{{ n }}</span></button>
+      {%- endfor -%}
+    </div>
+    <div class="res">
+      {% for s in all %}{% include service-card.html s=s %}{% endfor %}
+    </div>
+    <p class="empty-note" hidden>No services match that filter.</p>
+  </div>
+</section>
+
+<section class="band navy">
+  <div class="container">
+    <div class="band-head"><div><div class="kicker">Know before you start</div><h2>Four things every researcher should know</h2><p class="sub">Short, plain answers. Each links to the policy or rate sheet that governs it.</p></div><a class="btn" href="{{ '/security/' | relative_url }}">Security and data</a></div>
+    <div class="know">
+      <a class="kc" href="{{ '/security/' | relative_url }}#data-protection-levels"><i class="fa-solid fa-shield-halved"></i><h3>Your data has a protection level</h3><p>UC classifies information P1 to P4. The level decides where it may be stored and processed.</p></a>
+      <a class="kc" href="{{ '/costs/' | relative_url }}"><i class="fa-solid fa-receipt"></i><h3>Some services carry a recharge</h3><p>Rates come from published rate sheets. The sheet in force when you are billed is the one that applies.</p></a>
+      <a class="kc" href="{{ '/costs/' | relative_url }}#limits-and-fair-use"><i class="fa-solid fa-scale-balanced"></i><h3>Shared systems have fair-use limits</h3><p>Quotas, queues and priorities protect everyone, and can change as demand changes.</p></a>
+      <a class="kc" href="{{ '/storage/' | relative_url }}#backups-are-not-archives"><i class="fa-solid fa-box-archive"></i><h3>Backups are not archives</h3><p>Know which storage is backed up, which is not, and how long you are required to keep your data.</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="container">
+    <div class="band-head"><div><div class="kicker">New here?</div><h2>From first question to first job</h2></div><a class="btn solid" href="{{ '/get-started/' | relative_url }}">Get started</a></div>
+    <div class="steps">
+      <div class="step"><h4>Tell us what you do</h4><p>Your field, your data, and what you want to run.</p></div>
+      <div class="step"><h4>Check your data</h4><p>Confirm its protection level and any agreements attached to it.</p></div>
+      <div class="step"><h4>Pick a service</h4><p>We suggest options; you choose with the terms in front of you.</p></div>
+      <div class="step"><h4>Get access</h4><p>Your PI approves, accounts are created, a funding source is set if needed.</p></div>
+      <div class="step"><h4>Run and learn</h4><p>First-login guides, workshops and office hours.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band alt">
+  <div class="container">
+    <div class="band-head"><div><div class="kicker">Knowledge base</div><h2>Popular guides</h2><p class="sub">Step-by-step articles. Each shows when it was last reviewed.</p></div><a class="btn" href="{{ '/kb/' | relative_url }}">All guides</a></div>
+    <div class="kbgrid">
+      {%- assign pop = "KB004,KB013,KB009,KB014" | split: "," -%}
+      {%- for id in pop -%}{%- assign a = site.kb | where: "kb_id", id | first -%}{%- if a -%}
+      <a class="kb" href="{{ a.url | relative_url }}"><div class="id">{{ a.kb_id }}</div><h4>{{ a.title }}</h4><div class="rv">{% if a.reviewed %}Reviewed {{ a.reviewed | date: "%b %Y" }}{% else %}Review pending{% endif %}</div></a>
+      {%- endif -%}{%- endfor -%}
+    </div>
+  </div>
+</section>

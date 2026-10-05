@@ -1,0 +1,7 @@
+- {title: "Get Started", url: "/get-started/", section: start}
+- {title: "Compute", url: "/compute/", section: compute}
+- {title: "Storage", url: "/storage/", section: storage}
+- {title: "Security", url: "/security/", section: security}
+- {title: "Costs", url: "/costs/", section: costs}
+- {title: "Knowledge Base", url: "/kb/", section: kb}
+- {title: "Help", url: "/help/", section: help}

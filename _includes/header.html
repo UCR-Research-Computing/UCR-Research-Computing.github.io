@@ -1,0 +1,28 @@
+{%- assign here = page.url | relative_url -%}
+<div class="util">
+  <div class="container">
+    <a href="https://www.ucr.edu/">UCR Home</a>
+    <a href="https://its.ucr.edu/" class="hide-sm">ITS</a>
+    <a href="https://hpcc.ucr.edu/" class="hide-sm">HPCC</a>
+    <span class="sp"></span>
+    {% if site.preview %}<span class="preview-pill" title="This is the development preview of the redesigned site. The official site is ucr-research-computing.github.io.">Preview</span>{% endif %}
+    <a href="https://campusstatus.ucr.edu/" class="hide-sm">Campus status</a>
+    <a href="{{ '/help/' | relative_url }}">Get help</a>
+  </div>
+</div>
+<header class="top">
+  <div class="container">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand-name">Research Computing<small>University of California, Riverside</small></span>
+    </a>
+    <nav class="nav" id="rc-nav" aria-label="Main">
+      {%- for n in site.data.nav -%}
+      {%- assign u = n.url | relative_url -%}
+      <a href="{{ u }}"{% if page.section == n.section or here == u %} class="on" aria-current="page"{% endif %}>{{ n.title }}</a>
+      {%- endfor -%}
+    </nav>
+    <span class="sp"></span>
+    <button type="button" class="searchbtn" data-rc-search aria-label="Search the site (press /)"><i class="fa-solid fa-magnifying-glass"></i><span>Search</span><kbd>/</kbd></button>
+    <button type="button" class="burger" data-rc-burger aria-controls="rc-nav" aria-expanded="false" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>

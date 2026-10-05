@@ -1,0 +1,11 @@
+{%- comment -%}
+Render one figure from _data/facts.yml with its source and date.
+Usage: {% include fact.html id="hpcc_lab_fee" %}            -> value + (source, as of)
+       {% include fact.html id="hpcc_lab_fee" bare=true %}  -> value only (use where the source is shown nearby)
+{%- endcomment -%}
+{%- assign f = site.data.facts[include.id] -%}
+{%- if f -%}
+<span class="fact">{{ f.value }}</span>{% unless include.bare %}<span class="fact-src"> ({% if f.url != "" %}<a href="{{ f.url }}">{{ f.source }}</a>{% else %}{{ f.source }}{% endif %}, as of {{ f.as_of | date: "%b %Y" }})</span>{% endunless %}
+{%- else -%}
+<span class="fact missing">[missing fact: {{ include.id }}]</span>
+{%- endif -%}

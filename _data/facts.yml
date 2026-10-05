@@ -1,0 +1,134 @@
+# Single source of truth for every figure shown on this site.
+# Rules (docs/SPEC.md section 4):
+#  - Pages never type a price, quota, capacity or hardware count into prose. Use
+#    {% include fact.html id="..." %} which renders the value with its source and date.
+#  - Each entry: value (as displayed), source (title), url, as_of (when we checked the
+#    source), owner (who sets it). Where another unit owns a figure, prefer linking to it.
+#  - Changing anything here needs Chuck's review (CODEOWNERS).
+
+hpcc_lab_fee:
+  label: HPCC annual lab registration (UC internal rate)
+  value: "$1,000 per lab per year"
+  source: "HPCC Recharging Rates 2026/2027"
+  url: https://hpcc.ucr.edu/about/overview/rates/
+  as_of: 2026-10-04
+  owner: HPCC
+hpcc_storage_rent_tb:
+  label: HPCC extra storage, TB plan (UC internal rate)
+  value: "$1,000 per 10 TB per year"
+  source: "HPCC Recharging Rates 2026/2027"
+  url: https://hpcc.ucr.edu/about/overview/rates/
+  as_of: 2026-10-04
+  owner: HPCC
+hpcc_storage_rent_gb:
+  label: HPCC extra storage, GB plan (UC internal rate)
+  value: "$25 per 100 GB per year"
+  source: "HPCC Recharging Rates 2026/2027"
+  url: https://hpcc.ucr.edu/about/overview/rates/
+  as_of: 2026-10-04
+  owner: HPCC
+hpcc_owned_storage_fee:
+  label: HPCC owned-storage maintenance
+  value: "$260 per 10 TB of backed-up storage per year"
+  source: "HPCC Recharging Rates 2026/2027"
+  url: https://hpcc.ucr.edu/about/overview/rates/
+  as_of: 2026-10-04
+  owner: HPCC
+hpcc_labor_rate:
+  label: HPCC labor rate (UC internal)
+  value: "$52 per hour"
+  source: "HPCC Recharging Rates 2026/2027"
+  url: https://hpcc.ucr.edu/about/overview/rates/
+  as_of: 2026-10-04
+  owner: HPCC
+hpcc_user_storage:
+  label: HPCC storage included with a standard user account
+  value: "50 GB"
+  source: "HPCC Recharging Rates 2026/2027"
+  url: https://hpcc.ucr.edu/about/overview/rates/
+  as_of: 2026-10-04
+  owner: HPCC
+hpcc_cpu_quota:
+  label: HPCC CPU quotas (internal users)
+  value: "384 cores per user, 768 cores per lab"
+  source: "HPCC Recharging Rates 2026/2027"
+  url: https://hpcc.ucr.edu/about/overview/rates/
+  as_of: 2026-10-04
+  owner: HPCC
+hpcc_hardware:
+  label: HPCC cluster size
+  value: "over 16,000 CPU cores and NVIDIA GPU nodes"
+  source: "HPCC Access page and Recharging Rates 2026/2027"
+  url: https://hpcc.ucr.edu/about/overview/access/
+  as_of: 2026-10-04
+  owner: HPCC
+hpcc_facility_doc:
+  label: HPCC facility description for grant applications
+  value: "HPCC facility description"
+  source: "HPCC Rates page"
+  url: https://docs.google.com/document/d/1KZqQagOyG_sT_s84F1zj-mBtBMvoWxKVydWMJbi25v8/edit
+  as_of: 2026-10-04
+  owner: HPCC
+hpcc_storage_capacity:
+  label: HPCC storage systems
+  value: "approximately 3 PB production and 3 PB backup storage (GPFS)"
+  source: "HPCC Hardware Details"
+  url: https://hpcc.ucr.edu/about/hardware/details/
+  as_of: 2026-10-04
+  owner: HPCC
+hpcc_software:
+  label: HPCC software
+  value: "over 1,200 software tools and 50 databases"
+  source: "HPCC Recharging Rates 2026/2027"
+  url: https://hpcc.ucr.edu/about/overview/rates/
+  as_of: 2026-10-04
+  owner: HPCC
+cephrds_rent:
+  label: CephRDS rental (pilot terms)
+  value: "$50 per TB per year"
+  source: "CephRDS Sustainability and Financial Model (Research Computing, Sep 2026)"
+  url: ""
+  as_of: 2026-09-16
+  owner: Research Computing
+cephrds_purchase:
+  label: CephRDS purchased capacity (pilot terms)
+  value: "$250 per usable TB, one time, for the 5-year hardware lifecycle"
+  source: "CephRDS Sustainability and Financial Model (Research Computing, Sep 2026)"
+  url: ""
+  as_of: 2026-09-16
+  owner: Research Computing
+cloud_admin_setup:
+  label: Cloud account setup fee (enclave, cloud discount programs)
+  value: "$135 one time"
+  source: "ITS recharge terms (set out in the MOU); confirmed by Research Computing"
+  url: ""
+  as_of: 2026-10-04
+  owner: ITS
+cloud_admin_annual:
+  label: Cloud account annual support fee (enclave, cloud discount programs)
+  value: "$407 per year"
+  source: "ITS recharge terms (set out in the MOU); confirmed by Research Computing"
+  url: ""
+  as_of: 2026-10-04
+  owner: ITS
+google_drive_default:
+  label: Google Drive included storage
+  value: "100 GB for faculty, staff and graduate students; 25 GB for undergraduates"
+  source: "ITS Storage at UCR"
+  url: https://its.ucr.edu/storage
+  as_of: 2026-10-04
+  owner: ITS
+google_drive_extra:
+  label: Google Drive additional storage
+  value: "faculty may request individual Drive storage up to 1 TB, and create Shared Drives of up to 1 TB each, at no additional cost"
+  source: "ITS Storage at UCR"
+  url: https://its.ucr.edu/storage
+  as_of: 2026-10-04
+  owner: ITS
+onedrive_default:
+  label: OneDrive included storage
+  value: "100 GB for faculty and staff; 1 GB for undergraduate and graduate students"
+  source: "ITS Storage at UCR"
+  url: https://its.ucr.edu/storage
+  as_of: 2026-10-04
+  owner: ITS

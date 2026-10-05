@@ -1,0 +1,3 @@
+# Allow-list for tools/claims_check.py
+# Format:  <path glob> | <exact substring of the matching line>   # reason (required)
+# Keep this short. Prefer rewording over allowing.

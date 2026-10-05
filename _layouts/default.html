@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#00287a" />
+  {% if site.preview %}<meta name="robots" content="noindex, nofollow" />{% elsif page.archived %}<meta name="robots" content="noindex" />{% endif %}
+  {% seo %}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Fira+Sans+Condensed:wght@500;600;700&family=Fira+Code:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="{{ '/assets/css/rc.css' | relative_url }}" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23003da5'/%3E%3Ctext x='32' y='42' font-size='26' font-weight='700' text-anchor='middle' fill='%23ffb81c' font-family='Arial'%3ERC%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include header.html %}
+  <main id="main">{{ content }}</main>
+  {% include footer.html %}
+  {% include search.html %}
+  <script>window.RC = { base: '{{ site.baseurl }}' };</script>
+  <script src="{{ '/assets/js/rc.js' | relative_url }}" defer></script>
+</body>
+</html>

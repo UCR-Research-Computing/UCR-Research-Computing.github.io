@@ -1,59 +1,48 @@
 title: UCR Research Computing
-description: "Empowering UCRs research community with advanced computing resources, training, and support."
-remote_theme: zendesk/jekyll-theme-zendesk-garden@main
+description: "Computing, storage and expert help for UC Riverside researchers."
+url: https://ucr-research-computing.github.io
+baseurl: ""
+lang: en_US
+timezone: America/Los_Angeles
+preview: false         # live site (set true on a staging copy)
 
-search_enabled: true
-
-sidebar:
-  - label: Computing
-    children:
-      - computing-resources-overview
-      - hpcc
-      - ursa-major
-      - nsf-access
-      - nautilus
-      - nsf-osg
-      - gcp-aws-edp
-      - gcp-aws-cloud-credits
-      - on-prem-facilities
-  - label: Data Storage
-    children:
-      - storage-overview
-      - ursa-major-storage
-      - google-drive
-      - ursa-major-data
-      - gcs-aws-s3
-      - hpcc-gpfs
-      - ceph-secure-research-storage
-      - dryad
-      - backup
-  - label: Support
-    children:
-      - research-facilitation
-      - software-support
-      - infrastructure-support
-      - grant-collaboration
-      - lab-support
-      - faq
-  - label: Training
-    children:
-      - workshops-and-webinars
-      - online-courses
-      - documentation-and-guides
-  - research-security
-  - blog
-  - knowledge-base
-  - cost-models
-  - guidelines
-  - about
-  - blog
-  - success-stories
-  - contact-us
-
-# Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+  hard_wrap: false
+  syntax_highlighter: rouge
+
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-remote-theme
+  - jekyll-redirect-from
+
+collections:
+  services:
+    output: true
+    permalink: /:collection/:name/
+  kb:
+    output: true
+    permalink: /kb/:name/
+  redirects:
+    output: true
+
+defaults:
+  - scope: {path: "", type: services}
+    values: {layout: service}
+  - scope: {path: "", type: kb}
+    values: {layout: kb}
+  - scope: {path: "", type: redirects}
+    values: {layout: null, sitemap: false}
+  - scope: {path: ""}
+    values: {layout: page}
+
+exclude:
+  - .github
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - tools
+  - docs
