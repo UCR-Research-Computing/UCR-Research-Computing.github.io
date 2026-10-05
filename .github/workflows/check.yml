@@ -1,0 +1,37 @@
+name: Site checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Claims check (wording a reader could hold us to)
+        run: python3 tools/claims_check.py
+
+      - name: Old URLs still resolve (redirects for every prod sitemap URL)
+        run: python3 tools/check_old_urls.py tools/data/prod_sitemap_2026-10-04.txt
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+        env:
+          BUNDLE_FROZEN: "false"
+
+      - name: Build with the GitHub Pages gem set
+        env:
+          JEKYLL_ENV: production
+          PAGES_REPO_NWO: ${{ github.repository }}
+        run: bundle exec jekyll build -d _site
+
+      - name: Built-site check (links, missing facts, ASCII, noindex)
+        run: python3 tools/check_build.py _site "$(ruby -ryaml -e 'print YAML.load_file("_config.yml")["baseurl"].to_s')"

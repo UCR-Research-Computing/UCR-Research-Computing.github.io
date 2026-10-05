@@ -1,1 +1,0 @@
-File_Path = logging-into-sdsc-comet-and-running-test-job.md

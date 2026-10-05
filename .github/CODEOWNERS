@@ -1,0 +1,15 @@
+# Changes to figures, costs, security and policy wording need Chuck's review.
+/_data/facts.yml          @charles-forsyth
+/_data/terms.yml          @charles-forsyth
+/costs.md                 @charles-forsyth
+/security.md              @charles-forsyth
+/records-retention.md     @charles-forsyth
+/terms.md                 @charles-forsyth
+/_services/secure-enclave.md @charles-forsyth
+/_kb/kb014-*.md           @charles-forsyth
+/_kb/kb015-*.md           @charles-forsyth
+/_kb/kb016-*.md           @charles-forsyth
+/_kb/ucr-data-security-plans.md @charles-forsyth
+/_kb/ursa-major-guidelines.md   @charles-forsyth
+/tools/claims_check.py    @charles-forsyth
+/tools/claims_allow.txt   @charles-forsyth

@@ -1,0 +1,24 @@
+---
+layout: default
+---
+{%- if page.hero != false -%}
+<section class="dochero">
+  <div class="container">
+    {% if page.crumbs != false %}<div class="crumbs"><a href="{{ '/' | relative_url }}">Home</a>{% if page.parent %} / <a href="{{ page.parent_url | relative_url }}">{{ page.parent }}</a>{% endif %} / {{ page.heading | default: page.title }}</div>{% endif %}
+    {% if page.kicker %}<div class="kicker">{{ page.kicker }}</div>{% endif %}
+    <h1>{{ page.heading | default: page.title }}</h1>
+    {% if page.description and page.show_description != false %}<p>{{ page.description }}</p>{% endif %}
+  </div>
+</section>
+{%- endif -%}
+{%- if page.raw -%}
+{{ content }}
+{%- else -%}
+<div class="container layout{% unless page.toc %} single{% endunless %}"{% if page.toc %} data-toc-layout{% endif %}>
+  {% if page.toc %}<aside class="toc" data-toc hidden><h6>On this page</h6><nav data-toc-list></nav></aside>{% endif %}
+  <article class="prose">
+    {{ content }}
+    {% if page.owner or page.reviewed %}{% include provenance.html %}{% endif %}
+  </article>
+</div>
+{%- endif -%}

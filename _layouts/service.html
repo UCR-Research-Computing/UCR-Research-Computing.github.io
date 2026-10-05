@@ -1,0 +1,39 @@
+---
+layout: default
+---
+{%- assign s = page -%}
+<section class="dochero">
+  <div class="container">
+    <div class="crumbs"><a href="{{ '/' | relative_url }}">Home</a> / <a href="{{ s.parent_url | default: '/compute/' | relative_url }}">{{ s.parent | default: "Compute" }}</a> / {{ s.title }}</div>
+    {% if s.kicker %}<div class="kicker">{{ s.kicker }}</div>{% endif %}
+    <h1>{{ s.title }}</h1>
+    <p>{{ s.description }}</p>
+    <div class="tags">
+      {% if s.status %}<span class="tag status-{{ s.status | slugify }}">{{ s.status }}</span>{% endif %}
+      {% for t in s.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+      {% if s.data_levels %}<span class="tag">Data: {{ s.data_levels }}</span>{% endif %}
+    </div>
+  </div>
+</section>
+<div class="container layout three" data-toc-layout>
+  <aside class="toc" data-toc hidden><h6>On this page</h6><nav data-toc-list></nav></aside>
+  <article class="prose">
+    {% if s.fit or s.not_fit %}
+    <h2 id="is-it-right-for-you">Is it right for you?</h2>
+    <div class="fit">
+      <div class="yes"><h4><i class="fa-solid fa-check"></i> A good fit</h4><ul>{% for f in s.fit %}<li>{{ f }}</li>{% endfor %}</ul></div>
+      <div class="no"><h4><i class="fa-solid fa-xmark"></i> Not a fit</h4><ul>{% for f in s.not_fit %}<li>{{ f }}</li>{% endfor %}</ul></div>
+    </div>
+    <div class="callout"><b>Not sure?</b> Describe your work in a short <a href="{{ '/help/' | relative_url }}">consultation request</a> and the team will suggest options. Suggestions are guidance; the service terms decide what is provided.</div>
+    {% endif %}
+    {{ content }}
+    {% include provenance.html %}
+  </article>
+  <aside class="panel">
+    <h6>At a glance</h6>
+    <dl>
+      {% for g in s.glance %}<dt>{{ g.k }}</dt><dd>{% if g.fact %}{% include fact.html id=g.fact bare=true %}<span class="src">{% assign f = site.data.facts[g.fact] %}{% if f.url != "" %}<a href="{{ f.url }}">{{ f.source }}</a>{% else %}{{ f.source }}{% endif %}, as of {{ f.as_of | date: "%b %Y" }}</span>{% else %}{{ g.v }}{% endif %}</dd>{% endfor %}
+    </dl>
+    {% if s.cta %}<div class="cta">{% for c in s.cta %}<a class="btn{% if forloop.first %} solid{% endif %}" href="{% if c.url contains '://' %}{{ c.url }}{% else %}{{ c.url | relative_url }}{% endif %}">{{ c.label }}</a>{% endfor %}</div>{% endif %}
+  </aside>
+</div>

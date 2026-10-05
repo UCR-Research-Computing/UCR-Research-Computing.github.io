@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<section class="dochero kbhero">
+  <div class="container">
+    <div class="crumbs"><a href="{{ '/' | relative_url }}">Home</a> / <a href="{{ '/kb/' | relative_url }}">Knowledge Base</a> / {{ page.kb_id | default: page.title }}</div>
+    <div class="kicker">{% if page.archived %}Archived <span class="sep">|</span> {% endif %}{% if page.kb_id %}{{ page.kb_id }} <span class="sep">|</span> {% endif %}{{ page.topic | default: "Guide" }}</div>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p>{{ page.description }}</p>{% endif %}
+  </div>
+</section>
+<div class="container layout" data-toc-layout>
+  <aside class="toc" data-toc hidden><h6>In this guide</h6><nav data-toc-list></nav></aside>
+  <article class="prose">
+    {% if page.audience %}<div class="kbmeta"><span><i class="fa-solid fa-users"></i> {{ page.audience }}</span>{% if page.applies_to %}<span><i class="fa-solid fa-cube"></i> {{ page.applies_to }}</span>{% endif %}</div>{% endif %}
+    {% if page.archived %}<div class="callout archived"><b>Archived reference.</b> This article describes {{ page.archived_note | default: "an earlier arrangement" }}. It is kept for people still working that way and is not current guidance. {% if page.superseded_by %}For current guidance, see <a href="{{ page.superseded_by | relative_url }}">{{ page.superseded_by_title | default: "the current article" }}</a>.{% endif %}</div>{% endif %}
+    {% if page.renumbered_from %}<div class="callout"><b>Renumbered.</b> This article was previously published as {{ page.renumbered_from }}. Old links forward here.</div>{% endif %}
+    {{ content }}
+    {% include provenance.html %}
+    {%- assign rel = site.kb | where: "topic", page.topic | where_exp: "a", "a.archived != true" -%}
+    {% if rel.size > 1 %}
+    <div class="related"><h6>Related guides</h6>
+      {% for r in rel %}{% if r.url != page.url %}<a href="{{ r.url | relative_url }}"><span>{{ r.kb_id | default: "Guide" }}</span>{{ r.title }}</a>{% endif %}{% endfor %}
+    </div>
+    {% endif %}
+  </article>
+</div>
