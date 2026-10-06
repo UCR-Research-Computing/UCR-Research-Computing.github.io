@@ -19,7 +19,7 @@ This guide is for a lab that wants to build **its own** Slurm cluster in its Urs
 - **Costs:** a lab's own cluster is Tier 2. Its compute nodes, GPUs, disks and file systems are recharged to a lab funding source under an MOU. See [KB005: Ursa Major service tiers](../kb005-ursa-major-service-tiers/) and [KB007: Ursa Major recharge workflow](../kb007-tier2-recharge-workflow/).
 - **Exotic hardware:** if you need hardware the HPCC does not have, such as TPUs or Arm processors, ask about Research Computing's shared cluster in Google Cloud instead. That is Tier 1, within limits set per project, and starts with a consultation.
 - **The HPCC first:** for most batch and GPU work, the campus [HPCC cluster](../../services/hpcc/) is a better fit and usually costs the lab less.
-- **Set a budget** on the project before you start. See [Creating GCP budgets](../ursa-major-project-budget/).
+- **Ask for a budget** on the project before you start, so the lab sees spending early and has a cap. Research Computing sets budgets on request. See [Ursa Major project budgets](../ursa-major-project-budget/).
 
 [Talk to Research Computing](../../help/) before you build. We can help you compare options and estimate costs. For background, see [Ursa Major HPC clusters](../ursa-major-hpc-clusters/).
 

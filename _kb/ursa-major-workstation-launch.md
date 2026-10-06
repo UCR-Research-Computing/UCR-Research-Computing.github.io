@@ -19,7 +19,7 @@ This guide shows how to create a research workstation (a Compute Engine VM) in y
 - **Workstations set up before October 2026:** some were set up under the earlier tiers, when workstations were not recharged. If your lab has one, contact [research-computing@ucr.edu](mailto:research-computing@ucr.edu). Nothing changes without that conversation.
 - **Exotic hardware:** if you need hardware the HPCC does not have, such as TPUs or Arm processors, ask about Tier 1 exotic hardware instead. It runs through a Research Computing cluster rather than a workstation.
 - **GPU work:** for GPU work at lower cost to the lab, consider the [HPCC](../../services/hpcc/).
-- **Set a budget** so the lab sees spending early. See [Creating GCP budgets](../ursa-major-project-budget/).
+- **Ask for a budget** on the project before you start, so the lab sees spending early and has a cap. Research Computing sets budgets on request. See [Ursa Major project budgets](../ursa-major-project-budget/).
 - **Sensitive data:** P3, P4 or regulated data needs a review before it is used on a VM. See [Security and Data](../../security/).
 
 ## Web console

@@ -38,7 +38,7 @@
   tags: [Allocation, GPU, Cloud VMs]
   status: By application
   cost: No UCR recharge
-  data: P1-P2
+  data: Per provider; P1-P2 typical
   terms: ACCESS policies
   t: "compute national batch gpu interactive cloudai p12 norecharge"
 - id: nairr
@@ -50,7 +50,7 @@
   tags: [Allocation, AI, GPU]
   status: By application
   cost: No UCR recharge
-  data: P1-P2
+  data: Per provider; P1-P2 typical
   terms: NAIRR Pilot terms
   t: "compute national gpu cloudai p12 norecharge"
 - id: nautilus
@@ -62,7 +62,7 @@
   tags: [Containers, GPU, Jupyter]
   status: External
   cost: No UCR recharge
-  data: P1 only
+  data: Non-sensitive only
   terms: NRP policies
   t: "compute national containers gpu interactive p12 norecharge"
 - id: osg
@@ -74,7 +74,7 @@
   tags: [High throughput, Batch]
   status: External
   cost: No UCR recharge
-  data: P1-P2
+  data: Non-sensitive only
   terms: OSG policies
   t: "compute national batch p12 norecharge"
 - id: cloud-discounts

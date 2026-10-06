@@ -28,7 +28,7 @@ Tier 1 AI model access is arranged by Research Computing, with a per-lab allowan
 
 ## 3. Watch your spending
 
-If your project carries a recharge, set a budget alert. See [Creating a project budget](../ursa-major-project-budget/).
+If your project carries a recharge, ask Research Computing for a budget. It sends alerts and caps spending. See [Ursa Major project budgets](../ursa-major-project-budget/).
 
 ## 4. Getting help
 
