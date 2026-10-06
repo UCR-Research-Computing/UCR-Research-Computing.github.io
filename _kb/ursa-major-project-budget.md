@@ -5,6 +5,7 @@ owner: Research Computing
 reviewed: 2026-10-06
 review_notes:
   - "Chuck 2026-10-04: project owners do not set budgets; Research Computing sets them on request, for Tier 2 projects, to help labs stay within grant funding. Rewritten from a self-service console guide to a request guide."
+  - "2026-10-06 (Chuck): Tier 1 projects also have budgets. Research Computing sets them itself as the Tier 1 limit, and they stop work at the cap like Tier 2 budgets. Replaces the 2026-10-04 line that Tier 1 does not use lab budgets."
   - "2026-10-06: corrected to match operations: an Ursa Major budget is a spending cap, not only an alert. At the cap the throttle stops running VMs and turns off Vertex AI and the Gemini API; disks, storage and data are kept. Budgets count gross spend, before credits."
 redirect_from:
   - /Knowledge_Base/Ursa_Major_Project_Budget_Creation.html
@@ -14,8 +15,8 @@ A budget on an Ursa Major project is a spending cap. It sends alerts as spending
 
 ## How budgets work in Ursa Major
 
-- **Budgets apply to Tier 2 projects**, the projects recharged to a lab funding source under an MOU. Most Ursa Major usage, including VMs, GPUs, Standard storage and Filestore, is Tier 2. Tier 1 resources are managed by Research Computing and do not use lab budgets. See [KB005: Ursa Major service tiers](../kb005-ursa-major-service-tiers/) and [KB007: Ursa Major recharge workflow](../kb007-tier2-recharge-workflow/).
-- **Research Computing sets budgets up.** Project owners do not create budgets themselves. To add or change a budget, send a request to [research-computing@ucr.edu](mailto:research-computing@ucr.edu) or through the [UCR Support Portal](https://ucrsupport.service-now.com/ucr_portal/).
+- **Every Ursa Major project can have a budget, Tier 1 and Tier 2.** On Tier 2 projects, the ones recharged to a lab funding source under an MOU, Research Computing sets the budget on request to match the lab's funding. Most Ursa Major usage, including VMs, GPUs, Standard storage and Filestore, is Tier 2. On Tier 1 projects, Research Computing sets the budget itself, as the project's Tier 1 limit. In both cases the budget is a cap and work stops when it is reached. See [KB005: Ursa Major service tiers](../kb005-ursa-major-service-tiers/) and [KB007: Ursa Major recharge workflow](../kb007-tier2-recharge-workflow/).
+- **Research Computing sets budgets up.** Project owners do not create budgets themselves. To add or change a Tier 2 budget, or to ask about a Tier 1 limit, send a request to [research-computing@ucr.edu](mailto:research-computing@ucr.edu) or through the [UCR Support Portal](https://ucrsupport.service-now.com/ucr_portal/).
 - **A budget is a cap.** When spending reaches the budget amount, the throttle acts (see below). Stop or delete resources you are not using well before then.
 
 ## What happens at the cap
