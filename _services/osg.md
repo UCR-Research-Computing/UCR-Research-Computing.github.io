@@ -4,7 +4,7 @@ kicker: "National <span class='sep'>|</span> Distributed high-throughput computi
 description: "The OSG's Open Science Pool runs large numbers of small, independent jobs on spare capacity contributed by institutions across the country."
 status: External
 tags: [High throughput, Batch, HTCondor]
-data_levels: Non-sensitive
+data_levels: Non-sensitive only (P1; no protected data)
 owner: "OSG (the service); Research Computing (UCR guidance)"
 reviewed: 2026-10-04
 governed_by: "OSG and OSPool policies"

@@ -4,7 +4,7 @@ kicker: "National <span class='sep'>|</span> NSF-funded computing allocations"
 description: "National allocations on NSF-funded supercomputers, GPU systems and research clouds such as Jetstream2, awarded by application."
 status: By application
 tags: [Allocations, GPU, Cloud VMs]
-data_levels: Per ACCESS policies
+data_levels: Per resource provider policy; P1-P2 typical, higher only where a provider allows it
 owner: "Research Computing (UCR guidance); ACCESS (the program)"
 reviewed: 2026-10-04
 governed_by: "ACCESS allocation policies"

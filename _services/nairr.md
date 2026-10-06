@@ -4,7 +4,7 @@ kicker: "National <span class='sep'>|</span> National AI Research Resource"
 description: "The National AI Research Resource pilot offers competitive allocations of AI computing, data and software to US researchers."
 status: By application
 tags: [Allocations, AI, GPU]
-data_levels: Per provider policies
+data_levels: Per resource provider policy; P1-P2 typical, higher only where a provider allows it
 owner: "Research Computing (UCR guidance); NAIRR Pilot (the program)"
 reviewed: 2026-10-04
 governed_by: "NAIRR Pilot program terms"
