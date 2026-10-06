@@ -110,7 +110,7 @@ Search: `/` or Ctrl+K opens an overlay that searches `search.json` (pages, servi
 
 ## 6. Knowledge base
 
-- **Numbering.** Numbered articles keep their IDs. Duplicates in the old site were renumbered (Chuck, 2026-10-04): KB001 AI/Cloud Access Request became **KB021**, KB006 Migrating Compute to HPCC became **KB022**, and KB007 Migrating Data to Archive became **KB012** (12 was unused). KB001 Storage Strategy, KB006 SOM Clinical Apps and KB007 Tier 2 Recharge kept their numbers. Renumbered articles show a "previously" notice, and their old URLs redirect. The next free number is **KB023**.
+- **Numbering.** Numbered articles keep their IDs. Duplicates in the old site were renumbered (Chuck, 2026-10-04): KB001 AI/Cloud Access Request became **KB021**, KB006 Migrating Compute to HPCC became **KB022**, and KB007 Migrating Data to Archive became **KB012** (12 was unused). KB001 Storage Strategy, KB006 SOM Clinical Apps and KB007 Tier 2 Recharge kept their numbers. Renumbered articles show a "previously" notice, and their old URLs redirect. The next free number is **KB031** (KB023-KB030 are the NRP Nautilus researcher guide series, `series: nautilus`, added 2026-10-06).
 - **Ledger.** The ServiceNow ledger (`Knowledge_Base/Master_ServiceNow_KB_Ledger.md` in the old repo) must be updated with the new numbers when the switch happens. ServiceNow itself is not changed without Chuck's approval.
 - **Migration.** `tools/migrate_kb.py` copied the old KB mechanically (front matter, emoji and smart-quote removal, link rewriting, redirects). It skips any article that has a `reviewed:` date, so hand-edited articles are never overwritten.
 - **Reviewed so far (2026-10-04):** KB001, KB002, KB004, KB005, KB006, KB007, KB008, KB010, KB012, KB014, KB015, KB021, Ursa Major guidelines, workstations, cloud storage, HPC clusters and research services. Wording fixes were also made in KB009, KB013, KB019, KB020, KB022, DSPs, Globus, BLAST, Nextflow, Ollama and the budget guide (claims check clean). Everything else shows "Review pending".
@@ -142,7 +142,11 @@ bundle exec jekyll build -d _site && python3 tools/check_build.py _site /rc-dev
 
 **Ship a change.** Branch, PR, CI green, merge, delete the branch. Chuck reviews costs and security changes.
 
-## 8. The switch (when Chuck approves)
+## 8. The switch
+
+**Done 2026-10-04 (Chuck: "go").** The new site went live at https://ucr-research-computing.github.io/ through PR #51 on `UCR-Research-Computing/UCR-Research-Computing.github.io` (merge 3915999), with `preview: false` and `baseurl: ""`. The old site is tagged `pre-cutover-2026-10-04` (096c15a). **Roll back:** Revert PR #51 and merge the revert, or reset main to that tag. This repo stays the staging copy (preview on, `/rc-dev`); changes made here must be copied to the live repo (or the live repo edited directly) until a sync is set up. Still to do: update the ServiceNow KB ledger with renumbered IDs (section 6).
+
+Original plan, for reference:
 
 The dev site was built so the switch is one reversible change. Recommended path:
 
