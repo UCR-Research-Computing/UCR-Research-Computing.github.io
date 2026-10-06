@@ -6,7 +6,7 @@ status: External
 tags: [Containers, Kubernetes, GPU, Jupyter]
 data_levels: Non-sensitive only (P1; no protected data)
 owner: "National Research Platform (the platform); Research Computing (UCR guidance)"
-reviewed: 2026-10-04
+reviewed: 2026-10-06
 governed_by: "NRP policies and acceptable use policy"
 governed_url: https://nrp.ai/documentation/userdocs/start/policies/
 redirect_from:
@@ -25,6 +25,7 @@ glance:
   - {k: "Cost", v: "No recharge from UCR"}
   - {k: "Data allowed", v: "Non-sensitive data only, per NRP policy"}
 cta:
+  - {label: "Researcher guide", url: "/kb/kb023-nautilus-researcher-guide/"}
   - {label: "Get started with NRP", url: "https://nrp.ai/documentation/userdocs/start/getting-started/"}
   - {label: "NRP policies", url: "https://nrp.ai/documentation/userdocs/start/policies/"}
 ---
@@ -39,4 +40,4 @@ The NRP states that its systems have no storage suitable for HIPAA, PII, FISMA, 
 
 ## How to get started
 
-The [NRP documentation](https://nrp.ai/documentation/) covers getting access, running GPU pods and batch jobs, storage, JupyterHub and support channels. For UCR-specific questions, or help deciding whether Nautilus or the HPCC fits your work, [contact Research Computing]({{ '/help/' | relative_url }}).
+Start with our [researcher guide to NRP Nautilus]({{ '/kb/kb023-nautilus-researcher-guide/' | relative_url }}), a series of eight articles: getting access, notebooks and desktops in the browser, batch and GPU jobs, storage, the hosted language models, hosting lab web tools, and teaching. The [NRP documentation](https://nrp.ai/documentation/) covers everything else. For UCR-specific questions, or help deciding whether Nautilus or the HPCC fits your work, [contact Research Computing]({{ '/help/' | relative_url }}).
