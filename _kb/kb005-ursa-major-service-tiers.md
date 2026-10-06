@@ -15,7 +15,7 @@ Projects set up before October 2026 may still be arranged under the earlier tier
 
 ## Tier 1: Campus-supported (no recharge to the lab under current terms)
 
-**Purpose:** support research that campus systems cannot easily serve, in three areas. Tier 1 resources carry no recharge to the lab under current terms, within limits and subject to eligibility. They depend on continued campus funding and can change.
+**Purpose:** support research that campus systems cannot easily serve, in three areas. Tier 1 resources carry no recharge to the lab under current terms, within limits and subject to eligibility. Research Computing sets each Tier 1 project's limit as a budget, and work stops when it is reached (see [project budgets](../ursa-major-project-budget/)). They depend on continued campus funding and can change.
 
 ### 1. AI model access for research
 

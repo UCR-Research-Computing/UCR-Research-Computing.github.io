@@ -34,7 +34,7 @@ Tier 1 depends on continued campus funding. Research Computing may change the se
 
 ### Monitoring usage
 
-Project members can see their project's usage in the Google Cloud console (for example the Cloud Monitoring dashboards and, for recharged projects, billing reports). Research Computing also monitors usage across projects to manage Tier 1 allowances and limits.
+Project members can see their project's usage in the Google Cloud console (for example the Cloud Monitoring dashboards and, for recharged projects, billing reports). Research Computing also monitors usage across projects to manage Tier 1 allowances and limits. Tier 1 projects have a budget set by Research Computing; when it is reached, work stops (see [project budgets](../ursa-major-project-budget/)).
 
 ### Limits and restrictions
 
