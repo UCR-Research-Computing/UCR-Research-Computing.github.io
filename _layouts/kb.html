@@ -17,7 +17,7 @@ layout: default
     {% if page.renumbered_from %}<div class="callout"><b>Renumbered.</b> This article was previously published as {{ page.renumbered_from }}. Old links forward here.</div>{% endif %}
     {{ content }}
     {% include provenance.html %}
-    {%- assign rel = site.kb | where: "topic", page.topic | where_exp: "a", "a.archived != true" -%}
+    {%- assign rel = site.kb | where: "topic", page.topic | where_exp: "a", "a.archived != true" | where_exp: "a", "a.unlisted != true" -%}
     {% if rel.size > 1 %}
     <div class="related"><h6>Related guides</h6>
       {% for r in rel %}{% if r.url != page.url %}<a href="{{ r.url | relative_url }}"><span>{{ r.kb_id | default: "Guide" }}</span>{{ r.title }}</a>{% endif %}{% endfor %}

@@ -17,7 +17,7 @@ toc: false
   <div class="chips">
     <button type="button" class="chip on" data-topic="all">All</button>
     {%- assign topics = "HPCC,Cloud,Storage,Security,National,General,Software" | split: "," -%}
-    {%- for t in topics -%}{%- assign n = site.kb | where: "topic", t | where_exp: "a", "a.archived != true" | size -%}{%- if n > 0 -%}
+    {%- for t in topics -%}{%- assign n = site.kb | where: "topic", t | where_exp: "a", "a.archived != true" | where_exp: "a", "a.unlisted != true" | size -%}{%- if n > 0 -%}
     <button type="button" class="chip" data-topic="{{ t }}">{{ t }}<span class="n">{{ n }}</span></button>
     {%- endif -%}{%- endfor -%}
     <span class="kbcount" data-kbcount></span>
@@ -25,7 +25,7 @@ toc: false
 
   <h2 class="kbsec">Numbered articles</h2>
   <div class="kblist">
-    {%- assign current = site.kb | where_exp: "a", "a.archived != true" -%}
+    {%- assign current = site.kb | where_exp: "a", "a.archived != true" | where_exp: "a", "a.unlisted != true" -%}
     {%- assign numbered = current | where_exp: "a", "a.kb_id" | sort: "kb_id" -%}
     {%- for a in numbered -%}
     <a href="{{ a.url | relative_url }}" data-topic="{{ a.topic }}"><div class="id">{{ a.kb_id }} <span class="sep">|</span> {{ a.topic }}</div><h4>{{ a.title }}</h4>{% if a.renumbered_from %}<p>Previously {{ a.renumbered_from }}</p>{% endif %}<div class="rv">{% if a.reviewed %}Reviewed {{ a.reviewed | date: "%b %Y" }}{% elsif a.updated %}Updated {{ a.updated | date: "%b %Y" }}{% else %}Review pending{% endif %}</div></a>

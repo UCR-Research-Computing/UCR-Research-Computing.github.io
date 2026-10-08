@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#00287a" />
-  {% if site.preview %}<meta name="robots" content="noindex, nofollow" />{% elsif page.archived %}<meta name="robots" content="noindex" />{% endif %}
+  {% if site.preview %}<meta name="robots" content="noindex, nofollow" />{% elsif page.archived or page.unlisted %}<meta name="robots" content="noindex" />{% endif %}
   {% seo %}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
