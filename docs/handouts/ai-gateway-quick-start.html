@@ -108,7 +108,7 @@
   <div class="band">
     <div class="kicker">UCR Research Computing &middot; AI gateway pilot</div>
     <h1>Run your lab's AI access<br>from your AI agent</h1>
-    <div class="sub">One endpoint for Gemini, Claude and open-weight models. You add members, give each one a capped key,
+    <div class="sub">One endpoint for Google's Gemini models. You add members, give each one a capped key,
       give an app its own key, and watch what the lab spends, by asking in plain language.</div>
     <div class="meta"><b>For lab PIs</b> (front)<br>Lab members: turn over<br>Oct 2026</div>
   </div>
@@ -145,7 +145,7 @@
         <h3>Give each student a key <span class="t">1 min each</span></h3>
         <p><span class="say">Issue a key to jdoe001.</span> Confirm the plan, then email the claim link and message it returns.</p>
         <p class="note">The link holds no key, works once, only for that student, for 72 hours. Keys expire after 90 days, cap each day at 30% of the
-          monthly cap, carry rate limits, and leave out Claude Opus unless you approve it on that key.</p>
+          monthly cap and carry rate limits.</p>
         <div class="ok">The student signs in, accepts the terms and sees their key once.</div>
       </div></div>
 
@@ -201,7 +201,7 @@ r = client.chat.completions.create(model="gemini-3.8-flash",
 print(r.choices[0].message.content)</span>
           <p class="lbl" style="margin-top:6px">Your spend and limits (free)</p>
           <span class="cmd long"><span class="p">$ </span>curl https://ucr-ursa-major-ai-gateway-service-575977597413.us-central1.run.app/key/info -H "Authorization: Bearer $UCR_AI_GATEWAY_KEY"</span>
-          <p class="note" style="margin:5px 0 0"><b>Claude Code, Gemini CLI:</b> exact setup lines on the web page (QR below).</p>
+          <p class="note" style="margin:5px 0 0"><b>Gemini CLI, OpenCode:</b> exact setup lines on the web page (QR below).</p>
         </div>
 
         <div class="box">
@@ -211,10 +211,10 @@ print(r.choices[0].message.content)</span>
             <tr><td><code>gemini-3.8-flash</code></td><td>fast, low cost; the sensible default</td></tr>
             <tr><td><code>gemini-2.5-flash-lite</code></td><td>cheapest; bulk classification, extraction</td></tr>
             <tr><td><code>gemini-2.5-pro</code></td><td>deeper reasoning, higher price</td></tr>
-            <tr><td><code>claude-sonnet-5</code></td><td>strong coding and analysis</td></tr>
             <tr><td><code>gemini-embedding-001</code></td><td>embeddings for search and retrieval</td></tr>
           </table>
-          <p class="note" style="margin:5px 0 0">Model choice is the biggest cost lever. A Claude agent session can spend tens of dollars an hour.</p>
+          <p class="note" style="margin:5px 0 0">Model choice is the biggest cost lever. Flash costs a fraction of Pro.</p>
+          <p class="note" style="margin:5px 0 0"><b>Need another model?</b> The gateway can route to other models and providers, and more are planned. Ask Research Computing.</p>
         </div>
       </div>
 
@@ -234,7 +234,7 @@ print(r.choices[0].message.content)</span>
           <h2>If you get stuck</h2>
           <table class="stuck">
             <tr><td>401 from the gateway</td><td>key wrong, blocked or expired; check <code>/key/info</code>, then ask your PI</td></tr>
-            <tr><td>error naming a model</td><td>your key does not include it (Opus needs PI approval)</td></tr>
+            <tr><td>error naming a model</td><td>your key does not include it; pick one from the table</td></tr>
             <tr><td>&ldquo;budget exceeded&rdquo;</td><td>daily or monthly cap reached; it resets, or ask your PI</td></tr>
             <tr><td>429 rate limit</td><td>too many requests a minute; slow down, or ask your PI</td></tr>
             <tr><td>link &ldquo;issued to someone else&rdquo;</td><td>sign in with the NetID account the link names</td></tr>

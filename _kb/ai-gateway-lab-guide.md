@@ -1,7 +1,7 @@
 ---
 title: "Using the UCR AI gateway: a guide for lab PIs and members"
 topic: Cloud
-description: "Run your lab's access to AI models: add members, give each one a capped key by claim link, issue a dedicated key for an app, and see what the lab spends. Then use a key from Python, curl, Claude Code, Gemini CLI or OpenCode."
+description: "Run your lab's access to AI models: add members, give each one a capped key by claim link, issue a dedicated key for an app, and see what the lab spends. Then use a key from Python, curl, Gemini CLI or OpenCode."
 audience: "PIs and members of labs onboarded to the UCR AI gateway pilot"
 reviewed: 2026-10-08
 owner: Research Computing
@@ -9,12 +9,12 @@ unlisted: true
 sitemap: false
 review_notes:
   - "Unlisted on purpose (2026-10-08): the AI gateway is a pilot open to labs Research Computing has onboarded, so this page is shared by link with those labs and is kept out of the KB index, related guides, site search and the sitemap, with noindex. Make it a listed, numbered article when the gateway opens more widely."
-  - "Tool names, roles, key policy (90-day expiry, daily cap of 30 percent of the monthly cap, Opus models by approval, rate limits on every key and lab) app keys and terms of use follow the gateway admin server (aigw v0.7.0) as read live on 2026-10-08. Client setups come from aigw_client_setup, tested 2026-10-01; the OpenCode MCP command was tested 2026-10-08 (OpenCode 1.18)."
+  - "Tool names, roles, key policy (90-day expiry, daily cap of 30 percent of the monthly cap, rate limits on every key and lab) app keys and terms of use follow the gateway admin server (aigw v0.7.0) as read live on 2026-10-08. Client setups come from aigw_client_setup, tested 2026-10-01; the OpenCode MCP command was tested 2026-10-08 (OpenCode 1.18)."
   - "Prices are deliberately not printed here: they change, and aigw_models shows the current price of every model."
   - "CHECK: the PI walkthrough (sign in, add a member, issue a key) follows the live tool definitions; the first faculty PI had not yet run it end to end when this was written."
 ---
 
-The UCR AI gateway is a Research Computing service, now in pilot, that gives labs access to AI models (Google Gemini, Anthropic Claude on Google Cloud, open-weight models and embeddings) through one endpoint. Each lab has a monthly allowance. The lab's PI decides who is in the lab, what each person may spend, who holds a key, and whether an app the lab runs gets a key of its own, without filing a ticket.
+The UCR AI gateway is a Research Computing service, now in pilot, that gives labs access to Google's Gemini models, including embeddings, through one endpoint. The gateway can route to other models and providers, and more are planned for the future, such as Claude, open-source models hosted elsewhere and third-party API sources. If you need a model that is not listed, contact Research Computing. Each lab has a monthly allowance. The lab's PI decides who is in the lab, what each person may spend, who holds a key, and whether an app the lab runs gets a key of its own, without filing a ticket.
 
 **Printable version:** [AI gateway quick start (PDF, 2 pages, Letter)](../../assets/documents/ai-gateway-quick-start.pdf).
 
@@ -25,7 +25,7 @@ This page has two parts: [for PIs](#for-pis-run-your-lab) and [for lab members](
 * **A lab** has a PI, a monthly allowance that resets on the 1st, members, and a shared speed limit (tokens and requests per minute) that all its keys count against together.
 * **Each member** has their own monthly cap inside the lab's allowance. A new lab gives members a default cap, so every member starts with one.
 * **Each person gets their own key**, delivered by a one-time claim link. The link holds no key and works only for the person it names, for 72 hours. The key is created when they open the link, sign in with their own UCR Google account and accept the terms of use, and it is shown to them once.
-* **Every key** expires after 90 days, has a daily cap of 30 percent of its monthly cap, has rate limits (tokens per minute, requests per minute, requests at once), and leaves out the most expensive models (Claude Opus 5 and 5.5) unless the PI approves them on that key. The PI's own key gets higher rate limits than students' keys.
+* **Every key** expires after 90 days, has a daily cap of 30 percent of its monthly cap, has rate limits (tokens per minute, requests per minute, requests at once). The PI's own key gets higher rate limits than students' keys.
 * **An app can have a key of its own.** For a web app or service that many people use (a classroom tool, for example), the PI issues one app key. It belongs to the lab rather than a person, has its own monthly cap, daily cap and higher rate limits sized for many users at once, and its spend shows as its own line. The app does any per-user limits on its side. The lab's shared speed limit still applies.
 * **The gateway records usage** (who, which model, tokens and cost), not the text of prompts or answers.
 
@@ -162,17 +162,7 @@ curl https://ucr-ursa-major-ai-gateway-service-575977597413.us-central1.run.app/
   -H "Authorization: Bearer $UCR_AI_GATEWAY_KEY"
 ```
 
-**Claude Code** (Claude models only; note the base URL has no `/v1`):
-
-```bash
-export ANTHROPIC_BASE_URL=https://ucr-ursa-major-ai-gateway-service-575977597413.us-central1.run.app
-export ANTHROPIC_AUTH_TOKEN=$UCR_AI_GATEWAY_KEY
-export ANTHROPIC_MODEL=claude-sonnet-5
-export ANTHROPIC_DEFAULT_SONNET_MODEL=claude-sonnet-5 ANTHROPIC_DEFAULT_HAIKU_MODEL=claude-sonnet-5
-claude
-```
-
-**Gemini CLI** (Gemini models only; choose "Use Gemini API Key"):
+**Gemini CLI** (choose "Use Gemini API Key"):
 
 ```bash
 export GOOGLE_GEMINI_BASE_URL=https://ucr-ursa-major-ai-gateway-service-575977597413.us-central1.run.app
@@ -189,11 +179,9 @@ gemini
 | `gemini-3.8-flash` | Fast, low-cost general model; the sensible default |
 | `gemini-2.5-flash-lite` | Cheapest; bulk classification, extraction, short summaries |
 | `gemini-2.5-pro` | Deeper reasoning than Flash, at a higher price |
-| `claude-sonnet-5` | Strong coding and analysis |
-| `gpt-oss-120b` | Low-cost open-weight model (not for agent tools that send `tool_choice`) |
 | `gemini-embedding-001` | Embeddings for search and retrieval |
 
-Model choice is the biggest cost lever: Flash models cost a small fraction of Claude, and a Claude agent session can spend tens of dollars an hour. If you also plug in aigw (step 1 for PIs works for members too, once Research Computing adds you to the sign-in list), ask it "Which models can I use, and what do they cost?" or "What would a million input tokens on gemini-3.8-flash cost?"
+Model choice is the biggest cost lever: Flash models cost a fraction of Pro, and agent tools that make many calls add up quickly. If you also plug in aigw (step 1 for PIs works for members too, once Research Computing adds you to the sign-in list), ask it "Which models can I use, and what do they cost?" or "What would a million input tokens on gemini-3.8-flash cost?"
 
 ## Rules
 
@@ -208,7 +196,7 @@ Model choice is the biggest cost lever: Flash models cost a small fraction of Cl
 | Symptom | Fix |
 | :--- | :--- |
 | 401 from the gateway | The key is wrong, blocked or expired; check it with the `/key/info` call above, then ask your PI |
-| 400 or 401 naming a model | Your key does not include that model (Opus needs PI approval); pick another |
+| 400 or 401 naming a model | Your key does not include that model; pick one from the table above |
 | A "budget exceeded" error | You hit your daily or monthly cap; it resets, or ask your PI to raise it |
 | 429 "rate limit" errors | Too many requests or tokens per minute for your key or your lab; wait a minute or slow your script, or ask your PI to raise the key's limits |
 | The claim link says it was issued to someone else | Sign in with the NetID account the link names; ask your PI if it is not yours |
