@@ -6,7 +6,7 @@ status: Pilot
 tags: [Object storage (S3), Project data, Recharge]
 data_levels: P1-P2
 owner: "Research Computing"
-reviewed: 2026-10-04
+reviewed: 2026-10-08
 governed_by: "CephRDS pilot terms (set out when storage is allocated)"
 redirect_from:
   - /pages/ceph_secure_research_storage.html
@@ -25,8 +25,7 @@ not_fit:
 glance:
   - {k: "Who can use it", v: "UCR faculty and staff, allocated by project"}
   - {k: "Access", v: "S3-compatible API only, from the campus network or VPN"}
-  - {k: "Rental", fact: cephrds_rent}
-  - {k: "Purchase", fact: cephrds_purchase}
+  - {k: "Rates", v: "Rates under review, not yet approved"}
   - {k: "Data allowed", v: "P1 and P2"}
   - {k: "Status", v: "Pilot: terms and capacity may change"}
 cta:
@@ -44,7 +43,7 @@ CephRDS is in **pilot**. During the pilot, capacity is limited, terms may change
 
 ## Costs
 
-Pilot rates are {% include fact.html id="cephrds_rent" %} for rented capacity, or {% include fact.html id="cephrds_purchase" bare=true %} for purchased capacity. The terms that apply are the ones set out when your storage is allocated. See [Costs]({{ '/costs/' | relative_url }}).
+Rates are under review, not yet approved. Terms are set out when your storage is allocated. See [Costs]({{ '/costs/' | relative_url }}).
 
 ## How to get access
 

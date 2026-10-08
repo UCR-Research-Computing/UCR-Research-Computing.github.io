@@ -3,7 +3,7 @@ title: "Research data storage at UCR: choosing by stage"
 kb_id: KB001
 topic: Storage
 audience: "UCR faculty, postdocs, researchers and students"
-reviewed: 2026-10-04
+reviewed: 2026-10-08
 owner: Research Computing
 redirect_from:
   - /Knowledge_Base/KB001_Research_Data_Storage_Strategy.html
@@ -25,7 +25,7 @@ Research data moves through stages: data you are computing on, project data the 
 
 - Status: **pilot**. Terms and capacity may change during the pilot.
 - Access over S3, with tools such as rclone and Cyberduck.
-- Pilot rates: {% include fact.html id="cephrds_rent" bare=true %} rented, or {% include fact.html id="cephrds_purchase" bare=true %} purchased (Research Computing CephRDS pilot terms).
+- Rates: under review, not yet approved.
 - Details: [CephRDS](../../services/cephrds/).
 
 Cloud projects that need high-performance shared file systems (such as Google Filestore) can use them through a recharged Ursa Major project or a [cloud account](../../services/cloud-accounts/).

@@ -3,12 +3,13 @@ title: "Connecting to CephRDS (S3 Object Storage)"
 kb_id: KB013
 topic: Storage
 audience: "Researchers, PIs, Students"
-reviewed: 2026-10-04
+reviewed: 2026-10-08
 owner: Research Computing
 review_notes:
   - "Chuck 2026-10-04: S3 only for now; campus network or VPN only."
   - "Removed a staff name and internal team routing; described the request process instead of promising outcomes."
-  - "Added pilot status, P1-P2 data limit and costs via the cephrds_rent / cephrds_purchase facts; removed price-claim wording."
+  - "Added pilot status, P1-P2 data limit and costs; removed price-claim wording."
+  - "2026-10-08: CephRDS rate figures removed; rates under review, not yet approved."
   - "Replaced the duplicated Python script with a short example and a link to KB018; used placeholder bucket names."
 redirect_from:
   - /Knowledge_Base/KB013_CephRDS_Onboarding.html
@@ -25,7 +26,7 @@ Before you request storage, note:
 - **Pilot service.** CephRDS is in pilot. Capacity is limited, terms may change, and each request is reviewed individually. See [CephRDS](../../services/cephrds/).
 - **Network.** CephRDS is reachable from the campus network only. Off campus, connect to the [UCR campus VPN](https://vpn.ucr.edu/) (Cisco Secure Client) first.
 - **Data allowed.** P1 and P2 data only. Do not store P3 or P4 data on CephRDS.
-- **Costs.** Pilot rates are {% include fact.html id="cephrds_rent" %} for rented capacity, or {% include fact.html id="cephrds_purchase" bare=true %} for purchased capacity. The terms set out when your storage is allocated are the ones that apply. See [Costs](../../costs/).
+- **Costs.** Rates are under review, not yet approved. Terms are set out when your storage is allocated. See [Costs](../../costs/).
 
 ## Requesting storage and access keys
 
