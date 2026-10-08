@@ -9,7 +9,7 @@ unlisted: true
 sitemap: false
 review_notes:
   - "Unlisted on purpose (2026-10-08): the AI gateway is a pilot open to labs Research Computing has onboarded, so this page is shared by link with those labs and is kept out of the KB index, related guides, site search and the sitemap, with noindex. Make it a listed, numbered article when the gateway opens more widely."
-  - "Tool names, roles, key policy (90-day expiry, daily cap of 30 percent of the monthly cap, Opus models by approval) and terms of use follow the gateway admin server (aigw v0.5.1) as read live on 2026-10-08. Client setups come from aigw_client_setup, tested 2026-10-01."
+  - "Tool names, roles, key policy (90-day expiry, daily cap of 30 percent of the monthly cap, Opus models by approval, rate limits on every key and lab) and terms of use follow the gateway admin server (aigw v0.6.0) as read live on 2026-10-08. Client setups come from aigw_client_setup, tested 2026-10-01."
   - "Prices are deliberately not printed here: they change, and aigw_models shows the current price of every model."
   - "CHECK: the PI walkthrough (sign in, add a member, issue a key) follows the live tool definitions; the first faculty PI had not yet run it end to end when this was written."
 ---
@@ -22,10 +22,10 @@ This page has two parts: [for PIs](#for-pis-run-your-lab) and [for lab members](
 
 ## How it works
 
-* **A lab** has a PI, a monthly allowance that resets on the 1st, and members.
-* **Each member** can have their own monthly cap inside the lab's allowance.
+* **A lab** has a PI, a monthly allowance that resets on the 1st, members, and a shared speed limit (tokens and requests per minute) that all its keys count against together.
+* **Each member** has their own monthly cap inside the lab's allowance. A new lab gives members a default cap, so every member starts with one.
 * **Each person gets their own key**, delivered by a one-time claim link. The link holds no key and works only for the person it names, for 72 hours. The key is created when they open the link, sign in with their own UCR Google account and accept the terms of use, and it is shown to them once.
-* **Every key** expires after 90 days, has a daily cap of 30 percent of its monthly cap, and leaves out the most expensive models (Claude Opus 5 and 5.5) unless the PI approves them on that key.
+* **Every key** expires after 90 days, has a daily cap of 30 percent of its monthly cap, has rate limits (tokens per minute, requests per minute, requests at once), and leaves out the most expensive models (Claude Opus 5 and 5.5) unless the PI approves them on that key. The PI's own key gets higher rate limits than students' keys.
 * **The gateway records usage** (who, which model, tokens and cost), not the text of prompts or answers.
 
 Everyone is identified by their UCR NetID account (for example `jdoe001@ucr.edu`). Use NetIDs when you add people; the gateway resolves other UCR addresses to the NetID account.
@@ -59,7 +59,7 @@ A browser opens once. Sign in with your UCR NetID account. Then ask:
 
 > Add jdoe001 to my lab with a monthly cap of 50 dollars.
 
-The assistant shows the person's directory name back so you can confirm it is the right person. A member without a cap can spend up to the whole lab allowance, so give everyone a cap.
+The assistant shows the person's directory name back so you can confirm it is the right person. Leave out the cap and the lab's default member cap applies.
 
 ### 3. Give each student a key
 
@@ -74,6 +74,9 @@ Changes that create keys or remove people are two-step: the assistant shows a pl
 | "Show my lab." | Allowance, spent this month, reset date, every member with cap and spend |
 | "What did my lab spend in the last 30 days?" | Spend by member, by model and by day |
 | "Set jdoe001's cap to 100 dollars." | Changes the member's cap (never above the allowance) |
+| "Show my lab's rate limits." | The lab's shared limit and the default limits for new keys |
+| "Lower jdoe001's key to 100 requests a minute." | Changes a key's rate limits at once, no new key needed |
+| "Give new student keys 1M tokens a minute." | Changes the lab's default rate limits for keys issued from now on |
 | "Which claims are still open?" | Claim links not yet collected, and when they expire |
 | "Block jdoe001's key." | Refuses that key at once; unblock undoes it |
 | "Remove jdoe001 from my lab." | Takes access away; history is kept |
@@ -183,6 +186,7 @@ Model choice is the biggest cost lever: Flash models cost a small fraction of Cl
 | 401 from the gateway | The key is wrong, blocked or expired; check it with the `/key/info` call above, then ask your PI |
 | 400 or 401 naming a model | Your key does not include that model (Opus needs PI approval); pick another |
 | A "budget exceeded" error | You hit your daily or monthly cap; it resets, or ask your PI to raise it |
+| 429 "rate limit" errors | Too many requests or tokens per minute for your key or your lab; wait a minute or slow your script, or ask your PI to raise the key's limits |
 | The claim link says it was issued to someone else | Sign in with the NetID account the link names; ask your PI if it is not yours |
 | The claim link has expired | Links last 72 hours; ask your PI to issue a new one |
 | aigw sign-in refuses you | You are not on the sign-in list yet; ask Research Computing |

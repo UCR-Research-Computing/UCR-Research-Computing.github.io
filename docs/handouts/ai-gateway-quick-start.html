@@ -137,14 +137,14 @@
       <div class="step"><div class="num">2</div><div>
         <h3>Add your students, each with a cap <span class="t">1 min each</span></h3>
         <p><span class="say">Add jdoe001 to my lab with a monthly cap of 50 dollars.</span></p>
-        <p class="note">Use NetIDs. The directory name comes back so you can confirm the person. A member with no cap can spend the whole allowance.</p>
+        <p class="note">Use NetIDs. The directory name comes back so you can confirm the person. Leave out the cap and the lab default applies.</p>
       </div></div>
 
       <div class="step"><div class="num">3</div><div>
         <h3>Give each student a key <span class="t">1 min each</span></h3>
         <p><span class="say">Issue a key to jdoe001.</span> Confirm the plan, then email the claim link and message it returns.</p>
         <p class="note">The link holds no key, works once, only for that student, for 72 hours. Keys expire after 90 days, cap each day at 30% of the
-          monthly cap, and leave out Claude Opus unless you approve it on that key.</p>
+          monthly cap, carry rate limits, and leave out Claude Opus unless you approve it on that key.</p>
         <div class="ok">The student signs in, accepts the terms and sees their key once.</div>
       </div></div>
 
@@ -234,6 +234,7 @@ print(r.choices[0].message.content)</span>
             <tr><td>401 from the gateway</td><td>key wrong, blocked or expired; check <code>/key/info</code>, then ask your PI</td></tr>
             <tr><td>error naming a model</td><td>your key does not include it (Opus needs PI approval)</td></tr>
             <tr><td>&ldquo;budget exceeded&rdquo;</td><td>daily or monthly cap reached; it resets, or ask your PI</td></tr>
+            <tr><td>429 rate limit</td><td>too many requests a minute; slow down, or ask your PI</td></tr>
             <tr><td>link &ldquo;issued to someone else&rdquo;</td><td>sign in with the NetID account the link names</td></tr>
             <tr><td>link expired</td><td>links last 72 hours; ask your PI for a new one</td></tr>
             <tr><td>lost your key</td><td>it is never shown again; ask your PI to issue a new one</td></tr>
