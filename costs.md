@@ -25,14 +25,14 @@ Some services are paid for by the lab from a UCR funding source (a chart of acco
 <table class="rates">
   <thead><tr><th>Item</th><th>Rate</th><th>Source</th><th>As of</th></tr></thead>
   <tbody>
-  {%- assign ids = "hpcc_lab_fee,hpcc_storage_rent_tb,hpcc_storage_rent_gb,hpcc_owned_storage_fee,hpcc_labor_rate,hpcc_user_storage,cephrds_rent,cephrds_purchase,cloud_admin_setup,cloud_admin_annual" | split: "," -%}
+  {%- assign ids = "hpcc_lab_fee,hpcc_storage_rent_tb,hpcc_storage_rent_gb,hpcc_owned_storage_fee,hpcc_labor_rate,hpcc_user_storage,cephrds_rates,cloud_admin_setup,cloud_admin_annual" | split: "," -%}
   {%- for id in ids -%}{%- assign f = site.data.facts[id] -%}
   <tr><td>{{ f.label }}</td><td class="num">{{ f.value }}</td><td>{% if f.url != "" %}<a href="{{ f.url }}">{{ f.source }}</a>{% else %}{{ f.source }}{% endif %}</td><td>{{ f.as_of | date: "%b %Y" }}</td></tr>
   {%- endfor -%}
   </tbody>
 </table>
 
-HPCC figures are UC internal rates. External and non-UC rates differ: see the [HPCC Recharging Rates](https://hpcc.ucr.edu/about/overview/rates/). CephRDS rates are pilot terms. Cloud usage itself is billed at the rates in the University of California agreement with each provider, and set out in your MOU.
+HPCC figures are UC internal rates. External and non-UC rates differ: see the [HPCC Recharging Rates](https://hpcc.ucr.edu/about/overview/rates/). CephRDS rates are under review and not yet approved. Cloud usage itself is billed at the rates in the University of California agreement with each provider, and set out in your MOU.
 
 ## Services without a recharge under current terms
 

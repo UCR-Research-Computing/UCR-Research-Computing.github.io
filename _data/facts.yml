@@ -83,19 +83,12 @@ hpcc_software:
   url: https://hpcc.ucr.edu/about/overview/rates/
   as_of: 2026-10-04
   owner: HPCC
-cephrds_rent:
-  label: CephRDS rental (pilot terms)
-  value: "$50 per TB per year"
-  source: "CephRDS Sustainability and Financial Model (Research Computing, Sep 2026)"
+cephrds_rates:
+  label: CephRDS storage
+  value: "Rates under review, not yet approved"
+  source: "Research Computing"
   url: ""
-  as_of: 2026-09-16
-  owner: Research Computing
-cephrds_purchase:
-  label: CephRDS purchased capacity (pilot terms)
-  value: "$250 per usable TB, one time, for the 5-year hardware lifecycle"
-  source: "CephRDS Sustainability and Financial Model (Research Computing, Sep 2026)"
-  url: ""
-  as_of: 2026-09-16
+  as_of: 2026-10-08
   owner: Research Computing
 cloud_admin_setup:
   label: Cloud account setup fee (enclave, cloud discount programs)
