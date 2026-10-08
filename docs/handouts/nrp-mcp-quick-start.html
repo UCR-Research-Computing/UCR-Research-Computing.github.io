@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Run your research on Nautilus from your AI assistant (nrp-mcp quick start)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fira+Sans+Condensed:wght@500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  @page { size: Letter; margin: 0; }
+  :root {
+    --navy-950: #001a4f; --navy: #00287a; --blue: #003da5; --blue-mid: #1f5fbf;
+    --sky: #ccd8ed; --sky-50: #f2f6fc; --gold: #ffb81c; --gold-deep: #f1ab00;
+    --ink: #0f1b33; --muted: #4b5874; --border: #d5deec; --ok: #3f8f2a; --red: #c8102e;
+    --font: 'Fira Sans', 'Helvetica Neue', Arial, sans-serif;
+    --cond: 'Fira Sans Condensed', 'Fira Sans', Arial, sans-serif;
+    --mono: 'Fira Code', 'DejaVu Sans Mono', monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: var(--font); color: var(--ink); font-size: 9.6pt; line-height: 1.38;
+         -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 8.5in; height: 11in; position: relative; overflow: hidden; page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+
+  /* Header band */
+  .band { background: linear-gradient(118deg, var(--navy-950) 0%, var(--navy) 58%, var(--blue) 100%);
+          color: #fff; padding: 0.34in 0.5in 0.27in; position: relative; }
+  .band::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 5px; background: var(--gold); }
+  .kicker { font-family: var(--cond); font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+            font-size: 8.4pt; color: var(--gold); }
+  .band h1 { font-family: var(--cond); font-weight: 700; font-size: 23pt; line-height: 1.05; margin: 6px 0 6px; letter-spacing: -.005em; }
+  .band .sub { font-size: 10.6pt; color: #d9e3f5; max-width: 5.6in; }
+  .band .meta { position: absolute; right: 0.5in; top: 0.36in; text-align: right; font-size: 8.4pt; color: #c9d6ef; line-height: 1.5; }
+  .band .meta b { color: #fff; font-weight: 600; }
+  .band.slim { padding: 0.22in 0.5in 0.19in; }
+  .band.slim h1 { font-size: 17pt; margin: 3px 0 0; }
+
+  .body { padding: 0.17in 0.5in 0; }
+
+  /* Strip of what you get */
+  .strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 0 0 0.13in; }
+  .strip div { background: var(--sky-50); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 6px; padding: 5px 8px; }
+  .strip b { display: block; font-family: var(--cond); font-weight: 600; color: var(--navy); font-size: 9.6pt; }
+  .strip span { color: var(--muted); font-size: 8.3pt; line-height: 1.3; display: block; }
+
+  /* Steps */
+  .steps { display: grid; grid-template-columns: 1fr; gap: 6px; }
+  .step { display: grid; grid-template-columns: 30px 1fr; gap: 10px; align-items: start;
+          border: 1px solid var(--border); border-radius: 7px; padding: 6px 10px 6px 8px; background: #fff; }
+  .num { width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: #fff;
+         font-family: var(--cond); font-weight: 700; font-size: 13pt; display: flex; align-items: center; justify-content: center; }
+  .step h3 { margin: 0 0 2px; font-family: var(--cond); font-weight: 600; font-size: 11.4pt; color: var(--navy); }
+  .step h3 .tag + .t, .step h3 .t { float: right; font-family: var(--font); font-weight: 500; font-size: 7.8pt; color: var(--muted);
+                background: var(--sky-50); border: 1px solid var(--border); border-radius: 10px; padding: 1px 7px; margin-top: 1px; }
+  .step p { margin: 2px 0; }
+  .step .ok { color: var(--ok); font-weight: 600; font-size: 8.6pt; margin-top: 3px; }
+  .step .ok::before { content: "\2713  "; }
+  .os { display: grid; grid-template-columns: 66px 1fr; gap: 2px 8px; margin: 3px 0 1px; align-items: baseline; }
+  .os .l { font-family: var(--cond); font-weight: 600; color: var(--muted); font-size: 8.4pt; text-transform: uppercase; letter-spacing: .05em; }
+  code, .cmd { font-family: var(--mono); font-size: 8.2pt; }
+  .cmd { display: block; background: var(--navy-950); color: #e8eefb; border-radius: 4px; padding: 4px 8px; white-space: pre-wrap; word-break: break-all; line-height: 1.35; }
+  .cmd .p { color: var(--gold); user-select: none; }
+  code { background: var(--sky-50); border: 1px solid var(--border); border-radius: 3px; padding: 0 3px; color: var(--navy-950); white-space: nowrap; }
+  .cmd.long { font-size: 6.55pt; letter-spacing: -.02em; padding: 4px 6px; }
+  .nw { white-space: nowrap; }
+  .note { color: var(--muted); font-size: 8.3pt; }
+
+  /* Footer */
+  .foot { position: absolute; left: 0.5in; right: 0.5in; bottom: 0.3in; display: flex; justify-content: space-between;
+          align-items: flex-end; border-top: 1px solid var(--border); padding-top: 7px; font-size: 7.8pt; color: var(--muted); }
+  .foot b { color: var(--navy); }
+
+  /* Back page */
+  .cols { display: grid; grid-template-columns: 1.08fr 1fr; gap: 0.24in; }
+  h2 { font-family: var(--cond); font-weight: 600; font-size: 12.4pt; color: var(--navy); margin: 0 0 6px;
+       padding-bottom: 3px; border-bottom: 2px solid var(--gold); display: inline-block; }
+  .box { border: 1px solid var(--border); border-radius: 7px; padding: 8px 11px; margin-bottom: 0.12in; background: #fff; }
+  .box.tint { background: var(--sky-50); }
+  table { width: 100%; border-collapse: collapse; font-size: 8.4pt; }
+  th { text-align: left; font-family: var(--cond); font-weight: 600; color: var(--muted); font-size: 7.9pt; text-transform: uppercase; letter-spacing: .05em; padding: 2px 4px 3px; border-bottom: 1px solid var(--border); }
+  td { padding: 3px 4px; border-bottom: 1px solid #e8eef7; vertical-align: top; }
+  tr:last-child td { border-bottom: 0; }
+  td code { font-size: 7.6pt; }
+  .say { font-style: italic; color: var(--navy-950); }
+  .say::before { content: "\201C"; } .say::after { content: "\201D"; }
+  ul.tight { margin: 2px 0 0; padding-left: 15px; } ul.tight li { margin: 1.5px 0; }
+  .rules li b { color: var(--red); font-weight: 600; }
+  .qrs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .qrs > div { display: grid; grid-template-columns: 0.78in 1fr; gap: 9px; align-items: center; }
+  .qrs img { width: 0.78in; height: 0.78in; display: block; }
+  .qrs b { display: block; font-family: var(--cond); font-weight: 600; color: var(--navy); font-size: 9.6pt; line-height: 1.15; margin-bottom: 2px; }
+  .qrs span { color: var(--muted); font-size: 7.6pt; line-height: 1.3; display: block; }
+  .qrs span i { font-style: normal; color: var(--ink); }
+  .alt { font-size: 8.3pt; }
+  .alt b { color: var(--navy); font-family: var(--cond); font-weight: 600; }
+  .stuck td:first-child { font-weight: 500; color: var(--navy-950); width: 42%; }
+  .tag { margin-left: 8px !important; display: inline-block; font-family: var(--cond); font-weight: 600; font-size: 7.6pt; letter-spacing: .05em; text-transform: uppercase;
+         background: var(--gold); color: var(--navy-950); border-radius: 3px; padding: 0 5px; margin-left: 4px; vertical-align: 1px; }
+</style>
+</head>
+<body>
+
+<!-- ===================== FRONT ===================== -->
+<section class="page">
+  <div class="band">
+    <div class="kicker">UCR Research Computing &middot; Quick start</div>
+    <h1>Run your research on Nautilus,<br>from your AI assistant</h1>
+    <div class="sub">Connect your laptop to the National Research Platform, give your assistant the
+      <b style="color:#fff">nrp</b> tools, then move a Slurm job to Kubernetes by asking in plain language.</div>
+    <div class="meta"><b>nrp-mcp</b> 0.7.0 or newer<br>macOS &middot; Linux &middot; Windows<br>KB031 &middot; Oct 2026</div>
+  </div>
+
+  <div class="body">
+    <div class="strip">
+      <div><b>National GPUs and CPUs</b><span>No UCR recharge and no allocation proposal to write.</span></div>
+      <div><b>Plain language</b><span>Your assistant plans, runs, watches and cleans up for you.</span></div>
+      <div><b>Nothing hidden</b><span>Every plan shows what it creates and the kubectl it equals.</span></div>
+      <div><b>Asks first</b><span>Running, publishing and deleting each need a plan you approve.</span></div>
+    </div>
+
+    <div class="steps">
+      <div class="step"><div class="num">1</div><div>
+        <h3>Sign in to Nautilus <span class="t">2 min</span></h3>
+        <p>Go to <b>nrp.ai</b>, click <b>Login</b>, choose <b>University of California, Riverside</b>, and accept the policy.
+          Your first sign-in is what activates your namespace invite.</p>
+        <div class="ok">You see your name on nrp.ai; your namespace admin sees you.</div>
+      </div></div>
+
+      <div class="step"><div class="num">2</div><div>
+        <h3>Install nrp-mcp <span class="t">2 min</span></h3>
+        <div class="os">
+          <span class="l">Mac / Linux</span><span class="cmd long"><span class="p">$ </span>curl -fsSL https://raw.githubusercontent.com/UCR-Research-Computing/nrp-mcp/main/scripts/install.sh | sh
+<span class="p">$ </span>echo 'export PATH="$HOME/.local/bin:$PATH"' &gt;&gt; ~/.zshrc   <span class="p"># macOS; Linux: ~/.bashrc</span>
+<span class="p">$ </span>export PATH="$HOME/.local/bin:$PATH"</span>
+          <span class="l">Windows</span><span>Download the <code>windows_amd64.zip</code> from the <b>Releases</b> page, then paste the PowerShell lines from the web version (KB031, QR on the back). They put <code>nrp-mcp.exe</code> on your PATH.</span>
+        </div>
+        <div class="ok"><code>nrp-mcp version</code> prints 0.7.0 or newer.</div>
+      </div></div>
+
+      <div class="step"><div class="num">3</div><div>
+        <h3>Connect your laptop <span class="t">8 min</span></h3>
+        <p>Download your config at <b>nrp.ai/config</b> (it lands in Downloads), then run:</p>
+        <span class="cmd"><span class="p">$ </span>nrp-mcp setup</span>
+        <p class="note">It installs kubectl and the sign-in plugin into your user folder (no admin rights, checksums verified),
+          puts the config in place, then opens a normal browser tab for the UCR sign-in. It asks before changing anything.</p>
+        <div class="ok">It ends with &ldquo;This computer is ready for Nautilus.&rdquo;</div>
+      </div></div>
+
+      <div class="step"><div class="num">4</div><div>
+        <h3>Install Hermes Agent and add your key <span class="t">8 min</span><span class="tag">recommended</span></h3>
+        <div class="os">
+          <span class="l">Mac / Linux</span><span class="cmd"><span class="p">$ </span>curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash</span>
+          <span class="l">Windows</span><span class="cmd"><span class="p">PS&gt; </span>iex (irm https://hermes-agent.nousresearch.com/install.ps1)</span>
+        </div>
+        <p>Open a new terminal. Store your Gemini API key and pick the model:</p>
+        <span class="cmd"><span class="p">$ </span>hermes config set GEMINI_API_KEY <i style="color:var(--gold)">your-key</i>
+<span class="p">$ </span>hermes config set model.provider gemini
+<span class="p">$ </span>hermes config set model.default gemini-3.8-flash</span>
+        <div class="ok"><code>hermes chat -q "hello"</code> answers.</div>
+      </div></div>
+
+      <div class="step"><div class="num">5</div><div>
+        <h3>Give Hermes the nrp tools <span class="t">2 min</span></h3>
+        <span class="cmd"><span class="p">$ </span>hermes mcp add nrp --command "$HOME/.local/bin/nrp-mcp" --args serve</span>
+        <p class="note">Windows: <code>--command "$env:LOCALAPPDATA\Programs\nrp-mcp\bin\nrp-mcp.exe"</code>. Answer <b>Y</b> to enable all 9 tools; if it cannot connect, answer <b>N</b> to &ldquo;save anyway&rdquo; and fix the path. Then start <code>hermes</code> and ask:</p>
+        <p style="margin-top:3px"><span class="say">Where do I stand on Nautilus?</span></p>
+        <div class="ok">It answers with your user, namespace, what is running and your GPU quota.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span><b>Your key is yours.</b> Never paste it into a chat, a repo, a shared doc or a screenshot.</span>
+    <span>Turn over: the exercise, what to say, the rules</span>
+  </div>
+</section>
+
+<!-- ===================== BACK ===================== -->
+<section class="page">
+  <div class="band slim">
+    <div class="kicker">Hands-on &middot; Slurm to Kubernetes</div>
+    <h1>Move a Slurm array job to Nautilus in two sentences</h1>
+  </div>
+
+  <div class="body">
+    <div class="cols">
+      <div>
+        <div class="box tint">
+          <h2>The exercise</h2>
+          <p style="margin:3px 0 5px">Get <code>examples/slurm-array-bootstrap</code> from the project (QR below, Code, Download ZIP): an R bootstrap of a
+            trimmed mean and a normal Slurm script with <code>--array=0-9</code>. In that folder, ask Hermes:</p>
+          <ol class="tight" style="padding-left:17px">
+            <li><span class="say">Plan the Slurm script in this folder and show me what each line becomes.</span></li>
+            <li><span class="say">Run it.</span></li>
+            <li><span class="say">How did it go?</span></li>
+            <li><span class="say">Clean up everything I made.</span></li>
+          </ol>
+          <table style="margin-top:7px">
+            <tr><th>Slurm line</th><th>Becomes on Nautilus</th></tr>
+            <tr><td><code>--cpus-per-task=1</code><br><code>--mem=2G</code></td><td>CPU and memory request; limits equal requests</td></tr>
+            <tr><td><code>--time=00:20:00</code></td><td>a time limit on the Job (whole hours)</td></tr>
+            <tr><td><code>--array=0-9</code></td><td>an Indexed Job: 10 tasks, each with its own <code>$SLURM_ARRAY_TASK_ID</code></td></tr>
+            <tr><td><code>module load R</code></td><td>a container image with R in it</td></tr>
+          </table>
+          <p class="note" style="margin:6px 0 0">Ten tasks, ten seeds, ten different answers, in about a minute. The same script still runs on Slurm.</p>
+        </div>
+
+        <div class="box">
+          <h2>What to say</h2>
+          <table>
+            <tr><th>You say</th><th>nrp does</th></tr>
+            <tr><td><span class="say">Where do I stand?</span></td><td>who you are, what runs, quotas, warnings</td></tr>
+            <tr><td><span class="say">Run train.py on a GPU</span></td><td>plans it, waits for your yes, then runs</td></tr>
+            <tr><td><span class="say">Run this 50 times, seeds 1 to 50</span></td><td>a sweep (Indexed Job)</td></tr>
+            <tr><td><span class="say">Why did it fail?</span></td><td>logs plus a plain diagnosis and the fix</td></tr>
+            <tr><td><span class="say">Give me a Jupyter notebook</span></td><td>a private session on Nautilus</td></tr>
+            <tr><td><span class="say">Copy results to my laptop</span></td><td>downloads from your volume</td></tr>
+            <tr><td><span class="say">Clean up</span></td><td>lists what you made, deletes after a 2nd yes</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <div class="box" style="border-color:#f3c4cc">
+          <h2>Rules of the road</h2>
+          <ul class="tight rules">
+            <li><b>P1 data only.</b> Public, non-sensitive data. No student records, PII, clinical or controlled data.</li>
+            <li><b>No idle GPUs.</b> Ask for a GPU only when the code uses one; idle GPUs get accounts suspended.</li>
+            <li><b>Nothing public without asking RC.</b> Publishing a web app needs you to type its URL back.</li>
+            <li><b>Clean up</b> when you finish. Jobs left running hold resources others need.</li>
+            <li><b>Keys stay private.</b> Never paste a key into a chat, a repo, a shared doc or a screenshot.</li>
+          </ul>
+        </div>
+
+        <div class="box tint">
+          <h2>If you get stuck</h2>
+          <table class="stuck">
+            <tr><td>&ldquo;no Nautilus context&rdquo;</td><td>download the config at nrp.ai/config, rerun <code>nrp-mcp setup</code></td></tr>
+            <tr><td>&ldquo;forbidden&rdquo; / not in namespace</td><td>sign in at nrp.ai once more; ask your namespace admin</td></tr>
+            <tr><td><code>command not found</code></td><td>run the PATH lines in step 2, or use <code>~/.local/bin/nrp-mcp</code></td></tr>
+            <tr><td>&ldquo;Not ready yet: kubectl&rdquo;</td><td>an older kubectl (Docker Desktop) is first on PATH; ask RC</td></tr>
+            <tr><td>Hermes has no nrp tools</td><td><code>hermes mcp test nrp</code>; if it fails, remove and redo step 5</td></tr>
+            <tr><td>Laptop will not cooperate</td><td>use the NRP JupyterHub (only needs the sign-in):<br><b class="nw">jupyterhub-west.nrp-nautilus.io</b></td></tr>
+          </table>
+        </div>
+
+        <div class="box alt">
+          <h2>Prefer another assistant?</h2>
+          <p style="margin:2px 0"><b>Gemini CLI</b> (Node.js 20+): <code>npm i -g @google/gemini-cli</code>, set <code>GEMINI_API_KEY</code>, then <code>gemini mcp add nrp ~/.local/bin/nrp-mcp serve</code></p>
+          <p style="margin:4px 0 0"><b>OpenCode</b>: set <code>GOOGLE_GENERATIVE_AI_API_KEY</code>, model <code>google/gemini-3.8-flash</code>, add nrp under <code>mcp</code> in <code>opencode.json</code>. Claude Code and others: see KB031.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="box" style="margin-top:0.02in">
+      <div class="qrs">
+        <div><img src="qr_kit.svg" alt=""><div><b>nrp-mcp</b><span>Install, Releases (Windows zip) and the exercise in <i>examples/</i></span><span><i>github.com/UCR-Research-Computing/</i><br><i>nrp-mcp</i></span></div></div>
+        <div><img src="qr_nrp.svg" alt=""><div><b>Your NRP config</b><span>Sign in first, then Get Config; it lands in Downloads</span><span><i>nrp.ai/config</i></span></div></div>
+        <div><img src="qr_kb031.svg" alt=""><div><b>This sheet, online</b><span>Copyable commands, Windows steps, other assistants; links to the full Nautilus guide</span><span><i>RC Knowledge Base, KB031</i></span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span><b>UCR Research Computing</b> &middot; research-computing@ucr.edu</span>
+    <span>nrp-mcp is open source (MIT) &middot; Nautilus is run by the National Research Platform</span>
+  </div>
+</section>
+
+</body>
+</html>

@@ -562,3 +562,5 @@ kubectl delete pvc -n ucr-example class-data
 6. [Using the NRP's hosted large language models](../kb028-nautilus-llm-api/)
 7. [Hosting a lab web tool or service on Nautilus](../kb029-nautilus-hosting-web-tools/)
 8. Teaching a class or workshop on Nautilus (this article)
+
+See also: [Run Nautilus jobs from your AI assistant (nrp-mcp quick start)](../kb031-nrp-mcp-quick-start/), a printable one-sheet handout for a hands-on session.
