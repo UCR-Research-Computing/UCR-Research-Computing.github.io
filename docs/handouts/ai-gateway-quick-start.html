@@ -107,27 +107,28 @@
 <section class="page">
   <div class="band">
     <div class="kicker">UCR Research Computing &middot; AI gateway pilot</div>
-    <h1>Run your lab's AI access<br>from your AI assistant</h1>
+    <h1>Run your lab's AI access<br>from your AI agent</h1>
     <div class="sub">One endpoint for Gemini, Claude and open-weight models. You add members, give each one a capped key,
-      and watch what the lab spends, by asking in plain language.</div>
+      give an app its own key, and watch what the lab spends, by asking in plain language.</div>
     <div class="meta"><b>For lab PIs</b> (front)<br>Lab members: turn over<br>Oct 2026</div>
   </div>
 
   <div class="body">
     <div class="strip">
       <div><b>One lab allowance</b><span>Resets on the 1st. You split it into caps per member.</span></div>
-      <div><b>A key per person</b><span>By one-time claim link; each student signs in and accepts the terms.</span></div>
+      <div><b>A key per person, or per app</b><span>By one-time claim link; each person signs in and accepts the terms.</span></div>
       <div><b>Plans before changes</b><span>Keys and removals are two-step: a plan, then your yes.</span></div>
       <div><b>Usage, not prompts</b><span>The gateway records who, model, tokens and cost. Never the text.</span></div>
     </div>
 
     <div class="steps">
       <div class="step"><div class="num">1</div><div>
-        <h3>Connect your assistant <span class="t">5 min</span></h3>
-        <p>Research Computing creates your lab and adds you to the sign-in list. Then add aigw (pick one):</p>
+        <h3>Plug aigw into your agent <span class="t">5 min</span></h3>
+        <p>aigw is an MCP server: any MCP-capable agent works. Research Computing adds you to the sign-in list; then (pick one):</p>
         <div class="os">
           <span class="l">Hermes</span><span class="cmd mid"><span class="p">$ </span>hermes mcp add aigw --url https://ai-gateway-mcp-575977597413.us-central1.run.app/mcp --auth oauth</span>
           <span class="l">Claude Code</span><span class="cmd mid"><span class="p">$ </span>claude mcp add --transport http aigw https://ai-gateway-mcp-575977597413.us-central1.run.app/mcp</span>
+          <span class="l">OpenCode</span><span class="cmd mid"><span class="p">$ </span>opencode mcp add aigw --url https://ai-gateway-mcp-575977597413.us-central1.run.app/mcp</span>
           <span class="l">Gemini CLI</span><span class="cmd mid"><span class="p">$ </span>gemini mcp add -s user -t http aigw https://ai-gateway-mcp-575977597413.us-central1.run.app/mcp</span>
         </div>
         <p class="note">A browser opens once: sign in with your UCR NetID account. Then ask: <span class="say">Who am I on the AI gateway?</span></p>
@@ -156,7 +157,8 @@
           <tr><td><span class="say">What did my lab spend in the last 30 days?</span></td><td>by member, by model, by day</td></tr>
           <tr><td><span class="say">Set jdoe001's cap to 100 dollars.</span></td><td>changes the cap (never above the allowance)</td></tr>
           <tr><td><span class="say">Block jdoe001's key.</span> / <span class="say">Remove jdoe001.</span></td><td>refuses the key at once / takes access away, history kept</td></tr>
-          <tr><td><span class="say">Make jsmith002 a delegate.</span></td><td>a lab manager who can add members and issue keys</td></tr>
+          <tr><td><span class="say">Issue an app key named teaching-ai with a monthly cap of 1,000 dollars.</span></td><td>one key for an app many people use; PI only; open the link yourself, put the key in the app's settings</td></tr>
+          <tr><td><span class="say">Make jsmith002 a delegate.</span></td><td>a lab manager who can add members and issue personal keys</td></tr>
           <tr><td><span class="say">Freeze my lab.</span></td><td>blocks every key in the lab until you unfreeze</td></tr>
         </table>
       </div></div>
