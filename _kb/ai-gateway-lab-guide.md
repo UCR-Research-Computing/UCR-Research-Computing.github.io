@@ -1,7 +1,7 @@
 ---
 title: "Using the UCR AI gateway: a guide for lab PIs and members"
 topic: Cloud
-description: "Run your lab's access to AI models: add members, give each one a capped key by claim link, and see what the lab spends. Then use your key from Python, curl, Claude Code or Gemini CLI."
+description: "Run your lab's access to AI models: add members, give each one a capped key by claim link, issue a dedicated key for an app, and see what the lab spends. Then use a key from Python, curl, Claude Code, Gemini CLI or OpenCode."
 audience: "PIs and members of labs onboarded to the UCR AI gateway pilot"
 reviewed: 2026-10-08
 owner: Research Computing
@@ -9,12 +9,12 @@ unlisted: true
 sitemap: false
 review_notes:
   - "Unlisted on purpose (2026-10-08): the AI gateway is a pilot open to labs Research Computing has onboarded, so this page is shared by link with those labs and is kept out of the KB index, related guides, site search and the sitemap, with noindex. Make it a listed, numbered article when the gateway opens more widely."
-  - "Tool names, roles, key policy (90-day expiry, daily cap of 30 percent of the monthly cap, Opus models by approval, rate limits on every key and lab) and terms of use follow the gateway admin server (aigw v0.6.0) as read live on 2026-10-08. Client setups come from aigw_client_setup, tested 2026-10-01."
+  - "Tool names, roles, key policy (90-day expiry, daily cap of 30 percent of the monthly cap, Opus models by approval, rate limits on every key and lab) app keys and terms of use follow the gateway admin server (aigw v0.7.0) as read live on 2026-10-08. Client setups come from aigw_client_setup, tested 2026-10-01; the OpenCode MCP command was tested 2026-10-08 (OpenCode 1.18)."
   - "Prices are deliberately not printed here: they change, and aigw_models shows the current price of every model."
   - "CHECK: the PI walkthrough (sign in, add a member, issue a key) follows the live tool definitions; the first faculty PI had not yet run it end to end when this was written."
 ---
 
-The UCR AI gateway is a Research Computing service, now in pilot, that gives labs access to AI models (Google Gemini, Anthropic Claude on Google Cloud, open-weight models and embeddings) through one endpoint and one key per person. Each lab has a monthly allowance. The lab's PI decides who is in the lab, what each person may spend, and who holds a key, without filing a ticket.
+The UCR AI gateway is a Research Computing service, now in pilot, that gives labs access to AI models (Google Gemini, Anthropic Claude on Google Cloud, open-weight models and embeddings) through one endpoint. Each lab has a monthly allowance. The lab's PI decides who is in the lab, what each person may spend, who holds a key, and whether an app the lab runs gets a key of its own, without filing a ticket.
 
 **Printable version:** [AI gateway quick start (PDF, 2 pages, Letter)](../../assets/documents/ai-gateway-quick-start.pdf).
 
@@ -26,15 +26,16 @@ This page has two parts: [for PIs](#for-pis-run-your-lab) and [for lab members](
 * **Each member** has their own monthly cap inside the lab's allowance. A new lab gives members a default cap, so every member starts with one.
 * **Each person gets their own key**, delivered by a one-time claim link. The link holds no key and works only for the person it names, for 72 hours. The key is created when they open the link, sign in with their own UCR Google account and accept the terms of use, and it is shown to them once.
 * **Every key** expires after 90 days, has a daily cap of 30 percent of its monthly cap, has rate limits (tokens per minute, requests per minute, requests at once), and leaves out the most expensive models (Claude Opus 5 and 5.5) unless the PI approves them on that key. The PI's own key gets higher rate limits than students' keys.
+* **An app can have a key of its own.** For a web app or service that many people use (a classroom tool, for example), the PI issues one app key. It belongs to the lab rather than a person, has its own monthly cap, daily cap and higher rate limits sized for many users at once, and its spend shows as its own line. The app does any per-user limits on its side. The lab's shared speed limit still applies.
 * **The gateway records usage** (who, which model, tokens and cost), not the text of prompts or answers.
 
 Everyone is identified by their UCR NetID account (for example `jdoe001@ucr.edu`). Use NetIDs when you add people; the gateway resolves other UCR addresses to the NetID account.
 
 ## For PIs: run your lab
 
-You run your lab through **aigw**, the gateway's admin server, from an AI assistant that supports MCP (Hermes Agent, Claude Code, Gemini CLI and others). You ask in plain language; the assistant calls the tools. Research Computing creates your lab and adds you to the sign-in list first.
+You run your lab through **aigw**, the gateway's admin server. It is an MCP server, so it works with any AI agent or harness that supports MCP (Hermes Agent, Claude Code, OpenCode, Gemini CLI and others). Plug it into the one you use, then ask in plain language; the agent calls the tools. Research Computing creates your lab and adds you to the sign-in list first.
 
-### 1. Connect your assistant (5 min)
+### 1. Plug aigw into your agent (5 min)
 
 Pick one:
 
@@ -45,9 +46,14 @@ hermes mcp add aigw --url https://ai-gateway-mcp-575977597413.us-central1.run.ap
 # Claude Code (then type /mcp inside Claude Code to sign in)
 claude mcp add --transport http aigw https://ai-gateway-mcp-575977597413.us-central1.run.app/mcp
 
+# OpenCode (then run: opencode mcp auth aigw)
+opencode mcp add aigw --url https://ai-gateway-mcp-575977597413.us-central1.run.app/mcp
+
 # Gemini CLI
 gemini mcp add -s user -t http aigw https://ai-gateway-mcp-575977597413.us-central1.run.app/mcp
 ```
+
+Any other MCP-capable agent: add a remote (Streamable HTTP) MCP server at `https://ai-gateway-mcp-575977597413.us-central1.run.app/mcp` with OAuth sign-in.
 
 A browser opens once. Sign in with your UCR NetID account. Then ask:
 
@@ -59,15 +65,32 @@ A browser opens once. Sign in with your UCR NetID account. Then ask:
 
 > Add jdoe001 to my lab with a monthly cap of 50 dollars.
 
-The assistant shows the person's directory name back so you can confirm it is the right person. Leave out the cap and the lab's default member cap applies.
+The agent shows the person's directory name back so you can confirm it is the right person. Leave out the cap and the lab's default member cap applies.
 
 ### 3. Give each student a key
 
 > Issue a key to jdoe001.
 
-Changes that create keys or remove people are two-step: the assistant shows a plan first, and nothing happens until you confirm. You get a claim link and a short message to paste into an email to the student. Send it from your UCR email.
+Changes that create keys or remove people are two-step: the agent shows a plan first, and nothing happens until you confirm. You get a claim link and a short message to paste into an email to the student. Send it from your UCR email.
 
-### 4. Watch spending and adjust
+Your own key works the same way: "Issue a key to me."
+
+### 4. Give an app its own key (optional)
+
+If your lab runs a web app or service that calls AI models for many people, give it one key of its own instead of using a personal key:
+
+> Issue an app key named teaching-ai for my lab with a monthly cap of 1,000 dollars.
+
+Only the PI can issue an app key, and the monthly cap is required. Confirm the plan, then open the claim link yourself: the key appears once in your browser, and you put it straight into the app's settings (never in its code or repository). The app key:
+
+* belongs to the lab, not to you, so your personal key stays separate;
+* has a daily cap of 30 percent of its monthly cap and higher rate limits than a personal key (sized for a class of 60 to 70 people at once; ask to change them);
+* shows as its own line when you ask what the lab spent;
+* is one per app name; to replace it, ask to rotate it.
+
+The gateway sees all of the app's traffic as one key, so per-user quotas belong in the app itself.
+
+### 5. Watch spending and adjust
 
 | You say | aigw does |
 | :--- | :--- |
@@ -76,11 +99,12 @@ Changes that create keys or remove people are two-step: the assistant shows a pl
 | "Set jdoe001's cap to 100 dollars." | Changes the member's cap (never above the allowance) |
 | "Show my lab's rate limits." | The lab's shared limit and the default limits for new keys |
 | "Lower jdoe001's key to 100 requests a minute." | Changes a key's rate limits at once, no new key needed |
+| "Raise the teaching-ai app key to 2,000 requests a minute." | Changes an app key's rate limits, live |
 | "Give new student keys 1M tokens a minute." | Changes the lab's default rate limits for keys issued from now on |
 | "Which claims are still open?" | Claim links not yet collected, and when they expire |
 | "Block jdoe001's key." | Refuses that key at once; unblock undoes it |
 | "Remove jdoe001 from my lab." | Takes access away; history is kept |
-| "Make jsmith002 a delegate." | A delegate can add members and issue keys for you |
+| "Make jsmith002 a delegate." | A delegate can add members and issue personal keys for you (not app keys) |
 | "Freeze my lab because of a runaway script." | Blocks every key in the lab at once, until you unfreeze |
 | "Set my lab's keys to expire after 30 days." | A stricter lab policy for new keys (never looser than the gateway's) |
 
@@ -169,13 +193,13 @@ gemini
 | `gpt-oss-120b` | Low-cost open-weight model (not for agent tools that send `tool_choice`) |
 | `gemini-embedding-001` | Embeddings for search and retrieval |
 
-Model choice is the biggest cost lever: Flash models cost a small fraction of Claude, and a Claude agent session can spend tens of dollars an hour. If you also connect aigw (step 1 for PIs works for members too, once Research Computing adds you to the sign-in list), ask it "Which models can I use, and what do they cost?" or "What would a million input tokens on gemini-3.8-flash cost?"
+Model choice is the biggest cost lever: Flash models cost a small fraction of Claude, and a Claude agent session can spend tens of dollars an hour. If you also plug in aigw (step 1 for PIs works for members too, once Research Computing adds you to the sign-in list), ask it "Which models can I use, and what do they cost?" or "What would a million input tokens on gemini-3.8-flash cost?"
 
 ## Rules
 
 * **Data: UC protection levels P1 (public) and P2 (internal) only.** P3 and P4 data are not allowed unless UCR's Information Security Office has approved that specific use in writing. P3 and P4 include identifiable health information, student records, government ID numbers, financial account numbers, export-controlled data and CUI.
 * **Your key is yours.** Never put it in code, a repository, chat, email or a shared file, and never share it.
-* **If a key leaks,** report it at once: ask your assistant to "report my key as leaked" (it is blocked immediately), or email research-computing@ucr.edu.
+* **If a key leaks,** report it at once: ask your agent to "report my key as leaked" (it is blocked immediately), or email research-computing@ucr.edu.
 * **UCR work only.** Use follows UC policy, including the Electronic Communications Policy and IS-3. Research Computing may block a key at any time to protect the service.
 * **Access depends on the pilot.** Allowances, models and terms can change as the pilot develops.
 
@@ -190,7 +214,7 @@ Model choice is the biggest cost lever: Flash models cost a small fraction of Cl
 | The claim link says it was issued to someone else | Sign in with the NetID account the link names; ask your PI if it is not yours |
 | The claim link has expired | Links last 72 hours; ask your PI to issue a new one |
 | aigw sign-in refuses you | You are not on the sign-in list yet; ask Research Computing |
-| Your assistant shows no aigw tools | Start a new session after adding aigw |
+| Your agent shows no aigw tools | Start a new session after adding aigw |
 
 ## Getting help
 
