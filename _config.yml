@@ -35,6 +35,8 @@ defaults:
     values: {layout: kb}
   - scope: {path: "", type: redirects}
     values: {layout: null, sitemap: false}
+  - scope: {path: "assets/documents/ai-gateway-quick-start.pdf"}
+    values: {sitemap: false}
   - scope: {path: ""}
     values: {layout: page}
 
