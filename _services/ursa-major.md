@@ -6,7 +6,7 @@ status: By review
 tags: [Cloud, AI access, Exotic hardware, Archive]
 data_levels: P1-P2 by default
 owner: "Research Computing"
-reviewed: 2026-10-04
+reviewed: 2026-10-19
 governed_by: "Ursa Major guidelines"
 governed_url_rel: /kb/ursa-major-guidelines/
 redirect_from:
@@ -43,7 +43,7 @@ Requests are reviewed against current campus resources, funding and research pri
 
 - **Tier 1, campus-supported.** Three things, with no recharge to the lab under current terms, within limits and subject to eligibility:
   - **AI model access** for research and programming, through a service Research Computing manages, with a per-lab allowance;
-  - **exotic hardware** not available on the HPCC, such as TPUs or Arm processors, through a Research Computing HPC cluster in Google Cloud, within limits set per project, starting with a consultation;
+  - **exotic hardware** not available on the HPCC, such as TPUs or Arm processors, through a Research Computing HPC cluster in Google Cloud, within limits set per project, starting with a consultation (P1 and P2 data; ask us first about anything more sensitive);
   - **archive storage** in Google Cloud archive classes.
 - **Tier 2, recharge.** All other cloud work, including VMs, GKE, Cloud SQL, BigQuery, Standard storage, GPUs and marketplace models, billed to a lab funding source through ITS.
 - **Tier 3, dedicated agreements.** Very large or multi-year projects may need their own contract with the provider, with ITS oversight.
