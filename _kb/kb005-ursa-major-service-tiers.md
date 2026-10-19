@@ -3,7 +3,7 @@ title: "Ursa Major service tiers"
 kb_id: KB005
 topic: Cloud
 audience: "PIs, researchers and lab managers"
-reviewed: 2026-10-04
+reviewed: 2026-10-19
 owner: Research Computing
 redirect_from:
   - /Knowledge_Base/KB005_Ursa_Major_Service_Tiers.html
@@ -26,6 +26,8 @@ Access to generative AI models for research and programming, through a service R
 Hardware the HPCC cluster does not offer and that is hard to find elsewhere, such as Google Cloud TPUs or Arm processors, provided through a Research Computing HPC cluster in Google Cloud, within limits set per project.
 
 Access starts with a consultation. We look at the work with you, confirm it needs hardware the HPCC does not have, and set the project's limits. Work that runs well on the HPCC belongs on the HPCC.
+
+Tier 1 hardware is for P1 and P2 data (public and internal). For P3 or P4 data, or data covered by a contract, data use agreement or regulation, ask us before you start; see [Security](../../security/).
 
 ### 3. Archive storage
 

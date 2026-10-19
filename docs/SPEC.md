@@ -127,7 +127,7 @@ Archived so far: the pre-October-2026 Ursa Major tiers (old KB005 content).
 
 For a service in pilot that only some researchers may use (Chuck, 2026-10-08: the AI gateway, shared with onboarded labs), publish the article with `unlisted: true` and `sitemap: false`. The page is live at its URL and gets `noindex`, but it is left out of the KB index, topic counts, related guides and site search, and is not linked from any other page. Give it no `kb_id` until it is listed. The site's source repository is public, so this hides the page from casual readers and search engines; it does not make it private. When the service opens up, remove `unlisted`, give it the next KB number and link it from its service page.
 
-Unlisted so far: `ai-gateway-lab-guide` (AI gateway, for lab PIs and members; PDF `assets/documents/ai-gateway-quick-start.pdf`, source `docs/handouts/ai-gateway-quick-start.html`).
+Unlisted so far: `ai-gateway-lab-guide` (AI gateway, for lab PIs and members; PDF `assets/documents/ai-gateway-quick-start.pdf`, source `docs/handouts/ai-gateway-quick-start.html`). (The RC shared cluster guides of 2026-10-19 were withdrawn the same day for a rewrite to Tier 1 exotic-hardware scope.) `tier1-exotic-hardware` (2026-10-19), for groups RC is already talking to: how Tier 1 exotic hardware access works (HPCC first, TPUs and Arm as the only examples, consultation, limits set per project, per-project setup). It must never describe general compute, the web portal, the software stack, AI tools on the cluster, or why the cluster exists.
 
 ## 7. How to...
 
@@ -174,6 +174,9 @@ The dev site was built so the switch is one reversible change. Recommended path:
 
 ## 10. History
 
+- 2026-10-19: Tier 1 exotic hardware is for P1 and P2 data (ask first about P3/P4 or contract-covered data), added to KB005 and the Ursa Major service page (Chuck). Unlisted `tier1-exotic-hardware` page shipped to prod with it (section 6.2).
+- 2026-10-19: unlisted `tier1-exotic-hardware` page drafted for review (section 6.2).
+- 2026-10-19: four unlisted RC shared cluster guides published to staging and withdrawn the same day (scope review: Tier 1 exotic hardware only, nothing that overlaps the HPCC).
 - 2026-10-08: unlisted-article mechanism (section 6.2) and the first unlisted article, the AI gateway guide for lab PIs and members, with its printable PDF.
 - 2026-10-08: KB031, the nrp-mcp quick start, added as the web version of the October 2026 workshop handout. The printable PDF is `assets/documents/nrp-mcp-quick-start.pdf`, built from `docs/handouts/nrp-mcp-quick-start.html` (not part of the build) with `google-chrome --headless=new --no-pdf-header-footer --virtual-time-budget=6000 --print-to-pdf=assets/documents/nrp-mcp-quick-start.pdf file://$PWD/docs/handouts/nrp-mcp-quick-start.html`. Edit the article and the HTML together.
 - 2026-10-04 (later): Ursa Major Tier 1 redefined as AI model access, exotic hardware (examples: TPUs and Arm only, by consultation) and archive storage; the old baseline list is now Tier 2. KB005 rewritten, old version archived (section 6.1). The change was carried through the Ursa Major service page, guidelines, workstations, storage, research services, HPC clusters, KB002, KB006, KB007, KB010, KB021, Ollama, Costs, FAQ, Compute, Cloud and AI, and the catalog. Enclave wording now reads as a NIST SP 800-171 environment.
