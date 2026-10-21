@@ -108,7 +108,7 @@
     <h1>Run your research on Nautilus,<br>from your AI assistant</h1>
     <div class="sub">Connect your laptop to the National Research Platform, give your assistant the
       <b style="color:#fff">nrp</b> tools, then move a Slurm job to Kubernetes by asking in plain language.</div>
-    <div class="meta"><b>nrp-mcp</b> 0.7.0 or newer<br>macOS &middot; Linux &middot; Windows<br>KB031 &middot; Oct 2026</div>
+    <div class="meta"><b>nrp-mcp</b> 1.0.0 or newer<br>macOS &middot; Linux &middot; Windows<br>KB031 &middot; Oct 2026</div>
   </div>
 
   <div class="body">
@@ -116,7 +116,7 @@
       <div><b>National GPUs and CPUs</b><span>No UCR recharge and no allocation proposal to write.</span></div>
       <div><b>Plain language</b><span>Your assistant plans, runs, watches and cleans up for you.</span></div>
       <div><b>Nothing hidden</b><span>Every plan shows what it creates and the kubectl it equals.</span></div>
-      <div><b>Asks first</b><span>Running, publishing and deleting each need a plan you approve.</span></div>
+      <div><b>Your yes first</b><span>GPU, public and delete steps wait for a code only you can see.</span></div>
     </div>
 
     <div class="steps">
@@ -130,21 +130,22 @@
       <div class="step"><div class="num">2</div><div>
         <h3>Install nrp-mcp <span class="t">2 min</span></h3>
         <div class="os">
-          <span class="l">Mac / Linux</span><span class="cmd long"><span class="p">$ </span>curl -fsSL https://raw.githubusercontent.com/UCR-Research-Computing/nrp-mcp/main/scripts/install.sh | sh
-<span class="p">$ </span>echo 'export PATH="$HOME/.local/bin:$PATH"' &gt;&gt; ~/.zshrc   <span class="p"># macOS; Linux: ~/.bashrc</span>
-<span class="p">$ </span>export PATH="$HOME/.local/bin:$PATH"</span>
-          <span class="l">Windows</span><span>Download the <code>windows_amd64.zip</code> from the <b>Releases</b> page, then paste the PowerShell lines from the web version (KB031, QR on the back). They put <code>nrp-mcp.exe</code> on your PATH.</span>
+          <span class="l">Mac / Linux</span><span class="cmd long"><span class="p">$ </span>curl -fsSL https://raw.githubusercontent.com/UCR-Research-Computing/nrp-mcp/main/scripts/install.sh | sh</span>
+          <span class="l">Windows</span><span class="cmd long"><span class="p">PS&gt; </span>irm https://raw.githubusercontent.com/UCR-Research-Computing/nrp-mcp/main/scripts/install.ps1 | iex</span>
         </div>
-        <div class="ok"><code>nrp-mcp version</code> prints 0.7.0 or newer.</div>
+        <p class="note">Both verify the download and put <code>nrp-mcp</code> on your PATH (Mac asks: answer <b>y</b>); then open a new terminal.</p>
+        <div class="ok"><code>nrp-mcp version</code> prints 1.0.0 or newer.</div>
       </div></div>
 
       <div class="step"><div class="num">3</div><div>
-        <h3>Connect your laptop <span class="t">8 min</span></h3>
+        <h3>Connect your laptop and saved results <span class="t">8 min</span></h3>
         <p>Download your config at <b>nrp.ai/config</b> (it lands in Downloads), then run:</p>
         <span class="cmd"><span class="p">$ </span>nrp-mcp setup</span>
-        <p class="note">It installs kubectl and the sign-in plugin into your user folder (no admin rights, checksums verified),
-          puts the config in place, then opens a normal browser tab for the UCR sign-in. It asks before changing anything.</p>
-        <div class="ok">It ends with &ldquo;This computer is ready for Nautilus.&rdquo;</div>
+        <p class="note">Installs kubectl and the sign-in plugin (no admin rights, checksums verified), puts the config in place, opens the UCR sign-in. Asks first.</p>
+        <p>Then save your S3 keys from <b>nrp.ai/s3token</b> so job results come home, and check it all:</p>
+        <span class="cmd"><span class="p">$ </span>nrp-mcp s3 setup
+<span class="p">$ </span>nrp-mcp doctor</span>
+        <div class="ok">Every <code>doctor</code> line says ok; any other line names the next step.</div>
       </div></div>
 
       <div class="step"><div class="num">4</div><div>
@@ -162,8 +163,8 @@
 
       <div class="step"><div class="num">5</div><div>
         <h3>Give Hermes the nrp tools <span class="t">2 min</span></h3>
-        <span class="cmd"><span class="p">$ </span>hermes mcp add nrp --command "$HOME/.local/bin/nrp-mcp" --args serve</span>
-        <p class="note">Windows: <code>--command "$env:LOCALAPPDATA\Programs\nrp-mcp\bin\nrp-mcp.exe"</code>. Answer <b>Y</b> to enable all 9 tools; if it cannot connect, answer <b>N</b> to &ldquo;save anyway&rdquo; and fix the path. Then start <code>hermes</code> and ask:</p>
+        <span class="cmd"><span class="p">$ </span>nrp-mcp client hermes</span>
+        <p class="note">Adds nrp (full path) to Hermes's settings, with a backup. Other apps: see the back. Then start <code>hermes</code> and ask:</p>
         <p style="margin-top:3px"><span class="say">Where do I stand on Nautilus?</span></p>
         <div class="ok">It answers with your user, namespace, what is running and your GPU quota.</div>
       </div></div>
@@ -192,7 +193,7 @@
             trimmed mean and a normal Slurm script with <code>--array=0-9</code>. In that folder, ask Hermes:</p>
           <ol class="tight" style="padding-left:17px">
             <li><span class="say">Plan the Slurm script in this folder and show me what each line becomes.</span></li>
-            <li><span class="say">Run it.</span></li>
+            <li><span class="say">Run it.</span> <span class="note">(no S3 keys yet? add &ldquo;yes, discard results&rdquo;)</span></li>
             <li><span class="say">How did it go?</span></li>
             <li><span class="say">Clean up everything I made.</span></li>
           </ol>
@@ -211,12 +212,12 @@
           <table>
             <tr><th>You say</th><th>nrp does</th></tr>
             <tr><td><span class="say">Where do I stand?</span></td><td>who you are, what runs, quotas, warnings</td></tr>
-            <tr><td><span class="say">Run train.py on a GPU</span></td><td>plans it, waits for your yes, then runs</td></tr>
+            <tr><td><span class="say">Run train.py on a GPU</span></td><td>plans it, waits for your approval code, then runs</td></tr>
             <tr><td><span class="say">Run this 50 times, seeds 1 to 50</span></td><td>a sweep (Indexed Job)</td></tr>
             <tr><td><span class="say">Why did it fail?</span></td><td>logs plus a plain diagnosis and the fix</td></tr>
             <tr><td><span class="say">Give me a Jupyter notebook</span></td><td>a private session on Nautilus</td></tr>
-            <tr><td><span class="say">Copy results to my laptop</span></td><td>downloads from your volume</td></tr>
-            <tr><td><span class="say">Clean up</span></td><td>lists what you made, deletes after a 2nd yes</td></tr>
+            <tr><td><span class="say">Copy results to my laptop</span></td><td>downloads the run's saved results</td></tr>
+            <tr><td><span class="say">Clean up</span></td><td>lists what you made, deletes after your code</td></tr>
           </table>
         </div>
       </div>
@@ -227,7 +228,7 @@
           <ul class="tight rules">
             <li><b>P1 data only.</b> Public, non-sensitive data. No student records, PII, clinical or controlled data.</li>
             <li><b>No idle GPUs.</b> Ask for a GPU only when the code uses one; idle GPUs get accounts suspended.</li>
-            <li><b>Nothing public without asking RC.</b> Publishing a web app needs you to type its URL back.</li>
+            <li><b>Nothing public without asking RC.</b> A web app needs your approval code and expires in 14 days.</li>
             <li><b>Clean up</b> when you finish. Jobs left running hold resources others need.</li>
             <li><b>Keys stay private.</b> Never paste a key into a chat, a repo, a shared doc or a screenshot.</li>
           </ul>
@@ -238,26 +239,27 @@
           <table class="stuck">
             <tr><td>&ldquo;no Nautilus context&rdquo;</td><td>download the config at nrp.ai/config, rerun <code>nrp-mcp setup</code></td></tr>
             <tr><td>&ldquo;forbidden&rdquo; / not in namespace</td><td>sign in at nrp.ai once more; ask your namespace admin</td></tr>
-            <tr><td><code>command not found</code></td><td>run the PATH lines in step 2, or use <code>~/.local/bin/nrp-mcp</code></td></tr>
+            <tr><td><code>command not found</code></td><td>open a new terminal, or use <code>~/.local/bin/nrp-mcp</code></td></tr>
+            <tr><td>Missed the approval code</td><td>run <code>nrp-mcp approve</code> in your terminal</td></tr>
             <tr><td>&ldquo;Not ready yet: kubectl&rdquo;</td><td>an older kubectl (Docker Desktop) is first on PATH; ask RC</td></tr>
-            <tr><td>Hermes has no nrp tools</td><td><code>hermes mcp test nrp</code>; if it fails, remove and redo step 5</td></tr>
+            <tr><td>Anything else</td><td>run <code>nrp-mcp doctor</code>; it names the next step</td></tr>
             <tr><td>Laptop will not cooperate</td><td>use the NRP JupyterHub (only needs the sign-in):<br><b class="nw">jupyterhub-west.nrp-nautilus.io</b></td></tr>
           </table>
         </div>
 
         <div class="box alt">
           <h2>Prefer another assistant?</h2>
-          <p style="margin:2px 0"><b>Gemini CLI</b> (Node.js 20+): <code>npm i -g @google/gemini-cli</code>, set <code>GEMINI_API_KEY</code>, then <code>gemini mcp add nrp ~/.local/bin/nrp-mcp serve</code></p>
-          <p style="margin:4px 0 0"><b>OpenCode</b>: set <code>GOOGLE_GENERATIVE_AI_API_KEY</code>, model <code>google/gemini-3.8-flash</code>, add nrp under <code>mcp</code> in <code>opencode.json</code>. Claude Code and others: see KB031.</p>
+          <p style="margin:2px 0">Run <code>nrp-mcp client</code> with <code>claude-desktop</code>, <code>claude-code</code>, <code>vscode</code>, <code>cursor</code>, <code>gemini</code> or <code>opencode</code>, then fully quit and reopen the app.</p>
+          <p style="margin:4px 0 0"><b>Gemini CLI</b> needs Node.js 20+: <code>npm i -g @google/gemini-cli</code> and set <code>GEMINI_API_KEY</code>.</p>
         </div>
       </div>
     </div>
 
     <div class="box" style="margin-top:0.02in">
       <div class="qrs">
-        <div><img src="qr_kit.svg" alt=""><div><b>nrp-mcp</b><span>Install, Releases (Windows zip) and the exercise in <i>examples/</i></span><span><i>github.com/UCR-Research-Computing/</i><br><i>nrp-mcp</i></span></div></div>
+        <div><img src="qr_kit.svg" alt=""><div><b>nrp-mcp</b><span>Install, Releases and the exercise in <i>examples/</i></span><span><i>github.com/UCR-Research-Computing/</i><br><i>nrp-mcp</i></span></div></div>
         <div><img src="qr_nrp.svg" alt=""><div><b>Your NRP config</b><span>Sign in first, then Get Config; it lands in Downloads</span><span><i>nrp.ai/config</i></span></div></div>
-        <div><img src="qr_kb031.svg" alt=""><div><b>This sheet, online</b><span>Copyable commands, Windows steps, other assistants; links to the full Nautilus guide</span><span><i>RC Knowledge Base, KB031</i></span></div></div>
+        <div><img src="qr_kb031.svg" alt=""><div><b>This sheet, online</b><span>Copyable commands, approval codes, other assistants; links to the full Nautilus guide</span><span><i>RC Knowledge Base, KB031</i></span></div></div>
       </div>
     </div>
   </div>
