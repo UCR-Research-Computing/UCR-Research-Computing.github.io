@@ -108,7 +108,7 @@
     <h1>Run your research on Nautilus,<br>from your AI assistant</h1>
     <div class="sub">Connect your laptop to the National Research Platform, give your assistant the
       <b style="color:#fff">nrp</b> tools, then move a Slurm job to Kubernetes by asking in plain language.</div>
-    <div class="meta"><b>nrp-mcp</b> 1.0.0 or newer<br>macOS &middot; Linux &middot; Windows<br>KB031 &middot; Oct 2026</div>
+    <div class="meta"><b>nrp-mcp</b> 1.1.0 or newer<br>macOS &middot; Linux &middot; Windows<br>KB031 &middot; Oct 2026</div>
   </div>
 
   <div class="body">
@@ -134,7 +134,7 @@
           <span class="l">Windows</span><span class="cmd long"><span class="p">PS&gt; </span>irm https://raw.githubusercontent.com/UCR-Research-Computing/nrp-mcp/main/scripts/install.ps1 | iex</span>
         </div>
         <p class="note">Both verify the download and put <code>nrp-mcp</code> on your PATH (Mac asks: answer <b>y</b>); then open a new terminal.</p>
-        <div class="ok"><code>nrp-mcp version</code> prints 1.0.0 or newer.</div>
+        <div class="ok"><code>nrp-mcp version</code> prints 1.1.0 or newer.</div>
       </div></div>
 
       <div class="step"><div class="num">3</div><div>
@@ -211,6 +211,7 @@
           <h2>What to say</h2>
           <table>
             <tr><th>You say</th><th>nrp does</th></tr>
+            <tr><td><span class="say">Walk me through it</span></td><td>one step at a time, from wherever you are</td></tr>
             <tr><td><span class="say">Where do I stand?</span></td><td>who you are, what runs, quotas, warnings</td></tr>
             <tr><td><span class="say">Run train.py on a GPU</span></td><td>plans it, waits for your approval code, then runs</td></tr>
             <tr><td><span class="say">Run this 50 times, seeds 1 to 50</span></td><td>a sweep (Indexed Job)</td></tr>

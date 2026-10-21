@@ -9,13 +9,14 @@ owner: Research Computing
 review_notes:
   - "Web version of the printable handout made for an October 2026 hands-on workshop. The PDF (assets/documents/nrp-mcp-quick-start.pdf) is built from docs/handouts/nrp-mcp-quick-start.html with headless Chrome."
   - "2026-10-21: updated for nrp-mcp 1.0.0 (released 2026-10-21). Install now uses the project's own installers (install.sh asks before adding ~/.local/bin to PATH; install.ps1 installs to LOCALAPPDATA Programs nrp-mcp, checks SHA256SUMS, sets the user PATH). nrp-mcp client hermes replaces hermes mcp add. New: nrp-mcp s3 setup for saved results (a job plan is refused without it unless the person says yes, discard results), nrp-mcp doctor, and 6-character approval codes from nrp-mcp approve for GPU, public, delete, upload and setup steps. Commands checked against the 1.0.0 binary; the Slurm example was re-planned on 1.0.0 (10 tasks, rocker/r-ver:4.4.2, 1 h limit)."
+  - "2026-10-21: added the nrp-mcp 1.1.0 guide (nrp_guide tool and walk_me_through prompt): a Not sure what to do next? paragraph after Step 5 and a row in What to say. Checked against the 1.1.0 code and its live test (scripts/e2eguide)."
   - "CHECK: install.ps1 is run on Windows Server 2025 in the nrp-mcp CI on every change but has not been run on a student Windows laptop."
   - "CHECK: the browser sign-in in nrp-mcp setup has been run on Linux only."
 ---
 
 [nrp-mcp](https://github.com/UCR-Research-Computing/nrp-mcp) is a small open-source program (MIT license) from UCR Research Computing that runs on your own computer and gives an AI assistant a set of tools for the [NRP Nautilus](../kb023-nautilus-researcher-guide/) cluster. You describe what you want ("run this script on a GPU", "run it 50 times with different seeds") and the assistant plans the Kubernetes work, shows you the plan and the `kubectl` it equals, and runs it once you agree.
 
-This page is the web version of the one-sheet handout from our hands-on workshop. It covers nrp-mcp 1.0.0.
+This page is the web version of the one-sheet handout from our hands-on workshop. It covers nrp-mcp 1.1.0.
 
 **Printable version:** [nrp-mcp quick start (PDF, 2 pages, Letter)](../../assets/documents/nrp-mcp-quick-start.pdf). Print it on one sheet, both sides.
 
@@ -61,7 +62,7 @@ It downloads the right zip for your processor, checks it against the published c
 
 Prefer to download it yourself? Every build is on the [Releases page](https://github.com/UCR-Research-Computing/nrp-mcp/releases/latest). On a Mac, a file downloaded in a browser needs `xattr -d com.apple.quarantine ~/.local/bin/nrp-mcp` before it will run. On Windows, if SmartScreen says "Windows protected your PC", choose **More info**, then **Run anyway**.
 
-**Check:** `nrp-mcp version` prints 1.0.0 or newer.
+**Check:** `nrp-mcp version` prints 1.1.0 or newer.
 
 ## Step 3. Connect your laptop and set up saved results (8 min)
 
@@ -129,6 +130,12 @@ This writes the nrp entry, with the full path to `nrp-mcp`, into Hermes's settin
 
 **Check:** it answers with your user, your namespace, what is running and your GPU quota.
 
+**Not sure what to do next?** Ask your assistant:
+
+> Walk me through it.
+
+nrp-mcp 1.1 and newer has a guide: it checks where you stand (this computer, the sign-in, your namespace, saving results, and any runs you have) and has your assistant ask you one question at a time, from setup to your first run and cleanup. If your AI app can show forms, nrp-mcp also asks you for any missing details (which file, GPU or not, and so on) in a short form instead of guessing. You can ask for the guide again whenever you come back.
+
 ## Hands-on: move a Slurm array job to Nautilus
 
 Download the `examples/slurm-array-bootstrap` folder from the [nrp-mcp repository](https://github.com/UCR-Research-Computing/nrp-mcp) (GitHub's green **Code** button, then **Download ZIP**, gives you the whole repository; the folder is inside). It holds an R bootstrap of a trimmed mean and an ordinary Slurm script with `--array=0-9`. Open a terminal in that folder, start `hermes`, and ask, one at a time:
@@ -161,6 +168,7 @@ Type the code into the chat. It works once, for that one plan, for 10 minutes. T
 
 | You say | nrp does |
 | :--- | :--- |
+| "Walk me through it" | One step at a time from wherever you are: setup, your first run, results, cleanup |
 | "Where do I stand?" | Who you are, what is running, your quotas, any warnings |
 | "Run train.py on a GPU" | Plans it, waits for your approval, then runs it |
 | "Run this 50 times, seeds 1 to 50" | A parameter sweep (an Indexed Job) |
