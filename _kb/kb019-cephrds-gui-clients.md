@@ -34,6 +34,8 @@ CephRDS uses the S3 protocol, so you need an S3-compatible graphical client. You
 6. **Secret Access Key:** your CephRDS secret key
 7. Click **Connect**.
 
+If Cyberduck cannot list your bucket (it may try an address such as `my-lab-bucket.rds.ucr.edu`), use a generic S3 profile set to path-style requests, or use rclone instead.
+
 To reuse the connection, save it as a bookmark (**Bookmark** then **New Bookmark**). Cyberduck can store the secret key in your system keychain.
 
 ## Linux: Universal S3 UI (us3ui)

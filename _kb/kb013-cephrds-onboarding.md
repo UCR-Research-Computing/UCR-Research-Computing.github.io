@@ -56,6 +56,8 @@ Cyberduck is an open-source graphical client for macOS and Windows, suited to dr
    - **Secret Access Key:** your secret key
 4. Click **Connect**. Your buckets are listed, and you can drag and drop files.
 
+If Cyberduck cannot list your bucket (it may try an address such as `my-lab-bucket.rds.ucr.edu`), use a generic S3 profile set to path-style requests, or use rclone instead.
+
 ## 2. Using rclone (command line)
 
 rclone is a command-line tool for cloud and object storage, suited to large transfers and scripted copies. It runs on Linux, macOS and Windows.

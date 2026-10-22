@@ -42,7 +42,7 @@ rclone config
 7. When asked whether to configure it as a Shared Drive, choose `n` for your own My Drive, or `y` and pick the Shared Drive you want.
 8. Confirm the settings and choose `q` to quit.
 
-Note: if Google refuses the sign-in or says the app is blocked, UCR's Google Workspace may not allow rclone's built-in client. You can create your own client ID as described in the [rclone Google Drive documentation](https://rclone.org/drive/#making-your-own-client-id), or contact research-computing@ucr.edu.
+Note: if Google refuses the sign-in or says the app is blocked, UCR's Google Workspace may not allow rclone's built-in client. You can create your own client ID as described in the [rclone Google Drive documentation](https://rclone.org/drive/#making-your-own-client-id), or ask ITS through the [UCR Support Portal](https://ucrsupport.service-now.com/ucr_portal/), since ITS manages UCR's Google Workspace.
 
 Check that the remote works:
 

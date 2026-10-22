@@ -64,6 +64,6 @@ Projects set up before October 2026 may still be arranged under the earlier tier
 
 ## Related
 
-- [AI at UCR]({{ '/compute/cloud-and-ai/' | relative_url }}) for campus AI tools and where their terms are published.
+- [Cloud and AI]({{ '/compute/cloud-and-ai/' | relative_url }}) for campus AI tools and where their terms are published.
 - [Cloud archive]({{ '/services/cloud-archive/' | relative_url }}) for long-term data retention in Google Cloud.
 - [KB007: Ursa Major recharge workflow]({{ '/kb/kb007-tier2-recharge-workflow/' | relative_url }}) for setting up a recharged project.

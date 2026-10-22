@@ -1,7 +1,7 @@
 # Catalog of services. Drives the home catalog, the finder and the hub pages.
 # t (tags used by filters/finder):
 #   work: batch gpu interactive cloudai containers webservice
-#   data: p12 p34
+#   data: p1 (non-sensitive only) p12 p34
 #   fund: lab norecharge grant
 #   kind: compute storage secure national help
 # status: Available | Pilot | By review | By application | External
@@ -28,7 +28,7 @@
   cost: Tier 1 + recharge
   data: Varies
   terms: Ursa Major guidelines
-  t: "compute cloudai gpu batch webservice interactive storage p12 norecharge lab grant"
+  t: "compute cloudai storage p12 norecharge lab grant"
 - id: nsf-access
   name: NSF ACCESS
   url: /services/nsf-access/
@@ -64,7 +64,7 @@
   cost: No UCR recharge
   data: Non-sensitive only
   terms: NRP policies
-  t: "compute national containers gpu interactive p12 norecharge"
+  t: "compute national containers gpu interactive p1 norecharge"
 - id: osg
   name: OSG / OSPool
   url: /services/osg/
@@ -76,7 +76,7 @@
   cost: No UCR recharge
   data: Non-sensitive only
   terms: OSG policies
-  t: "compute national batch p12 norecharge"
+  t: "compute national batch p1 norecharge"
 - id: cloud-discounts
   name: Cloud accounts (AWS, GCP, Azure)
   url: /services/cloud-accounts/
@@ -97,7 +97,7 @@
   blurb: "On-campus project storage for lab data, instruments and sequencing libraries, with S3 access."
   tags: [Object (S3), Project data]
   status: Pilot
-  cost: Recharge
+  cost: Rates under review
   data: P1-P2
   terms: CephRDS terms (pilot)
   t: "storage p12 lab grant"
@@ -157,9 +157,9 @@
   blurb: "Talk through a project, a grant, a data plan or a stuck workflow with the team. Office hours weekly."
   tags: [Consultation, Office hours]
   status: Available
-  cost: Ask us
+  cost: No recharge
   data: Any
-  terms: Ask us
+  terms: Site terms
   t: "help batch gpu interactive cloudai containers webservice p12 p34 norecharge lab grant"
 - id: rcsas
   name: Lab system administration (RCSAS)
@@ -170,6 +170,6 @@
   tags: [Lab systems, MOU]
   status: By review
   cost: Per MOU
-  data: P1-P2 (higher by MOU)
+  data: P1-P2 (higher only with an ISO-approved DSP)
   terms: RCSAS MOU
   t: "help webservice interactive p12 lab grant"

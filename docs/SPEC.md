@@ -104,7 +104,7 @@ Page types:
 3. **Policy summary** (Security, Costs, Records retention, Terms): plain-language summary with links to the governing documents. The documents win.
 4. **KB article** (`_kb/`): kicker with KB ID and topic, audience line, renumbered notice if any, body, provenance, related guides by topic.
 
-Home-page catalog and filters: each entry in `services.yml` has `t:` tags (`compute storage secure national help`, `gpu batch interactive cloudai containers webservice`, `p12 p34`, `lab norecharge grant`). Chips filter on them. The catalog is labelled as suggestions, is deterministic, and is not a chatbot.
+Home-page catalog and filters: each entry in `services.yml` has `t:` tags (`compute storage secure national help`, `gpu batch interactive cloudai containers webservice`, `p1 p12 p34`, `lab norecharge grant`). Chips filter on them. Tag rules (2026-10-22): `p1` marks external platforms that allow non-sensitive data only (Nautilus, OSG); Ursa Major carries no `gpu`, `batch`, `interactive` or `webservice` tag, because those are HPCC work or Tier 2 recharge and the GPU chip must never show Ursa Major beside the HPCC. A card's `cost:` must match its facts (CephRDS: "Rates under review"; consulting: "No recharge"). The catalog is labelled as suggestions, is deterministic, and is not a chatbot.
 
 Search: `/` or Ctrl+K opens an overlay that searches `search.json` (pages, services, KB) with weighted title, kicker, summary and body matches. The hero box opens the same overlay with the typed words.
 
@@ -127,7 +127,7 @@ Archived so far: the pre-October-2026 Ursa Major tiers (old KB005 content).
 
 For a service in pilot that only some researchers may use (Chuck, 2026-10-08: the AI gateway, shared with onboarded labs), publish the article with `unlisted: true` and `sitemap: false`. The page is live at its URL and gets `noindex`, but it is left out of the KB index, topic counts, related guides and site search, and is not linked from any other page. Give it no `kb_id` until it is listed. The site's source repository is public, so this hides the page from casual readers and search engines; it does not make it private. When the service opens up, remove `unlisted`, give it the next KB number and link it from its service page.
 
-Unlisted so far: `ai-gateway-lab-guide` (AI gateway, for lab PIs and members; PDF `assets/documents/ai-gateway-quick-start.pdf`, source `docs/handouts/ai-gateway-quick-start.html`). (The RC shared cluster guides of 2026-10-19 were withdrawn the same day for a rewrite to Tier 1 exotic-hardware scope.) `tier1-exotic-hardware` (2026-10-19), for groups RC is already talking to: how Tier 1 exotic hardware access works (HPCC first, TPUs and Arm as the only examples, consultation, limits set per project, per-project setup). It must never describe general compute, the web portal, the software stack, AI tools on the cluster, or why the cluster exists.
+Unlisted so far: `ai-gateway-lab-guide` (AI gateway, for lab PIs and members; wording tightened 2026-10-22, see 4.6; PDF `assets/documents/ai-gateway-quick-start.pdf`, source `docs/handouts/ai-gateway-quick-start.html`). (The RC shared cluster guides of 2026-10-19 were withdrawn the same day for a rewrite to Tier 1 exotic-hardware scope.) `tier1-exotic-hardware` (2026-10-19), for groups RC is already talking to: how Tier 1 exotic hardware access works (HPCC first, TPUs and Arm as the only examples, consultation, limits set per project, per-project setup). It must never describe general compute, the web portal, the software stack, AI tools on the cluster, or why the cluster exists.
 
 ## 7. How to...
 
@@ -162,6 +162,18 @@ The dev site was built so the switch is one reversible change. Recommended path:
 4. Roll back if needed by reverting that merge.
 5. Update the ServiceNow KB ledger with the renumbered IDs (section 6). Archive this repo or keep it as the staging copy.
 
+### 4.6 Wording review of 2026-10-22 (rules it added)
+
+A five-model, five-lens review of every page, card and public PDF (report and verified findings kept outside the repo, in Chuck's reviews folder) added these standing rules:
+
+- No stray public documents. Every file in `assets/documents/` must be linked from a current page or be an unlisted handout recorded in 6.2. The old "Safe and Secure AI in Research" PDF was deleted (it cleared P3 on the HPCC, Ursa Major and Drive and made Google data-handling promises) and removed from the sitemap snapshot; the old HTML URL still redirects to `/security/`.
+- Regulated data routing: NIST SP 800-171 and CMMC Level 2 go to the enclave; HIPAA and clinical work go to KB006 (SOM IT). Never send all P3/P4 or HIPAA to the enclave.
+- Any P3 or P4 environment (Ursa Major Tier 2, RCSAS lab servers) needs a data security plan approved by the ISO before data is stored. An MOU alone does not authorize it.
+- RC does not gate faculty use of external platforms: KB031 says to ask the namespace admin (RC only in an RC workshop namespace) before a public web app.
+- Lab-owned hardware: list the HPCC beside RCSAS; containers and Jupyter: list the HPCC (Singularity, OnDemand) beside Nautilus; any Ursa Major general compute is marked recharged.
+- Unlisted AI gateway guide: P1 and P2 only, no ISO exception path; examples use a research app key with a modest cap, never a classroom key (large instructional use is Tier 2).
+- HPCC limits are linked, never typed in prose (Nextflow 5,000-job line removed).
+
 ## 9. Open items
 
 - Counsel review of the site terms notice (suggested).
@@ -173,6 +185,8 @@ The dev site was built so the switch is one reversible change. Recommended path:
 - Eventually offer this site's content to ITS for https://its.ucr.edu/research, which ITS calls the RC website and which has gaps (Chuck, 2026-10-04: not now).
 
 ## 10. History
+
+- 2026-10-22: wording review fixes (section 4.6): catalog tags (Ursa Major, Nautilus, OSG), CephRDS and consulting card costs, FAQ and HPCC regulated-data routing, Ursa Major research services rewritten, KB031 public-app rule, RCSAS costs and ISO caveat, compute table, DSP P3/P4 caveat, KB002 budgets, KB007 admin fees, Nextflow/BLAST/CephRDS Cyberduck notes, breadcrumb and link fixes, AI gateway guide example and data rule, old AI PDF deleted. Both handout PDFs rebuilt (same filenames).
 
 - 2026-10-19: Tier 1 exotic hardware is for P1 and P2 data (ask first about P3/P4 or contract-covered data), added to KB005 and the Ursa Major service page (Chuck). Unlisted `tier1-exotic-hardware` page shipped to prod with it (section 6.2).
 - 2026-10-19: unlisted `tier1-exotic-hardware` page drafted for review (section 6.2).

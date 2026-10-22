@@ -274,7 +274,7 @@ Storage classes, S3, and moving data in and out: [Storage and moving data on Nau
 | :--- | :--- |
 | GPU notebooks, hosted LLM API, containers on a shared national pool, non-sensitive data | **NRP Nautilus** (this series) |
 | Batch jobs with Slurm, MPI across nodes, P1-P2 data, a campus cluster | [HPCC](../../services/hpcc/) (see [KB004](../kb004-hpcc-account-creation/)) |
-| Your lab's own Google Cloud project, VMs and managed services, P1-P2 data | [Ursa Major](../../services/ursa-major/) (see [KB005](../kb005-ursa-major-service-tiers/)) |
+| Your lab's own Google Cloud project, VMs and managed services (recharged), P1-P2 data | [Ursa Major](../../services/ursa-major/) (see [KB005](../kb005-ursa-major-service-tiers/)) |
 | Regulated or controlled data | [Secure Enclave](../../services/secure-enclave/) (see [KB014](../kb014-secure-enclave-guide/)) |
 | Very large numbers of short, independent jobs (high-throughput computing) | [OSG / OSPool](../../services/osg/) |
 | An allocation on a specific national supercomputer, or VMs on Jetstream2 | [NSF ACCESS](../../services/nsf-access/) (see [KB009](../kb009-using-nsf-access/)) |

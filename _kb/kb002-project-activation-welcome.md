@@ -4,7 +4,7 @@ kb_id: KB002
 topic: Cloud
 audience: "PIs and lab members with a new Ursa Major project"
 updated: 2026-08-19
-reviewed: 2026-10-04
+reviewed: 2026-10-22
 owner: Research Computing
 redirect_from:
   - /Knowledge_Base/KB002_Project_Activation_Welcome.html
@@ -28,7 +28,7 @@ Tier 1 AI model access is arranged by Research Computing, with a per-lab allowan
 
 ## 3. Watch your spending
 
-If your project carries a recharge, ask Research Computing for a budget. It sends alerts and caps spending. See [Ursa Major project budgets](../ursa-major-project-budget/).
+Every Ursa Major project has a budget. It sends alerts, and work stops when it is reached. On Tier 1 projects Research Computing sets it as the project's limit; on recharged (Tier 2) projects Research Computing sets or changes it on request, to match the lab's funding. See [Ursa Major project budgets](../ursa-major-project-budget/).
 
 ## 4. Getting help
 

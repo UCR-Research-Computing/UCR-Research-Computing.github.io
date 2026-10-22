@@ -28,7 +28,7 @@ glance:
   - {k: "Lab-owned disk", fact: hpcc_owned_storage_fee}
   - {k: "Data allowed", v: "P1 and P2"}
 cta:
-  - {label: "HPCC storage details", url: "https://hpcc.ucr.edu/about/overview/access/"}
+  - {label: "HPCC storage details", url: "https://hpcc.ucr.edu/manuals/hpc_cluster/storage/"}
   - {label: "Compare storage", url: "/storage/"}
 ---
 

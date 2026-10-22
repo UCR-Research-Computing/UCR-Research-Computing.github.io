@@ -183,7 +183,7 @@ The [nrp-mcp README](https://github.com/UCR-Research-Computing/nrp-mcp#readme) l
 
 * **Non-sensitive data only (UCR P1).** Public, non-sensitive data. No student records, personal information, clinical or controlled data. For P2 and above, see the [HPCC](../../services/hpcc/), [Ursa Major](../../services/ursa-major/) or the [Secure Enclave](../../services/secure-enclave/).
 * **No idle GPUs.** Ask for a GPU only when your code uses one. The NRP suspends accounts that hold idle GPUs.
-* **Nothing public without asking Research Computing.** Publishing a web app also needs your own approval, and the app is set to expire after 14 days; the NRP removes long-running apps after two weeks.
+* **Ask your namespace admin before exposing a public web app** (or Research Computing, if you are working in a Research Computing workshop namespace). Publishing a web app also needs your own approval, and the app is set to expire after 14 days; the NRP removes long-running apps after two weeks.
 * **Clean up when you finish.** Jobs left running hold resources other researchers need.
 * **Keep your keys private.** Never paste a model key or your S3 keys into a chat, a repository, a shared document or a screenshot.
 

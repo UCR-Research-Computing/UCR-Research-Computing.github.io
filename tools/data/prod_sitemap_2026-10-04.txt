@@ -138,7 +138,6 @@
 /Knowledge_Base/solid_state_battery_sim.html
 /Knowledge_Base/ucr-research-gcp-scaling.html
 /Knowledge_Base/ucr_comp_chem_report.html
-/assets/documents/Safe%20and%20Secure%20AI%20in%20Research.pdf
 /google48ff203332789656.html
 /pages/ship_status.html
 /pages/um.html
