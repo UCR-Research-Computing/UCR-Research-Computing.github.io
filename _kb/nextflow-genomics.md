@@ -164,7 +164,7 @@ profiles {
 * **`profiles { slurm { ... } }`:** a profile you turn on with `-profile slurm`. Without it, Nextflow runs tasks on the machine where it was started.
 * **`process.executor = 'slurm'`:** submit each task as a Slurm job.
 * **`process.queue = 'epyc'`:** the default partition. Individual processes can override it with a `queue` directive.
-* **`executor.queueSize` and `executor.submitRateLimit`:** cap how many jobs Nextflow keeps in the queue and how fast it submits them. Users can have at most 5000 jobs queued or running at once on the HPCC.
+* **`executor.queueSize` and `executor.submitRateLimit`:** cap how many jobs Nextflow keeps in the queue and how fast it submits them. The HPCC limits how many jobs one user can have queued or running at once; see its [Queue Policies](https://hpcc.ucr.edu/manuals/hpc_cluster/queue/) page.
 
 You do not need a Slurm account option on the HPCC. Put resource requests (`cpus`, `memory`, `time`) on each process, as in `main.nf`, rather than one setting for all.
 
@@ -207,6 +207,8 @@ sbatch run_nextflow.sh
 * **`-profile slurm`:** uses the Slurm settings from `nextflow.config`, so each FASTQC task becomes its own Slurm job.
 * **`-work-dir`:** where Nextflow keeps intermediate files. Putting it on `/bigdata` keeps your home directory under quota.
 * **`-resume`:** reuses results from earlier runs where inputs and code have not changed (see below).
+
+This pattern relies on a running job being allowed to submit further jobs. If the HPCC does not allow that on your partition, run the driver in a `tmux` session on a head node instead, with the same `NXF_OPTS` setting to keep its memory small, or ask support@hpcc.ucr.edu.
 
 For a quick test with a few small files you can also run `nextflow run main.nf -profile slurm` directly in an interactive session (`srun -p short --mem=4G -c 2 -t 2:00:00 --pty bash -l`).
 

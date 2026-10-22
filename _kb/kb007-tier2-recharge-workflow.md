@@ -4,7 +4,7 @@ kb_id: KB007
 topic: Cloud
 audience: "PIs and department administrators"
 updated: 2026-02-13
-reviewed: 2026-10-04
+reviewed: 2026-10-22
 owner: Research Computing
 redirect_from:
   - /Knowledge_Base/KB007_Tier2_Recharge_Workflow.html
@@ -21,7 +21,7 @@ Some Google Cloud projects are billed to a lab funding source, which covers all 
 - the technical requirements (APIs, GPUs and so on);
 - the full chart of accounts (COA) string.
 
-**3. MOU.** The ITS systems and finance teams prepare a Memorandum of Understanding (MOU) that sets out the recharge rates, the COA and the terms, and send it to the PI for signature.
+**3. MOU.** The ITS systems and finance teams prepare a Memorandum of Understanding (MOU) that sets out the recharge rates, the COA and the terms, and send it to the PI for signature. The MOU also sets out any ITS administrative fees for the cloud account (a one-time setup fee and an annual support fee); see [Costs](../../costs/) for the current figures.
 
 **4. Billing setup.** Once the MOU is signed, ITS creates a billing account for the COA and links it to the project.
 

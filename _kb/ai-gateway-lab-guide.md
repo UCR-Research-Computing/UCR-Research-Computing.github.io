@@ -3,7 +3,7 @@ title: "Using the UCR AI gateway: a guide for lab PIs and members"
 topic: Cloud
 description: "Run your lab's access to AI models: add members, give each one a capped key by claim link, issue a dedicated key for an app, and see what the lab spends. Then use a key from Python, curl, Gemini CLI or OpenCode."
 audience: "PIs and members of labs onboarded to the UCR AI gateway pilot"
-reviewed: 2026-10-08
+reviewed: 2026-10-22
 owner: Research Computing
 unlisted: true
 sitemap: false
@@ -11,7 +11,7 @@ review_notes:
   - "Unlisted on purpose (2026-10-08): the AI gateway is a pilot open to labs Research Computing has onboarded, so this page is shared by link with those labs and is kept out of the KB index, related guides, site search and the sitemap, with noindex. Make it a listed, numbered article when the gateway opens more widely."
   - "Tool names, roles, key policy (90-day expiry, daily cap of 30 percent of the monthly cap, rate limits on every key and lab) app keys, models on offer and terms of use follow the gateway admin server (aigw v0.8.0) as read live on 2026-10-08. Client setups come from aigw_client_setup, tested 2026-10-01; the OpenCode MCP command was tested 2026-10-08 (OpenCode 1.18)."
   - "Prices are deliberately not printed here: they change, and aigw_models shows the current price of every model."
-  - "CHECK: the PI walkthrough (sign in, add a member, issue a key) follows the live tool definitions; the first faculty PI had not yet run it end to end when this was written."
+  - "2026-10-22: after a multi-model wording review, the app-key example is a research pipeline with a modest cap (large instructional use is Tier 2 per KB005), and the data rule is P1 and P2 only with no exception path."
 ---
 
 The UCR AI gateway is a Research Computing service, now in pilot, that gives labs access to Google's Gemini models, including embeddings, through one endpoint. The gateway can route to other models and providers, and more are planned for the future, such as Claude, open-source models hosted elsewhere and third-party API sources. If you need a model that is not listed, contact Research Computing. Each lab has a monthly allowance. The lab's PI decides who is in the lab, what each person may spend, who holds a key, and whether an app the lab runs gets a key of its own, without filing a ticket.
@@ -26,7 +26,7 @@ This page has two parts: [for PIs](#for-pis-run-your-lab) and [for lab members](
 * **Each member** has their own monthly cap inside the lab's allowance. Every lab has a default member cap, so nobody is ever uncapped.
 * **Each person gets their own key**, delivered by a one-time claim link. The link holds no key and works only for the person it names, for 72 hours. The key is created when they open the link, sign in with their own UCR Google account and accept the terms of use, and it is shown to them once.
 * **Every key** expires after 90 days, has a daily cap of 30 percent of its monthly cap, has rate limits (tokens per minute, requests per minute, requests at once), and carries the Gemini models. The PI's own key gets higher rate limits than students' keys.
-* **An app can have a key of its own.** For a web app or service that many people use (a classroom tool, for example), the PI issues one app key. It belongs to the lab rather than a person, has its own monthly cap, daily cap and higher rate limits sized for many users at once, and its spend shows as its own line. The app does any per-user limits on its side. The lab's shared speed limit still applies.
+* **An app can have a key of its own.** For a web app or service that many people use (a research pipeline or a shared lab tool, for example), the PI issues one app key. It belongs to the lab rather than a person, has its own monthly cap, daily cap and higher rate limits sized for many users at once, and its spend shows as its own line. The app does any per-user limits on its side. The lab's shared speed limit still applies.
 * **The gateway records usage** (who, which model, tokens and cost), not the text of prompts or answers.
 
 Everyone is identified by their UCR NetID account (for example `jdoe001@ucr.edu`). Use NetIDs when you add people; the gateway resolves other UCR addresses to the NetID account.
@@ -79,12 +79,12 @@ Your own key works the same way: "Issue a key to me."
 
 If your lab runs a web app or service that calls AI models for many people, give it one key of its own instead of using a personal key:
 
-> Issue an app key named teaching-ai for my lab with a monthly cap of 1,000 dollars.
+> Issue an app key named lab-pipeline for my lab with a monthly cap of 100 dollars.
 
 Only the PI can issue an app key. Give it a monthly cap that fits the app (without one it starts at a modest default you can raise later). Confirm the plan, then open the claim link yourself: the key appears once in your browser, and you put it straight into the app's settings (never in its code or repository). The app key:
 
 * belongs to the lab, not to you, so your personal key stays separate;
-* has a daily cap of 30 percent of its monthly cap and higher rate limits than a personal key (sized for a class of 60 to 70 people at once; ask to change them);
+* has a daily cap of 30 percent of its monthly cap and higher rate limits than a personal key (sized for many users at once; ask to change them);
 * shows as its own line when you ask what the lab spent;
 * carries the same Gemini models as personal keys;
 * is one per app name; to replace it, ask to rotate it.
@@ -100,7 +100,7 @@ The gateway sees all of the app's traffic as one key, so per-user quotas belong 
 | "Set jdoe001's cap to 100 dollars." | Changes the member's cap (never above the allowance) |
 | "Show my lab's rate limits." | The lab's shared limit and the default limits for new keys |
 | "Lower jdoe001's key to 100 requests a minute." | Changes a key's rate limits at once, no new key needed |
-| "Raise the teaching-ai app key to 2,000 requests a minute." | Changes an app key's rate limits, live |
+| "Raise the lab-pipeline app key to 500 requests a minute." | Changes an app key's rate limits, live |
 | "Give new student keys 1M tokens a minute." | Changes the lab's default rate limits for keys issued from now on |
 | "Which claims are still open?" | Claim links not yet collected, and when they expire |
 | "Block jdoe001's key." | Refuses that key at once; unblock undoes it |
@@ -186,7 +186,7 @@ Model choice is the biggest cost lever: Flash models cost a fraction of Pro, and
 
 ## Rules
 
-* **Data: UC protection levels P1 (public) and P2 (internal) only.** P3 and P4 data are not allowed unless UCR's Information Security Office has approved that specific use in writing. P3 and P4 include identifiable health information, student records, government ID numbers, financial account numbers, export-controlled data and CUI.
+* **Data: UC protection levels P1 (public) and P2 (internal) only.** Never send P3 or P4 data to the gateway. P3 and P4 include identifiable health information, student records, government ID numbers, financial account numbers, export-controlled data and CUI.
 * **Your key is yours.** Never put it in code, a repository, chat, email or a shared file, and never share it.
 * **If a key leaks,** report it at once: ask your agent to "report my key as leaked" (it is blocked immediately), or email research-computing@ucr.edu.
 * **UCR work only.** Use follows UC policy, including the Electronic Communications Policy and IS-3. Research Computing may block a key at any time to protect the service.

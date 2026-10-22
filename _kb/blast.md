@@ -76,6 +76,8 @@ The HPCC keeps copies of common NCBI databases (nr, nt, core_nt and others) thro
 module load db-ncbi
 ```
 
+If a tool needs the full path to a database, `module show db-ncbi` lists the directory and variables the module sets.
+
 ## Interactive BLAST searches
 
 Interactive sessions are useful for testing commands and running small searches.

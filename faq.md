@@ -48,7 +48,7 @@ Yes. The HPCC's GPUs are usually the lower-cost place to run them yourself. For 
 ## Security
 
 **I work with HIPAA or NIST SP 800-171 data. Can I use the shared cluster?**
-No. Regulated data needs a review, an approved [data security plan]({{ '/kb/ucr-data-security-plans/' | relative_url }}), and an appropriate environment such as the [secure research enclave]({{ '/services/secure-enclave/' | relative_url }}). Contact us before you start.
+No. Regulated data needs a review and an approved [data security plan]({{ '/kb/ucr-data-security-plans/' | relative_url }}). For NIST SP 800-171 and CMMC Level 2 work, the campus offers the [secure research enclave]({{ '/services/secure-enclave/' | relative_url }}). Health data and HIPAA clinical applications follow a different path; see [KB006: Clinical and HIPAA applications]({{ '/kb/kb006-som-clinical-apps/' | relative_url }}). Contact us before you start.
 
 ## Access
 

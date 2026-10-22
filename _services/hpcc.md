@@ -17,7 +17,7 @@ fit:
   - GPU training and inference run as batch jobs
   - Pipelines with many independent tasks
 not_fit:
-  - Data rated P3 or P4 (see the secure enclave)
+  - Data rated P3 or P4 (see Security and data)
   - Always-on web services or databases
   - Work that needs a dedicated machine at a fixed time
   - Long-term storage of finished data

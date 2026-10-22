@@ -1,9 +1,11 @@
 ---
 title: "CephRDS"
+parent: Storage
+parent_url: /storage/
 kicker: "Storage <span class='sep'>|</span> On-campus research data storage"
 description: "On-campus project storage for lab data, instrument output and sequencing libraries, accessed over S3. Currently in pilot."
 status: Pilot
-tags: [Object storage (S3), Project data, Recharge]
+tags: [Object storage (S3), Project data, Pilot]
 data_levels: P1-P2
 owner: "Research Computing"
 reviewed: 2026-10-08

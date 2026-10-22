@@ -4,8 +4,9 @@ topic: Security
 owner: Research Computing
 redirect_from:
   - /Knowledge_Base/UCR_Data_Security_Plans.html
-reviewed: 2026-10-04
+reviewed: 2026-10-22
 review_notes:
+  - "2026-10-22: P3/P4 section now says the ISO approves the environment in the DSP before data is stored, adds export-control review, and notes classified data is not supported."
   - "Chuck 2026-10-04: DSP template current; CHASS server room option removed (no longer offered)."
   - "Reworded the secure enclave section to match KB014 and the enclave service page (designed to support NIST SP 800-171 / CMMC Level 2 work, after review, an approved DSP and training; ITS covers the shared infrastructure, project usage and admin fees are recharged)."
   - "Added a pointer to campus policy (UC IS-3) through the Security hub, a HIPAA pointer to KB006, and fixed the broken Next steps list."
@@ -55,7 +56,7 @@ The DUA and the data classification decide which environment is appropriate. Sta
 
 ### P3 and P4 research data
 
-For sensitive research data classified as P3 or P4 without federal NIST SP 800-171 or CMMC requirements:
+For sensitive research data classified as P3 or P4 without federal NIST SP 800-171 or CMMC requirements, the environment is decided in review: the Information Security Office must approve the design in the project's data security plan before any P3 or P4 data is stored. Export-controlled data also needs review by the Office of Research Integrity, and US classified data is not supported. One option that may be approved:
 
 *   **Google Cloud (Ursa Major, Tier 2 recharge)**
     *   **Availability:** UCR researchers.
