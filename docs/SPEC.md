@@ -171,7 +171,7 @@ A five-model, five-lens review of every page, card and public PDF (report and ve
 - Any P3 or P4 environment (Ursa Major Tier 2, RCSAS lab servers) needs a data security plan approved by the ISO before data is stored. An MOU alone does not authorize it.
 - RC does not gate faculty use of external platforms: KB031 says to ask the namespace admin (RC only in an RC workshop namespace) before a public web app.
 - Lab-owned hardware: list the HPCC beside RCSAS; containers and Jupyter: list the HPCC (Singularity, OnDemand) beside Nautilus; any Ursa Major general compute is marked recharged.
-- Unlisted AI gateway guide: P1 and P2 only, no ISO exception path; examples use a research app key with a modest cap, never a classroom key (large instructional use is Tier 2).
+- Unlisted AI gateway guide: P1 and P2 only, no ISO exception path; examples use a research app key with a modest cap and no classroom example; app keys for teaching are arranged case by case with leadership approval, not described publicly.
 - HPCC limits are linked, never typed in prose (Nextflow 5,000-job line removed).
 
 ## 9. Open items
