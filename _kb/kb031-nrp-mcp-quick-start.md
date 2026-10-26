@@ -6,6 +6,8 @@ description: "Connect your laptop to NRP Nautilus, give your AI assistant the nr
 audience: "UCR researchers and students with a Nautilus namespace who want to run jobs by talking to an AI assistant instead of writing Kubernetes files"
 reviewed: 2026-10-21
 owner: Research Computing
+series: nautilus
+series_order: 9
 review_notes:
   - "Web version of the printable handout made for an October 2026 hands-on workshop. The PDF (assets/documents/nrp-mcp-quick-start.pdf) is built from docs/handouts/nrp-mcp-quick-start.html with headless Chrome."
   - "2026-10-21: updated for nrp-mcp 1.0.0 (released 2026-10-21). Install now uses the project's own installers (install.sh asks before adding ~/.local/bin to PATH; install.ps1 installs to LOCALAPPDATA Programs nrp-mcp, checks SHA256SUMS, sets the user PATH). nrp-mcp client hermes replaces hermes mcp add. New: nrp-mcp s3 setup for saved results (a job plan is refused without it unless the person says yes, discard results), nrp-mcp doctor, and 6-character approval codes from nrp-mcp approve for GPU, public, delete, upload and setup steps. Commands checked against the 1.0.0 binary; the Slurm example was re-planned on 1.0.0 (10 tasks, rocker/r-ver:4.4.2, 1 h limit)."
