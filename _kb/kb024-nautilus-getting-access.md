@@ -16,6 +16,8 @@ review_notes:
   - "CHECK: the Homebrew, krew and Chocolatey install options are mentioned only by pointing to the kubelogin README; they were not tested."
 ---
 
+**Easiest way in:** once you have a namespace, an AI assistant can plan and run jobs for you. See [Run Nautilus jobs from your AI assistant (nrp-mcp quick start)](../kb031-nrp-mcp-quick-start/).
+
 ## 1. What "getting access" means on Nautilus
 
 Getting onto the National Research Platform (NRP) Nautilus cluster has three layers. People often finish the first and wonder why nothing works, so it helps to see all three up front:

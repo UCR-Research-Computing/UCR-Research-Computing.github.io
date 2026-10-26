@@ -15,9 +15,10 @@ fit:
   - Containerized workloads, including GPU jobs
   - JupyterHub and interactive notebooks
   - Collaborations that span several institutions
+  - GPU work moving out of a lab cloud project
 not_fit:
   - Any protected data (HIPAA, FERPA, PII and similar); the NRP does not permit it
-  - Researchers who cannot work with containers and Kubernetes
+  - Researchers who need a point-and-click portal (there is none; use a notebook, or let an AI assistant run jobs with nrp-mcp)
   - Work that needs reserved or predictable capacity
 glance:
   - {k: "Who runs it", v: "The National Research Platform, a multi-institution partnership"}
@@ -26,6 +27,7 @@ glance:
   - {k: "Data allowed", v: "Non-sensitive data only, per NRP policy"}
 cta:
   - {label: "Researcher guide", url: "/kb/kb023-nautilus-researcher-guide/"}
+  - {label: "Run jobs from an AI assistant", url: "/kb/kb031-nrp-mcp-quick-start/"}
   - {label: "Get started with NRP", url: "https://nrp.ai/documentation/userdocs/start/getting-started/"}
   - {label: "NRP policies", url: "https://nrp.ai/documentation/userdocs/start/policies/"}
 ---

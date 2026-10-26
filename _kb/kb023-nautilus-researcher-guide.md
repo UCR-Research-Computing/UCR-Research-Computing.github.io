@@ -16,6 +16,8 @@ review_notes:
   - "CHECK: the comparison table in section 9 summarizes UCR service pages as of 2026-10-06; re-read them if those pages change."
 ---
 
+**Easiest way in:** once you have a namespace, an AI assistant can plan and run jobs for you. See [Run Nautilus jobs from your AI assistant (nrp-mcp quick start)](../kb031-nrp-mcp-quick-start/).
+
 ## 1. What is NRP Nautilus?
 
 The **National Research Platform (NRP)** is a partnership of research institutions, supported by National Science Foundation awards. Its main system, **Nautilus**, is one large Kubernetes cluster spread across more than 75 sites, mostly in the US with a few in Asia and Europe ([Using Nautilus](https://nrp.ai/documentation/userdocs/start/using-nautilus/)). Institutions contribute machines, and researchers at participating institutions run their work on the shared pool. UCR participates, and UCR does not recharge for Nautilus use. See the [NRP Nautilus service page](../../services/nautilus/) for the short version.
