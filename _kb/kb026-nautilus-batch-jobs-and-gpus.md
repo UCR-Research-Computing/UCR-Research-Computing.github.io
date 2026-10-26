@@ -15,7 +15,7 @@ review_notes:
   - "CHECK: podFailurePolicy (ignore preemption disruptions) is standard Kubernetes and passed server dry-run, but the NRP docs do not mention it. It is offered as optional."
 ---
 
-**Easiest way in:** once you have a namespace, an AI assistant can plan and run jobs for you. See [Run Nautilus jobs from your AI assistant (nrp-mcp quick start)](../kb031-nrp-mcp-quick-start/).
+**Prefer not to write Kubernetes files?** Once you have a namespace, an AI assistant can plan and run jobs for you. See [Run Nautilus jobs from your AI assistant (nrp-mcp quick start)](../kb031-nrp-mcp-quick-start/).
 
 Batch jobs are the way the National Research Platform (NRP) wants most computing done on Nautilus. You describe the work in a short text file, hand it to the cluster, and walk away. The cluster finds a machine with the hardware you asked for, runs your command, restarts it if the machine fails, and keeps the output for you to collect. Nothing depends on your laptop staying awake.
 

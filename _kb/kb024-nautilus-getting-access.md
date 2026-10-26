@@ -16,7 +16,7 @@ review_notes:
   - "CHECK: the Homebrew, krew and Chocolatey install options are mentioned only by pointing to the kubelogin README; they were not tested."
 ---
 
-**Easiest way in:** once you have a namespace, an AI assistant can plan and run jobs for you. See [Run Nautilus jobs from your AI assistant (nrp-mcp quick start)](../kb031-nrp-mcp-quick-start/).
+**Prefer not to write Kubernetes files?** Once you have a namespace, an AI assistant can plan and run jobs for you. See [Run Nautilus jobs from your AI assistant (nrp-mcp quick start)](../kb031-nrp-mcp-quick-start/).
 
 ## 1. What "getting access" means on Nautilus
 

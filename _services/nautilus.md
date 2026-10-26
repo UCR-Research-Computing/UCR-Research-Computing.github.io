@@ -18,7 +18,7 @@ fit:
   - GPU work moving out of a lab cloud project
 not_fit:
   - Any protected data (HIPAA, FERPA, PII and similar); the NRP does not permit it
-  - Researchers who need a point-and-click portal (there is none; use a notebook, or let an AI assistant run jobs with nrp-mcp)
+  - Researchers who need reserved hardware or a supported, managed desktop
   - Work that needs reserved or predictable capacity
 glance:
   - {k: "Who runs it", v: "The National Research Platform, a multi-institution partnership"}

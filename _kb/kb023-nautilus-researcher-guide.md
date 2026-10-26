@@ -16,7 +16,7 @@ review_notes:
   - "CHECK: the comparison table in section 9 summarizes UCR service pages as of 2026-10-06; re-read them if those pages change."
 ---
 
-**Easiest way in:** once you have a namespace, an AI assistant can plan and run jobs for you. See [Run Nautilus jobs from your AI assistant (nrp-mcp quick start)](../kb031-nrp-mcp-quick-start/).
+**Prefer not to write Kubernetes files?** Once you have a namespace, an AI assistant can plan and run jobs for you. See [Run Nautilus jobs from your AI assistant (nrp-mcp quick start)](../kb031-nrp-mcp-quick-start/).
 
 ## 1. What is NRP Nautilus?
 
