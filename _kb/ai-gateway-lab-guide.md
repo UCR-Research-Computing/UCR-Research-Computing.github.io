@@ -3,7 +3,7 @@ title: "Using the UCR AI gateway: a guide for lab PIs and members"
 topic: Cloud
 description: "Run your lab's access to AI models: add members, give each one a capped key by claim link, issue a dedicated key for an app, and see what the lab spends. Then use a key from Python, curl, Gemini CLI or OpenCode."
 audience: "PIs and members of labs onboarded to the UCR AI gateway pilot"
-reviewed: 2026-10-22
+reviewed: 2026-10-27
 owner: Research Computing
 unlisted: true
 sitemap: false
@@ -11,10 +11,11 @@ review_notes:
   - "Unlisted on purpose (2026-10-08): the AI gateway is a pilot open to labs Research Computing has onboarded, so this page is shared by link with those labs and is kept out of the KB index, related guides, site search and the sitemap, with noindex. Make it a listed, numbered article when the gateway opens more widely."
   - "Tool names, roles, key policy (90-day expiry, daily cap of 30 percent of the monthly cap, rate limits on every key and lab) app keys, models on offer and terms of use follow the gateway admin server (aigw v0.8.0) as read live on 2026-10-08. Client setups come from aigw_client_setup, tested 2026-10-01; the OpenCode MCP command was tested 2026-10-08 (OpenCode 1.18)."
   - "Prices are deliberately not printed here: they change, and aigw_models shows the current price of every model."
+  - "2026-10-27: tool setups in \"Use your key in your AI coding tool\" were run against the live gateway (Claude Code 2.1.311, Codex CLI 0.164.0, Gemini CLI 0.46.0, OpenCode 1.19.4). Claude Code connector behaviour was checked with a claude.ai login: any ANTHROPIC_AUTH_TOKEN or ANTHROPIC_API_KEY disables claude.ai connectors; the x-litellm-api-key header keeps them. Header mode confirmed: a bad key returns 401 and a good key returns 200 even with a claude.ai bearer sent alongside, and the key's spend rose after a header-mode call (the test key was also in use elsewhere, so the exact per-call amount was not isolated). Gateway Cloud Run logs for the test window (1,685 entries, 20 /v1/messages requests including the header-mode calls) were searched for the claude.ai bearer, the test keys and any Authorization or x-litellm-api-key text: zero matches, so request headers are not written to the service logs. The LiteLLM spend database was not inspected. CHECK: Codex with Claude models needs web_search disabled until the Google Cloud org policy allows it."
   - "2026-10-22: after a multi-model wording review, the app-key example is a research pipeline with a modest cap (teaching app keys are arranged case by case with leadership approval), and the data rule is P1 and P2 only with no exception path."
 ---
 
-The UCR AI gateway is a Research Computing service, now in pilot, that gives labs access to Google's Gemini models, including embeddings, through one endpoint. The gateway can route to other models and providers, and more are planned for the future, such as Claude, open-source models hosted elsewhere and third-party API sources. If you need a model that is not listed, contact Research Computing. Each lab has a monthly allowance. The lab's PI decides who is in the lab, what each person may spend, who holds a key, and whether an app the lab runs gets a key of its own, without filing a ticket.
+The UCR AI gateway is a Research Computing service, now in pilot, that gives labs access to Google's Gemini models, including embeddings, through one endpoint. Some keys also carry Anthropic's Claude models; ask Research Computing if you need Claude on yours. The gateway can route to other models and providers, and more are planned for the future, such as open-source models hosted elsewhere and third-party API sources. If you need a model that is not listed, contact Research Computing. Each lab has a monthly allowance. The lab's PI decides who is in the lab, what each person may spend, who holds a key, and whether an app the lab runs gets a key of its own, without filing a ticket.
 
 **Printable version:** [AI gateway quick start (PDF, 2 pages, Letter)](../../assets/documents/ai-gateway-quick-start.pdf).
 
@@ -163,15 +164,77 @@ curl https://ucr-ursa-major-ai-gateway-service-575977597413.us-central1.run.app/
   -H "Authorization: Bearer $UCR_AI_GATEWAY_KEY"
 ```
 
+### Use your key in your AI coding tool
+
+Pick the tool you already use. Each setup below was tested against the gateway on 2026-10-27.
+
+**Claude Code** (Claude models, on keys that carry them: `claude-sonnet-5-5`, `claude-sonnet-5`, `claude-opus-5`, `claude-opus-5-5`, `claude-haiku-5-5`). If you sign in to Claude Code with a claude.ai account and want to keep your claude.ai connectors (Gmail, Drive, Slack and the rest), pass the key as a header and leave `ANTHROPIC_AUTH_TOKEN` and `ANTHROPIC_API_KEY` unset:
+
+```bash
+export ANTHROPIC_BASE_URL=https://ucr-ursa-major-ai-gateway-service-575977597413.us-central1.run.app
+export ANTHROPIC_CUSTOM_HEADERS="x-litellm-api-key: Bearer $UCR_AI_GATEWAY_KEY"
+claude --model claude-sonnet-5-5
+```
+
+If you do not use a claude.ai login, the simpler setup also works, but Claude Code then switches your connectors off:
+
+```bash
+export ANTHROPIC_BASE_URL=https://ucr-ursa-major-ai-gateway-service-575977597413.us-central1.run.app
+export ANTHROPIC_AUTH_TOKEN=$UCR_AI_GATEWAY_KEY
+claude --model claude-sonnet-5-5
+```
+
+Claude Code prints "claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set". That is Claude Code's own rule, not a gateway fault: any `ANTHROPIC_AUTH_TOKEN` or `ANTHROPIC_API_KEY` turns the connectors off. Use the header setup above, or unset those two variables, to get them back. In header mode Claude Code still sends your claude.ai sign-in token to the gateway; the gateway ignores it and uses your key. To go back to normal Claude Code, unset `ANTHROPIC_BASE_URL` and `ANTHROPIC_CUSTOM_HEADERS`.
+
+**Codex CLI** (any model). Add this to `~/.codex/config.toml`:
+
+```toml
+model = "gemini-3.8-flash"
+model_provider = "ucr"
+
+[model_providers.ucr]
+name = "UCR AI Gateway"
+base_url = "https://ucr-ursa-major-ai-gateway-service-575977597413.us-central1.run.app/v1"
+env_key = "UCR_AI_GATEWAY_KEY"
+wire_api = "responses"
+```
+
+Codex prints "Model metadata not found" for non-OpenAI models. It still works. For Claude models, add `-c web_search="disabled"` to the command (see the table below).
+
 **Gemini CLI** (choose "Use Gemini API Key"):
 
 ```bash
 export GOOGLE_GEMINI_BASE_URL=https://ucr-ursa-major-ai-gateway-service-575977597413.us-central1.run.app
 export GEMINI_API_KEY=$UCR_AI_GATEWAY_KEY
-gemini
+gemini -m gemini-3.8-flash
 ```
 
-**OpenCode and other OpenAI-compatible tools:** use the base URL above (with `/v1`) and your key.
+If you also have `GOOGLE_API_KEY` set, Gemini CLI prefers it; unset it first.
+
+**OpenCode.** Add this to `opencode.json` (or `~/.config/opencode/opencode.json`), then run `opencode` and pick the model:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "ucr": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "UCR AI Gateway",
+      "options": { "baseURL": "https://ucr-ursa-major-ai-gateway-service-575977597413.us-central1.run.app/v1", "apiKey": "{env:UCR_AI_GATEWAY_KEY}" },
+      "models": { "gemini-3.8-flash": {}, "claude-sonnet-5-5": {} }
+    }
+  }
+}
+```
+
+**Other OpenAI-compatible tools:** use the base URL above (with `/v1`) and your key.
+
+| Tool | Gemini models | Claude models | Notes |
+| :--- | :--- | :--- | :--- |
+| Claude Code | works, but slow, and Claude Code prints an unrecognized-model notice | works | Use the header setup to keep claude.ai connectors |
+| Codex CLI | works | works with `-c web_search="disabled"` | Without it, Claude calls fail with a 400 about `web_search` (the gateway's Google Cloud policy does not allow Claude's web search) |
+| Gemini CLI | works | not applicable | Wrong key gives a 401 |
+| OpenCode | works | works | |
 
 ### 3. Pick a model
 
