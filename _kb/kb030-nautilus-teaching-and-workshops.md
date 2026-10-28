@@ -94,7 +94,7 @@ On Nautilus, a **namespace** is your group's isolated space on the cluster. Ever
 
 1. **Become an admin.** Faculty, staff and postdocs can request their own group with the namespace request form, linked from the NRP [Getting access](https://nrp.ai/documentation/userdocs/start/getting-started/) page. Sign in at nrp.ai first. A PhD or master's student (for example, the course TA) can be a namespace admin if their supervisor submits the form for them. [KB024](../kb024-nautilus-getting-access/) has the details.
 2. **Create a namespace for the course** on the [Namespaces page](https://nrp.ai/namespaces). Use lowercase letters, numbers and dashes, and a name that says whose it is and what it is for, such as `ucr-smithlab-ling100`. The NRP asks people to avoid generic names.
-3. **Add your TAs directly** as members (they must have signed in once). People you add yourself are never removed by a join link, so TAs keep access after the class ends until you remove them.
+3. **Add your TAs directly** as members (search by name; anyone who has not signed in yet can be invited by email). People you add yourself are never removed by a join link, so TAs keep access after the class ends until you remove them.
 4. **Look at the namespace's limits** if you will use `kubectl`:
 
 ```bash

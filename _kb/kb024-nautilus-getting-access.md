@@ -3,11 +3,12 @@ title: "Getting access to Nautilus: accounts, namespaces and kubectl"
 kb_id: KB024
 topic: National
 audience: "UCR faculty, postdocs, staff and students starting on the NRP Nautilus cluster, and PIs setting up a group"
-reviewed: 2026-10-06
+reviewed: 2026-10-28
 owner: Research Computing
 series: nautilus
 series_order: 2
 review_notes:
+  - "Updated 2026-10-28 after creating a lab namespace (ucr-gallardo-lab) as a subgroup of ucr-research-computing: Subgroups/Members/Details tabs, add-by-name search, email invites for people not yet signed in (expire after 2 months), RC-created lab namespace route."
   - "Written 2026-10-06 from the NRP documentation (nrp.ai/documentation, fetched 2026-10-06) and tests run in a UCR namespace the same day."
   - "Tested 2026-10-06: kubeconfig from nrp.ai/config, kubelogin browser sign-in, kubectl auth whoami, kubectl auth can-i, kubectl get resourcequota and kubectl describe limitrange in a UCR namespace. The CPU and memory LimitRange defaults (100m CPU, 1Gi memory) were seen in that one namespace; other namespaces may differ."
   - "CHECK: the Windows install route (rename the release binary to kubectl-oidc_login.exe and put it on PATH) follows the kubelogin README and the NRP VS Code note; it was not tested on Windows."
@@ -82,18 +83,30 @@ Every namespace has at least one **namespace admin**. The admin adds and removes
 
 ### If you are a student
 
-Ask your PI or research supervisor to add you to their namespace. They can do this from the [Namespaces page](https://nrp.ai/namespaces) once you have signed in at least once (Step 1), because they can only add people who already have an NRP account.
+Ask your PI or research supervisor to add you to their namespace from the [Namespaces page](https://nrp.ai/namespaces). It is quickest if you sign in once first (Step 1), because then they can add you right away. If you have not signed in yet, they can invite you by email instead, and you are added the first time you sign in (invites expire after two months).
 
-If your supervisor does not have a namespace yet, they can request one (next section). A PhD or master's student can be the admin of a namespace if their supervisor submits the request on their behalf.
+If your supervisor does not have a namespace yet, Research Computing can set one up for the lab (next section), or your supervisor can request one. A PhD or master's student can be the admin of a namespace if their supervisor submits the request on their behalf.
+
+### Fastest route for a UCR lab: ask Research Computing
+
+Research Computing runs a UCR namespace on Nautilus for onboarding campus labs. We can create a namespace for your lab under it, usually the same day, and add you and your students. Email research-computing@ucr.edu with:
+
+- your lab or group name,
+- the people to add (name and the email address each person uses), and
+- one or two sentences on what you plan to run.
+
+Each person should sign in at [nrp.ai](https://nrp.ai) once (Step 1). If someone has not, we invite them by email and they are added when they first sign in. Your namespace starts with the default quotas (Section 9). The PI is listed on the namespace and is responsible for its members and what runs in it.
 
 ### If you are faculty, staff or a postdoc
 
-You can request your own group, which makes you its admin:
+You can also request your own group directly from the NRP, which makes you its admin:
 
 1. Sign in at [nrp.ai](https://nrp.ai) first, so the request is tied to your account.
 2. Fill out the **namespace request form**, linked from the NRP [Getting access](https://nrp.ai/documentation/userdocs/start/getting-started/) page. It asks for your name, institution, current affiliation and a name for your group.
 3. Pick a clear, descriptive name: **lowercase letters, numbers and dashes only**. The NRP asks people to avoid generic names such as `testing-group` or `llm-access`. Something like `ucr-smithlab-ecology` tells everyone (including the NRP admins) whose work it is.
-4. Once approved, open the [Namespaces page](https://nrp.ai/namespaces) to create namespaces and add members. Members must have signed in once before you can add them.
+4. Once approved, open the [Namespaces page](https://nrp.ai/namespaces), select your namespace, and use its **Subgroups** tab to create more namespaces and its **Members** tab to add people. Then fill in the **Details** tab (PI, description, institution, publications); the NRP staff use it to see who runs what.
+
+**Adding members.** In the Members tab, start typing the person's **name** and pick them from the list. People appear under the email address they sign in with, which may be their NetID address, a first.last@ucr.edu alias, or a Google account, so searching by NetID can miss them. People with an NRP account are added right away. For someone who has not signed in yet, paste their email address to send an invite; they are added when they first sign in.
 
 Questions about the form can go to the Nautilus Support chat (Section 5).
 
