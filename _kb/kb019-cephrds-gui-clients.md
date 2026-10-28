@@ -9,7 +9,7 @@ review_notes:
   - "Removed the architecture image: it used Liquid outside a fact include and has garbled AI-generated labels ('Collected anth-rrate', an OSD icon under monitor nodes). The file is still in assets/images."
   - "Replaced 'officially recommended' and 'effortlessly' wording; the bucket example is now a placeholder instead of a NetID-based name."
   - "CHECK: the us3ui field names (Endpoint, Bucket Name, Use SSL) still match the current release (project last updated Jul 2026)."
-  - "CHECK: whether the Cyberduck 'Amazon S3' profile works as-is or a generic S3 profile with path-style is needed for rds.ucr.edu."
+  - "2026-10-28: Cyberduck note settled as written: try the Amazon S3 profile first; if it reaches for my-lab-bucket.rds.ucr.edu, switch to a generic S3 profile with path-style requests (rds-cli and KB018 both use path-style). Confirm on a live bucket when VPN access is back."
 redirect_from:
   - /Knowledge_Base/KB019_CephRDS_GUI_Clients.html
 ---
@@ -62,6 +62,6 @@ Download the precompiled Linux binary from the project's [GitHub releases page](
 ## Other options
 
 - To work with a bucket as if it were a local drive, see [KB020: Mounting CephRDS buckets as local drives](../kb020-cephrds-mounting-folders/).
-- To script transfers, see [KB018: Accessing CephRDS with Python (boto3)](../kb018-cephrds-python-boto3/) or the rclone section of [KB013](../kb013-cephrds-onboarding/).
+- To script transfers, see [KB018: Accessing CephRDS with Python (boto3)](../kb018-cephrds-python-boto3/), [KB032: rds-cli](../kb032-cephrds-rds-cli/), [KB033: other languages and tools](../kb033-cephrds-other-languages-and-tools/) or the rclone section of [KB013](../kb013-cephrds-onboarding/).
 
 Questions: research-computing@ucr.edu.
