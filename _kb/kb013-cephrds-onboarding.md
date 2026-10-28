@@ -124,6 +124,12 @@ for obj in s3.list_objects_v2(Bucket="my-lab-bucket").get("Contents", []):
 
 [KB018: Accessing CephRDS with Python (boto3)](../kb018-cephrds-python-boto3/) has a fuller example, including uploads and downloads.
 
+## More ways to connect
+
+- [KB032: rds-cli](../kb032-cephrds-rds-cli/), a Research Computing command-line tool with CephRDS already set up: quota check, folder uploads, share links, copies to Google Cloud Storage.
+- [KB033: Other languages and tools](../kb033-cephrds-other-languages-and-tools/): the AWS CLI, s5cmd, R, Julia, MATLAB and Go, and reaching CephRDS from the HPCC cluster.
+- [KB019: Graphical clients](../kb019-cephrds-gui-clients/) and [KB020: Mounting a bucket as a drive](../kb020-cephrds-mounting-folders/).
+
 ## Getting help
 
 Contact Research Computing at research-computing@ucr.edu.

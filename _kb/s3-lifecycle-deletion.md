@@ -13,6 +13,8 @@ redirect_from:
 
 An Amazon S3 lifecycle rule can delete objects automatically after a set number of days, or move them to a cheaper storage class. This helps you follow a data retention plan and avoid paying to store data you no longer need. This article covers the deletion (expiration) rule.
 
+**This article is for Amazon S3 (AWS) accounts only.** CephRDS buckets look similar but do not support lifecycle or auto-delete rules; delete CephRDS data yourself (for example with `rds-cli rm`, see [KB032](../kb032-cephrds-rds-cli/)).
+
 UCR researchers get AWS accounts through ITS under the University of California agreements; see [Cloud accounts](../../services/cloud-accounts/). This article is for Amazon S3. [CephRDS](../../services/cephrds/), the on-campus S3 storage, does not support automatic deletion (lifecycle) rules; delete data there yourself when your retention period ends.
 
 **Expiration is permanent.** Once a rule deletes an object, it cannot be recovered unless you keep another copy. Check the rule's scope carefully, and check your data retention obligations (funder, journal, and UC records rules; see [Records retention](../../security/records-retention/)) before you set one.

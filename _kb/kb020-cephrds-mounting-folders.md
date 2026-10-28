@@ -98,4 +98,6 @@ Open File Explorer to find the new `Z:` drive with your CephRDS data.
 
 If you prefer not to use the command line, [RcloneView](https://rcloneview.com/) is a third-party graphical interface for rclone on Windows and macOS. You can use it to set up the `rds.ucr.edu` endpoint and mount a bucket with a button. It is not run or supported by Research Computing; check its licensing and terms before you rely on it.
 
+For copying rather than mounting, [KB032: rds-cli](../kb032-cephrds-rds-cli/) and the tools in [KB033](../kb033-cephrds-other-languages-and-tools/) are faster for large transfers.
+
 Questions: research-computing@ucr.edu.

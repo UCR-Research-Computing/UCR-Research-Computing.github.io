@@ -86,6 +86,10 @@ print("Download complete.")
 - **`NoSuchBucket`:** check the bucket name spelling. Bucket names are case-sensitive.
 - **Connection timeouts:** CephRDS is reachable only from the campus network. Off campus, connect to the [UCR campus VPN](https://vpn.ucr.edu/) (Cisco Secure Client) first. Contact research-computing@ucr.edu if the problem continues.
 
+## Other options
+
+For a ready-made command-line tool, see [KB032: rds-cli](../kb032-cephrds-rds-cli/). For R, Julia, MATLAB and the AWS CLI, see [KB033](../kb033-cephrds-other-languages-and-tools/).
+
 ## Security note
 
 Never commit keys to GitHub or another repository. If a key may have been exposed, contact research-computing@ucr.edu so it can be replaced.

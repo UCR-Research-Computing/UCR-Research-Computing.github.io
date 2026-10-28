@@ -33,6 +33,7 @@ glance:
 cta:
   - {label: "Request storage", url: "/kb/kb013-cephrds-onboarding/"}
   - {label: "Connect with rclone", url: "/kb/kb020-cephrds-mounting-folders/"}
+  - {label: "Use rds-cli", url: "/kb/kb032-cephrds-rds-cli/"}
 ---
 
 ## What it is
@@ -56,6 +57,8 @@ The PI or lab lead requests storage through Research Computing. [KB013: CephRDS 
 - [KB018: CephRDS with Python (boto3)]({{ '/kb/kb018-cephrds-python-boto3/' | relative_url }})
 - [KB019: CephRDS with Cyberduck and other desktop clients]({{ '/kb/kb019-cephrds-gui-clients/' | relative_url }})
 - [KB020: Mounting CephRDS buckets as local folders with rclone]({{ '/kb/kb020-cephrds-mounting-folders/' | relative_url }})
+- [KB032: The rds-cli command-line tool]({{ '/kb/kb032-cephrds-rds-cli/' | relative_url }})
+- [KB033: Other languages and tools (AWS CLI, R, Julia, MATLAB, Go)]({{ '/kb/kb033-cephrds-other-languages-and-tools/' | relative_url }})
 
 ## Keep in mind
 
