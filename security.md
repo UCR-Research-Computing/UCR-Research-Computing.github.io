@@ -32,7 +32,7 @@ If you are not sure of your data's level, ask before you store it. That is far e
 
 ## Data security plans
 
-A data security plan (DSP) documents the roles, controls and processes that protect a project's data. Agreements and regulations often require one. Research Computing works with researchers and the campus Information Security Office to prepare DSPs. See [UCR data security plans]({{ '/kb/ucr-data-security-plans/' | relative_url }}) for the process and template.
+A data security plan (DSP) documents the roles, controls and processes that protect a project's data. Agreements and regulations often require one. The PI is responsible for the DSP. Research Computing helps with the process and writes the technical sections, and the campus Information Security Office reviews and approves it. See [UCR data security plans]({{ '/kb/ucr-data-security-plans/' | relative_url }}) for the process and template.
 
 ## Regulated and contract-controlled data
 
