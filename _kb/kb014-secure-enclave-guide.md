@@ -36,7 +36,7 @@ The enclave is for NIST SP 800-171 and CMMC Level 2 work. Other options may suit
 ## How onboarding works
 
 1. **Initial consultation.** Contact Research Computing to discuss your project's requirements. We review your contract, grant or data use agreement with you.
-2. **Data security plan.** We work with you and the campus Information Security Office (ISO) on a data security plan that documents the controls and procedures for your project.
+2. **Data security plan.** You complete a data security plan for your project, and you are responsible for submitting it for review. Research Computing writes the technical sections and guides you through the process. The campus Information Security Office (ISO) reviews and approves it.
 3. **Billing and MOU.** You provide a grant-funded funding source (COA). ITS drafts an MOU for the recharged services for your review and signature.
 4. **Mandatory training.** Before access, the PI and all authorized researchers attend a training session with Research Computing and the ISO. It covers researcher responsibilities, secure access, compute rules, and data transfer rules.
 5. **Provisioning.** Once the MOU is signed and training is complete, ITS sets up a dedicated, isolated workspace for the project.

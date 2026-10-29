@@ -24,8 +24,9 @@ This checklist shows the steps to bring a project into the [secure research encl
 - [ ] ITS creates a billing account for the project once the MOU is signed.
 
 **Data security plan (DSP)**
-- [ ] Research Computing prepares a draft DSP with the research team.
-- [ ] The research team reviews it and lists everyone who needs access.
+- [ ] The PI and research team complete the DSP using the UCR template. Research Computing writes the technical sections.
+- [ ] The research team lists everyone who needs access.
+- [ ] The PI submits the completed DSP for review.
 - [ ] The Information Security Office (ISO) reviews the DSP against the required controls.
 - [ ] The final DSP is signed by all parties. This can run in parallel with Phase 2.
 

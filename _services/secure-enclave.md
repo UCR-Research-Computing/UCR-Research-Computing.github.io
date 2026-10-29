@@ -41,7 +41,7 @@ The secure research enclave is a NIST SP 800-171 environment in Google Cloud. It
 ## How onboarding works
 
 1. **Consultation.** We review your contract, grant or data use agreement with you.
-2. **Data security plan.** You, Research Computing and the ISO write a data security plan that documents the controls for your project.
+2. **Data security plan.** You complete a data security plan for your project and submit it for review. Research Computing writes the technical sections and guides you through the process, and the ISO reviews and approves it.
 3. **Funding and MOU.** You provide a grant-funded funding source (COA) and ITS drafts an MOU for the recharged services.
 4. **Training.** The PI and every authorized user complete the required enclave training before access.
 5. **Provisioning.** A dedicated, isolated workspace is set up for the project.

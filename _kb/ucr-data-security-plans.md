@@ -4,8 +4,9 @@ topic: Security
 owner: Research Computing
 redirect_from:
   - /Knowledge_Base/UCR_Data_Security_Plans.html
-reviewed: 2026-10-22
+reviewed: 2026-10-29
 review_notes:
+  - "Chuck 2026-10-29: added a Who does what section. The PI is responsible for completing, maintaining and submitting the DSP; RC writes the technical sections and facilitates; ISO reviews and approves. Same wording applied to KB014, KB015, the enclave service page, the security page and the help page."
   - "2026-10-22: P3/P4 section now says the ISO approves the environment in the DSP before data is stored, adds export-control review, and notes classified data is not supported."
   - "Chuck 2026-10-04: DSP template current; CHASS server room option removed (no longer offered)."
   - "Reworded the secure enclave section to match KB014 and the enclave service page (designed to support NIST SP 800-171 / CMMC Level 2 work, after review, an approved DSP and training; ITS covers the shared infrastructure, project usage and admin fees are recharged)."
@@ -16,6 +17,14 @@ review_notes:
 Research with highly sensitive data needs formal planning and approval before it starts. This includes P3 or P4 data, protected health information (HIPAA), data regulated under NIST SP 800-171 Rev 2, export-controlled data, and datasets governed by strict data use agreements (DUAs). The governing rules are University of California policy, in particular UC IS-3, plus any external regulations or agreements that apply to the data. The [Security and Data](../../security/) page lists the policies and links to the official sources; where this article and a policy differ, the policy wins.
 
 This article describes how to start a Data Security Plan (DSP), what you are responsible for, and the infrastructure options.
+
+## Who does what
+
+The PI is responsible for the data security plan: completing it, keeping it accurate, and submitting it for review. Research Computing guides the process and writes the technical sections (the computing environment, access controls and data handling). The Information Security Office reviews and approves it.
+
+*   **The PI** completes the plan, keeps it accurate, and submits it for review.
+*   **Research Computing** facilitates the process and writes the technical sections: the computing environment, access controls and data handling.
+*   **The Information Security Office (ISO)** reviews and approves the plan.
 
 ## 1. What is a Data Security Plan?
 
@@ -32,11 +41,11 @@ It describes how your research environment is built and maintained securely, and
 
 ## 2. Before anything is built
 
-When you request infrastructure for a confidential dataset, Research Computing and the ISO first establish the security requirements. Before any technical solution is proposed or hardware is purchased, complete these intake steps.
+When you request infrastructure for a confidential dataset, Research Computing and the ISO help you establish the security requirements. Before any technical solution is proposed or hardware is purchased, complete these intake steps.
 
 ### A. PI oversight is required
 
-Every Data Security Plan and secure environment must be anchored to a faculty data custodian. If you are a student, postdoc or staff member starting the request, include your Principal Investigator (PI) or faculty advisor in the communication. The PI approves the request and holds responsibility for the data.
+Every Data Security Plan and secure environment must be anchored to a faculty data custodian. If you are a student, postdoc or staff member starting the request, include your Principal Investigator (PI) or faculty advisor in the communication. The PI approves the request, holds responsibility for the data, and is responsible for the data security plan.
 
 ### B. Provide the governing documents
 

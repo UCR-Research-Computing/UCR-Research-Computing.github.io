@@ -42,7 +42,7 @@ Research Computing holds online office hours, currently on Wednesdays from 10 to
 | Cloud accounts under UC agreements | ITS, through the [support portal](https://ucrsupport.service-now.com/ucr_portal/) |
 | Google Drive, OneDrive, campus accounts | ITS, through the [support portal](https://ucrsupport.service-now.com/ucr_portal/) |
 | Campus AI tools | ITS: [AI at UCR](https://its.ucr.edu/ai) |
-| Data security plans, regulated data | Research Computing with the Information Security Office |
+| Help with data security plans, regulated data | Research Computing with the Information Security Office |
 
 ## Before you write
 
