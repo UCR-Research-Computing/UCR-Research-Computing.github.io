@@ -25,7 +25,7 @@ Most research computing at UCR runs on the **HPCC cluster**. Cloud and national 
 | Train or run models on GPUs | [HPCC cluster]({{ '/services/hpcc/' | relative_url }}) | [NAIRR Pilot]({{ '/services/nairr/' | relative_url }}), [NSF ACCESS]({{ '/services/nsf-access/' | relative_url }}), [Nautilus]({{ '/services/nautilus/' | relative_url }}) |
 | Use generative AI models in your research | [Ursa Major]({{ '/services/ursa-major/' | relative_url }}) (Tier 1 AI access) | [Cloud and AI]({{ '/compute/cloud-and-ai/' | relative_url }}) |
 | Use exotic hardware the HPCC does not have (such as TPUs or Arm) | [Ursa Major]({{ '/services/ursa-major/' | relative_url }}) (Tier 1 exotic hardware, by consultation) | [NSF ACCESS]({{ '/services/nsf-access/' | relative_url }}) |
-| Run thousands of small independent jobs | [HPCC cluster]({{ '/services/hpcc/' | relative_url }}) | [OSG / OSPool]({{ '/services/osg/' | relative_url }}) |
+| Run thousands of small independent jobs | [HPCC cluster]({{ '/services/hpcc/' | relative_url }}) | [OSG / OSPool]({{ '/services/osg/' | relative_url }}), with the [OSDF]({{ '/services/osdf/' | relative_url }}) for larger files |
 | Run containers or JupyterHub at scale | [NRP Nautilus]({{ '/services/nautilus/' | relative_url }}) | [HPCC cluster]({{ '/services/hpcc/' | relative_url }}) (Singularity containers, Open OnDemand), [Ursa Major]({{ '/services/ursa-major/' | relative_url }}) (recharged) |
 | Have your own cloud account on a grant | [Cloud accounts]({{ '/services/cloud-accounts/' | relative_url }}) | [Ursa Major]({{ '/services/ursa-major/' | relative_url }}) |
 | Work with regulated data | [Secure research enclave]({{ '/services/secure-enclave/' | relative_url }}) | [Security and data]({{ '/security/' | relative_url }}) |
@@ -40,7 +40,7 @@ Most research computing at UCR runs on the **HPCC cluster**. Cloud and national 
 
 National programs award time by application rather than by recharge. They have their own policies on eligibility and data.
 
-{% assign nat = "nsf-access,nairr,nautilus,osg" | split: "," %}
+{% assign nat = "nsf-access,nairr,nautilus,osg,osdf,osn" | split: "," %}
 <div class="hubgrid">{% for id in nat %}{% assign s = site.data.services | where: "id", id | first %}{% include service-card.html s=s %}{% endfor %}</div>
 
 ## A note on capacity

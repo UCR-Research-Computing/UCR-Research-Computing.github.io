@@ -25,6 +25,7 @@ Most labs use more than one kind of storage, and move data between them as a pro
 | Collaboration | Documents, manuscripts, small shared files | [Google Drive and OneDrive]({{ '/services/google-drive/' | relative_url }}) |
 | Archive (cold) | Data you must keep but rarely read | [Cloud archive]({{ '/services/cloud-archive/' | relative_url }}) |
 | Cloud object | Data used by cloud workloads | [Cloud accounts]({{ '/services/cloud-accounts/' | relative_url }}), [Ursa Major]({{ '/services/ursa-major/' | relative_url }}) |
+| Shared nationally | Datasets shared across institutions and platforms, or public datasets | [Open Storage Network]({{ '/services/osn/' | relative_url }}) (through NSF ACCESS) |
 | Published | Data shared openly with a DOI | Dryad and other repositories (see below) |
 
 {% assign st = "hpcc-gpfs,cephrds,drive,cloud-archive" | split: "," %}
@@ -44,4 +45,4 @@ Funders and journals increasingly ask for data to be shared. UC researchers can 
 
 ## Moving data
 
-For large transfers between campus systems, national systems and collaborators, see [Globus data transfer]({{ '/kb/globus-transfer/' | relative_url }}). For CephRDS, see the [rclone guide]({{ '/kb/kb020-cephrds-mounting-folders/' | relative_url }}).
+For large transfers between campus systems, national systems and collaborators, see [Globus data transfer]({{ '/kb/globus-transfer/' | relative_url }}). For CephRDS, see the [rclone guide]({{ '/kb/kb020-cephrds-mounting-folders/' | relative_url }}). For OSN buckets, see [Moving data in and out of OSN]({{ '/kb/kb040-osn-moving-data/' | relative_url }}).

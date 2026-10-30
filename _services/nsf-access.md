@@ -43,7 +43,7 @@ UCR does not recharge for ACCESS allocations, and ACCESS awards them rather than
 
 ## How to get started
 
-[KB009: Using NSF ACCESS and Jetstream2]({{ '/kb/kb009-using-nsf-access/' | relative_url }}) walks through the whole process yourself, from creating an ACCESS account to launching a first Jetstream2 virtual machine. Research Computing is happy to look over a request with you. [Contact us]({{ '/help/' | relative_url }}).
+[KB009: Using NSF ACCESS and Jetstream2]({{ '/kb/kb009-using-nsf-access/' | relative_url }}) walks through the whole process yourself, from creating an ACCESS account to launching a first Jetstream2 virtual machine. ACCESS also allocates [Open Storage Network]({{ '/services/osn/' | relative_url }}) storage; see [Getting OSN storage]({{ '/kb/kb039-osn-getting-storage/' | relative_url }}). Research Computing is happy to look over a request with you. [Contact us]({{ '/help/' | relative_url }}).
 
 ## Useful links
 
