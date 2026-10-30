@@ -26,6 +26,7 @@ glance:
   - {k: "Project sizes", v: "Explore, Discover, Accelerate, Maximize"}
 cta:
   - {label: "Step-by-step guide", url: "/kb/kb009-using-nsf-access/"}
+  - {label: "Jetstream2 VMs and GPUs", url: "/services/jetstream2/"}
   - {label: "ACCESS allocations", url: "https://allocations.access-ci.org/"}
 ---
 
@@ -43,7 +44,7 @@ UCR does not recharge for ACCESS allocations, and ACCESS awards them rather than
 
 ## How to get started
 
-[KB009: Using NSF ACCESS and Jetstream2]({{ '/kb/kb009-using-nsf-access/' | relative_url }}) walks through the whole process yourself, from creating an ACCESS account to launching a first Jetstream2 virtual machine. ACCESS also allocates [Open Storage Network]({{ '/services/osn/' | relative_url }}) storage; see [Getting OSN storage]({{ '/kb/kb039-osn-getting-storage/' | relative_url }}). Research Computing is happy to look over a request with you. [Contact us]({{ '/help/' | relative_url }}).
+[KB009: Using NSF ACCESS and Jetstream2]({{ '/kb/kb009-using-nsf-access/' | relative_url }}) walks through the whole process yourself, from creating an ACCESS account to launching a first Jetstream2 virtual machine. For VMs and GPU VMs on Jetstream2, see the [Jetstream2 series]({{ '/kb/kb042-jetstream2-researcher-guide/' | relative_url }}). ACCESS also allocates [Open Storage Network]({{ '/services/osn/' | relative_url }}) storage; see [Getting OSN storage]({{ '/kb/kb039-osn-getting-storage/' | relative_url }}). Research Computing is happy to look over a request with you. [Contact us]({{ '/help/' | relative_url }}).
 
 ## Useful links
 

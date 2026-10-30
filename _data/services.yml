@@ -101,6 +101,18 @@
   data: Non-sensitive only
   terms: ACCESS and OSN policies
   t: "storage national p1 norecharge grant"
+- id: jetstream2
+  name: Jetstream2
+  url: /services/jetstream2/
+  icon: fa-solid fa-server
+  group: National
+  blurb: "NSF research cloud: Linux VMs you fully control, including NVIDIA A100 GPU VMs, through ACCESS."
+  tags: [Cloud VMs, GPU]
+  status: External
+  cost: No UCR recharge
+  data: Non-sensitive only
+  terms: ACCESS and Jetstream2 policies
+  t: "compute gpu national p1 norecharge grant"
 - id: cloud-discounts
   name: Cloud accounts (AWS, GCP, Azure)
   url: /services/cloud-accounts/
