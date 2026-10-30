@@ -8,11 +8,10 @@ owner: Research Computing
 redirect_from:
   - /Knowledge_Base/KB009_Using_NSF_ACCESS.html
 review_notes:
-  - "2026-10-30: added section 4b (GPUs through ACCESS; systems and GPU models from allocations.access-ci.org/resources.json, fetched 2026-10-30), links to the Jetstream2 series (KB042-KB045) and the Ubuntu 24.04 default image. The Exosphere steps were rerun on 2026-10-30 (see KB043)."
+  - "2026-10-30: added section 4b (GPUs through ACCESS; systems and GPU models from allocations.access-ci.org/resources.json, fetched 2026-10-30), links to the Jetstream2 series (KB042-KB045) and the Ubuntu 24.04 default image. The Exosphere steps were rerun on 2026-10-30 (see KB043), and the ACCESS CI (XSEDE) sign-in at CILogon was confirmed again the same day in Horizon (KB045)."
   - "Chuck 2026-10-04: Research Computing remains UCR ACCESS Campus Champion."
   - "Removed the ACCESS credit limits from the project-type table and the SU sizing section; the article now links the ACCESS project types page for current limits. Checked the remaining ACCESS steps, policies and Jetstream2 flavors, SU rates, state charges and default storage against access-ci.org and docs.jetstream-cloud.org on 2026-10-04."
   - "Added links to the NSF ACCESS, Nautilus and NAIRR service pages and the ACCESS resource list, a row pointing cloud VMs on Google Cloud to Ursa Major Tier 2, and a Research Computing contact."
-  - "CHECK: the Exosphere sign-in steps (Add ACCESS account, then ACCESS CI (XSEDE) at CILogon) still match the current Jetstream2 interface."
 ---
 
 ## 1. What is ACCESS?

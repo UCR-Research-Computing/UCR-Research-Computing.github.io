@@ -10,9 +10,9 @@ series: jetstream2
 series_order: 4
 review_notes:
   - "Written 2026-10-30 from the Jetstream2 documentation (Instance Management Actions, Instance Flavors, CLI: Installing OpenStack Clients and Authenticating; docs.jetstream-cloud.org, fetched 2026-10-30)."
-  - "Tested 2026-10-30 in Exosphere: the Actions menu (Lock, Suspend, Shelve, Resize, Image, Reboot, Delete), Shelve with its confirmation, the allocation page's SUs remaining and burn rate. Resize, Image, volumes, Delete and the OpenStack CLI were not run."
-  - "CHECK: create, attach, mount and detach a volume (section 3) and record the mount path Exosphere shows."
-  - "CHECK: run the CLI section (application credential in Horizon, pip install python-openstackclient, source the openrc, openstack server list) before prod."
+  - "Tested 2026-10-30 in Exosphere: the Actions menu (Lock, Suspend, Shelve, Resize, Image, Reboot, Delete), Shelve with its confirmation, the allocation page's SUs remaining and burn rate. Resize and Image were not run."
+  - "Volumes tested 2026-10-30 on an m3.tiny Ubuntu 24.04 VM: Create > Volume (1 GB), Attach from the volume list; Exosphere showed Device /dev/sdb and Mount point /media/volume/<volume-name>; on the VM the volume was already ext4, mounted there and writable by exouser; Detach showed a data-loss warning, then the volume went to Available and was unmounted."
+  - "CLI tested 2026-10-30: Horizon sign-in with ACCESS CILogon (identity provider ACCESS CI (XSEDE)), Identity > Application Credentials > Create (name, optional expiration; leave Unrestricted unchecked), Download openrc file (saved as app-cred-<name>-openrc.sh); python-openstackclient 8.0.0 in a venv; openstack server list, flavor list, volume list, server shelve, server delete and volume delete all worked."
 ---
 
 ## 1. Where your SUs go
@@ -57,9 +57,15 @@ When a VM runs out of memory, choose a larger flavor. When it sits idle most of 
 
 A **volume** is a separate disk you attach to a VM. It survives when the VM is deleted, and it can be moved to another VM. Use one for data and results you want to keep apart from the operating system.
 
-1. **Create**, then **Volume**: give it a name and a size in GB.
-2. On the volume (or on the VM's page under **Volumes**), choose **Attach** and pick the VM.
-3. Exosphere shows where the volume is mounted on the VM; check with `df -h` on the VM.
+1. **Create**, then **Volume**: give it a name and a size in GB. It shows **Creating**, then **Available**.
+2. On the volume (or on the VM's page under **Attach volume**), choose **Attach**, pick the VM and the volume, and click **Attach**.
+3. Exosphere shows the device and the mount point. On Ubuntu VMs the volume is formatted and mounted for you at `/media/volume/<volume-name>`, and you can write to it as `exouser`. Check on the VM:
+
+   ```bash
+   df -h /media/volume/<volume-name>
+   ```
+
+4. To move a volume, stop anything using it, then open the volume and choose **Detach**. Exosphere warns that detaching a volume in use can lose data; confirm, and the volume goes back to **Available**.
 
 Volumes use your allocation's storage quota (the **Volumes** card shows how many you have). Detach and delete volumes you no longer need. They keep counting against your quota until you delete them, even when no VM uses them.
 
@@ -79,7 +85,7 @@ Also check the **Volumes** card and the **Images** list for leftovers from earli
 
 For scripting, or for managing many VMs, use the OpenStack command-line client.
 
-1. Sign in to Horizon at [js2.jetstream-cloud.org](https://js2.jetstream-cloud.org/) (Authenticate using **ACCESS CILogon**), choose your allocation, and create an **application credential**. Download the `openrc` file it offers. Each allocation needs its own credential.
+1. Sign in to Horizon at [js2.jetstream-cloud.org](https://js2.jetstream-cloud.org/): under **Authenticate using** choose **ACCESS CILogon**, click **Sign In**, then pick **ACCESS CI (XSEDE)** as the identity provider. Check the allocation name at the top left, then go to **Identity**, **Application Credentials**, **Create Application Credential**. Give it a name and, if you like, an expiration date; leave **Unrestricted** unchecked. Click **Download openrc file** before closing the window, because the secret is shown only once. The file is named `app-cred-<name>-openrc.sh`. Each allocation needs its own credential.
 2. Install the client:
 
    ```bash
@@ -92,7 +98,7 @@ For scripting, or for managing many VMs, use the OpenStack command-line client.
 
    ```bash
    source ~/os-cli/bin/activate
-   source ~/Downloads/app-cred-openrc.sh
+   source ~/Downloads/app-cred-<name>-openrc.sh
    openstack server list
    openstack flavor list
    ```
@@ -104,9 +110,11 @@ For scripting, or for managing many VMs, use the OpenStack command-line client.
    openstack server unshelve <name>
    openstack server resize --flavor m3.small <name>
    openstack server delete <name>
+   openstack volume list
+   openstack volume delete <volume-name>
    ```
 
-Treat the `openrc` file like a password. Do not share it or commit it to Git, and give each person and each computer its own application credential. See [Authenticating against the OpenStack CLI](https://docs.jetstream-cloud.org/ui/cli/auth/).
+Treat the `openrc` file like a password. Do not share it or commit it to Git, and give each person and each computer its own application credential. When you no longer need a credential, delete it under **Identity**, **Application Credentials**. See [Authenticating against the OpenStack CLI](https://docs.jetstream-cloud.org/ui/cli/auth/).
 
 ## 6. When an allocation is running low
 
