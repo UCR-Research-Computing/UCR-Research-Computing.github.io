@@ -77,6 +77,30 @@
   data: Non-sensitive only
   terms: OSG policies
   t: "compute national batch p1 norecharge"
+- id: osdf
+  name: Open Science Data Federation (OSDF)
+  url: /services/osdf/
+  icon: fa-solid fa-circle-nodes
+  group: National
+  blurb: "National data origins and caches that deliver datasets to OSPool jobs, notebooks and laptops."
+  tags: [Data delivery, Pelican]
+  status: External
+  cost: No UCR recharge
+  data: Non-sensitive only
+  terms: OSG policies
+  t: "storage national batch p1 norecharge"
+- id: osn
+  name: Open Storage Network (OSN)
+  url: /services/osn/
+  icon: fa-solid fa-database
+  group: National
+  blurb: "NSF-funded S3 object storage, allocated through ACCESS, for sharing data across institutions and platforms."
+  tags: [Object (S3), Data sharing]
+  status: External
+  cost: No UCR recharge
+  data: Non-sensitive only
+  terms: ACCESS and OSN policies
+  t: "storage national p1 norecharge grant"
 - id: cloud-discounts
   name: Cloud accounts (AWS, GCP, Azure)
   url: /services/cloud-accounts/

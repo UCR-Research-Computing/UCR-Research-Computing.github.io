@@ -125,3 +125,17 @@ onedrive_default:
   url: https://its.ucr.edu/storage
   as_of: 2026-10-04
   owner: ITS
+osn_allocation_range:
+  label: OSN project allocation size through ACCESS
+  value: "1 to 50 TB per project (larger needs: contact OSN)"
+  source: "OSN documentation: ACCESS Allocations"
+  url: https://openstoragenetwork.github.io/docs/allocations/
+  as_of: 2026-10-29
+  owner: Open Storage Network
+osn_credit_rate:
+  label: ACCESS credit exchange rate for OSN storage
+  value: "3,000 ACCESS credits per 1 TB of OSN storage"
+  source: "OSN documentation: ACCESS Allocations"
+  url: https://openstoragenetwork.github.io/docs/allocations/
+  as_of: 2026-10-29
+  owner: Open Storage Network
