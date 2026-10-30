@@ -3,11 +3,12 @@ title: "Using NSF ACCESS and Jetstream2"
 kb_id: KB009
 topic: National
 audience: "UCR faculty, postdocs and graduate students"
-reviewed: 2026-10-04
+reviewed: 2026-10-30
 owner: Research Computing
 redirect_from:
   - /Knowledge_Base/KB009_Using_NSF_ACCESS.html
 review_notes:
+  - "2026-10-30: added section 4b (GPUs through ACCESS; systems and GPU models from allocations.access-ci.org/resources.json, fetched 2026-10-30), links to the Jetstream2 series (KB042-KB045) and the Ubuntu 24.04 default image. The Exosphere steps were rerun on 2026-10-30 (see KB043)."
   - "Chuck 2026-10-04: Research Computing remains UCR ACCESS Campus Champion."
   - "Removed the ACCESS credit limits from the project-type table and the SU sizing section; the article now links the ACCESS project types page for current limits. Checked the remaining ACCESS steps, policies and Jetstream2 flavors, SU rates, state charges and default storage against access-ci.org and docs.jetstream-cloud.org on 2026-10-04."
   - "Added links to the NSF ACCESS, Nautilus and NAIRR service pages and the ACCESS resource list, a row pointing cloud VMs on Google Cloud to Ursa Major Tier 2, and a Research Computing contact."
@@ -113,6 +114,8 @@ Your project page lists your username on each resource and links to its document
 
 ## 4. Jetstream2: Your Own VMs in a Research Cloud
 
+For a full walkthrough with screenshots, see the Jetstream2 series: [researcher guide](../kb042-jetstream2-researcher-guide/), [your first VM](../kb043-jetstream2-first-vm/), [GPU VMs](../kb044-jetstream2-gpu-vms/) and [managing VMs and SUs](../kb045-jetstream2-managing-vms/). This section is the short version.
+
 **Jetstream2** is an NSF-funded research cloud run by Indiana University. You create and control your own virtual machines, with full admin rights, from a web browser. It is a good fit for work that HPCC's batch system does not handle: always-on services, web apps, databases, science gateways, interactive desktops, and VMs with public IP addresses.
 
 ### Pick the right Jetstream2 resource
@@ -156,12 +159,12 @@ Full-GPU and larger flavors are also available; some require a request to the Je
 1. Go to [jetstream2.exosphere.app](https://jetstream2.exosphere.app) and click **Add ACCESS account**.
 2. At the CILogon page, choose **ACCESS CI (XSEDE)** as the identity provider and sign in.
 3. Select the allocations you want to use (select all of them; unselected ones are not added).
-4. Click **Create**, then **Instance**. Choose an image (**Ubuntu 22.04** is the most common), give it a name, and pick a flavor.
+4. Click **Create**, then **Instance**. Choose an image (**Ubuntu 24.04 (latest)** is a good default), give it a name, and pick a flavor.
 5. Turn on **Web Desktop** if you want a graphical desktop. Add an SSH public key if you want to connect from your own machine.
 6. Click **Create**. After a few minutes the status changes from Building to **Ready**.
 7. Open it with the **Web Shell** or **Web Desktop** buttons in your browser, or SSH in.
 
-If an instance shows **Error**, delete it and create a new one. Step-by-step walkthrough with screenshots: [Creating your First Instance](https://docs.jetstream-cloud.org/getting-started/first-instance/).
+If an instance shows **Error**, delete it and create a new one. Step-by-step walkthrough with screenshots: [Your first Jetstream2 VM](../kb043-jetstream2-first-vm/).
 
 ### Save credits: shelve what you are not using
 
@@ -177,6 +180,25 @@ A running VM uses SUs even when nobody is logged in.
 **Shelve** VMs you are not using. Shelving and unshelving each take a few minutes, so shelve at the end of a day or week, not for short breaks. Usage appears on the ACCESS site 12 to 24 hours after the fact, so do not rely on it for same-day tracking.
 
 ---
+
+## 4b. GPUs through ACCESS
+
+UCR researchers can get NVIDIA GPUs through their own ACCESS project, with no recharge from UCR. Which system fits depends on how you want to work:
+
+| You want | System (ACCESS resource) | GPUs |
+| :--- | :--- | :--- |
+| A GPU machine you log in to and use interactively | Jetstream2 GPU (see [GPU VMs on Jetstream2](../kb044-jetstream2-gpu-vms/)) | NVIDIA A100: a quarter, a half or a whole card |
+| Batch GPU jobs (Slurm) on A100s | NCSA Delta GPU, Purdue Anvil GPU | NVIDIA A100 |
+| Batch jobs on the newest GPUs | NCSA DeltaAI, Purdue Anvil AI, PSC Bridges-2 GPU | NVIDIA H100 (Bridges-2 also has V100 and L40S) |
+| Batch jobs on older GPUs | SDSC Expanse GPU | NVIDIA V100 |
+
+How to get started:
+
+1. Create an **Explore** project (Section 3). In the abstract, say what you will run and roughly how many GPU hours.
+2. Exchange credits for the GPU resource you picked. GPU hours cost more credits than CPU time; the [ACCESS resource catalog](https://allocations.access-ci.org/resources) shows each resource's exchange rate.
+3. Read that system's user guide (linked from your project page) for how to submit GPU jobs.
+
+Not sure which to pick? Start with Jetstream2 GPU to test your code interactively, then move longer runs to a batch system. [NRP Nautilus](../../services/nautilus/) is another GPU option for container jobs, with no recharge from UCR. GPUs on ACCESS systems are for non-sensitive data only.
 
 ## 5. Keeping Your Project Going
 

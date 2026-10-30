@@ -134,8 +134,8 @@ osn_allocation_range:
   owner: Open Storage Network
 osn_credit_rate:
   label: ACCESS credit exchange rate for OSN storage
-  value: "3,000 ACCESS credits per 1 TB of OSN storage"
-  source: "OSN documentation: ACCESS Allocations"
-  url: https://openstoragenetwork.github.io/docs/allocations/
-  as_of: 2026-10-29
+  value: "about 1,000 ACCESS credits per 1 TB of OSN storage"
+  source: "ACCESS resource catalog (OSN exchange rate)"
+  url: https://allocations.access-ci.org/resources
+  as_of: 2026-10-30
   owner: Open Storage Network

@@ -12,7 +12,8 @@ review_notes:
   - "Written 2026-10-29 from the OSN documentation (ACCESS Allocations, The OSN Portal, Create an OSN Bucket; fetched 2026-10-29)."
   - "Tested 2026-10-29 in the OSN portal (ColdFront 1.1.5) with an ACCESS identity: project page, annual project review form (reason + acknowledgement), 'Request Resource Allocation' with resource 'OSN Bucket (Storage)', Justification and TB fields, and 'Click to renew' on the OSN allocation. The bucket approval and keys step (section 5) was not yet seen."
   - "Tested 2026-10-29: signing in to ACCESS with a stale CILogon session gave 'User Not Registered'; deleting CILogon cookies at cilogon.org/me and choosing 'ACCESS CI (XSEDE)' fixed it."
-  - "CHECK: the 3,000 credits per TB exchange rate and the 1 to 50 TB range are from the OSN docs; ACCESS may change exchange rates."
+  - "2026-10-30: exchange rate updated to the ACCESS catalog figure (conversionFactor 8014.5 / 8.0145 = 1,000 credits per TB); the OSN docs still say 3,000."
+  - "CHECK: the 1 to 50 TB range is from the OSN docs."
 ---
 
 ## 1. Get an ACCESS project
@@ -21,7 +22,7 @@ OSN storage comes from an [NSF ACCESS](../../services/nsf-access/) allocation. I
 
 ## 2. Exchange credits for OSN
 
-In the [ACCESS allocations portal](https://allocations.access-ci.org/), open your project and choose to exchange credits for the **Open Storage Network** resource. The OSN documentation gives the rate as {% include fact.html id="osn_credit_rate" %} and suggests starting with the minimum and adding more as you near your quota. Describe how OSN helps your project in a few sentences.
+In the [ACCESS allocations portal](https://allocations.access-ci.org/), open your project and choose to exchange credits for the **Open Storage Network** resource. ACCESS currently lists the rate as {% include fact.html id="osn_credit_rate" %} and the OSN documentation suggests starting with the minimum and adding more as you near your quota. Describe how OSN helps your project in a few sentences.
 
 ACCESS Campus Champions can request a small test allocation. Say so in the exchange request.
 

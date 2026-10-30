@@ -40,7 +40,7 @@ Most research computing at UCR runs on the **HPCC cluster**. Cloud and national 
 
 National programs award time by application rather than by recharge. They have their own policies on eligibility and data.
 
-{% assign nat = "nsf-access,nairr,nautilus,osg,osdf,osn" | split: "," %}
+{% assign nat = "nsf-access,jetstream2,nairr,nautilus,osg,osdf,osn" | split: "," %}
 <div class="hubgrid">{% for id in nat %}{% assign s = site.data.services | where: "id", id | first %}{% include service-card.html s=s %}{% endfor %}</div>
 
 ## A note on capacity
