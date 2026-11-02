@@ -13,7 +13,7 @@ review_notes:
   - "Tested 2026-10-06: kubeconfig from nrp.ai/config, kubelogin browser sign-in, kubectl auth whoami, kubectl auth can-i, kubectl get resourcequota and kubectl describe limitrange in a UCR namespace. The CPU and memory LimitRange defaults (100m CPU, 1Gi memory) were seen in that one namespace; other namespaces may differ."
   - "CHECK: the Windows install route (rename the release binary to kubectl-oidc_login.exe and put it on PATH) follows the kubelogin README and the NRP VS Code note; it was not tested on Windows."
   - "CHECK: the exact link for registering for the Nautilus Support Matrix chat; the article points to the NRP Getting access page and nrp.ai/contact rather than a direct invite."
-  - "CHECK: the WSL --browser-command line is written without inner quotes (the NRP page shows it with double quotes inside the YAML item); not tested on WSL."
+  - "CHECK: the WSL --browser-command line is quoted as one YAML item because the path has spaces (2026-11-02, matching the NRP page); not tested on WSL."
   - "CHECK: the Homebrew, krew and Chocolatey install options are mentioned only by pointing to the kubelogin README; they were not tested."
 ---
 
@@ -302,7 +302,7 @@ kubelogin's options live in the `args:` list near the bottom of `~/.kube/config`
 **WSL cannot open a browser.** Add a line that points to Windows Chrome:
 
 ```yaml
-      - --browser-command=/mnt/c/Program Files/Google/Chrome/Application/chrome.exe
+      - "--browser-command=/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
 ```
 
 **Port 8000 is taken.** The NRP config already contains a `--listen-address=0.0.0.0:8000` line. Change the port to any unused one:

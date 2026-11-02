@@ -43,7 +43,7 @@ The live list of nodes and what is available to schedule right now is on the [NR
 
 **A good fit:**
 
-* You need a GPU for hours or days and the HPCC queue or your laptop is the bottleneck.
+* You need a GPU for hours or days, more than you have on campus or on your laptop.
 * You want a Jupyter notebook or a VS Code session with a GPU behind it, in a browser.
 * You want to call a large language model from a script, with an OpenAI-compatible API.
 * Your work splits into many independent pieces (one file, one parameter set, one image batch per worker).
