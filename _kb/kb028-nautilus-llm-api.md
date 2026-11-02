@@ -393,7 +393,7 @@ kubectl logs -n <your-namespace> -f job/llm-labeling
 Why these settings:
 
 * The token comes from the Secret, so it never appears in the spec.
-* Requests of 1 CPU and 2 GB fall under the NRP's exemption from its usage-violation checks, which matters for a pod that mostly waits on the network ([Cluster Policies](https://nrp.ai/documentation/userdocs/start/policies/)). Limits equal requests, which satisfies the rule that limits stay within 20% of requests.
+* Request 1 CPU and 2 GB for a pod that mostly waits on the network; the NRP's usage checks treat pods this small as exempt, so a quiet client is not flagged as idle ([Cluster Policies](https://nrp.ai/documentation/userdocs/start/policies/)). Limits equal requests, which satisfies the rule that limits stay within 20% of requests.
 * The command ends when the script ends. Never end a Job with `sleep`; the NRP bans users who do.
 * Write results to a persistent volume or S3 as you go, so a restart does not lose finished work ([KB027](../kb027-nautilus-storage-and-data/)).
 

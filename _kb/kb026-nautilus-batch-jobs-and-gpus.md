@@ -113,7 +113,7 @@ What the fields mean:
 
 - `restartPolicy: Never` with `backoffLimit: 2`: if the command exits with an error, or the node is rebooted, the Job starts a fresh pod, up to 2 more times. The NRP recommends a backoff above 0 so a node failure does not lose your run.
 - `ttlSecondsAfterFinished: 86400`: delete the finished Job and its pod after one day. The [NRP tutorial](https://nrp.ai/documentation/userdocs/tutorial/jobs/) says finished jobs otherwise stay for one week by default.
-- `resources`: 1 CPU and 2 GB, with limit equal to request. That size is exempt from the usage-violation rules, which makes it a safe default for small tasks.
+- `resources`: 1 CPU and 2 GB, with limit equal to request. That is a sensible size for small tasks, and the NRP's usage checks treat pods this small as exempt.
 
 When `kubectl get jobs` shows `COMPLETIONS 1/1`, the job is done. Clean up:
 

@@ -341,7 +341,7 @@ kubectl logs -n ucr-example job/wordcount-jdoe
 In our test it finished in about 17 seconds and printed counts for "the", "to", "of" and so on. That opens a good discussion about stop words. A few design choices are worth pointing out to students:
 
 * **The student's name is in the Job name and labels.** Everyone in the namespace shares one space, so unique names stop students from overwriting each other's Jobs, and `-l student=jdoe` filters to their own pods.
-* **1 CPU and 2Gi, with limits equal to requests.** The NRP requires limits within 20% of requests, and pods at 1 CPU and 2 GB are exempt from the usage-violation rules ([Cluster Policies](https://nrp.ai/documentation/userdocs/start/policies/)). That makes it a safe size for beginners.
+* **1 CPU and 2Gi, with limits equal to requests.** The NRP requires limits within 20% of requests, and 1 CPU and 2 GB is a good size for class work (the NRP's usage checks treat pods this small as exempt) ([Cluster Policies](https://nrp.ai/documentation/userdocs/start/policies/)). That makes it a safe size for beginners.
 * **`ttlSecondsAfterFinished: 86400`** is standard Kubernetes: the finished Job and its pods are deleted a day later, so the namespace does not fill up with old pods.
 
 ### A second exercise: a parallel sweep with an Indexed Job

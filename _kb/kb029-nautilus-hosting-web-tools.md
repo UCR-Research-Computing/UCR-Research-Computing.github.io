@@ -189,7 +189,7 @@ Web tools sit mostly idle between visitors, which runs into the NRP's usage rule
 * Limits must be within 20% of requests.
 * A user cannot run more than 4 pods whose actual use falls outside CPU 20-200% or RAM 20-150% of what they requested. **Pods requesting 1 CPU core and 2 GB of memory are exempt** from this check.
 
-For a small app, requesting and limiting at 1 CPU and 2Gi (as above) is the simplest way to stay clear of violations. If your app needs more memory, size it from what it really uses (the NRP's [Grafana dashboards](https://nrp.ai/documentation/userdocs/running/monitoring/) show this) and check the Violations page on the NRP portal after it has run for a day.
+For a small app, requesting and limiting at 1 CPU and 2Gi (as above) is the simplest right size, since a web app is idle most of the time. If your app needs more memory, size it from what it really uses (the NRP's [Grafana dashboards](https://nrp.ai/documentation/userdocs/running/monitoring/) show this) and check the Violations page on the NRP portal after it has run for a day.
 
 Other notes:
 

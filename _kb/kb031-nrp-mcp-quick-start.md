@@ -4,7 +4,7 @@ kb_id: KB031
 topic: National
 description: "Connect your laptop to NRP Nautilus, give your AI assistant the nrp tools, keep your job results in NRP S3, then move a Slurm job to Kubernetes by asking in plain language."
 audience: "UCR researchers and students with a Nautilus namespace who want to run jobs by talking to an AI assistant instead of writing Kubernetes files"
-reviewed: 2026-10-21
+reviewed: 2026-11-02
 owner: Research Computing
 series: nautilus
 series_order: 9
@@ -12,13 +12,14 @@ review_notes:
   - "Web version of the printable handout made for an October 2026 hands-on workshop. The PDF (assets/documents/nrp-mcp-quick-start.pdf) is built from docs/handouts/nrp-mcp-quick-start.html with headless Chrome."
   - "2026-10-21: updated for nrp-mcp 1.0.0 (released 2026-10-21). Install now uses the project's own installers (install.sh asks before adding ~/.local/bin to PATH; install.ps1 installs to LOCALAPPDATA Programs nrp-mcp, checks SHA256SUMS, sets the user PATH). nrp-mcp client hermes replaces hermes mcp add. New: nrp-mcp s3 setup for saved results (a job plan is refused without it unless the person says yes, discard results), nrp-mcp doctor, and 6-character approval codes from nrp-mcp approve for GPU, public, delete, upload and setup steps. Commands checked against the 1.0.0 binary; the Slurm example was re-planned on 1.0.0 (10 tasks, rocker/r-ver:4.4.2, 1 h limit)."
   - "2026-10-21: added the nrp-mcp 1.1.0 guide (nrp_guide tool and walk_me_through prompt): a Not sure what to do next? paragraph after Step 5 and a row in What to say. Checked against the 1.1.0 code and its live test (scripts/e2eguide)."
+  - "2026-11-02: updated for nrp-mcp 1.1.4 (public-readiness review): ten tools (nrp_guide), deleting your own finished run with no volumes needs only your yes in the chat (since 1.1.2; 1.1.4 also checks stand-alone pods have stopped), version lines to 1.1.4."
   - "CHECK: install.ps1 is run on Windows Server 2025 in the nrp-mcp CI on every change but has not been run on a student Windows laptop."
   - "CHECK: the browser sign-in in nrp-mcp setup has been run on Linux only."
 ---
 
 [nrp-mcp](https://github.com/UCR-Research-Computing/nrp-mcp) is a small open-source program (MIT license) from UCR Research Computing that runs on your own computer and gives an AI assistant a set of tools for the [NRP Nautilus](../kb023-nautilus-researcher-guide/) cluster. You describe what you want ("run this script on a GPU", "run it 50 times with different seeds") and the assistant plans the Kubernetes work, shows you the plan and the `kubectl` it equals, and runs it once you agree.
 
-This page is the web version of the one-sheet handout from our hands-on workshop. It covers nrp-mcp 1.1.0.
+This page is the web version of the one-sheet handout from our hands-on workshop. It covers nrp-mcp 1.1.4.
 
 **Printable version:** [nrp-mcp quick start (PDF, 2 pages, Letter)](../../assets/documents/nrp-mcp-quick-start.pdf). Print it on one sheet, both sides.
 
@@ -64,7 +65,7 @@ It downloads the right zip for your processor, checks it against the published c
 
 Prefer to download it yourself? Every build is on the [Releases page](https://github.com/UCR-Research-Computing/nrp-mcp/releases/latest). On a Mac, a file downloaded in a browser needs `xattr -d com.apple.quarantine ~/.local/bin/nrp-mcp` before it will run. On Windows, if SmartScreen says "Windows protected your PC", choose **More info**, then **Run anyway**.
 
-**Check:** `nrp-mcp version` prints 1.1.0 or newer.
+**Check:** `nrp-mcp version` prints 1.1.4 or newer.
 
 ## Step 3. Connect your laptop and set up saved results (8 min)
 
@@ -145,7 +146,7 @@ Download the `examples/slurm-array-bootstrap` folder from the [nrp-mcp repositor
 1. "Plan the Slurm script in this folder and show me what each line becomes."
 2. "Run it." (This example prints its answers to the logs and saves no files, so if you skipped saved results, say "yes, discard results".)
 3. "How did it go?"
-4. "Clean up everything I made." (Deleting needs your approval; see below.)
+4. "Clean up everything I made." (A finished run with no saved volumes needs only your yes in the chat; anything still running, or a volume, needs your approval. See below.)
 
 | Slurm line | Becomes on Nautilus |
 | :--- | :--- |
@@ -158,7 +159,7 @@ Ten tasks, ten seeds, ten different answers, in about a minute. CPU-only work is
 
 ## Approval codes
 
-GPU work, public web apps, deleting, uploading files and installing tools wait for your own yes. If your AI app can ask you directly, it shows a question; otherwise nrp-mcp shows a 6-character code (such as `KQ7-M4P`) in a desktop notification. If you miss it, run this in your own terminal:
+GPU work, public web apps, deleting anything still running or any volume, uploading files and installing tools wait for your own yes. (Cleaning up your own finished run needs only your yes in the chat.) If your AI app can ask you directly, it shows a question; otherwise nrp-mcp shows a 6-character code (such as `KQ7-M4P`) in a desktop notification. If you miss it, run this in your own terminal:
 
 ```bash
 nrp-mcp approve
@@ -177,9 +178,9 @@ Type the code into the chat. It works once, for that one plan, for 10 minutes. T
 | "Why did it fail?" | The logs, a plain-language diagnosis and the fix |
 | "Give me a Jupyter notebook" | A private notebook session; with a GPU it stops after a time limit (6 hours by default) |
 | "Copy the results to my laptop" | Downloads the run's saved results, or files from your volume |
-| "Clean up" | Lists what you made, deletes it after your approval |
+| "Clean up" | Lists what you made and deletes it: your yes in the chat for a finished run, your approval for anything running or any volume |
 
-The [nrp-mcp README](https://github.com/UCR-Research-Computing/nrp-mcp#readme) lists all nine tools, [START-HERE](https://github.com/UCR-Research-Computing/nrp-mcp/blob/main/docs/START-HERE.md) has a longer walkthrough with a glossary, and the `docs/examples` folder has 20 worked research examples.
+The [nrp-mcp README](https://github.com/UCR-Research-Computing/nrp-mcp#readme) lists all ten tools, [START-HERE](https://github.com/UCR-Research-Computing/nrp-mcp/blob/main/docs/START-HERE.md) has a longer walkthrough with a glossary, and the `docs/examples` folder has 20 worked research examples.
 
 ## Rules of the road
 
