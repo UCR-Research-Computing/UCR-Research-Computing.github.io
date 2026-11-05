@@ -8,7 +8,7 @@ owner: Research Computing
 unlisted: true
 sitemap: false
 review_notes:
-  - "2026-11-05: Claude Code section rewritten for a separate, temporary gateway session (claude-ucr shell function, or a per-folder .claude/settings.local.json) that leaves normal Claude Code untouched. Tested on Claude Code 2.1.311 against the live gateway: folder settings ran claude-sonnet-5-5 and gemini-3.8-flash through the gateway with all claude.ai connectors still listed and the key spend rising; the same command in another folder ran on the normal account with no gateway spend; the env wrapper ran gemini-3.8-flash and a Gemini session with the ANTHROPIC_DEFAULT_*_MODEL lines completed a Write tool call. A bad key in the header makes Claude Code hang and retry rather than print a clear error (seen 2026-10-27 and again 2026-11-05)."
+  - "2026-11-05: Claude Code section rewritten for a separate, temporary gateway session (claude-ucr shell function, or a per-folder .claude/settings.local.json) that leaves normal Claude Code untouched. Tested on Claude Code 2.1.311 against the live gateway (claude-ucr in zsh and in bash 3.2): folder settings ran claude-sonnet-5-5 and gemini-3.8-flash through the gateway with all claude.ai connectors still listed and the key spend rising; the same command in another folder ran on the normal account with no gateway spend; the env wrapper ran gemini-3.8-flash and a Gemini session with the ANTHROPIC_DEFAULT_*_MODEL lines completed a Write tool call. A bad key in the header makes Claude Code hang and retry rather than print a clear error (seen 2026-10-27 and again 2026-11-05)."
   - "Unlisted on purpose (2026-10-08): the AI gateway is a pilot open to labs Research Computing has onboarded, so this page is shared by link with those labs and is kept out of the KB index, related guides, site search and the sitemap, with noindex. Make it a listed, numbered article when the gateway opens more widely."
   - "Tool names, roles, key policy (90-day expiry, daily cap of 30 percent of the monthly cap, rate limits on every key and lab) app keys, models on offer and terms of use follow the gateway admin server (aigw v0.8.0) as read live on 2026-10-08. Client setups come from aigw_client_setup, tested 2026-10-01; the OpenCode MCP command was tested 2026-10-08 (OpenCode 1.18)."
   - "Prices are deliberately not printed here: they change, and aigw_models shows the current price of every model."
@@ -227,7 +227,11 @@ Things you'll notice:
 
 - On Gemini models, Claude Code prints a `[claude-code:unrecognized_model]` notice. It's only a notice; replies and tool use (editing files, running commands) work.
 - In header mode, Claude Code still sends your claude.ai sign-in token to the gateway. The gateway ignores it and bills your gateway key. Request headers are not written to the gateway's service logs.
-- Your key's limits apply to this session. Over the per-minute limits you get a 429 and Claude Code retries. Over the daily or monthly dollar cap, requests fail with a budget message until the cap resets.
+- **If Claude Code just sits there and never answers,** the key is almost always missing or mistyped: with a bad key in the header, Claude Code keeps retrying quietly instead of printing an error. Check the key with the "See your own spend and limits" command above. A good key returns your key's details; a bad one returns an error. In a new terminal, make sure `echo $UCR_AI_GATEWAY_KEY` prints something.
+- Your key's limits apply to this session. Which one you hit:
+  - Per-minute limits (tokens, requests, requests at once): a `429` error. Claude Code slows down and retries on its own.
+  - Daily dollar cap: a `422` "Key over 24h budget" error until the 24-hour window resets.
+  - Monthly dollar cap, or your lab's monthly allowance: a budget error until the 1st of the month (00:00 UTC). A lab stop affects everyone in the lab.
 - If you don't use a claude.ai login at all, `ANTHROPIC_AUTH_TOKEN` in place of the header line also works; you just have no connectors to keep.
 
 **Codex CLI** (any model). Add this to `~/.codex/config.toml`:
