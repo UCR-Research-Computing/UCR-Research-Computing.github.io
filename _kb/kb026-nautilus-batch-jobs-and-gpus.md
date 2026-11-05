@@ -17,6 +17,8 @@ review_notes:
 
 **Prefer not to write Kubernetes files?** Once you have a namespace, an AI assistant can plan and run jobs for you. See [Run Nautilus jobs from your AI assistant (nrp-mcp quick start)](../kb031-nrp-mcp-quick-start/).
 
+**Need your own container image?** See [Containerize your research software with an AI coding agent](../kb049-containerize-your-research/).
+
 Batch jobs are the way the National Research Platform (NRP) wants most computing done on Nautilus. You describe the work in a short text file, hand it to the cluster, and walk away. The cluster finds a machine with the hardware you asked for, runs your command, restarts it if the machine fails, and keeps the output for you to collect. Nothing depends on your laptop staying awake.
 
 This guide is for people who have a namespace and a working `kubectl` (see [Getting access to Nautilus](../kb024-nautilus-getting-access/)) and want to move past notebooks. It covers the rules that shape every job, a first job, sizing, GPU jobs, sweeps of many tasks, preemptible work, distributed training, troubleshooting and cleanup. Each section has a manifest you can copy.

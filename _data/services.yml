@@ -70,13 +70,13 @@
   url: /services/osg/
   icon: fa-solid fa-diagram-project
   group: National
-  blurb: "Distributed high-throughput computing for many small, independent jobs."
-  tags: [High throughput, Batch]
+  blurb: "Distributed high-throughput computing for many small, independent jobs, including GPU jobs."
+  tags: [High throughput, Batch, GPU]
   status: External
   cost: No UCR recharge
   data: Non-sensitive only
   terms: OSG policies
-  t: "compute national batch p1 norecharge"
+  t: "compute national batch gpu containers p1 norecharge"
 - id: osdf
   name: Open Science Data Federation (OSDF)
   url: /services/osdf/
