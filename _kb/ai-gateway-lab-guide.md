@@ -3,11 +3,12 @@ title: "Using the UCR AI gateway: a guide for lab PIs and members"
 topic: Cloud
 description: "Run your lab's access to AI models: add members, give each one a capped key by claim link, issue a dedicated key for an app, and see what the lab spends. Then use a key from Python, curl, Gemini CLI or OpenCode."
 audience: "PIs and members of labs onboarded to the UCR AI gateway pilot"
-reviewed: 2026-10-27
+reviewed: 2026-11-05
 owner: Research Computing
 unlisted: true
 sitemap: false
 review_notes:
+  - "2026-11-05: Claude Code section rewritten for a separate, temporary gateway session (claude-ucr shell function, or a per-folder .claude/settings.local.json) that leaves normal Claude Code untouched. Tested on Claude Code 2.1.311 against the live gateway: folder settings ran claude-sonnet-5-5 and gemini-3.8-flash through the gateway with all claude.ai connectors still listed and the key spend rising; the same command in another folder ran on the normal account with no gateway spend; the env wrapper ran gemini-3.8-flash and a Gemini session with the ANTHROPIC_DEFAULT_*_MODEL lines completed a Write tool call. A bad key in the header makes Claude Code hang and retry rather than print a clear error (seen 2026-10-27 and again 2026-11-05)."
   - "Unlisted on purpose (2026-10-08): the AI gateway is a pilot open to labs Research Computing has onboarded, so this page is shared by link with those labs and is kept out of the KB index, related guides, site search and the sitemap, with noindex. Make it a listed, numbered article when the gateway opens more widely."
   - "Tool names, roles, key policy (90-day expiry, daily cap of 30 percent of the monthly cap, rate limits on every key and lab) app keys, models on offer and terms of use follow the gateway admin server (aigw v0.8.0) as read live on 2026-10-08. Client setups come from aigw_client_setup, tested 2026-10-01; the OpenCode MCP command was tested 2026-10-08 (OpenCode 1.18)."
   - "Prices are deliberately not printed here: they change, and aigw_models shows the current price of every model."
@@ -168,23 +169,66 @@ curl https://ucr-ursa-major-ai-gateway-service-575977597413.us-central1.run.app/
 
 Pick the tool you already use. Each setup below was tested against the gateway on 2026-10-27.
 
-**Claude Code** (Claude models, on keys that carry them: `claude-sonnet-5-5`, `claude-sonnet-5`, `claude-opus-5`, `claude-opus-5-5`, `claude-haiku-5-5`). If you sign in to Claude Code with a claude.ai account and want to keep your claude.ai connectors (Gmail, Drive, Slack and the rest), pass the key as a header and leave `ANTHROPIC_AUTH_TOKEN` and `ANTHROPIC_API_KEY` unset:
+**Claude Code.** You can try the gateway in Claude Code without touching your normal Claude Code. The setups below only change the one Claude Code session you start with them. Your usual `claude` keeps working exactly as before, with your own login, models and claude.ai connectors (Gmail, Drive, Slack and the rest).
+
+The key goes in a header (`ANTHROPIC_CUSTOM_HEADERS`), not in `ANTHROPIC_AUTH_TOKEN` or `ANTHROPIC_API_KEY`. That's on purpose. If either of those two is set, Claude Code switches your claude.ai connectors off and prints "claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set". With the header, the gateway runs the models and your claude.ai login keeps the connectors working.
+
+**Option A: a separate `claude-ucr` command (recommended).** Add this to `~/.zshrc` (Mac) or `~/.bashrc` (Linux), then open a new terminal:
 
 ```bash
-export ANTHROPIC_BASE_URL=https://ucr-ursa-major-ai-gateway-service-575977597413.us-central1.run.app
-export ANTHROPIC_CUSTOM_HEADERS="x-litellm-api-key: Bearer $UCR_AI_GATEWAY_KEY"
-claude --model claude-sonnet-5-5
+claude-ucr() {
+  env ANTHROPIC_BASE_URL=https://ucr-ursa-major-ai-gateway-service-575977597413.us-central1.run.app \
+      ANTHROPIC_CUSTOM_HEADERS="x-litellm-api-key: Bearer $UCR_AI_GATEWAY_KEY" \
+      ANTHROPIC_MODEL="${UCR_MODEL:-gemini-3.8-flash}" \
+      ANTHROPIC_DEFAULT_SONNET_MODEL="${UCR_MODEL:-gemini-3.8-flash}" \
+      ANTHROPIC_DEFAULT_OPUS_MODEL=gemini-4-argon \
+      ANTHROPIC_DEFAULT_HAIKU_MODEL=gemini-3.5-flash-lite \
+      claude "$@"
+}
 ```
 
-If you do not use a claude.ai login, the simpler setup also works, but Claude Code then switches your connectors off:
+Run `claude-ucr` for a gateway session and `claude` for your normal one. You can have both open in different terminals at the same time. The settings exist only inside that one `claude-ucr` session: nothing is exported to your shell, and nothing is written to your Claude Code settings.
+
+The three `ANTHROPIC_DEFAULT_*_MODEL` lines matter. Claude Code quietly makes its own background calls (titles, summaries, quick checks) on a small "Haiku" model, and when you pick Sonnet or Opus in `/model` it asks for those by name. If your key carries Gemini only, those calls would fail. The lines point each of them at a Gemini model your key has. If your key also carries Claude models, use those names instead:
 
 ```bash
-export ANTHROPIC_BASE_URL=https://ucr-ursa-major-ai-gateway-service-575977597413.us-central1.run.app
-export ANTHROPIC_AUTH_TOKEN=$UCR_AI_GATEWAY_KEY
-claude --model claude-sonnet-5-5
+UCR_MODEL=claude-sonnet-5-5 claude-ucr              # one session on Claude Sonnet
+claude-ucr --model gemini-2.5-pro                   # or pick any model your key has
 ```
 
-Claude Code prints "claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set". That is Claude Code's own rule, not a gateway fault: any `ANTHROPIC_AUTH_TOKEN` or `ANTHROPIC_API_KEY` turns the connectors off. Use the header setup above, or unset those two variables, to get them back. In header mode Claude Code still sends your claude.ai sign-in token to the gateway; the gateway ignores it and uses your key. To go back to normal Claude Code, unset `ANTHROPIC_BASE_URL` and `ANTHROPIC_CUSTOM_HEADERS`.
+To leave: quit the session (`/exit` or Ctrl-D) and run `claude` as usual. To remove it for good, delete the function from your shell file.
+
+**Option B: one project folder that always uses the gateway.** Use this when you want a test folder where every Claude Code session goes through the gateway, while every other folder stays normal. In that folder, create `.claude/settings.local.json`:
+
+```json
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://ucr-ursa-major-ai-gateway-service-575977597413.us-central1.run.app",
+    "ANTHROPIC_CUSTOM_HEADERS": "x-litellm-api-key: Bearer YOUR-KEY",
+    "ANTHROPIC_MODEL": "gemini-3.8-flash",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "gemini-3.8-flash",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "gemini-4-argon",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "gemini-3.5-flash-lite"
+  }
+}
+```
+
+Then `cd` into the folder and run `claude`. This file holds your key in plain text, so:
+
+- Run `chmod 600 .claude/settings.local.json`.
+- Keep it out of git: add `.claude/settings.local.json` to the folder's `.gitignore`, and check `git status` before you commit anything.
+- Never use this in a shared or synced folder.
+
+To leave: `cd` to any other folder (or delete the file) and start `claude` again.
+
+**Check which one you're on.** In a gateway session, Claude Code prints the `[claude-code:unrecognized_model]` notice on Gemini models, and your key's spend goes up (see "See your own spend and limits" above). `/mcp` still lists your claude.ai connectors in both kinds of session. If in doubt, quit and start again with the command you want.
+
+Things you'll notice:
+
+- On Gemini models, Claude Code prints a `[claude-code:unrecognized_model]` notice. It's only a notice; replies and tool use (editing files, running commands) work.
+- In header mode, Claude Code still sends your claude.ai sign-in token to the gateway. The gateway ignores it and bills your gateway key. Request headers are not written to the gateway's service logs.
+- Your key's limits apply to this session. Over the per-minute limits you get a 429 and Claude Code retries. Over the daily or monthly dollar cap, requests fail with a budget message until the cap resets.
+- If you don't use a claude.ai login at all, `ANTHROPIC_AUTH_TOKEN` in place of the header line also works; you just have no connectors to keep.
 
 **Codex CLI** (any model). Add this to `~/.codex/config.toml`:
 
@@ -231,7 +275,7 @@ If you also have `GOOGLE_API_KEY` set, Gemini CLI prefers it; unset it first.
 
 | Tool | Gemini models | Claude models | Notes |
 | :--- | :--- | :--- | :--- |
-| Claude Code | works, but slow, and Claude Code prints an unrecognized-model notice | works | Use the header setup to keep claude.ai connectors |
+| Claude Code | works (unrecognized-model notice only) | works | Use the header setup to keep claude.ai connectors; set the `ANTHROPIC_DEFAULT_*_MODEL` lines on a Gemini-only key |
 | Codex CLI | works | works with `-c web_search="disabled"` | Without it, Claude calls fail with a 400 about `web_search` (the gateway's Google Cloud policy does not allow Claude's web search) |
 | Gemini CLI | works | not applicable | Wrong key gives a 401 |
 | OpenCode | works | works | |
