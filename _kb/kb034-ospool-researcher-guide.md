@@ -105,12 +105,13 @@ The campus HPCC is UCR's primary cluster for research computing and the place to
 
 This series covers the full life cycle of high-throughput computing on the OSPool:
 
-1. **[Getting access to the OSPool](../kb035-ospool-getting-access/):** Submit an application, attend an orientation consultation with an OSG facilitator, register for an access point, configure SSH keys, and complete your first login.
-2. **[Moving data on the OSPool](../kb036-ospool-moving-data/):** Transfer files to your access point, use HTCondor file transfer for small files, stage larger files and container images in the OSDF, and manage storage quotas.
-3. **[Submitting OSPool jobs and getting results](../kb037-ospool-jobs-and-results/):** Write submit files, run initial test jobs, scale across thousands of tasks, monitor queues with `condor_q`, diagnose held jobs, and collect outputs.
-4. **[GPU jobs on the OSPool](../kb047-ospool-gpu-jobs/):** Request GPU resources, filter by compute capability and GPU memory, run jobs using pre-built CUDA containers, and understand throughput dynamics.
-5. **[Common OSPool job types](../kb048-ospool-common-job-types/):** Structured templates for parameter sweeps, Monte Carlo simulations, per-file processing, multicore threading, and multi-step DAGMan workflows.
-6. **[Containerize your research software with an AI coding agent](../kb049-containerize-your-research/):** Package your code, libraries, and runtime dependencies into portable Apptainer and Docker container images for the OSPool, Nautilus, and cloud environments.
+1. **[Try the OSPool today in your browser](../kb050-ospool-notebooks-try-today/):** sign in to OSPool Notebooks with your UCR login, no account needed, and practice HTCondor jobs and the OSG tutorials.
+2. **[Getting access to the OSPool](../kb035-ospool-getting-access/):** Every researcher applies for their own account (there are no sub-accounts); Research Computing can guide you. Submit an application, attend an orientation consultation with an OSG facilitator, register for an access point, configure SSH keys, and complete your first login.
+3. **[Moving data on the OSPool](../kb036-ospool-moving-data/):** Transfer files to your access point, use HTCondor file transfer for small files, stage larger files and container images in the OSDF, and manage storage quotas.
+4. **[Submitting OSPool jobs and getting results](../kb037-ospool-jobs-and-results/):** Write submit files, run initial test jobs, scale across thousands of tasks, monitor queues with `condor_q`, diagnose held jobs, and collect outputs.
+5. **[GPU jobs on the OSPool](../kb047-ospool-gpu-jobs/):** Request GPU resources, filter by compute capability and GPU memory, run jobs using pre-built CUDA containers, and understand throughput dynamics.
+6. **[Common OSPool job types](../kb048-ospool-common-job-types/):** Structured templates for parameter sweeps, Monte Carlo simulations, per-file processing, multicore threading, and multi-step DAGMan workflows.
+7. **[Containerize your research software with an AI coding agent](../kb049-containerize-your-research/):** Package your code, libraries, and runtime dependencies into portable Apptainer and Docker container images for the OSPool, Nautilus, and cloud environments.
 
 ---
 

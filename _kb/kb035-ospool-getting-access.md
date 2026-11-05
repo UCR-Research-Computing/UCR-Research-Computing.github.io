@@ -9,11 +9,16 @@ owner: Research Computing
 series: ospool
 series_order: 2
 review_notes:
+  - "2026-11-05 (later): added the no-sub-accounts rule and pointers to OSPool Notebooks after the OSG facilitator confirmed both at the RC orientation."
   - "Written 2026-10-29 from 'Start Here: Overview of Requesting OSPool Access' (portal.osg-htc.org/documentation/overview/account_setup/registration-and-login/, fetched 2026-10-29)."
   - "Tested 2026-10-29: the application form at portal.osg-htc.org/application was filled in and submitted by RC staff signed in with a UCR identity. The form fields listed in section 2 are from that form."
   - "Tested 2026-11-05 on ap40 by RC: enrollment petition, email confirmation, account approval, SSH key upload in COmanage, SSH config alias, and two-step publickey plus CILogon device code authentication."
   - "CHECK: Windows file dialog path (C:\\Users\\you\\.ssh and View > Show hidden items) was derived from standard Windows paths and was not tested on a Windows PC."
 ---
+
+**Want to try it first?** [OSPool Notebooks](../kb050-ospool-notebooks-try-today/) lets anyone with a UCR login practice in a browser today, with no account.
+
+**Each researcher needs their own account.** There are no shared or lab sub-accounts: every student, postdoc and PI who submits jobs applies separately. Research Computing can guide you through the steps below; [contact us](../../help/).
 
 Getting onto the OSPool is a short, people-first process: you submit an application on the OSG Portal, meet with an OSG facilitator for about 20 to 30 minutes, and register for an account on an **access point**. There is no formal allocation proposal and no recharge from UCR.
 
@@ -154,6 +159,10 @@ Two operational details observed in testing:
 
 - **Later logins:** For a while after you approve a browser sign-in, logins from the same computer went straight through with the key alone. When the link appears again, repeat the steps above.
 - **Batch mode:** Running `ssh -o BatchMode=yes` will always fail if the server requires this second verification step, because batch mode disables the interactive terminal prompt required to complete the CILogon device code flow.
+
+### Prefer a browser?
+
+With your account active, [OSPool Notebooks](../kb050-ospool-notebooks-try-today/) opens JupyterLab on your ap40 account, with your home directory and a terminal, and your jobs run on the OSPool. No SSH key or terminal app is needed.
 
 ### Access point welcome message (MOTD)
 

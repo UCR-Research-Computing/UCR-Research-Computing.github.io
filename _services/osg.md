@@ -28,9 +28,11 @@ glance:
   - {k: "Scheduler", v: "HTCondor, from an OSG access point"}
   - {k: "Hardware", v: "Shared CPUs and GPUs at many sites; the mix changes from day to day"}
   - {k: "Software", v: "Your own scripts, or containers (Apptainer or Docker images)"}
-  - {k: "Access", v: "Apply, meet an OSG facilitator, get an access point account"}
+  - {k: "Try it", v: "OSPool Notebooks in a browser with your UCR login, no account needed"}
+  - {k: "Access", v: "Each researcher applies for their own account; Research Computing guides you"}
   - {k: "Cost", v: "No recharge from UCR"}
 cta:
+  - {label: "Try it today (browser)", url: "/kb/kb050-ospool-notebooks-try-today/"}
   - {label: "Researcher guide", url: "/kb/kb034-ospool-researcher-guide/"}
   - {label: "Get an account", url: "/kb/kb035-ospool-getting-access/"}
   - {label: "Submit jobs", url: "/kb/kb037-ospool-jobs-and-results/"}
@@ -72,15 +74,20 @@ Files under 1 GB move with each job. Larger inputs and outputs, and container im
 
 ## How to get started
 
-Start with our [researcher guide to the OSPool and OSDF]({{ '/kb/kb034-ospool-researcher-guide/' | relative_url }}), a series of six articles:
+**Try it today.** Anyone with a UCR login can open [OSPool Notebooks]({{ '/kb/kb050-ospool-notebooks-try-today/' | relative_url }}), a JupyterLab service run by the OSG, and practice HTCondor jobs and the OSG tutorials in a browser. No account is needed.
+
+**Get your own account to use the full pool.** There are no shared or lab sub-accounts: each researcher who submits jobs applies for their own account. Research Computing guides UCR researchers through the application and first jobs.
+
+Our [researcher guide to the OSPool and OSDF]({{ '/kb/kb034-ospool-researcher-guide/' | relative_url }}) is a series of seven articles:
 
 1. [What fits, limits and guidelines]({{ '/kb/kb034-ospool-researcher-guide/' | relative_url }})
-2. [Getting an account and logging in]({{ '/kb/kb035-ospool-getting-access/' | relative_url }})
-3. [Moving data]({{ '/kb/kb036-ospool-moving-data/' | relative_url }})
-4. [Submitting jobs and getting results]({{ '/kb/kb037-ospool-jobs-and-results/' | relative_url }})
-5. [GPU jobs]({{ '/kb/kb047-ospool-gpu-jobs/' | relative_url }})
-6. [Common job types: sweeps, Monte Carlo, per-file pipelines and workflows]({{ '/kb/kb048-ospool-common-job-types/' | relative_url }})
+2. [Try the OSPool today in your browser]({{ '/kb/kb050-ospool-notebooks-try-today/' | relative_url }})
+3. [Getting an account and logging in]({{ '/kb/kb035-ospool-getting-access/' | relative_url }})
+4. [Moving data]({{ '/kb/kb036-ospool-moving-data/' | relative_url }})
+5. [Submitting jobs and getting results]({{ '/kb/kb037-ospool-jobs-and-results/' | relative_url }})
+6. [GPU jobs]({{ '/kb/kb047-ospool-gpu-jobs/' | relative_url }})
+7. [Common job types: sweeps, Monte Carlo, per-file pipelines and workflows]({{ '/kb/kb048-ospool-common-job-types/' | relative_url }})
 
 If your software needs packages or libraries, [Containerize your research software with an AI coding agent]({{ '/kb/kb049-containerize-your-research/' | relative_url }}) shows how to package it once so it runs on the OSPool, NRP Nautilus and Google Cloud.
 
-There is no allocation proposal: you apply, meet an OSG facilitator, and get an account on an access point. If you are unsure whether your work fits, [ask us]({{ '/help/' | relative_url }}). Research Computing can help you decide and look over your first submit file. OSG facilitators run the service, approve accounts and hold weekly office hours ([support@osg-htc.org](mailto:support@osg-htc.org)).
+There is no allocation proposal: you apply, meet an OSG facilitator, and get an account on an access point. If you are unsure whether your work fits, [ask us]({{ '/help/' | relative_url }}). Research Computing can help you decide, guide you through the application and look over your first submit file. OSG facilitators run the service, approve accounts and hold weekly office hours ([support@osg-htc.org](mailto:support@osg-htc.org)).
