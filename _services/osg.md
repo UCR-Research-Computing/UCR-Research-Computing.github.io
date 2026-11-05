@@ -4,7 +4,7 @@ kicker: "National <span class='sep'>|</span> Distributed high-throughput computi
 description: "The OSG's Open Science Pool runs large numbers of small, independent jobs, including GPU jobs, on spare capacity contributed by institutions across the country."
 status: External
 tags: [High throughput, Batch, HTCondor, GPU, Containers]
-data_levels: Non-sensitive only (P1; no protected data)
+data_levels: P1 only (no protected data)
 owner: "OSG (the service); Research Computing (UCR guidance)"
 reviewed: 2026-11-05
 governed_by: "OSG and OSPool policies"
@@ -49,7 +49,7 @@ UCR's HPCC is one of the sites that contributes capacity to the OSPool.
 
 ## What it looks like in practice
 
-Research Computing ran test jobs from an OSG access point on 2026-11-05. A 10-job Monte Carlo sweep started within about a minute and ran on machines at several universities. A GPU job got a GPU in about a minute and ran PyTorch inside an OSG-provided container. Our own container image, built on the access point, ran a 5-job sweep on machines at three universities.
+In Research Computing's own tests (November 2026), small CPU and GPU jobs typically started within a minute or two, on machines at several universities.
 
 - **CPUs.** Several thousand slots typically match a small one-core job. Smaller requests start sooner.
 - **GPUs.** About a hundred GPUs were in the pool when we looked, from older cards to current data-center GPUs, at around twenty sites. The mix changes from day to day, so you ask for what your code needs (for example a minimum amount of GPU memory) rather than a model. See [GPU jobs on the OSPool]({{ '/kb/kb047-ospool-gpu-jobs/' | relative_url }}).
@@ -61,22 +61,18 @@ The OSPool documentation sets these, and access points enforce some of them when
 
 - **Job length.** Label each job Medium (expected under 10 hours) or Long (expected under 20 hours). Jobs that run past their category's maximum are held. Work longer than about 20 hours per job should be split up or save checkpoints.
 - **Cores and memory.** One core and a couple of GB of memory match the most machines. Requests up to about 8 cores, and larger memory, are possible but wait longer.
-- **Data per job.** Files under 1 GB move with each job. Larger files and container images go through the [OSDF]({{ '/services/osdf/' | relative_url }}).
+- **Data per job.** Files under 1 GB move with each job. Larger files and container images go through the [OSDF]({{ '/services/osdf/' | relative_url }}), which comes with an OSPool account; datasets you want to share widely can live in an [Open Storage Network]({{ '/services/osn/' | relative_url }}) bucket.
 - **Quotas.** Your home and data directories on the access point have quotas, shown in the login message.
 - **Data level.** P1 only. No protected data.
 - **Acknowledgement.** Using an access point means accepting the [OSG acceptable use policy](https://osg-htc.org/end-user-aup); publications should [acknowledge the OSPool](https://osg-htc.org/acknowledging).
 
 The [researcher guide]({{ '/kb/kb034-ospool-researcher-guide/' | relative_url }}) explains each of these with examples.
 
-## Data for OSPool jobs
-
-Files under 1 GB move with each job. Larger inputs and outputs, and container images, go through the [Open Science Data Federation (OSDF)]({{ '/services/osdf/' | relative_url }}), which comes with an OSPool account. Datasets you want to share widely can live in an [Open Storage Network]({{ '/services/osn/' | relative_url }}) bucket.
-
 ## How to get started
 
 **Try it today.** Anyone with a UCR login can open [OSPool Notebooks]({{ '/kb/kb050-ospool-notebooks-try-today/' | relative_url }}), a JupyterLab service run by the OSG, and practice HTCondor jobs and the OSG tutorials in a browser. No account is needed.
 
-**Get your own account to use the full pool.** There are no shared or lab sub-accounts: each researcher who submits jobs applies for their own account. Research Computing guides UCR researchers through the application and first jobs.
+**Get your own account to use the full pool.** There are no shared or lab sub-accounts and no allocation proposal: each researcher who submits jobs applies, meets an OSG facilitator, and gets an account on an access point.
 
 Our [researcher guide to the OSPool and OSDF]({{ '/kb/kb034-ospool-researcher-guide/' | relative_url }}) is a series of seven articles:
 
@@ -90,4 +86,4 @@ Our [researcher guide to the OSPool and OSDF]({{ '/kb/kb034-ospool-researcher-gu
 
 If your software needs packages or libraries, [Containerize your research software with an AI coding agent]({{ '/kb/kb049-containerize-your-research/' | relative_url }}) shows how to package it once so it runs on the OSPool, NRP Nautilus and Google Cloud.
 
-There is no allocation proposal: you apply, meet an OSG facilitator, and get an account on an access point. If you are unsure whether your work fits, [ask us]({{ '/help/' | relative_url }}). Research Computing can help you decide, guide you through the application and look over your first submit file. OSG facilitators run the service, approve accounts and hold weekly office hours ([support@osg-htc.org](mailto:support@osg-htc.org)).
+If you are unsure whether your work fits, [ask us]({{ '/help/' | relative_url }}). Research Computing can help you decide, guide you through the application and look over your first submit file. OSG facilitators run the service, approve accounts and hold weekly office hours ([support@osg-htc.org](mailto:support@osg-htc.org)).

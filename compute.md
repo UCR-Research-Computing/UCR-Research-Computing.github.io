@@ -8,7 +8,7 @@ kicker_plain: "Compute"
 description: "Campus cluster, Google Cloud, national allocations and high-throughput computing: what each is for, who can use it, and how to start."
 toc: true
 owner: Research Computing
-reviewed: 2026-10-04
+reviewed: 2026-11-05
 redirect_from:
   - /pages/computing-resources-overview.html
   - /pages/ai-hpc-cluster.html
@@ -27,6 +27,7 @@ Most research computing at UCR runs on the **HPCC cluster**. Cloud and national 
 | Use exotic hardware the HPCC does not have (such as TPUs or Arm) | [Ursa Major]({{ '/services/ursa-major/' | relative_url }}) (Tier 1 exotic hardware, by consultation) | [NSF ACCESS]({{ '/services/nsf-access/' | relative_url }}) |
 | Run thousands of small independent jobs | [HPCC cluster]({{ '/services/hpcc/' | relative_url }}) | [OSG / OSPool]({{ '/services/osg/' | relative_url }}), with the [OSDF]({{ '/services/osdf/' | relative_url }}) for larger files |
 | Run containers or JupyterHub at scale | [NRP Nautilus]({{ '/services/nautilus/' | relative_url }}) | [HPCC cluster]({{ '/services/hpcc/' | relative_url }}) (Singularity containers, Open OnDemand), [Ursa Major]({{ '/services/ursa-major/' | relative_url }}) (recharged) |
+| Have a server or VM of your own (always-on web app, database, study server, Jupyter or RStudio server) | [Jetstream2]({{ '/services/jetstream2/' | relative_url }}) (through NSF ACCESS) | [Ursa Major]({{ '/services/ursa-major/' | relative_url }}) (recharged), [Cloud accounts]({{ '/services/cloud-accounts/' | relative_url }}) |
 | Have your own cloud account on a grant | [Cloud accounts]({{ '/services/cloud-accounts/' | relative_url }}) | [Ursa Major]({{ '/services/ursa-major/' | relative_url }}) |
 | Work with regulated data | [Secure research enclave]({{ '/services/secure-enclave/' | relative_url }}) | [Security and data]({{ '/security/' | relative_url }}) |
 | Get help running a lab-owned cluster | [RCSAS]({{ '/services/rcsas/' | relative_url }}) | [HPCC cluster]({{ '/services/hpcc/' | relative_url }}) (lab-owned hardware in the campus cluster) |

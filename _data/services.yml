@@ -1,7 +1,7 @@
 # Catalog of services. Drives the home catalog, the finder and the hub pages.
 # t (tags used by filters/finder):
 #   work: batch gpu interactive cloudai containers webservice
-#   data: p1 (non-sensitive only) p12 p34
+#   data: p1 (P1 only) p12 p34
 #   fund: lab norecharge grant
 #   kind: compute storage secure national help
 # status: Available | Pilot | By review | By application | External
@@ -62,7 +62,7 @@
   tags: [Containers, GPU, Jupyter]
   status: External
   cost: No UCR recharge
-  data: Non-sensitive only
+  data: P1 only
   terms: NRP policies
   t: "compute national containers gpu interactive p1 norecharge"
 - id: osg
@@ -74,7 +74,7 @@
   tags: [High throughput, Batch, GPU]
   status: External
   cost: No UCR recharge
-  data: Non-sensitive only
+  data: P1 only
   terms: OSG policies
   t: "compute national batch gpu containers p1 norecharge"
 - id: osdf
@@ -86,7 +86,7 @@
   tags: [Data delivery, Pelican]
   status: External
   cost: No UCR recharge
-  data: Non-sensitive only
+  data: P1 only
   terms: OSG policies
   t: "storage national batch p1 norecharge"
 - id: osn
@@ -98,7 +98,7 @@
   tags: [Object (S3), Data sharing]
   status: External
   cost: No UCR recharge
-  data: Non-sensitive only
+  data: P1 only
   terms: ACCESS and OSN policies
   t: "storage national p1 norecharge grant"
 - id: jetstream2
@@ -110,7 +110,7 @@
   tags: [Cloud VMs, GPU]
   status: External
   cost: No UCR recharge
-  data: Non-sensitive only
+  data: P1-P2 (no protected data)
   terms: ACCESS and Jetstream2 policies
   t: "compute gpu national p1 norecharge grant"
 - id: cloud-discounts
