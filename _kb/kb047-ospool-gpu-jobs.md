@@ -11,7 +11,8 @@ series_order: 5
 review_notes:
   - "Written 2026-11-05 from OSG documentation (portal.osg-htc.org/documentation/htc_workloads/specific_resource/gpu-jobs/) and ap40 test runs."
   - "Tested 2026-11-05 on ap40 by RC: 1-GPU PyTorch 2.3.1 container job (gpu_test.sub, gpu_test.py) on a Quadro RTX 6000 at Notre Dame; CUDA matmul 4096x4096 ran in 0.012 s vs CPU 0.841 s (~70x speedup); total run time ~1.5 min after ~1 min queue wait."
-  - "CHECK: submit file requirement variations (gpus_minimum_capability, gpus_minimum_memory) and alternative CVMFS image paths are from OSG documentation and were not individually submitted by RC."
+  - "Tested 2026-11-05 on ap40 by RC: the same GPU job with gpus_minimum_memory = 40000 waited about 15 minutes (17 machines qualified, none free at first) and ran on an NVIDIA H100 NVL at the University of Oklahoma; matmul 0.0031 s vs CPU 0.995 s."
+  - "CHECK: gpus_minimum_capability / gpus_maximum_capability and the CVMFS image paths other than htc/pytorch:2.3.1-cuda11.8 are from OSG documentation and were not submitted by RC."
 ---
 
 The Open Science Pool (OSPool) provides opportunistic access to Graphics Processing Units (GPUs) contributed by universities and research facilities across the United States. If your calculations rely on NVIDIA CUDA, PyTorch, TensorFlow, JAX, or GPU-accelerated simulation packages, you can submit batches of independent GPU jobs through HTCondor.
@@ -132,7 +133,7 @@ gpus_minimum_memory = 40000
 
 ### The minimal requirement principle
 
-Every constraint you add reduces the pool of eligible machines. In the 2026-11-05 snapshot, `request_gpus = 1` could match any of the 65 GPU machines, while `gpus_minimum_memory = 40000` narrowed that to 17. Fewer eligible machines usually means a longer wait. Whenever possible, set minimal requirements or none at all.
+Every constraint you add reduces the pool of eligible machines. In the 2026-11-05 snapshot, `request_gpus = 1` could match any of the 65 GPU machines, while `gpus_minimum_memory = 40000` narrowed that to 17. Fewer eligible machines usually means a longer wait. In our test, the same job with `gpus_minimum_memory = 40000` waited about 15 minutes instead of about 1, then ran on an NVIDIA H100 NVL at the University of Oklahoma (matrix multiply 0.0031 s, about 320 times the CPU). Whenever possible, set minimal requirements or none at all.
 
 ---
 
