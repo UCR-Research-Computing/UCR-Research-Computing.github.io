@@ -89,6 +89,18 @@
   data: P1 only
   terms: FABRIC policies
   t: "compute national gpu interactive p1 norecharge"
+- id: chameleon
+  name: Chameleon testbed
+  url: /services/chameleon/
+  icon: fa-solid fa-server
+  group: National
+  blurb: "NSF testbed for computer science: reserve whole bare-metal servers (GPUs, FPGAs, Arm) with root access, or VMs, for up to a week at a time."
+  tags: [Bare metal, Testbed, GPU]
+  status: External
+  cost: No UCR recharge
+  data: P1 only
+  terms: Chameleon policies
+  t: "compute national gpu interactive p1 norecharge"
 - id: osdf
   name: Open Science Data Federation (OSDF)
   url: /services/osdf/

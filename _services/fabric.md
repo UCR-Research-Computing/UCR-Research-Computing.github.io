@@ -78,6 +78,7 @@ Our [getting-started guide]({{ '/kb/kb051-fabric-getting-started/' | relative_ur
 
 ## Related
 
+- [Chameleon testbed]({{ '/services/chameleon/' | relative_url }}): reserve whole bare-metal servers for systems experiments; FABRIC and Chameleon can be used together.
 - [NRP Nautilus]({{ '/services/nautilus/' | relative_url }}): Kubernetes, GPUs and JupyterHub on the National Research Platform, which FABRIC can connect to.
 - [NSF ACCESS]({{ '/services/nsf-access/' | relative_url }}) and [Jetstream2]({{ '/services/jetstream2/' | relative_url }}): national computing allocations and cloud VMs.
 - [OSG / OSPool]({{ '/services/osg/' | relative_url }}): distributed high-throughput computing.
