@@ -29,6 +29,7 @@ cta:
   - {label: "Researcher guide", url: "/kb/kb042-jetstream2-researcher-guide/"}
   - {label: "Your first VM", url: "/kb/kb043-jetstream2-first-vm/"}
   - {label: "GPU VMs", url: "/kb/kb044-jetstream2-gpu-vms/"}
+  - {label: "Host a web app", url: "/kb/kb046-jetstream2-web-app-hosting/"}
   - {label: "Jetstream2 documentation", url: "https://docs.jetstream-cloud.org/"}
 ---
 
@@ -48,4 +49,4 @@ Jetstream2 is for open research data. Do not put protected data on it (see the [
 
 ## How to get started
 
-Read the [researcher guide to Jetstream2]({{ '/kb/kb042-jetstream2-researcher-guide/' | relative_url }}). It covers getting an ACCESS project (see also [KB009]({{ '/kb/kb009-using-nsf-access/' | relative_url }})). Then follow [Your first Jetstream2 VM]({{ '/kb/kb043-jetstream2-first-vm/' | relative_url }}), and [GPU VMs on Jetstream2]({{ '/kb/kb044-jetstream2-gpu-vms/' | relative_url }}) if you need a GPU. Research Computing can look over an ACCESS request with you. [Contact us]({{ '/help/' | relative_url }}).
+Read the [researcher guide to Jetstream2]({{ '/kb/kb042-jetstream2-researcher-guide/' | relative_url }}). It covers getting an ACCESS project (see also [KB009]({{ '/kb/kb009-using-nsf-access/' | relative_url }})). Then follow [Your first Jetstream2 VM]({{ '/kb/kb043-jetstream2-first-vm/' | relative_url }}), and [GPU VMs on Jetstream2]({{ '/kb/kb044-jetstream2-gpu-vms/' | relative_url }}) if you need a GPU, or [Host a web app on Jetstream2]({{ '/kb/kb046-jetstream2-web-app-hosting/' | relative_url }}) for an always-on study server or lab tool with an HTTPS address. Research Computing can look over an ACCESS request with you. [Contact us]({{ '/help/' | relative_url }}).
