@@ -4,9 +4,9 @@ kicker: "National <span class='sep'>|</span> Data delivery for distributed compu
 description: "A national network of data origins and caches, run by the OSG with Pelican software, that delivers datasets to OSPool jobs, notebooks and laptops."
 status: External
 tags: [Data delivery, Caching, Pelican]
-data_levels: Non-sensitive only (P1; no protected data)
+data_levels: P1 only (no protected data)
 owner: "OSG and the Pelican Platform (the service); Research Computing (UCR guidance)"
-reviewed: 2026-10-29
+reviewed: 2026-11-05
 governed_by: "OSG and OSPool policies"
 governed_url: https://osg-htc.org/services/osdf.html
 fit:

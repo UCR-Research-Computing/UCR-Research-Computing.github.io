@@ -4,9 +4,9 @@ kicker: "National <span class='sep'>|</span> National Research Platform"
 description: "A shared Kubernetes platform for containerized research and education workloads, with CPUs, GPUs and storage contributed by many institutions."
 status: External
 tags: [Containers, Kubernetes, GPU, Jupyter]
-data_levels: Non-sensitive only (P1; no protected data)
+data_levels: P1 only (no protected data)
 owner: "National Research Platform (the platform); Research Computing (UCR guidance)"
-reviewed: 2026-10-06
+reviewed: 2026-11-05
 governed_by: "NRP policies and acceptable use policy"
 governed_url: https://nrp.ai/documentation/userdocs/start/policies/
 redirect_from:
@@ -24,7 +24,7 @@ glance:
   - {k: "Who runs it", v: "The National Research Platform, a multi-institution partnership"}
   - {k: "Access", v: "Through the NRP's own sign-up and namespaces"}
   - {k: "Cost", v: "No recharge from UCR"}
-  - {k: "Data allowed", v: "Non-sensitive data only, per NRP policy"}
+  - {k: "Data allowed", v: "P1 only; no protected data, per NRP policy"}
 cta:
   - {label: "Researcher guide", url: "/kb/kb023-nautilus-researcher-guide/"}
   - {label: "Run jobs from an AI assistant", url: "/kb/kb031-nrp-mcp-quick-start/"}

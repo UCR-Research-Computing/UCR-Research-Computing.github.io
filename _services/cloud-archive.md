@@ -8,7 +8,7 @@ status: By review
 tags: [Archive, Retention, Google Cloud]
 data_levels: P1-P2
 owner: "Research Computing"
-reviewed: 2026-10-04
+reviewed: 2026-11-05
 governed_by: "Ursa Major guidelines"
 governed_url_rel: /kb/ursa-major-guidelines/
 redirect_from:
@@ -24,7 +24,7 @@ not_fit:
 glance:
   - {k: "Who can use it", v: "UCR labs with an Ursa Major project"}
   - {k: "Storage class", v: "Google Cloud archive classes (for example Coldline)"}
-  - {k: "Cost", v: "May be available without recharge under current Ursa Major terms, within limits; see the guidelines"}
+  - {k: "Cost", v: "Ursa Major Tier 1: no recharge to the lab under current terms, within limits; retrieval can carry charges"}
   - {k: "Data allowed", v: "P1 and P2"}
 cta:
   - {label: "Ask about archive", url: "/help/"}
@@ -37,7 +37,7 @@ Labs with an Ursa Major project can keep long-term data in Google Cloud archive 
 
 ## Costs and terms
 
-Under the current Ursa Major terms, archive storage may be available without recharge to the lab, within limits and subject to eligibility. That coverage depends on continued campus funding. Research Computing makes no commitment about how long it will continue or at what scale. Retrieval, early deletion and other operations can carry charges. The [Ursa Major guidelines]({{ '/kb/ursa-major-guidelines/' | relative_url }}) describe the current terms.
+Archive storage is part of Ursa Major Tier 1: under current terms it carries no recharge to the lab, within limits and subject to eligibility. That coverage depends on continued campus funding. Research Computing makes no commitment about how long it will continue or at what scale. Retrieval, early deletion and other operations can carry charges. The [Ursa Major guidelines]({{ '/kb/ursa-major-guidelines/' | relative_url }}) describe the current terms.
 
 Plan for the possibility that terms change during the life of your data. Keep a record of what you archived, where, and why.
 

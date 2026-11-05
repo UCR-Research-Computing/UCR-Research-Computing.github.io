@@ -8,7 +8,7 @@ kicker_plain: "Storage"
 description: "Working, project, collaboration and archive storage: which fits which data, what is backed up, and how long you are required to keep it."
 toc: true
 owner: Research Computing
-reviewed: 2026-10-04
+reviewed: 2026-11-05
 redirect_from:
   - /pages/storage-overview.html
   - /pages/dryad.html

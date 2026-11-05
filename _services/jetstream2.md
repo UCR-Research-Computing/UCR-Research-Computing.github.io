@@ -4,9 +4,9 @@ kicker: "National <span class='sep'>|</span> Research cloud VMs, including NVIDI
 description: "NSF-funded research cloud at Indiana University: Linux virtual machines you fully control, with partial or full NVIDIA A100 GPUs, a web desktop and web shell, allocated through NSF ACCESS."
 status: External
 tags: [Cloud VMs, GPU, ACCESS]
-data_levels: Non-sensitive only (P1-P2; no protected data)
+data_levels: P1-P2 (no protected data)
 owner: "Indiana University and partners (the service); Research Computing (UCR guidance)"
-reviewed: 2026-10-30
+reviewed: 2026-11-05
 governed_by: "ACCESS allocation policies and Jetstream2 policies"
 governed_url: https://docs.jetstream-cloud.org/
 fit:

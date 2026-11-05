@@ -4,9 +4,9 @@ kicker: "National <span class='sep'>|</span> S3 object storage through NSF ACCES
 description: "NSF-funded S3-compatible object storage, allocated through ACCESS, for sharing datasets across institutions, hosting public data and feeding pipelines on any platform."
 status: External
 tags: [Object (S3), Data sharing, ACCESS]
-data_levels: Non-sensitive only (P1; no protected data)
+data_levels: P1 only (no protected data)
 owner: "Open Storage Network (the service); Research Computing (UCR guidance)"
-reviewed: 2026-10-29
+reviewed: 2026-11-05
 governed_by: "ACCESS allocation policies and OSN documentation"
 governed_url: https://openstoragenetwork.github.io/docs/
 fit:

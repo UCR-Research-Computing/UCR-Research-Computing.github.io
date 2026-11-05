@@ -8,7 +8,7 @@ kicker_plain: "Costs"
 description: "How recharge works for research computing services at UCR, the current published rates with their sources and dates, and the limits that apply."
 toc: true
 owner: Research Computing
-reviewed: 2026-10-04
+reviewed: 2026-11-05
 governed_by: "The rate sheets and MOUs linked on this page"
 redirect_from:
   - /pages/cost_models.html
@@ -40,7 +40,7 @@ Some services carry no recharge to the lab today:
 
 - **Campus collaboration storage** (Google Drive, OneDrive) within the quotas ITS publishes on its [storage page](https://its.ucr.edu/storage).
 - **Ursa Major Tier 1:** AI model access for research (with a per-lab allowance), exotic hardware not available on the HPCC (by consultation, within limits set per project), and archive storage. See [KB005: Ursa Major service tiers]({{ '/kb/kb005-ursa-major-service-tiers/' | relative_url }}). Other Ursa Major cloud work is recharged.
-- **National allocations** (NSF ACCESS, NAIRR Pilot, NRP Nautilus, OSG), which are awarded by those programs rather than sold.
+- **National programs** (NSF ACCESS and its resources such as Jetstream2 and the Open Storage Network, the NAIRR Pilot, NRP Nautilus, and OSG with the OSDF), which are awarded or provided by those programs rather than sold.
 - **Consultation** with Research Computing on choosing services, planning projects and grant preparation. Consultation carries no recharge to the lab under current terms.
 - **Cloud research credits:** Google and AWS both run research credit programs that can offset cloud costs. Credits are awarded by the provider, not by UCR. See [Cloud accounts]({{ '/services/cloud-accounts/' | relative_url }}#cloud-credits).
 
