@@ -72,7 +72,7 @@ A signed-up FABRIC account on its own cannot create slices: you need to be in an
 
 1. **Sign up** at the [FABRIC portal](https://portal.fabric-testbed.net/) with your UCR login.
 2. **Join a project.** Students and postdocs ask their PI or instructor to add them. Faculty and senior researchers can request to become a Project Lead and create a project for their group or class.
-3. **Open JupyterHub**, run the "Configure Environment" notebook, then "Hello, FABRIC" to create your first slice.
+3. **Open JupyterHub**, run the "Configure Environment" notebook (it creates your SSH keys), then "Hello, FABRIC" to create your first slice. In our test a one-VM slice was ready in under 10 minutes.
 
 Our [getting-started guide]({{ '/kb/kb051-fabric-getting-started/' | relative_url }}) walks through each step with the UCR specifics. Research Computing can help you decide whether FABRIC fits your work and get your group set up; [contact us]({{ '/help/' | relative_url }}).
 
