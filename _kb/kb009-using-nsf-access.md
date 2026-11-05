@@ -113,7 +113,7 @@ Your project page lists your username on each resource and links to its document
 
 ## 4. Jetstream2: Your Own VMs in a Research Cloud
 
-For a full walkthrough with screenshots, see the Jetstream2 series: [researcher guide](../kb042-jetstream2-researcher-guide/), [your first VM](../kb043-jetstream2-first-vm/), [GPU VMs](../kb044-jetstream2-gpu-vms/) and [managing VMs and SUs](../kb045-jetstream2-managing-vms/). This section is the short version.
+For a full walkthrough with screenshots, see the Jetstream2 series: [researcher guide](../kb042-jetstream2-researcher-guide/), [your first VM](../kb043-jetstream2-first-vm/), [GPU VMs](../kb044-jetstream2-gpu-vms/), [managing VMs and SUs](../kb045-jetstream2-managing-vms/) and [hosting a web app](../kb046-jetstream2-web-app-hosting/). This section is the short version.
 
 **Jetstream2** is an NSF-funded research cloud run by Indiana University. You create and control your own virtual machines, with full admin rights, from a web browser. It is a good fit for work that HPCC's batch system does not handle: always-on services, web apps, databases, science gateways, interactive desktops, and VMs with public IP addresses.
 

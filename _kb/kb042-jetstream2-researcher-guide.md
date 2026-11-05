@@ -73,6 +73,7 @@ Jetstream2 CPU, Jetstream2 GPU and Jetstream2 Large Memory are **separate ACCESS
 4. **Create a VM**, then connect to it: [Your first Jetstream2 VM](../kb043-jetstream2-first-vm/).
 5. For GPUs, see [GPU VMs on Jetstream2](../kb044-jetstream2-gpu-vms/).
 6. To manage your VMs and your SUs, see [Managing Jetstream2 VMs and SUs](../kb045-jetstream2-managing-vms/).
+7. To host a web app or study server with an HTTPS address, see [Host a web app on Jetstream2](../kb046-jetstream2-web-app-hosting/).
 
 ## 6. Your responsibilities
 
