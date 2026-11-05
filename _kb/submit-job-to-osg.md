@@ -11,6 +11,8 @@ review_notes:
   - "CHECK: the OSPool documentation links (portal.osg-htc.org/documentation/...) resolved on 2026-10-04 but OSG reorganizes its docs from time to time."
 ---
 
+**Looking for the full guide?** This is the short summary. The [OSPool researcher guide](../kb034-ospool-researcher-guide/) series covers accounts, data, jobs, [GPU jobs](../kb047-ospool-gpu-jobs/), [common job types](../kb048-ospool-common-job-types/) and [containers](../kb049-containerize-your-research/), with commands Research Computing has run.
+
 The OSG's Open Science Pool (OSPool) runs large numbers of small, independent jobs on spare capacity contributed by institutions across the country. It suits work that splits into many short jobs, such as parameter sweeps, Monte Carlo runs and per-sample pipelines. Jobs are scheduled with HTCondor. See the [OSG / OSPool service page](../../services/osg/) for what fits, and [osg-htc.org](https://osg-htc.org) for the program itself. For the full step-by-step series, start with the [researcher guide to the OSPool and OSDF](../kb034-ospool-researcher-guide/).
 
 ## 1. Get access to an OSPool access point
