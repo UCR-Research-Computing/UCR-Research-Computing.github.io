@@ -77,6 +77,18 @@
   data: P1 only
   terms: OSG policies
   t: "compute national batch gpu containers p1 norecharge"
+- id: fabric
+  name: FABRIC testbed
+  url: /services/fabric/
+  icon: fa-solid fa-network-wired
+  group: National
+  blurb: "NSF testbed for networking and distributed-systems research: build your own multi-site networks of VMs, GPUs, FPGAs and programmable network hardware."
+  tags: [Networking, Testbed, GPU]
+  status: External
+  cost: No UCR recharge
+  data: P1 only
+  terms: FABRIC policies
+  t: "compute national gpu interactive p1 norecharge"
 - id: osdf
   name: Open Science Data Federation (OSDF)
   url: /services/osdf/
