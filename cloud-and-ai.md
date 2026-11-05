@@ -34,6 +34,7 @@ The [RAISE Institute](https://raise.ucr.edu/) (Riverside Artificial Intelligence
 | Use Google's AI platform services (such as Vertex AI) directly | A recharged [Ursa Major]({{ '/services/ursa-major/' | relative_url }}) project |
 | Run open-source language models yourself | [Running local LLMs with Ollama]({{ '/kb/ollama-how-to/' | relative_url }}), on the HPCC or a workstation |
 | Use containers and notebooks with GPUs | [NRP Nautilus]({{ '/services/nautilus/' | relative_url }}) |
+| Experiment on bare-metal GPU, FPGA or Arm hardware, or on programmable networks (computer-science research) | [Chameleon]({{ '/services/chameleon/' | relative_url }}) and [FABRIC]({{ '/services/fabric/' | relative_url }}) testbeds |
 
 ## Cloud for research
 

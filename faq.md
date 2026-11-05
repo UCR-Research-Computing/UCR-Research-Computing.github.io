@@ -53,7 +53,7 @@ No. Regulated data needs a review and an approved [data security plan]({{ '/kb/u
 ## Access
 
 **My work needs more than campus has. What are my options?**
-National programs award allocations by application: [NSF ACCESS]({{ '/services/nsf-access/' | relative_url }}), the [NAIRR Pilot]({{ '/services/nairr/' | relative_url }}), [NRP Nautilus]({{ '/services/nautilus/' | relative_url }}) and [OSG]({{ '/services/osg/' | relative_url }}). We can help you choose and apply.
+National programs award allocations by application: [NSF ACCESS]({{ '/services/nsf-access/' | relative_url }}), the [NAIRR Pilot]({{ '/services/nairr/' | relative_url }}), [NRP Nautilus]({{ '/services/nautilus/' | relative_url }}) and [OSG]({{ '/services/osg/' | relative_url }}). For computer-science experiments that need whole machines or custom networks, the [Chameleon]({{ '/services/chameleon/' | relative_url }}) and [FABRIC]({{ '/services/fabric/' | relative_url }}) testbeds are open to UCR researchers at no recharge from UCR. We can help you choose and apply.
 
 **How do I move from a cloud VM to the HPCC?**
 See [KB022: Migrating workloads from Google Cloud to HPCC]({{ '/kb/kb022-migrating-compute-to-hpcc/' | relative_url }}).

@@ -9,7 +9,8 @@ owner: Research Computing
 review_notes:
   - "Written 2026-11-05 from Chameleon's documentation (Getting Started; PI Eligibility; Project Management; Reservations) and FAQ (allocation size, SU rates, lease limits, lease stacking policy), all fetched 2026-11-05."
   - "Checked 2026-11-05 by RC with an existing UCR Chameleon account: sign-in with the UCR identity, the site terms page on first sign-in, the empty Projects page message, and the profile Edit form for requesting PI eligibility (fields listed in section 3, including the department directory link that appears when the box is ticked). The request then showed 'PI Eligibility: Requested'."
-  - "CHECK: sections 4 to 6 (creating a project, reserving a node, launching an instance, SSH, JupyterHub) follow Chameleon's documentation and were not yet run by RC; the RC PI eligibility request was pending."
+  - "Tested 2026-11-05 by RC: the PI eligibility request was approved the same day, then the Create a Project form (title, nickname, research-area tag, public abstract, private resource justification, funding question, acceptable use box) created a project at once, with its allocation shown as Pending until Chameleon reviews it."
+  - "CHECK: sections 4 to 6 (reserving a node, launching an instance, SSH, JupyterHub) follow Chameleon's documentation and were not yet run by RC; the RC project allocation was pending review."
 ---
 
 Chameleon is a national testbed for computer science. You reserve **whole physical servers** (or VMs) for up to a week at a time, with root access and your own operating system image, at sites in Chicago, Austin and Boulder. See the [Chameleon service page](../../services/chameleon/) for what fits and what does not.
@@ -52,7 +53,15 @@ Until you are in a project, **Projects** shows "You don't have any projects!" an
 3. Tick **Request PI Eligibility**. A **Department directory link** field appears and is required: give the address of your public UCR profile, for example your `https://profiles.ucr.edu/<your.name>` page or your department's people page.
 4. Click **Save Profile**. Your profile now shows **PI Eligibility: Requested**. Chameleon says requests are usually reviewed within one business day.
 
-**Create a project (after approval).** Go to **Projects** and click **Create a Project**. Give it a title and a description of the research. Once approved, the project receives a startup allocation of service units for six months (see Chameleon's [FAQ](https://chameleoncloud.org/learn/frequently-asked-questions/) for the current amount). PIs and managers can add members, set per-member budgets, and request extensions or recharges from the project page.
+**Create a project (after approval).** Go to **Projects** and click **Create a Project**. The form asks for:
+
+- a **title** and a short **nickname** used across Chameleon's sites;
+- a **research-area tag** (choose the closest);
+- a public **abstract** of about 200 words covering your objectives, planned activities and why the work matters;
+- a private **resource justification**: roughly how much hardware you will use and for how long, which Chameleon reviewers use to size the allocation (a simple estimate such as "about 15 one-day bare-metal leases and 4 GPU leases" is fine);
+- whether the work is grant-funded, and agreement to Chameleon's acceptable use policies.
+
+The project appears straight away, but its allocation shows **Pending** until Chameleon staff review it, so you cannot reserve hardware until then. Once approved, the project receives a startup allocation of service units for six months (see Chameleon's [FAQ](https://chameleoncloud.org/learn/frequently-asked-questions/) for the current amount). PIs and managers can add members, set per-member budgets, and request extensions or recharges from the project page.
 
 ---
 

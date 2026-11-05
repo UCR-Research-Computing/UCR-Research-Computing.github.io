@@ -9,7 +9,8 @@ owner: Research Computing
 review_notes:
   - "Written 2026-11-05 from FABRIC's Knowledge Base (Quick Start Guide; Signing up for a FABRIC account; Creating or Joining a Project; FABRIC User Roles and Project Permissions; Generating SSH Configuration and SSH Keys; Creating your first experiment in Jupyter Hub; Things to know when using FABRIC for the first time; all fetched 2026-11-05) and the FABRIC portal (release 2.0.0 notice, portal version 1.10.4)."
   - "Checked 2026-11-05 by RC with an existing UCR FABRIC account: sign-in with the UCR identity through CILogon, the profile page fields (FABRIC ID, Bastion Login, Other Identities), the Roles & Projects page, an expired project's 'Renew Project' button and the Project Renewal form in the FABRIC help portal."
-  - "CHECK: sections 4 to 6 (bastion key generation in the portal, JupyterHub Configure Environment and Hello, FABRIC) follow FABRIC's documentation and were not yet run by RC; the RC project was awaiting renewal."
+  - "Tested 2026-11-05 by RC on the renewed RC project: JupyterHub sign-in with the UCR identity, the default server image (FABRIC Examples v1.9.0), the Configure Environment step (it created the bastion key itself; no portal download was needed), and a Hello, FABRIC style slice: one Ubuntu 22 VM with 2 cores, 8 GB RAM and 10 GB disk at a randomly chosen site, ready in under 10 minutes, SSH through the bastion, then deleted."
+  - "CHECK: the portal SSH Keys page route for working from your own computer (section 4, second half) was not run by RC; it follows FABRIC's SSH configuration guide."
   - "CHECK: the sign-up workflow screens (section 2) were not walked through by RC with a new account; they follow FABRIC's 'Signing up for a FABRIC account' article."
 ---
 
@@ -17,7 +18,7 @@ FABRIC is a national testbed for networking and distributed-systems research. Yo
 
 FABRIC is **Non-sensitive only (P1; no protected data)**.
 
-Getting started takes four steps: sign up, get into a project, set up a bastion SSH key, and run the example notebooks in FABRIC's JupyterHub. Research Computing can help at any step; [contact us](../../help/).
+Getting started takes four steps: sign up, get into a project, open FABRIC's JupyterHub (which sets up your SSH keys for you), and run the Hello, FABRIC example. Research Computing can help at any step; [contact us](../../help/).
 
 ---
 
@@ -60,26 +61,27 @@ Your account can see the portal, but it cannot create slices until you are a mem
 
 ---
 
-## 4. Set up your bastion SSH key
+## 4. Your SSH keys (JupyterHub does this for you)
 
-FABRIC VMs are reached through FABRIC's bastion host, so you need two key pairs: a **bastion** key pair (you create it in the portal, once) and a **sliver** key pair for the VMs themselves.
+FABRIC VMs are reached through FABRIC's **bastion** host, so you need two key pairs: a **bastion** key pair that lets you through the bastion, and a **slice** key pair for the VMs themselves.
 
-1. In the portal, open your profile and go to **SSH Keys**.
-2. Generate a **bastion** key pair and download the private key, or upload the public half of a key you made yourself. Bastion keys expire and are renewed in the same place.
-3. If you work in JupyterHub (recommended), upload the bastion private key into your JupyterHub `fabric_config` folder when the Configure Environment notebook asks for it. The notebook creates the sliver key and the SSH config for you.
+**If you work in JupyterHub (recommended),** you do not need to make either key by hand. The Configure Environment notebook in section 5 creates the bastion key, the slice key and the SSH config in your JupyterHub `fabric_config` folder. Bastion keys expire; when one does, run Configure Environment again and it makes a new one.
 
-If you work from your own computer instead, follow FABRIC's [SSH configuration guide](https://learn.fabric-testbed.net/knowledge-base/generating-ssh-configuration-and-ssh-keys/). Keep the FABRIC settings in their own file (for example `~/.ssh/fabric_ssh_config`) rather than your main `~/.ssh/config`.
+**If you work from your own computer instead,** create a bastion key in the portal (your profile, **SSH Keys**) and follow FABRIC's [SSH configuration guide](https://learn.fabric-testbed.net/knowledge-base/generating-ssh-configuration-and-ssh-keys/). Keep the FABRIC settings in their own file (for example `~/.ssh/fabric_ssh_config`) rather than your main `~/.ssh/config`.
 
 ---
 
 ## 5. Open JupyterHub and run Hello, FABRIC
 
-1. From the portal's top menu, click **JupyterHub** (or go to [jupyter.fabric-testbed.net](https://jupyter.fabric-testbed.net/)) and sign in with CILogon, choosing UC Riverside. The first time, FABRIC builds your private environment, which can take a few minutes.
-2. Open the `jupyter-examples` folder and the **start-here** notebook.
-3. Run **Configure Environment** first. It sets up your FABlib configuration, sliver keys and SSH config, and asks which project to use.
-4. Open **Hello, FABRIC** and run each cell in turn. It creates a small slice, logs in to a VM and deletes the slice.
+1. From the portal's top menu, click **JupyterHub** (or go to [jupyter.fabric-testbed.net](https://jupyter.fabric-testbed.net/)) and sign in with CILogon, choosing UC Riverside. Click through the sign-in once and wait: if you click **Log On** a second time, or sign in from two tabs at once, JupyterHub can send you back to its sign-in page. If that happens, sign in again once.
+2. On **Server Options**, keep the **(default)** stable release and click **Start**. Your server takes a minute or two to start the first time.
+3. In the file browser, open the `jupyter-examples-rel...` folder (the name includes the release number) and the **start_here** notebook. It lists every example.
+4. Run **Configure Environment** (`configure_and_validate`) first. Replace `REPLACE_WITH_YOUR_PROJECT_ID` with your project's ID (the long code shown on your project's page in the portal), then run each cell. It checks your settings, creates your bastion and slice keys, and saves the configuration. If it reports that the bastion username is missing, add `bastion_username="<your Bastion Login>"` (from your portal profile) to the `fablib_manager(...)` line and run it again.
+5. Open **Hello, FABRIC** (`fabric_examples/fablib_api/hello_fabric`) and run each cell in turn. It creates a small slice with one VM at a site with free capacity, runs a command on it over SSH, and deletes the slice.
 
-Your JupyterHub files are kept between sessions, but slices are not: save results to your own storage.
+What to expect: in our test the slice (one Ubuntu 22 VM with 2 cores and 8 GB of memory) was ready in under 10 minutes, and the VM answered over SSH within seconds. VMs have a FABRIC management address (IPv6 at many sites) and come with a default lease of about one day, which you can extend.
+
+Your JupyterHub files are kept between sessions, but slices are not: save results to your own storage, and delete slices when you are done.
 
 ---
 
