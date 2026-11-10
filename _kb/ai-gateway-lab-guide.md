@@ -295,8 +295,6 @@ If you also have `GOOGLE_API_KEY` set, Gemini CLI prefers it; unset it first.
 
 Model choice is the biggest cost lever: Flash models cost a fraction of Pro, and agent tools that make many calls add up quickly. If you also plug in aigw (step 1 for PIs works for members too, once Research Computing adds you to the sign-in list), ask it "Which models can I use, and what do they cost?" or "What would a million input tokens on gemini-3.8-flash cost?" Your key also lists its models at `/v1/models`. If you need a model that is not listed, ask Research Computing.
 
-For every model on the gateway ranked by capability, picks by job, and how to keep long agent sessions affordable, see [Choosing a model on the UCR AI gateway](../ai-gateway-choosing-a-model/).
-
 ## Rules
 
 * **Data: UC protection levels P1 (public) and P2 (internal) only.** Never send P3 or P4 data to the gateway. P3 and P4 include identifiable health information, student records, government ID numbers, financial account numbers, export-controlled data and CUI.
