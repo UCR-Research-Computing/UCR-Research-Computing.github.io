@@ -186,6 +186,7 @@ A five-model, five-lens review of every page, card and public PDF (report and ve
 
 ## 10. History
 
+- 2026-11-12: KB052 updated with tested Chameleon workflow (bare-metal lease creation, instance launch, SSH, CLI commands, screenshots and timings); reviewed date bumped to 2026-11-12.
 - 2026-11-10: unlisted `ai-gateway-choosing-a-model` published (PR #88) and withdrawn the same day: it named the Claude models on the gateway, which are not to be made known yet.
 - 2026-11-05: Chameleon testbed service page, catalog card, Compute hub row and KB052 getting started, straight to prod.
 - 2026-11-05: FABRIC testbed service page, catalog card, Compute hub row and KB051 getting started, straight to prod (Chuck: website changes go straight to live).
