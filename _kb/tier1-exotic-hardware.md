@@ -25,7 +25,7 @@ The HPCC is the place for batch computing at UCR, including CPU, high-memory and
 
 Hardware the HPCC cluster does not offer and that is hard to find elsewhere. Two examples:
 
-* **Google Cloud TPUs** (Tensor Processing Units), Google's accelerators for training and running machine learning models. TPU code is usually written in JAX, or in PyTorch or TensorFlow with TPU support.
+* **Google Cloud TPUs** (Tensor Processing Units), Google's accelerators for training and running machine learning models. TPU code is usually written in JAX, or in PyTorch or Keras with TPU support; see [KB053: Porting PyTorch and GPU research code to Google Cloud TPUs](../kb053-porting-gpu-code-to-tpus/).
 * **Arm processors**, for building, testing and benchmarking software on Arm, or for work that is tied to that architecture.
 
 If you have another kind of hardware in mind, ask. The test is the same: the work needs hardware the HPCC does not have.

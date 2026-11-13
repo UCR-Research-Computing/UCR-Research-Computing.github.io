@@ -37,6 +37,7 @@ This page gets you connected. The rest of the series:
 | 4 | [Remote Linux desktop](../ursa-portal-desktop/) | A desktop on a compute node, GPU visualization, copy and paste, display settings |
 | 5 | [Use it from an AI assistant](../ursa-portal-ai-assistant/) | Let Claude, Codex, Gemini and others check jobs, explain failures and submit work for you |
 | 6 | [Troubleshooting](../ursa-portal-troubleshooting/) | Fixes for the problems people actually hit |
+| 7 | [Cloud TPUs: running and porting workloads](../ursa-portal-tpus/) | TPU v5e and v6e Trillium partitions, preinstalled TPU modules, batch scripts, and AI-agent porting |
 
 ## Before you start
 

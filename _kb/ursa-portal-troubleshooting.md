@@ -128,6 +128,6 @@ gcloud compute ssh ucrslurmcl-slurm-login-001 --zone us-central1-a \
 
 ## Still stuck
 
-Email [research-computing@ucr.edu](mailto:research-computing@ucr.edu). Include your NetID, what you were doing, the exact message, and the Session ID or job number. Back to the series: [Getting connected](../ursa-portal-getting-started/), [Files and jobs](../ursa-portal-files-and-jobs/), [Jupyter](../ursa-portal-jupyter/), [Desktop](../ursa-portal-desktop/), [AI assistant](../ursa-portal-ai-assistant/).
+Email [research-computing@ucr.edu](mailto:research-computing@ucr.edu). Include your NetID, what you were doing, the exact message, and the Session ID or job number. Back to the series: [Getting connected](../ursa-portal-getting-started/), [Files and jobs](../ursa-portal-files-and-jobs/), [Jupyter](../ursa-portal-jupyter/), [Desktop](../ursa-portal-desktop/), [AI assistant](../ursa-portal-ai-assistant/), [Cloud TPUs](../ursa-portal-tpus/).
 
 Upstream documentation: [Open OnDemand troubleshooting for users](https://osc.github.io/ood-documentation/latest/user-guide/troubleshooting.html), [Slurm job reason codes](https://slurm.schedmd.com/job_reason_codes.html), [Google Cloud IAP troubleshooting](https://cloud.google.com/iap/docs/troubleshooting-tcp-forwarding).

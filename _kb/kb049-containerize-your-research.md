@@ -482,6 +482,7 @@ Once your container is verified locally and running on your target platform, ref
 * **OSPool GPU jobs:** Read [GPU jobs on the OSPool](../kb047-ospool-gpu-jobs/) to select GPU memory and compute capabilities.
 * **OSPool job architectures:** Read [Common OSPool job types](../kb048-ospool-common-job-types/) for parameter sweeps, DAGMan multi-step workflows, and checkpointing.
 * **NRP Nautilus Kubernetes batch computing:** Read [Running batch jobs and GPU work on Nautilus with Kubernetes](../kb026-nautilus-batch-jobs-and-gpus/) and [Run Nautilus jobs from your AI assistant (nrp-mcp quick start)](../kb031-nrp-mcp-quick-start/).
+* **Porting GPU code to Cloud TPUs:** If your workload targets Google Cloud TPUs instead of NVIDIA GPUs, read [Porting PyTorch and GPU research code to Google Cloud TPUs with an AI coding agent](../kb053-porting-gpu-code-to-tpus/).
 * **Campus cluster:** For workloads requiring low-latency MPI across multiple nodes or local campus storage, compute on the campus [HPCC](../../services/hpcc/).
 
 ### Support and consultations
