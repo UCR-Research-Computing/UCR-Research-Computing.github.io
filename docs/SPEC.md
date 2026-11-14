@@ -186,6 +186,7 @@ A five-model, five-lens review of every page, card and public PDF (report and ve
 
 ## 10. History
 
+- 2026-11-14: unlisted `ai-gateway-lab-guide` updated to remove stale non-Google model references so issued-key examples and tool table match D26 (Google Gemini and embedding models only); `reviewed` bumped to 2026-11-14.
 - 2026-11-13: KB053 added (porting PyTorch and GPU research code to Google Cloud TPUs with OpenXLA and an AI coding agent), plus unlisted Part 7 (`ursa-portal-tpus`) in the cluster portal series covering `tpu6spot`/`tpuspot`/`tpu` partitions, preinstalled `/apps/modulefiles-tpu` stacks, Slurm batch templates, and the `ursa` MCP agent workflow.
 - 2026-11-12: KB052 updated with tested Chameleon workflow (bare-metal lease creation, instance launch, SSH, CLI commands, screenshots and timings); reviewed date bumped to 2026-11-12.
 - 2026-11-10: unlisted `ai-gateway-choosing-a-model` published (PR #88) and withdrawn the same day: it named the Claude models on the gateway, which are not to be made known yet.
