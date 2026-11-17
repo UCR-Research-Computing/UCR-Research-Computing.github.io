@@ -8,7 +8,7 @@ kicker_plain: "Help"
 description: "How to reach Research Computing: consultations, office hours, Slack, the support portal, and who to contact for each kind of question."
 toc: true
 owner: Research Computing
-reviewed: 2026-10-04
+reviewed: 2026-11-17
 redirect_from:
   - /pages/research_facilitation.html
   - /pages/faq-contact.html
@@ -39,6 +39,8 @@ Research Computing holds online office hours, currently on Wednesdays from 10 to
 | HPCC accounts, jobs, cluster software | The [HPCC](https://hpcc.ucr.edu/), through the channels on its site |
 | Choosing a service, planning a project or grant | Research Computing |
 | Ursa Major, CephRDS, secure enclave | Research Computing |
+| Campus REDCap (`redcap.ucr.edu`) access, lab onboarding, API tokens | Research Computing ([REDCap]({{ '/services/redcap/' | relative_url }}), [KB054]({{ '/kb/kb054-redcap-access-and-onboarding/' | relative_url }})) |
+| School of Medicine REDCap (`redcap.medsch.ucr.edu`), clinical / HIPAA apps | SOM IT ([KB006]({{ '/kb/kb006-som-clinical-apps/' | relative_url }})) |
 | Cloud accounts under UC agreements | ITS, through the [support portal](https://ucrsupport.service-now.com/ucr_portal/) |
 | Google Drive, OneDrive, campus accounts | ITS, through the [support portal](https://ucrsupport.service-now.com/ucr_portal/) |
 | Campus AI tools | ITS: [AI at UCR](https://its.ucr.edu/ai) |
