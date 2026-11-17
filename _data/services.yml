@@ -197,6 +197,18 @@
   data: Check ITS guidance
   terms: ITS storage page
   t: "storage p12 norecharge"
+- id: redcap
+  name: REDCap
+  url: /services/redcap/
+  icon: fa-solid fa-clipboard-check
+  group: Data collection
+  blurb: "Web platform for online research surveys and longitudinal study databases, organized by faculty-led labs at redcap.ucr.edu."
+  tags: [Surveys, Study databases]
+  status: Available
+  cost: No UCR recharge
+  data: Per IRB / DSP (no HIPAA)
+  terms: UC IS-3, IRB and DSP
+  t: "storage secure webservice p12 p34 norecharge lab"
 - id: enclave
   name: Secure research enclave
   url: /services/secure-enclave/
